@@ -490,6 +490,360 @@
       margin-bottom: 18px;
     }
 
+    /* ════════════════════════════════════════════════════
+       SECTION 3 – CLARIDAD (navy dark)
+    ════════════════════════════════════════════════════ */
+    .clarity-section {
+      padding: 88px 0 96px;
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+    }
+    .clarity-section .section-eyebrow { color: var(--yellow); }
+    .clarity-section .section-title   { color: var(--white); }
+    .clarity-section .section-sub     { color: rgba(255,255,255,.72); margin: 16px auto 0; }
+
+    .clarity-warning {
+      max-width: 620px;
+      margin: 40px auto 0;
+      background: rgba(255,214,0,.12);
+      border: 1px solid rgba(255,214,0,.28);
+      border-left: 4px solid var(--yellow);
+      border-radius: 12px;
+      padding: 24px 28px;
+      text-align: left;
+      font-size: .95rem;
+      color: rgba(255,255,255,.82);
+      line-height: 1.65;
+    }
+    .clarity-warning strong { color: var(--yellow); display: block; font-size: 1rem; margin-bottom: 6px; }
+
+    /* ════════════════════════════════════════════════════
+       SECTION 4 – CÓMO AYUDAMOS
+    ════════════════════════════════════════════════════ */
+    .how-section { padding: 88px 0 96px; background: var(--white); }
+
+    .how-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    @media (max-width: 768px) { .how-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+    .how-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .how-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .how-check {
+      flex-shrink: 0;
+      width: 26px; height: 26px;
+      background: #e6f2fb;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+    .how-check svg { width: 13px; height: 13px; color: var(--blue); }
+    .how-item-text strong { display: block; font-weight: 600; color: var(--navy); font-size: .97rem; }
+    .how-item-text span   { font-size: .88rem; color: var(--gray-md); }
+
+    .how-cta-card {
+      background: linear-gradient(145deg, var(--navy) 0%, #004a7a 100%);
+      border-radius: 18px;
+      padding: 44px 36px;
+      text-align: center;
+      color: var(--white);
+      box-shadow: var(--shadow-lg);
+    }
+    .how-cta-card h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: 12px; }
+    .how-cta-card p  { font-size: .95rem; opacity: .78; margin-bottom: 28px; line-height: 1.65; }
+
+    /* ════════════════════════════════════════════════════
+       SECTION 5 – AUTORIDAD
+    ════════════════════════════════════════════════════ */
+    .authority-section { padding: 88px 0 96px; background: var(--bg); text-align: center; }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin: 44px 0 52px;
+    }
+    @media (max-width: 600px) { .stats-row { grid-template-columns: 1fr; } }
+
+    .stat-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px 20px;
+    }
+    .stat-num  { font-size: 2.6rem; font-weight: 700; color: var(--blue); line-height: 1; margin-bottom: 8px; }
+    .stat-lbl  { font-size: .88rem; color: var(--gray-md); }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      text-align: left;
+    }
+    .testi-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+    }
+    .testi-stars { display: flex; gap: 3px; margin-bottom: 12px; }
+    .testi-stars svg { width: 15px; height: 15px; fill: var(--yellow); color: var(--yellow); }
+    .testi-text  { font-size: .9rem; font-style: italic; color: var(--gray-dk); line-height: 1.65; margin-bottom: 18px; }
+    .testi-author{ display: flex; align-items: center; gap: 10px; }
+    .testi-avatar{
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--navy));
+      display: flex; align-items: center; justify-content: center;
+      font-size: .75rem; font-weight: 700; color: var(--white); flex-shrink: 0;
+    }
+    .testi-name    { font-size: .88rem; font-weight: 600; color: var(--navy); }
+    .testi-country { font-size: .8rem; color: var(--gray-md); }
+
+    /* ════════════════════════════════════════════════════
+       SECTION 6 – PRE-CUALIFICACIÓN
+    ════════════════════════════════════════════════════ */
+    .preq-section { padding: 88px 0 96px; background: var(--white); }
+
+    .preq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    @media (max-width: 768px) { .preq-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+    .preq-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .preq-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .preq-dot {
+      width: 30px; height: 30px;
+      background: var(--blue);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .preq-dot svg { width: 14px; height: 14px; color: var(--white); }
+
+    .preq-highlight {
+      background: linear-gradient(135deg, #f0f6ff, #e6f2fb);
+      border: 1px solid #c3dcf0;
+      border-radius: 16px;
+      padding: 36px 32px;
+    }
+    .preq-highlight h3 { font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; }
+    .preq-highlight p  { font-size: .92rem; color: var(--dark); line-height: 1.65; margin-bottom: 24px; }
+
+    /* ════════════════════════════════════════════════════
+       SECTION 7 – CTA FINAL
+    ════════════════════════════════════════════════════ */
+    .final-cta {
+      padding: 100px 0 108px;
+      background: linear-gradient(140deg, var(--navy) 0%, #004a7a 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,214,0,.08), transparent 70%);
+      top: -200px; right: -150px;
+      pointer-events: none;
+    }
+    .final-cta-inner { position: relative; z-index: 1; }
+    .final-cta .section-eyebrow { color: var(--yellow); }
+    .final-cta .section-title   { color: var(--white); max-width: 660px; margin: 0 auto; }
+    .final-cta-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,.75);
+      max-width: 500px;
+      margin: 18px auto 40px;
+      line-height: 1.65;
+    }
+    .final-cta-actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+    .btn-white {
+      background: var(--white);
+      color: var(--navy);
+      padding: 14px 30px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      font-family: 'Asap', sans-serif;
+      transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-white:hover { background: #f0f6ff; box-shadow: 0 6px 24px rgba(0,0,0,.18); transform: translateY(-1px); }
+    .btn-outline-white {
+      background: transparent;
+      color: var(--white);
+      padding: 13px 30px;
+      border-radius: 10px;
+      border: 2px solid rgba(255,255,255,.4);
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      font-family: 'Asap', sans-serif;
+      transition: border-color var(--transition), background var(--transition);
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-outline-white:hover { border-color: var(--white); background: rgba(255,255,255,.08); }
+    @media (max-width: 480px) {
+      .final-cta { padding: 72px 0 80px; }
+      .final-cta-actions { flex-direction: column; align-items: center; }
+      .btn-white, .btn-outline-white { width: 100%; max-width: 320px; justify-content: center; }
+    }
+
+    /* ════════════════════════════════════════════════════
+       SUB-LANDINGS
+    ════════════════════════════════════════════════════ */
+    .sub-hero {
+      background: linear-gradient(150deg, #eef5fc 0%, #ffffff 100%);
+      padding: 72px 0 80px;
+      text-align: center;
+    }
+    .sub-tag {
+      display: inline-block;
+      background: var(--blue);
+      color: var(--white);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+    .sub-hero h1 {
+      font-size: clamp(1.9rem, 4vw, 2.9rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.18;
+      max-width: 700px;
+      margin: 0 auto 16px;
+    }
+    .sub-hero p {
+      font-size: 1.1rem;
+      color: var(--dark);
+      max-width: 560px;
+      margin: 0 auto 32px;
+      line-height: 1.65;
+    }
+    @media (max-width: 480px) { .sub-hero { padding: 52px 0 60px; } }
+
+    .sub-section       { padding: 64px 0; }
+    .sub-section.alt   { background: var(--bg); }
+    .sub-section.dark  { background: var(--navy); }
+    .sub-section.dark .section-title { color: var(--white); }
+    .sub-section.dark .section-eyebrow { color: var(--yellow); }
+
+    .isfor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 32px;
+    }
+    .isfor-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 15px 18px;
+      font-size: .9rem;
+      font-weight: 500;
+      color: var(--navy);
+    }
+    .isfor-item svg { flex-shrink: 0; width: 18px; height: 18px; color: var(--blue); }
+    @media (max-width: 480px) { .isfor-grid { grid-template-columns: 1fr; } }
+
+    .alert-box {
+      background: #fffbe6;
+      border: 1px solid #ffe082;
+      border-left: 4px solid var(--yellow);
+      border-radius: 12px;
+      padding: 22px 26px;
+      margin-top: 32px;
+      font-size: .95rem;
+      color: var(--gray-dk);
+      line-height: 1.65;
+    }
+    .alert-box strong { display: block; font-size: 1rem; color: #7a5c00; margin-bottom: 6px; }
+
+    .help-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 32px;
+    }
+    .help-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: rgba(255,255,255,.07);
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 32px; height: 32px;
+      background: var(--blue);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .8rem; font-weight: 700; color: var(--white);
+    }
+    .help-step p { font-size: .93rem; color: rgba(255,255,255,.82); margin-top: 5px; line-height: 1.55; }
+
+    /* form embed */
+    .form-section {
+      padding: 72px 0 88px;
+      background: linear-gradient(140deg, var(--navy) 0%, #004a7a 100%);
+      text-align: center;
+    }
+    .form-section .section-eyebrow { color: var(--yellow); }
+    .form-section .section-title   { color: var(--white); margin-bottom: 8px; }
+    .form-section p { color: rgba(255,255,255,.72); margin-bottom: 36px; font-size: 1rem; }
+    .form-wrapper {
+      max-width: 660px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(0,0,0,.28);
+    }
+    .form-wrapper iframe { width: 100%; border: none; display: block; min-height: 600px; }
+
     /* ── prefers-reduced-motion ── */
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
@@ -752,17 +1106,295 @@
       </div>
     </section><!-- /#segmentacion -->
 
-    <div id="como-ayudamos"></div>
-    <div id="cta-final" style="padding:80px 24px;text-align:center;background:var(--navy);">
-      <p style="color:rgba(255,255,255,.6);font-size:.95rem;">— Próximas secciones en construcción —</p>
-    </div>
+    <!-- ── 3. CLARIDAD ── -->
+    <section class="clarity-section" aria-labelledby="clarity-heading">
+      <div class="container">
+        <p class="section-eyebrow">Por qué importa la decisión</p>
+        <h2 class="section-title" id="clarity-heading">
+          Elegir mal tu opción puede costarte meses<br />(o hacer que te rechacen)
+        </h2>
+        <p class="section-sub">
+          Cada tipo de visado o residencia tiene requisitos específicos. Muchas personas pierden tiempo aplicando a opciones que no corresponden a su perfil.
+        </p>
+        <div class="clarity-warning" role="note">
+          <strong>Nosotros analizamos tu situación primero.</strong>
+          Te decimos qué camino seguir para que no cometas errores que puedan costarte la oportunidad de emigrar.
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 4. CÓMO AYUDAMOS ── -->
+    <section id="como-ayudamos" class="how-section" aria-labelledby="how-heading">
+      <div class="container">
+        <div class="how-grid">
+          <div>
+            <p class="section-eyebrow">Nuestro proceso</p>
+            <h2 class="section-title" id="how-heading">
+              Así es como te ayudamos en todo el proceso
+            </h2>
+            <ul class="how-list" style="margin-top:36px;">
+              <li class="how-item">
+                <div class="how-check" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
+                <div class="how-item-text"><strong>Analizamos tu perfil y situación actual</strong><span>Entendemos de dónde vienes y qué necesitas.</span></div>
+              </li>
+              <li class="how-item">
+                <div class="how-check" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
+                <div class="how-item-text"><strong>Te indicamos la mejor opción según tu caso</strong><span>Sin rodeos: la opción que realmente aplica para ti.</span></div>
+              </li>
+              <li class="how-item">
+                <div class="how-check" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
+                <div class="how-item-text"><strong>Te explicamos exactamente qué necesitas</strong><span>Documentos, plazos y pasos en lenguaje claro.</span></div>
+              </li>
+              <li class="how-item">
+                <div class="how-check" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
+                <div class="how-item-text"><strong>Revisamos tu documentación paso a paso</strong><span>Para que nada llegue incompleto o con errores.</span></div>
+              </li>
+              <li class="how-item">
+                <div class="how-check" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
+                <div class="how-item-text"><strong>Te acompañamos durante todo el proceso legal</strong><span>Desde la primera consulta hasta obtener tu residencia.</span></div>
+              </li>
+            </ul>
+          </div>
+          <div class="how-cta-card">
+            <h3>No estás solo en este proceso</h3>
+            <p>Te guiamos desde el inicio hasta obtener tu residencia. Miles de personas de LATAM ya lo han logrado con nuestra ayuda.</p>
+            <button class="btn btn-yellow" onclick="scrollToId('cta-final')">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+              Agendar asesoría gratuita
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 5. AUTORIDAD ── -->
+    <section class="authority-section" aria-labelledby="authority-heading">
+      <div class="container">
+        <p class="section-eyebrow">Resultados reales</p>
+        <h2 class="section-title" id="authority-heading">Personas como tú ya lo han conseguido</h2>
+        <p class="section-sub" style="margin:12px auto 0;">Hemos ayudado a cientos de personas de Latinoamérica y otros países a vivir legalmente en España. Cada caso es diferente, por eso trabajamos con estrategias personalizadas.</p>
+
+        <div class="stats-row" role="list">
+          <div class="stat-card" role="listitem">
+            <div class="stat-num">+500</div>
+            <div class="stat-lbl">Personas asesoradas</div>
+          </div>
+          <div class="stat-card" role="listitem">
+            <div class="stat-num">+15</div>
+            <div class="stat-lbl">Países de origen</div>
+          </div>
+          <div class="stat-card" role="listitem">
+            <div class="stat-num">98%</div>
+            <div class="stat-lbl">Satisfacción en asesorías</div>
+          </div>
+        </div>
+
+        <div class="testi-grid" role="list">
+          <article class="testi-card" role="listitem">
+            <div class="testi-stars" aria-label="5 estrellas">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="testi-text">"Gracias a GOTIR entendí que mi perfil era el de nómada digital. En 4 meses estaba viviendo legalmente en Madrid."</p>
+            <div class="testi-author">
+              <div class="testi-avatar" aria-hidden="true">KM</div>
+              <div><div class="testi-name">Karen M.</div><div class="testi-country">Colombia · Nómada Digital</div></div>
+            </div>
+          </article>
+          <article class="testi-card" role="listitem">
+            <div class="testi-stars" aria-label="5 estrellas">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="testi-text">"Yo creía que no calificaba para nada. GOTIR me explicó que podía aplicar al visado no lucrativo. Ahora vivo en Barcelona."</p>
+            <div class="testi-author">
+              <div class="testi-avatar" aria-hidden="true">RL</div>
+              <div><div class="testi-name">Rodrigo L.</div><div class="testi-country">Argentina · No Lucrativo</div></div>
+            </div>
+          </article>
+          <article class="testi-card" role="listitem">
+            <div class="testi-stars" aria-label="5 estrellas">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="testi-text">"El proceso me parecía imposible. Con GOTIR lo entendí todo en una sola llamada y me acompañaron hasta el final."</p>
+            <div class="testi-author">
+              <div class="testi-avatar" aria-hidden="true">VP</div>
+              <div><div class="testi-name">Valeria P.</div><div class="testi-country">México · Visado de Estudios</div></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 6. PRE-CUALIFICACIÓN ── -->
+    <section class="preq-section" aria-labelledby="preq-heading">
+      <div class="container">
+        <div class="preq-grid">
+          <div>
+            <p class="section-eyebrow">Antes de avanzar</p>
+            <h2 class="section-title" id="preq-heading">Necesitamos entender tu caso primero</h2>
+            <p class="section-sub" style="margin-top:14px;">En la asesoría analizamos tu situación para decirte con claridad:</p>
+            <ul class="preq-list" style="margin-top:28px;">
+              <li class="preq-item">
+                <div class="preq-dot" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
+                Si puedes aplicar
+              </li>
+              <li class="preq-item">
+                <div class="preq-dot" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
+                Qué opción es mejor para ti
+              </li>
+              <li class="preq-item">
+                <div class="preq-dot" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
+                Qué pasos debes seguir
+              </li>
+            </ul>
+          </div>
+          <div class="preq-highlight">
+            <h3>La asesoría es completamente gratuita</h3>
+            <p>Sin compromisos. Sin letra pequeña. Una llamada donde analizamos tu caso y te damos claridad sobre el camino que debes tomar.</p>
+            <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="scrollToId('cta-final')">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+              Agendar mi asesoría gratuita
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 7. CTA FINAL ── -->
+    <section id="cta-final" class="final-cta" aria-labelledby="finalcta-heading">
+      <div class="container">
+        <div class="final-cta-inner">
+          <p class="section-eyebrow">El primer paso es tuyo</p>
+          <h2 class="section-title" id="finalcta-heading">
+            Descubre cuál es la mejor opción para ti
+          </h2>
+          <p class="final-cta-sub">
+            Agenda una asesoría personalizada y te diremos exactamente qué camino es el adecuado según tu perfil.
+          </p>
+          <div class="final-cta-actions">
+            <button class="btn-white" onclick="scrollToId('segmentacion')">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+              Descubrir mi opción ideal
+            </button>
+            <button class="btn-outline-white" onclick="showPage('pac')">
+              Hablar con un asesor
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
 
   </main><!-- /#page-main -->
 
   <!-- ══════════════════════════════════════════════════
        SUB-LANDINGS (ocultas, se revelan con JS)
   ══════════════════════════════════════════════════ -->
-  <div id="page-nomada"        class="page" aria-label="Nómada digital"></div>
+  <!-- ══════════════════════════════════════════════════
+       SUB-LANDING 1 – NÓMADA DIGITAL
+  ══════════════════════════════════════════════════ -->
+  <div id="page-nomada" class="page" aria-label="Nómada digital">
+
+    <div class="back-bar">
+      <button class="back-btn" onclick="showPage('main')" aria-label="Volver al inicio">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/></svg>
+        Volver al inicio
+      </button>
+    </div>
+
+    <!-- Hero -->
+    <section class="sub-hero">
+      <div class="container">
+        <span class="sub-tag">Nómada Digital</span>
+        <h1>Vive en España trabajando de forma remota</h1>
+        <p>Si ya generas ingresos online o trabajas para el exterior, puedes residir legalmente en España sin depender de una empresa local.</p>
+        <button class="btn btn-yellow" onclick="document.getElementById('form-nomada').scrollIntoView({behavior:'smooth'})">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+          Agendar asesoría gratuita
+        </button>
+      </div>
+    </section>
+
+    <!-- ¿Es para ti? -->
+    <section class="sub-section alt" aria-labelledby="nomada-isfor">
+      <div class="container">
+        <p class="section-eyebrow">¿Es para ti?</p>
+        <h2 class="section-title" id="nomada-isfor">Esta opción puede ser la tuya si…</h2>
+        <div class="isfor-grid" role="list">
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Trabajas remoto o eres freelancer
+          </div>
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Tienes clientes fuera de España
+          </div>
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Generas ingresos estables
+          </div>
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Puedes demostrar tu actividad
+          </div>
+        </div>
+        <div class="alert-box" role="note">
+          <strong>Importante: no todos los trabajos remotos aplican.</strong>
+          Hay requisitos específicos que deben cumplirse para que aprueben tu solicitud. Por eso primero analizamos tu caso.
+        </div>
+      </div>
+    </section>
+
+    <!-- Cómo ayudamos -->
+    <section class="sub-section dark" aria-labelledby="nomada-how">
+      <div class="container">
+        <p class="section-eyebrow">Nuestro acompañamiento</p>
+        <h2 class="section-title" id="nomada-how">Cómo te ayudamos</h2>
+        <div class="help-steps">
+          <div class="help-step">
+            <div class="step-num" aria-hidden="true">1</div>
+            <p>Analizamos si cumples los requisitos mínimos para esta vía.</p>
+          </div>
+          <div class="help-step">
+            <div class="step-num" aria-hidden="true">2</div>
+            <p>Te indicamos cómo presentar tu actividad y demostrar tus ingresos correctamente.</p>
+          </div>
+          <div class="help-step">
+            <div class="step-num" aria-hidden="true">3</div>
+            <p>Te guiamos paso a paso para que no cometas errores que generen rechazos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulario -->
+    <section id="form-nomada" class="form-section" aria-labelledby="nomada-form-title">
+      <div class="container">
+        <p class="section-eyebrow">Primer paso</p>
+        <h2 class="section-title" id="nomada-form-title">Agenda tu asesoría gratuita</h2>
+        <p>Descubre si puedes aplicar a la visa de nómada digital. Sin costo, sin compromiso.</p>
+        <div class="form-wrapper">
+          <iframe
+            src="https://link.apisystem.tech/widget/form/55wG5sKZYkvxxAOqcJSZ"
+            title="Formulario asesoría nómada digital"
+            loading="lazy"
+            allow="payment"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /#page-nomada -->
   <div id="page-pac"           class="page" aria-label="Profesional cualificado"></div>
   <div id="page-nolucrativo"   class="page" aria-label="Visado no lucrativo"></div>
   <div id="page-emprendedor"   class="page" aria-label="Visado emprendedor"></div>

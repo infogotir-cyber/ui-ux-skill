@@ -1,0 +1,2100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GOTIR — Emigra a España legalmente</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Asap:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── TOKENS ─────────────────────────────────────────── */
+    :root {
+      --blue:      #006bad;
+      --navy:      #002c49;
+      --dark:      #2c394a;
+      --yellow:    #ffd600;
+      --gray-dk:   #232323;
+      --gray-md:   #777779;
+      --white:     #ffffff;
+      --bg:        #f5f8fc;
+      --border:    #e2e8f0;
+      --radius:    12px;
+      --shadow-sm: 0 1px 4px rgba(0,44,73,.06);
+      --shadow-md: 0 4px 20px rgba(0,107,173,.12);
+      --shadow-lg: 0 12px 40px rgba(0,107,173,.18);
+      --transition: 200ms ease;
+    }
+
+    /* ── RESET ──────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html  { scroll-behavior: smooth; }
+    body  {
+      font-family: 'Asap', sans-serif;
+      font-size: 16px;
+      line-height: 1.65;
+      color: var(--gray-dk);
+      background: var(--white);
+      -webkit-font-smoothing: antialiased;
+    }
+    a    { color: inherit; text-decoration: none; }
+    img  { max-width: 100%; display: block; }
+    button { font-family: inherit; }
+
+    /* ── LAYOUT UTILS ───────────────────────────────────── */
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; }
+
+    /* ── PAGE ROUTER ────────────────────────────────────── */
+    .page          { display: none; }
+    .page.is-active{ display: block; }
+
+    /* ════════════════════════════════════════════════════
+       BUTTONS
+    ════════════════════════════════════════════════════ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-family: 'Asap', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    .btn:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+
+    .btn-primary {
+      background: var(--blue);
+      color: var(--white);
+      padding: 14px 30px;
+    }
+    .btn-primary:hover {
+      background: var(--navy);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--blue);
+      padding: 13px 30px;
+      border: 2px solid var(--blue);
+    }
+    .btn-outline:hover {
+      background: var(--blue);
+      color: var(--white);
+    }
+
+    .btn-yellow {
+      background: var(--yellow);
+      color: var(--navy);
+      padding: 15px 36px;
+      font-size: 1.05rem;
+      border-radius: 12px;
+    }
+    .btn-yellow:hover {
+      background: #e6c200;
+      box-shadow: 0 6px 24px rgba(255,214,0,.35);
+      transform: translateY(-1px);
+    }
+
+    .btn-card {
+      background: none;
+      border: none;
+      color: var(--blue);
+      font-weight: 600;
+      font-size: .9rem;
+      padding: 0;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: gap var(--transition);
+      font-family: 'Asap', sans-serif;
+    }
+    .btn-card:hover { gap: 10px; }
+    .btn-card svg  { width: 14px; height: 14px; transition: transform var(--transition); }
+    .btn-card:hover svg { transform: translateX(3px); }
+
+    /* ════════════════════════════════════════════════════
+       HEADER
+    ════════════════════════════════════════════════════ */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: rgba(255,255,255,.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    .logo {
+      font-size: 1.55rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      color: var(--navy);
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-family: 'Asap', sans-serif;
+    }
+    .logo span { color: var(--blue); }
+    .header-nav { display: flex; align-items: center; gap: 10px; }
+    .header-link {
+      display: none;
+      font-size: .9rem;
+      font-weight: 500;
+      color: var(--dark);
+      padding: 6px 12px;
+      border-radius: 8px;
+      transition: color var(--transition), background var(--transition);
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: 'Asap', sans-serif;
+    }
+    .header-link:hover { color: var(--blue); background: #e6f2fb; }
+    .header-cta {
+      font-size: .875rem;
+      padding: 10px 20px;
+      border-radius: 8px;
+    }
+
+    @media (min-width: 768px) {
+      .header-link { display: inline-flex; }
+    }
+
+    /* ════════════════════════════════════════════════════
+       HERO
+    ════════════════════════════════════════════════════ */
+    .hero {
+      background: linear-gradient(150deg, #eef5fc 0%, #ffffff 55%, #fffde6 100%);
+      padding: 88px 0 96px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    /* subtle decorative blobs */
+    .hero::before,
+    .hero::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: .35;
+      pointer-events: none;
+    }
+    .hero::before {
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, #006bad40, transparent 70%);
+      top: -120px; left: -120px;
+    }
+    .hero::after {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, #ffd60040, transparent 70%);
+      bottom: -80px; right: -80px;
+    }
+
+    .hero-inner { position: relative; z-index: 1; }
+
+    /* live badge */
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #e6f2fb;
+      color: var(--blue);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 100px;
+      margin-bottom: 28px;
+    }
+    .badge-dot {
+      width: 8px; height: 8px;
+      background: #22c55e;
+      border-radius: 50%;
+      animation: blink 2s ease-in-out infinite;
+    }
+    @keyframes blink {
+      0%,100% { opacity: 1; }
+      50%      { opacity: .3; }
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.18;
+      max-width: 820px;
+      margin: 0 auto 20px;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--blue);
+    }
+
+    .hero-subtitle {
+      font-size: 1.15rem;
+      color: var(--dark);
+      max-width: 600px;
+      margin: 0 auto 28px;
+      line-height: 1.7;
+    }
+
+    .hero-warning {
+      display: inline-block;
+      background: #fffbe6;
+      border-left: 4px solid var(--yellow);
+      border-radius: 8px;
+      padding: 14px 22px;
+      font-size: .95rem;
+      color: var(--gray-dk);
+      max-width: 560px;
+      text-align: left;
+      margin-bottom: 40px;
+    }
+    .hero-warning strong { color: var(--navy); }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+    }
+
+    /* trust strip */
+    .hero-trust {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 52px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .85rem;
+      color: var(--gray-md);
+      font-weight: 500;
+    }
+    .trust-item svg { width: 16px; height: 16px; color: var(--blue); flex-shrink: 0; }
+
+    /* ════════════════════════════════════════════════════
+       SECTION HELPERS
+    ════════════════════════════════════════════════════ */
+    .section-eyebrow {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 10px;
+    }
+    .section-title {
+      font-size: clamp(1.65rem, 3.5vw, 2.4rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.22;
+    }
+    .section-sub {
+      font-size: 1.05rem;
+      color: var(--gray-md);
+      margin-top: 12px;
+      max-width: 560px;
+      line-height: 1.65;
+    }
+    .section-head          { margin-bottom: 48px; }
+    .section-head.centered { text-align: center; }
+    .section-head.centered .section-sub { margin-left: auto; margin-right: auto; }
+
+    /* ════════════════════════════════════════════════════
+       FOOTER
+    ════════════════════════════════════════════════════ */
+    .site-footer {
+      background: var(--navy);
+      color: rgba(255,255,255,.55);
+      text-align: center;
+      padding: 32px 24px;
+      font-size: .85rem;
+    }
+    .site-footer strong { color: var(--white); letter-spacing: .08em; }
+    .site-footer a { color: rgba(255,255,255,.6); transition: color var(--transition); }
+    .site-footer a:hover { color: var(--white); }
+
+    /* ════════════════════════════════════════════════════
+       BACK BAR (sub-landings)
+    ════════════════════════════════════════════════════ */
+    .back-bar {
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 24px;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--blue);
+      font-weight: 600;
+      font-size: .9rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: 'Asap', sans-serif;
+      transition: gap var(--transition);
+    }
+    .back-btn:hover { gap: 12px; }
+    .back-btn svg { width: 15px; height: 15px; }
+
+    /* ════════════════════════════════════════════════════
+       RESPONSIVE: mobile-first
+    ════════════════════════════════════════════════════ */
+    @media (max-width: 480px) {
+      .hero { padding: 60px 0 72px; }
+      .hero-actions { flex-direction: column; align-items: center; }
+      .btn-yellow { width: 100%; max-width: 320px; }
+      .btn-primary, .btn-outline { width: 100%; max-width: 320px; }
+    }
+
+    @media (min-width: 769px) {
+      .hero { padding: 100px 0 110px; }
+    }
+
+    /* ════════════════════════════════════════════════════
+       SECTION 2 – SEGMENTACIÓN
+    ════════════════════════════════════════════════════ */
+    .seg-section {
+      padding: 88px 0 96px;
+      background: var(--bg);
+    }
+
+    .seg-intro {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+    .seg-intro .section-sub {
+      margin: 12px auto 0;
+    }
+
+    .seg-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .seg-card {
+      background: var(--white);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 26px 24px;
+      cursor: pointer;
+      transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      text-align: left;
+    }
+    .seg-card:hover {
+      border-color: var(--blue);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-3px);
+    }
+    .seg-card:focus-visible {
+      outline: 3px solid var(--yellow);
+      outline-offset: 3px;
+    }
+
+    .seg-icon {
+      width: 46px;
+      height: 46px;
+      background: #e6f2fb;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      flex-shrink: 0;
+    }
+    .seg-icon svg {
+      width: 22px;
+      height: 22px;
+      color: var(--blue);
+    }
+
+    .seg-card h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+
+    .seg-card p {
+      font-size: .9rem;
+      color: var(--gray-md);
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 20px;
+    }
+
+    .seg-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+
+    .seg-tag {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--blue);
+      background: #e6f2fb;
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+
+    /* CTA mid-section */
+    .seg-cta-strip {
+      text-align: center;
+      margin-top: 52px;
+      padding-top: 48px;
+      border-top: 1px solid var(--border);
+    }
+    .seg-cta-strip p {
+      font-size: .95rem;
+      color: var(--gray-md);
+      margin-bottom: 18px;
+    }
+
+    /* ════════════════════════════════════════════════════
+       SECTION 3 – CLARIDAD (navy dark)
+    ════════════════════════════════════════════════════ */
+    .clarity-section {
+      padding: 88px 0 96px;
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+    }
+    .clarity-section .section-eyebrow { color: var(--yellow); }
+    .clarity-section .section-title   { color: var(--white); }
+    .clarity-section .section-sub     { color: rgba(255,255,255,.72); margin: 16px auto 0; }
+
+    .clarity-warning {
+      max-width: 620px;
+      margin: 40px auto 0;
+      background: rgba(255,214,0,.12);
+      border: 1px solid rgba(255,214,0,.28);
+      border-left: 4px solid var(--yellow);
+      border-radius: 12px;
+      padding: 24px 28px;
+      text-align: left;
+      font-size: .95rem;
+      color: rgba(255,255,255,.82);
+      line-height: 1.65;
+    }
+    .clarity-warning strong { color: var(--yellow); display: block; font-size: 1rem; margin-bottom: 6px; }
+
+    /* ════════════════════════════════════════════════════
+       SECTION 4 – CÓMO AYUDAMOS
+    ════════════════════════════════════════════════════ */
+    .how-section { padding: 88px 0 96px; background: var(--white); }
+
+    .how-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    @media (max-width: 768px) { .how-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+    .how-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .how-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .how-check {
+      flex-shrink: 0;
+      width: 26px; height: 26px;
+      background: #e6f2fb;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1px;
+    }
+    .how-check svg { width: 13px; height: 13px; color: var(--blue); }
+    .how-item-text strong { display: block; font-weight: 600; color: var(--navy); font-size: .97rem; }
+    .how-item-text span   { font-size: .88rem; color: var(--gray-md); }
+
+    .how-cta-card {
+      background: linear-gradient(145deg, var(--navy) 0%, #004a7a 100%);
+      border-radius: 18px;
+      padding: 44px 36px;
+      text-align: center;
+      color: var(--white);
+      box-shadow: var(--shadow-lg);
+    }
+    .how-cta-card h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: 12px; }
+    .how-cta-card p  { font-size: .95rem; opacity: .78; margin-bottom: 28px; line-height: 1.65; }
+
+    /* ════════════════════════════════════════════════════
+       SECTION 5 – AUTORIDAD
+    ════════════════════════════════════════════════════ */
+    .authority-section { padding: 88px 0 96px; background: var(--bg); text-align: center; }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin: 44px 0 52px;
+    }
+    @media (max-width: 600px) { .stats-row { grid-template-columns: 1fr; } }
+
+    .stat-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px 20px;
+    }
+    .stat-num  { font-size: 2.6rem; font-weight: 700; color: var(--blue); line-height: 1; margin-bottom: 8px; }
+    .stat-lbl  { font-size: .88rem; color: var(--gray-md); }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      text-align: left;
+    }
+    .testi-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+    }
+    .testi-stars { display: flex; gap: 3px; margin-bottom: 12px; }
+    .testi-stars svg { width: 15px; height: 15px; fill: var(--yellow); color: var(--yellow); }
+    .testi-text  { font-size: .9rem; font-style: italic; color: var(--gray-dk); line-height: 1.65; margin-bottom: 18px; }
+    .testi-author{ display: flex; align-items: center; gap: 10px; }
+    .testi-avatar{
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--navy));
+      display: flex; align-items: center; justify-content: center;
+      font-size: .75rem; font-weight: 700; color: var(--white); flex-shrink: 0;
+    }
+    .testi-name    { font-size: .88rem; font-weight: 600; color: var(--navy); }
+    .testi-country { font-size: .8rem; color: var(--gray-md); }
+
+    /* ════════════════════════════════════════════════════
+       SECTION 6 – PRE-CUALIFICACIÓN
+    ════════════════════════════════════════════════════ */
+    .preq-section { padding: 88px 0 96px; background: var(--white); }
+
+    .preq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+    @media (max-width: 768px) { .preq-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+    .preq-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .preq-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+    .preq-dot {
+      width: 30px; height: 30px;
+      background: var(--blue);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .preq-dot svg { width: 14px; height: 14px; color: var(--white); }
+
+    .preq-highlight {
+      background: linear-gradient(135deg, #f0f6ff, #e6f2fb);
+      border: 1px solid #c3dcf0;
+      border-radius: 16px;
+      padding: 36px 32px;
+    }
+    .preq-highlight h3 { font-size: 1.15rem; font-weight: 700; color: var(--navy); margin-bottom: 16px; }
+    .preq-highlight p  { font-size: .92rem; color: var(--dark); line-height: 1.65; margin-bottom: 24px; }
+
+    /* ════════════════════════════════════════════════════
+       SECTION 7 – CTA FINAL
+    ════════════════════════════════════════════════════ */
+    .final-cta {
+      padding: 100px 0 108px;
+      background: linear-gradient(140deg, var(--navy) 0%, #004a7a 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,214,0,.08), transparent 70%);
+      top: -200px; right: -150px;
+      pointer-events: none;
+    }
+    .final-cta-inner { position: relative; z-index: 1; }
+    .final-cta .section-eyebrow { color: var(--yellow); }
+    .final-cta .section-title   { color: var(--white); max-width: 660px; margin: 0 auto; }
+    .final-cta-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,.75);
+      max-width: 500px;
+      margin: 18px auto 40px;
+      line-height: 1.65;
+    }
+    .final-cta-actions { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; }
+    .btn-white {
+      background: var(--white);
+      color: var(--navy);
+      padding: 14px 30px;
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      cursor: pointer;
+      font-family: 'Asap', sans-serif;
+      transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-white:hover { background: #f0f6ff; box-shadow: 0 6px 24px rgba(0,0,0,.18); transform: translateY(-1px); }
+    .btn-outline-white {
+      background: transparent;
+      color: var(--white);
+      padding: 13px 30px;
+      border-radius: 10px;
+      border: 2px solid rgba(255,255,255,.4);
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      font-family: 'Asap', sans-serif;
+      transition: border-color var(--transition), background var(--transition);
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-outline-white:hover { border-color: var(--white); background: rgba(255,255,255,.08); }
+    @media (max-width: 480px) {
+      .final-cta { padding: 72px 0 80px; }
+      .final-cta-actions { flex-direction: column; align-items: center; }
+      .btn-white, .btn-outline-white { width: 100%; max-width: 320px; justify-content: center; }
+    }
+
+    /* ════════════════════════════════════════════════════
+       SUB-LANDINGS
+    ════════════════════════════════════════════════════ */
+    .sub-hero {
+      background: linear-gradient(150deg, #eef5fc 0%, #ffffff 100%);
+      padding: 72px 0 80px;
+      text-align: center;
+    }
+    .sub-tag {
+      display: inline-block;
+      background: var(--blue);
+      color: var(--white);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 20px;
+    }
+    .sub-hero h1 {
+      font-size: clamp(1.9rem, 4vw, 2.9rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.18;
+      max-width: 700px;
+      margin: 0 auto 16px;
+    }
+    .sub-hero p {
+      font-size: 1.1rem;
+      color: var(--dark);
+      max-width: 560px;
+      margin: 0 auto 32px;
+      line-height: 1.65;
+    }
+    @media (max-width: 480px) { .sub-hero { padding: 52px 0 60px; } }
+
+    .sub-section       { padding: 64px 0; }
+    .sub-section.alt   { background: var(--bg); }
+    .sub-section.dark  { background: var(--navy); }
+    .sub-section.dark .section-title { color: var(--white); }
+    .sub-section.dark .section-eyebrow { color: var(--yellow); }
+
+    .isfor-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 32px;
+    }
+    .isfor-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 15px 18px;
+      font-size: .9rem;
+      font-weight: 500;
+      color: var(--navy);
+    }
+    .isfor-item svg { flex-shrink: 0; width: 18px; height: 18px; color: var(--blue); }
+    @media (max-width: 480px) { .isfor-grid { grid-template-columns: 1fr; } }
+
+    .alert-box {
+      background: #fffbe6;
+      border: 1px solid #ffe082;
+      border-left: 4px solid var(--yellow);
+      border-radius: 12px;
+      padding: 22px 26px;
+      margin-top: 32px;
+      font-size: .95rem;
+      color: var(--gray-dk);
+      line-height: 1.65;
+    }
+    .alert-box strong { display: block; font-size: 1rem; color: #7a5c00; margin-bottom: 6px; }
+
+    .help-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 32px;
+    }
+    .help-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      background: rgba(255,255,255,.07);
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .step-num {
+      flex-shrink: 0;
+      width: 32px; height: 32px;
+      background: var(--blue);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: .8rem; font-weight: 700; color: var(--white);
+    }
+    .help-step p { font-size: .93rem; color: rgba(255,255,255,.82); margin-top: 5px; line-height: 1.55; }
+
+    /* form embed */
+    .form-section {
+      padding: 72px 0 88px;
+      background: linear-gradient(140deg, var(--navy) 0%, #004a7a 100%);
+      text-align: center;
+    }
+    .form-section .section-eyebrow { color: var(--yellow); }
+    .form-section .section-title   { color: var(--white); margin-bottom: 8px; }
+    .form-section p { color: rgba(255,255,255,.72); margin-bottom: 36px; font-size: 1rem; }
+    .form-wrapper {
+      max-width: 660px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(0,0,0,.28);
+    }
+    .form-wrapper iframe { width: 100%; border: none; display: block; min-height: 600px; }
+
+    /* ── prefers-reduced-motion ── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+
+    /* ── responsive cards ── */
+    @media (max-width: 640px) {
+      .seg-grid { grid-template-columns: 1fr; }
+      .seg-section { padding: 64px 0 72px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════
+       HEADER
+  ══════════════════════════════════════════════════ -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <button class="logo" onclick="showPage('main')" aria-label="Ir al inicio">
+          GOT<span>IR</span>
+        </button>
+        <nav class="header-nav" aria-label="Navegación principal">
+          <button class="header-link" onclick="scrollToId('segmentacion')">¿Cuál es mi opción?</button>
+          <button class="header-link" onclick="scrollToId('como-ayudamos')">Cómo funcionamos</button>
+          <button class="btn btn-primary header-cta" onclick="scrollToId('cta-final')">
+            Asesoría gratuita
+          </button>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════════════════
+       PÁGINA PRINCIPAL
+  ══════════════════════════════════════════════════ -->
+  <main id="page-main" class="page is-active" aria-label="Página principal">
+
+    <!-- ── 1. HERO ── -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+        <div class="hero-inner">
+
+          <div class="hero-badge" role="status">
+            <span class="badge-dot" aria-hidden="true"></span>
+            Asesorías disponibles ahora
+          </div>
+
+          <h1 id="hero-heading">
+            Vivir y trabajar en España es posible —<br />
+            pero <em>no todas las opciones son para todos</em>
+          </h1>
+
+          <p class="hero-subtitle">
+            Te ayudamos a identificar el camino correcto según tu perfil
+            (trabajo, estudios, inversión o remoto) y te acompañamos en
+            todo el proceso legal.
+          </p>
+
+          <div class="hero-warning" role="note">
+            <strong>Si eliges mal, puedes perder tiempo, dinero o incluso la oportunidad de emigrar.</strong><br />
+            Por eso primero analizamos tu caso antes de recomendarte una opción.
+          </div>
+
+          <div class="hero-actions">
+            <button class="btn btn-yellow" onclick="scrollToId('segmentacion')">
+              <!-- arrow-right icon -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+              Descubrir mi opción ideal
+            </button>
+            <button class="btn btn-outline" onclick="scrollToId('cta-final')">
+              Hablar con un asesor
+            </button>
+          </div>
+
+          <!-- trust strip -->
+          <div class="hero-trust" aria-label="Garantías">
+            <span class="trust-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z"/></svg>
+              Asesoría 100% gratuita
+            </span>
+            <span class="trust-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z"/></svg>
+              +500 personas asesoradas
+            </span>
+            <span class="trust-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253M3 12a8.96 8.96 0 0 0 .216 1.918"/></svg>
+              LATAM &amp; USA
+            </span>
+            <span class="trust-item">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z"/></svg>
+              Proceso 100% legal
+            </span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 2. SEGMENTACIÓN ── -->
+    <section id="segmentacion" class="seg-section" aria-labelledby="seg-heading">
+      <div class="container">
+
+        <div class="seg-intro">
+          <p class="section-eyebrow">Encuentra tu camino</p>
+          <h2 class="section-title" id="seg-heading">
+            Elige la situación que más se parece a la tuya
+          </h2>
+          <p class="section-sub">
+            No necesitas saber qué visado es. Solo dinos tu situación y te guiamos.
+          </p>
+        </div>
+
+        <div class="seg-grid" role="list">
+
+          <!-- TARJETA 1 – NÓMADA DIGITAL -->
+          <article class="seg-card" role="listitem" tabindex="0"
+            onclick="showPage('nomada')"
+            onkeydown="if(event.key==='Enter'||event.key===' ')showPage('nomada')"
+            aria-label="Ver opciones para trabajar remoto">
+            <div class="seg-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0H3"/></svg>
+            </div>
+            <h3>Trabajo online o para empresas del exterior</h3>
+            <p>Soy freelancer, tengo clientes fuera de España o trabajo remoto y quiero vivir legalmente en España sin depender de una empresa española.</p>
+            <div class="seg-card-footer">
+              <span class="seg-tag">Nómada digital</span>
+              <button class="btn-card" tabindex="-1" aria-hidden="true">
+                Ver opciones
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- TARJETA 2 – PROFESIONAL CUALIFICADO -->
+          <article class="seg-card" role="listitem" tabindex="0"
+            onclick="showPage('pac')"
+            onkeydown="if(event.key==='Enter'||event.key===' ')showPage('pac')"
+            aria-label="Ver opciones profesionales">
+            <div class="seg-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 3.741-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5"/></svg>
+            </div>
+            <h3>Soy profesional con experiencia o título</h3>
+            <p>Tengo estudios universitarios o experiencia relevante y quiero trabajar en España con una empresa.</p>
+            <div class="seg-card-footer">
+              <span class="seg-tag">PAC</span>
+              <button class="btn-card" tabindex="-1" aria-hidden="true">
+                Ver opciones
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- TARJETA 3 – NO LUCRATIVO -->
+          <article class="seg-card" role="listitem" tabindex="0"
+            onclick="showPage('nolucrativo')"
+            onkeydown="if(event.key==='Enter'||event.key===' ')showPage('nolucrativo')"
+            aria-label="Ver opción sin trabajar">
+            <div class="seg-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z"/></svg>
+            </div>
+            <h3>Tengo ingresos o ahorros suficientes</h3>
+            <p>No necesito trabajar en España y quiero residir legalmente de forma tranquila.</p>
+            <div class="seg-card-footer">
+              <span class="seg-tag">No lucrativo</span>
+              <button class="btn-card" tabindex="-1" aria-hidden="true">
+                Ver opciones
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- TARJETA 4 – EMPRENDER -->
+          <article class="seg-card" role="listitem" tabindex="0"
+            onclick="showPage('emprendedor')"
+            onkeydown="if(event.key==='Enter'||event.key===' ')showPage('emprendedor')"
+            aria-label="Ver opciones para emprender">
+            <div class="seg-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/></svg>
+            </div>
+            <h3>Quiero montar un negocio o trasladar mi empresa</h3>
+            <p>Tengo una idea o empresa y quiero desarrollarla en España de forma legal.</p>
+            <div class="seg-card-footer">
+              <span class="seg-tag">Emprendedor</span>
+              <button class="btn-card" tabindex="-1" aria-hidden="true">
+                Ver opciones
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- TARJETA 5 – ESTUDIAR Y TRABAJAR -->
+          <article class="seg-card" role="listitem" tabindex="0"
+            onclick="showPage('estudios')"
+            onkeydown="if(event.key==='Enter'||event.key===' ')showPage('estudios')"
+            aria-label="Ver opción más accesible">
+            <div class="seg-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25"/></svg>
+            </div>
+            <h3>Quiero estudiar y trabajar al mismo tiempo</h3>
+            <p>Busco una vía accesible para emigrar y poder trabajar mientras estudio en España.</p>
+            <div class="seg-card-footer">
+              <span class="seg-tag">Estudios</span>
+              <button class="btn-card" tabindex="-1" aria-hidden="true">
+                Ver opciones
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- TARJETA 6 – WORK & HOLIDAY -->
+          <article class="seg-card" role="listitem" tabindex="0"
+            onclick="showPage('workholiday')"
+            onkeydown="if(event.key==='Enter'||event.key===' ')showPage('workholiday')"
+            aria-label="Ver opciones temporales">
+            <div class="seg-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"/></svg>
+            </div>
+            <h3>Quiero viajar, vivir y trabajar una temporada</h3>
+            <p>Tengo menos de cierta edad (según país) y quiero una experiencia en España.</p>
+            <div class="seg-card-footer">
+              <span class="seg-tag">Work &amp; Holiday</span>
+              <button class="btn-card" tabindex="-1" aria-hidden="true">
+                Ver opciones
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- TARJETA 7 – YA EN ESPAÑA -->
+          <article class="seg-card" role="listitem" tabindex="0"
+            onclick="showPage('regularizacion')"
+            onkeydown="if(event.key==='Enter'||event.key===' ')showPage('regularizacion')"
+            aria-label="Ver cómo regularizarme">
+            <div class="seg-icon" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg>
+            </div>
+            <h3>Ya estoy en España y quiero regularizarme</h3>
+            <p>Entré como turista o estoy en proceso y quiero quedarme legalmente.</p>
+            <div class="seg-card-footer">
+              <span class="seg-tag">Regularización</span>
+              <button class="btn-card" tabindex="-1" aria-hidden="true">
+                Ver opciones
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+              </button>
+            </div>
+          </article>
+
+        </div><!-- /.seg-grid -->
+
+        <!-- CTA mid -->
+        <div class="seg-cta-strip">
+          <p>¿No sabes cuál es tu situación? Cuéntanos tu caso y te orientamos.</p>
+          <button class="btn btn-primary" onclick="scrollToId('cta-final')">
+            Hablar con un asesor
+          </button>
+        </div>
+
+      </div>
+    </section><!-- /#segmentacion -->
+
+    <!-- ── 3. CLARIDAD ── -->
+    <section class="clarity-section" aria-labelledby="clarity-heading">
+      <div class="container">
+        <p class="section-eyebrow">Por qué importa la decisión</p>
+        <h2 class="section-title" id="clarity-heading">
+          Elegir mal tu opción puede costarte meses<br />(o hacer que te rechacen)
+        </h2>
+        <p class="section-sub">
+          Cada tipo de visado o residencia tiene requisitos específicos. Muchas personas pierden tiempo aplicando a opciones que no corresponden a su perfil.
+        </p>
+        <div class="clarity-warning" role="note">
+          <strong>Nosotros analizamos tu situación primero.</strong>
+          Te decimos qué camino seguir para que no cometas errores que puedan costarte la oportunidad de emigrar.
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 4. CÓMO AYUDAMOS ── -->
+    <section id="como-ayudamos" class="how-section" aria-labelledby="how-heading">
+      <div class="container">
+        <div class="how-grid">
+          <div>
+            <p class="section-eyebrow">Nuestro proceso</p>
+            <h2 class="section-title" id="how-heading">
+              Así es como te ayudamos en todo el proceso
+            </h2>
+            <ul class="how-list" style="margin-top:36px;">
+              <li class="how-item">
+                <div class="how-check" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
+                <div class="how-item-text"><strong>Analizamos tu perfil y situación actual</strong><span>Entendemos de dónde vienes y qué necesitas.</span></div>
+              </li>
+              <li class="how-item">
+                <div class="how-check" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
+                <div class="how-item-text"><strong>Te indicamos la mejor opción según tu caso</strong><span>Sin rodeos: la opción que realmente aplica para ti.</span></div>
+              </li>
+              <li class="how-item">
+                <div class="how-check" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
+                <div class="how-item-text"><strong>Te explicamos exactamente qué necesitas</strong><span>Documentos, plazos y pasos en lenguaje claro.</span></div>
+              </li>
+              <li class="how-item">
+                <div class="how-check" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
+                <div class="how-item-text"><strong>Revisamos tu documentación paso a paso</strong><span>Para que nada llegue incompleto o con errores.</span></div>
+              </li>
+              <li class="how-item">
+                <div class="how-check" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
+                <div class="how-item-text"><strong>Te acompañamos durante todo el proceso legal</strong><span>Desde la primera consulta hasta obtener tu residencia.</span></div>
+              </li>
+            </ul>
+          </div>
+          <div class="how-cta-card">
+            <h3>No estás solo en este proceso</h3>
+            <p>Te guiamos desde el inicio hasta obtener tu residencia. Miles de personas de LATAM ya lo han logrado con nuestra ayuda.</p>
+            <button class="btn btn-yellow" onclick="scrollToId('cta-final')">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+              Agendar asesoría gratuita
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 5. AUTORIDAD ── -->
+    <section class="authority-section" aria-labelledby="authority-heading">
+      <div class="container">
+        <p class="section-eyebrow">Resultados reales</p>
+        <h2 class="section-title" id="authority-heading">Personas como tú ya lo han conseguido</h2>
+        <p class="section-sub" style="margin:12px auto 0;">Hemos ayudado a cientos de personas de Latinoamérica y otros países a vivir legalmente en España. Cada caso es diferente, por eso trabajamos con estrategias personalizadas.</p>
+
+        <div class="stats-row" role="list">
+          <div class="stat-card" role="listitem">
+            <div class="stat-num">+500</div>
+            <div class="stat-lbl">Personas asesoradas</div>
+          </div>
+          <div class="stat-card" role="listitem">
+            <div class="stat-num">+15</div>
+            <div class="stat-lbl">Países de origen</div>
+          </div>
+          <div class="stat-card" role="listitem">
+            <div class="stat-num">98%</div>
+            <div class="stat-lbl">Satisfacción en asesorías</div>
+          </div>
+        </div>
+
+        <div class="testi-grid" role="list">
+          <article class="testi-card" role="listitem">
+            <div class="testi-stars" aria-label="5 estrellas">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="testi-text">"Gracias a GOTIR entendí que mi perfil era el de nómada digital. En 4 meses estaba viviendo legalmente en Madrid."</p>
+            <div class="testi-author">
+              <div class="testi-avatar" aria-hidden="true">KM</div>
+              <div><div class="testi-name">Karen M.</div><div class="testi-country">Colombia · Nómada Digital</div></div>
+            </div>
+          </article>
+          <article class="testi-card" role="listitem">
+            <div class="testi-stars" aria-label="5 estrellas">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="testi-text">"Yo creía que no calificaba para nada. GOTIR me explicó que podía aplicar al visado no lucrativo. Ahora vivo en Barcelona."</p>
+            <div class="testi-author">
+              <div class="testi-avatar" aria-hidden="true">RL</div>
+              <div><div class="testi-name">Rodrigo L.</div><div class="testi-country">Argentina · No Lucrativo</div></div>
+            </div>
+          </article>
+          <article class="testi-card" role="listitem">
+            <div class="testi-stars" aria-label="5 estrellas">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <p class="testi-text">"El proceso me parecía imposible. Con GOTIR lo entendí todo en una sola llamada y me acompañaron hasta el final."</p>
+            <div class="testi-author">
+              <div class="testi-avatar" aria-hidden="true">VP</div>
+              <div><div class="testi-name">Valeria P.</div><div class="testi-country">México · Visado de Estudios</div></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 6. PRE-CUALIFICACIÓN ── -->
+    <section class="preq-section" aria-labelledby="preq-heading">
+      <div class="container">
+        <div class="preq-grid">
+          <div>
+            <p class="section-eyebrow">Antes de avanzar</p>
+            <h2 class="section-title" id="preq-heading">Necesitamos entender tu caso primero</h2>
+            <p class="section-sub" style="margin-top:14px;">En la asesoría analizamos tu situación para decirte con claridad:</p>
+            <ul class="preq-list" style="margin-top:28px;">
+              <li class="preq-item">
+                <div class="preq-dot" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
+                Si puedes aplicar
+              </li>
+              <li class="preq-item">
+                <div class="preq-dot" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
+                Qué opción es mejor para ti
+              </li>
+              <li class="preq-item">
+                <div class="preq-dot" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg></div>
+                Qué pasos debes seguir
+              </li>
+            </ul>
+          </div>
+          <div class="preq-highlight">
+            <h3>La asesoría es completamente gratuita</h3>
+            <p>Sin compromisos. Sin letra pequeña. Una llamada donde analizamos tu caso y te damos claridad sobre el camino que debes tomar.</p>
+            <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="scrollToId('cta-final')">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+              Agendar mi asesoría gratuita
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── 7. CTA FINAL ── -->
+    <section id="cta-final" class="final-cta" aria-labelledby="finalcta-heading">
+      <div class="container">
+        <div class="final-cta-inner">
+          <p class="section-eyebrow">El primer paso es tuyo</p>
+          <h2 class="section-title" id="finalcta-heading">
+            Descubre cuál es la mejor opción para ti
+          </h2>
+          <p class="final-cta-sub">
+            Agenda una asesoría personalizada y te diremos exactamente qué camino es el adecuado según tu perfil.
+          </p>
+          <div class="final-cta-actions">
+            <button class="btn-white" onclick="scrollToId('segmentacion')">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+              Descubrir mi opción ideal
+            </button>
+            <button class="btn-outline-white" onclick="showPage('pac')">
+              Hablar con un asesor
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- /#page-main -->
+
+  <!-- ══════════════════════════════════════════════════
+       SUB-LANDINGS (ocultas, se revelan con JS)
+  ══════════════════════════════════════════════════ -->
+  <!-- ══════════════════════════════════════════════════
+       SUB-LANDING 1 – NÓMADA DIGITAL
+  ══════════════════════════════════════════════════ -->
+  <div id="page-nomada" class="page" aria-label="Nómada digital">
+
+    <div class="back-bar">
+      <button class="back-btn" onclick="showPage('main')" aria-label="Volver al inicio">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/></svg>
+        Volver al inicio
+      </button>
+    </div>
+
+    <!-- Hero -->
+    <section class="sub-hero">
+      <div class="container">
+        <span class="sub-tag">Nómada Digital</span>
+        <h1>Vive en España trabajando de forma remota</h1>
+        <p>Si ya generas ingresos online o trabajas para el exterior, puedes residir legalmente en España sin depender de una empresa local.</p>
+        <button class="btn btn-yellow" onclick="document.getElementById('form-nomada').scrollIntoView({behavior:'smooth'})">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+          Agendar asesoría gratuita
+        </button>
+      </div>
+    </section>
+
+    <!-- ¿Es para ti? -->
+    <section class="sub-section alt" aria-labelledby="nomada-isfor">
+      <div class="container">
+        <p class="section-eyebrow">¿Es para ti?</p>
+        <h2 class="section-title" id="nomada-isfor">Esta opción puede ser la tuya si…</h2>
+        <div class="isfor-grid" role="list">
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Trabajas remoto o eres freelancer
+          </div>
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Tienes clientes fuera de España
+          </div>
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Generas ingresos estables
+          </div>
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Puedes demostrar tu actividad
+          </div>
+        </div>
+        <div class="alert-box" role="note">
+          <strong>Importante: no todos los trabajos remotos aplican.</strong>
+          Hay requisitos específicos que deben cumplirse para que aprueben tu solicitud. Por eso primero analizamos tu caso.
+        </div>
+      </div>
+    </section>
+
+    <!-- Cómo ayudamos -->
+    <section class="sub-section dark" aria-labelledby="nomada-how">
+      <div class="container">
+        <p class="section-eyebrow">Nuestro acompañamiento</p>
+        <h2 class="section-title" id="nomada-how">Cómo te ayudamos</h2>
+        <div class="help-steps">
+          <div class="help-step">
+            <div class="step-num" aria-hidden="true">1</div>
+            <p>Analizamos si cumples los requisitos mínimos para esta vía.</p>
+          </div>
+          <div class="help-step">
+            <div class="step-num" aria-hidden="true">2</div>
+            <p>Te indicamos cómo presentar tu actividad y demostrar tus ingresos correctamente.</p>
+          </div>
+          <div class="help-step">
+            <div class="step-num" aria-hidden="true">3</div>
+            <p>Te guiamos paso a paso para que no cometas errores que generen rechazos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulario -->
+    <section id="form-nomada" class="form-section" aria-labelledby="nomada-form-title">
+      <div class="container">
+        <p class="section-eyebrow">Primer paso</p>
+        <h2 class="section-title" id="nomada-form-title">Agenda tu asesoría gratuita</h2>
+        <p>Descubre si puedes aplicar a la visa de nómada digital. Sin costo, sin compromiso.</p>
+        <div class="form-wrapper">
+          <iframe
+            src="https://link.apisystem.tech/widget/form/55wG5sKZYkvxxAOqcJSZ"
+            title="Formulario asesoría nómada digital"
+            loading="lazy"
+            allow="payment"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /#page-nomada -->
+  <!-- ══════════════════════════════════════════════════
+       SUB-LANDING 2 – PROFESIONAL ALTAMENTE CUALIFICADO
+  ══════════════════════════════════════════════════ -->
+  <div id="page-pac" class="page" aria-label="Profesional altamente cualificado">
+
+    <div class="back-bar">
+      <button class="back-btn" onclick="showPage('main')" aria-label="Volver al inicio">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/></svg>
+        Volver al inicio
+      </button>
+    </div>
+
+    <!-- Hero -->
+    <section class="sub-hero">
+      <div class="container">
+        <span class="sub-tag">Profesional Cualificado</span>
+        <h1>Trabaja en España como profesional cualificado</h1>
+        <p>Si tienes formación o experiencia relevante, puedes acceder a oportunidades laborales en España con un visado especializado.</p>
+        <button class="btn btn-yellow" onclick="document.getElementById('form-pac').scrollIntoView({behavior:'smooth'})">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+          Agendar asesoría gratuita
+        </button>
+      </div>
+    </section>
+
+    <!-- ¿Es para ti? -->
+    <section class="sub-section alt" aria-labelledby="pac-isfor">
+      <div class="container">
+        <p class="section-eyebrow">¿Es para ti?</p>
+        <h2 class="section-title" id="pac-isfor">Esta opción puede ser la tuya si…</h2>
+        <div class="isfor-grid" role="list">
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Tienes título universitario o experiencia sólida
+          </div>
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Buscas trabajar en España con una empresa
+          </div>
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Puedes acceder a ofertas cualificadas
+          </div>
+        </div>
+        <div class="alert-box" role="note">
+          <strong>Importante: este visado requiere condiciones específicas de contratación.</strong>
+          No todos los perfiles aplican directamente. Primero evaluamos tu caso para no hacerte perder tiempo.
+        </div>
+      </div>
+    </section>
+
+    <!-- Cómo ayudamos -->
+    <section class="sub-section dark" aria-labelledby="pac-how">
+      <div class="container">
+        <p class="section-eyebrow">Nuestro acompañamiento</p>
+        <h2 class="section-title" id="pac-how">Cómo te ayudamos</h2>
+        <div class="help-steps">
+          <div class="help-step">
+            <div class="step-num" aria-hidden="true">1</div>
+            <p>Evaluamos tu perfil profesional y formación para determinar si calificas.</p>
+          </div>
+          <div class="help-step">
+            <div class="step-num" aria-hidden="true">2</div>
+            <p>Te orientamos sobre la viabilidad real según tu sector y experiencia.</p>
+          </div>
+          <div class="help-step">
+            <div class="step-num" aria-hidden="true">3</div>
+            <p>Te explicamos cómo estructurar el proceso y qué documentación necesitas.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulario -->
+    <section id="form-pac" class="form-section" aria-labelledby="pac-form-title">
+      <div class="container">
+        <p class="section-eyebrow">Primer paso</p>
+        <h2 class="section-title" id="pac-form-title">Descubre si puedes aplicar</h2>
+        <p>Asesoría gratuita para evaluar tu perfil profesional y orientarte sobre el camino correcto.</p>
+        <div class="form-wrapper">
+          <iframe
+            src="https://link.apisystem.tech/widget/form/55wG5sKZYkvxxAOqcJSZ"
+            title="Formulario asesoría profesional cualificado"
+            loading="lazy"
+            allow="payment"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /#page-pac -->
+  <!-- ══════════════════════════════════════════════════
+       SUB-LANDING 3 – VISADO NO LUCRATIVO
+  ══════════════════════════════════════════════════ -->
+  <div id="page-nolucrativo" class="page" aria-label="Visado no lucrativo">
+
+    <div class="back-bar">
+      <button class="back-btn" onclick="showPage('main')" aria-label="Volver al inicio">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/></svg>
+        Volver al inicio
+      </button>
+    </div>
+
+    <!-- Hero -->
+    <section class="sub-hero">
+      <div class="container">
+        <span class="sub-tag">No Lucrativo</span>
+        <h1>Vive en España sin necesidad de trabajar</h1>
+        <p>Si tienes ingresos o ahorros suficientes, puedes residir legalmente en España sin actividad laboral.</p>
+        <button class="btn btn-yellow" onclick="document.getElementById('form-nolucrativo').scrollIntoView({behavior:'smooth'})">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+          Agendar asesoría gratuita
+        </button>
+      </div>
+    </section>
+
+    <!-- ¿Es para ti? -->
+    <section class="sub-section alt" aria-labelledby="nolucrativo-isfor">
+      <div class="container">
+        <p class="section-eyebrow">¿Es para ti?</p>
+        <h2 class="section-title" id="nolucrativo-isfor">Esta opción puede ser la tuya si…</h2>
+        <div class="isfor-grid" role="list">
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Tienes ahorros o ingresos pasivos
+          </div>
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            No necesitas trabajar en España
+          </div>
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Buscas estabilidad y residencia legal
+          </div>
+        </div>
+        <div class="alert-box" role="note">
+          <strong>Importante: debes demostrar solvencia económica suficiente.</strong>
+          No es solo "tener dinero". Hay formas correctas de acreditarlo ante las autoridades españolas y te explicamos exactamente cómo.
+        </div>
+      </div>
+    </section>
+
+    <!-- Cómo ayudamos -->
+    <section class="sub-section dark" aria-labelledby="nolucrativo-how">
+      <div class="container">
+        <p class="section-eyebrow">Nuestro acompañamiento</p>
+        <h2 class="section-title" id="nolucrativo-how">Cómo te ayudamos</h2>
+        <div class="help-steps">
+          <div class="help-step">
+            <div class="step-num" aria-hidden="true">1</div>
+            <p>Analizamos tu situación económica y si cumples el umbral requerido.</p>
+          </div>
+          <div class="help-step">
+            <div class="step-num" aria-hidden="true">2</div>
+            <p>Te explicamos cómo demostrar fondos de forma correcta para que sea válido.</p>
+          </div>
+          <div class="help-step">
+            <div class="step-num" aria-hidden="true">3</div>
+            <p>Evitamos los errores más comunes que hacen que rechacen la solicitud.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulario -->
+    <section id="form-nolucrativo" class="form-section" aria-labelledby="nolucrativo-form-title">
+      <div class="container">
+        <p class="section-eyebrow">Primer paso</p>
+        <h2 class="section-title" id="nolucrativo-form-title">Agenda tu asesoría gratuita</h2>
+        <p>Evalúa tu caso con un asesor y descubre si tu situación económica califica para esta vía.</p>
+        <div class="form-wrapper">
+          <iframe
+            src="https://link.apisystem.tech/widget/form/55wG5sKZYkvxxAOqcJSZ"
+            title="Formulario asesoría visado no lucrativo"
+            loading="lazy"
+            allow="payment"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /#page-nolucrativo -->
+  <!-- ══════════════════════════════════════════════════
+       SUB-LANDING 4 – VISADO EMPRENDEDOR
+  ══════════════════════════════════════════════════ -->
+  <div id="page-emprendedor" class="page" aria-label="Visado emprendedor">
+
+    <div class="back-bar">
+      <button class="back-btn" onclick="showPage('main')" aria-label="Volver al inicio">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/></svg>
+        Volver al inicio
+      </button>
+    </div>
+
+    <!-- Hero -->
+    <section class="sub-hero">
+      <div class="container">
+        <span class="sub-tag">Emprendedor</span>
+        <h1>Crea o traslada tu negocio a España</h1>
+        <p>Si quieres emprender o expandir tu empresa, puedes hacerlo de forma legal en España con el visado adecuado.</p>
+        <button class="btn btn-yellow" onclick="document.getElementById('form-emprendedor').scrollIntoView({behavior:'smooth'})">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+          Agendar asesoría gratuita
+        </button>
+      </div>
+    </section>
+
+    <!-- ¿Es para ti? -->
+    <section class="sub-section alt" aria-labelledby="emprendedor-isfor">
+      <div class="container">
+        <p class="section-eyebrow">¿Es para ti?</p>
+        <h2 class="section-title" id="emprendedor-isfor">Esta opción puede ser la tuya si…</h2>
+        <div class="isfor-grid" role="list">
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Tienes una idea de negocio
+          </div>
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Ya tienes una empresa en operación
+          </div>
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Quieres operar legalmente en España
+          </div>
+        </div>
+        <div class="alert-box" role="note">
+          <strong>Importante: no cualquier negocio aplica.</strong>
+          El proyecto debe cumplir ciertos criterios de viabilidad e interés para España. Evaluamos tu idea antes de recomendarte esta vía.
+        </div>
+      </div>
+    </section>
+
+    <!-- Cómo ayudamos -->
+    <section class="sub-section dark" aria-labelledby="emprendedor-how">
+      <div class="container">
+        <p class="section-eyebrow">Nuestro acompañamiento</p>
+        <h2 class="section-title" id="emprendedor-how">Cómo te ayudamos</h2>
+        <div class="help-steps">
+          <div class="help-step">
+            <div class="step-num" aria-hidden="true">1</div>
+            <p>Evaluamos tu proyecto o empresa para ver si cumple los criterios requeridos.</p>
+          </div>
+          <div class="help-step">
+            <div class="step-num" aria-hidden="true">2</div>
+            <p>Te orientamos sobre la viabilidad real y qué ajustes podrían fortalecer tu solicitud.</p>
+          </div>
+          <div class="help-step">
+            <div class="step-num" aria-hidden="true">3</div>
+            <p>Te guiamos en todo el proceso legal hasta obtener tu autorización.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulario -->
+    <section id="form-emprendedor" class="form-section" aria-labelledby="emprendedor-form-title">
+      <div class="container">
+        <p class="section-eyebrow">Primer paso</p>
+        <h2 class="section-title" id="emprendedor-form-title">Agenda tu asesoría gratuita</h2>
+        <p>Analiza tu proyecto con un asesor y descubre si tu negocio puede abrirte las puertas a España.</p>
+        <div class="form-wrapper">
+          <iframe
+            src="https://link.apisystem.tech/widget/form/55wG5sKZYkvxxAOqcJSZ"
+            title="Formulario asesoría visado emprendedor"
+            loading="lazy"
+            allow="payment"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /#page-emprendedor -->
+  <!-- ══════════════════════════════════════════════════
+       SUB-LANDING 5 – ESTUDIOS (VISADO + ESTANCIA)
+  ══════════════════════════════════════════════════ -->
+  <div id="page-estudios" class="page" aria-label="Visado de estudios">
+
+    <div class="back-bar">
+      <button class="back-btn" onclick="showPage('main')" aria-label="Volver al inicio">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/></svg>
+        Volver al inicio
+      </button>
+    </div>
+
+    <!-- Hero -->
+    <section class="sub-hero">
+      <div class="container">
+        <span class="sub-tag">Estudios</span>
+        <h1>Estudia en España y trabaja legalmente</h1>
+        <p>Una de las formas más accesibles de vivir en España, con posibilidad de trabajar mientras estudias.</p>
+        <button class="btn btn-yellow" onclick="document.getElementById('form-estudios').scrollIntoView({behavior:'smooth'})">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+          Agendar asesoría gratuita
+        </button>
+      </div>
+    </section>
+
+    <!-- ¿Es para ti? -->
+    <section class="sub-section alt" aria-labelledby="estudios-isfor">
+      <div class="container">
+        <p class="section-eyebrow">¿Es para ti?</p>
+        <h2 class="section-title" id="estudios-isfor">Esta opción puede ser la tuya si…</h2>
+        <div class="isfor-grid" role="list">
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Quieres emigrar a España
+          </div>
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Buscas una opción accesible
+          </div>
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Estás dispuesto a estudiar
+          </div>
+        </div>
+        <div class="alert-box" role="note">
+          <strong>Importante: no todos los cursos permiten trabajar.</strong>
+          Elegir mal el programa puede limitar tus opciones laborales. Te recomendamos los cursos que sí habilitan para trabajar legalmente.
+        </div>
+      </div>
+    </section>
+
+    <!-- Cómo ayudamos -->
+    <section class="sub-section dark" aria-labelledby="estudios-how">
+      <div class="container">
+        <p class="section-eyebrow">Nuestro acompañamiento</p>
+        <h2 class="section-title" id="estudios-how">Cómo te ayudamos</h2>
+        <div class="help-steps">
+          <div class="help-step">
+            <div class="step-num" aria-hidden="true">1</div>
+            <p>Te recomendamos cursos válidos que te permitan trabajar legalmente mientras estudias.</p>
+          </div>
+          <div class="help-step">
+            <div class="step-num" aria-hidden="true">2</div>
+            <p>Te guiamos en todo el proceso de solicitud, documentación y plazos.</p>
+          </div>
+          <div class="help-step">
+            <div class="step-num" aria-hidden="true">3</div>
+            <p>Te explicamos cómo ejercer tu derecho a trabajar de forma legal durante tu estancia.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dos formularios: Visado de estudios y Estancia por estudios -->
+    <section id="form-estudios" class="form-section" aria-labelledby="estudios-form-title">
+      <div class="container">
+        <p class="section-eyebrow">Elige tu situación</p>
+        <h2 class="section-title" id="estudios-form-title">¿Visado o estancia por estudios?</h2>
+        <p>Hay dos vías según desde dónde apliques. Selecciona la que corresponde a tu situación.</p>
+
+        <!-- Tabs selector -->
+        <div style="display:flex;gap:12px;justify-content:center;margin-bottom:32px;flex-wrap:wrap;">
+          <button
+            id="tab-visado"
+            onclick="switchEstudiosTab('visado')"
+            style="padding:12px 28px;border-radius:10px;border:2px solid var(--white);background:var(--white);color:var(--navy);font-family:'Asap',sans-serif;font-weight:700;font-size:.95rem;cursor:pointer;transition:all .2s;">
+            Visado de estudios
+          </button>
+          <button
+            id="tab-estancia"
+            onclick="switchEstudiosTab('estancia')"
+            style="padding:12px 28px;border-radius:10px;border:2px solid rgba(255,255,255,.4);background:transparent;color:rgba(255,255,255,.8);font-family:'Asap',sans-serif;font-weight:600;font-size:.95rem;cursor:pointer;transition:all .2s;">
+            Estancia por estudios
+          </button>
+        </div>
+
+        <div id="panel-visado" class="form-wrapper">
+          <iframe
+            src="https://link.apisystem.tech/widget/form/rvGrrKqC76JAltyuoGuL"
+            title="Formulario visado de estudios"
+            loading="lazy"
+            allow="payment"
+          ></iframe>
+        </div>
+
+        <div id="panel-estancia" class="form-wrapper" style="display:none;">
+          <iframe
+            src="https://link.apisystem.tech/widget/form/6mANHohxrOLt15EvQeA0"
+            title="Formulario estancia por estudios"
+            loading="lazy"
+            allow="payment"
+          ></iframe>
+        </div>
+
+      </div>
+    </section>
+
+  </div><!-- /#page-estudios -->
+  <!-- ══════════════════════════════════════════════════
+       SUB-LANDING 6 – WORK & HOLIDAY
+  ══════════════════════════════════════════════════ -->
+  <div id="page-workholiday" class="page" aria-label="Work and Holiday">
+
+    <div class="back-bar">
+      <button class="back-btn" onclick="showPage('main')" aria-label="Volver al inicio">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/></svg>
+        Volver al inicio
+      </button>
+    </div>
+
+    <!-- Hero -->
+    <section class="sub-hero">
+      <div class="container">
+        <span class="sub-tag">Work &amp; Holiday</span>
+        <h1>Vive y trabaja en España por una temporada</h1>
+        <p>Si tienes cierta edad y nacionalidad, puedes acceder a una experiencia temporal en España de forma legal.</p>
+        <button class="btn btn-yellow" onclick="document.getElementById('form-workholiday').scrollIntoView({behavior:'smooth'})">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+          Agendar asesoría gratuita
+        </button>
+      </div>
+    </section>
+
+    <!-- ¿Es para ti? -->
+    <section class="sub-section alt" aria-labelledby="workholiday-isfor">
+      <div class="container">
+        <p class="section-eyebrow">¿Es para ti?</p>
+        <h2 class="section-title" id="workholiday-isfor">Esta opción puede ser la tuya si…</h2>
+        <div class="isfor-grid" role="list">
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Cumples con la edad requerida
+          </div>
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Quieres viajar y trabajar en España
+          </div>
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Buscas una experiencia temporal
+          </div>
+        </div>
+        <div class="alert-box" role="note">
+          <strong>Importante: depende de tu país de origen y los cupos disponibles.</strong>
+          Este programa no está disponible para todos los países y los cupos son limitados. Verificamos si tu nacionalidad aplica antes de avanzar.
+        </div>
+      </div>
+    </section>
+
+    <!-- Cómo ayudamos -->
+    <section class="sub-section dark" aria-labelledby="workholiday-how">
+      <div class="container">
+        <p class="section-eyebrow">Nuestro acompañamiento</p>
+        <h2 class="section-title" id="workholiday-how">Cómo te ayudamos</h2>
+        <div class="help-steps">
+          <div class="help-step">
+            <div class="step-num" aria-hidden="true">1</div>
+            <p>Verificamos si tu país de origen tiene acuerdo activo con España y si hay cupos disponibles.</p>
+          </div>
+          <div class="help-step">
+            <div class="step-num" aria-hidden="true">2</div>
+            <p>Te guiamos en el proceso de solicitud para que llegues completo y a tiempo.</p>
+          </div>
+          <div class="help-step">
+            <div class="step-num" aria-hidden="true">3</div>
+            <p>Te ayudamos a evitar errores que descalifican la solicitud antes de que la revisen.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulario -->
+    <section id="form-workholiday" class="form-section" aria-labelledby="workholiday-form-title">
+      <div class="container">
+        <p class="section-eyebrow">Primer paso</p>
+        <h2 class="section-title" id="workholiday-form-title">Agenda tu asesoría gratuita</h2>
+        <p>Verificamos si tu país aplica y te orientamos sobre los próximos pasos para vivir esta experiencia.</p>
+        <div class="form-wrapper">
+          <iframe
+            src="https://link.apisystem.tech/widget/form/55wG5sKZYkvxxAOqcJSZ"
+            title="Formulario asesoría Work and Holiday"
+            loading="lazy"
+            allow="payment"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /#page-workholiday -->
+  <!-- ══════════════════════════════════════════════════
+       SUB-LANDING 7 – VISADO DE TRABAJO
+  ══════════════════════════════════════════════════ -->
+  <div id="page-trabajo" class="page" aria-label="Visado de trabajo">
+
+    <div class="back-bar">
+      <button class="back-btn" onclick="showPage('main')" aria-label="Volver al inicio">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/></svg>
+        Volver al inicio
+      </button>
+    </div>
+
+    <!-- Hero -->
+    <section class="sub-hero">
+      <div class="container">
+        <span class="sub-tag">Visado de Trabajo</span>
+        <h1>Trabaja legalmente en España</h1>
+        <p>Existen opciones para trabajar en España, pero no son accesibles para todos los perfiles. Primero evaluamos si es viable para ti.</p>
+        <button class="btn btn-yellow" onclick="document.getElementById('form-trabajo').scrollIntoView({behavior:'smooth'})">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+          Agendar asesoría gratuita
+        </button>
+      </div>
+    </section>
+
+    <!-- ¿Es para ti? -->
+    <section class="sub-section alt" aria-labelledby="trabajo-isfor">
+      <div class="container">
+        <p class="section-eyebrow">¿Es para ti?</p>
+        <h2 class="section-title" id="trabajo-isfor">Esta opción puede ser la tuya si…</h2>
+        <div class="isfor-grid" role="list">
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Tienes una oferta laboral o posibilidad real
+          </div>
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Tienes experiencia demostrable en tu área
+          </div>
+        </div>
+        <div class="alert-box" role="note">
+          <strong>Importante: los visados de trabajo son limitados y muy exigentes.</strong>
+          No es la vía más fácil en la mayoría de los casos. Si no calificas, te orientamos hacia alternativas reales que sí funcionan para tu perfil.
+        </div>
+      </div>
+    </section>
+
+    <!-- Cómo ayudamos -->
+    <section class="sub-section dark" aria-labelledby="trabajo-how">
+      <div class="container">
+        <p class="section-eyebrow">Nuestro acompañamiento</p>
+        <h2 class="section-title" id="trabajo-how">Cómo te ayudamos</h2>
+        <div class="help-steps">
+          <div class="help-step">
+            <div class="step-num" aria-hidden="true">1</div>
+            <p>Te decimos con claridad si esta vía es viable o no para tu perfil y situación.</p>
+          </div>
+          <div class="help-step">
+            <div class="step-num" aria-hidden="true">2</div>
+            <p>Si no aplica, te orientamos hacia alternativas reales que sí se ajustan a tu caso.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulario -->
+    <section id="form-trabajo" class="form-section" aria-labelledby="trabajo-form-title">
+      <div class="container">
+        <p class="section-eyebrow">Primer paso</p>
+        <h2 class="section-title" id="trabajo-form-title">Agenda tu asesoría gratuita</h2>
+        <p>Evaluamos si esta vía es viable para ti y, si no lo es, te decimos qué alternativa real tienes.</p>
+        <div class="form-wrapper">
+          <iframe
+            src="https://link.apisystem.tech/widget/form/55wG5sKZYkvxxAOqcJSZ"
+            title="Formulario asesoría visado de trabajo"
+            loading="lazy"
+            allow="payment"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /#page-trabajo -->
+  <!-- ══════════════════════════════════════════════════
+       SUB-LANDING 8 – REGULARIZACIÓN
+  ══════════════════════════════════════════════════ -->
+  <div id="page-regularizacion" class="page" aria-label="Regularización">
+
+    <div class="back-bar">
+      <button class="back-btn" onclick="showPage('main')" aria-label="Volver al inicio">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/></svg>
+        Volver al inicio
+      </button>
+    </div>
+
+    <!-- Hero -->
+    <section class="sub-hero">
+      <div class="container">
+        <span class="sub-tag">Regularización</span>
+        <h1>¿Ya estás en España? Aún puedes regularizarte</h1>
+        <p>Si entraste como turista, todavía existen opciones legales para quedarte. El tiempo es clave — no dejes pasar los plazos.</p>
+        <button class="btn btn-yellow" onclick="document.getElementById('form-regularizacion').scrollIntoView({behavior:'smooth'})">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+          Agendar asesoría gratuita
+        </button>
+      </div>
+    </section>
+
+    <!-- ¿Es para ti? -->
+    <section class="sub-section alt" aria-labelledby="reg-isfor">
+      <div class="container">
+        <p class="section-eyebrow">¿Es para ti?</p>
+        <h2 class="section-title" id="reg-isfor">Esta opción puede ser la tuya si…</h2>
+        <div class="isfor-grid" role="list">
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Ya estás físicamente en España
+          </div>
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Entraste como turista
+          </div>
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Quieres quedarte legalmente
+          </div>
+        </div>
+        <div class="alert-box" role="note">
+          <strong>Importante: el tiempo es clave. Hay plazos que no debes dejar pasar.</strong>
+          Cada día cuenta. Cuanto antes analicemos tu situación, más opciones tendrás disponibles para regularizarte.
+        </div>
+      </div>
+    </section>
+
+    <!-- Cómo ayudamos -->
+    <section class="sub-section dark" aria-labelledby="reg-how">
+      <div class="container">
+        <p class="section-eyebrow">Nuestro acompañamiento</p>
+        <h2 class="section-title" id="reg-how">Cómo te ayudamos</h2>
+        <div class="help-steps">
+          <div class="help-step">
+            <div class="step-num" aria-hidden="true">1</div>
+            <p>Evaluamos tu situación actual: cuánto tiempo llevas, cómo entraste y qué opciones tienes.</p>
+          </div>
+          <div class="help-step">
+            <div class="step-num" aria-hidden="true">2</div>
+            <p>Te decimos exactamente qué opciones legales existen para tu caso concreto.</p>
+          </div>
+          <div class="help-step">
+            <div class="step-num" aria-hidden="true">3</div>
+            <p>Te guiamos paso a paso para actuar a tiempo y no perder la oportunidad de quedarte.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Formulario -->
+    <section id="form-regularizacion" class="form-section" aria-labelledby="reg-form-title">
+      <div class="container">
+        <p class="section-eyebrow">Actúa ahora</p>
+        <h2 class="section-title" id="reg-form-title">Agenda tu asesoría gratuita</h2>
+        <p>No esperes más. Cuéntanos tu situación y te decimos qué puedes hacer para quedarte legalmente en España.</p>
+        <div class="form-wrapper">
+          <iframe
+            src="https://link.apisystem.tech/widget/form/P6m1nOByHjzbE2noLwqW"
+            title="Formulario regularización en España"
+            loading="lazy"
+            allow="payment"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /#page-regularizacion -->
+
+  <!-- ══════════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <p>© 2024 <strong>GOTIR</strong> · Todos los derechos reservados ·
+      <a href="mailto:info@gotir.com">info@gotir.com</a>
+    </p>
+  </footer>
+
+  <!-- ══════════════════════════════════════════════════
+       JS – ROUTER
+  ══════════════════════════════════════════════════ -->
+  <script>
+    const PAGES = ['main','nomada','pac','nolucrativo','emprendedor','estudios','workholiday','trabajo','regularizacion'];
+
+    function showPage(id) {
+      PAGES.forEach(p => {
+        const el = document.getElementById('page-' + p);
+        if (el) el.classList.toggle('is-active', p === id);
+      });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function scrollToId(id) {
+      showPage('main');
+      setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 50);
+    }
+
+    function switchEstudiosTab(tab) {
+      const isVisado = tab === 'visado';
+      document.getElementById('panel-visado').style.display  = isVisado ? 'block' : 'none';
+      document.getElementById('panel-estancia').style.display = isVisado ? 'none'  : 'block';
+
+      const activeStyle   = 'padding:12px 28px;border-radius:10px;border:2px solid var(--white);background:var(--white);color:var(--navy);font-family:\'Asap\',sans-serif;font-weight:700;font-size:.95rem;cursor:pointer;transition:all .2s;';
+      const inactiveStyle = 'padding:12px 28px;border-radius:10px;border:2px solid rgba(255,255,255,.4);background:transparent;color:rgba(255,255,255,.8);font-family:\'Asap\',sans-serif;font-weight:600;font-size:.95rem;cursor:pointer;transition:all .2s;';
+
+      document.getElementById('tab-visado').style.cssText   = isVisado ? activeStyle : inactiveStyle;
+      document.getElementById('tab-estancia').style.cssText = isVisado ? inactiveStyle : activeStyle;
+    }
+  </script>
+
+</body>
+</html>

@@ -1668,7 +1668,124 @@
     </section>
 
   </div><!-- /#page-emprendedor -->
-  <div id="page-estudios"      class="page" aria-label="Visado de estudios"></div>
+  <!-- ══════════════════════════════════════════════════
+       SUB-LANDING 5 – ESTUDIOS (VISADO + ESTANCIA)
+  ══════════════════════════════════════════════════ -->
+  <div id="page-estudios" class="page" aria-label="Visado de estudios">
+
+    <div class="back-bar">
+      <button class="back-btn" onclick="showPage('main')" aria-label="Volver al inicio">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"/></svg>
+        Volver al inicio
+      </button>
+    </div>
+
+    <!-- Hero -->
+    <section class="sub-hero">
+      <div class="container">
+        <span class="sub-tag">Estudios</span>
+        <h1>Estudia en España y trabaja legalmente</h1>
+        <p>Una de las formas más accesibles de vivir en España, con posibilidad de trabajar mientras estudias.</p>
+        <button class="btn btn-yellow" onclick="document.getElementById('form-estudios').scrollIntoView({behavior:'smooth'})">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+          Agendar asesoría gratuita
+        </button>
+      </div>
+    </section>
+
+    <!-- ¿Es para ti? -->
+    <section class="sub-section alt" aria-labelledby="estudios-isfor">
+      <div class="container">
+        <p class="section-eyebrow">¿Es para ti?</p>
+        <h2 class="section-title" id="estudios-isfor">Esta opción puede ser la tuya si…</h2>
+        <div class="isfor-grid" role="list">
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Quieres emigrar a España
+          </div>
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Buscas una opción accesible
+          </div>
+          <div class="isfor-item" role="listitem">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5"/></svg>
+            Estás dispuesto a estudiar
+          </div>
+        </div>
+        <div class="alert-box" role="note">
+          <strong>Importante: no todos los cursos permiten trabajar.</strong>
+          Elegir mal el programa puede limitar tus opciones laborales. Te recomendamos los cursos que sí habilitan para trabajar legalmente.
+        </div>
+      </div>
+    </section>
+
+    <!-- Cómo ayudamos -->
+    <section class="sub-section dark" aria-labelledby="estudios-how">
+      <div class="container">
+        <p class="section-eyebrow">Nuestro acompañamiento</p>
+        <h2 class="section-title" id="estudios-how">Cómo te ayudamos</h2>
+        <div class="help-steps">
+          <div class="help-step">
+            <div class="step-num" aria-hidden="true">1</div>
+            <p>Te recomendamos cursos válidos que te permitan trabajar legalmente mientras estudias.</p>
+          </div>
+          <div class="help-step">
+            <div class="step-num" aria-hidden="true">2</div>
+            <p>Te guiamos en todo el proceso de solicitud, documentación y plazos.</p>
+          </div>
+          <div class="help-step">
+            <div class="step-num" aria-hidden="true">3</div>
+            <p>Te explicamos cómo ejercer tu derecho a trabajar de forma legal durante tu estancia.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dos formularios: Visado de estudios y Estancia por estudios -->
+    <section id="form-estudios" class="form-section" aria-labelledby="estudios-form-title">
+      <div class="container">
+        <p class="section-eyebrow">Elige tu situación</p>
+        <h2 class="section-title" id="estudios-form-title">¿Visado o estancia por estudios?</h2>
+        <p>Hay dos vías según desde dónde apliques. Selecciona la que corresponde a tu situación.</p>
+
+        <!-- Tabs selector -->
+        <div style="display:flex;gap:12px;justify-content:center;margin-bottom:32px;flex-wrap:wrap;">
+          <button
+            id="tab-visado"
+            onclick="switchEstudiosTab('visado')"
+            style="padding:12px 28px;border-radius:10px;border:2px solid var(--white);background:var(--white);color:var(--navy);font-family:'Asap',sans-serif;font-weight:700;font-size:.95rem;cursor:pointer;transition:all .2s;">
+            Visado de estudios
+          </button>
+          <button
+            id="tab-estancia"
+            onclick="switchEstudiosTab('estancia')"
+            style="padding:12px 28px;border-radius:10px;border:2px solid rgba(255,255,255,.4);background:transparent;color:rgba(255,255,255,.8);font-family:'Asap',sans-serif;font-weight:600;font-size:.95rem;cursor:pointer;transition:all .2s;">
+            Estancia por estudios
+          </button>
+        </div>
+
+        <div id="panel-visado" class="form-wrapper">
+          <iframe
+            src="https://link.apisystem.tech/widget/form/rvGrrKqC76JAltyuoGuL"
+            title="Formulario visado de estudios"
+            loading="lazy"
+            allow="payment"
+          ></iframe>
+        </div>
+
+        <div id="panel-estancia" class="form-wrapper" style="display:none;">
+          <iframe
+            src="https://link.apisystem.tech/widget/form/6mANHohxrOLt15EvQeA0"
+            title="Formulario estancia por estudios"
+            loading="lazy"
+            allow="payment"
+          ></iframe>
+        </div>
+
+      </div>
+    </section>
+
+  </div><!-- /#page-estudios -->
   <div id="page-workholiday"   class="page" aria-label="Work and Holiday"></div>
   <div id="page-trabajo"       class="page" aria-label="Visado de trabajo"></div>
   <div id="page-regularizacion"class="page" aria-label="Regularización"></div>
@@ -1697,12 +1814,23 @@
     }
 
     function scrollToId(id) {
-      // ensure main page is visible first
       showPage('main');
       setTimeout(() => {
         const el = document.getElementById(id);
         if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 50);
+    }
+
+    function switchEstudiosTab(tab) {
+      const isVisado = tab === 'visado';
+      document.getElementById('panel-visado').style.display  = isVisado ? 'block' : 'none';
+      document.getElementById('panel-estancia').style.display = isVisado ? 'none'  : 'block';
+
+      const activeStyle   = 'padding:12px 28px;border-radius:10px;border:2px solid var(--white);background:var(--white);color:var(--navy);font-family:\'Asap\',sans-serif;font-weight:700;font-size:.95rem;cursor:pointer;transition:all .2s;';
+      const inactiveStyle = 'padding:12px 28px;border-radius:10px;border:2px solid rgba(255,255,255,.4);background:transparent;color:rgba(255,255,255,.8);font-family:\'Asap\',sans-serif;font-weight:600;font-size:.95rem;cursor:pointer;transition:all .2s;';
+
+      document.getElementById('tab-visado').style.cssText   = isVisado ? activeStyle : inactiveStyle;
+      document.getElementById('tab-estancia').style.cssText = isVisado ? inactiveStyle : activeStyle;
     }
   </script>
 

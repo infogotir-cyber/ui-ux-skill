@@ -423,6 +423,8 @@ function ConfigSection(props){
   var _tt=useState(""),tt=_tt[0],setTt=_tt[1];
   var _p5n=useState(""),p5n=_p5n[0],setP5n=_p5n[1];
   var _p5p=useState(""),p5p=_p5p[0],setP5p=_p5p[1];
+  var _efi=useState(null),editFiId=_efi[0],setEditFiId=_efi[1];
+  var _efa=useState(""),editFiA=_efa[0],setEditFiA=_efa[1];
   var fs=sum(fixedItems,"a"),ts=sum(tempItems,"a"),ps=sum(p5Items,"p");
 
   return h("div",{style:{paddingTop:4}},
@@ -435,7 +437,22 @@ function ConfigSection(props){
     ]}),
     Card({children:[
       h("div",{key:"lbl",style:{fontSize:11,fontWeight:600,color:T2,letterSpacing:"0.06em",textTransform:"uppercase",marginBottom:8}},"Gastos fijos — "+f(fs)),
-      fixedItems.map(function(it){return h("div",{key:it.id,style:{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"4px 0",borderBottom:"0.5px solid "+BD}},h("span",{style:{fontSize:13,color:T}},it.n),h("div",{style:{display:"flex",gap:8,alignItems:"center"}},h("span",{style:{fontSize:13,fontWeight:500,color:T}},f(it.a)),h("button",{onClick:function(){onFixed(fixedItems.filter(function(x){return x.id!==it.id;}));},style:{background:"none",border:"none",cursor:"pointer",color:T3,fontSize:16,padding:"0 4px"}},"x")));}),
+      fixedItems.map(function(it){
+        var isEd=editFiId===it.id;
+        return h("div",{key:it.id,style:{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"6px 0",borderBottom:"0.5px solid "+BD,gap:8}},
+          h("span",{style:{fontSize:13,color:T,flex:1}},it.n),
+          h("div",{style:{display:"flex",gap:6,alignItems:"center",flexShrink:0}},
+            isEd
+              ? h("div",{style:{display:"flex",gap:4,alignItems:"center"}},
+                  h("input",{type:"number",min:"0",value:editFiA,autoFocus:true,
+                    onChange:function(e){setEditFiA(e.target.value);},
+                    onKeyDown:function(e){if(e.key==="Enter"){var v=parseFloat(editFiA);if(!isNaN(v)&&v>=0){onFixed(fixedItems.map(function(x){return x.id===it.id?Object.assign({},x,{a:v}):x;}));setEditFiId(null);}}if(e.key==="Escape")setEditFiId(null);},
+                    style:{width:75,fontSize:12,padding:"3px 6px",borderRadius:6,border:"0.5px solid "+AC,background:S2,color:T,textAlign:"right"}}),
+                  h("button",{onClick:function(){var v=parseFloat(editFiA);if(!isNaN(v)&&v>=0){onFixed(fixedItems.map(function(x){return x.id===it.id?Object.assign({},x,{a:v}):x;}));setEditFiId(null);}},style:{background:AC,color:"white",border:"none",borderRadius:6,padding:"3px 8px",fontSize:11,cursor:"pointer"}},"OK"),
+                  h("button",{onClick:function(){setEditFiId(null);},style:{background:"none",border:"none",cursor:"pointer",color:T3,fontSize:16,padding:"0 2px"}},"x"))
+              : h("button",{onClick:function(){setEditFiId(it.id);setEditFiA(String(it.a));},style:{fontSize:13,fontWeight:500,color:T,background:"none",border:"0.5px dashed "+BD2,borderRadius:6,padding:"2px 8px",cursor:"pointer",minWidth:60,textAlign:"right"}},f(it.a)+" ✎"),
+            !isEd && h("button",{onClick:function(){onFixed(fixedItems.filter(function(x){return x.id!==it.id;}));},style:{background:"none",border:"none",cursor:"pointer",color:T3,fontSize:16,padding:"0 2px"}},"x")));
+      }),
       h("div",{key:"add",style:{display:"flex",gap:6,marginTop:8,paddingTop:8,borderTop:"0.5px dashed "+BD2}},
         h("input",{placeholder:"Nombre",value:fn,onChange:function(e){setFn(e.target.value);},style:{flex:2,fontSize:13,padding:"7px 10px",borderRadius:8,border:"0.5px solid "+BD2,background:S2,color:T}}),
         h("input",{type:"number",placeholder:"EUR",value:fa,onChange:function(e){setFa(e.target.value);},style:{flex:1,fontSize:13,padding:"7px 10px",borderRadius:8,border:"0.5px solid "+BD2,background:S2,color:T,width:"100%"}}),

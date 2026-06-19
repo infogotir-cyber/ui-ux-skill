@@ -240,6 +240,8 @@ function PersonalSection(props){
   var _cn=useState(""),newCatN=_cn[0],setNewCatN=_cn[1];
   var _ca=useState(""),newCatA=_ca[0],setNewCatA=_ca[1];
   var _showCats=useState(false),showCats=_showCats[0],setShowCats=_showCats[1];
+  var _editCatId=useState(null),editCatId=_editCatId[0],setEditCatId=_editCatId[1];
+  var _editCatA=useState(""),editCatA=_editCatA[0],setEditCatA=_editCatA[1];
 
   var transactions=profile.transactions||[];
   var totExp=sum(profile.exp,"a");
@@ -348,13 +350,25 @@ function PersonalSection(props){
       showCats && Card({children:[
         h("div",{key:"lbl",style:{fontSize:11,fontWeight:600,color:T2,letterSpacing:"0.06em",textTransform:"uppercase",marginBottom:8}},"Categorias (presupuesto mensual)"),
         profile.exp.map(function(e){
-          return h("div",{key:e.id,style:{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"5px 0",borderBottom:"0.5px solid "+BD}},
-            h("div",{style:{display:"flex",alignItems:"center",gap:6}},
-              h("span",{style:{width:8,height:8,borderRadius:"50%",background:e.c,display:"inline-block"}}),
-              h("span",{style:{fontSize:13,color:T}},e.n)),
-            h("div",{style:{display:"flex",alignItems:"center",gap:8}},
-              h("span",{style:{fontSize:13,fontWeight:500,color:T}},f(e.a)),
-              h("button",{onClick:function(){onUpdate(Object.assign({},profile,{exp:profile.exp.filter(function(x){return x.id!==e.id;})}));},style:{background:"none",border:"none",cursor:"pointer",color:T3,fontSize:16,padding:"0 4px"}},"x")));
+          var isEditing=editCatId===e.id;
+          return h("div",{key:e.id,style:{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"6px 0",borderBottom:"0.5px solid "+BD,gap:8}},
+            h("div",{style:{display:"flex",alignItems:"center",gap:6,flex:1,minWidth:0}},
+              h("span",{style:{width:8,height:8,borderRadius:"50%",background:e.c,display:"inline-block",flexShrink:0}}),
+              h("span",{style:{fontSize:13,color:T,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}},e.n)),
+            h("div",{style:{display:"flex",alignItems:"center",gap:6,flexShrink:0}},
+              isEditing
+                ? h("div",{style:{display:"flex",gap:4,alignItems:"center"}},
+                    h("input",{type:"number",min:"0",value:editCatA,autoFocus:true,
+                      onChange:function(ev){setEditCatA(ev.target.value);},
+                      onKeyDown:function(ev){
+                        if(ev.key==="Enter"){var v=parseFloat(editCatA);if(!isNaN(v)&&v>=0){onUpdate(Object.assign({},profile,{exp:profile.exp.map(function(x){return x.id===e.id?Object.assign({},x,{a:v}):x;})}));setEditCatId(null);}};
+                        if(ev.key==="Escape")setEditCatId(null);
+                      },
+                      style:{width:75,fontSize:12,padding:"3px 6px",borderRadius:6,border:"0.5px solid "+AC,background:S2,color:T,textAlign:"right"}}),
+                    h("button",{onClick:function(){var v=parseFloat(editCatA);if(!isNaN(v)&&v>=0){onUpdate(Object.assign({},profile,{exp:profile.exp.map(function(x){return x.id===e.id?Object.assign({},x,{a:v}):x;})}));setEditCatId(null);}},style:{background:AC,color:"white",border:"none",borderRadius:6,padding:"3px 8px",fontSize:11,cursor:"pointer"}},"OK"),
+                    h("button",{onClick:function(){setEditCatId(null);},style:{background:"none",border:"none",cursor:"pointer",color:T3,fontSize:16,padding:"0 2px"}},"x"))
+                : h("button",{onClick:function(){setEditCatId(e.id);setEditCatA(String(e.a));},style:{fontSize:13,fontWeight:500,color:T,background:"none",border:"0.5px dashed "+BD2,borderRadius:6,padding:"2px 8px",cursor:"pointer",minWidth:60,textAlign:"right"}},f(e.a)+" ✎"),
+              !isEditing && h("button",{onClick:function(){onUpdate(Object.assign({},profile,{exp:profile.exp.filter(function(x){return x.id!==e.id;})}));},style:{background:"none",border:"none",cursor:"pointer",color:T3,fontSize:16,padding:"0 2px"}},"x")));
         }),
         h("div",{key:"add",style:{display:"flex",gap:6,marginTop:10,paddingTop:8,borderTop:"0.5px dashed "+BD2}},
           h("input",{placeholder:"Nueva categoria",value:newCatN,onChange:function(e){setNewCatN(e.target.value);},style:{flex:2,fontSize:13,padding:"7px 10px",borderRadius:8,border:"0.5px solid "+BD2,background:S2,color:T}}),

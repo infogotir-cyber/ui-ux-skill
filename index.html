@@ -237,6 +237,7 @@ function PersonalSection(props){
   var _td=useState(""),txDesc=_td[0],setTxDesc=_td[1];
   var _ta=useState(""),txAmt=_ta[0],setTxAmt=_ta[1];
   var _tc=useState(""),txCat=_tc[0],setTxCat=_tc[1];
+  var _tdt=useState(function(){var d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}),txDate=_tdt[0],setTxDate=_tdt[1];
   var _cn=useState(""),newCatN=_cn[0],setNewCatN=_cn[1];
   var _ca=useState(""),newCatA=_ca[0],setNewCatA=_ca[1];
   var _showCats=useState(false),showCats=_showCats[0],setShowCats=_showCats[1];
@@ -253,6 +254,9 @@ function PersonalSection(props){
   var pct=Math.min(100,Math.round((totAll+efDep)/Math.max(1,profile.inc)*100));
   var ef=profile.ef||0,t6=totExp*6;
 
+  function todayISO(){var d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
+  function fmtDate(iso){if(!iso)return "";var p=iso.split("-");return p[2]+"/"+p[1]+"/"+p[0];}
+
   function spentByCat(catId){
     return transactions.reduce(function(a,t){return t.catId===catId?a+t.amt:a;},0);
   }
@@ -265,9 +269,9 @@ function PersonalSection(props){
     var catId=parseInt(txCat)||0;
     if(!txDesc||!(a>0)||!catId){return;}
     var cat=profile.exp.find(function(e){return e.id===catId;});
-    var tx={id:Date.now(),desc:txDesc,amt:a,catId:catId,catName:cat?cat.n:"",date:new Date().toLocaleDateString("es-ES")};
+    var tx={id:Date.now(),desc:txDesc,amt:a,catId:catId,catName:cat?cat.n:"",date:fmtDate(txDate||todayISO())};
     onUpdate(Object.assign({},profile,{transactions:transactions.concat([tx])}));
-    setTxDesc("");setTxAmt("");
+    setTxDesc("");setTxAmt("");setTxDate(todayISO());
   }
 
   function delTx(id){
@@ -315,7 +319,7 @@ function PersonalSection(props){
       Card({children:[
         h("div",{key:"lbl",style:{fontSize:11,fontWeight:600,color:AC,letterSpacing:"0.06em",textTransform:"uppercase",marginBottom:12}},"Registrar gasto"),
         h("input",{key:"desc",placeholder:"Descripcion (ej: Supermercado Lidl)",value:txDesc,onChange:function(e){setTxDesc(e.target.value);},onKeyDown:function(e){if(e.key==="Enter")addTx();},style:{fontSize:13,padding:"7px 10px",borderRadius:8,border:"0.5px solid "+BD2,background:S2,color:T,width:"100%",marginBottom:8}}),
-        h("div",{key:"row",style:{display:"flex",gap:8,marginBottom:8}},
+        h("div",{key:"row1",style:{display:"flex",gap:8,marginBottom:8}},
           h("div",{style:{flex:1}},
             h("div",{style:{fontSize:11,color:T2,marginBottom:4}},"Monto (EUR)"),
             h("input",{type:"number",placeholder:"0",min:"0",step:"0.01",value:txAmt,onChange:function(e){setTxAmt(e.target.value);},onKeyDown:function(e){if(e.key==="Enter")addTx();},style:{fontSize:13,padding:"7px 10px",borderRadius:8,border:"0.5px solid "+BD2,background:S2,color:T,width:"100%"}})),
@@ -323,6 +327,9 @@ function PersonalSection(props){
             h("div",{style:{fontSize:11,color:T2,marginBottom:4}},"Categoria"),
             h("select",{value:txCat||defaultCatId,onChange:function(e){setTxCat(e.target.value);},style:{fontSize:13,padding:"7px 10px",borderRadius:8,border:"0.5px solid "+BD2,background:S2,color:T,width:"100%"}},
               profile.exp.map(function(e){return h("option",{key:e.id,value:e.id},e.n);})))),
+        h("div",{key:"row2",style:{marginBottom:8}},
+          h("div",{style:{fontSize:11,color:T2,marginBottom:4}},"Fecha"),
+          h("input",{type:"date",value:txDate,onChange:function(e){setTxDate(e.target.value);},style:{fontSize:13,padding:"7px 10px",borderRadius:8,border:"0.5px solid "+BD2,background:S2,color:T,width:"100%"}})),
         Btn({key:"add",onClick:addTx,children:"+ Registrar gasto"})
       ]}),
       transactions.length===0

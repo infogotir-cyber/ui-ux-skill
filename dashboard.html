@@ -1745,25 +1745,40 @@ async function loadGHLData() {
       if(count) camp.leads = count;
     });
 
-    // ── 2. OPPORTUNITIES (pipeline pre-venta) ───────────────
-    // V2 uses POST /opportunities/search with JSON body
-    const oppsResp = await ghlFetchV2('GET', `/opportunities/search`, {
-      location_id: GHL.locationId,
-      locationId: GHL.locationId,
-      limit: 100,
-      page: 1
-    });
-    const oppList = oppsResp.opportunities || oppsResp.data || [];
+    // ── 2. PIPELINES → OPPORTUNITIES ────────────────────────
+    // Step 1: get pipelines to find Pre-venta pipeline ID
+    let oppList = [];
+    try {
+      const pipelines = await ghlFetchV2('GET', `/opportunities/pipelines`, { locationId: GHL.locationId });
+      const pipelineList = pipelines.pipelines || [];
+      // Find Pre-venta pipeline
+      const preVenta = pipelineList.find(p =>
+        (p.name||'').toLowerCase().includes('pre') ||
+        (p.name||'').toLowerCase().includes('venta') ||
+        (p.name||'').toLowerCase().includes('preventa')
+      ) || pipelineList[0];
+
+      if(preVenta) {
+        // Step 2: search opportunities with pipelineId
+        const oppsResp = await ghlFetchV2('GET', `/opportunities/search`, {
+          locationId: GHL.locationId,
+          pipelineId: preVenta.id,
+          limit: 100
+        });
+        oppList = oppsResp.opportunities || oppsResp.data || [];
+      }
+    } catch(e) { console.warn('Opportunities load failed:', e.message); }
+
     const won     = oppList.filter(o=>o.status==='won').length;
     const revenue = oppList.filter(o=>o.status==='won').reduce((s,o)=>s+(o.monetaryValue||o.monetary_value||0),0);
     const avgTicket = won>0 ? Math.round(revenue/won) : 0;
 
     // KPIs
     document.getElementById('kpi-leads').textContent = total;
-    document.getElementById('kpi-ventas').textContent = won;
-    document.getElementById('kpi-facturacion').textContent = '€'+revenue.toLocaleString('es-ES');
-    document.getElementById('kpi-ticket').textContent = avgTicket ? '€'+avgTicket.toLocaleString('es-ES') : '—';
-    document.getElementById('kpi-conversion').textContent = total>0 ? ((won/total)*100).toFixed(1)+'%' : '—';
+    if(won)     document.getElementById('kpi-ventas').textContent = won;
+    if(revenue) document.getElementById('kpi-facturacion').textContent = '€'+revenue.toLocaleString('es-ES');
+    if(avgTicket) document.getElementById('kpi-ticket').textContent = '€'+avgTicket.toLocaleString('es-ES');
+    if(total>0 && won) document.getElementById('kpi-conversion').textContent = ((won/total)*100).toFixed(1)+'%';
 
     // Pipeline Pre-venta → funnel (nombres exactos de GHL)
     const STAGE_MAP = {

@@ -1359,7 +1359,10 @@ const sectionTitles = {
   ventas:'Dashboard de Ventas', campanas:'Campañas y Fuentes',
   vendedores:'Rendimiento por Vendedor', llamadas:'Análisis de Reuniones Google Meet',
   seguimiento:'Seguimiento / Producción', proveedores:'Proveedores & Comisiones',
-  ia:'Análisis con Inteligencia Artificial'
+  ia:'Análisis con Inteligencia Artificial',
+  conversion:'Conversión — Análisis Completo', perdidas:'Análisis de Pérdidas',
+  valor:'Valor de Cliente', nocualificados:'No Cualificados',
+  segmentacion:'Segmentación de Clientes'
 };
 
 function showSection(id) {
@@ -1971,6 +1974,11 @@ function initChartsForSection(id) {
   else if(id==='seguimiento') initSeguimiento();
   else if(id==='proveedores') initProveedores();
   else if(id==='ia') initIA();
+  else if(id==='conversion') initConversion();
+  else if(id==='perdidas') initPerdidas();
+  else if(id==='valor') initValor();
+  else if(id==='nocualificados') initNoCualificados();
+  else if(id==='segmentacion') initSegmentacion();
 }
 
 // ═══════════════════════════════════════
@@ -2054,6 +2062,368 @@ function initProveedores() {
       <td class="py-3 px-3 text-right font-semibold text-amber-400">${c.comision}</td>
       <td class="py-3 px-3 text-right"><span class="badge badge-neutral">Por cobrar</span></td>
     </tr>`).join('');
+}
+
+// ═══════════════════════════════════════
+// TAB HELPERS (Conversion & Perdidas)
+// ═══════════════════════════════════════
+function switchConvTab(name, btn) {
+  ['general','source','pais','tramite','vendedor'].forEach(t => {
+    document.getElementById('conv-tab-'+t).classList.add('hidden');
+  });
+  document.getElementById('conv-tab-'+name).classList.remove('hidden');
+  document.querySelectorAll('#s-conversion .tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  // Lazy init charts for that tab
+  if(name==='source')   initConvSource();
+  if(name==='pais')     initConvPais();
+  if(name==='tramite')  initConvTramite();
+  if(name==='vendedor') initConvVendedor();
+}
+
+function switchPerdTab(name, btn) {
+  ['motivos','stage'].forEach(t => {
+    document.getElementById('perd-tab-'+t).classList.add('hidden');
+  });
+  document.getElementById('perd-tab-'+name).classList.remove('hidden');
+  document.querySelectorAll('#s-perdidas .tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  if(name==='stage') initPerdidasStage();
+}
+
+// ═══════════════════════════════════════
+// CHARTS: CONVERSIÓN
+// ═══════════════════════════════════════
+function initConversion() {
+  // Update stat cards from ghlLive if available
+  const gl = DATA.ghlLive;
+  if(gl.totalOpps > 0) {
+    document.getElementById('conv-opps-total').textContent = gl.totalOpps;
+    document.getElementById('conv-won-total').textContent = gl.totalWon;
+    document.getElementById('conv-ratio').textContent = gl.totalOpps>0 ? ((gl.totalWon/gl.totalOpps)*100).toFixed(1)+'%' : '—';
+  }
+
+  // General tab chart
+  const months = ['Ene','Feb','Mar','Abr','May','Jun'];
+  initChart('chart-conv-general', mkOpts({
+    chart:{ type:'bar', height:280 },
+    series:[
+      { name:'Leads',   data:[720,760,801,831,858,891] },
+      { name:'Opps',    data:[260,272,285,296,304,312] },
+      { name:'Ventas',  data:[88, 94, 101,108,113,118] }
+    ],
+    xaxis:{ categories:months, labels:{ style:{ colors:'#64748b' } } },
+    yaxis:{ labels:{ style:{ colors:'#64748b' } } },
+    colors:['#3b82f6','#a78bfa','#4ade80'],
+    plotOptions:{ bar:{ borderRadius:4, columnWidth:'60%' } },
+    legend:{ labels:{ colors:'#94a3b8' } }
+  }));
+}
+
+function initConvSource() {
+  const d = DATA.conv_source;
+  initChart('chart-conv-source', mkOpts({
+    chart:{ type:'bar', height:280 },
+    series:[
+      { name:'Ganadas', data: d.map(x=>x.ganadas) },
+      { name:'Perdidas',data: d.map(x=>x.perdidas) }
+    ],
+    xaxis:{ categories: d.map(x=>x.fuente), labels:{ style:{ colors:'#64748b', fontSize:'11px' } } },
+    yaxis:{ labels:{ style:{ colors:'#64748b' } } },
+    colors:['#4ade80','#f87171'],
+    plotOptions:{ bar:{ borderRadius:3, columnWidth:'60%', stacked:false } },
+    legend:{ labels:{ colors:'#94a3b8' } }
+  }));
+
+  document.getElementById('tbody-conv-source').innerHTML = d.map(x=>{
+    const conv = ((x.ganadas/x.leads)*100).toFixed(1);
+    return `<tr class="border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
+      <td class="py-2 px-3 text-slate-200 font-medium">${x.fuente}</td>
+      <td class="py-2 px-3 text-right text-slate-300">${x.leads}</td>
+      <td class="py-2 px-3 text-right text-slate-300">${x.opps}</td>
+      <td class="py-2 px-3 text-right text-green-400 font-semibold">${x.ganadas}</td>
+      <td class="py-2 px-3 text-right text-red-400">${x.perdidas}</td>
+      <td class="py-2 px-3 text-right"><span class="badge ${parseFloat(conv)>18?'badge-up':parseFloat(conv)>10?'badge-neutral':'badge-down'}">${conv}%</span></td>
+    </tr>`;
+  }).join('');
+}
+
+function initConvPais() {
+  const d = DATA.conv_pais;
+  // Use ghlLive.byCountry if populated
+  const gl = DATA.ghlLive.byCountry;
+  const src = Object.keys(gl).length > 0
+    ? Object.entries(gl).map(([pais,v])=>({ pais:pais.charAt(0).toUpperCase()+pais.slice(1), leads:v.leads, ventas:v.ventas }))
+    : d;
+
+  initChart('chart-conv-pais', mkOpts({
+    chart:{ type:'bar', height:280 },
+    series:[{ name:'Conv.%', data: src.map(x=>parseFloat(((x.ventas/x.leads)*100).toFixed(1))) }],
+    xaxis:{ categories: src.map(x=>x.pais), labels:{ style:{ colors:'#64748b', fontSize:'11px' } } },
+    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>v+'%' }, max:30 },
+    colors:['#3b82f6','#6366f1','#a78bfa','#f59e0b','#4ade80','#94a3b8'],
+    plotOptions:{ bar:{ borderRadius:4, distributed:true, horizontal:true } },
+    legend:{ show:false }
+  }));
+
+  document.getElementById('tbody-conv-pais').innerHTML = src.map(x=>{
+    const conv = ((x.ventas/x.leads)*100).toFixed(1);
+    return `<tr class="border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
+      <td class="py-2 px-3 text-slate-200 font-medium">${x.pais}</td>
+      <td class="py-2 px-3 text-right text-slate-300">${x.leads}</td>
+      <td class="py-2 px-3 text-right text-green-400 font-semibold">${x.ventas}</td>
+      <td class="py-2 px-3 text-right"><span class="badge ${parseFloat(conv)>16?'badge-up':parseFloat(conv)>10?'badge-neutral':'badge-down'}">${conv}%</span></td>
+    </tr>`;
+  }).join('');
+}
+
+function initConvTramite() {
+  const d = DATA.conv_tramite;
+  const gl = DATA.ghlLive.byTramite;
+  const src = Object.keys(gl).length > 0
+    ? Object.entries(gl).map(([key,v])=>({ tramite:key, leads:v.leads, ventas:v.ventas, revenue:v.revenue }))
+    : d;
+
+  initChart('chart-conv-tramite', mkOpts({
+    chart:{ type:'bar', height:320 },
+    series:[{ name:'Conv.%', data: src.map(x=>parseFloat(((x.ventas/(x.leads||1))*100).toFixed(1))) }],
+    xaxis:{ categories: src.map(x=>x.tramite||x.key), labels:{ style:{ colors:'#64748b', fontSize:'10px' }, rotate:-30 } },
+    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>v+'%' }, max:30 },
+    colors:['#3b82f6'],
+    plotOptions:{ bar:{ borderRadius:4, distributed:true } },
+    legend:{ show:false }
+  }));
+
+  document.getElementById('tbody-conv-tramite').innerHTML = src.map(x=>{
+    const conv = ((x.ventas/(x.leads||1))*100).toFixed(1);
+    const ticket = x.ventas>0 ? '€'+(x.revenue/x.ventas).toFixed(0) : '—';
+    return `<tr class="border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
+      <td class="py-2 px-3 text-slate-200 font-medium">${x.tramite||x.key}</td>
+      <td class="py-2 px-3 text-right text-slate-300">${x.leads}</td>
+      <td class="py-2 px-3 text-right text-green-400 font-semibold">${x.ventas}</td>
+      <td class="py-2 px-3 text-right"><span class="badge ${parseFloat(conv)>16?'badge-up':parseFloat(conv)>10?'badge-neutral':'badge-down'}">${conv}%</span></td>
+      <td class="py-2 px-3 text-right text-amber-400 font-semibold">${ticket}</td>
+    </tr>`;
+  }).join('');
+}
+
+function initConvVendedor() {
+  const d = DATA.conv_vendedor;
+  const gl = DATA.ghlLive.byVendedor;
+  const src = Object.keys(gl).length > 0
+    ? Object.values(gl).map(v=>({
+        nombre: v.name, llamadas:v.llamadas||'—', opps:v.opps||'—',
+        ventas:v.ventas, conv:((v.ventas/(v.opps||1))*100).toFixed(1)+'%',
+        facturacion:'€'+v.revenue.toLocaleString('es-ES'),
+        ticket: v.ventas>0?'€'+(v.revenue/v.ventas).toFixed(0):'—'
+      }))
+    : d;
+
+  const rankClasses = ['rank-1','rank-2','rank-3','rank-other'];
+  document.getElementById('conv-vendedor-ranking').innerHTML = src.map((v,i)=>`
+    <div class="ranking-row">
+      <div class="rank-num ${rankClasses[i]||'rank-other'}">${i+1}</div>
+      <div class="flex-1 min-w-0">
+        <div class="font-semibold text-sm text-white">${v.nombre}</div>
+        <div class="text-xs text-slate-500">${v.ventas} ventas · Ticket ${v.ticket}</div>
+      </div>
+      <div class="text-right">
+        <div class="font-bold text-white text-sm">${v.facturacion}</div>
+        <span class="badge ${parseFloat(v.conv)>30?'badge-up':parseFloat(v.conv)>20?'badge-neutral':'badge-down'}">${v.conv}</span>
+      </div>
+    </div>`).join('');
+
+  document.getElementById('tbody-conv-vendedor').innerHTML = src.map(v=>`
+    <tr class="border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
+      <td class="py-2 px-3 text-slate-200 font-medium">${v.nombre}</td>
+      <td class="py-2 px-3 text-right text-slate-300">${v.llamadas}</td>
+      <td class="py-2 px-3 text-right text-slate-300">${v.opps}</td>
+      <td class="py-2 px-3 text-right text-green-400 font-semibold">${v.ventas}</td>
+      <td class="py-2 px-3 text-right"><span class="badge ${parseFloat(v.conv)>30?'badge-up':parseFloat(v.conv)>20?'badge-neutral':'badge-down'}">${v.conv}</span></td>
+      <td class="py-2 px-3 text-right font-semibold text-white">${v.facturacion}</td>
+      <td class="py-2 px-3 text-right text-amber-400">${v.ticket}</td>
+    </tr>`).join('');
+}
+
+// ═══════════════════════════════════════
+// CHARTS: PÉRDIDAS
+// ═══════════════════════════════════════
+function initPerdidas() {
+  const gl = DATA.ghlLive.lostReasons;
+  const hasLive = Object.keys(gl).length > 0;
+  const labels = hasLive ? Object.keys(gl) : ['Dinero','No cumple req.','No responde','Competencia','Más adelante','Otros'];
+  const values = hasLive ? Object.values(gl) : [34, 22, 18, 13, 8, 5];
+  const colors = ['#f87171','#fb923c','#fbbf24','#a78bfa','#60a5fa','#94a3b8'];
+
+  initChart('chart-perdidas-pie', mkOpts({
+    chart:{ type:'donut', height:280 },
+    series: values,
+    labels: labels,
+    colors: colors.slice(0, labels.length),
+    legend:{ position:'bottom', labels:{ colors:'#94a3b8' } },
+    plotOptions:{ pie:{ donut:{ size:'60%' } } }
+  }));
+
+  initChart('chart-perdidas-evolucion', mkOpts({
+    chart:{ type:'bar', height:280 },
+    series:[
+      { name:'Dinero',       data:[18,21,24,27,30,34] },
+      { name:'No cumple',    data:[10,12,14,16,19,22] },
+      { name:'No responde',  data:[8,9,11,13,15,18]   }
+    ],
+    xaxis:{ categories:['Ene','Feb','Mar','Abr','May','Jun'], labels:{ style:{ colors:'#64748b' } } },
+    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>v+'%' } },
+    colors:['#f87171','#fb923c','#fbbf24'],
+    plotOptions:{ bar:{ borderRadius:3, columnWidth:'60%' } },
+    legend:{ labels:{ colors:'#94a3b8' } }
+  }));
+}
+
+function initPerdidasStage() {
+  const d = DATA.perdidas_stage;
+  initChart('chart-perdidas-stage', mkOpts({
+    chart:{ type:'bar', height:280 },
+    series:[{ name:'Tasa pérdida %', data: d.map(x=>parseFloat(((x.perdieron/x.entraron)*100).toFixed(1))) }],
+    xaxis:{ categories: d.map(x=>x.stage), labels:{ style:{ colors:'#64748b', fontSize:'10px' }, rotate:-20 } },
+    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>v+'%' }, max:100 },
+    colors:['#f87171','#fb923c','#fbbf24','#a78bfa','#60a5fa','#94a3b8'],
+    plotOptions:{ bar:{ borderRadius:4, distributed:true } },
+    legend:{ show:false }
+  }));
+
+  document.getElementById('tbody-perdidas-stage').innerHTML = d.map(x=>{
+    const tasa = ((x.perdieron/x.entraron)*100).toFixed(1);
+    return `<tr class="border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
+      <td class="py-2 px-3 text-slate-200 font-medium">${x.stage}</td>
+      <td class="py-2 px-3 text-right text-slate-300">${x.entraron}</td>
+      <td class="py-2 px-3 text-right text-red-400 font-semibold">${x.perdieron}</td>
+      <td class="py-2 px-3 text-right"><span class="badge ${parseFloat(tasa)>50?'badge-down':parseFloat(tasa)>25?'badge-neutral':'badge-up'}">${tasa}%</span></td>
+    </tr>`;
+  }).join('');
+}
+
+// ═══════════════════════════════════════
+// CHARTS: VALOR DE CLIENTE
+// ═══════════════════════════════════════
+function initValor() {
+  const gl = DATA.ghlLive;
+  if(gl.totalWon > 0) {
+    const ticket = Math.round(gl.totalRevenue / gl.totalWon);
+    document.getElementById('valor-ticket').textContent = '€'+ticket.toLocaleString('es-ES');
+    document.getElementById('valor-cltv').textContent = '€'+(ticket*2.25).toFixed(0);
+    document.getElementById('valor-clientes').textContent = gl.totalWon;
+    document.getElementById('valor-facturacion').textContent = '€'+gl.totalRevenue.toLocaleString('es-ES');
+  }
+
+  // Top 5 clients table (always demo for now)
+  document.getElementById('tbody-valor-top5').innerHTML = DATA.valor_top5.map((c,i)=>`
+    <tr class="border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
+      <td class="py-2 px-3">
+        <div class="flex items-center gap-2">
+          <div class="rank-num ${['rank-1','rank-2','rank-3','rank-other','rank-other'][i]} w-6 h-6 text-xs">${i+1}</div>
+          <span class="text-slate-200 font-medium">${c.nombre}</span>
+        </div>
+      </td>
+      <td class="py-2 px-3 text-right text-slate-300">${c.tramites}</td>
+      <td class="py-2 px-3 text-right font-bold text-amber-400">${c.valor}</td>
+      <td class="py-2 px-3 text-right text-slate-400 text-xs">${c.ultimo}</td>
+    </tr>`).join('');
+
+  initChart('chart-valor-histograma', mkOpts({
+    chart:{ type:'bar', height:260 },
+    series:[{ name:'Clientes', data:[31, 48, 24, 15] }],
+    xaxis:{ categories:['€0–500','€500–1.000','€1.000–2.000','€2.000+'], labels:{ style:{ colors:'#64748b' } } },
+    yaxis:{ labels:{ style:{ colors:'#64748b' } } },
+    colors:['#3b82f6','#6366f1','#a78bfa','#f59e0b'],
+    plotOptions:{ bar:{ borderRadius:4, distributed:true, columnWidth:'55%' } },
+    legend:{ show:false }
+  }));
+}
+
+// ═══════════════════════════════════════
+// CHARTS: NO CUALIFICADOS
+// ═══════════════════════════════════════
+function initNoCualificados() {
+  const gl = DATA.ghlLive.noQualified;
+  const fondos = gl.fondos || DATA.nq_evolucion.fondos[5];
+  const tiempo = gl.tiempo || DATA.nq_evolucion.tiempo[5];
+  const cue    = gl.cue    || DATA.nq_evolucion.cue[5];
+  const total  = fondos + tiempo + cue;
+
+  document.getElementById('nq-fondos').textContent = fondos;
+  document.getElementById('nq-tiempo').textContent = tiempo;
+  document.getElementById('nq-cue').textContent    = cue;
+
+  initChart('chart-nq-pie', mkOpts({
+    chart:{ type:'donut', height:260 },
+    series:[fondos, tiempo, cue],
+    labels:['Sin fondos','Excedido tiempo','CUE'],
+    colors:['#f87171','#fbbf24','#a78bfa'],
+    legend:{ position:'bottom', labels:{ colors:'#94a3b8' } },
+    plotOptions:{ pie:{ donut:{ size:'60%' } } }
+  }));
+
+  const ev = DATA.nq_evolucion;
+  initChart('chart-nq-evolucion', mkOpts({
+    chart:{ type:'line', height:260 },
+    series:[
+      { name:'Sin fondos',     data: ev.fondos },
+      { name:'Excedido tiempo',data: ev.tiempo },
+      { name:'CUE',            data: ev.cue    }
+    ],
+    xaxis:{ categories: ev.meses, labels:{ style:{ colors:'#64748b' } } },
+    yaxis:{ labels:{ style:{ colors:'#64748b' } } },
+    colors:['#f87171','#fbbf24','#a78bfa'],
+    stroke:{ curve:'smooth', width:2 },
+    legend:{ labels:{ colors:'#94a3b8' } }
+  }));
+
+  const tendencias = [
+    { tag:'no cualificado / sin fondos', qty:fondos, color:'#f87171', trend:'↑ Alza' },
+    { tag:'no cualificado / excedido tiempo', qty:tiempo, color:'#fbbf24', trend:'→ Estable' },
+    { tag:'no cualificado / cue', qty:cue, color:'#a78bfa', trend:'↑ Alza' }
+  ];
+  document.getElementById('tbody-nq-tabla').innerHTML = tendencias.map(r=>`
+    <tr class="border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
+      <td class="py-2 px-3"><code class="text-xs text-slate-400 bg-slate-800 px-1.5 py-0.5 rounded">${r.tag}</code></td>
+      <td class="py-2 px-3 text-right font-bold text-white">${r.qty}</td>
+      <td class="py-2 px-3 text-right text-slate-300">${total>0?((r.qty/total)*100).toFixed(1)+'%':'—'}</td>
+      <td class="py-2 px-3 text-right"><span class="text-xs" style="color:${r.color}">${r.trend}</span></td>
+    </tr>`).join('');
+}
+
+// ═══════════════════════════════════════
+// CHARTS: SEGMENTACIÓN
+// ═══════════════════════════════════════
+function initSegmentacion() {
+  initChart('chart-segmentacion', mkOpts({
+    chart:{ type:'bar', height:300 },
+    series:[
+      { name:'Leads',   data:[312, 198, 89]   },
+      { name:'Conv.%',  data:[12.8, 18.2, 22.5] }
+    ],
+    xaxis:{ categories:['Individual','Pareja','Familia'], labels:{ style:{ colors:'#64748b' } } },
+    yaxis:[
+      { labels:{ style:{ colors:'#64748b' } } },
+      { opposite:true, labels:{ style:{ colors:'#64748b' }, formatter:v=>v+'%' } }
+    ],
+    colors:['#3b82f6','#4ade80'],
+    plotOptions:{ bar:{ borderRadius:4, columnWidth:'50%' } },
+    legend:{ labels:{ colors:'#94a3b8' } }
+  }));
+}
+
+// ═══════════════════════════════════════
+// refreshLiveSections — called after loadGHLData
+// ═══════════════════════════════════════
+function refreshLiveSections() {
+  ['conversion','perdidas','valor','nocualificados'].forEach(id => {
+    // If section was already inited, re-init with fresh data
+    if(sectionInited[id]) {
+      sectionInited[id] = false; // allow re-init
+      initChartsForSection(id);
+    }
+  });
 }
 
 // ═══════════════════════════════════════
@@ -2146,16 +2516,51 @@ async function loadGHLData() {
     const contacts = await ghlFetchV2('GET', `/contacts/`, { locationId: GHL.locationId, limit:100 });
     const total = contacts.meta?.total || contacts.total || contacts.contacts?.length || 0;
 
-    // Leer campo personalizado canal_referencia_dr
+    // Leer campos personalizados: canal_referencia_dr, pais_de_origennacionalidad, tipo_de_trmite + tags
     const contactList = contacts.contacts || [];
     const sourceCounts = {};
+    DATA.ghlLive.byCountry  = {};
+    DATA.ghlLive.byTramite  = {};
+    DATA.ghlLive.noQualified = { cue:0, tiempo:0, fondos:0 };
+
     contactList.forEach(c => {
       const fields = c.customFields || c.customField || [];
-      let src = null;
+      let src = null, pais = null, tramite = null;
+
       if(Array.isArray(fields)) {
-        const f = fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('canal_referencia'));
-        src = f?.value || f?.fieldValue;
+        const fSrc   = fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('canal_referencia'));
+        const fPais  = fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('pais_de_origen'));
+        const fTram  = fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('tipo_de_tr'));
+        src    = fSrc?.value  || fSrc?.fieldValue;
+        pais   = fPais?.value || fPais?.fieldValue;
+        tramite= fTram?.value || fTram?.fieldValue;
       }
+
+      // Country accumulation
+      if(pais) {
+        const k = pais.toLowerCase().trim();
+        if(!DATA.ghlLive.byCountry[k]) DATA.ghlLive.byCountry[k] = { leads:0, ventas:0 };
+        DATA.ghlLive.byCountry[k].leads++;
+      }
+      // Tramite accumulation
+      if(tramite) {
+        const keys = Array.isArray(tramite) ? tramite : [tramite];
+        keys.forEach(t => {
+          const k = (t||'').toLowerCase().trim();
+          if(!DATA.ghlLive.byTramite[k]) DATA.ghlLive.byTramite[k] = { leads:0, ventas:0, revenue:0 };
+          DATA.ghlLive.byTramite[k].leads++;
+        });
+      }
+      // Tags — no cualificados
+      const tags = c.tags || [];
+      tags.forEach(tag => {
+        const t = (tag||'').toLowerCase();
+        if(t.includes('sin fondos'))     DATA.ghlLive.noQualified.fondos++;
+        if(t.includes('excedido tiempo'))DATA.ghlLive.noQualified.tiempo++;
+        if(t === 'no cualificado / cue' || t.includes('/ cue')) DATA.ghlLive.noQualified.cue++;
+      });
+
+      if(!src) src = c.source || 'otro';
       if(!src) src = c.source || 'otro';
       sourceCounts[(src||'otro').toLowerCase()] = (sourceCounts[(src||'otro').toLowerCase()]||0)+1;
     });
@@ -2197,6 +2602,32 @@ async function loadGHLData() {
     const won     = oppList.filter(o=>o.status==='won').length;
     const revenue = oppList.filter(o=>o.status==='won').reduce((s,o)=>s+(o.monetaryValue||o.monetary_value||0),0);
     const avgTicket = won>0 ? Math.round(revenue/won) : 0;
+
+    // Populate ghlLive from opportunities
+    DATA.ghlLive.totalOpps    = oppList.length;
+    DATA.ghlLive.totalWon     = won;
+    DATA.ghlLive.totalRevenue = revenue;
+
+    // Lost reasons
+    DATA.ghlLive.lostReasons = {};
+    oppList.filter(o=>o.status==='lost').forEach(o => {
+      const reason = o.lostReason || o.lost_reason || 'Sin motivo';
+      DATA.ghlLive.lostReasons[reason] = (DATA.ghlLive.lostReasons[reason]||0)+1;
+    });
+
+    // Vendedor stats
+    DATA.ghlLive.byVendedor = {};
+    oppList.forEach(o => {
+      const uid  = o.assignedTo || o.assigned_to || o.userId || 'unknown';
+      const name = o.assignedToUser?.name || o.user?.name || uid;
+      const val  = o.monetaryValue || o.monetary_value || 0;
+      if(!DATA.ghlLive.byVendedor[uid]) DATA.ghlLive.byVendedor[uid] = { name, llamadas:0, opps:0, ventas:0, revenue:0 };
+      DATA.ghlLive.byVendedor[uid].opps++;
+      if(o.status==='won') { DATA.ghlLive.byVendedor[uid].ventas++; DATA.ghlLive.byVendedor[uid].revenue += val; }
+    });
+
+    // Won ventas → mark in byCountry & byTramite (best-effort via contact match)
+    // (contact-to-opp matching requires cross-referencing — mark zero for now; contacts above handle leads)
 
     // KPIs
     document.getElementById('kpi-leads').textContent = total;
@@ -2250,6 +2681,7 @@ async function loadGHLData() {
     document.getElementById('last-update').textContent =
       new Date().toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'}) + ' · GHL Live';
     showToast('Datos reales de GoHighLevel cargados');
+    refreshLiveSections();
 
   } catch(e) {
     showToast('Error cargando datos: '+e.message, true);

@@ -1762,17 +1762,23 @@ async function loadGHLData() {
 
     // ── 3. APPOINTMENTS (citas / no-shows) ──────────────────
     try {
-      // GHL V2 calendars/events requires startTime and endTime
       const now = Date.now();
-      const startTime = now - 90 * 24 * 60 * 60 * 1000; // 90 days ago
-      const endTime   = now + 30 * 24 * 60 * 60 * 1000; // 30 days ahead
-      const appts = await ghlFetchV2('GET', `/calendars/events`, {
-        locationId: GHL.locationId,
-        startTime, endTime, limit: 100
-      });
-      const apptList = appts.events || appts.appointments || [];
-      const citas   = apptList.filter(a=>['confirmed','showed','no-showed'].includes(a.appointmentStatus)).length;
-      const noshows = apptList.filter(a=>a.appointmentStatus==='no-showed').length;
+      const startTime = now - 90 * 24 * 60 * 60 * 1000;
+      const endTime   = now + 30 * 24 * 60 * 60 * 1000;
+      // GHL V2: first get calendars list, then fetch events per calendar
+      const calsResp = await ghlFetchV2('GET', `/calendars/`, { locationId: GHL.locationId });
+      const calList = calsResp.calendars || calsResp.data || [];
+      let apptList = [];
+      for(const cal of calList.slice(0,3)) {
+        try {
+          const ev = await ghlFetchV2('GET', `/calendars/events`, {
+            calendarId: cal.id, locationId: GHL.locationId, startTime, endTime
+          });
+          apptList = apptList.concat(ev.events || ev.appointments || []);
+        } catch(_) {}
+      }
+      const citas   = apptList.filter(a=>['confirmed','showed','no-showed','booked'].includes(a.appointmentStatus||a.status)).length;
+      const noshows = apptList.filter(a=>['no-showed','noshow','no_show'].includes(a.appointmentStatus||a.status)).length;
       if(citas)   document.getElementById('kpi-citas').textContent   = citas;
       if(noshows) document.getElementById('kpi-noshows').textContent = noshows;
     } catch(_) { /* appointments scope opcional */ }

@@ -116,16 +116,28 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
           class="w-full bg-slate-800 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white placeholder-slate-600 outline-none focus:border-brand-500 transition-colors font-mono"/>
         <p class="text-xs text-slate-600 mt-1">Settings → Business Info → Location ID</p>
       </div>
-      <div>
-        <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wide mb-1.5">Versión API</label>
-        <div class="flex gap-2">
-          <button id="ghl-v1-btn" onclick="selectAPIVersion('v1')" class="flex-1 py-2 rounded-lg border text-sm font-medium transition-colors border-brand-600 bg-brand-900/30 text-brand-400">V1 (Legacy)</button>
-          <button id="ghl-v2-btn" onclick="selectAPIVersion('v2')" class="flex-1 py-2 rounded-lg border text-sm font-medium transition-colors border-slate-700 text-slate-500">V2 (OAuth)</button>
-        </div>
+      <div class="bg-slate-800/60 border border-slate-700 rounded-lg p-3">
+        <div class="text-xs font-semibold text-slate-300 mb-2">Dónde encontrar el token en GHL:</div>
+        <ol class="text-xs text-slate-400 space-y-1 list-decimal list-inside">
+          <li>Settings → <strong class="text-slate-200">Integraciones Privado</strong></li>
+          <li>Clic en <strong class="text-slate-200">"panel de control"</strong></li>
+          <li>Copia el campo <strong class="text-amber-400">API Key / Access Token</strong></li>
+          <li>Verifica que tenga los scopes: <code class="text-green-400">contacts.readonly</code>, <code class="text-green-400">opportunities.readonly</code></li>
+        </ol>
       </div>
     </div>
 
     <div id="ghl-status" class="hidden mb-4 p-3 rounded-lg text-sm"></div>
+
+    <div id="cors-help" class="hidden mb-4 p-3 bg-slate-800 border border-slate-600 rounded-lg text-xs text-slate-300 space-y-2">
+      <div class="font-semibold text-white">Solución al error de red (CORS):</div>
+      <div>El navegador bloquea llamadas a APIs externas cuando el archivo se abre localmente. Soluciones:</div>
+      <div class="space-y-1">
+        <div class="p-2 bg-slate-700 rounded"><strong class="text-green-400">Opción 1 — GitHub Pages (gratis):</strong> Sube el archivo a tu repo → Settings → Pages → activar</div>
+        <div class="p-2 bg-slate-700 rounded"><strong class="text-brand-400">Opción 2 — VS Code:</strong> Instala extensión "Live Server" → clic derecho en el archivo → "Open with Live Server"</div>
+        <div class="p-2 bg-slate-700 rounded"><strong class="text-amber-400">Opción 3 — Netlify Drop:</strong> Arrastra el archivo a <code>netlify.com/drop</code></div>
+      </div>
+    </div>
 
     <div class="flex gap-3">
       <button onclick="closeGHLModal()" class="flex-1 py-2.5 rounded-lg border border-slate-700 text-slate-400 text-sm font-medium hover:bg-slate-800 transition-colors cursor-pointer">
@@ -1647,28 +1659,19 @@ async function connectGHL() {
   const locationId = document.getElementById('ghl-locationid').value.trim();
   if(!apiKey || !locationId) { setGHLStatus('Por favor completa ambos campos.','error'); return; }
 
-  // Auto-detect version: private API keys always go to V1
-  // V2 (services.leadconnectorhq.com) requires OAuth tokens, not private keys
-  const isPrivateKey = apiKey.length < 200; // OAuth tokens are JWTs (very long)
-  if(isPrivateKey && GHL.version === 'v2') {
-    selectAPIVersion('v1');
-    setGHLStatus('Detectada API Key privada → cambiando a V1 automáticamente. V2 requiere OAuth.','info');
-    await new Promise(r => setTimeout(r, 1500));
-  }
-
-  GHL = { apiKey, locationId, version: isPrivateKey ? 'v1' : GHL.version, connected:false };
+  GHL = { apiKey, locationId, version:'v2', connected:false };
   const btn = document.getElementById('ghl-connect-btn');
   btn.innerHTML = '<span class="loading-dot"></span> Conectando...';
   btn.disabled = true;
-  setGHLStatus('Probando conexión con GoHighLevel V1...','info');
+  setGHLStatus('Probando conexión con GoHighLevel API v2...','info');
 
   try {
-    // V1 endpoint — works with private API key
-    const url = `https://rest.gohighlevel.com/v1/contacts/?locationId=${locationId}&limit=1`;
+    const url = `https://services.leadconnectorhq.com/contacts/?locationId=${locationId}&limit=1`;
     const resp = await fetch(url, {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${apiKey}`,
+        'Version': '2021-07-28',
         'Content-Type': 'application/json'
       }
     });
@@ -1676,24 +1679,27 @@ async function connectGHL() {
     if(resp.ok) {
       const data = await resp.json();
       GHL.connected = true;
-      localStorage.setItem('gotir_ghl', JSON.stringify({ apiKey, locationId, version:'v1' }));
-      setGHLStatus(`Conectado. ${data.meta?.total || data.contacts?.length || 0} contactos encontrados.`, 'ok');
+      localStorage.setItem('gotir_ghl', JSON.stringify({ apiKey, locationId, version:'v2' }));
+      const total = data.meta?.total || data.contacts?.length || 0;
+      setGHLStatus(`Conectado. ${total} contactos encontrados.`, 'ok');
       document.getElementById('nav-ghl-dot').className = 'ml-auto w-2 h-2 rounded-full bg-green-400';
       document.getElementById('nav-ghl-label').textContent = 'GHL Conectado';
       setTimeout(async()=>{ await loadGHLData(); closeGHLModal(); }, 1200);
-    } else if(resp.status === 422) {
-      setGHLStatus('Error 422: Petición incorrecta. Verifica que la API Key sea la clave privada de Settings → Integrations → API Key (no un OAuth token).','error');
+
     } else if(resp.status === 401) {
-      setGHLStatus('Error 401: API Key incorrecta o expirada. Ve a GHL → Settings → Integrations → API Key y copia la clave completa.','error');
+      setGHLStatus('Error 401: Token inválido. Abre la integración "panel de control" en GHL → copia el campo API Key completo.','error');
     } else if(resp.status === 403) {
-      setGHLStatus('Error 403: Sin permisos. Verifica que tu rol en GHL tenga acceso a la API.','error');
+      setGHLStatus('Error 403: Sin permisos. Edita la integración en GHL y activa los scopes: contacts.readonly, opportunities.readonly, calendars.readonly','error');
+    } else if(resp.status === 422) {
+      setGHLStatus('Error 422: Parámetros incorrectos. Verifica que el Location ID sea correcto (utTdf7grGmBznkERpPNM).','error');
     } else {
       const err = await resp.json().catch(()=>({}));
-      setGHLStatus(`Error ${resp.status}: ${err.message || err.msg || 'Verifica tus credenciales.'}`, 'error');
+      setGHLStatus(`Error ${resp.status}: ${err.message || err.msg || JSON.stringify(err)}`, 'error');
     }
   } catch(e) {
-    if(e.message.includes('fetch') || e.message.includes('CORS') || e.message.includes('network')) {
-      setGHLStatus('Error de red / CORS: El navegador bloquea llamadas directas a GHL. Necesitas abrir el dashboard desde un servidor (no como archivo local). Usa Live Server en VS Code o súbelo a hosting.','error');
+    if(e.message.includes('fetch') || e.message.includes('Failed') || e.message.includes('NetworkError')) {
+      setGHLStatus('Error de red: El navegador bloquea llamadas a GHL desde archivo local. Necesitas abrir el dashboard desde un servidor HTTP. Ver instrucciones abajo.','error');
+      document.getElementById('cors-help').style.display = 'block';
     } else {
       setGHLStatus(`Error: ${e.message}`,'error');
     }
@@ -1704,12 +1710,15 @@ async function connectGHL() {
 }
 
 async function ghlFetch(path, params={}) {
-  // Always use V1 base for private API keys
-  const base = 'https://rest.gohighlevel.com/v1';
+  const base = 'https://services.leadconnectorhq.com';
   const query = new URLSearchParams({ locationId: GHL.locationId, ...params }).toString();
   const url = `${base}${path}?${query}`;
   const resp = await fetch(url, {
-    headers: { 'Authorization': `Bearer ${GHL.apiKey}`, 'Content-Type':'application/json' }
+    headers: {
+      'Authorization': `Bearer ${GHL.apiKey}`,
+      'Version': '2021-07-28',
+      'Content-Type': 'application/json'
+    }
   });
   if(!resp.ok) throw new Error(`GHL ${resp.status}`);
   return resp.json();

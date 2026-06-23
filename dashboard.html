@@ -1143,17 +1143,6 @@ function renderCampanasTable(filter) {
       <td class="py-3 px-3 text-right">${comision}</td>
     </tr>`;
   }).join('');
-  // fix table header to include Comisión column
-  const thead = document.querySelector('#s-campanas table thead tr');
-  if(thead) {
-    const last = thead.lastElementChild;
-    if(last && last.textContent.trim() !== 'Comisión') {
-      const th = document.createElement('th');
-      th.className = 'text-right py-2 px-3 text-amber-400 font-medium';
-      th.textContent = 'Comisión';
-      thead.appendChild(th);
-    }
-  }
 }
 
 function filterCampanas(tipo, btn) {
@@ -1189,9 +1178,9 @@ function initCampanas() {
     annotations:{ yaxis:[{ y:18, borderColor:'#f59e0b', label:{ text:'Benchmark 18%', style:{ color:'#f59e0b', background:'transparent' } } }] }
   }));
 
-  // Update table header to include Tipo column
+  // Set complete table header (9 columns)
   const thead = document.querySelector('#s-campanas table thead tr');
-  if(thead && thead.children.length < 8) {
+  if(thead) {
     thead.innerHTML = `
       <th class="text-left py-2 px-3 text-slate-400 font-medium">Fuente</th>
       <th class="text-right py-2 px-3 text-slate-400 font-medium">Tipo</th>
@@ -1200,7 +1189,8 @@ function initCampanas() {
       <th class="text-right py-2 px-3 text-slate-400 font-medium">Ventas</th>
       <th class="text-right py-2 px-3 text-slate-400 font-medium">Conv.%</th>
       <th class="text-right py-2 px-3 text-slate-400 font-medium">CPL</th>
-      <th class="text-right py-2 px-3 text-slate-400 font-medium">ROI</th>`;
+      <th class="text-right py-2 px-3 text-slate-400 font-medium">ROI</th>
+      <th class="text-right py-2 px-3 text-amber-400 font-medium">Comisión</th>`;
   }
   renderCampanasTable('all');
 }
@@ -1607,22 +1597,6 @@ function initProveedores() {
 // ═══════════════════════════════════════
 let GHL = { apiKey:'', locationId:'', version:'v1', connected:false };
 
-const GHL_ENDPOINTS = {
-  v1: {
-    base: 'https://rest.gohighlevel.com/v1',
-    contacts: '/contacts/',
-    opportunities: '/pipelines/opportunities/',
-    appointments: '/appointments/',
-    calls: '/calls/'
-  },
-  v2: {
-    base: 'https://services.leadconnectorhq.com',
-    contacts: '/contacts/',
-    opportunities: '/opportunities/search',
-    appointments: '/calendars/events',
-    pipelines: '/opportunities/pipelines'
-  }
-};
 
 function selectAPIVersion(v) { GHL.version = 'v2'; }
 
@@ -1701,20 +1675,6 @@ async function connectGHL() {
   btn.disabled = false;
 }
 
-async function ghlFetch(path, params={}) {
-  const base = 'https://services.leadconnectorhq.com';
-  const query = new URLSearchParams({ locationId: GHL.locationId, ...params }).toString();
-  const url = `${base}${path}?${query}`;
-  const resp = await fetch(url, {
-    headers: {
-      'Authorization': `Bearer ${GHL.apiKey}`,
-      'Version': '2021-07-28',
-      'Content-Type': 'application/json'
-    }
-  });
-  if(!resp.ok) throw new Error(`GHL ${resp.status}`);
-  return resp.json();
-}
 
 async function loadGHLData() {
   try {

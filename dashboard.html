@@ -30,7 +30,7 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
 ::-webkit-scrollbar{width:6px;height:6px}
 ::-webkit-scrollbar-track{background:#0f172a}
 ::-webkit-scrollbar-thumb{background:#334155;border-radius:3px}
-.sidebar{width:260px;min-height:100vh;background:#0f172a;border-right:1px solid #1e293b;position:fixed;top:0;left:0;z-index:40;transition:transform .3s ease}
+.sidebar{width:260px;height:100vh;background:#0f172a;border-right:1px solid #1e293b;position:fixed;top:0;left:0;z-index:40;transition:transform .3s ease;display:flex;flex-direction:column;overflow:hidden}
 .main-content{margin-left:260px;min-height:100vh;background:#0a0f1e}
 .nav-item{display:flex;align-items:center;gap:12px;padding:10px 16px;border-radius:8px;cursor:pointer;transition:all .2s;color:#94a3b8;font-size:14px;font-weight:500}
 .nav-item:hover{background:#1e293b;color:#e2e8f0}
@@ -168,7 +168,7 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
       </div>
     </div>
   </div>
-  <nav class="p-4 flex flex-col gap-1">
+  <nav class="p-4 flex flex-col gap-1 flex-1 overflow-y-auto">
     <div class="text-xs font-semibold text-slate-600 uppercase tracking-wider px-2 mb-2">Principal</div>
     <div class="nav-item active" onclick="showSection('ejecutivo')">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
@@ -239,7 +239,7 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
       Generar Informe PDF
     </div>
   </nav>
-  <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-slate-800">
+  <div class="flex-shrink-0 p-4 border-t border-slate-800">
     <div class="flex items-center gap-3">
       <div class="w-8 h-8 rounded-full bg-gradient-to-br from-brand-600 to-brand-400 flex items-center justify-center text-xs font-bold text-white">A</div>
       <div class="flex-1 min-w-0">

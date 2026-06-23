@@ -1719,10 +1719,11 @@ async function loadGHLData() {
       ) || pipelineList[0];
 
       if(preVenta) {
-        // Step 2: search opportunities with pipelineId
+        // GHL V2 opportunities/search uses location_id and pipeline_id (snake_case)
         const oppsResp = await ghlFetchV2('GET', `/opportunities/search`, {
-          locationId: GHL.locationId,
-          pipelineId: preVenta.id,
+          location_id: GHL.locationId,
+          pipeline_id: preVenta.id,
+          page: 1,
           limit: 100
         });
         oppList = oppsResp.opportunities || oppsResp.data || [];
@@ -1761,7 +1762,14 @@ async function loadGHLData() {
 
     // ── 3. APPOINTMENTS (citas / no-shows) ──────────────────
     try {
-      const appts = await ghlFetchV2('GET', `/calendars/events`, { locationId: GHL.locationId, limit:100 });
+      // GHL V2 calendars/events requires startTime and endTime
+      const now = Date.now();
+      const startTime = now - 90 * 24 * 60 * 60 * 1000; // 90 days ago
+      const endTime   = now + 30 * 24 * 60 * 60 * 1000; // 30 days ahead
+      const appts = await ghlFetchV2('GET', `/calendars/events`, {
+        locationId: GHL.locationId,
+        startTime, endTime, limit: 100
+      });
       const apptList = appts.events || appts.appointments || [];
       const citas   = apptList.filter(a=>['confirmed','showed','no-showed'].includes(a.appointmentStatus)).length;
       const noshows = apptList.filter(a=>a.appointmentStatus==='no-showed').length;

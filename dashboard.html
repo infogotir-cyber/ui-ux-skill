@@ -1647,43 +1647,55 @@ async function connectGHL() {
   const locationId = document.getElementById('ghl-locationid').value.trim();
   if(!apiKey || !locationId) { setGHLStatus('Por favor completa ambos campos.','error'); return; }
 
-  GHL = { apiKey, locationId, version: GHL.version, connected:false };
+  // Auto-detect version: private API keys always go to V1
+  // V2 (services.leadconnectorhq.com) requires OAuth tokens, not private keys
+  const isPrivateKey = apiKey.length < 200; // OAuth tokens are JWTs (very long)
+  if(isPrivateKey && GHL.version === 'v2') {
+    selectAPIVersion('v1');
+    setGHLStatus('Detectada API Key privada → cambiando a V1 automáticamente. V2 requiere OAuth.','info');
+    await new Promise(r => setTimeout(r, 1500));
+  }
+
+  GHL = { apiKey, locationId, version: isPrivateKey ? 'v1' : GHL.version, connected:false };
   const btn = document.getElementById('ghl-connect-btn');
   btn.innerHTML = '<span class="loading-dot"></span> Conectando...';
   btn.disabled = true;
-  setGHLStatus('Probando conexión con GoHighLevel...','info');
+  setGHLStatus('Probando conexión con GoHighLevel V1...','info');
 
   try {
-    const headers = GHL.version==='v1'
-      ? { 'Authorization': `Bearer ${apiKey}`, 'Content-Type':'application/json' }
-      : { 'Authorization': `Bearer ${apiKey}`, 'Version':'2021-07-28', 'Content-Type':'application/json' };
-
-    const testUrl = GHL.version==='v1'
-      ? `${GHL_ENDPOINTS.v1.base}/contacts/?locationId=${locationId}&limit=1`
-      : `${GHL_ENDPOINTS.v2.base}/contacts/?locationId=${locationId}&limit=1`;
-
-    const resp = await fetch(testUrl, { method:'GET', headers });
+    // V1 endpoint — works with private API key
+    const url = `https://rest.gohighlevel.com/v1/contacts/?locationId=${locationId}&limit=1`;
+    const resp = await fetch(url, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json'
+      }
+    });
 
     if(resp.ok) {
       const data = await resp.json();
       GHL.connected = true;
-      localStorage.setItem('gotir_ghl', JSON.stringify({ apiKey, locationId, version:GHL.version }));
-      setGHLStatus(`Conectado correctamente. Cargando datos reales...`, 'ok');
+      localStorage.setItem('gotir_ghl', JSON.stringify({ apiKey, locationId, version:'v1' }));
+      setGHLStatus(`Conectado. ${data.meta?.total || data.contacts?.length || 0} contactos encontrados.`, 'ok');
       document.getElementById('nav-ghl-dot').className = 'ml-auto w-2 h-2 rounded-full bg-green-400';
       document.getElementById('nav-ghl-label').textContent = 'GHL Conectado';
-      setTimeout(async()=>{
-        await loadGHLData();
-        closeGHLModal();
-      }, 1200);
+      setTimeout(async()=>{ await loadGHLData(); closeGHLModal(); }, 1200);
+    } else if(resp.status === 422) {
+      setGHLStatus('Error 422: Petición incorrecta. Verifica que la API Key sea la clave privada de Settings → Integrations → API Key (no un OAuth token).','error');
+    } else if(resp.status === 401) {
+      setGHLStatus('Error 401: API Key incorrecta o expirada. Ve a GHL → Settings → Integrations → API Key y copia la clave completa.','error');
+    } else if(resp.status === 403) {
+      setGHLStatus('Error 403: Sin permisos. Verifica que tu rol en GHL tenga acceso a la API.','error');
     } else {
-      const err = await resp.json().catch(()=>({message:'Error desconocido'}));
-      setGHLStatus(`Error ${resp.status}: ${err.message || 'Credenciales incorrectas o sin permisos.'}`, 'error');
+      const err = await resp.json().catch(()=>({}));
+      setGHLStatus(`Error ${resp.status}: ${err.message || err.msg || 'Verifica tus credenciales.'}`, 'error');
     }
   } catch(e) {
-    if(e.message.includes('CORS') || e.message.includes('Failed to fetch')) {
-      setGHLStatus('Error CORS: GHL bloquea llamadas directas desde el navegador. Necesitas un proxy. Contacta al soporte técnico.','error');
+    if(e.message.includes('fetch') || e.message.includes('CORS') || e.message.includes('network')) {
+      setGHLStatus('Error de red / CORS: El navegador bloquea llamadas directas a GHL. Necesitas abrir el dashboard desde un servidor (no como archivo local). Usa Live Server en VS Code o súbelo a hosting.','error');
     } else {
-      setGHLStatus(`Error de conexión: ${e.message}`,'error');
+      setGHLStatus(`Error: ${e.message}`,'error');
     }
   }
 
@@ -1692,13 +1704,13 @@ async function connectGHL() {
 }
 
 async function ghlFetch(path, params={}) {
-  const base = GHL_ENDPOINTS[GHL.version].base;
+  // Always use V1 base for private API keys
+  const base = 'https://rest.gohighlevel.com/v1';
   const query = new URLSearchParams({ locationId: GHL.locationId, ...params }).toString();
   const url = `${base}${path}?${query}`;
-  const headers = GHL.version==='v1'
-    ? { 'Authorization': `Bearer ${GHL.apiKey}` }
-    : { 'Authorization': `Bearer ${GHL.apiKey}`, 'Version':'2021-07-28' };
-  const resp = await fetch(url, { headers });
+  const resp = await fetch(url, {
+    headers: { 'Authorization': `Bearer ${GHL.apiKey}`, 'Content-Type':'application/json' }
+  });
   if(!resp.ok) throw new Error(`GHL ${resp.status}`);
   return resp.json();
 }

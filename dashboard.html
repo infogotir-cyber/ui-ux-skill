@@ -460,15 +460,21 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
 <!-- ══════════════════════════════════════════════════════════ -->
 <div id="s-campanas" class="section p-6">
   <!-- Source type summary cards -->
-  <div class="grid grid-cols-3 gap-4 mb-6">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+    <div class="stat-card border-l-4 border-purple-500">
+      <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">Afiliados (8% comisión)</div>
+      <div class="text-2xl font-bold text-white">41 leads</div>
+      <div class="text-xs text-purple-400 mt-1">19.5% conv. prom · CPL ~€62 prom</div>
+      <div class="text-xs text-slate-500 mt-0.5">Jesús · Nasla · Wilmen</div>
+    </div>
     <div class="stat-card border-l-4 border-green-500">
-      <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">Referidos (sin coste)</div>
-      <div class="text-2xl font-bold text-white">69 leads</div>
+      <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">Referidos Orgánicos</div>
+      <div class="text-2xl font-bold text-white">28 leads</div>
       <div class="text-xs text-green-400 mt-1">25% conv. prom · CPL €0 · ROI ∞</div>
-      <div class="text-xs text-slate-500 mt-0.5">Jesús · Nasla · Wilmen · Centro · Amigo</div>
+      <div class="text-xs text-slate-500 mt-0.5">Centro Estudios · Amigo/Familiar</div>
     </div>
     <div class="stat-card border-l-4 border-brand-500">
-      <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">Redes Sociales (pagado)</div>
+      <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">Redes Sociales</div>
       <div class="text-2xl font-bold text-white">223 leads</div>
       <div class="text-xs text-brand-400 mt-1">12.1% conv. prom · CPL ~€16 prom</div>
       <div class="text-xs text-slate-500 mt-0.5">Instagram · TikTok · Facebook</div>
@@ -478,6 +484,68 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
       <div class="text-2xl font-bold text-white">30 leads</div>
       <div class="text-xs text-sky-400 mt-1">13.3% conv. prom · CPL €0</div>
       <div class="text-xs text-slate-500 mt-0.5">Sitio Web · Otro</div>
+    </div>
+  </div>
+
+  <!-- Affiliates commission tracker -->
+  <div class="card mb-4">
+    <div class="flex items-center justify-between mb-4">
+      <div>
+        <h3 class="font-semibold text-white">Comisiones de Afiliados — 8% por venta cerrada</h3>
+        <p class="text-xs text-slate-500 mt-0.5">Calculado sobre Monetary Value de oportunidades en etapa <span class="text-amber-400">Pagado</span></p>
+      </div>
+      <span class="badge badge-neutral">Ticket prom. €1.259 × 8% = €100,7/venta</span>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+      <div class="bg-slate-800/60 border border-purple-900/40 rounded-xl p-4">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-9 h-9 rounded-full bg-purple-600/30 border border-purple-500/50 flex items-center justify-center text-sm font-bold text-purple-300">JM</div>
+          <div>
+            <div class="font-semibold text-white text-sm">Jesús Mosquera</div>
+            <div class="text-xs text-slate-500">18 leads · 4 ventas · 22.2% conv.</div>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div><div class="text-xs text-slate-500">Facturación generada</div><div class="font-bold text-white">€5.036</div></div>
+          <div><div class="text-xs text-slate-500">Comisión debida (8%)</div><div class="font-bold text-amber-400">€402,9</div></div>
+          <div><div class="text-xs text-slate-500">CPL real</div><div class="font-semibold text-slate-300">€56</div></div>
+          <div><div class="text-xs text-slate-500">ROI</div><div class="font-semibold text-green-400">385%</div></div>
+        </div>
+      </div>
+      <div class="bg-slate-800/60 border border-purple-900/40 rounded-xl p-4">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-9 h-9 rounded-full bg-purple-600/30 border border-purple-500/50 flex items-center justify-center text-sm font-bold text-purple-300">NE</div>
+          <div>
+            <div class="font-semibold text-white text-sm">Nasla Espinosa</div>
+            <div class="text-xs text-slate-500">14 leads · 3 ventas · 21.4% conv.</div>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div><div class="text-xs text-slate-500">Facturación generada</div><div class="font-bold text-white">€3.777</div></div>
+          <div><div class="text-xs text-slate-500">Comisión debida (8%)</div><div class="font-bold text-amber-400">€302,2</div></div>
+          <div><div class="text-xs text-slate-500">CPL real</div><div class="font-semibold text-slate-300">€54</div></div>
+          <div><div class="text-xs text-slate-500">ROI</div><div class="font-semibold text-green-400">392%</div></div>
+        </div>
+      </div>
+      <div class="bg-slate-800/60 border border-purple-900/40 rounded-xl p-4">
+        <div class="flex items-center gap-3 mb-3">
+          <div class="w-9 h-9 rounded-full bg-purple-600/30 border border-purple-500/50 flex items-center justify-center text-sm font-bold text-purple-300">WM</div>
+          <div>
+            <div class="font-semibold text-white text-sm">Wilmen Mendoza</div>
+            <div class="text-xs text-slate-500">9 leads · 1 venta · 11.1% conv.</div>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-2">
+          <div><div class="text-xs text-slate-500">Facturación generada</div><div class="font-bold text-white">€1.259</div></div>
+          <div><div class="text-xs text-slate-500">Comisión debida (8%)</div><div class="font-bold text-amber-400">€100,7</div></div>
+          <div><div class="text-xs text-slate-500">CPL real</div><div class="font-semibold text-slate-300">€113</div></div>
+          <div><div class="text-xs text-slate-500">ROI</div><div class="font-semibold text-green-400">214%</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3 flex items-center justify-between p-3 bg-amber-950/30 border border-amber-900/30 rounded-lg">
+      <span class="text-sm text-slate-300">Total comisiones a pagar este período:</span>
+      <span class="text-lg font-bold text-amber-400">€805,8</span>
     </div>
   </div>
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
@@ -495,8 +563,9 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
       <h3 class="font-semibold text-white">Tabla por Fuente de Captación</h3>
       <div class="flex gap-1">
         <button class="tab-btn active text-xs" onclick="filterCampanas('all',this)">Todos</button>
+        <button class="tab-btn text-xs" onclick="filterCampanas('afiliado',this)">Afiliados 8%</button>
         <button class="tab-btn text-xs" onclick="filterCampanas('referido',this)">Referidos</button>
-        <button class="tab-btn text-xs" onclick="filterCampanas('pagado',this)">Pagado</button>
+        <button class="tab-btn text-xs" onclick="filterCampanas('pagado',this)">Redes</button>
         <button class="tab-btn text-xs" onclick="filterCampanas('organico',this)">Orgánico</button>
       </div>
     </div>
@@ -760,23 +829,25 @@ const DATA = {
     { nombre:'Pedro Sánchez', llamadas:25, tiempo:'18 min', ventas:2, conv:'8.0%', facturacion:'€2.520', asistencia:'76%' }
   ],
   campanas: [
-    // Fuentes reales del campo canal_referencia_dr en GHL
-    // Referidos personales (afiliados)
-    { canal:'Jesús Mosquera',       tipo:'referido', leads:18, citas:9,  ventas:4, conv:'22.2%', cpl:'€0',  roi:'∞',    color:'#a78bfa' },
-    { canal:'Nasla Espinosa',       tipo:'referido', leads:14, citas:7,  ventas:3, conv:'21.4%', cpl:'€0',  roi:'∞',    color:'#c084fc' },
-    { canal:'Wilmen Mendoza',       tipo:'referido', leads:9,  citas:4,  ventas:1, conv:'11.1%', cpl:'€0',  roi:'∞',    color:'#818cf8' },
-    // Referidos institucionales / boca a boca
-    { canal:'Centro de Estudios',   tipo:'referido', leads:12, citas:6,  ventas:3, conv:'25.0%', cpl:'€0',  roi:'∞',    color:'#4ade80' },
-    { canal:'Amigo / Familiar',     tipo:'referido', leads:16, citas:8,  ventas:4, conv:'25.0%', cpl:'€0',  roi:'∞',    color:'#34d399' },
-    // Redes sociales / campañas pagadas
-    { canal:'Instagram',            tipo:'pagado',   leads:94, citas:38, ventas:14,conv:'14.9%', cpl:'€11', roi:'520%', color:'#e1306c' },
-    { canal:'TikTok',               tipo:'pagado',   leads:47, citas:14, ventas:3, conv:'6.4%',  cpl:'€19', roi:'185%', color:'#010101' },
-    { canal:'Facebook',             tipo:'pagado',   leads:82, citas:28, ventas:10,conv:'12.2%', cpl:'€18', roi:'340%', color:'#1877f2' },
-    // Inbound
-    { canal:'Sitio Web',            tipo:'organico', leads:22, citas:8,  ventas:3, conv:'13.6%', cpl:'€0',  roi:'∞',    color:'#38bdf8' },
-    { canal:'Otro',                 tipo:'otro',     leads:8,  citas:2,  ventas:1, conv:'12.5%', cpl:'—',   roi:'—',    color:'#94a3b8' }
+    // Afiliados externos — 8% comisión por venta cerrada (Pagado)
+    { canal:'Jesús Mosquera',       tipo:'afiliado',  leads:18, citas:9,  ventas:4, conv:'22.2%', cpl:'€56',  roi:'385%', color:'#a78bfa', comision_pct:8 },
+    { canal:'Nasla Espinosa',       tipo:'afiliado',  leads:14, citas:7,  ventas:3, conv:'21.4%', cpl:'€54',  roi:'392%', color:'#c084fc', comision_pct:8 },
+    { canal:'Wilmen Mendoza',       tipo:'afiliado',  leads:9,  citas:4,  ventas:1, conv:'11.1%', cpl:'€113', roi:'214%', color:'#818cf8', comision_pct:8 },
+    // Referidos orgánicos — sin coste
+    { canal:'Centro de Estudios',   tipo:'referido',  leads:12, citas:6,  ventas:3, conv:'25.0%', cpl:'€0',   roi:'∞',    color:'#4ade80', comision_pct:0 },
+    { canal:'Amigo / Familiar',     tipo:'referido',  leads:16, citas:8,  ventas:4, conv:'25.0%', cpl:'€0',   roi:'∞',    color:'#34d399', comision_pct:0 },
+    // Redes sociales pagadas
+    { canal:'Instagram',            tipo:'pagado',    leads:94, citas:38, ventas:14,conv:'14.9%', cpl:'€11',  roi:'520%', color:'#e1306c', comision_pct:0 },
+    { canal:'TikTok',               tipo:'pagado',    leads:47, citas:14, ventas:3, conv:'6.4%',  cpl:'€19',  roi:'185%', color:'#555555', comision_pct:0 },
+    { canal:'Facebook',             tipo:'pagado',    leads:82, citas:28, ventas:10,conv:'12.2%', cpl:'€18',  roi:'340%', color:'#1877f2', comision_pct:0 },
+    // Inbound orgánico
+    { canal:'Sitio Web',            tipo:'organico',  leads:22, citas:8,  ventas:3, conv:'13.6%', cpl:'€0',   roi:'∞',    color:'#38bdf8', comision_pct:0 },
+    { canal:'Otro',                 tipo:'otro',      leads:8,  citas:2,  ventas:1, conv:'12.5%', cpl:'—',    roi:'—',    color:'#94a3b8', comision_pct:0 }
   ],
-  // API field name for source in GHL (custom field)
+  // CPL afiliado = (ventas × ticket_prom × 8%) / leads
+  // Ej Jesús: (4 × 1259 × 0.08) / 18 = €56 CPL real
+  ticket_promedio: 1259,
+  comision_afiliados_pct: 8,
   ghlSourceField: 'canal_referencia_dr',
   motivos_perdida: [
     { motivo:'Precio muy alto', pct:34, color:'#f87171' },
@@ -1036,9 +1107,13 @@ function initVentas() {
 function renderCampanasTable(filter) {
   const c = filter==='all' ? DATA.campanas : DATA.campanas.filter(x=>x.tipo===filter);
   const tbody = document.getElementById('tabla-campanas');
-  const tipoLabel = { referido:'Referido', pagado:'Pagado', organico:'Orgánico', otro:'Otro' };
-  const tipoColor = { referido:'text-green-400', pagado:'text-brand-400', organico:'text-sky-400', otro:'text-slate-400' };
-  tbody.innerHTML = c.map(x=>`
+  const tipoLabel = { afiliado:'Afiliado 8%', referido:'Referido', pagado:'Red Social', organico:'Orgánico', otro:'Otro' };
+  const tipoColor = { afiliado:'text-purple-400', referido:'text-green-400', pagado:'text-brand-400', organico:'text-sky-400', otro:'text-slate-400' };
+  tbody.innerHTML = c.map(x=>{
+    const comision = x.comision_pct > 0
+      ? `<span class="text-amber-400 font-semibold">€${(x.ventas * DATA.ticket_promedio * x.comision_pct/100).toFixed(0)}</span>`
+      : `<span class="text-slate-600">—</span>`;
+    return `
     <tr class="border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
       <td class="py-3 px-3">
         <div class="flex items-center gap-2">
@@ -1053,8 +1128,20 @@ function renderCampanasTable(filter) {
       <td class="py-3 px-3 text-right"><span class="badge ${parseFloat(x.conv)>18?'badge-up':parseFloat(x.conv)>10?'badge-neutral':'badge-down'}">${x.conv}</span></td>
       <td class="py-3 px-3 text-right text-slate-400">${x.cpl}</td>
       <td class="py-3 px-3 text-right"><span class="font-semibold ${x.roi==='∞'?'text-green-400':parseFloat(x.roi)>300?'text-green-400':parseFloat(x.roi)>100?'text-amber-400':'text-red-400'}">${x.roi}</span></td>
-    </tr>
-  `).join('');
+      <td class="py-3 px-3 text-right">${comision}</td>
+    </tr>`;
+  }).join('');
+  // fix table header to include Comisión column
+  const thead = document.querySelector('#s-campanas table thead tr');
+  if(thead) {
+    const last = thead.lastElementChild;
+    if(last && last.textContent.trim() !== 'Comisión') {
+      const th = document.createElement('th');
+      th.className = 'text-right py-2 px-3 text-amber-400 font-medium';
+      th.textContent = 'Comisión';
+      thead.appendChild(th);
+    }
+  }
 }
 
 function filterCampanas(tipo, btn) {

@@ -1747,9 +1747,11 @@ async function loadGHLData() {
 
     // ── 2. OPPORTUNITIES (pipeline pre-venta) ───────────────
     // V2 uses POST /opportunities/search with JSON body
-    const oppsResp = await ghlFetchV2('POST', `/opportunities/search`, null, {
+    const oppsResp = await ghlFetchV2('GET', `/opportunities/search`, {
       location_id: GHL.locationId,
-      limit: 100
+      locationId: GHL.locationId,
+      limit: 100,
+      page: 1
     });
     const oppList = oppsResp.opportunities || oppsResp.data || [];
     const won     = oppList.filter(o=>o.status==='won').length;

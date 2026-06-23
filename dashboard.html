@@ -1624,15 +1624,7 @@ const GHL_ENDPOINTS = {
   }
 };
 
-function selectAPIVersion(v) {
-  GHL.version = v;
-  document.getElementById('ghl-v1-btn').className = v==='v1'
-    ? 'flex-1 py-2 rounded-lg border text-sm font-medium transition-colors border-brand-600 bg-brand-900/30 text-brand-400'
-    : 'flex-1 py-2 rounded-lg border text-sm font-medium transition-colors border-slate-700 text-slate-500';
-  document.getElementById('ghl-v2-btn').className = v==='v2'
-    ? 'flex-1 py-2 rounded-lg border text-sm font-medium transition-colors border-brand-600 bg-brand-900/30 text-brand-400'
-    : 'flex-1 py-2 rounded-lg border text-sm font-medium transition-colors border-slate-700 text-slate-500';
-}
+function selectAPIVersion(v) { GHL.version = 'v2'; }
 
 function openGHLModal() {
   const modal = document.getElementById('ghl-modal');
@@ -1726,83 +1718,106 @@ async function ghlFetch(path, params={}) {
 
 async function loadGHLData() {
   try {
-    // Load contacts/leads — reads custom field canal_referencia_dr
-    const contacts = await ghlFetch(GHL_ENDPOINTS[GHL.version].contacts, { limit:100 });
+    // ── 1. CONTACTS (leads totales) ──────────────────────────
+    const contacts = await ghlFetchV2('GET', `/contacts/`, { locationId: GHL.locationId, limit:100 });
     const total = contacts.meta?.total || contacts.total || contacts.contacts?.length || 0;
 
-    // Count leads by source using canal_referencia_dr custom field
+    // Leer campo personalizado canal_referencia_dr
     const contactList = contacts.contacts || [];
     const sourceCounts = {};
     contactList.forEach(c => {
-      // GHL stores custom fields in customField array or customFields object
       const fields = c.customFields || c.customField || [];
       let src = null;
       if(Array.isArray(fields)) {
-        const f = fields.find(f => f.id === 'canal_referencia_dr' || f.key === 'canal_referencia_dr' || (f.fieldKey||'').includes('canal_referencia'));
+        const f = fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('canal_referencia'));
         src = f?.value || f?.fieldValue;
-      } else if(typeof fields === 'object') {
-        src = fields['canal_referencia_dr'] || fields['contact.canal_referencia_dr'];
       }
       if(!src) src = c.source || 'otro';
-      sourceCounts[src] = (sourceCounts[src]||0) + 1;
+      sourceCounts[(src||'otro').toLowerCase()] = (sourceCounts[(src||'otro').toLowerCase()]||0)+1;
     });
-    // Update campaigns data with real counts
     DATA.campanas.forEach(camp => {
-      const ghlKey = camp.canal.toLowerCase()
-        .replace('jesús','jesús').replace(' ','_').replace(/\s+/g,'_')
-        .replace('centro de estudios','un_centro_de_estudios_me')
-        .replace('amigo / familiar','un_amigo_o_familiar')
-        .replace('sitio web','sitio_web');
-      const realCount = sourceCounts[ghlKey] || sourceCounts[camp.canal.toLowerCase()];
-      if(realCount) camp.leads = realCount;
+      const key = camp.canal.toLowerCase().replace(/\s+/g,'_')
+        .replace('jesús_mosquera','jesús_mosquera')
+        .replace('centro_de_estudios','un_centro_de_estudios_me')
+        .replace('amigo_/_familiar','un_amigo_o_familiar')
+        .replace('sitio_web','sitio_web');
+      const count = sourceCounts[key] || sourceCounts[camp.canal.toLowerCase()];
+      if(count) camp.leads = count;
     });
 
-    // Load opportunities
-    const opps = await ghlFetch(
-      GHL.version==='v1' ? GHL_ENDPOINTS.v1.opportunities : GHL_ENDPOINTS.v2.opportunities,
-      { limit:100 }
-    );
-    const oppList = opps.opportunities || [];
-    const won = oppList.filter(o => o.status==='won').length;
-    const revenue = oppList.filter(o=>o.status==='won').reduce((s,o)=>s+(o.monetaryValue||0),0);
+    // ── 2. OPPORTUNITIES (pipeline pre-venta) ───────────────
+    // V2 uses POST /opportunities/search with JSON body
+    const oppsResp = await ghlFetchV2('POST', `/opportunities/search`, null, {
+      location_id: GHL.locationId,
+      limit: 100
+    });
+    const oppList = oppsResp.opportunities || oppsResp.data || [];
+    const won     = oppList.filter(o=>o.status==='won').length;
+    const revenue = oppList.filter(o=>o.status==='won').reduce((s,o)=>s+(o.monetaryValue||o.monetary_value||0),0);
     const avgTicket = won>0 ? Math.round(revenue/won) : 0;
 
-    // Update KPIs with real data
+    // KPIs
     document.getElementById('kpi-leads').textContent = total;
     document.getElementById('kpi-ventas').textContent = won;
     document.getElementById('kpi-facturacion').textContent = '€'+revenue.toLocaleString('es-ES');
     document.getElementById('kpi-ticket').textContent = avgTicket ? '€'+avgTicket.toLocaleString('es-ES') : '—';
-    const conv = total>0 ? ((won/total)*100).toFixed(1)+'%' : '—';
-    document.getElementById('kpi-conversion').textContent = conv;
+    document.getElementById('kpi-conversion').textContent = total>0 ? ((won/total)*100).toFixed(1)+'%' : '—';
 
-    // Map real GHL pipeline stages to funnel
-    // Pre-venta stage names (exact match from your GHL screenshots)
+    // Pipeline Pre-venta → funnel (nombres exactos de GHL)
     const STAGE_MAP = {
-      'new lead /sin clasificar': 0,
-      'cualificado': 1,
-      'llamada agendada': 2,
-      'llamada realizada': 3,
-      'información y contrato enviado': 4,
-      'pronto pago': 5,
-      'pagado': 6
+      'new lead /sin clasificar':0, 'new lead / sin clasificar':0,
+      'cualificado':1, 'cuailficado':1,
+      'agendar llamada':1.5,
+      'llamada agendada':2,
+      'llamada realizada':3,
+      'información y contrato enviado':4, 'informacion y contrato enviado':4,
+      'pronto pago':5,
+      'pagado':6
     };
     const stageCounts = new Array(7).fill(0);
     oppList.forEach(o => {
-      const stageName = (o.stageName||o.pipelineStageName||'').toLowerCase().trim();
-      const idx = STAGE_MAP[stageName];
-      if(idx !== undefined) stageCounts[idx]++;
+      const name = (o.pipelineStageName||o.stageName||o.stage?.name||'').toLowerCase().trim();
+      const idx = STAGE_MAP[name];
+      if(idx !== undefined && Number.isInteger(idx)) stageCounts[idx]++;
     });
-    stageCounts.forEach((count, i) => {
-      if(count > 0 && DATA.funnel[i]) DATA.funnel[i].value = count;
-    });
+    stageCounts.forEach((count,i) => { if(count>0 && DATA.funnel[i]) DATA.funnel[i].value = count; });
 
-    document.getElementById('last-update').textContent = new Date().toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'}) + ' (GHL)';
-    showToast('Datos de GoHighLevel cargados correctamente');
+    // ── 3. APPOINTMENTS (citas / no-shows) ──────────────────
+    try {
+      const appts = await ghlFetchV2('GET', `/calendars/events`, { locationId: GHL.locationId, limit:100 });
+      const apptList = appts.events || appts.appointments || [];
+      const citas   = apptList.filter(a=>['confirmed','showed','no-showed'].includes(a.appointmentStatus)).length;
+      const noshows = apptList.filter(a=>a.appointmentStatus==='no-showed').length;
+      if(citas)   document.getElementById('kpi-citas').textContent   = citas;
+      if(noshows) document.getElementById('kpi-noshows').textContent = noshows;
+    } catch(_) { /* appointments scope opcional */ }
+
+    document.getElementById('last-update').textContent =
+      new Date().toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'}) + ' · GHL Live';
+    showToast('Datos reales de GoHighLevel cargados');
 
   } catch(e) {
     showToast('Error cargando datos: '+e.message, true);
     console.error('GHL Load error:', e);
   }
+}
+
+// Fetch helper V2 — soporta GET y POST
+async function ghlFetchV2(method, path, queryParams=null, body=null) {
+  let url = `https://services.leadconnectorhq.com${path}`;
+  if(queryParams) url += '?' + new URLSearchParams(queryParams).toString();
+  const opts = {
+    method,
+    headers: {
+      'Authorization': `Bearer ${GHL.apiKey}`,
+      'Version': '2021-07-28',
+      'Content-Type': 'application/json'
+    }
+  };
+  if(body) opts.body = JSON.stringify(body);
+  const resp = await fetch(url, opts);
+  if(!resp.ok) throw new Error(`GHL ${resp.status}`);
+  return resp.json();
 }
 
 function showToast(msg, isError=false) {
@@ -1823,17 +1838,20 @@ document.addEventListener('DOMContentLoaded', ()=>{
     document.getElementById('last-update').textContent = new Date().toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'});
   }, 60000);
 
-  // Auto-reconnect if credentials saved
+  // Auto-reconnect if credentials saved (v2 only)
   const saved = JSON.parse(localStorage.getItem('gotir_ghl') || '{}');
   if(saved.apiKey && saved.locationId) {
-    GHL = { ...saved, connected:false };
+    GHL = { ...saved, version:'v2', connected:false };
     document.getElementById('nav-ghl-dot').className = 'ml-auto w-2 h-2 rounded-full bg-amber-400';
-    document.getElementById('nav-ghl-label').textContent = 'GHL (guardado)';
+    document.getElementById('nav-ghl-label').textContent = 'GHL (reconectando...)';
     loadGHLData().then(()=>{
       GHL.connected = true;
       document.getElementById('nav-ghl-dot').className = 'ml-auto w-2 h-2 rounded-full bg-green-400';
       document.getElementById('nav-ghl-label').textContent = 'GHL Conectado';
-    }).catch(()=>{});
+    }).catch(()=>{
+      document.getElementById('nav-ghl-dot').className = 'ml-auto w-2 h-2 rounded-full bg-red-400';
+      document.getElementById('nav-ghl-label').textContent = 'GHL Error';
+    });
   }
 });
 </script>

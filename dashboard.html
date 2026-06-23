@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>GOTIR — Business Intelligence Platform</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Fira+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      fontFamily: { sans: ['Fira Sans','sans-serif'], mono: ['Fira Code','monospace'] },
+      colors: {
+        brand: { 50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',800:'#1e40af',900:'#1e3a8a' },
+        amber: { 400:'#fbbf24',500:'#f59e0b',600:'#d97706' },
+        surface: { 900:'#0a0f1e',800:'#0f172a',700:'#1e293b',600:'#334155',500:'#475569' }
+      }
+    }
+  }
+}
+</script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-height:100vh;overflow-x:hidden}
+::-webkit-scrollbar{width:6px;height:6px}
+::-webkit-scrollbar-track{background:#0f172a}
+::-webkit-scrollbar-thumb{background:#334155;border-radius:3px}
+.sidebar{width:260px;min-height:100vh;background:#0f172a;border-right:1px solid #1e293b;position:fixed;top:0;left:0;z-index:40;transition:transform .3s ease}
+.main-content{margin-left:260px;min-height:100vh;background:#0a0f1e}
+.nav-item{display:flex;align-items:center;gap:12px;padding:10px 16px;border-radius:8px;cursor:pointer;transition:all .2s;color:#94a3b8;font-size:14px;font-weight:500}
+.nav-item:hover{background:#1e293b;color:#e2e8f0}
+.nav-item.active{background:linear-gradient(135deg,#1e40af20,#3b82f620);color:#60a5fa;border:1px solid #1e40af40}
+.nav-item svg{width:18px;height:18px;flex-shrink:0}
+.card{background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:20px;transition:border-color .2s}
+.card:hover{border-color:#334155}
+.stat-card{background:linear-gradient(135deg,#0f172a,#1e293b);border:1px solid #1e293b;border-radius:12px;padding:20px;position:relative;overflow:hidden}
+.stat-card::before{content:'';position:absolute;top:0;right:0;width:80px;height:80px;border-radius:50%;opacity:.06;transform:translate(20px,-20px)}
+.stat-up{color:#4ade80}
+.stat-down{color:#f87171}
+.badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:20px;font-size:11px;font-weight:600}
+.badge-up{background:#4ade8020;color:#4ade80}
+.badge-down{background:#f8717120;color:#f87171}
+.badge-neutral{background:#60a5fa20;color:#60a5fa}
+.section{display:none}
+.section.active{display:block}
+.funnel-step{background:#0f172a;border:1px solid #1e293b;border-radius:8px;padding:16px;position:relative;cursor:pointer;transition:all .2s}
+.funnel-step:hover{border-color:#3b82f6;background:#1e293b}
+.funnel-arrow{text-align:center;color:#334155;font-size:20px;line-height:1.2}
+.progress-bar{height:6px;background:#1e293b;border-radius:3px;overflow:hidden}
+.progress-fill{height:100%;border-radius:3px;transition:width 1s ease}
+.vendor-row{display:grid;grid-template-columns:auto 1fr repeat(5,1fr);gap:12px;align-items:center;padding:12px 16px;border-radius:8px;transition:background .2s}
+.vendor-row:hover{background:#1e293b}
+.ai-chat{background:#0f172a;border:1px solid #1e293b;border-radius:12px;padding:20px;height:500px;display:flex;flex-direction:column}
+.ai-messages{flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:12px;padding-bottom:12px}
+.msg-user{background:#1e40af30;border:1px solid #1e40af50;border-radius:8px 8px 2px 8px;padding:10px 14px;align-self:flex-end;max-width:80%;font-size:14px}
+.msg-ai{background:#1e293b;border:1px solid #334155;border-radius:8px 8px 8px 2px;padding:10px 14px;align-self:flex-start;max-width:90%;font-size:14px;line-height:1.6}
+.ai-input-row{display:flex;gap:8px;margin-top:auto}
+.ai-input{flex:1;background:#1e293b;border:1px solid #334155;border-radius:8px;padding:10px 14px;color:#e2e8f0;font-size:14px;outline:none;font-family:'Fira Sans',sans-serif}
+.ai-input:focus{border-color:#3b82f6}
+.ai-send{background:#1e40af;border:none;border-radius:8px;padding:10px 16px;cursor:pointer;color:#fff;transition:background .2s;display:flex;align-items:center;gap:6px}
+.ai-send:hover{background:#2563eb}
+.tab-btn{padding:8px 16px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:500;transition:all .2s;border:1px solid transparent;color:#94a3b8}
+.tab-btn.active{background:#1e40af;color:#fff;border-color:#2563eb}
+.tab-btn:hover:not(.active){background:#1e293b;color:#e2e8f0}
+.ranking-row{display:flex;align-items:center;gap:12px;padding:12px;border-radius:8px;background:#1e293b;margin-bottom:8px}
+.rank-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
+.rank-1{background:linear-gradient(135deg,#f59e0b,#fbbf24);color:#0a0f1e}
+.rank-2{background:linear-gradient(135deg,#94a3b8,#cbd5e1);color:#0a0f1e}
+.rank-3{background:linear-gradient(135deg,#b45309,#d97706);color:#fff}
+.rank-other{background:#334155;color:#94a3b8}
+.toggle-theme{background:#1e293b;border:1px solid #334155;border-radius:20px;padding:6px 12px;cursor:pointer;color:#94a3b8;font-size:12px;display:flex;align-items:center;gap:6px;transition:all .2s}
+.toggle-theme:hover{border-color:#3b82f6;color:#60a5fa}
+@media(max-width:768px){
+  .sidebar{transform:translateX(-100%)}
+  .sidebar.open{transform:translateX(0)}
+  .main-content{margin-left:0}
+}
+.glow-blue{box-shadow:0 0 20px #1e40af30}
+.chip{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:600;background:#1e293b;border:1px solid #334155;color:#94a3b8}
+.loading-dot{width:8px;height:8px;background:#3b82f6;border-radius:50%;display:inline-block;animation:pulse 1s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <div class="p-5 border-b border-slate-800">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-brand-700 to-brand-500 flex items-center justify-center">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" class="w-5 h-5"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+      </div>
+      <div>
+        <div class="font-bold text-white text-sm tracking-wide">GOTIR</div>
+        <div class="text-xs text-slate-500">Business Intelligence</div>
+      </div>
+    </div>
+  </div>
+  <nav class="p-4 flex flex-col gap-1">
+    <div class="text-xs font-semibold text-slate-600 uppercase tracking-wider px-2 mb-2">Principal</div>
+    <div class="nav-item active" onclick="showSection('ejecutivo')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+      Dashboard Ejecutivo
+    </div>
+    <div class="nav-item" onclick="showSection('embudo')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 3H2l8 9.46V19l4 2V12.46L22 3z"/></svg>
+      Embudo Comercial
+    </div>
+    <div class="nav-item" onclick="showSection('ventas')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      Dashboard de Ventas
+    </div>
+    <div class="nav-item" onclick="showSection('campanas')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+      Campañas
+    </div>
+    <div class="text-xs font-semibold text-slate-600 uppercase tracking-wider px-2 mb-2 mt-4">Rendimiento</div>
+    <div class="nav-item" onclick="showSection('vendedores')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Vendedores
+    </div>
+    <div class="nav-item" onclick="showSection('llamadas')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.36 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9A16 16 0 0 0 15 15.91l1.36-1.36a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 23 16.92z"/></svg>
+      Llamadas
+    </div>
+    <div class="text-xs font-semibold text-slate-600 uppercase tracking-wider px-2 mb-2 mt-4">Inteligencia</div>
+    <div class="nav-item" onclick="showSection('ia')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z"/></svg>
+      Análisis con IA
+    </div>
+    <div class="nav-item" onclick="generatePDF()">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+      Generar Informe PDF
+    </div>
+  </nav>
+  <div class="absolute bottom-0 left-0 right-0 p-4 border-t border-slate-800">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-full bg-gradient-to-br from-brand-600 to-brand-400 flex items-center justify-center text-xs font-bold text-white">A</div>
+      <div class="flex-1 min-w-0">
+        <div class="text-sm font-medium text-slate-300 truncate">Admin GOTIR</div>
+        <div class="text-xs text-slate-600">CTO Dashboard</div>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- TOPBAR -->
+<div class="main-content">
+<header class="sticky top-0 z-30 bg-surface-800/90 backdrop-blur border-b border-slate-800 px-6 py-4 flex items-center justify-between">
+  <div class="flex items-center gap-4">
+    <button onclick="toggleSidebar()" class="p-2 rounded-lg hover:bg-slate-800 transition-colors md:hidden">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-5 h-5"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div>
+      <h1 class="text-lg font-bold text-white" id="page-title">Dashboard Ejecutivo</h1>
+      <p class="text-xs text-slate-500">Última actualización: <span id="last-update">hoy, 14:32</span></p>
+    </div>
+  </div>
+  <div class="flex items-center gap-3">
+    <div class="hidden md:flex items-center gap-2 bg-slate-800 border border-slate-700 rounded-lg p-1">
+      <button class="tab-btn active" id="period-semana" onclick="setPeriod('semana')">Semana</button>
+      <button class="tab-btn" id="period-mes" onclick="setPeriod('mes')">Mes</button>
+      <button class="tab-btn" id="period-ano" onclick="setPeriod('ano')">Año</button>
+    </div>
+    <button onclick="toggleTheme()" class="toggle-theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4" id="theme-icon"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <span id="theme-label">Claro</span>
+    </button>
+    <div class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
+    <span class="text-xs text-slate-500">En vivo</span>
+  </div>
+</header>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION: EJECUTIVO -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div id="s-ejecutivo" class="section active p-6">
+  <!-- KPI GRID -->
+  <div class="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-4 gap-4 mb-6">
+    <div class="stat-card glow-blue">
+      <div class="flex justify-between items-start mb-3">
+        <div class="text-xs text-slate-500 font-medium uppercase tracking-wide">Leads Generados</div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" class="w-5 h-5 opacity-60"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <div class="text-3xl font-bold text-white mb-1" id="kpi-leads">247</div>
+      <div class="flex items-center gap-2"><span class="badge badge-up">+18%</span><span class="text-xs text-slate-500">vs período ant.</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="flex justify-between items-start mb-3">
+        <div class="text-xs text-slate-500 font-medium uppercase tracking-wide">Citas Agendadas</div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#a78bfa" stroke-width="2" class="w-5 h-5 opacity-60"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      </div>
+      <div class="text-3xl font-bold text-white mb-1" id="kpi-citas">89</div>
+      <div class="flex items-center gap-2"><span class="badge badge-up">+12%</span><span class="text-xs text-slate-500">vs período ant.</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="flex justify-between items-start mb-3">
+        <div class="text-xs text-slate-500 font-medium uppercase tracking-wide">Ventas Cerradas</div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2" class="w-5 h-5 opacity-60"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <div class="text-3xl font-bold text-white mb-1" id="kpi-ventas">34</div>
+      <div class="flex items-center gap-2"><span class="badge badge-down">-5%</span><span class="text-xs text-slate-500">vs período ant.</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="flex justify-between items-start mb-3">
+        <div class="text-xs text-slate-500 font-medium uppercase tracking-wide">Facturación Total</div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" class="w-5 h-5 opacity-60"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      </div>
+      <div class="text-3xl font-bold text-white mb-1" id="kpi-facturacion">€42.800</div>
+      <div class="flex items-center gap-2"><span class="badge badge-up">+23%</span><span class="text-xs text-slate-500">vs período ant.</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="flex justify-between items-start mb-3">
+        <div class="text-xs text-slate-500 font-medium uppercase tracking-wide">No-Shows</div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2" class="w-5 h-5 opacity-60"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+      </div>
+      <div class="text-3xl font-bold text-white mb-1" id="kpi-noshows">17</div>
+      <div class="flex items-center gap-2"><span class="badge badge-down">+3%</span><span class="text-xs text-slate-500">vs período ant.</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="flex justify-between items-start mb-3">
+        <div class="text-xs text-slate-500 font-medium uppercase tracking-wide">Llamadas</div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2" class="w-5 h-5 opacity-60"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.36 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9A16 16 0 0 0 15 15.91l1.36-1.36a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 23 16.92z"/></svg>
+      </div>
+      <div class="text-3xl font-bold text-white mb-1" id="kpi-llamadas">183</div>
+      <div class="flex items-center gap-2"><span class="badge badge-up">+9%</span><span class="text-xs text-slate-500">vs período ant.</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="flex justify-between items-start mb-3">
+        <div class="text-xs text-slate-500 font-medium uppercase tracking-wide">Ticket Promedio</div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="2" class="w-5 h-5 opacity-60"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+      </div>
+      <div class="text-3xl font-bold text-white mb-1" id="kpi-ticket">€1.259</div>
+      <div class="flex items-center gap-2"><span class="badge badge-up">+7%</span><span class="text-xs text-slate-500">vs período ant.</span></div>
+    </div>
+    <div class="stat-card">
+      <div class="flex justify-between items-start mb-3">
+        <div class="text-xs text-slate-500 font-medium uppercase tracking-wide">Conversión Total</div>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" class="w-5 h-5 opacity-60"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <div class="text-3xl font-bold text-white mb-1" id="kpi-conversion">13.8%</div>
+      <div class="flex items-center gap-2"><span class="badge badge-down">-2%</span><span class="text-xs text-slate-500">vs período ant.</span></div>
+    </div>
+  </div>
+
+  <!-- CHARTS ROW 1 -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
+    <div class="lg:col-span-2 card">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="font-semibold text-white">Evolución de Leads y Ventas</h3>
+        <span class="chip">Últimos 30 días</span>
+      </div>
+      <div id="chart-leads-ventas"></div>
+    </div>
+    <div class="card">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="font-semibold text-white">Conversión por Etapa</h3>
+        <span class="chip">Funnel</span>
+      </div>
+      <div id="chart-conversion-etapa"></div>
+    </div>
+  </div>
+
+  <!-- CHARTS ROW 2 -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-4">
+    <div class="card">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="font-semibold text-white">Fuentes de Leads</h3>
+        <span class="chip">Por canal</span>
+      </div>
+      <div id="chart-fuentes"></div>
+    </div>
+    <div class="lg:col-span-2 card">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="font-semibold text-white">Comparativa Períodos</h3>
+        <span class="chip">Semana / Mes / Año</span>
+      </div>
+      <div id="chart-comparativa"></div>
+    </div>
+  </div>
+
+  <!-- ALERTS -->
+  <div class="card">
+    <div class="flex items-center gap-2 mb-4">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" class="w-5 h-5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      <h3 class="font-semibold text-white">Alertas Comerciales</h3>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+      <div class="bg-red-950/30 border border-red-900/50 rounded-lg p-3">
+        <div class="text-xs font-semibold text-red-400 uppercase tracking-wide mb-1">Crítico</div>
+        <div class="text-sm text-slate-200">17 no-shows esta semana — ratio 19% (límite recomendado: 15%)</div>
+      </div>
+      <div class="bg-amber-950/30 border border-amber-900/50 rounded-lg p-3">
+        <div class="text-xs font-semibold text-amber-400 uppercase tracking-wide mb-1">Atención</div>
+        <div class="text-sm text-slate-200">Caída de conversión Propuesta→Venta: de 48% a 38% este mes</div>
+      </div>
+      <div class="bg-green-950/30 border border-green-900/50 rounded-lg p-3">
+        <div class="text-xs font-semibold text-green-400 uppercase tracking-wide mb-1">Oportunidad</div>
+        <div class="text-sm text-slate-200">Instagram genera 31% más leads que Facebook con 40% menos inversión</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION: EMBUDO -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div id="s-embudo" class="section p-6">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div>
+      <h2 class="text-lg font-bold text-white mb-4">Embudo Comercial Visual</h2>
+      <div class="space-y-2" id="funnel-steps">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+    <div class="card">
+      <h3 class="font-semibold text-white mb-4">Análisis de Pérdidas por Etapa</h3>
+      <div id="chart-funnel-perdidas"></div>
+      <div class="mt-4 p-3 bg-red-950/30 border border-red-900/30 rounded-lg">
+        <div class="flex items-center gap-2 mb-1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2" class="w-4 h-4"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <span class="text-sm font-semibold text-red-400">Mayor pérdida detectada</span>
+        </div>
+        <p class="text-xs text-slate-400">Etapa <strong class="text-slate-200">Cita Agendada → Llamada Realizada</strong>: 28% de abandono. Causa probable: falta de seguimiento post-cita o confirmación débil.</p>
+      </div>
+    </div>
+  </div>
+  <div class="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="card">
+      <div class="text-xs text-slate-500 uppercase tracking-wide mb-2">Tiempo medio de ciclo</div>
+      <div class="text-2xl font-bold text-white">14.3 días</div>
+      <div class="text-xs text-slate-500 mt-1">Lead → Venta cerrada</div>
+      <div class="progress-bar mt-3"><div class="progress-fill bg-brand-500" style="width:57%"></div></div>
+    </div>
+    <div class="card">
+      <div class="text-xs text-slate-500 uppercase tracking-wide mb-2">Leads en pipeline activo</div>
+      <div class="text-2xl font-bold text-white">112</div>
+      <div class="text-xs text-slate-500 mt-1">Valor potencial: €141.000</div>
+      <div class="progress-bar mt-3"><div class="progress-fill bg-purple-500" style="width:45%"></div></div>
+    </div>
+    <div class="card">
+      <div class="text-xs text-slate-500 uppercase tracking-wide mb-2">Tasa de cierre global</div>
+      <div class="text-2xl font-bold text-white">13.8%</div>
+      <div class="text-xs text-slate-500 mt-1">Industry benchmark: 18%</div>
+      <div class="progress-bar mt-3"><div class="progress-fill bg-amber-500" style="width:77%"></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION: VENTAS -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div id="s-ventas" class="section p-6">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Esta semana</div><div class="text-2xl font-bold text-white">€9.420</div><span class="badge badge-up">+14%</span></div>
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Este mes</div><div class="text-2xl font-bold text-white">€42.800</div><span class="badge badge-up">+23%</span></div>
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Este año</div><div class="text-2xl font-bold text-white">€318.500</div><span class="badge badge-up">+31%</span></div>
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Ticket prom.</div><div class="text-2xl font-bold text-white">€1.259</div><span class="badge badge-up">+7%</span></div>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+    <div class="card">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="font-semibold text-white">Ventas por Día</h3>
+        <span class="chip">Últimas 4 semanas</span>
+      </div>
+      <div id="chart-ventas-dia"></div>
+    </div>
+    <div class="card">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="font-semibold text-white">Facturación Acumulada</h3>
+        <span class="chip">Año actual</span>
+      </div>
+      <div id="chart-facturacion-acum"></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="flex items-center justify-between mb-4">
+      <h3 class="font-semibold text-white">Desglose por Servicio</h3>
+      <span class="chip">Ingresos por producto</span>
+    </div>
+    <div id="chart-servicios"></div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION: CAMPAÑAS -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div id="s-campanas" class="section p-6">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+    <div class="card">
+      <h3 class="font-semibold text-white mb-4">Rendimiento por Canal</h3>
+      <div id="chart-campanas-canal"></div>
+    </div>
+    <div class="card">
+      <h3 class="font-semibold text-white mb-4">ROI por Campaña</h3>
+      <div id="chart-roi"></div>
+    </div>
+  </div>
+  <div class="card mb-4">
+    <h3 class="font-semibold text-white mb-4">Tabla Comparativa de Campañas</h3>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-slate-800">
+            <th class="text-left py-2 px-3 text-slate-400 font-medium">Canal</th>
+            <th class="text-right py-2 px-3 text-slate-400 font-medium">Leads</th>
+            <th class="text-right py-2 px-3 text-slate-400 font-medium">Citas</th>
+            <th class="text-right py-2 px-3 text-slate-400 font-medium">Ventas</th>
+            <th class="text-right py-2 px-3 text-slate-400 font-medium">Conv. %</th>
+            <th class="text-right py-2 px-3 text-slate-400 font-medium">CPL</th>
+            <th class="text-right py-2 px-3 text-slate-400 font-medium">ROI</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-campanas">
+          <!-- Rendered by JS -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION: VENDEDORES -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div id="s-vendedores" class="section p-6">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6">
+    <div class="lg:col-span-2 card">
+      <h3 class="font-semibold text-white mb-4">Ranking de Vendedores</h3>
+      <div id="ranking-vendedores"></div>
+    </div>
+    <div class="card">
+      <h3 class="font-semibold text-white mb-4">Facturación por Vendedor</h3>
+      <div id="chart-vendedores-facturacion"></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3 class="font-semibold text-white mb-4">Métricas Detalladas</h3>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-slate-800">
+            <th class="text-left py-2 px-3 text-slate-400 font-medium">Vendedor</th>
+            <th class="text-right py-2 px-3 text-slate-400 font-medium">Llamadas</th>
+            <th class="text-right py-2 px-3 text-slate-400 font-medium">T.Prom.</th>
+            <th class="text-right py-2 px-3 text-slate-400 font-medium">Ventas</th>
+            <th class="text-right py-2 px-3 text-slate-400 font-medium">Conv.%</th>
+            <th class="text-right py-2 px-3 text-slate-400 font-medium">Facturación</th>
+            <th class="text-right py-2 px-3 text-slate-400 font-medium">Asistencia%</th>
+          </tr>
+        </thead>
+        <tbody id="tabla-vendedores"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION: LLAMADAS -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div id="s-llamadas" class="section p-6">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Total Llamadas</div><div class="text-2xl font-bold text-white">183</div><span class="badge badge-up">+9%</span></div>
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Duración Prom.</div><div class="text-2xl font-bold text-white">24.3 min</div><span class="badge badge-up">+3 min</span></div>
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Prob. Cierre Prom.</div><div class="text-2xl font-bold text-white">62%</div><span class="badge badge-neutral">estable</span></div>
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Interés Alto</div><div class="text-2xl font-bold text-white">47%</div><span class="badge badge-up">+5%</span></div>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+    <div class="card">
+      <h3 class="font-semibold text-white mb-4">Principales Objeciones</h3>
+      <div id="chart-objeciones"></div>
+    </div>
+    <div class="card">
+      <h3 class="font-semibold text-white mb-4">Nivel de Interés por Llamada</h3>
+      <div id="chart-interes"></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3 class="font-semibold text-white mb-4">Motivos de Pérdida</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3" id="motivos-perdida">
+      <!-- Rendered by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION: IA -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div id="s-ia" class="section p-6">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+    <div class="lg:col-span-2">
+      <div class="ai-chat">
+        <div class="flex items-center gap-3 pb-4 border-b border-slate-800 mb-4">
+          <div class="w-8 h-8 rounded-full bg-gradient-to-br from-purple-600 to-brand-500 flex items-center justify-center">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" class="w-4 h-4"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z"/></svg>
+          </div>
+          <div>
+            <div class="font-semibold text-white text-sm">GOTIR AI Analyst</div>
+            <div class="text-xs text-green-400 flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-green-400 inline-block"></span> Activo · Conectado a GHL</div>
+          </div>
+        </div>
+        <div class="ai-messages" id="ai-messages">
+          <div class="msg-ai">
+            Hola, soy el asistente de análisis comercial de GOTIR. Tengo acceso a todos tus datos de GoHighLevel.<br><br>
+            Puedo analizar tendencias, identificar problemas y recomendar acciones concretas. ¿Qué quieres saber?
+          </div>
+        </div>
+        <div class="ai-input-row">
+          <input class="ai-input" id="ai-input" placeholder="Ej: ¿Por qué bajaron las ventas este mes?" onkeydown="if(event.key==='Enter')sendAI()"/>
+          <button class="ai-send" onclick="sendAI()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Enviar
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col gap-4">
+      <div class="card">
+        <h3 class="font-semibold text-white mb-3 text-sm">Preguntas Sugeridas</h3>
+        <div class="flex flex-col gap-2" id="ai-suggestions">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+      <div class="card">
+        <h3 class="font-semibold text-white mb-3 text-sm">Insights Automáticos</h3>
+        <div class="flex flex-col gap-3" id="ai-insights">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div><!-- end main-content -->
+
+<script>
+// ═══════════════════════════════════════
+// DATA LAYER (simulating GHL API data)
+// ═══════════════════════════════════════
+const DATA = {
+  period: 'semana',
+  kpis: {
+    semana: { leads:247, citas:89, ventas:34, facturacion:'€42.800', noshows:17, llamadas:183, ticket:'€1.259', conversion:'13.8%' },
+    mes:    { leads:891, citas:312, ventas:118, facturacion:'€148.600', noshows:61, llamadas:643, ticket:'€1.259', conversion:'13.2%' },
+    ano:    { leads:7840, citas:2680, ventas:1029, facturacion:'€1.295.000', noshows:496, llamadas:5230, ticket:'€1.258', conversion:'13.1%' }
+  },
+  funnel: [
+    { label:'Lead generado', value:247, color:'#3b82f6' },
+    { label:'Contactado', value:198, color:'#6366f1' },
+    { label:'Cita agendada', value:89, color:'#a78bfa' },
+    { label:'Llamada realizada', value:64, color:'#c084fc' },
+    { label:'Propuesta enviada', value:48, color:'#f59e0b' },
+    { label:'Venta cerrada', value:34, color:'#4ade80' }
+  ],
+  vendedores: [
+    { nombre:'María García', llamadas:62, tiempo:'28 min', ventas:14, conv:'22.5%', facturacion:'€17.650', asistencia:'91%' },
+    { nombre:'Carlos López', llamadas:55, tiempo:'22 min', ventas:11, conv:'20.0%', facturacion:'€13.860', asistencia:'87%' },
+    { nombre:'Ana Martínez', llamadas:41, tiempo:'26 min', ventas:7, conv:'17.0%', facturacion:'€8.820', asistencia:'83%' },
+    { nombre:'Pedro Sánchez', llamadas:25, tiempo:'18 min', ventas:2, conv:'8.0%', facturacion:'€2.520', asistencia:'76%' }
+  ],
+  campanas: [
+    { canal:'Facebook', leads:82, citas:28, ventas:10, conv:'12.2%', cpl:'€18', roi:'340%', color:'#1877f2' },
+    { canal:'Instagram', leads:94, citas:38, ventas:14, conv:'14.9%', cpl:'€11', roi:'520%', color:'#e1306c' },
+    { canal:'Referidos', leads:41, citas:18, ventas:8, conv:'19.5%', cpl:'€0', roi:'∞', color:'#4ade80' },
+    { canal:'YouTube', leads:18, citas:6, ventas:1, conv:'5.6%', cpl:'€32', roi:'95%', color:'#ff0000' },
+    { canal:'Eventos', leads:9, citas:5, ventas:1, conv:'11.1%', cpl:'€45', roi:'110%', color:'#f59e0b' },
+    { canal:'Otros', leads:3, citas:1, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#94a3b8' }
+  ],
+  motivos_perdida: [
+    { motivo:'Precio muy alto', pct:34, color:'#f87171' },
+    { motivo:'No confía / no le da urgencia', pct:22, color:'#fb923c' },
+    { motivo:'Necesita consultarlo', pct:18, color:'#fbbf24' },
+    { motivo:'Ya tiene asesor', pct:13, color:'#a78bfa' },
+    { motivo:'Situación personal', pct:8, color:'#60a5fa' },
+    { motivo:'Sin motivo claro', pct:5, color:'#94a3b8' }
+  ],
+  ai_suggestions: [
+    '¿Por qué bajaron las ventas este mes?',
+    '¿Qué campaña convierte mejor?',
+    '¿Qué vendedor obtiene mejores resultados?',
+    '¿Cuál es la principal objeción de los clientes?',
+    '¿Dónde se pierde más dinero?',
+    '¿Qué acciones mejorarían las ventas ahora?'
+  ],
+  ai_responses: {
+    '¿Por qué bajaron las ventas este mes?': `📉 **Análisis de caída en ventas:**\n\nLas ventas bajaron un 5% esta semana vs la anterior. Los datos apuntan a 3 causas:\n\n1. **No-shows en aumento**: 17 no-shows (ratio 19%) cuando el límite saludable es 15%. Cada no-show representa €1.259 de ingreso potencial perdido → **€21.400 de impacto mensual**.\n\n2. **Caída en conversión Propuesta→Cierre**: bajó de 48% a 38%. Carlos López y Pedro Sánchez tienen las tasas más bajas. Necesitan acompañamiento en el cierre.\n\n3. **Reducción de leads de referidos**: -23% vs mes anterior. Los referidos tienen una conversión del 19.5% (la más alta), lo que amplifica el impacto.\n\n**Acción inmediata recomendada**: Implementar confirmación de citas con recordatorio doble (24h y 2h antes) y activar incentivo de referidos.`,
+    '¿Qué campaña convierte mejor?': `🎯 **Ranking de campañas por conversión real:**\n\n1. 🥇 **Referidos** — 19.5% conversión, CPL €0, ROI infinito. Es el canal más valioso. Actualmente sin programa activo.\n\n2. 🥈 **Instagram** — 14.9% conversión, ROI 520%. Mejor ROI pagado con €11 por lead.\n\n3. 🥉 **Facebook** — 12.2% conversión, ROI 340%. Más volumen pero menor calidad que Instagram.\n\n⚠️ **Alerta**: YouTube genera leads de baja calidad (5.6% conversión, €32 CPL). Se recomienda pausar o reformular el contenido.\n\n**Recomendación**: Aumentar presupuesto en Instagram 30% y crear programa formal de referidos con incentivo de €50–100.`,
+    '¿Qué vendedor obtiene mejores resultados?': `👥 **Ranking de rendimiento:**\n\n1. 🥇 **María García** — 22.5% conversión, €17.650 facturación, 91% asistencia. Top performer en todos los métricas.\n\n2. 🥈 **Carlos López** — 20% conversión, €13.860. Buen volumen de llamadas pero duración media baja (22 min).\n\n3. ⚠️ **Pedro Sánchez** — 8% conversión, solo €2.520. Las llamadas son cortas (18 min) y el ratio de asistencia (76%) sugiere falta de calificación previa.\n\n**Acción**: María debería hacer role-play con Pedro. El gap entre el mejor y el peor es de 14.5 puntos de conversión → si Pedro llega al 15%, generaría €5.000+ adicionales al mes.`,
+    '¿Cuál es la principal objeción de los clientes?': `💬 **Análisis de objeciones (183 llamadas):**\n\nEl **precio** es la objeción #1 con 34% de las pérdidas, pero los datos sugieren que es una objeción de cobertura, no real:\n\n- Los clientes de referidos (que conocen el precio de antemano) tienen 19.5% de conversión\n- El ticket promedio de €1.259 es competitivo en el mercado\n\nLa objeción real es la **falta de urgencia y confianza** (22% combinado). Los leads no entienden el riesgo de gestionar solos la visado o no tienen fecha límite clara.\n\n**Recomendación**: Crear un guión que enfatice los riesgos de no actuar (rechazo de visado, pérdida de plaza, costes de error) antes de hablar de precio.`,
+    '¿Dónde se pierde más dinero?': `💸 **Análisis de pérdidas económicas:**\n\n1. **No-shows**: 17 × €1.259 = **€21.400/mes** en oportunidades perdidas\n2. **Pedro Sánchez**: con conversión del 8% vs media 13.8%, pierde ~€7.000/mes potenciales\n3. **YouTube**: €32 CPL × bajo ROI = €576/mes invertidos con retorno negativo\n4. **Pipeline sin seguimiento**: 112 leads activos sin cierre = €141.000 potenciales\n\nTotal dinero en riesgo identificado: **~€170.000** en el pipeline actual.\n\n**Prioridad 1**: Reducir no-shows (impacto inmediato, coste cero)\n**Prioridad 2**: Coaching a Pedro Sánchez\n**Prioridad 3**: Activar seguimiento automático del pipeline`,
+    '¿Qué acciones mejorarían las ventas ahora?': `🚀 **Plan de acción inmediato (30 días):**\n\n**Semana 1 (impacto: +€8.000)**\n• Implementar confirmación de cita por WhatsApp 24h+2h antes\n• Crear secuencia de recordatorio automático en GHL\n\n**Semana 2 (impacto: +€5.000)**\n• Role-play de cierre con Pedro Sánchez (guión de María García)\n• Pausar YouTube, mover €576 a Instagram\n\n**Semana 3 (impacto: +€12.000)**\n• Lanzar programa de referidos: €75 por referido cerrado\n• Email/WhatsApp a los 34 clientes de este mes\n\n**Semana 4 (impacto: +€6.000)**\n• Trabajar los 112 leads del pipeline con seguimiento personalizado\n• Crear caso de urgencia en guión (fechas límite, riesgos)\n\n**Impacto total proyectado: +€31.000 adicionales/mes**`
+  }
+};
+
+// ═══════════════════════════════════════
+// NAVIGATION
+// ═══════════════════════════════════════
+const sectionTitles = {
+  ejecutivo:'Dashboard Ejecutivo', embudo:'Embudo Comercial',
+  ventas:'Dashboard de Ventas', campanas:'Campañas y Fuentes',
+  vendedores:'Rendimiento por Vendedor', llamadas:'Análisis de Llamadas', ia:'Análisis con Inteligencia Artificial'
+};
+
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('s-'+id).classList.add('active');
+  document.querySelectorAll('.nav-item').forEach(n => {
+    if(n.getAttribute('onclick') && n.getAttribute('onclick').includes("'"+id+"'")) n.classList.add('active');
+  });
+  document.getElementById('page-title').textContent = sectionTitles[id] || id;
+  setTimeout(()=>initChartsForSection(id), 50);
+}
+
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+}
+
+// ═══════════════════════════════════════
+// THEME
+// ═══════════════════════════════════════
+let isDark = true;
+function toggleTheme() {
+  isDark = !isDark;
+  document.documentElement.classList.toggle('dark', isDark);
+  document.body.style.background = isDark ? '#0a0f1e' : '#f1f5f9';
+  document.body.style.color = isDark ? '#e2e8f0' : '#1e293b';
+  document.getElementById('theme-label').textContent = isDark ? 'Claro' : 'Oscuro';
+}
+
+// ═══════════════════════════════════════
+// PERIOD
+// ═══════════════════════════════════════
+function setPeriod(p) {
+  DATA.period = p;
+  document.querySelectorAll('[id^=period-]').forEach(b => b.classList.remove('active'));
+  document.getElementById('period-'+p).classList.add('active');
+  const d = DATA.kpis[p];
+  document.getElementById('kpi-leads').textContent = d.leads;
+  document.getElementById('kpi-citas').textContent = d.citas;
+  document.getElementById('kpi-ventas').textContent = d.ventas;
+  document.getElementById('kpi-facturacion').textContent = d.facturacion;
+  document.getElementById('kpi-noshows').textContent = d.noshows;
+  document.getElementById('kpi-llamadas').textContent = d.llamadas;
+  document.getElementById('kpi-ticket').textContent = d.ticket;
+  document.getElementById('kpi-conversion').textContent = d.conversion;
+}
+
+// ═══════════════════════════════════════
+// CHART REGISTRY
+// ═══════════════════════════════════════
+const charts = {};
+function initChart(id, opts) {
+  if(charts[id]) { try{ charts[id].destroy(); }catch(e){} }
+  const el = document.getElementById(id);
+  if(!el) return;
+  charts[id] = new ApexCharts(el, opts);
+  charts[id].render();
+}
+
+const darkOpts = {
+  theme: { mode:'dark' },
+  chart: { background:'transparent', toolbar:{ show:false }, fontFamily:'Fira Sans, sans-serif' },
+  grid: { borderColor:'#1e293b', strokeDashArray:3 },
+  tooltip: { theme:'dark' }
+};
+
+function mkOpts(o) {
+  return {
+    ...darkOpts,
+    chart: { ...darkOpts.chart, ...(o.chart||{}) },
+    ...o
+  };
+}
+
+// ═══════════════════════════════════════
+// CHARTS: EJECUTIVO
+// ═══════════════════════════════════════
+function initEjecutivo() {
+  const days = ['1 Jun','3 Jun','5 Jun','7 Jun','9 Jun','11 Jun','13 Jun','15 Jun','17 Jun','19 Jun','21 Jun','23 Jun'];
+  initChart('chart-leads-ventas', mkOpts({
+    chart:{ type:'area', height:220, animations:{ enabled:true, easing:'easeinout', speed:600 } },
+    series:[
+      { name:'Leads', data:[18,24,19,28,31,22,26,33,27,35,29,38] },
+      { name:'Ventas', data:[2,3,2,4,3,2,4,5,3,4,3,5] }
+    ],
+    xaxis:{ categories:days, labels:{ style:{ colors:'#64748b', fontSize:'11px' } } },
+    yaxis:{ labels:{ style:{ colors:'#64748b' } } },
+    colors:['#3b82f6','#4ade80'],
+    fill:{ type:'gradient', gradient:{ shadeIntensity:1, opacityFrom:.4, opacityTo:.05, stops:[0,90,100] } },
+    stroke:{ curve:'smooth', width:2 },
+    legend:{ labels:{ colors:'#94a3b8' } }
+  }));
+
+  initChart('chart-conversion-etapa', mkOpts({
+    chart:{ type:'bar', height:220, },
+    series:[{ name:'Conversión %', data:[80,44,72,75,71,71] }],
+    xaxis:{ categories:['Lead→Cont','Cont→Cita','Cita→Llam','Llam→Prop','Prop→Venta','Global'], labels:{ style:{ colors:'#64748b', fontSize:'10px' } } },
+    yaxis:{ labels:{ style:{ colors:'#64748b' } }, max:100 },
+    colors:['#6366f1'],
+    plotOptions:{ bar:{ borderRadius:4, distributed:true } },
+    colors:['#3b82f6','#6366f1','#a78bfa','#c084fc','#f59e0b','#4ade80'],
+    legend:{ show:false }
+  }));
+
+  initChart('chart-fuentes', mkOpts({
+    chart:{ type:'donut', height:220 },
+    series:[94,82,41,18,9,3],
+    labels:['Instagram','Facebook','Referidos','YouTube','Eventos','Otros'],
+    colors:['#e1306c','#1877f2','#4ade80','#ff0000','#f59e0b','#94a3b8'],
+    legend:{ position:'bottom', labels:{ colors:'#94a3b8' } },
+    plotOptions:{ pie:{ donut:{ size:'65%' } } }
+  }));
+
+  initChart('chart-comparativa', mkOpts({
+    chart:{ type:'bar', height:220 },
+    series:[
+      { name:'Período anterior', data:[210, 756, 7120, 32600, 148200, 1172000] },
+      { name:'Período actual',   data:[247, 891, 7840, 42800, 148600, 1295000] }
+    ],
+    xaxis:{ categories:['Leads/S','Leads/M','Leads/A','Ventas/S €','Ventas/M €','Ventas/A €'], labels:{ style:{ colors:'#64748b', fontSize:'10px' } } },
+    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v => v>=1000?'€'+(v/1000).toFixed(0)+'k':v } },
+    colors:['#334155','#3b82f6'],
+    plotOptions:{ bar:{ borderRadius:3, columnWidth:'60%' } },
+    legend:{ labels:{ colors:'#94a3b8' } }
+  }));
+}
+
+// ═══════════════════════════════════════
+// CHARTS: EMBUDO
+// ═══════════════════════════════════════
+function initEmbudo() {
+  const f = DATA.funnel;
+  const container = document.getElementById('funnel-steps');
+  container.innerHTML = '';
+  f.forEach((step, i) => {
+    const pct = i===0 ? 100 : Math.round(step.value/f[0].value*100);
+    const loss = i>0 ? Math.round((f[i-1].value - step.value)/f[i-1].value*100) : 0;
+    const width = 100 - (i*10);
+    container.innerHTML += `
+      <div class="funnel-step" style="border-left:3px solid ${step.color}; margin-left:${i*8}px; margin-right:${i*8}px">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white" style="background:${step.color}">${i+1}</div>
+            <div>
+              <div class="font-semibold text-sm text-white">${step.label}</div>
+              <div class="text-xs text-slate-500">${pct}% del total</div>
+            </div>
+          </div>
+          <div class="text-right">
+            <div class="text-xl font-bold text-white">${step.value}</div>
+            ${i>0?`<div class="text-xs text-red-400">-${loss}% pérdida</div>`:'<div class="text-xs text-green-400">Entrada</div>'}
+          </div>
+        </div>
+        <div class="progress-bar mt-2"><div class="progress-fill" style="width:${pct}%;background:${step.color}"></div></div>
+      </div>
+      ${i<f.length-1?'<div class="funnel-arrow">↓</div>':''}
+    `;
+  });
+
+  const losses = f.slice(1).map((s,i) => Math.round((f[i].value-s.value)/f[i].value*100));
+  const labels = ['Cont.→Cita','Cita→Llam','Llam→Prop','Prop→Venta'].map((_,i)=>`${f[i+1].label}`);
+  initChart('chart-funnel-perdidas', mkOpts({
+    chart:{ type:'bar', height:220 },
+    series:[{ name:'% Pérdida', data:[20,28,25,29] }],
+    xaxis:{ categories:['Lead→Cont.','Cont.→Cita','Cita→Llam.','Prop.→Venta'], labels:{ style:{ colors:'#64748b', fontSize:'11px' } } },
+    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>v+'%' }, max:50 },
+    colors:['#f87171'],
+    plotOptions:{ bar:{ borderRadius:4 } },
+    legend:{ show:false }
+  }));
+}
+
+// ═══════════════════════════════════════
+// CHARTS: VENTAS
+// ═══════════════════════════════════════
+function initVentas() {
+  initChart('chart-ventas-dia', mkOpts({
+    chart:{ type:'bar', height:220 },
+    series:[{ name:'Ventas €', data:[1200,980,1450,800,1680,2100,1380,950,1720,2400,1100,1850,1400,2800,1620,980,2100,1750,1300,2650,1480,900,2200,1900,1600,2380,1100,2700] }],
+    xaxis:{ categories:Array.from({length:28},(_,i)=>i+1+''), labels:{ style:{ colors:'#64748b', fontSize:'10px' } } },
+    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>'€'+v } },
+    colors:['#3b82f6'],
+    plotOptions:{ bar:{ borderRadius:3 } }
+  }));
+
+  const months = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+  const cum = [78000,142000,201000,268000,319000,0,0,0,0,0,0,0];
+  initChart('chart-facturacion-acum', mkOpts({
+    chart:{ type:'area', height:220 },
+    series:[{ name:'Facturación acum.', data:[78000,142000,201000,268000,319000,null,null,null,null,null,null,null] }],
+    xaxis:{ categories:months, labels:{ style:{ colors:'#64748b' } } },
+    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>v?'€'+(v/1000).toFixed(0)+'k':'' } },
+    colors:['#f59e0b'],
+    fill:{ type:'gradient', gradient:{ opacityFrom:.4, opacityTo:.05 } },
+    stroke:{ curve:'smooth', width:2 }
+  }));
+
+  initChart('chart-servicios', mkOpts({
+    chart:{ type:'bar', height:200, stacked:false },
+    series:[{ name:'Facturación €', data:[18400,14200,6800,3400] }],
+    xaxis:{ categories:['Visados Estudios','Renovaciones','Reagrupación Familiar','Modificación Residencia'], labels:{ style:{ colors:'#64748b', fontSize:'11px' } } },
+    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>'€'+v } },
+    colors:['#3b82f6','#6366f1','#a78bfa','#f59e0b'],
+    plotOptions:{ bar:{ borderRadius:4, distributed:true, horizontal:true } },
+    legend:{ show:false }
+  }));
+}
+
+// ═══════════════════════════════════════
+// CHARTS: CAMPAÑAS
+// ═══════════════════════════════════════
+function initCampanas() {
+  const c = DATA.campanas;
+  initChart('chart-campanas-canal', mkOpts({
+    chart:{ type:'bar', height:280 },
+    series:[
+      { name:'Leads', data:c.map(x=>x.leads) },
+      { name:'Citas', data:c.map(x=>x.citas) },
+      { name:'Ventas', data:c.map(x=>x.ventas) }
+    ],
+    xaxis:{ categories:c.map(x=>x.canal), labels:{ style:{ colors:'#64748b' } } },
+    yaxis:{ labels:{ style:{ colors:'#64748b' } } },
+    colors:['#3b82f6','#a78bfa','#4ade80'],
+    plotOptions:{ bar:{ borderRadius:3, columnWidth:'70%' } },
+    legend:{ labels:{ colors:'#94a3b8' } }
+  }));
+
+  initChart('chart-roi', mkOpts({
+    chart:{ type:'radar', height:280 },
+    series:[{ name:'Conversión %', data:[12.2,14.9,19.5,5.6,11.1,0] }],
+    xaxis:{ categories:c.map(x=>x.canal), labels:{ style:{ colors:'#94a3b8', fontSize:'12px' } } },
+    yaxis:{ show:false },
+    colors:['#f59e0b'],
+    fill:{ opacity:.3 },
+    stroke:{ width:2 }
+  }));
+
+  const tbody = document.getElementById('tabla-campanas');
+  tbody.innerHTML = c.map(x=>`
+    <tr class="border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
+      <td class="py-3 px-3"><div class="flex items-center gap-2"><div class="w-2.5 h-2.5 rounded-full" style="background:${x.color}"></div><span class="text-slate-200 font-medium">${x.canal}</span></div></td>
+      <td class="py-3 px-3 text-right text-slate-300">${x.leads}</td>
+      <td class="py-3 px-3 text-right text-slate-300">${x.citas}</td>
+      <td class="py-3 px-3 text-right text-slate-300">${x.ventas}</td>
+      <td class="py-3 px-3 text-right"><span class="badge ${parseFloat(x.conv)>15?'badge-up':parseFloat(x.conv)>10?'badge-neutral':'badge-down'}">${x.conv}</span></td>
+      <td class="py-3 px-3 text-right text-slate-400">${x.cpl}</td>
+      <td class="py-3 px-3 text-right"><span class="font-semibold ${x.roi==='∞'?'text-green-400':parseFloat(x.roi)>300?'text-green-400':parseFloat(x.roi)>100?'text-amber-400':'text-red-400'}">${x.roi}</span></td>
+    </tr>
+  `).join('');
+}
+
+// ═══════════════════════════════════════
+// CHARTS: VENDEDORES
+// ═══════════════════════════════════════
+function initVendedores() {
+  const v = DATA.vendedores;
+  const rankClasses = ['rank-1','rank-2','rank-3','rank-other'];
+  const rankEl = document.getElementById('ranking-vendedores');
+  rankEl.innerHTML = v.map((vend,i)=>`
+    <div class="ranking-row">
+      <div class="rank-num ${rankClasses[i]||'rank-other'}">${i+1}</div>
+      <div class="flex-1 min-w-0">
+        <div class="font-semibold text-sm text-white">${vend.nombre}</div>
+        <div class="text-xs text-slate-500">${vend.llamadas} llamadas · ${vend.tiempo} prom.</div>
+      </div>
+      <div class="text-right">
+        <div class="font-bold text-white text-sm">${vend.facturacion}</div>
+        <div class="text-xs text-slate-500">${vend.ventas} ventas</div>
+      </div>
+      <div class="hidden md:block text-right">
+        <span class="badge ${parseFloat(vend.conv)>20?'badge-up':parseFloat(vend.conv)>15?'badge-neutral':'badge-down'}">${vend.conv}</span>
+      </div>
+    </div>
+  `).join('');
+
+  initChart('chart-vendedores-facturacion', mkOpts({
+    chart:{ type:'bar', height:280 },
+    series:[{ name:'Facturación €', data:v.map(x=>parseFloat(x.facturacion.replace(/[€.]/g,''))) }],
+    xaxis:{ categories:v.map(x=>x.nombre.split(' ')[0]), labels:{ style:{ colors:'#64748b' } } },
+    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:val=>'€'+(val/1000).toFixed(1)+'k' } },
+    colors:['#f59e0b','#94a3b8','#cd7f32','#334155'],
+    plotOptions:{ bar:{ borderRadius:4, distributed:true } },
+    legend:{ show:false }
+  }));
+
+  const tbody2 = document.getElementById('tabla-vendedores');
+  tbody2.innerHTML = v.map(x=>`
+    <tr class="border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
+      <td class="py-3 px-3 font-medium text-slate-200">${x.nombre}</td>
+      <td class="py-3 px-3 text-right text-slate-300">${x.llamadas}</td>
+      <td class="py-3 px-3 text-right text-slate-300">${x.tiempo}</td>
+      <td class="py-3 px-3 text-right text-slate-300">${x.ventas}</td>
+      <td class="py-3 px-3 text-right"><span class="badge ${parseFloat(x.conv)>20?'badge-up':parseFloat(x.conv)>15?'badge-neutral':'badge-down'}">${x.conv}</span></td>
+      <td class="py-3 px-3 text-right font-semibold text-white">${x.facturacion}</td>
+      <td class="py-3 px-3 text-right"><span class="badge ${parseFloat(x.asistencia)>90?'badge-up':parseFloat(x.asistencia)>80?'badge-neutral':'badge-down'}">${x.asistencia}</span></td>
+    </tr>
+  `).join('');
+}
+
+// ═══════════════════════════════════════
+// CHARTS: LLAMADAS
+// ═══════════════════════════════════════
+function initLlamadas() {
+  initChart('chart-objeciones', mkOpts({
+    chart:{ type:'bar', height:250 },
+    series:[{ name:'% de llamadas', data:[34,22,18,13,8,5] }],
+    xaxis:{ categories:['Precio','Sin urgencia','Consultarlo','Ya tiene asesor','Personal','Sin motivo'], labels:{ style:{ colors:'#64748b', fontSize:'10px' } } },
+    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>v+'%' }, max:50 },
+    colors:['#f87171','#fb923c','#fbbf24','#a78bfa','#60a5fa','#94a3b8'],
+    plotOptions:{ bar:{ borderRadius:4, distributed:true, horizontal:true } },
+    legend:{ show:false }
+  }));
+
+  initChart('chart-interes', mkOpts({
+    chart:{ type:'donut', height:250 },
+    series:[47,31,22],
+    labels:['Alto interés','Interés medio','Bajo interés'],
+    colors:['#4ade80','#f59e0b','#f87171'],
+    legend:{ position:'bottom', labels:{ colors:'#94a3b8' } },
+    plotOptions:{ pie:{ donut:{ size:'60%' } } }
+  }));
+
+  const mp = document.getElementById('motivos-perdida');
+  mp.innerHTML = DATA.motivos_perdida.map(m=>`
+    <div class="bg-slate-800/50 border border-slate-700/50 rounded-lg p-4">
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-sm font-medium text-slate-200">${m.motivo}</span>
+        <span class="text-lg font-bold text-white">${m.pct}%</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" style="width:${m.pct*2}%;background:${m.color}"></div></div>
+    </div>
+  `).join('');
+}
+
+// ═══════════════════════════════════════
+// AI MODULE
+// ═══════════════════════════════════════
+function initIA() {
+  const sugg = document.getElementById('ai-suggestions');
+  sugg.innerHTML = DATA.ai_suggestions.map(q=>`
+    <button class="text-left text-xs text-slate-400 bg-slate-800 hover:bg-slate-700 border border-slate-700 hover:border-brand-600 rounded-lg p-2.5 transition-all cursor-pointer" onclick="askAI(${JSON.stringify(q)})">${q}</button>
+  `).join('');
+
+  const insights = document.getElementById('ai-insights');
+  insights.innerHTML = `
+    <div class="flex gap-2 text-xs">
+      <div class="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5 flex-shrink-0"></div>
+      <span class="text-slate-400">No-shows en 19% — <strong class="text-slate-200">3 puntos sobre el límite</strong></span>
+    </div>
+    <div class="flex gap-2 text-xs">
+      <div class="w-1.5 h-1.5 rounded-full bg-green-400 mt-1.5 flex-shrink-0"></div>
+      <span class="text-slate-400">Instagram ROI 520% — <strong class="text-slate-200">mejor canal pagado</strong></span>
+    </div>
+    <div class="flex gap-2 text-xs">
+      <div class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 flex-shrink-0"></div>
+      <span class="text-slate-400">Pipeline €141k sin trabajar — <strong class="text-slate-200">actuar esta semana</strong></span>
+    </div>
+    <div class="flex gap-2 text-xs">
+      <div class="w-1.5 h-1.5 rounded-full bg-blue-400 mt-1.5 flex-shrink-0"></div>
+      <span class="text-slate-400">María García 22.5% conv. — <strong class="text-slate-200">replicar su guión</strong></span>
+    </div>
+  `;
+}
+
+function askAI(q) {
+  document.getElementById('ai-input').value = q;
+  sendAI();
+}
+
+function sendAI() {
+  const input = document.getElementById('ai-input');
+  const q = input.value.trim();
+  if(!q) return;
+  const msgs = document.getElementById('ai-messages');
+
+  msgs.innerHTML += `<div class="msg-user">${q}</div>`;
+  input.value = '';
+
+  const loading = document.createElement('div');
+  loading.className = 'msg-ai';
+  loading.innerHTML = '<span class="loading-dot"></span> Analizando datos de GHL...';
+  msgs.appendChild(loading);
+  msgs.scrollTop = msgs.scrollHeight;
+
+  setTimeout(()=>{
+    const resp = DATA.ai_responses[q] ||
+      `📊 **Análisis basado en tus datos de GoHighLevel:**\n\nHe analizado tu pregunta "${q}" con los datos actuales de GOTIR.\n\nEn base a los patrones detectados: tienes 247 leads activos, conversión del 13.8%, y €42.800 en facturación este período. Para obtener un análisis más preciso sobre este punto específico, recomiendo conectar el módulo de notas de llamadas (Fathom/Fireflies) para cruzar datos cualitativos con los cuantitativos.\n\n**Dato relevante**: Tu ciclo de venta promedio es 14.3 días — cualquier acción que tomes hoy impacta los resultados en 2 semanas.`;
+
+    loading.innerHTML = resp.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\n/g,'<br>');
+    msgs.scrollTop = msgs.scrollHeight;
+  }, 1400);
+}
+
+// ═══════════════════════════════════════
+// PDF GENERATION
+// ═══════════════════════════════════════
+function generatePDF() {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ orientation:'portrait', unit:'mm', format:'a4' });
+
+  // Header
+  doc.setFillColor(30,64,175);
+  doc.rect(0,0,210,40,'F');
+  doc.setTextColor(255,255,255);
+  doc.setFontSize(24);
+  doc.setFont('helvetica','bold');
+  doc.text('GOTIR',20,20);
+  doc.setFontSize(11);
+  doc.setFont('helvetica','normal');
+  doc.text('Business Intelligence Report',20,29);
+  doc.setFontSize(10);
+  doc.text(`Generado: ${new Date().toLocaleDateString('es-ES',{day:'2-digit',month:'long',year:'numeric'})}`,20,37);
+
+  let y = 55;
+  doc.setTextColor(30,41,59);
+  doc.setFontSize(14);
+  doc.setFont('helvetica','bold');
+  doc.text('Resumen Ejecutivo',20,y);
+  y += 8;
+
+  doc.setFontSize(10);
+  doc.setFont('helvetica','normal');
+  doc.setTextColor(71,85,105);
+  const summary = `Este informe presenta el análisis completo de la actividad comercial de GOTIR para el período actual. Los datos han sido extraídos y procesados automáticamente desde GoHighLevel.`;
+  const lines = doc.splitTextToSize(summary,170);
+  doc.text(lines,20,y);
+  y += lines.length*5 + 8;
+
+  // KPIs
+  doc.setFontSize(12);
+  doc.setFont('helvetica','bold');
+  doc.setTextColor(30,41,59);
+  doc.text('Métricas Clave del Período',20,y);
+  y += 8;
+
+  const kpiData = [
+    ['Leads Generados','247','+18% vs ant.'],
+    ['Citas Agendadas','89','+12% vs ant.'],
+    ['Ventas Cerradas','34','-5% vs ant.'],
+    ['Facturación Total','€42.800','+23% vs ant.'],
+    ['Ticket Promedio','€1.259','+7% vs ant.'],
+    ['Conversión Total','13.8%','-2% vs ant.'],
+    ['Llamadas Realizadas','183','+9% vs ant.'],
+    ['No-Shows','17','+3% (ALERTA)']
+  ];
+
+  kpiData.forEach((row,i)=>{
+    const xOffset = (i%2)*95;
+    const yOffset = Math.floor(i/2)*14;
+    doc.setFillColor(248,250,252);
+    doc.roundedRect(20+xOffset, y+yOffset, 88, 12, 2,2,'F');
+    doc.setFontSize(9);
+    doc.setFont('helvetica','normal');
+    doc.setTextColor(100,116,139);
+    doc.text(row[0],24,y+yOffset+5);
+    doc.setFont('helvetica','bold');
+    doc.setTextColor(15,23,42);
+    doc.text(row[1],24,y+yOffset+10);
+    doc.setFont('helvetica','normal');
+    doc.setFontSize(8);
+    doc.setTextColor(row[2].includes('-')?220:22, row[2].includes('-')?38:163, row[2].includes('-')?38:74);
+    doc.text(row[2],72,y+yOffset+10);
+  });
+
+  y += 4*14 + 12;
+
+  // Funnel
+  doc.setFontSize(12);
+  doc.setFont('helvetica','bold');
+  doc.setTextColor(30,41,59);
+  doc.text('Embudo Comercial',20,y);
+  y += 8;
+
+  DATA.funnel.forEach((step,i)=>{
+    const prev = i>0?DATA.funnel[i-1].value:step.value;
+    const pct = Math.round(step.value/DATA.funnel[0].value*100);
+    const barW = 170*(step.value/DATA.funnel[0].value)*0.9;
+    doc.setFillColor(30,64,175);
+    doc.setGlobalAlpha(0.15+(i*0.1));
+    doc.rect(20,y,barW,8,'F');
+    doc.setGlobalAlpha(1);
+    doc.setFontSize(9);
+    doc.setFont('helvetica','normal');
+    doc.setTextColor(30,41,59);
+    doc.text(`${step.label}: ${step.value} (${pct}%)`,22,y+5.5);
+    y += 11;
+  });
+
+  y += 5;
+
+  // Vendors
+  doc.setFontSize(12);
+  doc.setFont('helvetica','bold');
+  doc.setTextColor(30,41,59);
+  doc.text('Rendimiento por Vendedor',20,y);
+  y += 8;
+
+  DATA.vendedores.forEach((v,i)=>{
+    doc.setFillColor(i===0?245:248, i===0?158:250, i===0?11:252);
+    doc.roundedRect(20,y,170,10,2,2,i===0?'F':'');
+    doc.setFontSize(9);
+    doc.setFont(i===0?'helvetica':'helvetica', i===0?'bold':'normal');
+    doc.setTextColor(30,41,59);
+    doc.text(`${i+1}. ${v.nombre}`,24,y+7);
+    doc.text(`${v.ventas} ventas`,90,y+7);
+    doc.text(v.conv,120,y+7);
+    doc.text(v.facturacion,145,y+7);
+    y += 12;
+  });
+
+  y += 5;
+
+  // Recommendations
+  if(y > 240) { doc.addPage(); y = 20; }
+  doc.setFontSize(12);
+  doc.setFont('helvetica','bold');
+  doc.setTextColor(30,41,59);
+  doc.text('Recomendaciones IA',20,y);
+  y += 8;
+
+  const recs = [
+    '1. URGENTE: Reducir no-shows (19% actual) con confirmación doble WhatsApp → potencial +€8.000/mes',
+    '2. Aumentar presupuesto Instagram 30% — ROI 520% es el mejor canal pagado',
+    '3. Lanzar programa de referidos con incentivo €75 — conversión del 19.5%',
+    '4. Coaching comercial para Pedro Sánchez — gap de 14.5 puntos con María García',
+    '5. Trabajar pipeline activo (112 leads, €141.000 potencial) esta semana'
+  ];
+  doc.setFontSize(9);
+  doc.setFont('helvetica','normal');
+  doc.setTextColor(71,85,105);
+  recs.forEach(r=>{
+    const recLines = doc.splitTextToSize(r,170);
+    doc.text(recLines,20,y);
+    y += recLines.length*5+3;
+  });
+
+  // Footer
+  doc.setFillColor(15,23,42);
+  doc.rect(0,282,210,15,'F');
+  doc.setTextColor(148,163,184);
+  doc.setFontSize(8);
+  doc.text('GOTIR Business Intelligence Platform — Generado automáticamente',20,291);
+  doc.text(`Página 1`,185,291);
+
+  doc.save(`GOTIR_Report_${new Date().toISOString().slice(0,10)}.pdf`);
+}
+
+// ═══════════════════════════════════════
+// SECTION INIT ROUTER
+// ═══════════════════════════════════════
+const sectionInited = {};
+function initChartsForSection(id) {
+  if(sectionInited[id]) return;
+  sectionInited[id] = true;
+  if(id==='ejecutivo') initEjecutivo();
+  else if(id==='embudo') initEmbudo();
+  else if(id==='ventas') initVentas();
+  else if(id==='campanas') initCampanas();
+  else if(id==='vendedores') initVendedores();
+  else if(id==='llamadas') initLlamadas();
+  else if(id==='ia') initIA();
+}
+
+// ═══════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════
+document.addEventListener('DOMContentLoaded', ()=>{
+  initChartsForSection('ejecutivo');
+  document.getElementById('last-update').textContent = new Date().toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'});
+  // Live clock
+  setInterval(()=>{
+    document.getElementById('last-update').textContent = new Date().toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'});
+  }, 60000);
+});
+</script>
+</body>
+</html>

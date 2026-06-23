@@ -174,6 +174,14 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
       Campañas
     </div>
+    <div class="nav-item" onclick="showSection('seguimiento')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+      Seguimiento / Producción
+    </div>
+    <div class="nav-item" onclick="showSection('proveedores')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg>
+      Proveedores / Comisiones
+    </div>
     <div class="text-xs font-semibold text-slate-600 uppercase tracking-wider px-2 mb-2 mt-4">Rendimiento</div>
     <div class="nav-item" onclick="showSection('vendedores')">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
@@ -548,6 +556,83 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
 </div>
 
 <!-- ══════════════════════════════════════════════════════════ -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION: SEGUIMIENTO -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div id="s-seguimiento" class="section p-6">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Clientes Activos</div><div class="text-2xl font-bold text-white">86</div><span class="badge badge-up">+6 este mes</span></div>
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">En Trámite</div><div class="text-2xl font-bold text-white">49</div><span class="badge badge-neutral">en proceso</span></div>
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Renovaciones</div><div class="text-2xl font-bold text-white">7</div><span class="badge badge-up">oportunidad</span></div>
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Cerrados OK</div><div class="text-2xl font-bold text-white">18</div><span class="badge badge-up">este mes</span></div>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+    <div class="card">
+      <h3 class="font-semibold text-white mb-4">Estado de Expedientes — Pipeline Seguimiento</h3>
+      <div id="chart-seguimiento-etapas"></div>
+    </div>
+    <div class="card">
+      <h3 class="font-semibold text-white mb-1">Flujo de Expedientes</h3>
+      <p class="text-xs text-slate-500 mb-4">Desde que paga hasta que cierra el trámite</p>
+      <div class="space-y-2" id="seguimiento-funnel"></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3 class="font-semibold text-white mb-4">Alertas Operativas</h3>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+      <div class="bg-red-950/30 border border-red-900/50 rounded-lg p-3">
+        <div class="text-xs font-semibold text-red-400 uppercase tracking-wide mb-1">En pausa — Atención</div>
+        <div class="text-sm text-slate-200">3 expedientes en pausa &gt;14 días. Pueden requerir re-activación o comunicación urgente.</div>
+      </div>
+      <div class="bg-amber-950/30 border border-amber-900/50 rounded-lg p-3">
+        <div class="text-xs font-semibold text-amber-400 uppercase tracking-wide mb-1">Recurso pendiente</div>
+        <div class="text-sm text-slate-200">4 expedientes en fase Recurso. Verificar plazos de respuesta administrativos.</div>
+      </div>
+      <div class="bg-green-950/30 border border-green-900/50 rounded-lg p-3">
+        <div class="text-xs font-semibold text-green-400 uppercase tracking-wide mb-1">Renovaciones próximas</div>
+        <div class="text-sm text-slate-200">7 clientes en Renovación = €8.813 de facturación potencial sin coste de adquisición.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION: PROVEEDORES -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div id="s-proveedores" class="section p-6">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Leads Derivados</div><div class="text-2xl font-bold text-white">41</div><span class="badge badge-up">este mes</span></div>
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Comisiones Cobradas</div><div class="text-2xl font-bold text-white">8</div><span class="badge badge-neutral">cerradas</span></div>
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Comisiones Pend.</div><div class="text-2xl font-bold text-white">11</div><span class="badge badge-up">por cobrar</span></div>
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Ingresos Comisiones</div><div class="text-2xl font-bold text-white">€3.200</div><span class="badge badge-up">+18%</span></div>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+    <div class="card">
+      <h3 class="font-semibold text-white mb-4">Embudo de Proveedores</h3>
+      <div class="space-y-2" id="proveedores-funnel"></div>
+    </div>
+    <div class="card">
+      <h3 class="font-semibold text-white mb-4">Conversión por Etapa</h3>
+      <div id="chart-proveedores"></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3 class="font-semibold text-white mb-4">Comisiones Pendientes de Cobro</h3>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead><tr class="border-b border-slate-800">
+          <th class="text-left py-2 px-3 text-slate-400 font-medium">Cliente</th>
+          <th class="text-left py-2 px-3 text-slate-400 font-medium">Partner</th>
+          <th class="text-right py-2 px-3 text-slate-400 font-medium">Valor venta</th>
+          <th class="text-right py-2 px-3 text-slate-400 font-medium">Comisión</th>
+          <th class="text-right py-2 px-3 text-slate-400 font-medium">Estado</th>
+        </tr></thead>
+        <tbody id="tabla-comisiones"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
 <!-- SECTION: IA -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div id="s-ia" class="section p-6">
@@ -608,13 +693,36 @@ const DATA = {
     mes:    { leads:891, citas:312, ventas:118, facturacion:'€148.600', noshows:61, llamadas:643, ticket:'€1.259', conversion:'13.2%' },
     ano:    { leads:7840, citas:2680, ventas:1029, facturacion:'€1.295.000', noshows:496, llamadas:5230, ticket:'€1.258', conversion:'13.1%' }
   },
+  // Etapas exactas de tu pipeline Pre-venta en GHL
   funnel: [
-    { label:'Lead generado', value:247, color:'#3b82f6' },
-    { label:'Contactado', value:198, color:'#6366f1' },
-    { label:'Cita agendada', value:89, color:'#a78bfa' },
-    { label:'Llamada realizada', value:64, color:'#c084fc' },
-    { label:'Propuesta enviada', value:48, color:'#f59e0b' },
-    { label:'Venta cerrada', value:34, color:'#4ade80' }
+    { label:'New lead / sin clasificar', value:247, color:'#3b82f6', ghlStage:'new-lead' },
+    { label:'Cualificado',               value:198, color:'#6366f1', ghlStage:'cualificado' },
+    { label:'Llamada agendada',          value:89,  color:'#a78bfa', ghlStage:'llamada-agendada' },
+    { label:'Llamada realizada',         value:64,  color:'#c084fc', ghlStage:'llamada-realizada' },
+    { label:'Info y contrato enviado',   value:48,  color:'#f59e0b', ghlStage:'info-contrato-enviado' },
+    { label:'Pronto pago',               value:39,  color:'#fb923c', ghlStage:'pronto-pago' },
+    { label:'Pagado',                    value:34,  color:'#4ade80', ghlStage:'pagado' }
+  ],
+  // Pipeline Seguimiento — clientes que ya pagaron
+  seguimiento: [
+    { label:'Nuevo cliente (derivar)',    value:34,  color:'#3b82f6' },
+    { label:'En proceso',                value:28,  color:'#6366f1' },
+    { label:'Presentado en evaluación',  value:21,  color:'#a78bfa' },
+    { label:'Resolución',                value:14,  color:'#f59e0b' },
+    { label:'Recurso',                   value:4,   color:'#f87171' },
+    { label:'Trámites posteriores',      value:9,   color:'#38bdf8' },
+    { label:'Renovación',                value:7,   color:'#4ade80' },
+    { label:'En pausa',                  value:3,   color:'#94a3b8' },
+    { label:'Cerrado',                   value:18,  color:'#1e293b' }
+  ],
+  // Pipeline Proveedores — derivaciones y comisiones
+  proveedores: [
+    { label:'Lead enviado',                      value:41, color:'#3b82f6' },
+    { label:'En contacto con partner',           value:29, color:'#6366f1' },
+    { label:'Confirmado',                        value:18, color:'#a78bfa' },
+    { label:'Compra realizada / Comisión pend.', value:11, color:'#f59e0b' },
+    { label:'Comisión pagada',                   value:8,  color:'#4ade80' },
+    { label:'Cerrado',                           value:3,  color:'#94a3b8' }
   ],
   vendedores: [
     { nombre:'María García', llamadas:62, tiempo:'28 min', ventas:14, conv:'22.5%', facturacion:'€17.650', asistencia:'91%' },
@@ -660,9 +768,11 @@ const DATA = {
 // NAVIGATION
 // ═══════════════════════════════════════
 const sectionTitles = {
-  ejecutivo:'Dashboard Ejecutivo', embudo:'Embudo Comercial',
+  ejecutivo:'Dashboard Ejecutivo', embudo:'Embudo Comercial — Pre-venta',
   ventas:'Dashboard de Ventas', campanas:'Campañas y Fuentes',
-  vendedores:'Rendimiento por Vendedor', llamadas:'Análisis de Llamadas', ia:'Análisis con Inteligencia Artificial'
+  vendedores:'Rendimiento por Vendedor', llamadas:'Análisis de Reuniones Google Meet',
+  seguimiento:'Seguimiento / Producción', proveedores:'Proveedores & Comisiones',
+  ia:'Análisis con Inteligencia Artificial'
 };
 
 function showSection(id) {
@@ -1223,7 +1333,92 @@ function initChartsForSection(id) {
   else if(id==='campanas') initCampanas();
   else if(id==='vendedores') initVendedores();
   else if(id==='llamadas') initLlamadas();
+  else if(id==='seguimiento') initSeguimiento();
+  else if(id==='proveedores') initProveedores();
   else if(id==='ia') initIA();
+}
+
+// ═══════════════════════════════════════
+// CHARTS: SEGUIMIENTO
+// ═══════════════════════════════════════
+function initSeguimiento() {
+  const s = DATA.seguimiento;
+  // Bar chart of stages
+  initChart('chart-seguimiento-etapas', mkOpts({
+    chart:{ type:'bar', height:260 },
+    series:[{ name:'Expedientes', data: s.map(x=>x.value) }],
+    xaxis:{ categories: s.map(x=>x.label), labels:{ style:{ colors:'#64748b', fontSize:'10px' } } },
+    yaxis:{ labels:{ style:{ colors:'#64748b' } } },
+    colors: s.map(x=>x.color),
+    plotOptions:{ bar:{ borderRadius:4, distributed:true, horizontal:false } },
+    legend:{ show:false }
+  }));
+
+  // Mini funnel
+  const container = document.getElementById('seguimiento-funnel');
+  container.innerHTML = '';
+  s.forEach((step,i) => {
+    const pct = Math.round(step.value / s[0].value * 100);
+    container.innerHTML += `
+      <div class="flex items-center gap-3 py-1">
+        <div class="text-xs text-slate-500 w-40 truncate">${step.label}</div>
+        <div class="flex-1 progress-bar"><div class="progress-fill" style="width:${pct}%;background:${step.color}"></div></div>
+        <div class="text-xs font-semibold text-white w-6 text-right">${step.value}</div>
+      </div>`;
+  });
+}
+
+// ═══════════════════════════════════════
+// CHARTS: PROVEEDORES
+// ═══════════════════════════════════════
+function initProveedores() {
+  const p = DATA.proveedores;
+
+  // Funnel
+  const pf = document.getElementById('proveedores-funnel');
+  pf.innerHTML = '';
+  p.forEach((step,i) => {
+    const pct = Math.round(step.value / p[0].value * 100);
+    const loss = i>0 ? Math.round((p[i-1].value - step.value)/p[i-1].value*100) : 0;
+    pf.innerHTML += `
+      <div class="funnel-step" style="border-left:3px solid ${step.color}; margin-left:${i*6}px; margin-right:${i*6}px">
+        <div class="flex items-center justify-between">
+          <div>
+            <div class="font-semibold text-sm text-white">${step.label}</div>
+            <div class="text-xs text-slate-500">${pct}% del total${i>0?' · -'+loss+'% pérdida':''}</div>
+          </div>
+          <div class="text-xl font-bold text-white">${step.value}</div>
+        </div>
+        <div class="progress-bar mt-1.5"><div class="progress-fill" style="width:${pct}%;background:${step.color}"></div></div>
+      </div>
+      ${i<p.length-1?'<div class="funnel-arrow text-sm">↓</div>':''}`;
+  });
+
+  initChart('chart-proveedores', mkOpts({
+    chart:{ type:'bar', height:260 },
+    series:[{ name:'Leads', data: p.map(x=>x.value) }],
+    xaxis:{ categories: p.map(x=>x.label), labels:{ style:{ colors:'#64748b', fontSize:'10px' }, rotate:-20 } },
+    yaxis:{ labels:{ style:{ colors:'#64748b' } } },
+    colors: p.map(x=>x.color),
+    plotOptions:{ bar:{ borderRadius:4, distributed:true } },
+    legend:{ show:false }
+  }));
+
+  // Comisiones table
+  const comisiones = [
+    { cliente:'Laura M.', partner:'Asesoría Legal BCN', venta:'€2.800', comision:'€280', estado:'pendiente' },
+    { cliente:'Ahmed K.',  partner:'Academia Español',  venta:'€1.200', comision:'€120', estado:'pendiente' },
+    { cliente:'Fatima R.', partner:'Asesoría Legal BCN', venta:'€3.100', comision:'€310', estado:'pendiente' },
+    { cliente:'Carlos V.', partner:'Consultora Visados', venta:'€1.900', comision:'€190', estado:'pendiente' },
+  ];
+  document.getElementById('tabla-comisiones').innerHTML = comisiones.map(c=>`
+    <tr class="border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
+      <td class="py-3 px-3 text-slate-200 font-medium">${c.cliente}</td>
+      <td class="py-3 px-3 text-slate-400">${c.partner}</td>
+      <td class="py-3 px-3 text-right text-slate-300">${c.venta}</td>
+      <td class="py-3 px-3 text-right font-semibold text-amber-400">${c.comision}</td>
+      <td class="py-3 px-3 text-right"><span class="badge badge-neutral">Por cobrar</span></td>
+    </tr>`).join('');
 }
 
 // ═══════════════════════════════════════
@@ -1363,11 +1558,26 @@ async function loadGHLData() {
     const conv = total>0 ? ((won/total)*100).toFixed(1)+'%' : '—';
     document.getElementById('kpi-conversion').textContent = conv;
 
-    // Pipeline funnel from real stages
-    if(oppList.length>0) {
-      const stages = {};
-      oppList.forEach(o=>{ stages[o.pipelineStageId||o.stage||'unknown'] = (stages[o.pipelineStageId||o.stage||'unknown']||0)+1; });
-    }
+    // Map real GHL pipeline stages to funnel
+    // Pre-venta stage names (exact match from your GHL screenshots)
+    const STAGE_MAP = {
+      'new lead /sin clasificar': 0,
+      'cualificado': 1,
+      'llamada agendada': 2,
+      'llamada realizada': 3,
+      'información y contrato enviado': 4,
+      'pronto pago': 5,
+      'pagado': 6
+    };
+    const stageCounts = new Array(7).fill(0);
+    oppList.forEach(o => {
+      const stageName = (o.stageName||o.pipelineStageName||'').toLowerCase().trim();
+      const idx = STAGE_MAP[stageName];
+      if(idx !== undefined) stageCounts[idx]++;
+    });
+    stageCounts.forEach((count, i) => {
+      if(count > 0 && DATA.funnel[i]) DATA.funnel[i].value = count;
+    });
 
     document.getElementById('last-update').textContent = new Date().toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'}) + ' (GHL)';
     showToast('Datos de GoHighLevel cargados correctamente');

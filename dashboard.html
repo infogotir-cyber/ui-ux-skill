@@ -459,18 +459,47 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
 <!-- SECTION: CAMPAÑAS -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div id="s-campanas" class="section p-6">
+  <!-- Source type summary cards -->
+  <div class="grid grid-cols-3 gap-4 mb-6">
+    <div class="stat-card border-l-4 border-green-500">
+      <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">Referidos (sin coste)</div>
+      <div class="text-2xl font-bold text-white">69 leads</div>
+      <div class="text-xs text-green-400 mt-1">25% conv. prom · CPL €0 · ROI ∞</div>
+      <div class="text-xs text-slate-500 mt-0.5">Jesús · Nasla · Wilmen · Centro · Amigo</div>
+    </div>
+    <div class="stat-card border-l-4 border-brand-500">
+      <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">Redes Sociales (pagado)</div>
+      <div class="text-2xl font-bold text-white">223 leads</div>
+      <div class="text-xs text-brand-400 mt-1">12.1% conv. prom · CPL ~€16 prom</div>
+      <div class="text-xs text-slate-500 mt-0.5">Instagram · TikTok · Facebook</div>
+    </div>
+    <div class="stat-card border-l-4 border-sky-500">
+      <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">Orgánico / Web</div>
+      <div class="text-2xl font-bold text-white">30 leads</div>
+      <div class="text-xs text-sky-400 mt-1">13.3% conv. prom · CPL €0</div>
+      <div class="text-xs text-slate-500 mt-0.5">Sitio Web · Otro</div>
+    </div>
+  </div>
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
     <div class="card">
-      <h3 class="font-semibold text-white mb-4">Rendimiento por Canal</h3>
+      <h3 class="font-semibold text-white mb-4">Leads por Fuente — <span class="text-slate-400 font-normal text-sm">campo <code class="text-amber-400 text-xs">canal_referencia_dr</code></span></h3>
       <div id="chart-campanas-canal"></div>
     </div>
     <div class="card">
-      <h3 class="font-semibold text-white mb-4">ROI por Campaña</h3>
+      <h3 class="font-semibold text-white mb-4">Conversión % por Fuente</h3>
       <div id="chart-roi"></div>
     </div>
   </div>
   <div class="card mb-4">
-    <h3 class="font-semibold text-white mb-4">Tabla Comparativa de Campañas</h3>
+    <div class="flex items-center justify-between mb-4">
+      <h3 class="font-semibold text-white">Tabla por Fuente de Captación</h3>
+      <div class="flex gap-1">
+        <button class="tab-btn active text-xs" onclick="filterCampanas('all',this)">Todos</button>
+        <button class="tab-btn text-xs" onclick="filterCampanas('referido',this)">Referidos</button>
+        <button class="tab-btn text-xs" onclick="filterCampanas('pagado',this)">Pagado</button>
+        <button class="tab-btn text-xs" onclick="filterCampanas('organico',this)">Orgánico</button>
+      </div>
+    </div>
     <div class="overflow-x-auto">
       <table class="w-full text-sm">
         <thead>
@@ -731,13 +760,24 @@ const DATA = {
     { nombre:'Pedro Sánchez', llamadas:25, tiempo:'18 min', ventas:2, conv:'8.0%', facturacion:'€2.520', asistencia:'76%' }
   ],
   campanas: [
-    { canal:'Facebook', leads:82, citas:28, ventas:10, conv:'12.2%', cpl:'€18', roi:'340%', color:'#1877f2' },
-    { canal:'Instagram', leads:94, citas:38, ventas:14, conv:'14.9%', cpl:'€11', roi:'520%', color:'#e1306c' },
-    { canal:'Referidos', leads:41, citas:18, ventas:8, conv:'19.5%', cpl:'€0', roi:'∞', color:'#4ade80' },
-    { canal:'YouTube', leads:18, citas:6, ventas:1, conv:'5.6%', cpl:'€32', roi:'95%', color:'#ff0000' },
-    { canal:'Eventos', leads:9, citas:5, ventas:1, conv:'11.1%', cpl:'€45', roi:'110%', color:'#f59e0b' },
-    { canal:'Otros', leads:3, citas:1, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#94a3b8' }
+    // Fuentes reales del campo canal_referencia_dr en GHL
+    // Referidos personales (afiliados)
+    { canal:'Jesús Mosquera',       tipo:'referido', leads:18, citas:9,  ventas:4, conv:'22.2%', cpl:'€0',  roi:'∞',    color:'#a78bfa' },
+    { canal:'Nasla Espinosa',       tipo:'referido', leads:14, citas:7,  ventas:3, conv:'21.4%', cpl:'€0',  roi:'∞',    color:'#c084fc' },
+    { canal:'Wilmen Mendoza',       tipo:'referido', leads:9,  citas:4,  ventas:1, conv:'11.1%', cpl:'€0',  roi:'∞',    color:'#818cf8' },
+    // Referidos institucionales / boca a boca
+    { canal:'Centro de Estudios',   tipo:'referido', leads:12, citas:6,  ventas:3, conv:'25.0%', cpl:'€0',  roi:'∞',    color:'#4ade80' },
+    { canal:'Amigo / Familiar',     tipo:'referido', leads:16, citas:8,  ventas:4, conv:'25.0%', cpl:'€0',  roi:'∞',    color:'#34d399' },
+    // Redes sociales / campañas pagadas
+    { canal:'Instagram',            tipo:'pagado',   leads:94, citas:38, ventas:14,conv:'14.9%', cpl:'€11', roi:'520%', color:'#e1306c' },
+    { canal:'TikTok',               tipo:'pagado',   leads:47, citas:14, ventas:3, conv:'6.4%',  cpl:'€19', roi:'185%', color:'#010101' },
+    { canal:'Facebook',             tipo:'pagado',   leads:82, citas:28, ventas:10,conv:'12.2%', cpl:'€18', roi:'340%', color:'#1877f2' },
+    // Inbound
+    { canal:'Sitio Web',            tipo:'organico', leads:22, citas:8,  ventas:3, conv:'13.6%', cpl:'€0',  roi:'∞',    color:'#38bdf8' },
+    { canal:'Otro',                 tipo:'otro',     leads:8,  citas:2,  ventas:1, conv:'12.5%', cpl:'—',   roi:'—',    color:'#94a3b8' }
   ],
+  // API field name for source in GHL (custom field)
+  ghlSourceField: 'canal_referencia_dr',
   motivos_perdida: [
     { motivo:'Precio muy alto', pct:34, color:'#f87171' },
     { motivo:'No confía / no le da urgencia', pct:22, color:'#fb923c' },
@@ -877,11 +917,20 @@ function initEjecutivo() {
     legend:{ show:false }
   }));
 
+  // Agrupar fuentes para el donut del ejecutivo
+  const donutGroups = [
+    { label:'Instagram',  v:94,  c:'#e1306c' },
+    { label:'Facebook',   v:82,  c:'#1877f2' },
+    { label:'TikTok',     v:47,  c:'#555' },
+    { label:'Referidos',  v:69,  c:'#4ade80' },  // sum: Jesus+Nasla+Wilmen+Centro+Amigo
+    { label:'Sitio Web',  v:22,  c:'#38bdf8' },
+    { label:'Otro',       v:8,   c:'#94a3b8' }
+  ];
   initChart('chart-fuentes', mkOpts({
     chart:{ type:'donut', height:220 },
-    series:[94,82,41,18,9,3],
-    labels:['Instagram','Facebook','Referidos','YouTube','Eventos','Otros'],
-    colors:['#e1306c','#1877f2','#4ade80','#ff0000','#f59e0b','#94a3b8'],
+    series: donutGroups.map(x=>x.v),
+    labels: donutGroups.map(x=>x.label),
+    colors: donutGroups.map(x=>x.c),
     legend:{ position:'bottom', labels:{ colors:'#94a3b8' } },
     plotOptions:{ pie:{ donut:{ size:'65%' } } }
   }));
@@ -984,44 +1033,77 @@ function initVentas() {
 // ═══════════════════════════════════════
 // CHARTS: CAMPAÑAS
 // ═══════════════════════════════════════
-function initCampanas() {
-  const c = DATA.campanas;
-  initChart('chart-campanas-canal', mkOpts({
-    chart:{ type:'bar', height:280 },
-    series:[
-      { name:'Leads', data:c.map(x=>x.leads) },
-      { name:'Citas', data:c.map(x=>x.citas) },
-      { name:'Ventas', data:c.map(x=>x.ventas) }
-    ],
-    xaxis:{ categories:c.map(x=>x.canal), labels:{ style:{ colors:'#64748b' } } },
-    yaxis:{ labels:{ style:{ colors:'#64748b' } } },
-    colors:['#3b82f6','#a78bfa','#4ade80'],
-    plotOptions:{ bar:{ borderRadius:3, columnWidth:'70%' } },
-    legend:{ labels:{ colors:'#94a3b8' } }
-  }));
-
-  initChart('chart-roi', mkOpts({
-    chart:{ type:'radar', height:280 },
-    series:[{ name:'Conversión %', data:[12.2,14.9,19.5,5.6,11.1,0] }],
-    xaxis:{ categories:c.map(x=>x.canal), labels:{ style:{ colors:'#94a3b8', fontSize:'12px' } } },
-    yaxis:{ show:false },
-    colors:['#f59e0b'],
-    fill:{ opacity:.3 },
-    stroke:{ width:2 }
-  }));
-
+function renderCampanasTable(filter) {
+  const c = filter==='all' ? DATA.campanas : DATA.campanas.filter(x=>x.tipo===filter);
   const tbody = document.getElementById('tabla-campanas');
+  const tipoLabel = { referido:'Referido', pagado:'Pagado', organico:'Orgánico', otro:'Otro' };
+  const tipoColor = { referido:'text-green-400', pagado:'text-brand-400', organico:'text-sky-400', otro:'text-slate-400' };
   tbody.innerHTML = c.map(x=>`
     <tr class="border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
-      <td class="py-3 px-3"><div class="flex items-center gap-2"><div class="w-2.5 h-2.5 rounded-full" style="background:${x.color}"></div><span class="text-slate-200 font-medium">${x.canal}</span></div></td>
+      <td class="py-3 px-3">
+        <div class="flex items-center gap-2">
+          <div class="w-2.5 h-2.5 rounded-full flex-shrink-0" style="background:${x.color}"></div>
+          <span class="text-slate-200 font-medium">${x.canal}</span>
+        </div>
+      </td>
+      <td class="py-3 px-3 text-right"><span class="text-xs ${tipoColor[x.tipo]||'text-slate-400'}">${tipoLabel[x.tipo]||x.tipo}</span></td>
       <td class="py-3 px-3 text-right text-slate-300">${x.leads}</td>
       <td class="py-3 px-3 text-right text-slate-300">${x.citas}</td>
       <td class="py-3 px-3 text-right text-slate-300">${x.ventas}</td>
-      <td class="py-3 px-3 text-right"><span class="badge ${parseFloat(x.conv)>15?'badge-up':parseFloat(x.conv)>10?'badge-neutral':'badge-down'}">${x.conv}</span></td>
+      <td class="py-3 px-3 text-right"><span class="badge ${parseFloat(x.conv)>18?'badge-up':parseFloat(x.conv)>10?'badge-neutral':'badge-down'}">${x.conv}</span></td>
       <td class="py-3 px-3 text-right text-slate-400">${x.cpl}</td>
       <td class="py-3 px-3 text-right"><span class="font-semibold ${x.roi==='∞'?'text-green-400':parseFloat(x.roi)>300?'text-green-400':parseFloat(x.roi)>100?'text-amber-400':'text-red-400'}">${x.roi}</span></td>
     </tr>
   `).join('');
+}
+
+function filterCampanas(tipo, btn) {
+  document.querySelectorAll('#s-campanas .tab-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderCampanasTable(tipo);
+}
+
+function initCampanas() {
+  const c = DATA.campanas;
+  initChart('chart-campanas-canal', mkOpts({
+    chart:{ type:'bar', height:300 },
+    series:[
+      { name:'Leads',  data:c.map(x=>x.leads) },
+      { name:'Citas',  data:c.map(x=>x.citas) },
+      { name:'Ventas', data:c.map(x=>x.ventas) }
+    ],
+    xaxis:{ categories:c.map(x=>x.canal), labels:{ style:{ colors:'#64748b', fontSize:'10px' }, rotate:-30 } },
+    yaxis:{ labels:{ style:{ colors:'#64748b' } } },
+    colors:['#3b82f6','#a78bfa','#4ade80'],
+    plotOptions:{ bar:{ borderRadius:3, columnWidth:'65%' } },
+    legend:{ labels:{ colors:'#94a3b8' } }
+  }));
+
+  initChart('chart-roi', mkOpts({
+    chart:{ type:'bar', height:300 },
+    series:[{ name:'Conversión %', data: c.map(x=>parseFloat(x.conv)||0) }],
+    xaxis:{ categories: c.map(x=>x.canal), labels:{ style:{ colors:'#64748b', fontSize:'10px' }, rotate:-30 } },
+    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>v+'%' }, max:30 },
+    colors: c.map(x=>x.tipo==='referido'?'#4ade80':x.tipo==='pagado'?'#3b82f6':'#38bdf8'),
+    plotOptions:{ bar:{ borderRadius:4, distributed:true, horizontal:false } },
+    legend:{ show:false },
+    annotations:{ yaxis:[{ y:18, borderColor:'#f59e0b', label:{ text:'Benchmark 18%', style:{ color:'#f59e0b', background:'transparent' } } }] }
+  }));
+
+  // Update table header to include Tipo column
+  const thead = document.querySelector('#s-campanas table thead tr');
+  if(thead && thead.children.length < 8) {
+    thead.innerHTML = `
+      <th class="text-left py-2 px-3 text-slate-400 font-medium">Fuente</th>
+      <th class="text-right py-2 px-3 text-slate-400 font-medium">Tipo</th>
+      <th class="text-right py-2 px-3 text-slate-400 font-medium">Leads</th>
+      <th class="text-right py-2 px-3 text-slate-400 font-medium">Citas</th>
+      <th class="text-right py-2 px-3 text-slate-400 font-medium">Ventas</th>
+      <th class="text-right py-2 px-3 text-slate-400 font-medium">Conv.%</th>
+      <th class="text-right py-2 px-3 text-slate-400 font-medium">CPL</th>
+      <th class="text-right py-2 px-3 text-slate-400 font-medium">ROI</th>`;
+  }
+  renderCampanasTable('all');
 }
 
 // ═══════════════════════════════════════
@@ -1536,9 +1618,36 @@ async function ghlFetch(path, params={}) {
 
 async function loadGHLData() {
   try {
-    // Load contacts/leads
+    // Load contacts/leads — reads custom field canal_referencia_dr
     const contacts = await ghlFetch(GHL_ENDPOINTS[GHL.version].contacts, { limit:100 });
-    const total = contacts.meta?.total || contacts.contacts?.length || 0;
+    const total = contacts.meta?.total || contacts.total || contacts.contacts?.length || 0;
+
+    // Count leads by source using canal_referencia_dr custom field
+    const contactList = contacts.contacts || [];
+    const sourceCounts = {};
+    contactList.forEach(c => {
+      // GHL stores custom fields in customField array or customFields object
+      const fields = c.customFields || c.customField || [];
+      let src = null;
+      if(Array.isArray(fields)) {
+        const f = fields.find(f => f.id === 'canal_referencia_dr' || f.key === 'canal_referencia_dr' || (f.fieldKey||'').includes('canal_referencia'));
+        src = f?.value || f?.fieldValue;
+      } else if(typeof fields === 'object') {
+        src = fields['canal_referencia_dr'] || fields['contact.canal_referencia_dr'];
+      }
+      if(!src) src = c.source || 'otro';
+      sourceCounts[src] = (sourceCounts[src]||0) + 1;
+    });
+    // Update campaigns data with real counts
+    DATA.campanas.forEach(camp => {
+      const ghlKey = camp.canal.toLowerCase()
+        .replace('jesús','jesús').replace(' ','_').replace(/\s+/g,'_')
+        .replace('centro de estudios','un_centro_de_estudios_me')
+        .replace('amigo / familiar','un_amigo_o_familiar')
+        .replace('sitio web','sitio_web');
+      const realCount = sourceCounts[ghlKey] || sourceCounts[camp.canal.toLowerCase()];
+      if(realCount) camp.leads = realCount;
+    });
 
     // Load opportunities
     const opps = await ghlFetch(

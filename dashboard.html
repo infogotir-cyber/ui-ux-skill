@@ -203,6 +203,27 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.6 3.36 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9A16 16 0 0 0 15 15.91l1.36-1.36a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 23 16.92z"/></svg>
       Llamadas
     </div>
+    <div class="text-xs font-semibold text-slate-600 uppercase tracking-wider px-2 mb-2 mt-4">Análisis</div>
+    <div class="nav-item" onclick="showSection('conversion')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      Conversión
+    </div>
+    <div class="nav-item" onclick="showSection('perdidas')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+      Pérdidas
+    </div>
+    <div class="nav-item" onclick="showSection('valor')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      Valor de Cliente
+    </div>
+    <div class="nav-item" onclick="showSection('nocualificados')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
+      No Cualificados
+    </div>
+    <div class="nav-item" onclick="showSection('segmentacion')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="18" r="3"/><circle cx="6" cy="6" r="3"/><path d="M6 21V9a9 9 0 0 0 9 9"/></svg>
+      Segmentación
+    </div>
     <div class="text-xs font-semibold text-slate-600 uppercase tracking-wider px-2 mb-2 mt-4">Inteligencia</div>
     <div class="nav-item" onclick="showSection('ia')">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v1a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z"/></svg>
@@ -790,6 +811,379 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
   </div>
 </div>
 
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION: CONVERSIÓN -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div id="s-conversion" class="section p-6">
+  <!-- Tab nav -->
+  <div class="flex gap-1 mb-6 flex-wrap">
+    <button class="tab-btn active" onclick="switchConvTab('general',this)">General</button>
+    <button class="tab-btn" onclick="switchConvTab('source',this)">Por Source</button>
+    <button class="tab-btn" onclick="switchConvTab('pais',this)">Por País</button>
+    <button class="tab-btn" onclick="switchConvTab('tramite',this)">Por Trámite</button>
+    <button class="tab-btn" onclick="switchConvTab('vendedor',this)">Por Vendedor</button>
+  </div>
+
+  <!-- Tab: General -->
+  <div id="conv-tab-general">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+      <div class="stat-card glow-blue">
+        <div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Leads Totales</div>
+        <div class="text-3xl font-bold text-white" id="conv-leads-total">891</div>
+        <span class="badge badge-up mt-1">este mes</span>
+      </div>
+      <div class="stat-card">
+        <div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Oportunidades Totales</div>
+        <div class="text-3xl font-bold text-white" id="conv-opps-total">312</div>
+        <span class="badge badge-neutral mt-1">en pipeline</span>
+      </div>
+      <div class="stat-card">
+        <div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Ventas Cerradas</div>
+        <div class="text-3xl font-bold text-white" id="conv-won-total">118</div>
+        <span class="badge badge-up mt-1">+8% vs ant.</span>
+      </div>
+      <div class="stat-card">
+        <div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Ratio Conversión</div>
+        <div class="text-3xl font-bold text-white" id="conv-ratio">37.8%</div>
+        <span class="badge badge-up mt-1">Ganadas/Opps</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="font-semibold text-white">Conversión por Mes</h3>
+        <span class="chip">Últimos 6 meses</span>
+      </div>
+      <div id="chart-conv-general"></div>
+    </div>
+  </div>
+
+  <!-- Tab: Por Source -->
+  <div id="conv-tab-source" class="hidden">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+      <div class="card">
+        <h3 class="font-semibold text-white mb-4">Conversión por Fuente</h3>
+        <div id="chart-conv-source"></div>
+      </div>
+      <div class="card">
+        <h3 class="font-semibold text-white mb-4">Tabla por Fuente</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-slate-800">
+                <th class="text-left py-2 px-3 text-slate-400 font-medium">Fuente</th>
+                <th class="text-right py-2 px-3 text-slate-400 font-medium">Leads</th>
+                <th class="text-right py-2 px-3 text-slate-400 font-medium">Oportunidades</th>
+                <th class="text-right py-2 px-3 text-slate-400 font-medium">Ganadas</th>
+                <th class="text-right py-2 px-3 text-slate-400 font-medium">Perdidas</th>
+                <th class="text-right py-2 px-3 text-slate-400 font-medium">Conv.%</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-conv-source"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab: Por País -->
+  <div id="conv-tab-pais" class="hidden">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+      <div class="card">
+        <h3 class="font-semibold text-white mb-4">Conversión por País</h3>
+        <div id="chart-conv-pais"></div>
+      </div>
+      <div class="card">
+        <h3 class="font-semibold text-white mb-4">Tabla por País</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-slate-800">
+                <th class="text-left py-2 px-3 text-slate-400 font-medium">País</th>
+                <th class="text-right py-2 px-3 text-slate-400 font-medium">Leads</th>
+                <th class="text-right py-2 px-3 text-slate-400 font-medium">Ventas</th>
+                <th class="text-right py-2 px-3 text-slate-400 font-medium">Conv.%</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-conv-pais"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab: Por Trámite -->
+  <div id="conv-tab-tramite" class="hidden">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+      <div class="card">
+        <h3 class="font-semibold text-white mb-4">Conversión por Trámite</h3>
+        <div id="chart-conv-tramite"></div>
+      </div>
+      <div class="card">
+        <h3 class="font-semibold text-white mb-4">Tabla por Trámite</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-slate-800">
+                <th class="text-left py-2 px-3 text-slate-400 font-medium">Trámite</th>
+                <th class="text-right py-2 px-3 text-slate-400 font-medium">Leads</th>
+                <th class="text-right py-2 px-3 text-slate-400 font-medium">Ventas</th>
+                <th class="text-right py-2 px-3 text-slate-400 font-medium">Conv.%</th>
+                <th class="text-right py-2 px-3 text-slate-400 font-medium">Ticket Prom.</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-conv-tramite"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab: Por Vendedor -->
+  <div id="conv-tab-vendedor" class="hidden">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+      <div class="card">
+        <h3 class="font-semibold text-white mb-4">Ranking por Conversión</h3>
+        <div id="conv-vendedor-ranking"></div>
+      </div>
+      <div class="card">
+        <h3 class="font-semibold text-white mb-4">Métricas por Vendedor</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-slate-800">
+                <th class="text-left py-2 px-3 text-slate-400 font-medium">Vendedor</th>
+                <th class="text-right py-2 px-3 text-slate-400 font-medium">Llamadas</th>
+                <th class="text-right py-2 px-3 text-slate-400 font-medium">Opps</th>
+                <th class="text-right py-2 px-3 text-slate-400 font-medium">Ventas</th>
+                <th class="text-right py-2 px-3 text-slate-400 font-medium">Conv.%</th>
+                <th class="text-right py-2 px-3 text-slate-400 font-medium">Facturación</th>
+                <th class="text-right py-2 px-3 text-slate-400 font-medium">Ticket</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-conv-vendedor"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION: PÉRDIDAS -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div id="s-perdidas" class="section p-6">
+  <div class="flex gap-1 mb-6">
+    <button class="tab-btn active" onclick="switchPerdTab('motivos',this)">Motivos</button>
+    <button class="tab-btn" onclick="switchPerdTab('stage',this)">Por Stage</button>
+  </div>
+
+  <!-- Tab: Motivos -->
+  <div id="perd-tab-motivos">
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+      <div class="stat-card" style="border-left:3px solid #f87171">
+        <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">Dinero / Precio</div>
+        <div class="text-2xl font-bold text-white">34%</div>
+        <div class="text-xs text-red-400 mt-1">Principal motivo</div>
+      </div>
+      <div class="stat-card" style="border-left:3px solid #fb923c">
+        <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">No Cumple Requisitos</div>
+        <div class="text-2xl font-bold text-white">22%</div>
+        <div class="text-xs text-orange-400 mt-1">CUE / sin fondos</div>
+      </div>
+      <div class="stat-card" style="border-left:3px solid #fbbf24">
+        <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">No Responde</div>
+        <div class="text-2xl font-bold text-white">18%</div>
+        <div class="text-xs text-amber-400 mt-1">Sin contacto</div>
+      </div>
+      <div class="stat-card" style="border-left:3px solid #a78bfa">
+        <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">Eligió Competencia</div>
+        <div class="text-2xl font-bold text-white">13%</div>
+        <div class="text-xs text-purple-400 mt-1">Otro proveedor</div>
+      </div>
+      <div class="stat-card" style="border-left:3px solid #60a5fa">
+        <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">Lo Hará Más Adelante</div>
+        <div class="text-2xl font-bold text-white">8%</div>
+        <div class="text-xs text-blue-400 mt-1">Falta urgencia</div>
+      </div>
+      <div class="stat-card" style="border-left:3px solid #94a3b8">
+        <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">Otros</div>
+        <div class="text-2xl font-bold text-white">5%</div>
+        <div class="text-xs text-slate-400 mt-1">Sin clasificar</div>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div class="card">
+        <h3 class="font-semibold text-white mb-4">Distribución de Motivos</h3>
+        <div id="chart-perdidas-pie"></div>
+      </div>
+      <div class="card">
+        <h3 class="font-semibold text-white mb-4">Evolución Mensual de Pérdidas</h3>
+        <div id="chart-perdidas-evolucion"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tab: Por Stage -->
+  <div id="perd-tab-stage" class="hidden">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+      <div class="card">
+        <h3 class="font-semibold text-white mb-4">Tasa de Pérdida por Etapa</h3>
+        <div id="chart-perdidas-stage"></div>
+      </div>
+      <div class="card">
+        <h3 class="font-semibold text-white mb-4">Tabla de Abandono por Stage</h3>
+        <div class="overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr class="border-b border-slate-800">
+                <th class="text-left py-2 px-3 text-slate-400 font-medium">Stage</th>
+                <th class="text-right py-2 px-3 text-slate-400 font-medium">Entraron</th>
+                <th class="text-right py-2 px-3 text-slate-400 font-medium">Perdieron</th>
+                <th class="text-right py-2 px-3 text-slate-400 font-medium">Tasa Pérdida</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-perdidas-stage"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION: VALOR DE CLIENTE -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div id="s-valor" class="section p-6">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+    <div class="stat-card glow-blue">
+      <div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Ticket Promedio</div>
+      <div class="text-3xl font-bold text-white" id="valor-ticket">€1.259</div>
+      <div class="text-xs text-slate-500 mt-1">Facturación / Ganadas</div>
+    </div>
+    <div class="stat-card">
+      <div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">CLTV Promedio</div>
+      <div class="text-3xl font-bold text-white" id="valor-cltv">€2.840</div>
+      <div class="text-xs text-slate-500 mt-1">Valor de vida del cliente</div>
+    </div>
+    <div class="stat-card">
+      <div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Clientes Ganados</div>
+      <div class="text-3xl font-bold text-white" id="valor-clientes">118</div>
+      <span class="badge badge-up mt-1">este mes</span>
+    </div>
+    <div class="stat-card">
+      <div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Facturación Total</div>
+      <div class="text-3xl font-bold text-white" id="valor-facturacion">€148.600</div>
+      <span class="badge badge-up mt-1">+23%</span>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+    <div class="card">
+      <h3 class="font-semibold text-white mb-4">Top 5 Clientes por Valor</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead>
+            <tr class="border-b border-slate-800">
+              <th class="text-left py-2 px-3 text-slate-400 font-medium">Cliente</th>
+              <th class="text-right py-2 px-3 text-slate-400 font-medium">Trámites</th>
+              <th class="text-right py-2 px-3 text-slate-400 font-medium">Valor Total</th>
+              <th class="text-right py-2 px-3 text-slate-400 font-medium">Último Trámite</th>
+            </tr>
+          </thead>
+          <tbody id="tbody-valor-top5"></tbody>
+        </table>
+      </div>
+    </div>
+    <div class="card">
+      <h3 class="font-semibold text-white mb-4">Distribución de Valor</h3>
+      <div id="chart-valor-histograma"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION: NO CUALIFICADOS -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div id="s-nocualificados" class="section p-6">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+    <div class="stat-card" style="border-left:3px solid #f87171">
+      <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">Sin Fondos</div>
+      <div class="text-3xl font-bold text-white" id="nq-fondos">38</div>
+      <div class="text-xs text-red-400 mt-1">no cualificado / sin fondos</div>
+    </div>
+    <div class="stat-card" style="border-left:3px solid #fbbf24">
+      <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">Excedido Tiempo</div>
+      <div class="text-3xl font-bold text-white" id="nq-tiempo">27</div>
+      <div class="text-xs text-amber-400 mt-1">no cualificado / excedido tiempo</div>
+    </div>
+    <div class="stat-card" style="border-left:3px solid #a78bfa">
+      <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">CUE</div>
+      <div class="text-3xl font-bold text-white" id="nq-cue">19</div>
+      <div class="text-xs text-purple-400 mt-1">no cualificado / cue</div>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
+    <div class="card">
+      <h3 class="font-semibold text-white mb-4">Distribución</h3>
+      <div id="chart-nq-pie"></div>
+    </div>
+    <div class="card">
+      <h3 class="font-semibold text-white mb-4">Evolución Mensual (últimos 6 meses)</h3>
+      <div id="chart-nq-evolucion"></div>
+    </div>
+  </div>
+  <div class="card">
+    <h3 class="font-semibold text-white mb-4">Detalle por Tag</h3>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead>
+          <tr class="border-b border-slate-800">
+            <th class="text-left py-2 px-3 text-slate-400 font-medium">Tag</th>
+            <th class="text-right py-2 px-3 text-slate-400 font-medium">Cantidad</th>
+            <th class="text-right py-2 px-3 text-slate-400 font-medium">%</th>
+            <th class="text-right py-2 px-3 text-slate-400 font-medium">Tendencia</th>
+          </tr>
+        </thead>
+        <tbody id="tbody-nq-tabla"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════ -->
+<!-- SECTION: SEGMENTACIÓN -->
+<!-- ══════════════════════════════════════════════════════════ -->
+<div id="s-segmentacion" class="section p-6">
+  <div class="mb-6 p-4 bg-amber-950/30 border border-amber-900/40 rounded-xl flex items-start gap-3">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" class="w-5 h-5 flex-shrink-0 mt-0.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+    <div>
+      <div class="text-sm font-semibold text-amber-400 mb-1">Configuración requerida</div>
+      <div class="text-xs text-slate-300">Para activar esta sección, crea el campo <code class="text-amber-400 bg-slate-800 px-1 rounded">tipo_grupo</code> en GHL (dropdown: <strong>Individual</strong>, <strong>Pareja</strong>, <strong>Familia</strong>) en la carpeta <strong>"Ficha de cliente"</strong>. Una vez creado y populado, esta sección mostrará datos reales.</div>
+    </div>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+    <div class="stat-card" style="border-left:3px solid #3b82f6">
+      <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">Individual</div>
+      <div class="text-2xl font-bold text-white">312 leads</div>
+      <div class="text-xs text-slate-400 mt-1">Conv. 12.8% · Ticket €1.050</div>
+    </div>
+    <div class="stat-card" style="border-left:3px solid #a78bfa">
+      <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">Pareja</div>
+      <div class="text-2xl font-bold text-white">198 leads</div>
+      <div class="text-xs text-slate-400 mt-1">Conv. 18.2% · Ticket €1.890</div>
+    </div>
+    <div class="stat-card" style="border-left:3px solid #4ade80">
+      <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">Familia</div>
+      <div class="text-2xl font-bold text-white">89 leads</div>
+      <div class="text-xs text-slate-400 mt-1">Conv. 22.5% · Ticket €2.640</div>
+    </div>
+  </div>
+  <div class="card">
+    <h3 class="font-semibold text-white mb-4">Comparativa por Grupo (datos demo — requiere campo tipo_grupo)</h3>
+    <div id="chart-segmentacion"></div>
+  </div>
+</div>
+
 </div><!-- end main-content -->
 
 <script>
@@ -861,6 +1255,76 @@ const DATA = {
   ticket_promedio: 1259,
   comision_afiliados_pct: 8,
   ghlSourceField: 'canal_referencia_dr',
+  // ── NEW: demo data for new sections ──────────────────────
+  conv_source: [
+    { fuente:'Meta Ads',   leads:176, opps:68,  ganadas:22, perdidas:46 },
+    { fuente:'Instagram',  leads:94,  opps:38,  ganadas:14, perdidas:24 },
+    { fuente:'Facebook',   leads:82,  opps:30,  ganadas:10, perdidas:20 },
+    { fuente:'Referidos',  leads:69,  opps:35,  ganadas:18, perdidas:17 },
+    { fuente:'YouTube',    leads:31,  opps:9,   ganadas:3,  perdidas:6  },
+    { fuente:'Google',     leads:28,  opps:11,  ganadas:5,  perdidas:6  },
+    { fuente:'Orgánico',   leads:22,  opps:8,   ganadas:3,  perdidas:5  },
+    { fuente:'Otros',      leads:8,   opps:3,   ganadas:1,  perdidas:2  }
+  ],
+  conv_pais: [
+    { pais:'Argentina',  leads:198, ventas:32 },
+    { pais:'Colombia',   leads:172, ventas:26 },
+    { pais:'Perú',       leads:141, ventas:19 },
+    { pais:'Ecuador',    leads:98,  ventas:14 },
+    { pais:'Venezuela',  leads:87,  ventas:11 },
+    { pais:'Otros',      leads:195, ventas:16 }
+  ],
+  conv_tramite: [
+    { tramite:'Visado Argentina', key:'visado_arg',       leads:198, ventas:32, revenue:40320 },
+    { tramite:'Visado LATAM',     key:'visado_latam',     leads:141, ventas:21, revenue:26460 },
+    { tramite:'Estancia',         key:'estancia',         leads:98,  ventas:14, revenue:14980 },
+    { tramite:'Renovación',       key:'renovación',       leads:87,  ventas:18, revenue:16380 },
+    { tramite:'Reagrupación',     key:'reagrupación',     leads:72,  ventas:12, revenue:14400 },
+    { tramite:'PAC',              key:'pac',              leads:48,  ventas:8,  revenue:8000  },
+    { tramite:'Nómada Digital',   key:'nòmada_digital',   leads:44,  ventas:6,  revenue:9000  },
+    { tramite:'No Lucrativa',     key:'no_lucrativa',     leads:38,  ventas:5,  revenue:5750  },
+    { tramite:'Emprendedor',      key:'emprendedor',      leads:31,  ventas:4,  revenue:6000  },
+    { tramite:'Work & Holidays',  key:'workandholidays',  leads:24,  ventas:3,  revenue:2700  },
+    { tramite:'Visa de Trabajo',  key:'visa_de_trabajo',  leads:10,  ventas:1,  revenue:1500  }
+  ],
+  conv_vendedor: [
+    { nombre:'María García', llamadas:62, opps:38, ventas:14, conv:'36.8%', facturacion:'€17.650', ticket:'€1.260' },
+    { nombre:'Carlos López', llamadas:55, opps:32, ventas:11, conv:'34.4%', facturacion:'€13.860', ticket:'€1.260' },
+    { nombre:'Ana Martínez', llamadas:41, opps:24, ventas:7,  conv:'29.2%', facturacion:'€8.820',  ticket:'€1.260' },
+    { nombre:'Pedro Sánchez',llamadas:25, opps:14, ventas:2,  conv:'14.3%', facturacion:'€2.520',  ticket:'€1.260' }
+  ],
+  perdidas_stage: [
+    { stage:'New Lead → Cualificado',       entraron:891, perdieron:693 },
+    { stage:'Cualificado → Cita',           entraron:198, perdieron:109 },
+    { stage:'Cita → Llamada',              entraron:89,  perdieron:25  },
+    { stage:'Llamada → Info+Contrato',     entraron:64,  perdieron:16  },
+    { stage:'Info → Pronto Pago',          entraron:48,  perdieron:9   },
+    { stage:'Pronto Pago → Pagado',        entraron:39,  perdieron:5   }
+  ],
+  valor_top5: [
+    { nombre:'Laura M.',   tramites:3, valor:'€4.200', ultimo:'Reagrupación Familiar' },
+    { nombre:'Ahmed K.',   tramites:2, valor:'€3.800', ultimo:'Visado Argentina' },
+    { nombre:'Fatima R.',  tramites:2, valor:'€3.500', ultimo:'Nómada Digital' },
+    { nombre:'Carlos V.',  tramites:3, valor:'€3.200', ultimo:'Renovación' },
+    { nombre:'María P.',   tramites:2, valor:'€2.900', ultimo:'Visado LATAM' }
+  ],
+  nq_evolucion: {
+    meses: ['Ene','Feb','Mar','Abr','May','Jun'],
+    fondos:  [5,7,8,10,11,38],
+    tiempo:  [3,5,6,7,8,27],
+    cue:     [2,3,4,5,6,19]
+  },
+  // ── ghlLive: populated by loadGHLData() ──────────────────
+  ghlLive: {
+    byCountry:  {},
+    byTramite:  {},
+    byVendedor: {},
+    lostReasons:{},
+    noQualified:{ cue:0, tiempo:0, fondos:0 },
+    totalOpps:  0,
+    totalWon:   0,
+    totalRevenue:0
+  },
   motivos_perdida: [
     { motivo:'Precio muy alto', pct:34, color:'#f87171' },
     { motivo:'No confía / no le da urgencia', pct:22, color:'#fb923c' },

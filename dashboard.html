@@ -1520,8 +1520,11 @@ function recalcFromPeriod(p) {
   const contacts = filterByPeriod(allC, days, 'dateAdded');
   const opps     = filterByPeriod(allO, days, 'createdAt');
   const wonOpps  = allO.filter(o => {
-    const d = o.closedDate || o.closeDate || '';
-    return o.status==='won' && d && new Date(d).getTime() >= Date.now() - days*86400000;
+    if((o.status||'').toLowerCase() !== 'won') return false;
+    const raw = o.closedDate || o.closeDate || o.date_closed || o.wonDate || '';
+    if(!raw) return false;
+    const t = typeof raw === 'number' ? raw : new Date(raw).getTime();
+    return t >= Date.now() - days * 86400000;
   });
 
   const totalLeads  = contacts.length;
@@ -1694,8 +1697,8 @@ function initEmbudo() {
   const container = document.getElementById('funnel-steps');
   container.innerHTML = '';
   f.forEach((step, i) => {
-    const pct = i===0 ? 100 : Math.round(step.value/f[0].value*100);
-    const loss = i>0 ? Math.round((f[i-1].value - step.value)/f[i-1].value*100) : 0;
+    const pct  = i===0 ? 100 : (f[0].value > 0 ? Math.round(step.value/f[0].value*100) : 0);
+    const loss = i>0 && f[i-1].value > 0 ? Math.round((f[i-1].value - step.value)/f[i-1].value*100) : 0;
     const width = 100 - (i*10);
     container.innerHTML += `
       <div class="funnel-step" style="border-left:3px solid ${step.color}; margin-left:${i*8}px; margin-right:${i*8}px">
@@ -1741,15 +1744,13 @@ function renderVentasCharts(days) {
   // ── Stat cards ────────────────────────────────────────────
   if(hasReal) {
     const cutoff = Date.now() - days * 86400000;
-    const wonPeriod = gl.allOpps.filter(o => {
-      const d = o.closedDate || o.closeDate || o.updatedAt || '';
-      return o.status === 'won' && d && new Date(d).getTime() >= cutoff;
-    });
+    const getDate = o => { const r = o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.updatedAt||''; return typeof r==='number'?r:new Date(r).getTime(); };
+    const wonPeriod = gl.allOpps.filter(o => (o.status||'').toLowerCase()==='won' && getDate(o) >= cutoff);
     const revPeriod = wonPeriod.reduce((s,o) => s + (o.monetaryValue || 0), 0);
     const ticket    = wonPeriod.length > 0 ? Math.round(revPeriod / wonPeriod.length) : 0;
     const wonYear   = gl.allOpps.filter(o => {
-      const d = o.closedDate || o.closeDate || o.updatedAt || '';
-      return o.status === 'won' && d && new Date(d).getFullYear() === new Date().getFullYear();
+      if((o.status||'').toLowerCase()!=='won') return false;
+      const t = getDate(o); return t && new Date(t).getFullYear() === new Date().getFullYear();
     });
     const revYear   = wonYear.reduce((s,o) => s + (o.monetaryValue || 0), 0);
 
@@ -1765,7 +1766,8 @@ function renderVentasCharts(days) {
       dayMap[d.toISOString().slice(0,10)] = 0;
     }
     wonPeriod.forEach(o => {
-      const k = (o.closedDate || o.closeDate || o.updatedAt || '').slice(0,10);
+      const raw = o.closedDate || o.closeDate || o.date_closed || o.wonDate || o.updatedAt || '';
+      const k = (typeof raw === 'number') ? new Date(raw).toISOString().slice(0,10) : String(raw).slice(0,10);
       if(k in dayMap) dayMap[k] += (o.monetaryValue || 0);
     });
     const dKeys   = Object.keys(dayMap);
@@ -1836,21 +1838,26 @@ function renderVentasCharts(days) {
     const svcData   = sorted.map(([,v]) => v);
     const svcColors = ['#3b82f6','#6366f1','#a78bfa','#f59e0b','#10b981','#ec4899','#f97316','#06b6d4','#84cc16','#e11d48','#8b5cf6'];
 
-    if(charts['chart-servicios']) {
+    if(svcLabels.length === 0) {
+      const el = document.getElementById('chart-servicios');
+      if(el) el.innerHTML = '<div class="text-xs text-slate-500 text-center py-8">Sin datos de trámites — se poblará automáticamente cuando los contactos tengan el campo <code class="text-slate-400">tipo_de_trámite</code> completado</div>';
+    } else if(charts['chart-servicios']) {
       charts['chart-servicios'].updateSeries([{ name:'Ingresos est. €', data: svcData }]);
       charts['chart-servicios'].updateOptions({
         xaxis:{ categories: svcLabels },
-        colors: svcColors.slice(0, svcLabels.length)
+        colors: svcColors.slice(0, svcLabels.length),
+        chart:{ height: Math.max(200, svcLabels.length * 40) }
       });
     } else {
       initChart('chart-servicios', mkOpts({
-        chart:{ type:'bar', height: Math.max(200, svcLabels.length * 36), stacked:false },
+        chart:{ type:'bar', height: Math.max(200, svcLabels.length * 40) },
         series:[{ name:'Ingresos est. €', data: svcData }],
         xaxis:{ categories: svcLabels, labels:{ style:{ colors:'#64748b', fontSize:'11px' } } },
         yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>'€'+v.toLocaleString('es-ES') } },
         colors: svcColors.slice(0, svcLabels.length),
         plotOptions:{ bar:{ borderRadius:4, distributed:true, horizontal:true } },
-        legend:{ show:false }
+        legend:{ show:false },
+        dataLabels:{ enabled:true, formatter:v=>'€'+v.toLocaleString('es-ES'), style:{ colors:['#fff'], fontSize:'10px' } }
       }));
     }
 
@@ -1925,29 +1932,41 @@ function filterCampanas(tipo, btn) {
 }
 
 function refreshCampanasFromGHL(sourceCounts, oppList, avgTicket) {
-  // ── Map GHL canal_referencia_dr values → DATA.campanas entries ──
-  // sourceCounts keys are lowercased raw values from the field
-  // We try exact match then partial match
-  // Build won-opps-by-source map for exact ventas per canal
-  // Build won-opps-by-source map using exact GHL field values
   const wonBySrc = {};
-  oppList.filter(o => o.status === 'won').forEach(o => {
+  oppList.filter(o => (o.status||'').toLowerCase() === 'won').forEach(o => {
     const src = (o.source || o.leadSource || o.lead_source || '').toLowerCase().trim();
     if(src) wonBySrc[src] = (wonBySrc[src] || 0) + 1;
   });
 
-  DATA.campanas.forEach(camp => {
-    // Use ghlVal (exact GHL field value) for matching, fallback to derived key
-    const key = (camp.ghlVal || camp.canal.toLowerCase().replace(/\s+/g,'_'));
-    const leads = sourceCounts[key] || sourceCounts[camp.canal.toLowerCase()] || 0;
-    if(leads > 0) camp.leads = leads;
-
-    // Exact ventas from opp source field (set by GHL automation)
-    const ventas = wonBySrc[key] || wonBySrc[camp.canal.toLowerCase()] || 0;
-    if(ventas > 0 || leads > 0) {
-      if(ventas > 0) camp.ventas = ventas;
-      camp.conv = camp.leads > 0 ? ((camp.ventas/camp.leads)*100).toFixed(1)+'%' : '0%';
+  // Build contact→canal map for citas cross-reference
+  const contactCanal = {};
+  (DATA.ghlLive.allContacts || []).forEach(c => {
+    const fields = c.customFields || c.customField || [];
+    if(Array.isArray(fields)) {
+      const fSrc = fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('canal_referencia'));
+      const src  = (fSrc?.value || fSrc?.fieldValue || c.source || '').toLowerCase().trim();
+      if(src && c.id) contactCanal[c.id] = src;
     }
+  });
+
+  // Count citas per canal from allCitas
+  const citasBySrc = {};
+  (DATA.ghlLive.allCitas || []).forEach(a => {
+    const cid = a.contactId || a.contact_id || a.contact?.id;
+    const src  = cid ? (contactCanal[cid] || '') : '';
+    if(src) citasBySrc[src] = (citasBySrc[src] || 0) + 1;
+  });
+
+  DATA.campanas.forEach(camp => {
+    const key   = (camp.ghlVal || camp.canal.toLowerCase().replace(/\s+/g,'_'));
+    const leads  = sourceCounts[key] || sourceCounts[camp.canal.toLowerCase()] || 0;
+    const citas  = citasBySrc[key]  || citasBySrc[camp.canal.toLowerCase()]   || 0;
+    const ventas = wonBySrc[key]    || wonBySrc[camp.canal.toLowerCase()]      || 0;
+
+    if(leads  > 0) camp.leads  = leads;
+    camp.citas  = citas;   // always overwrite with real value (0 is correct too)
+    if(ventas > 0) camp.ventas = ventas;
+    camp.conv = camp.leads > 0 ? ((camp.ventas / camp.leads) * 100).toFixed(1) + '%' : '0%';
   });
 
   // Apply real CPL from ad spend config for paid channels
@@ -3493,12 +3512,13 @@ async function loadGHLData() {
     try {
       const pipelines = await ghlFetchV2('GET', `/opportunities/pipelines`, { locationId: GHL.locationId });
       const pipelineList = pipelines.pipelines || [];
-      // Find Pre-venta pipeline
-      const preVenta = pipelineList.find(p =>
-        (p.name||'').toLowerCase().includes('pre') ||
-        (p.name||'').toLowerCase().includes('venta') ||
-        (p.name||'').toLowerCase().includes('preventa')
-      ) || pipelineList[0];
+      console.log('[GHL] Pipelines encontrados:', pipelineList.map(p=>p.name));
+      // Find Pre-venta pipeline — must contain BOTH 'pre' AND 'venta', or exact 'preventa'
+      const preVenta = pipelineList.find(p => {
+        const n = (p.name||'').toLowerCase();
+        return n.includes('preventa') || n.includes('pre-venta') || (n.includes('pre') && n.includes('venta'));
+      }) || pipelineList.find(p => (p.name||'').toLowerCase().includes('venta'))
+        || pipelineList[0];
 
       if(preVenta) {
         showToast('Cargando historial completo de oportunidades...', false);
@@ -3780,8 +3800,11 @@ function buildMonthlyHistory(contactList, oppList) {
     const key = (c.dateAdded||c.createdAt||'').slice(0,7);
     if(months[key]) months[key].leads++;
   });
-  oppList.filter(o=>o.status==='won').forEach(o => {
-    const key = (o.closedDate||o.closeDate||o.updatedAt||'').slice(0,7);
+  oppList.filter(o=>(o.status||'').toLowerCase()==='won').forEach(o => {
+    const dateStr = o.closedDate || o.closeDate || o.date_closed || o.wonDate || o.updatedAt || '';
+    const key = (typeof dateStr === 'number')
+      ? new Date(dateStr).toISOString().slice(0,7)
+      : String(dateStr).slice(0,7);
     if(months[key]) {
       months[key].ventas++;
       months[key].revenue += o.monetaryValue||o.monetary_value||0;

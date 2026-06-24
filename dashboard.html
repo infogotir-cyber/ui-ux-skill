@@ -2655,16 +2655,16 @@ async function loadGHLData() {
     });
     stageCounts.forEach((count,i) => { if(count>0 && DATA.funnel[i]) DATA.funnel[i].value = count; });
 
-    // ── 3. APPOINTMENTS (citas / no-shows) ──────────────────
+    // ── 3. CITAS / LLAMADAS (Google Meet via GHL Calendar) ──────
+    // Each calendar event = a Google Meet call. Crossed-out = cancelled (no-show).
     try {
       const now = new Date();
       const startTime = new Date(now - 90 * 24 * 60 * 60 * 1000).toISOString();
       const endTime   = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000).toISOString();
-      // GHL V2: first get calendars list, then fetch events per calendar
       const calsResp = await ghlFetchV2('GET', `/calendars/`, { locationId: GHL.locationId });
       const calList = calsResp.calendars || calsResp.data || [];
       let apptList = [];
-      for(const cal of calList.slice(0,3)) {
+      for(const cal of calList.slice(0,5)) {
         try {
           const ev = await ghlFetchV2('GET', `/calendars/events`, {
             calendarId: cal.id, locationId: GHL.locationId, startTime, endTime
@@ -2672,9 +2672,24 @@ async function loadGHLData() {
           apptList = apptList.concat(ev.events || ev.appointments || []);
         } catch(_) {}
       }
-      const citas   = apptList.filter(a=>['confirmed','showed','no-showed','booked'].includes(a.appointmentStatus||a.status)).length;
-      const noshows = apptList.filter(a=>['no-showed','noshow','no_show'].includes(a.appointmentStatus||a.status)).length;
-      if(citas)   document.getElementById('kpi-citas').textContent   = citas;
+      // Total agendadas = all events (includes confirmed, cancelled, showed, noshow)
+      const totalCitas = apptList.length;
+      // No-shows = cancelled or noshow status (the crossed-out ones in GHL calendar)
+      const noshows = apptList.filter(a => {
+        const s = (a.appointmentStatus || a.status || '').toLowerCase();
+        return ['cancelled','canceled','no-showed','noshow','no_show','invalid'].includes(s);
+      }).length;
+      // Shows = confirmed + showed (attended)
+      const shows = apptList.filter(a => {
+        const s = (a.appointmentStatus || a.status || '').toLowerCase();
+        return ['confirmed','showed','completed'].includes(s);
+      }).length;
+
+      if(totalCitas) {
+        document.getElementById('kpi-citas').textContent   = totalCitas;
+        // Llamadas = same as citas (each calendar event = a Google Meet call)
+        document.getElementById('kpi-llamadas').textContent = totalCitas;
+      }
       if(noshows) document.getElementById('kpi-noshows').textContent = noshows;
     } catch(_) { /* appointments scope opcional */ }
 

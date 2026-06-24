@@ -569,6 +569,30 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
       <span id="camp-total-comisiones" class="text-lg font-bold text-amber-400">—</span>
     </div>
   </div>
+  <!-- Gasto publicitario manual (para calcular CPL real de redes pagadas) -->
+  <div id="adspend-panel" class="card mb-4 border border-slate-700/50">
+    <div class="flex items-center justify-between mb-3">
+      <div>
+        <h4 class="font-semibold text-white text-sm">Gasto publicitario mensual</h4>
+        <p class="text-xs text-slate-500 mt-0.5">Ingresá el gasto de cada red para calcular CPL y ROI reales</p>
+      </div>
+      <button onclick="saveAdSpend()" class="px-3 py-1.5 bg-brand-600 hover:bg-brand-500 text-white text-xs rounded-lg transition-colors">Guardar</button>
+    </div>
+    <div class="grid grid-cols-3 gap-3">
+      <div>
+        <label class="text-xs text-slate-400 mb-1 block">Instagram €/mes</label>
+        <input id="adspend-instagram" type="number" placeholder="ej: 500" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-brand-500">
+      </div>
+      <div>
+        <label class="text-xs text-slate-400 mb-1 block">TikTok €/mes</label>
+        <input id="adspend-tiktok" type="number" placeholder="ej: 300" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-brand-500">
+      </div>
+      <div>
+        <label class="text-xs text-slate-400 mb-1 block">Facebook €/mes</label>
+        <input id="adspend-facebook" type="number" placeholder="ej: 400" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-brand-500">
+      </div>
+    </div>
+  </div>
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
     <div class="card">
       <h3 class="font-semibold text-white mb-4">Leads por Fuente — <span class="text-slate-400 font-normal text-sm">campo <code class="text-amber-400 text-xs">canal_referencia_dr</code></span></h3>
@@ -1285,19 +1309,19 @@ const DATA = {
   ],
   campanas: [
     // Afiliados externos — 8% comisión por venta cerrada (Pagado)
-    { canal:'Jesús Mosquera',       tipo:'afiliado',  leads:18, citas:9,  ventas:4, conv:'22.2%', cpl:'€56',  roi:'385%', color:'#a78bfa', comision_pct:8 },
-    { canal:'Nasla Espinosa',       tipo:'afiliado',  leads:14, citas:7,  ventas:3, conv:'21.4%', cpl:'€54',  roi:'392%', color:'#c084fc', comision_pct:8 },
-    { canal:'Wilmen Mendoza',       tipo:'afiliado',  leads:9,  citas:4,  ventas:1, conv:'11.1%', cpl:'€113', roi:'214%', color:'#818cf8', comision_pct:8 },
+    { canal:'Jesús Mosquera',       ghlVal:'jesús_mosquera',          tipo:'afiliado',  leads:18, citas:9,  ventas:4, conv:'22.2%', cpl:'€56',  roi:'385%', color:'#a78bfa', comision_pct:8 },
+    { canal:'Nasla Espinosa',       ghlVal:'nasla_espinosa',           tipo:'afiliado',  leads:14, citas:7,  ventas:3, conv:'21.4%', cpl:'€54',  roi:'392%', color:'#c084fc', comision_pct:8 },
+    { canal:'Wilmen Mendoza',       ghlVal:'wilmen_mendoza',           tipo:'afiliado',  leads:9,  citas:4,  ventas:1, conv:'11.1%', cpl:'€113', roi:'214%', color:'#818cf8', comision_pct:8 },
     // Referidos orgánicos — sin coste
-    { canal:'Centro de Estudios',   tipo:'referido',  leads:12, citas:6,  ventas:3, conv:'25.0%', cpl:'€0',   roi:'∞',    color:'#4ade80', comision_pct:0 },
-    { canal:'Amigo / Familiar',     tipo:'referido',  leads:16, citas:8,  ventas:4, conv:'25.0%', cpl:'€0',   roi:'∞',    color:'#34d399', comision_pct:0 },
+    { canal:'Centro de Estudios',   ghlVal:'un_centro_de_estudios_me', tipo:'referido',  leads:12, citas:6,  ventas:3, conv:'25.0%', cpl:'€0',   roi:'∞',    color:'#4ade80', comision_pct:0 },
+    { canal:'Amigo / Familiar',     ghlVal:'un_amigo_o_familiar',      tipo:'referido',  leads:16, citas:8,  ventas:4, conv:'25.0%', cpl:'€0',   roi:'∞',    color:'#34d399', comision_pct:0 },
     // Redes sociales pagadas
-    { canal:'Instagram',            tipo:'pagado',    leads:94, citas:38, ventas:14,conv:'14.9%', cpl:'€11',  roi:'520%', color:'#e1306c', comision_pct:0 },
-    { canal:'TikTok',               tipo:'pagado',    leads:47, citas:14, ventas:3, conv:'6.4%',  cpl:'€19',  roi:'185%', color:'#555555', comision_pct:0 },
-    { canal:'Facebook',             tipo:'pagado',    leads:82, citas:28, ventas:10,conv:'12.2%', cpl:'€18',  roi:'340%', color:'#1877f2', comision_pct:0 },
+    { canal:'Instagram',            ghlVal:'instagram',                tipo:'pagado',    leads:94, citas:38, ventas:14,conv:'14.9%', cpl:'€11',  roi:'520%', color:'#e1306c', comision_pct:0 },
+    { canal:'TikTok',               ghlVal:'tiktok',                   tipo:'pagado',    leads:47, citas:14, ventas:3, conv:'6.4%',  cpl:'€19',  roi:'185%', color:'#555555', comision_pct:0 },
+    { canal:'Facebook',             ghlVal:'facebook',                 tipo:'pagado',    leads:82, citas:28, ventas:10,conv:'12.2%', cpl:'€18',  roi:'340%', color:'#1877f2', comision_pct:0 },
     // Inbound orgánico
-    { canal:'Sitio Web',            tipo:'organico',  leads:22, citas:8,  ventas:3, conv:'13.6%', cpl:'€0',   roi:'∞',    color:'#38bdf8', comision_pct:0 },
-    { canal:'Otro',                 tipo:'otro',      leads:8,  citas:2,  ventas:1, conv:'12.5%', cpl:'—',    roi:'—',    color:'#94a3b8', comision_pct:0 }
+    { canal:'Sitio Web',            ghlVal:'sitio_web',                tipo:'organico',  leads:22, citas:8,  ventas:3, conv:'13.6%', cpl:'€0',   roi:'∞',    color:'#38bdf8', comision_pct:0 },
+    { canal:'Otro',                 ghlVal:'otro',                     tipo:'otro',      leads:8,  citas:2,  ventas:1, conv:'12.5%', cpl:'—',    roi:'—',    color:'#94a3b8', comision_pct:0 }
   ],
   // CPL afiliado = (ventas × ticket_prom × 8%) / leads
   // Ej Jesús: (4 × 1259 × 0.08) / 18 = €56 CPL real
@@ -1899,6 +1923,7 @@ function refreshCampanasFromGHL(sourceCounts, oppList, avgTicket) {
   // sourceCounts keys are lowercased raw values from the field
   // We try exact match then partial match
   // Build won-opps-by-source map for exact ventas per canal
+  // Build won-opps-by-source map using exact GHL field values
   const wonBySrc = {};
   oppList.filter(o => o.status === 'won').forEach(o => {
     const src = (o.source || o.leadSource || o.lead_source || '').toLowerCase().trim();
@@ -1906,45 +1931,59 @@ function refreshCampanasFromGHL(sourceCounts, oppList, avgTicket) {
   });
 
   DATA.campanas.forEach(camp => {
-    const nameLC = camp.canal.toLowerCase();
-    const leads = sourceCounts[nameLC]
-      || sourceCounts[nameLC.replace(/\s+/g,'_')]
-      || sourceCounts[nameLC.replace(/\s+/g,'-')]
-      || 0;
+    // Use ghlVal (exact GHL field value) for matching, fallback to derived key
+    const key = (camp.ghlVal || camp.canal.toLowerCase().replace(/\s+/g,'_'));
+    const leads = sourceCounts[key] || sourceCounts[camp.canal.toLowerCase()] || 0;
     if(leads > 0) camp.leads = leads;
 
     // Exact ventas from opp source field (set by GHL automation)
-    const ventas = wonBySrc[nameLC]
-      || wonBySrc[nameLC.replace(/\s+/g,'_')]
-      || wonBySrc[nameLC.replace(/\s+/g,'-')]
-      || 0;
-    if(ventas > 0) {
-      camp.ventas = ventas;
-      camp.conv   = camp.leads > 0 ? ((ventas/camp.leads)*100).toFixed(1)+'%' : '0%';
+    const ventas = wonBySrc[key] || wonBySrc[camp.canal.toLowerCase()] || 0;
+    if(ventas > 0 || leads > 0) {
+      if(ventas > 0) camp.ventas = ventas;
+      camp.conv = camp.leads > 0 ? ((camp.ventas/camp.leads)*100).toFixed(1)+'%' : '0%';
     }
   });
+
+  // Apply real CPL from ad spend config for paid channels
+  const adSpend = getAdSpend();
+  DATA.campanas.forEach(camp => {
+    if(camp.tipo === 'pagado' && camp.leads > 0) {
+      const spend = adSpend[(camp.ghlVal||camp.canal.toLowerCase())] || 0;
+      if(spend > 0) {
+        const cplVal = Math.round(spend / camp.leads);
+        camp.cpl = '€' + cplVal;
+        const revenue = camp.ventas * (avgTicket || 1259);
+        const roiVal  = spend > 0 ? Math.round((revenue - spend) / spend * 100) : 0;
+        camp.roi = roiVal + '%';
+      }
+    }
+  });
+
+  // Load ad spend inputs if panel is in DOM
+  loadAdSpend();
 
   // ── Per-afiliado stats from oppList (won opps whose contact source = afiliado) ──
   // GHL doesn't link opp→contact source directly, so we use the canal name match
   // on opp's own customFields or approximation from DATA.campanas
-  const AFILIADOS = [
-    { key:'jesús mosquera',  label:'Jesús Mosquera',  initials:'JM' },
-    { key:'nasla espinosa',  label:'Nasla Espinosa',  initials:'NE' },
-    { key:'wilmen mendoza',  label:'Wilmen Mendoza',  initials:'WM' }
-  ];
+  // Derive afiliados list from DATA.campanas entries with comision_pct > 0
+  const AFILIADOS = DATA.campanas
+    .filter(c => c.comision_pct > 0)
+    .map(c => ({
+      key:      c.ghlVal || c.canal.toLowerCase().replace(/\s+/g,'_'),
+      label:    c.canal,
+      initials: c.canal.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2)
+    }));
 
   // Count leads per afiliado from sourceCounts (canal_referencia_dr on contact)
   // Count ventas/revenue EXACT from oppList.source (GHL automation copies canal_referencia_dr → opp source)
   const afiliadoData = AFILIADOS.map(af => {
-    const leads = sourceCounts[af.key]
-      || sourceCounts[af.key.replace(/\s+/g,'_')]
-      || (DATA.campanas.find(c=>c.canal.toLowerCase()===af.key)?.leads || 0);
+    const leads = sourceCounts[af.key] || 0;
 
-    // Exact ventas: won opps whose source matches this afiliado name
+    // Exact ventas: won opps whose source matches this afiliado's ghlVal
     const wonOpps = oppList.filter(o => {
       if(o.status !== 'won') return false;
       const src = (o.source || o.leadSource || o.lead_source || '').toLowerCase().trim();
-      return src === af.key || src === af.key.replace(/\s+/g,'_') || src.includes(af.key.split(' ')[0].toLowerCase());
+      return src === af.key;
     });
     const ventas  = wonOpps.length;
     const revenue = wonOpps.reduce((s,o) => s + (o.monetaryValue || o.monetary_value || 0), 0);
@@ -2997,6 +3036,29 @@ let GHL = { apiKey:'', locationId:'', version:'v1', connected:false };
 
 function selectAPIVersion(v) { GHL.version = 'v2'; }
 
+// ── Ad spend config (localStorage) ──────────────────────────
+function loadAdSpend() {
+  const saved = JSON.parse(localStorage.getItem('gotir_adspend') || '{}');
+  ['instagram','tiktok','facebook'].forEach(k => {
+    const el = document.getElementById('adspend-'+k);
+    if(el && saved[k]) el.value = saved[k];
+  });
+  return saved;
+}
+function saveAdSpend() {
+  const data = {};
+  ['instagram','tiktok','facebook'].forEach(k => {
+    const v = parseFloat(document.getElementById('adspend-'+k)?.value) || 0;
+    if(v > 0) data[k] = v;
+  });
+  localStorage.setItem('gotir_adspend', JSON.stringify(data));
+  showToast('Gasto publicitario guardado');
+  if(sectionInited['campanas']) { sectionInited['campanas']=false; initChartsForSection('campanas'); }
+}
+function getAdSpend() {
+  return JSON.parse(localStorage.getItem('gotir_adspend') || '{}');
+}
+
 // ── Vendedores config (localStorage) ────────────────────────
 function loadVendedoresConfig() {
   const saved = localStorage.getItem('gotir_vendedores') || '';
@@ -3214,6 +3276,48 @@ async function loadGHLData() {
       if(preVenta) {
         showToast('Cargando historial completo de oportunidades...', false);
         oppList = await fetchAllOpportunities(preVenta.id);
+      }
+
+      // ── Seguimiento pipeline ────────────────────────────────
+      const seguimientoPL = pipelineList.find(p => (p.name||'').toLowerCase().includes('seguimiento'));
+      if(seguimientoPL) {
+        showToast('Cargando pipeline Seguimiento...', false);
+        const segOpps = await fetchAllOpportunities(seguimientoPL.id);
+        const SEG_STAGES = {
+          'nuevo cliente (derivar)':0,'en proceso':1,'presentado en evaluación':2,
+          'presentado en evaluacion':2,'resolución':3,'resolucion':3,'recurso':4,
+          'trámites posteriores':5,'tramites posteriores':5,'renovación':6,
+          'renovacion':6,'en pausa':7,'cerrado':8
+        };
+        const segCounts = new Array(9).fill(0);
+        segOpps.forEach(o => {
+          const name = (o.pipelineStageName||o.stageName||'').toLowerCase().trim();
+          const idx = SEG_STAGES[name];
+          if(idx !== undefined) segCounts[idx]++;
+        });
+        segCounts.forEach((count,i) => { if(DATA.seguimiento[i]) DATA.seguimiento[i].value = count; });
+        if(sectionInited['seguimiento']) { sectionInited['seguimiento']=false; initChartsForSection('seguimiento'); }
+      }
+
+      // ── Proveedores pipeline ────────────────────────────────
+      const provPL = pipelineList.find(p => (p.name||'').toLowerCase().includes('proveedor'));
+      if(provPL) {
+        showToast('Cargando pipeline Proveedores...', false);
+        const provOpps = await fetchAllOpportunities(provPL.id);
+        const PROV_STAGES = {
+          'lead enviado':0,'en contacto con partner':1,'confirmado':2,
+          'compra realizada/ comisión pendiente':3,'compra realizada/ comision pendiente':3,
+          'compra realizada / comisión pendiente':3,'comisión pagada':4,'comision pagada':4,
+          'cerrado':5
+        };
+        const provCounts = new Array(6).fill(0);
+        provOpps.forEach(o => {
+          const name = (o.pipelineStageName||o.stageName||'').toLowerCase().trim();
+          const idx = PROV_STAGES[name];
+          if(idx !== undefined) provCounts[idx]++;
+        });
+        provCounts.forEach((count,i) => { if(DATA.proveedores[i]) DATA.proveedores[i].value = count; });
+        if(sectionInited['proveedores']) { sectionInited['proveedores']=false; initChartsForSection('proveedores'); }
       }
     } catch(e) { console.warn('Opportunities load failed:', e.message); }
 

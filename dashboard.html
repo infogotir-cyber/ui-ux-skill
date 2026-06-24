@@ -409,6 +409,9 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
         <h3 class="font-semibold text-white">Comparativa Períodos</h3>
         <span class="chip">Semana / Mes / Año</span>
       </div>
+      <div id="comparativa-note" style="display:none" class="mb-3 px-3 py-2 rounded-lg bg-amber-950/40 border border-amber-900/40 text-xs text-amber-400">
+        ⚠️ El período anterior aún es estimado. Los datos reales se acumulan automáticamente con cada conexión al dashboard.
+      </div>
       <div id="chart-comparativa"></div>
     </div>
   </div>
@@ -2898,6 +2901,9 @@ async function loadGHLData() {
       if(realizadas && won) document.getElementById('kpi-conv-llamada').textContent = ((won/realizadas)*100).toFixed(1)+'%';
     } catch(_) { /* appointments scope opcional */ }
 
+    // ── 4. SNAPSHOT HISTÓRICO en localStorage ───────────────────
+    saveSnapshot({ leads: total, ventas: won, revenue, citas: contactList.length });
+
     document.getElementById('last-update').textContent =
       new Date().toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'}) + ' · GHL Live';
     showToast('Datos reales de GoHighLevel cargados');
@@ -2909,6 +2915,54 @@ async function loadGHLData() {
     showToast('Error cargando datos: '+e.message, true);
     console.error('GHL Load error:', e);
   }
+}
+
+// ── Snapshot helpers ─────────────────────────────────────────
+function saveSnapshot(data) {
+  const key = new Date().toISOString().slice(0,10); // YYYY-MM-DD
+  const all = JSON.parse(localStorage.getItem('gotir_snapshots') || '{}');
+  all[key] = { ...data, ts: Date.now() };
+  // Keep last 400 days max
+  const keys = Object.keys(all).sort();
+  if(keys.length > 400) keys.slice(0, keys.length - 400).forEach(k => delete all[k]);
+  localStorage.setItem('gotir_snapshots', JSON.stringify(all));
+}
+
+function getSnapshotRange(daysAgo, spanDays) {
+  // Returns aggregated snapshot for a date range
+  const all = JSON.parse(localStorage.getItem('gotir_snapshots') || '{}');
+  const now = Date.now();
+  const MS = 86400000;
+  const start = now - daysAgo * MS;
+  const end   = now - (daysAgo - spanDays) * MS;
+  const entries = Object.entries(all).filter(([k]) => {
+    const t = new Date(k).getTime();
+    return t >= start && t <= end;
+  });
+  if(entries.length === 0) return null;
+  // Return the latest entry in the range
+  entries.sort((a,b) => a[0] > b[0] ? 1 : -1);
+  return entries[entries.length - 1][1];
+}
+
+function buildComparativaData(currentLeads, currentVentas, currentRevenue) {
+  // Try to get real previous period data from snapshots
+  const prevWeek  = getSnapshotRange(14, 7);   // 14-7 days ago
+  const prevMonth = getSnapshotRange(60, 30);   // 60-30 days ago
+  const prevYear  = getSnapshotRange(730, 365); // 730-365 days ago
+
+  return {
+    categories: ['Leads Sem.','Leads Mes','Leads Año','Ventas Sem.€','Ventas Mes€','Ventas Año€'],
+    prev: [
+      prevWeek  ? prevWeek.leads   : null,
+      prevMonth ? prevMonth.leads  : null,
+      prevYear  ? prevYear.leads   : null,
+      prevWeek  ? prevWeek.revenue : null,
+      prevMonth ? prevMonth.revenue: null,
+      prevYear  ? prevYear.revenue : null,
+    ],
+    curr: [currentLeads, currentLeads, currentLeads, currentRevenue, currentRevenue, currentRevenue]
+  };
 }
 
 function refreshEjecutivoCharts(contactList, oppList, sourceCounts, won, revenue) {
@@ -2984,14 +3038,18 @@ function refreshEjecutivoCharts(contactList, oppList, sourceCounts, won, revenue
     window._charts['chart-fuentes'].updateOptions({ labels, colors });
   }
 
-  // ── 4. Comparativa períodos ───────────────────────────────────
-  // Use total contacts as leads; won/revenue from opportunities
+  // ── 4. Comparativa períodos — real histórico desde localStorage ──
   const totalLeads = contactList.length;
+  const comp = buildComparativaData(totalLeads, won, revenue);
   if(charts['chart-comparativa'] && totalLeads > 0) {
-    window._charts['chart-comparativa'].updateSeries([
-      { name:'Período anterior', data:[210, 756, 7120, 32600, 148200, 1172000] },
-      { name:'Período actual',   data:[totalLeads, totalLeads, totalLeads, revenue, revenue, revenue] }
+    const hasPrev = comp.prev.some(v => v !== null);
+    const prevData = comp.prev.map((v,i) => v !== null ? v : [210,756,7120,32600,148200,1172000][i]);
+    charts['chart-comparativa'].updateSeries([
+      { name: hasPrev ? 'Período anterior (real)' : 'Período anterior (demo)', data: prevData },
+      { name: 'Período actual (real)', data: comp.curr }
     ]);
+    const note = document.getElementById('comparativa-note');
+    if(note) note.style.display = hasPrev ? 'none' : 'block';
   }
 }
 

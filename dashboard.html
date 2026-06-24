@@ -2728,10 +2728,95 @@ async function loadGHLData() {
       new Date().toLocaleTimeString('es-ES',{hour:'2-digit',minute:'2-digit'}) + ' · GHL Live';
     showToast('Datos reales de GoHighLevel cargados');
     refreshLiveSections();
+    refreshEjecutivoCharts(contactList, oppList, sourceCounts, won, revenue);
 
   } catch(e) {
     showToast('Error cargando datos: '+e.message, true);
     console.error('GHL Load error:', e);
+  }
+}
+
+function refreshEjecutivoCharts(contactList, oppList, sourceCounts, won, revenue) {
+  // ── 1. Evolución leads por día (últimos 30 días) ──────────────
+  const today = new Date();
+  const dayMap = {};
+  const wonDayMap = {};
+  for(let i = 29; i >= 0; i--) {
+    const d = new Date(today); d.setDate(d.getDate() - i);
+    const key = d.toISOString().slice(0,10);
+    dayMap[key] = 0; wonDayMap[key] = 0;
+  }
+  contactList.forEach(c => {
+    const key = (c.dateAdded||c.createdAt||'').slice(0,10);
+    if(key in dayMap) dayMap[key]++;
+  });
+  oppList.filter(o=>o.status==='won').forEach(o => {
+    const key = (o.closedDate||o.closeDate||o.updatedAt||'').slice(0,10);
+    if(key in wonDayMap) wonDayMap[key]++;
+  });
+  const dayKeys = Object.keys(dayMap);
+  const dayLabels = dayKeys.map(k => { const d=new Date(k); return d.getDate()+' '+(d.toLocaleString('es-ES',{month:'short'})); });
+  if(charts['chart-leads-ventas']) {
+    window._charts['chart-leads-ventas'].updateSeries([
+      { name:'Leads',  data: dayKeys.map(k=>dayMap[k]) },
+      { name:'Ventas', data: dayKeys.map(k=>wonDayMap[k]) }
+    ]);
+    window._charts['chart-leads-ventas'].updateOptions({ xaxis:{ categories: dayLabels }});
+  }
+
+  // ── 2. Conversión por etapa (desde funnel real) ───────────────
+  const f = DATA.funnel;
+  const etapaConv = [];
+  const etapaLabels = [];
+  for(let i=1; i<f.length; i++) {
+    const prev = f[i-1].value;
+    const curr = f[i].value;
+    etapaConv.push(prev>0 ? Math.round((curr/prev)*100) : 0);
+    etapaLabels.push(f[i-1].label.slice(0,8)+'→'+f[i].label.slice(0,8));
+  }
+  const globalConv = f[0].value>0 ? Math.round((f[f.length-1].value/f[0].value)*100) : 0;
+  etapaConv.push(globalConv); etapaLabels.push('Global');
+  if(charts['chart-conversion-etapa']) {
+    window._charts['chart-conversion-etapa'].updateSeries([{ name:'Conversión %', data: etapaConv }]);
+    window._charts['chart-conversion-etapa'].updateOptions({ xaxis:{ categories: etapaLabels }});
+  }
+
+  // ── 3. Fuentes de leads (donut) ───────────────────────────────
+  const SOURCE_GROUPS = {
+    'instagram':   { label:'Instagram',  c:'#e1306c' },
+    'facebook':    { label:'Facebook',   c:'#1877f2' },
+    'tiktok':      { label:'TikTok',     c:'#555' },
+    'meta ads':    { label:'Meta Ads',   c:'#0866ff' },
+    'google':      { label:'Google',     c:'#4285f4' },
+    'sitio web':   { label:'Sitio Web',  c:'#38bdf8' },
+    'jesús mosquera':{ label:'Referidos',c:'#a78bfa' },
+    'nasla espinosa':{ label:'Referidos',c:'#a78bfa' },
+    'wilmen mendoza':{ label:'Referidos',c:'#a78bfa' },
+    'centro de estudios':{ label:'Referidos',c:'#4ade80' },
+    'amigo / familiar':  { label:'Referidos',c:'#4ade80' },
+  };
+  const grouped = {};
+  Object.entries(sourceCounts).forEach(([k,v]) => {
+    const def = SOURCE_GROUPS[k] || { label:'Otro', c:'#94a3b8' };
+    grouped[def.label] = (grouped[def.label]||0) + v;
+    if(!grouped[def.label+'__color']) grouped[def.label+'__color'] = def.c;
+  });
+  const labels = Object.keys(grouped).filter(k=>!k.includes('__color'));
+  const vals   = labels.map(l=>grouped[l]);
+  const colors = labels.map(l=>grouped[l+'__color']||'#94a3b8');
+  if(labels.length>0 && charts['chart-fuentes']) {
+    window._charts['chart-fuentes'].updateSeries(vals);
+    window._charts['chart-fuentes'].updateOptions({ labels, colors });
+  }
+
+  // ── 4. Comparativa períodos ───────────────────────────────────
+  // Use total contacts as leads; won/revenue from opportunities
+  const totalLeads = contactList.length;
+  if(charts['chart-comparativa'] && totalLeads > 0) {
+    window._charts['chart-comparativa'].updateSeries([
+      { name:'Período anterior', data:[210, 756, 7120, 32600, 148200, 1172000] },
+      { name:'Período actual',   data:[totalLeads, totalLeads, totalLeads, revenue, revenue, revenue] }
+    ]);
   }
 }
 

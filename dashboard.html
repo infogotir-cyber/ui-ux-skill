@@ -694,20 +694,26 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
 <!-- SECTION: LLAMADAS -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div id="s-llamadas" class="section p-6">
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Total Llamadas</div><div class="text-2xl font-bold text-white">183</div><span class="badge badge-up">+9%</span></div>
-    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Duración Prom.</div><div class="text-2xl font-bold text-white">24.3 min</div><span class="badge badge-up">+3 min</span></div>
-    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Prob. Cierre Prom.</div><div class="text-2xl font-bold text-white">62%</div><span class="badge badge-neutral">estable</span></div>
-    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Interés Alto</div><div class="text-2xl font-bold text-white">47%</div><span class="badge badge-up">+5%</span></div>
+  <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 mb-6">
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Total Citas</div><div class="text-2xl font-bold text-white" id="ll-total">—</div></div>
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Realizadas</div><div class="text-2xl font-bold text-green-400" id="ll-realizadas">—</div></div>
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">No-show</div><div class="text-2xl font-bold text-red-400" id="ll-noshows">—</div></div>
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Canceladas</div><div class="text-2xl font-bold text-amber-400" id="ll-canceladas">—</div></div>
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Asistencia</div><div class="text-2xl font-bold text-white" id="ll-asistencia">—</div></div>
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Conv. Llamada→Venta</div><div class="text-2xl font-bold text-white" id="ll-conv">—</div></div>
+  </div>
+  <div class="card mb-4">
+    <h3 class="font-semibold text-white mb-4">Citas por Día (últimos 30 días)</h3>
+    <div id="chart-llamadas-dia"></div>
   </div>
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
     <div class="card">
-      <h3 class="font-semibold text-white mb-4">Principales Objeciones</h3>
-      <div id="chart-objeciones"></div>
+      <h3 class="font-semibold text-white mb-4">Estado de Citas</h3>
+      <div id="chart-interes"></div>
     </div>
     <div class="card">
-      <h3 class="font-semibold text-white mb-4">Nivel de Interés por Llamada</h3>
-      <div id="chart-interes"></div>
+      <h3 class="font-semibold text-white mb-4">Principales Objeciones</h3>
+      <div id="chart-objeciones"></div>
     </div>
   </div>
   <div class="card">

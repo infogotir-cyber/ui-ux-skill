@@ -2013,7 +2013,8 @@ function initVendedores() {
   rankEl.innerHTML = entries.length === 0
     ? '<p class="text-slate-500 text-sm text-center py-4">No hay vendedores configurados. Usa el botón "Configurar" para agregar nombres.</p>'
     : entries.map((vend,i) => {
-        const conv = vend.opps > 0 ? ((vend.ventas/vend.opps)*100).toFixed(1) : '0';
+        const convBase = vend.llamadas > 0 ? vend.llamadas : vend.opps;
+        const conv = convBase > 0 ? ((vend.ventas/convBase)*100).toFixed(1) : '0';
         return `
         <div class="ranking-row">
           <div class="rank-num ${rankClasses[i]||'rank-other'}">${i+1}</div>
@@ -2040,7 +2041,8 @@ function initVendedores() {
 
   const tbody2 = document.getElementById('tabla-vendedores');
   tbody2.innerHTML = entries.map(x => {
-    const conv = x.opps > 0 ? ((x.ventas/x.opps)*100).toFixed(1) : '0';
+    const convBase = x.llamadas > 0 ? x.llamadas : x.opps;
+    const conv = convBase > 0 ? ((x.ventas/convBase)*100).toFixed(1) : '0';
     return `
     <tr class="border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
       <td class="py-3 px-3 font-medium text-slate-200">${x.nombre}</td>
@@ -3208,6 +3210,18 @@ async function loadGHLData() {
       }
       // Store full citas list for period filtering
       DATA.ghlLive.allCitas = apptList;
+
+      // Cross-reference calendar events → byVendedor llamadas count
+      apptList.forEach(a => {
+        const uid = a.userId || a.assignedUserId || a.calendarId || null;
+        if(uid && DATA.ghlLive.byVendedor[uid]) {
+          DATA.ghlLive.byVendedor[uid].llamadas++;
+        } else if(uid) {
+          // User in calendar but not in opps (e.g. only has calls, no opps assigned)
+          const name = a.calendarTitle || a.title || uid;
+          DATA.ghlLive.byVendedor[uid] = { name, llamadas:1, opps:0, ventas:0, revenue:0 };
+        }
+      });
 
       // Total agendadas = all events (includes confirmed, cancelled, showed, noshow)
       const totalCitas = apptList.length;

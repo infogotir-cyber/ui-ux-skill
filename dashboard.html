@@ -1186,33 +1186,32 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
 <!-- SECTION: SEGMENTACIÓN -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div id="s-segmentacion" class="section p-6">
-  <div class="mb-6 p-4 bg-amber-950/30 border border-amber-900/40 rounded-xl flex items-start gap-3">
-    <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" class="w-5 h-5 flex-shrink-0 mt-0.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-    <div>
-      <div class="text-sm font-semibold text-amber-400 mb-1">Configuración requerida</div>
-      <div class="text-xs text-slate-300">Para activar esta sección, crea el campo <code class="text-amber-400 bg-slate-800 px-1 rounded">tipo_grupo</code> en GHL (dropdown: <strong>Individual</strong>, <strong>Pareja</strong>, <strong>Familia</strong>) en la carpeta <strong>"Ficha de cliente"</strong>. Una vez creado y populado, esta sección mostrará datos reales.</div>
+  <div id="seg-cards" class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4 mb-6"></div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+    <div class="card">
+      <h3 class="font-semibold text-white mb-4">Leads por Grupo Familiar</h3>
+      <div id="chart-seg-leads"></div>
+    </div>
+    <div class="card">
+      <h3 class="font-semibold text-white mb-4">Tasa de Conversión por Grupo</h3>
+      <div id="chart-seg-conv"></div>
     </div>
   </div>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-    <div class="stat-card" style="border-left:3px solid #3b82f6">
-      <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">Individual</div>
-      <div class="text-2xl font-bold text-white">312 leads</div>
-      <div class="text-xs text-slate-400 mt-1">Conv. 12.8% · Ticket €1.050</div>
+  <div class="card mt-6">
+    <h3 class="font-semibold text-white mb-4">Detalle por Grupo Familiar</h3>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm">
+        <thead><tr class="border-b border-slate-700">
+          <th class="text-left py-2 px-3 text-slate-400 font-medium">Grupo</th>
+          <th class="text-right py-2 px-3 text-slate-400 font-medium">Leads</th>
+          <th class="text-right py-2 px-3 text-slate-400 font-medium">Ventas</th>
+          <th class="text-right py-2 px-3 text-slate-400 font-medium">Conv.</th>
+          <th class="text-right py-2 px-3 text-slate-400 font-medium">Facturación</th>
+          <th class="text-right py-2 px-3 text-slate-400 font-medium">Ticket Medio</th>
+        </tr></thead>
+        <tbody id="tbody-seg"></tbody>
+      </table>
     </div>
-    <div class="stat-card" style="border-left:3px solid #a78bfa">
-      <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">Pareja</div>
-      <div class="text-2xl font-bold text-white">198 leads</div>
-      <div class="text-xs text-slate-400 mt-1">Conv. 18.2% · Ticket €1.890</div>
-    </div>
-    <div class="stat-card" style="border-left:3px solid #4ade80">
-      <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">Familia</div>
-      <div class="text-2xl font-bold text-white">89 leads</div>
-      <div class="text-xs text-slate-400 mt-1">Conv. 22.5% · Ticket €2.640</div>
-    </div>
-  </div>
-  <div class="card">
-    <h3 class="font-semibold text-white mb-4">Comparativa por Grupo (datos demo — requiere campo tipo_grupo)</h3>
-    <div id="chart-segmentacion"></div>
   </div>
 </div>
 
@@ -1392,6 +1391,7 @@ const DATA = {
     byCountry:  {},
     byTramite:  {},
     byVendedor: {},
+    byGrupo:    {},
     lostReasons:{},
     noQualified:{ cue:0, tiempo:0, fondos:0 },
     totalOpps:  0,
@@ -2978,21 +2978,87 @@ function initNoCualificados() {
 // CHARTS: SEGMENTACIÓN
 // ═══════════════════════════════════════
 function initSegmentacion() {
-  initChart('chart-segmentacion', mkOpts({
-    chart:{ type:'bar', height:300 },
-    series:[
-      { name:'Leads',   data:[312, 198, 89]   },
-      { name:'Conv.%',  data:[12.8, 18.2, 22.5] }
-    ],
-    xaxis:{ categories:['Individual','Pareja','Familia'], labels:{ style:{ colors:'#64748b' } } },
-    yaxis:[
-      { labels:{ style:{ colors:'#64748b' } } },
-      { opposite:true, labels:{ style:{ colors:'#64748b' }, formatter:v=>v+'%' } }
-    ],
-    colors:['#3b82f6','#4ade80'],
-    plotOptions:{ bar:{ borderRadius:4, columnWidth:'50%' } },
-    legend:{ labels:{ colors:'#94a3b8' } }
+  const GRUPOS = [
+    { key:'individuo',                    label:'Individuo',               color:'#3b82f6' },
+    { key:'pareja_matrimonio',            label:'Pareja / Matrimonio',      color:'#a78bfa' },
+    { key:'pareja_con_hijos',             label:'Pareja con Hijos',         color:'#f59e0b' },
+    { key:'individuo_con_hijos',          label:'Individuo con Hijos',      color:'#4ade80' },
+    { key:'familia_ampliada_tios_her',    label:'Familia Ampliada',         color:'#f87171' }
+  ];
+  const bg = DATA.ghlLive.byGrupo || {};
+  const hasReal = GHL.connected && Object.keys(bg).length > 0;
+
+  const rows = GRUPOS.map(g => {
+    // match key with partial prefix (handles truncated GHL value)
+    const match = Object.keys(bg).find(k => k.startsWith(g.key) || g.key.startsWith(k));
+    const d = match ? bg[match] : { leads:0, ventas:0, revenue:0 };
+    return { ...g, leads:d.leads||0, ventas:d.ventas||0, revenue:d.revenue||0 };
+  }).filter(r => r.leads > 0 || !hasReal);
+
+  const displayRows = hasReal ? rows : [
+    { label:'Individuo',          color:'#3b82f6', leads:312, ventas:40, revenue:42000 },
+    { label:'Pareja / Matrimonio',color:'#a78bfa', leads:198, ventas:36, revenue:68040 },
+    { label:'Pareja con Hijos',   color:'#f59e0b', leads:89,  ventas:20, revenue:52800 },
+    { label:'Individuo con Hijos',color:'#4ade80', leads:67,  ventas:11, revenue:19800 },
+    { label:'Familia Ampliada',   color:'#f87171', leads:34,  ventas:7,  revenue:18480 }
+  ];
+
+  // Stat cards
+  const cards = document.getElementById('seg-cards');
+  if(cards) cards.innerHTML = displayRows.map(r => {
+    const conv = r.leads > 0 ? ((r.ventas/r.leads)*100).toFixed(1) : '0.0';
+    const ticket = r.ventas > 0 ? Math.round(r.revenue/r.ventas) : 0;
+    return `<div class="stat-card" style="border-left:3px solid ${r.color}">
+      <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide" style="color:${r.color}">${r.label}</div>
+      <div class="text-2xl font-bold text-white">${r.leads} <span class="text-sm font-normal text-slate-400">leads</span></div>
+      <div class="text-xs text-slate-400 mt-1">Conv. ${conv}% · Ticket €${ticket.toLocaleString('es-ES')}</div>
+    </div>`;
+  }).join('');
+
+  // Leads bar chart
+  initChart('chart-seg-leads', mkOpts({
+    chart:{ type:'bar', height:260 },
+    series:[{ name:'Leads', data: displayRows.map(r=>r.leads) }],
+    xaxis:{ categories: displayRows.map(r=>r.label), labels:{ style:{ colors:'#64748b', fontSize:'10px' }, rotate:-20 } },
+    yaxis:{ labels:{ style:{ colors:'#64748b' } } },
+    colors: displayRows.map(r=>r.color),
+    plotOptions:{ bar:{ borderRadius:4, distributed:true, columnWidth:'55%' } },
+    legend:{ show:false }
   }));
+
+  // Conversion rate chart
+  initChart('chart-seg-conv', mkOpts({
+    chart:{ type:'bar', height:260 },
+    series:[{ name:'Conversión %', data: displayRows.map(r => r.leads > 0 ? +((r.ventas/r.leads)*100).toFixed(1) : 0) }],
+    xaxis:{ categories: displayRows.map(r=>r.label), labels:{ style:{ colors:'#64748b', fontSize:'10px' }, rotate:-20 } },
+    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>v+'%' } },
+    colors: displayRows.map(r=>r.color),
+    plotOptions:{ bar:{ borderRadius:4, distributed:true, columnWidth:'55%' } },
+    legend:{ show:false },
+    dataLabels:{ enabled:true, formatter:v=>v+'%', style:{ colors:['#fff'], fontSize:'10px' } }
+  }));
+
+  // Table
+  const tbody = document.getElementById('tbody-seg');
+  if(tbody) tbody.innerHTML = displayRows.map(r => {
+    const conv   = r.leads > 0 ? ((r.ventas/r.leads)*100).toFixed(1) : '0.0';
+    const ticket = r.ventas > 0 ? '€'+Math.round(r.revenue/r.ventas).toLocaleString('es-ES') : '—';
+    return `<tr class="border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
+      <td class="py-2 px-3"><span class="inline-block w-2.5 h-2.5 rounded-full mr-2" style="background:${r.color}"></span><span class="text-slate-200 font-medium">${r.label}</span></td>
+      <td class="py-2 px-3 text-right text-slate-300">${r.leads}</td>
+      <td class="py-2 px-3 text-right text-green-400 font-semibold">${r.ventas}</td>
+      <td class="py-2 px-3 text-right"><span class="badge ${parseFloat(conv)>20?'badge-up':parseFloat(conv)>10?'badge-neutral':'badge-down'}">${conv}%</span></td>
+      <td class="py-2 px-3 text-right text-slate-300">€${r.revenue.toLocaleString('es-ES')}</td>
+      <td class="py-2 px-3 text-right text-amber-400 font-bold">${ticket}</td>
+    </tr>`;
+  }).join('');
+
+  if(!hasReal) {
+    const note = document.createElement('div');
+    note.className = 'mt-4 text-xs text-slate-500 text-center';
+    note.textContent = 'Datos de ejemplo — conectar GHL para ver datos reales del campo grupo_familiar';
+    document.getElementById('s-segmentacion')?.appendChild(note);
+  }
 }
 
 // ═══════════════════════════════════════
@@ -3312,19 +3378,22 @@ async function loadGHLData() {
     const sourceCounts = {};
     DATA.ghlLive.byCountry  = {};
     DATA.ghlLive.byTramite  = {};
+    DATA.ghlLive.byGrupo    = {};
     DATA.ghlLive.noQualified = { cue:0, tiempo:0, fondos:0 };
 
     contactList.forEach(c => {
       const fields = c.customFields || c.customField || [];
-      let src = null, pais = null, tramite = null;
+      let src = null, pais = null, tramite = null, grupo = null;
 
       if(Array.isArray(fields)) {
         const fSrc   = fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('canal_referencia'));
         const fPais  = fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('pais_de_origen'));
         const fTram  = fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('tipo_de_tr'));
+        const fGrupo = fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('grupo_familiar'));
         src    = fSrc?.value  || fSrc?.fieldValue;
         pais   = fPais?.value || fPais?.fieldValue;
         tramite= fTram?.value || fTram?.fieldValue;
+        grupo  = fGrupo?.value || fGrupo?.fieldValue;
       }
 
       // Country accumulation
@@ -3341,6 +3410,12 @@ async function loadGHLData() {
           if(!DATA.ghlLive.byTramite[k]) DATA.ghlLive.byTramite[k] = { leads:0, ventas:0, revenue:0 };
           DATA.ghlLive.byTramite[k].leads++;
         });
+      }
+      // Grupo familiar accumulation
+      if(grupo) {
+        const k = (grupo||'').toLowerCase().trim();
+        if(!DATA.ghlLive.byGrupo[k]) DATA.ghlLive.byGrupo[k] = { leads:0, ventas:0, revenue:0 };
+        DATA.ghlLive.byGrupo[k].leads++;
       }
       // Tags — no cualificados
       const tags = c.tags || [];
@@ -3459,8 +3534,22 @@ async function loadGHLData() {
       if(o.status==='won') { DATA.ghlLive.byVendedor[uid].ventas++; DATA.ghlLive.byVendedor[uid].revenue += val; }
     });
 
-    // Won ventas → mark in byCountry & byTramite (best-effort via contact match)
-    // (contact-to-opp matching requires cross-referencing — mark zero for now; contacts above handle leads)
+    // Won ventas → mark in byGrupo (cross-reference contact's grupo_familiar)
+    const contactMap = {};
+    contactList.forEach(c => { if(c.id) contactMap[c.id] = c; });
+    oppList.forEach(o => {
+      if(o.status !== 'won') return;
+      const cid = o.contactId || o.contact_id || o.contact?.id;
+      const c   = cid ? contactMap[cid] : null;
+      if(!c) return;
+      const fields = c.customFields || c.customField || [];
+      const fG = Array.isArray(fields) ? fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('grupo_familiar')) : null;
+      const g  = (fG?.value || fG?.fieldValue || '').toLowerCase().trim();
+      if(g && DATA.ghlLive.byGrupo[g]) {
+        DATA.ghlLive.byGrupo[g].ventas++;
+        DATA.ghlLive.byGrupo[g].revenue += (o.monetaryValue || 0);
+      }
+    });
 
     // KPIs
     document.getElementById('kpi-leads').textContent = total;

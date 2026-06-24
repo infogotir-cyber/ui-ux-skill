@@ -489,10 +489,10 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
 <!-- ══════════════════════════════════════════════════════════ -->
 <div id="s-ventas" class="section p-6">
   <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Esta semana</div><div class="text-2xl font-bold text-white">€9.420</div><span class="badge badge-up">+14%</span></div>
-    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Este mes</div><div class="text-2xl font-bold text-white">€42.800</div><span class="badge badge-up">+23%</span></div>
-    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Este año</div><div class="text-2xl font-bold text-white">€318.500</div><span class="badge badge-up">+31%</span></div>
-    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Ticket prom.</div><div class="text-2xl font-bold text-white">€1.259</div><span class="badge badge-up">+7%</span></div>
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Período seleccionado</div><div id="ventas-periodo-rev" class="text-2xl font-bold text-white">—</div><div class="text-xs text-slate-500 mt-1">facturación</div></div>
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Ventas cerradas</div><div id="ventas-periodo-cnt" class="text-2xl font-bold text-white">—</div><div class="text-xs text-slate-500 mt-1">contratos ganados</div></div>
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Ticket promedio</div><div id="ventas-periodo-ticket" class="text-2xl font-bold text-white">—</div><div class="text-xs text-slate-500 mt-1">por cliente</div></div>
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Facturación total año</div><div id="ventas-ano-rev" class="text-2xl font-bold text-white">—</div><div class="text-xs text-slate-500 mt-1">acumulado 12 meses</div></div>
   </div>
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
     <div class="card">
@@ -1561,6 +1561,9 @@ function recalcFromPeriod(p) {
     initEmbudo();
   }
 
+  // Refresh ventas section if visible or already inited
+  if(sectionInited['ventas']) renderVentasCharts(days);
+
   // Refresh day-by-day chart for the selected period
   const dayMap = {}, wonDayMap = {};
   for(let i=days-1; i>=0; i--) {
@@ -1718,37 +1721,156 @@ function initEmbudo() {
 // ═══════════════════════════════════════
 // CHARTS: VENTAS
 // ═══════════════════════════════════════
+function renderVentasCharts(days) {
+  const gl = DATA.ghlLive;
+  const hasReal = GHL.connected && gl.allOpps && gl.allOpps.length > 0;
+
+  // ── Stat cards ────────────────────────────────────────────
+  if(hasReal) {
+    const cutoff = Date.now() - days * 86400000;
+    const wonPeriod = gl.allOpps.filter(o => {
+      const d = o.closedDate || o.closeDate || o.updatedAt || '';
+      return o.status === 'won' && d && new Date(d).getTime() >= cutoff;
+    });
+    const revPeriod = wonPeriod.reduce((s,o) => s + (o.monetaryValue || 0), 0);
+    const ticket    = wonPeriod.length > 0 ? Math.round(revPeriod / wonPeriod.length) : 0;
+    const wonYear   = gl.allOpps.filter(o => {
+      const d = o.closedDate || o.closeDate || o.updatedAt || '';
+      return o.status === 'won' && d && new Date(d).getFullYear() === new Date().getFullYear();
+    });
+    const revYear   = wonYear.reduce((s,o) => s + (o.monetaryValue || 0), 0);
+
+    document.getElementById('ventas-periodo-rev').textContent    = '€' + revPeriod.toLocaleString('es-ES');
+    document.getElementById('ventas-periodo-cnt').textContent    = wonPeriod.length;
+    document.getElementById('ventas-periodo-ticket').textContent = ticket > 0 ? '€' + ticket.toLocaleString('es-ES') : '—';
+    document.getElementById('ventas-ano-rev').textContent        = '€' + revYear.toLocaleString('es-ES');
+
+    // ── Ventas por Día ──────────────────────────────────────
+    const dayMap = {};
+    for(let i = days - 1; i >= 0; i--) {
+      const d = new Date(); d.setDate(d.getDate() - i);
+      dayMap[d.toISOString().slice(0,10)] = 0;
+    }
+    wonPeriod.forEach(o => {
+      const k = (o.closedDate || o.closeDate || o.updatedAt || '').slice(0,10);
+      if(k in dayMap) dayMap[k] += (o.monetaryValue || 0);
+    });
+    const dKeys   = Object.keys(dayMap);
+    const dLabels = dKeys.map(k => { const d = new Date(k); return d.getDate() + ' ' + d.toLocaleString('es-ES', {month:'short'}); });
+
+    if(charts['chart-ventas-dia']) {
+      charts['chart-ventas-dia'].updateSeries([{ name:'Ventas €', data: dKeys.map(k => dayMap[k]) }]);
+      charts['chart-ventas-dia'].updateOptions({ xaxis:{ categories: dLabels } });
+    } else {
+      initChart('chart-ventas-dia', mkOpts({
+        chart:{ type:'bar', height:220 },
+        series:[{ name:'Ventas €', data: dKeys.map(k => dayMap[k]) }],
+        xaxis:{ categories: dLabels, labels:{ style:{ colors:'#64748b', fontSize:'10px' }, rotate: days > 30 ? -45 : 0 } },
+        yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>'€'+v.toLocaleString('es-ES') } },
+        colors:['#3b82f6'],
+        plotOptions:{ bar:{ borderRadius:3 } }
+      }));
+    }
+
+    // ── Facturación Acumulada (12 meses reales) ─────────────
+    const hist = buildMonthlyHistory(gl.allContacts || [], gl.allOpps);
+    let acum = 0;
+    const acumData = hist.keys.map(k => { acum += hist.revenue[hist.keys.indexOf(k)]; return acum; });
+    // Only show months up to current
+    const curMonth = new Date().toISOString().slice(0,7);
+    const acumMasked = acumData.map((v, i) => hist.keys[i] <= curMonth ? v : null);
+
+    if(charts['chart-facturacion-acum']) {
+      charts['chart-facturacion-acum'].updateSeries([{ name:'Facturación acum.', data: acumMasked }]);
+      charts['chart-facturacion-acum'].updateOptions({ xaxis:{ categories: hist.labels } });
+    } else {
+      initChart('chart-facturacion-acum', mkOpts({
+        chart:{ type:'area', height:220 },
+        series:[{ name:'Facturación acum.', data: acumMasked }],
+        xaxis:{ categories: hist.labels, labels:{ style:{ colors:'#64748b' } } },
+        yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>v?'€'+(v/1000).toFixed(0)+'k':'' } },
+        colors:['#f59e0b'],
+        fill:{ type:'gradient', gradient:{ opacityFrom:.4, opacityTo:.05 } },
+        stroke:{ curve:'smooth', width:2 }
+      }));
+    }
+
+    // ── Desglose por Servicio (dinámico desde byTramite) ────
+    // Count revenue by tramite from won opportunities linked via contacts
+    // Best-effort: use byTramite lead counts + avg ticket as revenue estimate
+    // Real revenue per tramite requires contact→opp matching which GHL doesn't expose directly
+    const tramiteRev = {};
+    const tramiteMap = {
+      'visado_arg':'Visado Argentina','visado_latam':'Visado Latam',
+      'estancia':'Estancia','renovación':'Renovación','reagrupación':'Reagrupación Familiar',
+      'pac':'PAC','nòmada_digital':'Nómada Digital','no_lucrativa':'No Lucrativa',
+      'emprendedor':'Emprendedor','workandholidays':'Work & Holidays','visa_de_trabajo':'Visa de Trabajo'
+    };
+    // Use byTramite for lead counts, scale by overall conversion to estimate revenue
+    const convRate = gl.allOpps && gl.allOpps.length > 0 ?
+      (gl.allOpps.filter(o=>o.status==='won').length / (gl.allContacts||[]).length) : 0.13;
+    const avgTk = ticket > 0 ? ticket : (gl.totalRevenue && gl.totalWon ? Math.round(gl.totalRevenue / gl.totalWon) : 1259);
+
+    Object.entries(gl.byTramite || {}).forEach(([k, v]) => {
+      if(v.leads > 0) {
+        const label = tramiteMap[k] || k.replace(/_/g,' ').replace(/\b\w/g, c=>c.toUpperCase());
+        tramiteRev[label] = Math.round(v.leads * convRate * avgTk);
+      }
+    });
+
+    const sorted = Object.entries(tramiteRev).sort((a,b) => b[1]-a[1]);
+    const svcLabels = sorted.map(([l]) => l);
+    const svcData   = sorted.map(([,v]) => v);
+    const svcColors = ['#3b82f6','#6366f1','#a78bfa','#f59e0b','#10b981','#ec4899','#f97316','#06b6d4','#84cc16','#e11d48','#8b5cf6'];
+
+    if(charts['chart-servicios']) {
+      charts['chart-servicios'].updateSeries([{ name:'Ingresos est. €', data: svcData }]);
+      charts['chart-servicios'].updateOptions({
+        xaxis:{ categories: svcLabels },
+        colors: svcColors.slice(0, svcLabels.length)
+      });
+    } else {
+      initChart('chart-servicios', mkOpts({
+        chart:{ type:'bar', height: Math.max(200, svcLabels.length * 36), stacked:false },
+        series:[{ name:'Ingresos est. €', data: svcData }],
+        xaxis:{ categories: svcLabels, labels:{ style:{ colors:'#64748b', fontSize:'11px' } } },
+        yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>'€'+v.toLocaleString('es-ES') } },
+        colors: svcColors.slice(0, svcLabels.length),
+        plotOptions:{ bar:{ borderRadius:4, distributed:true, horizontal:true } },
+        legend:{ show:false }
+      }));
+    }
+
+  } else {
+    // Demo fallback
+    initChart('chart-ventas-dia', mkOpts({
+      chart:{ type:'bar', height:220 },
+      series:[{ name:'Ventas €', data:[1200,980,1450,800,1680,2100,1380,950,1720,2400,1100,1850,1400,2800,1620,980,2100,1750,1300,2650,1480,900,2200,1900,1600,2380,1100,2700] }],
+      xaxis:{ categories:Array.from({length:28},(_,i)=>i+1+''), labels:{ style:{ colors:'#64748b', fontSize:'10px' } } },
+      yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>'€'+v } },
+      colors:['#3b82f6'], plotOptions:{ bar:{ borderRadius:3 } }
+    }));
+    const months = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+    initChart('chart-facturacion-acum', mkOpts({
+      chart:{ type:'area', height:220 },
+      series:[{ name:'Facturación acum.', data:[78000,142000,201000,268000,319000,null,null,null,null,null,null,null] }],
+      xaxis:{ categories:months, labels:{ style:{ colors:'#64748b' } } },
+      yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>v?'€'+(v/1000).toFixed(0)+'k':'' } },
+      colors:['#f59e0b'], fill:{ type:'gradient', gradient:{ opacityFrom:.4, opacityTo:.05 } }, stroke:{ curve:'smooth', width:2 }
+    }));
+    initChart('chart-servicios', mkOpts({
+      chart:{ type:'bar', height:200 },
+      series:[{ name:'Facturación €', data:[18400,14200,6800,3400] }],
+      xaxis:{ categories:['Visados Estudios','Renovaciones','Reagrupación Familiar','Modificación Residencia'], labels:{ style:{ colors:'#64748b', fontSize:'11px' } } },
+      yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>'€'+v } },
+      colors:['#3b82f6','#6366f1','#a78bfa','#f59e0b'],
+      plotOptions:{ bar:{ borderRadius:4, distributed:true, horizontal:true } }, legend:{ show:false }
+    }));
+  }
+}
+
 function initVentas() {
-  initChart('chart-ventas-dia', mkOpts({
-    chart:{ type:'bar', height:220 },
-    series:[{ name:'Ventas €', data:[1200,980,1450,800,1680,2100,1380,950,1720,2400,1100,1850,1400,2800,1620,980,2100,1750,1300,2650,1480,900,2200,1900,1600,2380,1100,2700] }],
-    xaxis:{ categories:Array.from({length:28},(_,i)=>i+1+''), labels:{ style:{ colors:'#64748b', fontSize:'10px' } } },
-    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>'€'+v } },
-    colors:['#3b82f6'],
-    plotOptions:{ bar:{ borderRadius:3 } }
-  }));
-
-  const months = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
-  const cum = [78000,142000,201000,268000,319000,0,0,0,0,0,0,0];
-  initChart('chart-facturacion-acum', mkOpts({
-    chart:{ type:'area', height:220 },
-    series:[{ name:'Facturación acum.', data:[78000,142000,201000,268000,319000,null,null,null,null,null,null,null] }],
-    xaxis:{ categories:months, labels:{ style:{ colors:'#64748b' } } },
-    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>v?'€'+(v/1000).toFixed(0)+'k':'' } },
-    colors:['#f59e0b'],
-    fill:{ type:'gradient', gradient:{ opacityFrom:.4, opacityTo:.05 } },
-    stroke:{ curve:'smooth', width:2 }
-  }));
-
-  initChart('chart-servicios', mkOpts({
-    chart:{ type:'bar', height:200, stacked:false },
-    series:[{ name:'Facturación €', data:[18400,14200,6800,3400] }],
-    xaxis:{ categories:['Visados Estudios','Renovaciones','Reagrupación Familiar','Modificación Residencia'], labels:{ style:{ colors:'#64748b', fontSize:'11px' } } },
-    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>'€'+v } },
-    colors:['#3b82f6','#6366f1','#a78bfa','#f59e0b'],
-    plotOptions:{ bar:{ borderRadius:4, distributed:true, horizontal:true } },
-    legend:{ show:false }
-  }));
+  renderVentasCharts(PERIOD_DAYS[DATA.period] || 30);
 }
 
 // ═══════════════════════════════════════
@@ -2716,7 +2838,7 @@ function updateTiemposFromGHL(oppList) {
 // refreshLiveSections — called after loadGHLData
 // ═══════════════════════════════════════
 function refreshLiveSections() {
-  ['conversion','perdidas','valor','nocualificados'].forEach(id => {
+  ['conversion','perdidas','valor','nocualificados','ventas'].forEach(id => {
     // If section was already inited, re-init with fresh data
     if(sectionInited[id]) {
       sectionInited[id] = false; // allow re-init

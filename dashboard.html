@@ -2214,17 +2214,25 @@ function initLlamadas() {
     if(el('ll-conv'))       el('ll-conv').textContent       = convLL + '%';
 
     // ── Llamadas por día (últimos 30 días) ───────────────────
+    const DIAS_ES = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
     const dayMap = {};
-    for(let i=29;i>=0;i--){ const d=new Date(); d.setDate(d.getDate()-i); dayMap[d.toISOString().slice(0,10)]=0; }
+    for(let i=29;i>=0;i--){
+      const d=new Date(); d.setDate(d.getDate()-i);
+      dayMap[d.toISOString().slice(0,10)]=0;
+    }
     allCitas.forEach(a=>{ const k=(a.startTime||a.start||'').slice(0,10); if(k in dayMap) dayMap[k]++; });
     const dKeys = Object.keys(dayMap);
-    const dLabels = dKeys.map(k=>{ const d=new Date(k); return d.getDate()+'/'+(d.getMonth()+1); });
+    const dLabels = dKeys.map(k=>{
+      const d=new Date(k+'T12:00:00');
+      return DIAS_ES[d.getDay()]+' '+d.getDate()+'/'+(d.getMonth()+1);
+    });
     initChart('chart-llamadas-dia', mkOpts({
-      chart:{ type:'bar', height:220 },
-      series:[{ name:'Llamadas', data: dKeys.map(k=>dayMap[k]) }],
-      xaxis:{ categories: dLabels, labels:{ style:{ colors:'#64748b', fontSize:'9px' }, rotate:-45 } },
-      yaxis:{ labels:{ style:{ colors:'#64748b' } } },
-      colors:['#3b82f6'], plotOptions:{ bar:{ borderRadius:2 } }
+      chart:{ type:'bar', height:240 },
+      series:[{ name:'Citas', data: dKeys.map(k=>dayMap[k]) }],
+      xaxis:{ categories: dLabels, labels:{ style:{ colors:'#64748b', fontSize:'9px' }, rotate:-45, rotateAlways:true } },
+      yaxis:{ labels:{ style:{ colors:'#64748b' } }, min:0, forceNiceScale:true },
+      colors:['#3b82f6'], plotOptions:{ bar:{ borderRadius:2 } },
+      dataLabels:{ enabled:true, style:{ colors:['#fff'], fontSize:'9px' } }
     }));
 
     // ── Estado de citas (donut) ───────────────────────────────
@@ -2237,13 +2245,20 @@ function initLlamadas() {
       plotOptions:{ pie:{ donut:{ size:'60%' } } }
     }));
   } else {
-    // Demo fallback
+    // Demo fallback — fechas reales de los últimos 30 días
+    const DIAS_ES2 = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
+    const demoData = [3,5,2,4,6,3,5,4,7,4,6,5,3,4,6,5,4,5,6,4,3,5,4,6,5,7,4,5,6,4];
+    const demoLabels = Array.from({length:30},(_,i)=>{
+      const d=new Date(); d.setDate(d.getDate()-(29-i));
+      return DIAS_ES2[d.getDay()]+' '+d.getDate()+'/'+(d.getMonth()+1);
+    });
     initChart('chart-llamadas-dia', mkOpts({
-      chart:{ type:'bar', height:220 },
-      series:[{ name:'Llamadas', data:[3,5,2,4,6,3,5,4,7,4,6,5,3,4,6,5,4,5,6,4,3,5,4,6,5,7,4,5,6,4] }],
-      xaxis:{ categories: Array.from({length:30},(_,i)=>i+1+''), labels:{ style:{ colors:'#64748b', fontSize:'9px' } } },
-      yaxis:{ labels:{ style:{ colors:'#64748b' } } },
-      colors:['#3b82f6'], plotOptions:{ bar:{ borderRadius:2 } }
+      chart:{ type:'bar', height:240 },
+      series:[{ name:'Citas', data: demoData }],
+      xaxis:{ categories: demoLabels, labels:{ style:{ colors:'#64748b', fontSize:'9px' }, rotate:-45, rotateAlways:true } },
+      yaxis:{ labels:{ style:{ colors:'#64748b' } }, min:0 },
+      colors:['#3b82f6'], plotOptions:{ bar:{ borderRadius:2 } },
+      dataLabels:{ enabled:true, style:{ colors:['#fff'], fontSize:'9px' } }
     }));
     initChart('chart-interes', mkOpts({
       chart:{ type:'donut', height:250 },

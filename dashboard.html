@@ -1893,14 +1893,30 @@ function refreshCampanasFromGHL(sourceCounts, oppList, avgTicket) {
   // ── Map GHL canal_referencia_dr values → DATA.campanas entries ──
   // sourceCounts keys are lowercased raw values from the field
   // We try exact match then partial match
+  // Build won-opps-by-source map for exact ventas per canal
+  const wonBySrc = {};
+  oppList.filter(o => o.status === 'won').forEach(o => {
+    const src = (o.source || o.leadSource || o.lead_source || '').toLowerCase().trim();
+    if(src) wonBySrc[src] = (wonBySrc[src] || 0) + 1;
+  });
+
   DATA.campanas.forEach(camp => {
     const nameLC = camp.canal.toLowerCase();
-    // Try direct lowercase match first, then underscore version
-    const count = sourceCounts[nameLC]
+    const leads = sourceCounts[nameLC]
       || sourceCounts[nameLC.replace(/\s+/g,'_')]
       || sourceCounts[nameLC.replace(/\s+/g,'-')]
       || 0;
-    if(count > 0) camp.leads = count;
+    if(leads > 0) camp.leads = leads;
+
+    // Exact ventas from opp source field (set by GHL automation)
+    const ventas = wonBySrc[nameLC]
+      || wonBySrc[nameLC.replace(/\s+/g,'_')]
+      || wonBySrc[nameLC.replace(/\s+/g,'-')]
+      || 0;
+    if(ventas > 0) {
+      camp.ventas = ventas;
+      camp.conv   = camp.leads > 0 ? ((ventas/camp.leads)*100).toFixed(1)+'%' : '0%';
+    }
   });
 
   // ── Per-afiliado stats from oppList (won opps whose contact source = afiliado) ──
@@ -1912,21 +1928,23 @@ function refreshCampanasFromGHL(sourceCounts, oppList, avgTicket) {
     { key:'wilmen mendoza',  label:'Wilmen Mendoza',  initials:'WM' }
   ];
 
-  // Count leads per afiliado from sourceCounts
+  // Count leads per afiliado from sourceCounts (canal_referencia_dr on contact)
+  // Count ventas/revenue EXACT from oppList.source (GHL automation copies canal_referencia_dr → opp source)
   const afiliadoData = AFILIADOS.map(af => {
     const leads = sourceCounts[af.key]
       || sourceCounts[af.key.replace(/\s+/g,'_')]
       || (DATA.campanas.find(c=>c.canal.toLowerCase()===af.key)?.leads || 0);
-    // Revenue: proportional estimate based on leads share of total afiliado leads
-    // For accuracy we'd need contact→opp link; best approximation:
-    const totalAfLeads = AFILIADOS.reduce((s,a) => s + (sourceCounts[a.key] || sourceCounts[a.key.replace(/\s+/g,'_')] || (DATA.campanas.find(c=>c.canal.toLowerCase()===a.key)?.leads||0)), 0);
-    const wonTotal = oppList.filter(o=>o.status==='won').length;
-    const revTotal = oppList.filter(o=>o.status==='won').reduce((s,o)=>s+(o.monetaryValue||0),0);
-    const convRate = totalAfLeads > 0 ? wonTotal / (oppList.length || 1) : 0.19;
-    const ventas   = Math.round(leads * convRate);
-    const revenue  = ventas * (avgTicket || 1259);
+
+    // Exact ventas: won opps whose source matches this afiliado name
+    const wonOpps = oppList.filter(o => {
+      if(o.status !== 'won') return false;
+      const src = (o.source || o.leadSource || o.lead_source || '').toLowerCase().trim();
+      return src === af.key || src === af.key.replace(/\s+/g,'_') || src.includes(af.key.split(' ')[0].toLowerCase());
+    });
+    const ventas  = wonOpps.length;
+    const revenue = wonOpps.reduce((s,o) => s + (o.monetaryValue || o.monetary_value || 0), 0);
     const comision = revenue * 0.08;
-    const cpl      = ventas > 0 ? Math.round(comision / leads) : 0;
+    const cpl      = leads > 0 && comision > 0 ? Math.round(comision / leads) : 0;
     const roi      = comision > 0 ? Math.round((revenue - comision) / comision * 100) : 0;
     const conv     = leads > 0 ? ((ventas/leads)*100).toFixed(1) : '0';
     return { ...af, leads, ventas, revenue, comision, cpl, roi, conv };

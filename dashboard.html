@@ -658,9 +658,29 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
 <!-- SECTION: VENDEDORES -->
 <!-- ══════════════════════════════════════════════════════════ -->
 <div id="s-vendedores" class="section p-6">
+  <!-- Vendedores config panel -->
+  <div id="vendedores-config" class="card mb-4 border border-amber-800/40 bg-amber-950/20 hidden">
+    <div class="flex items-center gap-3 mb-3">
+      <svg class="w-4 h-4 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      <h4 class="text-sm font-semibold text-amber-300">Configurar Vendedores</h4>
+      <button onclick="document.getElementById('vendedores-config').classList.add('hidden')" class="ml-auto text-slate-500 hover:text-white text-xs">✕</button>
+    </div>
+    <p class="text-xs text-slate-400 mb-3">Escribe los nombres o emails de los usuarios de GHL que son vendedores (uno por línea). Los demás usuarios (admin, soporte, etc.) serán ignorados en esta sección.</p>
+    <textarea id="vendedores-lista" rows="4" placeholder="ej:&#10;Juan Pérez&#10;maria@empresa.com&#10;Carlos Rodríguez" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm text-white placeholder-slate-600 resize-none focus:outline-none focus:border-brand-500"></textarea>
+    <div class="flex gap-2 mt-3">
+      <button onclick="saveVendedoresConfig()" class="px-4 py-2 bg-brand-600 hover:bg-brand-500 text-white text-sm rounded-lg transition-colors">Guardar y recargar</button>
+      <button onclick="clearVendedoresConfig()" class="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white text-sm rounded-lg transition-colors">Mostrar todos</button>
+    </div>
+  </div>
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6">
     <div class="lg:col-span-2 card">
-      <h3 class="font-semibold text-white mb-4">Ranking de Vendedores</h3>
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="font-semibold text-white">Ranking de Vendedores</h3>
+        <button onclick="document.getElementById('vendedores-config').classList.toggle('hidden'); loadVendedoresConfig()" class="text-xs text-slate-400 hover:text-white flex items-center gap-1 transition-colors">
+          <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3"/></svg>
+          Configurar
+        </button>
+      </div>
       <div id="ranking-vendedores"></div>
     </div>
     <div class="card">
@@ -1542,9 +1562,10 @@ function recalcFromPeriod(p) {
   // Recalculate funnel stage counts filtered by period
   const STAGE_MAP = {
     'new lead /sin clasificar':0,'new lead / sin clasificar':0,
-    'cualificado':1,'cuailficado':1,
+    'cualificado':1,'cuailficado':1,'agendar llamada':1,
     'llamada agendada':2,'llamada realizada':3,
     'información y contrato enviado':4,'informacion y contrato enviado':4,
+    'información y contrato  enviado':4,
     'pronto pago':5,'pagado':6
   };
   const stageCounts = new Array(7).fill(0);
@@ -1959,48 +1980,78 @@ function initCampanas() {
 // CHARTS: VENDEDORES
 // ═══════════════════════════════════════
 function initVendedores() {
-  const v = DATA.vendedores;
+  const gl = DATA.ghlLive.byVendedor;
+  const hasReal = GHL.connected && gl && Object.keys(gl).length > 0;
+  const filter  = getVendedoresList(); // names/emails from config
+
+  let entries = hasReal
+    ? Object.entries(gl).map(([uid, d]) => ({
+        nombre: d.name || uid,
+        opps: d.opps,
+        ventas: d.ventas,
+        revenue: d.revenue,
+        llamadas: d.llamadas || 0
+      }))
+    : DATA.vendedores.map(x => ({
+        nombre: x.nombre,
+        opps: x.llamadas,
+        ventas: x.ventas,
+        revenue: parseFloat((x.facturacion||'0').replace(/[€,.]/g,'')) || 0,
+        llamadas: x.llamadas
+      }));
+
+  // Apply filter if configured
+  if(filter.length > 0) {
+    entries = entries.filter(e => filter.some(f => e.nombre.toLowerCase().includes(f)));
+  }
+
+  // Sort by revenue desc
+  entries.sort((a,b) => b.revenue - a.revenue);
+
   const rankClasses = ['rank-1','rank-2','rank-3','rank-other'];
   const rankEl = document.getElementById('ranking-vendedores');
-  rankEl.innerHTML = v.map((vend,i)=>`
-    <div class="ranking-row">
-      <div class="rank-num ${rankClasses[i]||'rank-other'}">${i+1}</div>
-      <div class="flex-1 min-w-0">
-        <div class="font-semibold text-sm text-white">${vend.nombre}</div>
-        <div class="text-xs text-slate-500">${vend.llamadas} llamadas · ${vend.tiempo} prom.</div>
-      </div>
-      <div class="text-right">
-        <div class="font-bold text-white text-sm">${vend.facturacion}</div>
-        <div class="text-xs text-slate-500">${vend.ventas} ventas</div>
-      </div>
-      <div class="hidden md:block text-right">
-        <span class="badge ${parseFloat(vend.conv)>20?'badge-up':parseFloat(vend.conv)>15?'badge-neutral':'badge-down'}">${vend.conv}</span>
-      </div>
-    </div>
-  `).join('');
+  rankEl.innerHTML = entries.length === 0
+    ? '<p class="text-slate-500 text-sm text-center py-4">No hay vendedores configurados. Usa el botón "Configurar" para agregar nombres.</p>'
+    : entries.map((vend,i) => {
+        const conv = vend.opps > 0 ? ((vend.ventas/vend.opps)*100).toFixed(1) : '0';
+        return `
+        <div class="ranking-row">
+          <div class="rank-num ${rankClasses[i]||'rank-other'}">${i+1}</div>
+          <div class="flex-1 min-w-0">
+            <div class="font-semibold text-sm text-white">${vend.nombre}</div>
+            <div class="text-xs text-slate-500">${vend.opps} oportunidades · ${vend.ventas} ventas</div>
+          </div>
+          <div class="text-right">
+            <div class="font-bold text-white text-sm">€${vend.revenue.toLocaleString('es-ES')}</div>
+            <div class="text-xs text-slate-500">${conv}% conversión</div>
+          </div>
+        </div>`;
+      }).join('');
 
   initChart('chart-vendedores-facturacion', mkOpts({
     chart:{ type:'bar', height:280 },
-    series:[{ name:'Facturación €', data:v.map(x=>parseFloat(x.facturacion.replace(/[€.]/g,''))) }],
-    xaxis:{ categories:v.map(x=>x.nombre.split(' ')[0]), labels:{ style:{ colors:'#64748b' } } },
-    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:val=>'€'+(val/1000).toFixed(1)+'k' } },
-    colors:['#f59e0b','#94a3b8','#cd7f32','#334155'],
+    series:[{ name:'Facturación €', data: entries.map(x=>x.revenue) }],
+    xaxis:{ categories: entries.map(x=>x.nombre.split(' ')[0]), labels:{ style:{ colors:'#64748b' } } },
+    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>'€'+(v/1000).toFixed(1)+'k' } },
+    colors:['#f59e0b','#94a3b8','#cd7f32','#334155','#3b82f6','#10b981'],
     plotOptions:{ bar:{ borderRadius:4, distributed:true } },
     legend:{ show:false }
   }));
 
   const tbody2 = document.getElementById('tabla-vendedores');
-  tbody2.innerHTML = v.map(x=>`
+  tbody2.innerHTML = entries.map(x => {
+    const conv = x.opps > 0 ? ((x.ventas/x.opps)*100).toFixed(1) : '0';
+    return `
     <tr class="border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
       <td class="py-3 px-3 font-medium text-slate-200">${x.nombre}</td>
       <td class="py-3 px-3 text-right text-slate-300">${x.llamadas}</td>
-      <td class="py-3 px-3 text-right text-slate-300">${x.tiempo}</td>
+      <td class="py-3 px-3 text-right text-slate-300">—</td>
       <td class="py-3 px-3 text-right text-slate-300">${x.ventas}</td>
-      <td class="py-3 px-3 text-right"><span class="badge ${parseFloat(x.conv)>20?'badge-up':parseFloat(x.conv)>15?'badge-neutral':'badge-down'}">${x.conv}</span></td>
-      <td class="py-3 px-3 text-right font-semibold text-white">${x.facturacion}</td>
-      <td class="py-3 px-3 text-right"><span class="badge ${parseFloat(x.asistencia)>90?'badge-up':parseFloat(x.asistencia)>80?'badge-neutral':'badge-down'}">${x.asistencia}</span></td>
-    </tr>
-  `).join('');
+      <td class="py-3 px-3 text-right"><span class="badge ${parseFloat(conv)>20?'badge-up':parseFloat(conv)>15?'badge-neutral':'badge-down'}">${conv}%</span></td>
+      <td class="py-3 px-3 text-right font-semibold text-white">€${x.revenue.toLocaleString('es-ES')}</td>
+      <td class="py-3 px-3 text-right"><span class="badge badge-neutral">—</span></td>
+    </tr>`;
+  }).join('');
 }
 
 // ═══════════════════════════════════════
@@ -2798,9 +2849,10 @@ function updateTiemposFromGHL(oppList) {
   // Tiempo en stage actual (open opps — approx via updatedAt)
   const STAGE_MAP_IDX = {
     'new lead /sin clasificar':0,'new lead / sin clasificar':0,
-    'cualificado':1,'cuailficado':1,
+    'cualificado':1,'cuailficado':1,'agendar llamada':1,
     'llamada agendada':2,'llamada realizada':3,
     'información y contrato enviado':4,'informacion y contrato enviado':4,
+    'información y contrato  enviado':4,
     'pronto pago':5,'pagado':6
   };
   const stageDays = DATA.funnel.map(s => ({ label:s.label, color:s.color, count:0, totalDays:0 }));
@@ -2838,7 +2890,7 @@ function updateTiemposFromGHL(oppList) {
 // refreshLiveSections — called after loadGHLData
 // ═══════════════════════════════════════
 function refreshLiveSections() {
-  ['conversion','perdidas','valor','nocualificados','ventas'].forEach(id => {
+  ['conversion','perdidas','valor','nocualificados','ventas','vendedores'].forEach(id => {
     // If section was already inited, re-init with fresh data
     if(sectionInited[id]) {
       sectionInited[id] = false; // allow re-init
@@ -2854,6 +2906,31 @@ let GHL = { apiKey:'', locationId:'', version:'v1', connected:false };
 
 
 function selectAPIVersion(v) { GHL.version = 'v2'; }
+
+// ── Vendedores config (localStorage) ────────────────────────
+function loadVendedoresConfig() {
+  const saved = localStorage.getItem('gotir_vendedores') || '';
+  const ta = document.getElementById('vendedores-lista');
+  if(ta) ta.value = saved;
+}
+function saveVendedoresConfig() {
+  const val = (document.getElementById('vendedores-lista').value || '').trim();
+  localStorage.setItem('gotir_vendedores', val);
+  document.getElementById('vendedores-config').classList.add('hidden');
+  if(GHL.connected) { sectionInited['vendedores'] = false; initChartsForSection('vendedores'); }
+  showToast('Configuración de vendedores guardada');
+}
+function clearVendedoresConfig() {
+  localStorage.removeItem('gotir_vendedores');
+  document.getElementById('vendedores-lista').value = '';
+  document.getElementById('vendedores-config').classList.add('hidden');
+  if(GHL.connected) { sectionInited['vendedores'] = false; initChartsForSection('vendedores'); }
+  showToast('Mostrando todos los usuarios');
+}
+function getVendedoresList() {
+  const raw = localStorage.getItem('gotir_vendedores') || '';
+  return raw.split('\n').map(s=>s.trim().toLowerCase()).filter(Boolean);
+}
 
 function openGHLModal() {
   const modal = document.getElementById('ghl-modal');
@@ -3090,16 +3167,14 @@ async function loadGHLData() {
     if(avgTicket) document.getElementById('kpi-ticket').textContent = '€'+avgTicket.toLocaleString('es-ES');
     if(total>0 && won) document.getElementById('kpi-conversion').textContent = ((won/total)*100).toFixed(1)+'%';
 
-    // Pipeline Pre-venta → funnel (nombres exactos de GHL)
+    // Pipeline Pre-venta → funnel (nombres exactos de GHL, comparación case-insensitive)
     const STAGE_MAP = {
-      'new lead /sin clasificar':0, 'new lead / sin clasificar':0,
-      'cualificado':1, 'cuailficado':1,
-      'agendar llamada':1.5,
-      'llamada agendada':2,
-      'llamada realizada':3,
-      'información y contrato enviado':4, 'informacion y contrato enviado':4,
-      'pronto pago':5,
-      'pagado':6
+      'new lead /sin clasificar':0,'new lead / sin clasificar':0,
+      'cualificado':1,'cuailficado':1,'agendar llamada':1,
+      'llamada agendada':2,'llamada realizada':3,
+      'información y contrato enviado':4,'informacion y contrato enviado':4,
+      'información y contrato  enviado':4,
+      'pronto pago':5,'pagado':6
     };
     const stageCounts = new Array(7).fill(0);
     oppList.forEach(o => {
@@ -3116,9 +3191,14 @@ async function loadGHLData() {
       const startTime = new Date(now - 90 * 24 * 60 * 60 * 1000).toISOString();
       const endTime   = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000).toISOString();
       const calsResp = await ghlFetchV2('GET', `/calendars/`, { locationId: GHL.locationId });
-      const calList = calsResp.calendars || calsResp.data || [];
+      const calListAll = calsResp.calendars || calsResp.data || [];
+      // Only load from active sales calendars; filter others out to avoid mixing internal meetings
+      const ACTIVE_CALS = ['asesoría gotir','asesoria gotir','mariano barcelona'];
+      const calList = calListAll.filter(c => ACTIVE_CALS.some(n => (c.name||'').toLowerCase().includes(n)))
+                       .concat(calListAll.length === 0 ? [] : []); // fallback to all if none matched
+      const calListFinal = calList.length > 0 ? calList : calListAll.slice(0,5);
       let apptList = [];
-      for(const cal of calList.slice(0,5)) {
+      for(const cal of calListFinal) {
         try {
           const ev = await ghlFetchV2('GET', `/calendars/events`, {
             calendarId: cal.id, locationId: GHL.locationId, startTime, endTime

@@ -1372,7 +1372,10 @@ const DATA = {
     noQualified:{ cue:0, tiempo:0, fondos:0 },
     totalOpps:  0,
     totalWon:   0,
-    totalRevenue:0
+    totalRevenue:0,
+    allContacts: [],
+    allOpps:     [],
+    allCitas:    []
   },
   motivos_perdida: [
     { motivo:'Precio muy alto', pct:34, color:'#f87171' },
@@ -1482,9 +1485,11 @@ function filterByPeriod(list, days, dateField) {
 
 function recalcFromPeriod(p) {
   const days = PERIOD_DAYS[p] || 30;
-  const contacts = filterByPeriod(DATA.ghlLive.allContacts, days, 'dateAdded');
-  const opps     = filterByPeriod(DATA.ghlLive.allOpps, days, 'createdAt');
-  const wonOpps  = DATA.ghlLive.allOpps.filter(o => {
+  const allC = DATA.ghlLive.allContacts || [];
+  const allO = DATA.ghlLive.allOpps     || [];
+  const contacts = filterByPeriod(allC, days, 'dateAdded');
+  const opps     = filterByPeriod(allO, days, 'createdAt');
+  const wonOpps  = allO.filter(o => {
     const d = o.closedDate || o.closeDate || '';
     return o.status==='won' && d && new Date(d).getTime() >= Date.now() - days*86400000;
   });
@@ -3281,7 +3286,7 @@ async function loadGHLData() {
       const ACTIVE_CALS = ['asesoría gotir','asesoria gotir','mariano barcelona'];
       const calList = calListAll.filter(c => ACTIVE_CALS.some(n => (c.name||'').toLowerCase().includes(n)))
                        .concat(calListAll.length === 0 ? [] : []); // fallback to all if none matched
-      const calListFinal = calList.length > 0 ? calList : calListAll.slice(0,5);
+      const calListFinal = calList.length > 0 ? calList : calListAll.slice(0, 5);
       let apptList = [];
       for(const cal of calListFinal) {
         try {

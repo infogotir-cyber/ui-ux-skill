@@ -3601,45 +3601,51 @@ async function loadGHLData() {
 
     // ── 3. CITAS / LLAMADAS (GHL Calendar) ──────────────────────
     try {
-      const now      = Date.now();
-      const startMs  = now - 365 * 24 * 60 * 60 * 1000; // 1 year back
-      const endMs    = now + 30  * 24 * 60 * 60 * 1000; // 30 days ahead
-      const startISO = new Date(startMs).toISOString();
-      const endISO   = new Date(endMs).toISOString();
+      const now     = Date.now();
+      const startMs = now - 365 * 24 * 60 * 60 * 1000;
+      const endMs   = now + 30  * 24 * 60 * 60 * 1000;
 
+      // Get calendar list to find active sales calendars
       const calsResp = await ghlFetchV2('GET', `/calendars/`, { locationId: GHL.locationId });
       const calListAll = calsResp.calendars || calsResp.data || [];
       const ACTIVE_CALS = ['asesoría gotir','asesoria gotir','mariano barcelona'];
       const calList = calListAll.filter(c => ACTIVE_CALS.some(n => (c.name||'').toLowerCase().includes(n)));
-      const calListFinal = calList.length > 0 ? calList : calListAll.slice(0, 10);
+      const calListFinal = calList.length > 0 ? calList : calListAll;
 
       let apptList = [];
+
+      // Method 1: correct GHL V2 endpoint per calendar (ms timestamps)
       for(const cal of calListFinal) {
         try {
-          // Try with Unix ms timestamps first (GHL V2 preferred)
-          let ev = await ghlFetchV2('GET', `/calendars/events`, {
+          const ev = await ghlFetchV2('GET', `/calendars/events/appointments`, {
             calendarId: cal.id, locationId: GHL.locationId,
             startTime: startMs, endTime: endMs
           });
-          let items = ev.events || ev.appointments || ev.data || [];
-          // Fallback: ISO strings
-          if(items.length === 0) {
-            ev = await ghlFetchV2('GET', `/calendars/events`, {
-              calendarId: cal.id, locationId: GHL.locationId,
-              startTime: startISO, endTime: endISO
-            });
-            items = ev.events || ev.appointments || ev.data || [];
-          }
+          const items = ev.appointments || ev.events || ev.data || [];
+          console.log('[GHL] Cal', cal.name, '→', items.length, 'citas');
           apptList = apptList.concat(items);
+        } catch(e) { console.warn('[GHL] Cal fetch error:', cal.name, e.message); }
+      }
+
+      // Method 2: all appointments for location (no calendar filter)
+      if(apptList.length === 0) {
+        try {
+          const ev2 = await ghlFetchV2('GET', `/calendars/events/appointments`, {
+            locationId: GHL.locationId, startTime: startMs, endTime: endMs
+          });
+          apptList = ev2.appointments || ev2.events || ev2.data || [];
+          console.log('[GHL] All-location appointments:', apptList.length);
         } catch(_) {}
       }
-      // Fallback: try /appointments/ endpoint directly
+
+      // Method 3: /appointments/ endpoint (legacy fallback)
       if(apptList.length === 0) {
         try {
           const ap = await ghlFetchV2('GET', `/appointments/`, {
-            locationId: GHL.locationId, startDate: startISO, endDate: endISO, limit: 500
+            locationId: GHL.locationId, startTime: startMs, endTime: endMs, limit: 500
           });
           apptList = ap.appointments || ap.events || ap.data || [];
+          console.log('[GHL] /appointments/ fallback:', apptList.length);
         } catch(_) {}
       }
       // Store full citas list for period filtering

@@ -1468,22 +1468,117 @@ function toggleTheme() {
 // ═══════════════════════════════════════
 // PERIOD
 // ═══════════════════════════════════════
+const PERIOD_DAYS = { semana:7, mes:30, ano:365 };
+
 function setPeriod(p) {
   DATA.period = p;
   document.querySelectorAll('[id^=period-]').forEach(b => b.classList.remove('active'));
   document.getElementById('period-'+p).classList.add('active');
-  const d = DATA.kpis[p];
-  document.getElementById('kpi-leads').textContent = d.leads;
-  document.getElementById('kpi-citas').textContent = d.citas;
-  document.getElementById('kpi-realizadas').textContent = d.realizadas;
-  document.getElementById('kpi-noshows').textContent = d.noshows;
-  document.getElementById('kpi-canceladas').textContent = d.canceladas;
-  document.getElementById('kpi-asistencia').textContent = d.asistencia;
-  document.getElementById('kpi-ventas').textContent = d.ventas;
-  document.getElementById('kpi-facturacion').textContent = d.facturacion;
-  document.getElementById('kpi-ticket').textContent = d.ticket;
-  document.getElementById('kpi-conv-llamada').textContent = d.convLlamada;
-  document.getElementById('kpi-conversion').textContent = d.conversion;
+
+  // If GHL data is loaded, recalculate everything from real data filtered by period
+  if(GHL.connected && DATA.ghlLive.allContacts && DATA.ghlLive.allContacts.length > 0) {
+    recalcFromPeriod(p);
+  } else {
+    // Fallback to demo data
+    const d = DATA.kpis[p];
+    document.getElementById('kpi-leads').textContent = d.leads;
+    document.getElementById('kpi-citas').textContent = d.citas;
+    document.getElementById('kpi-realizadas').textContent = d.realizadas;
+    document.getElementById('kpi-noshows').textContent = d.noshows;
+    document.getElementById('kpi-canceladas').textContent = d.canceladas;
+    document.getElementById('kpi-asistencia').textContent = d.asistencia;
+    document.getElementById('kpi-ventas').textContent = d.ventas;
+    document.getElementById('kpi-facturacion').textContent = d.facturacion;
+    document.getElementById('kpi-ticket').textContent = d.ticket;
+    document.getElementById('kpi-conv-llamada').textContent = d.convLlamada;
+    document.getElementById('kpi-conversion').textContent = d.conversion;
+  }
+}
+
+function filterByPeriod(list, days, dateField) {
+  const cutoff = Date.now() - days * 86400000;
+  return list.filter(item => {
+    const raw = item[dateField] || item.dateAdded || item.createdAt || item.closedDate || '';
+    return raw && new Date(raw).getTime() >= cutoff;
+  });
+}
+
+function recalcFromPeriod(p) {
+  const days = PERIOD_DAYS[p] || 30;
+  const contacts = filterByPeriod(DATA.ghlLive.allContacts, days, 'dateAdded');
+  const opps     = filterByPeriod(DATA.ghlLive.allOpps, days, 'createdAt');
+  const wonOpps  = DATA.ghlLive.allOpps.filter(o => {
+    const d = o.closedDate || o.closeDate || '';
+    return o.status==='won' && d && new Date(d).getTime() >= Date.now() - days*86400000;
+  });
+
+  const totalLeads  = contacts.length;
+  const totalVentas = wonOpps.length;
+  const totalRev    = wonOpps.reduce((s,o)=>s+(o.monetaryValue||0),0);
+  const ticket      = totalVentas>0 ? Math.round(totalRev/totalVentas) : 0;
+  const conv        = totalLeads>0  ? ((totalVentas/totalLeads)*100).toFixed(1)+'%' : '0%';
+
+  document.getElementById('kpi-leads').textContent      = totalLeads;
+  document.getElementById('kpi-ventas').textContent     = totalVentas;
+  document.getElementById('kpi-facturacion').textContent= totalRev>0 ? '€'+totalRev.toLocaleString('es-ES') : '€0';
+  document.getElementById('kpi-ticket').textContent     = ticket>0 ? '€'+ticket.toLocaleString('es-ES') : '—';
+  document.getElementById('kpi-conversion').textContent = conv;
+
+  // Recalculate citas from filtered calendar events (stored in ghlLive.allCitas)
+  if(DATA.ghlLive.allCitas) {
+    const citas = filterByPeriod(DATA.ghlLive.allCitas, days, 'startTime');
+    const realizadas = citas.filter(a=>['confirmed','showed','completed'].includes((a.appointmentStatus||a.status||'').toLowerCase())).length;
+    const noshows    = citas.filter(a=>['no-showed','noshow','no_show'].includes((a.appointmentStatus||a.status||'').toLowerCase())).length;
+    const canceladas = citas.filter(a=>['cancelled','canceled','invalid'].includes((a.appointmentStatus||a.status||'').toLowerCase())).length;
+    const asistencia = citas.length>0 ? Math.round((realizadas/citas.length)*100)+'%' : '—';
+    document.getElementById('kpi-citas').textContent      = citas.length;
+    document.getElementById('kpi-realizadas').textContent = realizadas;
+    document.getElementById('kpi-noshows').textContent    = noshows;
+    document.getElementById('kpi-canceladas').textContent = canceladas;
+    document.getElementById('kpi-asistencia').textContent = asistencia;
+    document.getElementById('kpi-conv-llamada').textContent = realizadas>0 ? ((totalVentas/realizadas)*100).toFixed(1)+'%' : '—';
+  }
+
+  // Recalculate funnel stage counts filtered by period
+  const STAGE_MAP = {
+    'new lead /sin clasificar':0,'new lead / sin clasificar':0,
+    'cualificado':1,'cuailficado':1,
+    'llamada agendada':2,'llamada realizada':3,
+    'información y contrato enviado':4,'informacion y contrato enviado':4,
+    'pronto pago':5,'pagado':6
+  };
+  const stageCounts = new Array(7).fill(0);
+  opps.forEach(o => {
+    const name = (o.pipelineStageName||o.stageName||o.stage?.name||'').toLowerCase().trim();
+    const idx = STAGE_MAP[name];
+    if(idx !== undefined) stageCounts[idx]++;
+  });
+  stageCounts.forEach((count,i) => { if(DATA.funnel[i]) DATA.funnel[i].value = count || 0; });
+
+  // Re-render funnel if visible
+  if(document.getElementById('s-embudo')?.classList.contains('active')) {
+    sectionInited['embudo'] = false;
+    initEmbudo();
+  }
+
+  // Refresh day-by-day chart for the selected period
+  const dayMap = {}, wonDayMap = {};
+  for(let i=days-1; i>=0; i--) {
+    const d=new Date(); d.setDate(d.getDate()-i);
+    const k=d.toISOString().slice(0,10);
+    dayMap[k]=0; wonDayMap[k]=0;
+  }
+  contacts.forEach(c=>{ const k=(c.dateAdded||c.createdAt||'').slice(0,10); if(k in dayMap) dayMap[k]++; });
+  wonOpps.forEach(o=>{ const k=(o.closedDate||o.closeDate||'').slice(0,10); if(k in wonDayMap) wonDayMap[k]++; });
+  const dKeys   = Object.keys(dayMap);
+  const dLabels = dKeys.map(k=>{ const d=new Date(k); return d.getDate()+' '+(d.toLocaleString('es-ES',{month:'short'})); });
+  if(charts['chart-leads-ventas']) {
+    charts['chart-leads-ventas'].updateSeries([
+      { name:'Leads',  data: dKeys.map(k=>dayMap[k]) },
+      { name:'Ventas', data: dKeys.map(k=>wonDayMap[k]) }
+    ]);
+    charts['chart-leads-ventas'].updateOptions({ xaxis:{ categories: dLabels } });
+  }
 }
 
 // ═══════════════════════════════════════
@@ -2811,6 +2906,9 @@ async function loadGHLData() {
       if(count) camp.leads = count;
     });
 
+    // Store full contact list for period filtering
+    DATA.ghlLive.allContacts = contactList;
+
     // ── 2. PIPELINES → OPPORTUNITIES ────────────────────────
     // Step 1: get pipelines to find Pre-venta pipeline ID
     let oppList = [];
@@ -2833,6 +2931,9 @@ async function loadGHLData() {
     const won     = oppList.filter(o=>o.status==='won').length;
     const revenue = oppList.filter(o=>o.status==='won').reduce((s,o)=>s+(o.monetaryValue||o.monetary_value||0),0);
     const avgTicket = won>0 ? Math.round(revenue/won) : 0;
+
+    // Store full opp list for period filtering
+    DATA.ghlLive.allOpps = oppList;
 
     // Populate ghlLive from opportunities
     DATA.ghlLive.totalOpps    = oppList.length;
@@ -2903,6 +3004,9 @@ async function loadGHLData() {
           apptList = apptList.concat(ev.events || ev.appointments || []);
         } catch(_) {}
       }
+      // Store full citas list for period filtering
+      DATA.ghlLive.allCitas = apptList;
+
       // Total agendadas = all events (includes confirmed, cancelled, showed, noshow)
       const totalCitas = apptList.length;
       const realizadas = apptList.filter(a => {
@@ -2937,6 +3041,8 @@ async function loadGHLData() {
     refreshLiveSections();
     refreshEjecutivoCharts(contactList, oppList, sourceCounts, won, revenue);
     updateTiemposFromGHL(oppList);
+    // Apply current period filter now that full data is stored
+    recalcFromPeriod(DATA.period || 'mes');
 
   } catch(e) {
     showToast('Error cargando datos: '+e.message, true);

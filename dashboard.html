@@ -2271,37 +2271,58 @@ function initLlamadas() {
 
   // Motivos de pérdida (from lostReasons)
   const lostRaw = DATA.ghlLive.lostReasons;
+  const lostKeys = Object.keys(lostRaw).filter(k => k !== 'Sin motivo registrado');
   const lostTotal = Object.values(lostRaw).reduce((s,v)=>s+v,0);
-  const motivos = lostTotal > 0
-    ? Object.entries(lostRaw).sort((a,b)=>b[1]-a[1]).slice(0,6).map(([motivo,cnt],i)=>({
-        motivo, pct: Math.round(cnt/lostTotal*100),
-        color: ['#f87171','#fb923c','#fbbf24','#a78bfa','#60a5fa','#94a3b8'][i]
-      }))
-    : DATA.motivos_perdida;
+  const sinMotivo = lostRaw['Sin motivo registrado'] || 0;
+  const hasRealReasons = lostKeys.length > 0;
+
+  const motivos = hasRealReasons
+    ? Object.entries(lostRaw).filter(([k])=>k!=='Sin motivo registrado')
+        .sort((a,b)=>b[1]-a[1]).slice(0,6)
+        .map(([motivo,cnt],i)=>({ motivo, pct: Math.round(cnt/lostTotal*100),
+          color: ['#f87171','#fb923c','#fbbf24','#a78bfa','#60a5fa','#94a3b8'][i] }))
+    : lostTotal > 0 ? null : DATA.motivos_perdida;
 
   const mp = document.getElementById('motivos-perdida');
-  if(mp) mp.innerHTML = motivos.map(m=>`
-    <div class="bg-slate-800/50 border border-slate-700/50 rounded-lg p-4">
-      <div class="flex items-center justify-between mb-2">
-        <span class="text-sm font-medium text-slate-200">${m.motivo}</span>
-        <span class="text-lg font-bold text-white">${m.pct}%</span>
-      </div>
-      <div class="progress-bar"><div class="progress-fill" style="width:${Math.min(m.pct*2,100)}%;background:${m.color}"></div></div>
-    </div>
-  `).join('');
+  if(mp) {
+    if(motivos) {
+      mp.innerHTML = motivos.map(m=>`
+        <div class="bg-slate-800/50 border border-slate-700/50 rounded-lg p-4">
+          <div class="flex items-center justify-between mb-2">
+            <span class="text-sm font-medium text-slate-200">${m.motivo}</span>
+            <span class="text-lg font-bold text-white">${m.pct}%</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" style="width:${Math.min(m.pct*2,100)}%;background:${m.color}"></div></div>
+        </div>`).join('');
+    } else if(lostTotal > 0) {
+      mp.innerHTML = `<div class="col-span-3 p-4 bg-slate-800/50 border border-slate-700/50 rounded-lg text-center">
+        <div class="text-slate-400 text-sm mb-1">Hay <strong class="text-white">${lostTotal}</strong> oportunidades perdidas sin motivo registrado.</div>
+        <div class="text-slate-500 text-xs">Para ver datos aquí, seleccioná un motivo al marcar una oportunidad como perdida en GHL.</div>
+      </div>`;
+    }
+  }
 
-  // Objeciones chart — stays from lostReasons or demo
-  const objLabels = motivos.map(m=>m.motivo.slice(0,18));
-  const objData   = motivos.map(m=>m.pct);
+  // Objeciones chart
+  const objMotivos = motivos || DATA.motivos_perdida;
+  const objLabels  = objMotivos.map(m=>m.motivo.slice(0,22));
+  const objData    = objMotivos.map(m=>m.pct);
   initChart('chart-objeciones', mkOpts({
     chart:{ type:'bar', height:250 },
-    series:[{ name:'% de llamadas', data: objData }],
+    series:[{ name:'% perdidas', data: objData }],
     xaxis:{ categories: objLabels, labels:{ style:{ colors:'#64748b', fontSize:'10px' } } },
-    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>v+'%' }, max:50 },
+    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>v+'%' } },
     colors:['#f87171','#fb923c','#fbbf24','#a78bfa','#60a5fa','#94a3b8'],
     plotOptions:{ bar:{ borderRadius:4, distributed:true, horizontal:true } },
     legend:{ show:false }
   }));
+  // Note under chart if many have no reason
+  if(sinMotivo > 0 && lostTotal > 0) {
+    const pctSin = Math.round(sinMotivo/lostTotal*100);
+    const note = document.createElement('div');
+    note.className = 'text-xs text-slate-500 mt-2 text-center';
+    note.textContent = `${pctSin}% de las pérdidas (${sinMotivo}) no tienen motivo registrado en GHL`;
+    document.getElementById('chart-objeciones')?.after(note);
+  }
 }
 
 // ═══════════════════════════════════════
@@ -3539,12 +3560,21 @@ async function loadGHLData() {
     DATA.ghlLive.totalWon     = won;
     DATA.ghlLive.totalRevenue = revenue;
 
-    // Lost reasons
+    // Lost reasons — try multiple GHL field names
     DATA.ghlLive.lostReasons = {};
     oppList.filter(o=>(o.status||'').toLowerCase()==='lost').forEach(o => {
-      const reason = o.lostReason || o.lost_reason || 'Sin motivo';
-      DATA.ghlLive.lostReasons[reason] = (DATA.ghlLive.lostReasons[reason]||0)+1;
+      const reason = o.lostReason || o.lost_reason || o.lostReasonLabel ||
+                     o.reason || o.lostReasonId || null;
+      if(reason && String(reason).trim()) {
+        const k = String(reason).trim();
+        DATA.ghlLive.lostReasons[k] = (DATA.ghlLive.lostReasons[k]||0)+1;
+      }
+      // No reason recorded — count separately
+      if(!reason || !String(reason).trim()) {
+        DATA.ghlLive.lostReasons['Sin motivo registrado'] = (DATA.ghlLive.lostReasons['Sin motivo registrado']||0)+1;
+      }
     });
+    console.log('[GHL] Lost reasons:', DATA.ghlLive.lostReasons);
 
     // Vendedor stats
     DATA.ghlLive.byVendedor = {};

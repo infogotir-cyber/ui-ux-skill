@@ -2187,35 +2187,100 @@ function initVendedores() {
 // CHARTS: LLAMADAS
 // ═══════════════════════════════════════
 function initLlamadas() {
-  initChart('chart-objeciones', mkOpts({
-    chart:{ type:'bar', height:250 },
-    series:[{ name:'% de llamadas', data:[34,22,18,13,8,5] }],
-    xaxis:{ categories:['Precio','Sin urgencia','Consultarlo','Ya tiene asesor','Personal','Sin motivo'], labels:{ style:{ colors:'#64748b', fontSize:'10px' } } },
-    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>v+'%' }, max:50 },
-    colors:['#f87171','#fb923c','#fbbf24','#a78bfa','#60a5fa','#94a3b8'],
-    plotOptions:{ bar:{ borderRadius:4, distributed:true, horizontal:true } },
-    legend:{ show:false }
-  }));
+  const allCitas = DATA.ghlLive.allCitas || [];
+  const hasReal  = GHL.connected && allCitas.length > 0;
 
-  initChart('chart-interes', mkOpts({
-    chart:{ type:'donut', height:250 },
-    series:[47,31,22],
-    labels:['Alto interés','Interés medio','Bajo interés'],
-    colors:['#4ade80','#f59e0b','#f87171'],
-    legend:{ position:'bottom', labels:{ colors:'#94a3b8' } },
-    plotOptions:{ pie:{ donut:{ size:'60%' } } }
-  }));
+  // ── Stat cards ───────────────────────────────────────────
+  if(hasReal) {
+    const total      = allCitas.length;
+    const realizadas = allCitas.filter(a=>['confirmed','showed','completed'].includes((a.appointmentStatus||a.status||'').toLowerCase())).length;
+    const noshows    = allCitas.filter(a=>['no-showed','noshow','no_show'].includes((a.appointmentStatus||a.status||'').toLowerCase())).length;
+    const canceladas = allCitas.filter(a=>['cancelled','canceled','invalid'].includes((a.appointmentStatus||a.status||'').toLowerCase())).length;
+    const asist      = total > 0 ? Math.round(realizadas/total*100) : 0;
+    const won        = DATA.ghlLive.totalWon || 0;
+    const convLL     = realizadas > 0 ? ((won/realizadas)*100).toFixed(1) : '—';
+    const el = id => document.getElementById(id);
+    if(el('ll-total'))      el('ll-total').textContent      = total;
+    if(el('ll-realizadas')) el('ll-realizadas').textContent = realizadas;
+    if(el('ll-noshows'))    el('ll-noshows').textContent    = noshows;
+    if(el('ll-canceladas')) el('ll-canceladas').textContent = canceladas;
+    if(el('ll-asistencia')) el('ll-asistencia').textContent = asist + '%';
+    if(el('ll-conv'))       el('ll-conv').textContent       = convLL + '%';
+
+    // ── Llamadas por día (últimos 30 días) ───────────────────
+    const dayMap = {};
+    for(let i=29;i>=0;i--){ const d=new Date(); d.setDate(d.getDate()-i); dayMap[d.toISOString().slice(0,10)]=0; }
+    allCitas.forEach(a=>{ const k=(a.startTime||a.start||'').slice(0,10); if(k in dayMap) dayMap[k]++; });
+    const dKeys = Object.keys(dayMap);
+    const dLabels = dKeys.map(k=>{ const d=new Date(k); return d.getDate()+'/'+(d.getMonth()+1); });
+    initChart('chart-llamadas-dia', mkOpts({
+      chart:{ type:'bar', height:220 },
+      series:[{ name:'Llamadas', data: dKeys.map(k=>dayMap[k]) }],
+      xaxis:{ categories: dLabels, labels:{ style:{ colors:'#64748b', fontSize:'9px' }, rotate:-45 } },
+      yaxis:{ labels:{ style:{ colors:'#64748b' } } },
+      colors:['#3b82f6'], plotOptions:{ bar:{ borderRadius:2 } }
+    }));
+
+    // ── Estado de citas (donut) ───────────────────────────────
+    initChart('chart-interes', mkOpts({
+      chart:{ type:'donut', height:250 },
+      series:[ realizadas, noshows, canceladas ],
+      labels:['Realizadas','No-show','Canceladas'],
+      colors:['#4ade80','#f87171','#fbbf24'],
+      legend:{ position:'bottom', labels:{ colors:'#94a3b8' } },
+      plotOptions:{ pie:{ donut:{ size:'60%' } } }
+    }));
+  } else {
+    // Demo fallback
+    initChart('chart-llamadas-dia', mkOpts({
+      chart:{ type:'bar', height:220 },
+      series:[{ name:'Llamadas', data:[3,5,2,4,6,3,5,4,7,4,6,5,3,4,6,5,4,5,6,4,3,5,4,6,5,7,4,5,6,4] }],
+      xaxis:{ categories: Array.from({length:30},(_,i)=>i+1+''), labels:{ style:{ colors:'#64748b', fontSize:'9px' } } },
+      yaxis:{ labels:{ style:{ colors:'#64748b' } } },
+      colors:['#3b82f6'], plotOptions:{ bar:{ borderRadius:2 } }
+    }));
+    initChart('chart-interes', mkOpts({
+      chart:{ type:'donut', height:250 },
+      series:[47,31,22], labels:['Realizadas','No-show','Canceladas'],
+      colors:['#4ade80','#f87171','#fbbf24'],
+      legend:{ position:'bottom', labels:{ colors:'#94a3b8' } },
+      plotOptions:{ pie:{ donut:{ size:'60%' } } }
+    }));
+  }
+
+  // Motivos de pérdida (from lostReasons)
+  const lostRaw = DATA.ghlLive.lostReasons;
+  const lostTotal = Object.values(lostRaw).reduce((s,v)=>s+v,0);
+  const motivos = lostTotal > 0
+    ? Object.entries(lostRaw).sort((a,b)=>b[1]-a[1]).slice(0,6).map(([motivo,cnt],i)=>({
+        motivo, pct: Math.round(cnt/lostTotal*100),
+        color: ['#f87171','#fb923c','#fbbf24','#a78bfa','#60a5fa','#94a3b8'][i]
+      }))
+    : DATA.motivos_perdida;
 
   const mp = document.getElementById('motivos-perdida');
-  mp.innerHTML = DATA.motivos_perdida.map(m=>`
+  if(mp) mp.innerHTML = motivos.map(m=>`
     <div class="bg-slate-800/50 border border-slate-700/50 rounded-lg p-4">
       <div class="flex items-center justify-between mb-2">
         <span class="text-sm font-medium text-slate-200">${m.motivo}</span>
         <span class="text-lg font-bold text-white">${m.pct}%</span>
       </div>
-      <div class="progress-bar"><div class="progress-fill" style="width:${m.pct*2}%;background:${m.color}"></div></div>
+      <div class="progress-bar"><div class="progress-fill" style="width:${Math.min(m.pct*2,100)}%;background:${m.color}"></div></div>
     </div>
   `).join('');
+
+  // Objeciones chart — stays from lostReasons or demo
+  const objLabels = motivos.map(m=>m.motivo.slice(0,18));
+  const objData   = motivos.map(m=>m.pct);
+  initChart('chart-objeciones', mkOpts({
+    chart:{ type:'bar', height:250 },
+    series:[{ name:'% de llamadas', data: objData }],
+    xaxis:{ categories: objLabels, labels:{ style:{ colors:'#64748b', fontSize:'10px' } } },
+    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>v+'%' }, max:50 },
+    colors:['#f87171','#fb923c','#fbbf24','#a78bfa','#60a5fa','#94a3b8'],
+    plotOptions:{ bar:{ borderRadius:4, distributed:true, horizontal:true } },
+    legend:{ show:false }
+  }));
 }
 
 // ═══════════════════════════════════════
@@ -2569,29 +2634,50 @@ function switchPerdTab(name, btn) {
 // CHARTS: CONVERSIÓN
 // ═══════════════════════════════════════
 function initConversion() {
-  // Update stat cards from ghlLive if available
   const gl = DATA.ghlLive;
+  const hasReal = GHL.connected && (gl.allContacts||[]).length > 0;
+
+  // ── Stat cards ───────────────────────────────────────────
   if(gl.totalOpps > 0) {
-    document.getElementById('conv-opps-total').textContent = gl.totalOpps;
-    document.getElementById('conv-won-total').textContent = gl.totalWon;
-    document.getElementById('conv-ratio').textContent = gl.totalOpps>0 ? ((gl.totalWon/gl.totalOpps)*100).toFixed(1)+'%' : '—';
+    const el = id => document.getElementById(id);
+    if(el('conv-opps-total')) el('conv-opps-total').textContent = gl.totalOpps;
+    if(el('conv-won-total'))  el('conv-won-total').textContent  = gl.totalWon;
+    if(el('conv-ratio'))      el('conv-ratio').textContent      = ((gl.totalWon/gl.totalOpps)*100).toFixed(1)+'%';
+    const allC = gl.allContacts||[], allO = gl.allOpps||[];
+    if(el('conv-leads-total'))  el('conv-leads-total').textContent  = allC.length;
+    if(el('conv-lead-to-opp'))  el('conv-lead-to-opp').textContent  = allC.length>0 ? ((allO.length/allC.length)*100).toFixed(1)+'%' : '—';
   }
 
-  // General tab chart
-  const months = ['Ene','Feb','Mar','Abr','May','Jun'];
-  initChart('chart-conv-general', mkOpts({
-    chart:{ type:'bar', height:280 },
-    series:[
-      { name:'Leads',   data:[720,760,801,831,858,891] },
-      { name:'Opps',    data:[260,272,285,296,304,312] },
-      { name:'Ventas',  data:[88, 94, 101,108,113,118] }
-    ],
-    xaxis:{ categories:months, labels:{ style:{ colors:'#64748b' } } },
-    yaxis:{ labels:{ style:{ colors:'#64748b' } } },
-    colors:['#3b82f6','#a78bfa','#4ade80'],
-    plotOptions:{ bar:{ borderRadius:4, columnWidth:'60%' } },
-    legend:{ labels:{ colors:'#94a3b8' } }
-  }));
+  // ── General chart — real 12-month history ────────────────
+  if(hasReal) {
+    const hist = buildMonthlyHistory(gl.allContacts, gl.allOpps);
+    initChart('chart-conv-general', mkOpts({
+      chart:{ type:'bar', height:280 },
+      series:[
+        { name:'Leads',  data: hist.leads  },
+        { name:'Ventas', data: hist.ventas }
+      ],
+      xaxis:{ categories: hist.labels, labels:{ style:{ colors:'#64748b' } } },
+      yaxis:{ labels:{ style:{ colors:'#64748b' } } },
+      colors:['#3b82f6','#4ade80'],
+      plotOptions:{ bar:{ borderRadius:4, columnWidth:'60%' } },
+      legend:{ labels:{ colors:'#94a3b8' } }
+    }));
+  } else {
+    const months = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+    initChart('chart-conv-general', mkOpts({
+      chart:{ type:'bar', height:280 },
+      series:[
+        { name:'Leads',  data:[72,76,80,83,85,89,92,88,95,98,102,108] },
+        { name:'Ventas', data:[9, 10,10,11,11,12,12,11,13,13,14,14]   }
+      ],
+      xaxis:{ categories:months, labels:{ style:{ colors:'#64748b' } } },
+      yaxis:{ labels:{ style:{ colors:'#64748b' } } },
+      colors:['#3b82f6','#4ade80'],
+      plotOptions:{ bar:{ borderRadius:4, columnWidth:'60%' } },
+      legend:{ labels:{ colors:'#94a3b8' } }
+    }));
+  }
 }
 
 function initConvSource() {
@@ -2789,8 +2875,16 @@ function initValor() {
     document.getElementById('valor-facturacion').textContent = '€'+gl.totalRevenue.toLocaleString('es-ES');
   }
 
-  // Top 5 clients table (always demo for now)
-  document.getElementById('tbody-valor-top5').innerHTML = DATA.valor_top5.map((c,i)=>`
+  // Top 5 clients table — real won opps sorted by monetaryValue
+  const wonForTop = (gl.allOpps||[]).filter(o=>o.status==='won' && (o.monetaryValue||0) > 0)
+    .sort((a,b)=>(b.monetaryValue||0)-(a.monetaryValue||0)).slice(0,5);
+  const top5Data = wonForTop.length >= 3 ? wonForTop.map((o,i)=>{
+    const name = (o.contact?.name || o.contactName || o.name || 'Cliente').trim();
+    const val  = '€'+(o.monetaryValue||0).toLocaleString('es-ES');
+    const date = (o.closedDate||o.closeDate||'').slice(0,10) || '—';
+    return { nombre:name, tramites:1, valor:val, ultimo:date };
+  }) : DATA.valor_top5;
+  document.getElementById('tbody-valor-top5').innerHTML = top5Data.map((c,i)=>`
     <tr class="border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
       <td class="py-2 px-3">
         <div class="flex items-center gap-2">
@@ -2803,9 +2897,23 @@ function initValor() {
       <td class="py-2 px-3 text-right text-slate-400 text-xs">${c.ultimo}</td>
     </tr>`).join('');
 
+  // Histograma distribución de valor — real from allOpps
+  const allWon = (gl.allOpps||[]).filter(o=>o.status==='won');
+  let histData = [0,0,0,0];
+  if(allWon.length >= 3) {
+    allWon.forEach(o=>{
+      const v = o.monetaryValue||0;
+      if(v < 500)        histData[0]++;
+      else if(v < 1000)  histData[1]++;
+      else if(v < 2000)  histData[2]++;
+      else               histData[3]++;
+    });
+  } else {
+    histData = [31, 48, 24, 15];
+  }
   initChart('chart-valor-histograma', mkOpts({
     chart:{ type:'bar', height:260 },
-    series:[{ name:'Clientes', data:[31, 48, 24, 15] }],
+    series:[{ name:'Clientes', data: histData }],
     xaxis:{ categories:['€0–500','€500–1.000','€1.000–2.000','€2.000+'], labels:{ style:{ colors:'#64748b' } } },
     yaxis:{ labels:{ style:{ colors:'#64748b' } } },
     colors:['#3b82f6','#6366f1','#a78bfa','#f59e0b'],

@@ -3361,7 +3361,9 @@ async function fetchAllOpportunities(pipelineId) {
   while(hasMore) {
     const r = await ghlFetchV2('GET', `/opportunities/search`, {
       location_id: GHL.locationId,
+      locationId:  GHL.locationId,
       pipeline_id: pipelineId,
+      pipelineId:  pipelineId,
       page, limit: 100
     });
     const batch = r.opportunities || r.data || [];
@@ -3370,7 +3372,7 @@ async function fetchAllOpportunities(pipelineId) {
     const totalCount = meta.total || meta.count || 0;
     hasMore = batch.length === 100 && (totalCount === 0 || all.length < totalCount);
     page++;
-    if(page > 100) break; // safety cap ~10000 opps
+    if(page > 100) break;
   }
   return all;
 }
@@ -3510,8 +3512,8 @@ async function loadGHLData() {
       }
     } catch(e) { console.warn('Opportunities load failed:', e.message); }
 
-    const won     = oppList.filter(o=>o.status==='won').length;
-    const revenue = oppList.filter(o=>o.status==='won').reduce((s,o)=>s+(o.monetaryValue||o.monetary_value||0),0);
+    const won     = oppList.filter(o=>(o.status||'').toLowerCase()==='won').length;
+    const revenue = oppList.filter(o=>(o.status||'').toLowerCase()==='won').reduce((s,o)=>s+(o.monetaryValue||o.monetary_value||0),0);
     const avgTicket = won>0 ? Math.round(revenue/won) : 0;
 
     // Store full opp list for period filtering
@@ -3524,7 +3526,7 @@ async function loadGHLData() {
 
     // Lost reasons
     DATA.ghlLive.lostReasons = {};
-    oppList.filter(o=>o.status==='lost').forEach(o => {
+    oppList.filter(o=>(o.status||'').toLowerCase()==='lost').forEach(o => {
       const reason = o.lostReason || o.lost_reason || 'Sin motivo';
       DATA.ghlLive.lostReasons[reason] = (DATA.ghlLive.lostReasons[reason]||0)+1;
     });
@@ -3537,7 +3539,7 @@ async function loadGHLData() {
       const val  = o.monetaryValue || o.monetary_value || 0;
       if(!DATA.ghlLive.byVendedor[uid]) DATA.ghlLive.byVendedor[uid] = { name, llamadas:0, opps:0, ventas:0, revenue:0 };
       DATA.ghlLive.byVendedor[uid].opps++;
-      if(o.status==='won') { DATA.ghlLive.byVendedor[uid].ventas++; DATA.ghlLive.byVendedor[uid].revenue += val; }
+      if((o.status||'').toLowerCase()==='won') { DATA.ghlLive.byVendedor[uid].ventas++; DATA.ghlLive.byVendedor[uid].revenue += val; }
     });
 
     // Won ventas → mark in byGrupo (cross-reference contact's grupo_familiar)
@@ -3559,10 +3561,11 @@ async function loadGHLData() {
 
     // KPIs
     document.getElementById('kpi-leads').textContent = total;
-    if(won)     document.getElementById('kpi-ventas').textContent = won;
-    if(revenue) document.getElementById('kpi-facturacion').textContent = '€'+revenue.toLocaleString('es-ES');
+    document.getElementById('kpi-ventas').textContent = won;
+    document.getElementById('kpi-facturacion').textContent = '€'+revenue.toLocaleString('es-ES');
     if(avgTicket) document.getElementById('kpi-ticket').textContent = '€'+avgTicket.toLocaleString('es-ES');
-    if(total>0 && won) document.getElementById('kpi-conversion').textContent = ((won/total)*100).toFixed(1)+'%';
+    document.getElementById('kpi-conversion').textContent = total>0 ? ((won/total)*100).toFixed(1)+'%' : '0.0%';
+    console.log('[GHL] oppList:', oppList.length, 'won:', won, 'revenue:', revenue, 'pipeline:', preVenta?.name);
 
     // Pipeline Pre-venta → funnel (nombres exactos de GHL, comparación case-insensitive)
     const STAGE_MAP = {
@@ -3581,30 +3584,52 @@ async function loadGHLData() {
     });
     stageCounts.forEach((count,i) => { if(count>0 && DATA.funnel[i]) DATA.funnel[i].value = count; });
 
-    // ── 3. CITAS / LLAMADAS (Google Meet via GHL Calendar) ──────
-    // Each calendar event = a Google Meet call. Crossed-out = cancelled (no-show).
+    // ── 3. CITAS / LLAMADAS (GHL Calendar) ──────────────────────
     try {
-      const now = new Date();
-      const startTime = new Date(now - 90 * 24 * 60 * 60 * 1000).toISOString();
-      const endTime   = new Date(now.getTime() + 30 * 24 * 60 * 60 * 1000).toISOString();
+      const now      = Date.now();
+      const startMs  = now - 365 * 24 * 60 * 60 * 1000; // 1 year back
+      const endMs    = now + 30  * 24 * 60 * 60 * 1000; // 30 days ahead
+      const startISO = new Date(startMs).toISOString();
+      const endISO   = new Date(endMs).toISOString();
+
       const calsResp = await ghlFetchV2('GET', `/calendars/`, { locationId: GHL.locationId });
       const calListAll = calsResp.calendars || calsResp.data || [];
-      // Only load from active sales calendars; filter others out to avoid mixing internal meetings
       const ACTIVE_CALS = ['asesoría gotir','asesoria gotir','mariano barcelona'];
-      const calList = calListAll.filter(c => ACTIVE_CALS.some(n => (c.name||'').toLowerCase().includes(n)))
-                       .concat(calListAll.length === 0 ? [] : []); // fallback to all if none matched
-      const calListFinal = calList.length > 0 ? calList : calListAll.slice(0, 5);
+      const calList = calListAll.filter(c => ACTIVE_CALS.some(n => (c.name||'').toLowerCase().includes(n)));
+      const calListFinal = calList.length > 0 ? calList : calListAll.slice(0, 10);
+
       let apptList = [];
       for(const cal of calListFinal) {
         try {
-          const ev = await ghlFetchV2('GET', `/calendars/events`, {
-            calendarId: cal.id, locationId: GHL.locationId, startTime, endTime
+          // Try with Unix ms timestamps first (GHL V2 preferred)
+          let ev = await ghlFetchV2('GET', `/calendars/events`, {
+            calendarId: cal.id, locationId: GHL.locationId,
+            startTime: startMs, endTime: endMs
           });
-          apptList = apptList.concat(ev.events || ev.appointments || []);
+          let items = ev.events || ev.appointments || ev.data || [];
+          // Fallback: ISO strings
+          if(items.length === 0) {
+            ev = await ghlFetchV2('GET', `/calendars/events`, {
+              calendarId: cal.id, locationId: GHL.locationId,
+              startTime: startISO, endTime: endISO
+            });
+            items = ev.events || ev.appointments || ev.data || [];
+          }
+          apptList = apptList.concat(items);
+        } catch(_) {}
+      }
+      // Fallback: try /appointments/ endpoint directly
+      if(apptList.length === 0) {
+        try {
+          const ap = await ghlFetchV2('GET', `/appointments/`, {
+            locationId: GHL.locationId, startDate: startISO, endDate: endISO, limit: 500
+          });
+          apptList = ap.appointments || ap.events || ap.data || [];
         } catch(_) {}
       }
       // Store full citas list for period filtering
       DATA.ghlLive.allCitas = apptList;
+      console.log('[GHL] Calendarios encontrados:', calListFinal.map(c=>c.name), '| Citas:', apptList.length, '| Statuses:', [...new Set(apptList.map(a=>a.appointmentStatus||a.status||'?'))]);
 
       // Cross-reference calendar events → byVendedor llamadas count
       apptList.forEach(a => {

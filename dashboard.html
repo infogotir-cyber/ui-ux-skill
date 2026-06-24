@@ -2714,14 +2714,47 @@ async function connectGHL() {
 }
 
 
+async function fetchAllContacts() {
+  let all = [], page = 1, hasMore = true;
+  while(hasMore) {
+    const r = await ghlFetchV2('GET', `/contacts/`, { locationId: GHL.locationId, limit:100, page });
+    const batch = r.contacts || [];
+    all = all.concat(batch);
+    const meta = r.meta || {};
+    const fetched = all.length;
+    const totalCount = meta.total || meta.count || 0;
+    hasMore = batch.length === 100 && (totalCount === 0 || fetched < totalCount);
+    page++;
+    if(page > 50) break; // safety cap ~5000 contacts
+  }
+  return all;
+}
+
+async function fetchAllOpportunities(pipelineId) {
+  let all = [], page = 1, hasMore = true;
+  while(hasMore) {
+    const r = await ghlFetchV2('GET', `/opportunities/search`, {
+      location_id: GHL.locationId,
+      pipeline_id: pipelineId,
+      page, limit: 100
+    });
+    const batch = r.opportunities || r.data || [];
+    all = all.concat(batch);
+    const meta = r.meta || {};
+    const totalCount = meta.total || meta.count || 0;
+    hasMore = batch.length === 100 && (totalCount === 0 || all.length < totalCount);
+    page++;
+    if(page > 100) break; // safety cap ~10000 opps
+  }
+  return all;
+}
+
 async function loadGHLData() {
   try {
-    // ── 1. CONTACTS (leads totales) ──────────────────────────
-    const contacts = await ghlFetchV2('GET', `/contacts/`, { locationId: GHL.locationId, limit:100 });
-    const total = contacts.meta?.total || contacts.total || contacts.contacts?.length || 0;
-
-    // Leer campos personalizados: canal_referencia_dr, pais_de_origennacionalidad, tipo_de_trmite + tags
-    const contactList = contacts.contacts || [];
+    // ── 1. CONTACTS (todos — paginado) ───────────────────────
+    showToast('Cargando todos los contactos de GHL...', false);
+    const contactList = await fetchAllContacts();
+    const total = contactList.length;
     const sourceCounts = {};
     DATA.ghlLive.byCountry  = {};
     DATA.ghlLive.byTramite  = {};
@@ -2792,14 +2825,8 @@ async function loadGHLData() {
       ) || pipelineList[0];
 
       if(preVenta) {
-        // GHL V2 opportunities/search uses location_id and pipeline_id (snake_case)
-        const oppsResp = await ghlFetchV2('GET', `/opportunities/search`, {
-          location_id: GHL.locationId,
-          pipeline_id: preVenta.id,
-          page: 1,
-          limit: 100
-        });
-        oppList = oppsResp.opportunities || oppsResp.data || [];
+        showToast('Cargando historial completo de oportunidades...', false);
+        oppList = await fetchAllOpportunities(preVenta.id);
       }
     } catch(e) { console.warn('Opportunities load failed:', e.message); }
 
@@ -2945,52 +2972,40 @@ function getSnapshotRange(daysAgo, spanDays) {
   return entries[entries.length - 1][1];
 }
 
-function buildComparativaData(currentLeads, currentVentas, currentRevenue) {
-  // Try to get real previous period data from snapshots
-  const prevWeek  = getSnapshotRange(14, 7);   // 14-7 days ago
-  const prevMonth = getSnapshotRange(60, 30);   // 60-30 days ago
-  const prevYear  = getSnapshotRange(730, 365); // 730-365 days ago
-
-  return {
-    categories: ['Leads Sem.','Leads Mes','Leads Año','Ventas Sem.€','Ventas Mes€','Ventas Año€'],
-    prev: [
-      prevWeek  ? prevWeek.leads   : null,
-      prevMonth ? prevMonth.leads  : null,
-      prevYear  ? prevYear.leads   : null,
-      prevWeek  ? prevWeek.revenue : null,
-      prevMonth ? prevMonth.revenue: null,
-      prevYear  ? prevYear.revenue : null,
-    ],
-    curr: [currentLeads, currentLeads, currentLeads, currentRevenue, currentRevenue, currentRevenue]
-  };
+function buildMonthlyHistory(contactList, oppList) {
+  // Build 12-month series from GHL createdAt / closedDate
+  const months = {};
+  for(let i = 11; i >= 0; i--) {
+    const d = new Date(); d.setDate(1); d.setMonth(d.getMonth() - i);
+    const key = d.toISOString().slice(0,7); // YYYY-MM
+    months[key] = { leads:0, ventas:0, revenue:0 };
+  }
+  contactList.forEach(c => {
+    const key = (c.dateAdded||c.createdAt||'').slice(0,7);
+    if(months[key]) months[key].leads++;
+  });
+  oppList.filter(o=>o.status==='won').forEach(o => {
+    const key = (o.closedDate||o.closeDate||o.updatedAt||'').slice(0,7);
+    if(months[key]) {
+      months[key].ventas++;
+      months[key].revenue += o.monetaryValue||o.monetary_value||0;
+    }
+  });
+  const keys = Object.keys(months).sort();
+  const labels = keys.map(k => { const [y,m]=k.split('-'); return ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'][+m-1]+' '+y.slice(2); });
+  return { keys, labels, leads: keys.map(k=>months[k].leads), ventas: keys.map(k=>months[k].ventas), revenue: keys.map(k=>months[k].revenue) };
 }
 
 function refreshEjecutivoCharts(contactList, oppList, sourceCounts, won, revenue) {
-  // ── 1. Evolución leads por día (últimos 30 días) ──────────────
-  const today = new Date();
-  const dayMap = {};
-  const wonDayMap = {};
-  for(let i = 29; i >= 0; i--) {
-    const d = new Date(today); d.setDate(d.getDate() - i);
-    const key = d.toISOString().slice(0,10);
-    dayMap[key] = 0; wonDayMap[key] = 0;
-  }
-  contactList.forEach(c => {
-    const key = (c.dateAdded||c.createdAt||'').slice(0,10);
-    if(key in dayMap) dayMap[key]++;
-  });
-  oppList.filter(o=>o.status==='won').forEach(o => {
-    const key = (o.closedDate||o.closeDate||o.updatedAt||'').slice(0,10);
-    if(key in wonDayMap) wonDayMap[key]++;
-  });
-  const dayKeys = Object.keys(dayMap);
-  const dayLabels = dayKeys.map(k => { const d=new Date(k); return d.getDate()+' '+(d.toLocaleString('es-ES',{month:'short'})); });
+  const hist = buildMonthlyHistory(contactList, oppList);
+
+  // ── 1. Evolución leads/ventas — últimos 12 meses desde GHL ───
   if(charts['chart-leads-ventas']) {
-    window._charts['chart-leads-ventas'].updateSeries([
-      { name:'Leads',  data: dayKeys.map(k=>dayMap[k]) },
-      { name:'Ventas', data: dayKeys.map(k=>wonDayMap[k]) }
+    charts['chart-leads-ventas'].updateSeries([
+      { name:'Leads',  data: hist.leads },
+      { name:'Ventas', data: hist.ventas }
     ]);
-    window._charts['chart-leads-ventas'].updateOptions({ xaxis:{ categories: dayLabels }});
+    charts['chart-leads-ventas'].updateOptions({ xaxis:{ categories: hist.labels } });
   }
 
   // ── 2. Conversión por etapa (desde funnel real) ───────────────
@@ -2998,58 +3013,62 @@ function refreshEjecutivoCharts(contactList, oppList, sourceCounts, won, revenue
   const etapaConv = [];
   const etapaLabels = [];
   for(let i=1; i<f.length; i++) {
-    const prev = f[i-1].value;
-    const curr = f[i].value;
+    const prev = f[i-1].value, curr = f[i].value;
     etapaConv.push(prev>0 ? Math.round((curr/prev)*100) : 0);
     etapaLabels.push(f[i-1].label.slice(0,8)+'→'+f[i].label.slice(0,8));
   }
   const globalConv = f[0].value>0 ? Math.round((f[f.length-1].value/f[0].value)*100) : 0;
   etapaConv.push(globalConv); etapaLabels.push('Global');
   if(charts['chart-conversion-etapa']) {
-    window._charts['chart-conversion-etapa'].updateSeries([{ name:'Conversión %', data: etapaConv }]);
-    window._charts['chart-conversion-etapa'].updateOptions({ xaxis:{ categories: etapaLabels }});
+    charts['chart-conversion-etapa'].updateSeries([{ name:'Conversión %', data: etapaConv }]);
+    charts['chart-conversion-etapa'].updateOptions({ xaxis:{ categories: etapaLabels } });
   }
 
   // ── 3. Fuentes de leads (donut) ───────────────────────────────
   const SOURCE_GROUPS = {
-    'instagram':   { label:'Instagram',  c:'#e1306c' },
-    'facebook':    { label:'Facebook',   c:'#1877f2' },
-    'tiktok':      { label:'TikTok',     c:'#555' },
-    'meta ads':    { label:'Meta Ads',   c:'#0866ff' },
-    'google':      { label:'Google',     c:'#4285f4' },
-    'sitio web':   { label:'Sitio Web',  c:'#38bdf8' },
-    'jesús mosquera':{ label:'Referidos',c:'#a78bfa' },
-    'nasla espinosa':{ label:'Referidos',c:'#a78bfa' },
-    'wilmen mendoza':{ label:'Referidos',c:'#a78bfa' },
-    'centro de estudios':{ label:'Referidos',c:'#4ade80' },
-    'amigo / familiar':  { label:'Referidos',c:'#4ade80' },
+    'instagram':            { label:'Instagram',  c:'#e1306c' },
+    'facebook':             { label:'Facebook',   c:'#1877f2' },
+    'tiktok':               { label:'TikTok',     c:'#888' },
+    'meta ads':             { label:'Meta Ads',   c:'#0866ff' },
+    'google':               { label:'Google',     c:'#4285f4' },
+    'sitio web':            { label:'Sitio Web',  c:'#38bdf8' },
+    'jesús mosquera':       { label:'Referidos',  c:'#a78bfa' },
+    'nasla espinosa':       { label:'Referidos',  c:'#a78bfa' },
+    'wilmen mendoza':       { label:'Referidos',  c:'#a78bfa' },
+    'centro de estudios':   { label:'Referidos',  c:'#4ade80' },
+    'amigo / familiar':     { label:'Referidos',  c:'#4ade80' },
   };
   const grouped = {};
   Object.entries(sourceCounts).forEach(([k,v]) => {
     const def = SOURCE_GROUPS[k] || { label:'Otro', c:'#94a3b8' };
     grouped[def.label] = (grouped[def.label]||0) + v;
-    if(!grouped[def.label+'__color']) grouped[def.label+'__color'] = def.c;
+    grouped[def.label+'__c'] = grouped[def.label+'__c'] || def.c;
   });
-  const labels = Object.keys(grouped).filter(k=>!k.includes('__color'));
-  const vals   = labels.map(l=>grouped[l]);
-  const colors = labels.map(l=>grouped[l+'__color']||'#94a3b8');
-  if(labels.length>0 && charts['chart-fuentes']) {
-    window._charts['chart-fuentes'].updateSeries(vals);
-    window._charts['chart-fuentes'].updateOptions({ labels, colors });
+  const fLabels = Object.keys(grouped).filter(k=>!k.endsWith('__c'));
+  const fVals   = fLabels.map(l=>grouped[l]);
+  const fColors = fLabels.map(l=>grouped[l+'__c']||'#94a3b8');
+  if(fLabels.length>0 && charts['chart-fuentes']) {
+    charts['chart-fuentes'].updateSeries(fVals);
+    charts['chart-fuentes'].updateOptions({ labels: fLabels, colors: fColors });
   }
 
-  // ── 4. Comparativa períodos — real histórico desde localStorage ──
-  const totalLeads = contactList.length;
-  const comp = buildComparativaData(totalLeads, won, revenue);
-  if(charts['chart-comparativa'] && totalLeads > 0) {
-    const hasPrev = comp.prev.some(v => v !== null);
-    const prevData = comp.prev.map((v,i) => v !== null ? v : [210,756,7120,32600,148200,1172000][i]);
-    charts['chart-comparativa'].updateSeries([
-      { name: hasPrev ? 'Período anterior (real)' : 'Período anterior (demo)', data: prevData },
-      { name: 'Período actual (real)', data: comp.curr }
-    ]);
+  // ── 4. Comparativa períodos — 12 meses reales de GHL ─────────
+  // Last 6 months vs previous 6 months (facturación mensual)
+  if(charts['chart-comparativa'] && hist.keys.length >= 2) {
     const note = document.getElementById('comparativa-note');
-    if(note) note.style.display = hasPrev ? 'none' : 'block';
+    if(note) note.style.display = 'none';
+    // Show leads & revenue side by side per month (last 12 months)
+    charts['chart-comparativa'].updateSeries([
+      { name:'Leads', data: hist.leads },
+      { name:'Facturación €', data: hist.revenue }
+    ]);
+    charts['chart-comparativa'].updateOptions({
+      xaxis:{ categories: hist.labels },
+      yaxis:[
+        { labels:{ style:{colors:'#64748b'}, formatter:v=>v } },
+        { opposite:true, labels:{ style:{colors:'#64748b'}, formatter:v=>'€'+(v>=1000?(v/1000).toFixed(0)+'k':v) } }
+      ]
+    });
   }
 }
 

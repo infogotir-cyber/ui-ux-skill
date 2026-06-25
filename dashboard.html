@@ -267,10 +267,17 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
     </div>
   </div>
   <div class="flex items-center gap-3">
-    <div class="hidden md:flex items-center gap-2 bg-slate-800 border border-slate-700 rounded-lg p-1">
-      <button class="tab-btn active" id="period-semana" onclick="setPeriod('semana')">Semana</button>
-      <button class="tab-btn" id="period-mes" onclick="setPeriod('mes')">Mes</button>
-      <button class="tab-btn" id="period-ano" onclick="setPeriod('ano')">Año</button>
+    <div class="hidden md:flex items-center gap-2">
+      <select id="period-select" onchange="setPeriod(this.value)"
+        class="bg-slate-800 border border-slate-700 text-white text-sm rounded-lg px-3 py-2 focus:outline-none focus:border-blue-500 cursor-pointer">
+        <option value="semana">Esta semana (7d)</option>
+        <option value="semana_ant">Semana anterior</option>
+        <option value="mes" selected>Este mes (30d)</option>
+        <option value="mes_ant">Mes anterior</option>
+        <option value="trimestre">Últimos 3 meses</option>
+        <option value="semestre">Últimos 6 meses</option>
+        <option value="ano">Este año (365d)</option>
+      </select>
     </div>
     <button onclick="toggleTheme()" class="toggle-theme">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4" id="theme-icon"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -1269,7 +1276,7 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
 // DATA LAYER (simulating GHL API data)
 // ═══════════════════════════════════════
 const DATA = {
-  period: 'semana',
+  period: 'mes',
   kpis: {
     semana: { leads:247, citas:89, realizadas:71, noshows:17, canceladas:8, asistencia:'80%', ventas:34, facturacion:'€42.800', ticket:'€1.259', convLlamada:'47.9%', conversion:'13.8%' },
     mes:    { leads:891, citas:312, realizadas:248, noshows:61, canceladas:24, asistencia:'79%', ventas:118, facturacion:'€148.600', ticket:'€1.259', convLlamada:'47.6%', conversion:'13.2%' },
@@ -1478,12 +1485,28 @@ function toggleTheme() {
 // ═══════════════════════════════════════
 // PERIOD
 // ═══════════════════════════════════════
-const PERIOD_DAYS = { semana:7, mes:30, ano:365 };
+// Returns {from, to} timestamps in ms for each named period
+function getPeriodRange(p) {
+  const now = Date.now();
+  const d = n => n * 86400000;
+  switch(p) {
+    case 'semana':     return { from: now - d(7),   to: now };
+    case 'semana_ant': return { from: now - d(14),  to: now - d(7) };
+    case 'mes':        return { from: now - d(30),  to: now };
+    case 'mes_ant':    return { from: now - d(60),  to: now - d(30) };
+    case 'trimestre':  return { from: now - d(90),  to: now };
+    case 'semestre':   return { from: now - d(180), to: now };
+    case 'ano':        return { from: now - d(365), to: now };
+    default:           return { from: now - d(30),  to: now };
+  }
+}
+const PERIOD_DAYS = { semana:7, mes:30, trimestre:90, semestre:180, ano:365,
+                      semana_ant:7, mes_ant:30 }; // kept for renderVentasCharts compat
 
 function setPeriod(p) {
   DATA.period = p;
-  document.querySelectorAll('[id^=period-]').forEach(b => b.classList.remove('active'));
-  document.getElementById('period-'+p).classList.add('active');
+  const sel = document.getElementById('period-select');
+  if(sel) sel.value = p;
 
   // If GHL data is loaded, recalculate everything from real data filtered by period
   if(GHL.connected && DATA.ghlLive.allContacts && DATA.ghlLive.allContacts.length > 0) {
@@ -1505,26 +1528,31 @@ function setPeriod(p) {
   }
 }
 
-function filterByPeriod(list, days, dateField) {
-  const cutoff = Date.now() - days * 86400000;
+function filterByPeriod(list, daysOrRange, dateField) {
+  const { from, to } = (typeof daysOrRange === 'object' && daysOrRange !== null)
+    ? daysOrRange
+    : { from: Date.now() - daysOrRange * 86400000, to: Date.now() };
   return list.filter(item => {
     const raw = item[dateField] || item.dateAdded || item.createdAt || item.closedDate || '';
-    return raw && new Date(raw).getTime() >= cutoff;
+    if(!raw) return false;
+    const t = typeof raw === 'number' ? raw : new Date(raw).getTime();
+    return t >= from && t <= to;
   });
 }
 
 function recalcFromPeriod(p) {
-  const days = PERIOD_DAYS[p] || 30;
-  const allC = DATA.ghlLive.allContacts || [];
-  const allO = DATA.ghlLive.allOpps     || [];
-  const contacts = filterByPeriod(allC, days, 'dateAdded');
-  const opps     = filterByPeriod(allO, days, 'createdAt');
+  const range = getPeriodRange(p);
+  const days  = Math.round((range.to - range.from) / 86400000); // for compat
+  const allC  = DATA.ghlLive.allContacts || [];
+  const allO  = DATA.ghlLive.allOpps     || [];
+  const contacts = filterByPeriod(allC, range, 'dateAdded');
+  const opps     = filterByPeriod(allO, range, 'createdAt');
   const wonOpps  = allO.filter(o => {
     if((o.status||'').toLowerCase() !== 'won') return false;
     const raw = o.closedDate || o.closeDate || o.date_closed || o.wonDate || o.updatedAt || '';
     if(!raw) return true; // no date → include (can't filter by date)
     const t = typeof raw === 'number' ? raw : new Date(raw).getTime();
-    return t >= Date.now() - days * 86400000;
+    return t >= range.from && t <= range.to;
   });
 
   const totalLeads  = contacts.length;
@@ -1541,7 +1569,7 @@ function recalcFromPeriod(p) {
 
   // Recalculate citas from filtered calendar events (stored in ghlLive.allCitas)
   if(DATA.ghlLive.allCitas) {
-    const citas = filterByPeriod(DATA.ghlLive.allCitas, days, 'startTime');
+    const citas = filterByPeriod(DATA.ghlLive.allCitas, range, 'startTime');
     const realizadas = citas.filter(a=>['confirmed','showed','completed'].includes((a.appointmentStatus||a.status||'').toLowerCase())).length;
     const noshows    = citas.filter(a=>['no-showed','noshow','no_show'].includes((a.appointmentStatus||a.status||'').toLowerCase())).length;
     const canceladas = citas.filter(a=>['cancelled','canceled','invalid'].includes((a.appointmentStatus||a.status||'').toLowerCase())).length;
@@ -1588,11 +1616,10 @@ function recalcFromPeriod(p) {
   // Refresh ventas section if visible or already inited
   if(sectionInited['ventas']) renderVentasCharts(days);
 
-  // Refresh day-by-day chart for the selected period
+  // Refresh day-by-day chart for the selected period (range.from → range.to)
   const dayMap = {}, wonDayMap = {};
-  for(let i=days-1; i>=0; i--) {
-    const d=new Date(); d.setDate(d.getDate()-i);
-    const k=d.toISOString().slice(0,10);
+  for(let t=range.from; t<=range.to; t+=86400000) {
+    const k=new Date(t).toISOString().slice(0,10);
     dayMap[k]=0; wonDayMap[k]=0;
   }
   contacts.forEach(c=>{ const k=(c.dateAdded||c.createdAt||'').slice(0,10); if(k in dayMap) dayMap[k]++; });
@@ -1619,7 +1646,7 @@ function recalcFromPeriod(p) {
       } else { src = (c.source || '').toLowerCase().trim(); }
       if(src) sourceCounts[src] = (sourceCounts[src] || 0) + 1;
     });
-    const filteredCitas = filterByPeriod(DATA.ghlLive.allCitas || [], days, 'startTime');
+    const filteredCitas = filterByPeriod(DATA.ghlLive.allCitas || [], range, 'startTime');
     const avgTicket = totalVentas > 0 ? Math.round(totalRev / totalVentas) : 0;
     refreshCampanasFromGHL(sourceCounts, wonOpps, avgTicket, filteredCitas);
   }

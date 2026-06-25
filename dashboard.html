@@ -1568,8 +1568,11 @@ function recalcFromPeriod(p) {
     'pagado':6,'ganado':6,'won':6,'cerrado ganado':6
   };
   const stageCounts = new Array(7).fill(0);
+  const _stageIdMap = DATA.ghlLive.stageIdMap || {};
   opps.forEach(o => {
-    const nameAccented = (o.pipelineStageName||o.stageName||o.stage?.name||'').toLowerCase().trim();
+    const direct = o.pipelineStageName || o.stageName || o.stage?.name || '';
+    const resolved = direct || (()=>{const sid=o.stageId||o.pipelineStageId||o.stage?.id||'';return sid?(_stageIdMap[sid]||''):'';})();
+    const nameAccented = resolved.toLowerCase().trim();
     const name = nameAccented.normalize('NFD').replace(/[̀-ͯ]/g,'');
     const idx = STAGE_MAP[nameAccented] ?? STAGE_MAP[name];
     if(idx !== undefined) stageCounts[idx]++;
@@ -3528,7 +3531,24 @@ async function loadGHLData() {
       const pipelines = await ghlFetchV2('GET', `/opportunities/pipelines`, { locationId: GHL.locationId });
       const pipelineList = pipelines.pipelines || [];
       console.log('[GHL] Pipelines encontrados:', pipelineList.map(p=>p.name));
-      // Find Pre-venta pipeline — must contain BOTH 'pre' AND 'venta', or exact 'preventa'
+
+      // Build global stageId → stageName map from all pipelines
+      const stageIdMap = {};
+      pipelineList.forEach(p => {
+        (p.stages || []).forEach(s => { if(s.id) stageIdMap[s.id] = s.name || ''; });
+      });
+      DATA.ghlLive.stageIdMap = stageIdMap; // persist for recalcFromPeriod
+      console.log('[GHL] Stage ID map:', stageIdMap);
+
+      // Helper: resolve stage name from opp (tries name fields first, then stageId lookup)
+      const getStageName = o => {
+        const direct = o.pipelineStageName || o.stageName || o.stage?.name || '';
+        if(direct) return direct.toLowerCase().trim();
+        const sid = o.stageId || o.pipelineStageId || o.stage?.id || '';
+        return (sid ? (stageIdMap[sid] || '') : '').toLowerCase().trim();
+      };
+
+      // Find Pre-venta pipeline
       const preVenta = pipelineList.find(p => {
         const n = (p.name||'').toLowerCase();
         return n.includes('preventa') || n.includes('pre-venta') || (n.includes('pre') && n.includes('venta'));
@@ -3553,7 +3573,7 @@ async function loadGHLData() {
         };
         const segCounts = new Array(9).fill(0);
         segOpps.forEach(o => {
-          const name = (o.pipelineStageName||o.stageName||'').toLowerCase().trim();
+          const name = getStageName(o);
           const idx = SEG_STAGES[name];
           if(idx !== undefined) segCounts[idx]++;
         });
@@ -3574,7 +3594,7 @@ async function loadGHLData() {
         };
         const provCounts = new Array(6).fill(0);
         provOpps.forEach(o => {
-          const name = (o.pipelineStageName||o.stageName||'').toLowerCase().trim();
+          const name = getStageName(o);
           const idx = PROV_STAGES[name];
           if(idx !== undefined) provCounts[idx]++;
         });
@@ -3643,7 +3663,7 @@ async function loadGHLData() {
 
     // Pipeline Pre-venta → funnel
     // Log all unique stage names for debugging
-    const uniqueStages = [...new Set(oppList.map(o=>(o.pipelineStageName||o.stageName||o.stage?.name||o.stageId||'').trim()))].filter(Boolean);
+    const uniqueStages = [...new Set(oppList.map(o=>getStageName(o)||o.stageId||''))].filter(Boolean);
     console.log('[GHL] Stage names en pipeline:', uniqueStages);
 
     const STAGE_MAP = {
@@ -3667,9 +3687,8 @@ async function loadGHLData() {
     };
     const stageCounts = new Array(7).fill(0);
     oppList.forEach(o => {
-      const name = (o.pipelineStageName||o.stageName||o.stage?.name||'').toLowerCase().trim()
-        .normalize('NFD').replace(/[̀-ͯ]/g,''); // strip accents for matching
-      const nameAccented = (o.pipelineStageName||o.stageName||o.stage?.name||'').toLowerCase().trim();
+      const nameAccented = getStageName(o);
+      const name = nameAccented.normalize('NFD').replace(/[̀-ͯ]/g,'');
       const idx = STAGE_MAP[nameAccented] ?? STAGE_MAP[name];
       if(idx !== undefined && Number.isInteger(idx)) stageCounts[idx]++;
     });

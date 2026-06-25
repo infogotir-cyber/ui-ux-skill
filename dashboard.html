@@ -3747,7 +3747,8 @@ async function loadGHLData() {
         if(Array.isArray(fields)) {
           // byGrupo
           const fG = fields.find(f=>(FIELD_ID_MAP[f.key||f.id||f.fieldKey||'']||f.key||f.id||f.fieldKey||'').includes('grupo_familiar'));
-          const g  = (fG?.value || fG?.fieldValue || '').toLowerCase().trim();
+          const gRaw = fG?.value || fG?.fieldValue || '';
+          const g  = (Array.isArray(gRaw) ? gRaw[0] : gRaw).toString().toLowerCase().trim();
           if(isWon && g && DATA.ghlLive.byGrupo[g]) {
             DATA.ghlLive.byGrupo[g].ventas++;
             DATA.ghlLive.byGrupo[g].revenue += val;

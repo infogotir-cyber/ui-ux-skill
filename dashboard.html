@@ -2913,32 +2913,51 @@ function initConvVendedor() {
 // CHARTS: PÉRDIDAS
 // ═══════════════════════════════════════
 function initPerdidas() {
-  const gl = DATA.ghlLive.lostReasons;
-  // Only treat as real if there are named reasons (not just UUID fallbacks)
-  const realReasons = Object.fromEntries(Object.entries(gl).filter(([k]) => k !== 'Sin motivo registrado'));
-  const hasLive = Object.keys(realReasons).length > 0;
-  const labels = hasLive ? Object.keys(realReasons) : [];
-  const values = hasLive ? Object.values(realReasons) : [];
+  const gl = DATA.ghlLive.lostReasons || {};
   const colors = ['#f87171','#fb923c','#fbbf24','#a78bfa','#60a5fa','#94a3b8'];
+  const allEntries = Object.entries(gl).sort((a,b)=>b[1]-a[1]);
+  const total = allEntries.reduce((s,[,v])=>s+v, 0);
+  const namedEntries = allEntries.filter(([k])=>k!=='Sin motivo registrado');
+  const hasReal = namedEntries.length > 0;
+
+  // Update stat cards with real data if available
+  const cardContainer = document.querySelector('#perd-tab-motivos .grid');
+  if(cardContainer && hasReal && GHL.connected) {
+    const cardColors = ['#f87171','#fb923c','#fbbf24','#a78bfa','#60a5fa','#94a3b8'];
+    cardContainer.innerHTML = namedEntries.slice(0,6).map(([motivo,cnt],i) => {
+      const pct = Math.round(cnt/total*100);
+      return `<div class="stat-card" style="border-left:3px solid ${cardColors[i]}">
+        <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">${motivo}</div>
+        <div class="text-2xl font-bold text-white">${pct}%</div>
+        <div class="text-xs mt-1" style="color:${cardColors[i]}">${cnt} oportunidades</div>
+      </div>`;
+    }).join('');
+  }
+
+  const labels = hasReal ? namedEntries.slice(0,6).map(([k])=>k) : (total > 0 ? ['Sin motivo registrado'] : []);
+  const values = hasReal ? namedEntries.slice(0,6).map(([,v])=>v) : (total > 0 ? [total] : []);
 
   initChart('chart-perdidas-pie', mkOpts({
     chart:{ type:'donut', height:280 },
-    series: values,
-    labels: labels,
-    colors: colors.slice(0, labels.length),
+    series: values.length ? values : [1],
+    labels: labels.length ? labels : ['Sin datos'],
+    colors: values.length ? colors.slice(0, values.length) : ['#1e293b'],
     legend:{ position:'bottom', labels:{ colors:'#94a3b8' } },
-    plotOptions:{ pie:{ donut:{ size:'60%' } } }
+    plotOptions:{ pie:{ donut:{ size:'60%' } } },
+    noData:{ text: GHL.connected ? 'Cargando...' : 'Conectá GHL', style:{ color:'#64748b' } }
   }));
 
   initChart('chart-perdidas-evolucion', mkOpts({
     chart:{ type:'bar', height:280 },
-    series:[ { name:'Motivo 1', data:[] }, { name:'Motivo 2', data:[] } ],
-    xaxis:{ categories:[], labels:{ style:{ colors:'#64748b' } } },
-    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>v+'%' } },
-    colors:['#f87171','#fb923c','#fbbf24'],
+    series: hasReal
+      ? namedEntries.slice(0,3).map(([k,v],i)=>({ name:k, data:[v] }))
+      : [{ name:'Sin datos', data:[] }],
+    xaxis:{ categories: hasReal ? ['Total'] : [], labels:{ style:{ colors:'#64748b' } } },
+    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>v+' opps' } },
+    colors: colors,
     plotOptions:{ bar:{ borderRadius:3, columnWidth:'60%' } },
     legend:{ labels:{ colors:'#94a3b8' } },
-    noData:{ text:'Sin datos de motivos registrados en GHL', style:{ color:'#64748b' } }
+    noData:{ text: hasReal ? '' : 'Sin motivos registrados en GHL', style:{ color:'#64748b' } }
   }));
 }
 
@@ -3595,13 +3614,17 @@ async function loadGHLData() {
       const pipelineList = pipelines.pipelines || [];
       console.log('[GHL] Pipelines encontrados:', pipelineList.map(p=>p.name));
 
-      // Build global stageId → stageName map from all pipelines
+      // Build global stageId → stageName map and lostReasonId → label map from all pipelines
       const stageIdMap = {};
+      const lostReasonIdMap = {};
       pipelineList.forEach(p => {
         (p.stages || []).forEach(s => { if(s.id) stageIdMap[s.id] = s.name || ''; });
+        (p.lostReasons || []).forEach(r => { if(r.id && r.name) lostReasonIdMap[r.id] = r.name; });
       });
-      DATA.ghlLive.stageIdMap = stageIdMap; // persist for recalcFromPeriod
+      DATA.ghlLive.stageIdMap = stageIdMap;
+      DATA.ghlLive.lostReasonIdMap = lostReasonIdMap;
       console.log('[GHL] Stage ID map:', stageIdMap);
+      console.log('[GHL] Lost reason ID map:', lostReasonIdMap);
 
       // Helper: resolve stage name from opp (tries name fields first, then stageId lookup)
       const getStageName = o => {
@@ -3678,15 +3701,19 @@ async function loadGHLData() {
     DATA.ghlLive.totalWon     = won;
     DATA.ghlLive.totalRevenue = revenue;
 
-    // Lost reasons — tally from opp fields (GHL stores text label directly in lostReason)
+    // Lost reasons — resolve UUID → label using pipeline's lostReasons config
+    const lrMap = DATA.ghlLive.lostReasonIdMap || {};
     DATA.ghlLive.lostReasons = {};
     oppList.filter(o=>(o.status||'').toLowerCase()==='lost').forEach(o => {
       const raw = o.lostReason || o.lost_reason || o.lostReasonLabel || o.reason || null;
-      // Skip UUIDs (long hex strings — these are internal GHL IDs with no label available)
-      const isUUID = raw && String(raw).match(/^[0-9a-f]{20,}$/i);
-      const k = (raw && !isUUID) ? String(raw).trim() : 'Sin motivo registrado';
+      const rawStr = raw ? String(raw).trim() : '';
+      // Resolve UUID → human label via pipeline config; fall back to raw text if not a UUID
+      const isUUID = rawStr.match(/^[0-9a-f-]{20,}$/i);
+      const label = isUUID ? (lrMap[rawStr] || null) : (rawStr || null);
+      const k = label || 'Sin motivo registrado';
       DATA.ghlLive.lostReasons[k] = (DATA.ghlLive.lostReasons[k]||0)+1;
     });
+    console.log('[GHL] lostReasons:', JSON.stringify(DATA.ghlLive.lostReasons));
 
     // Known user ID → name hardcoded (from confirmed GHL data)
     const KNOWN_USERS = {

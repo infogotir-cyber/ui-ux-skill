@@ -3468,7 +3468,14 @@ async function loadGHLData() {
         };
         const fSrc   = fields.find(f=>getKey(f).includes('canal_referencia'));
         const fPais  = fields.find(f=>getKey(f).includes('pais_de_origen') || getKey(f).includes('pa_s_de') || getKey(f) === 'country');
-        const fTram  = fields.find(f=>{ const k=getKey(f); return k==='tipo_de_trmite'||k.includes('tipo_de_trmite')||k.includes('tipo_de_tr')||k.includes('tramite');});
+        const TRAMITE_VALUES = ['estancia','visado','viaje','renovación','renovacion','reagrupación','reagrupacion','pac','nómada','nomada','no lucrativa','emprendedor','work','visa de trabajo','residencia','autorización','autorizacion'];
+        const fTram  = fields.find(f=>{
+          const k=getKey(f);
+          if(k==='tipo_de_trmite'||k.includes('tipo_de_trmite')||k.includes('tipo_de_tr')||k.includes('tramite')) return true;
+          // fallback: detect by value matching known tramite types
+          const v = ((f.value||f.fieldValue||'') + '').toLowerCase().trim();
+          return v.length > 2 && TRAMITE_VALUES.some(t => v.startsWith(t) || v === t);
+        });
         const fGrupo = fields.find(f=>getKey(f).includes('grupo_familiar'));
         src    = fSrc?.value  || fSrc?.fieldValue;
         pais   = fPais?.value || fPais?.fieldValue || c.country || null;

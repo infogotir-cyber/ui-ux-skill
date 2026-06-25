@@ -1280,6 +1280,17 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
 
 <script>
 // ═══════════════════════════════════════
+// GHL FIELD ID MAP (UUID keys → readable names)
+// ═══════════════════════════════════════
+const FIELD_ID_MAP = {
+  'buvxaVIkvbHPOmzSz01C': 'canal_referencia_dr',
+  'qoxV5V0MkHUm4p0r0FLH': 'country',
+  'IXvjUwTB5rsZOUxyiyRP': 'grupo_familiar',
+  'IS0lgVEuhEDPIJ9BDLIB': 'tipo_de_trmite',
+  'sCpv8TXTz1J0BC8SZS6p': 'pais_de_origen',
+};
+
+// ═══════════════════════════════════════
 // DATA LAYER (simulating GHL API data)
 // ═══════════════════════════════════════
 const DATA = {
@@ -1599,13 +1610,6 @@ function recalcFromPeriod(p) {
 
   // Recalculate Campañas + Trámite + País with period-filtered contacts
   if(DATA.ghlLive.allContacts && DATA.ghlLive.allContacts.length > 0) {
-    const FIELD_ID_MAP = {
-      'buvxaVIkvbHPOmzSz01C': 'canal_referencia_dr',
-      'qoxV5V0MkHUm4p0r0FLH': 'country',
-      'IXvjUwTB5rsZOUxyiyRP': 'grupo_familiar',
-      'IS0lgVEuhEDPIJ9BDLIB': 'tipo_de_trmite',
-      'sCpv8TXTz1J0BC8SZS6p': 'pais_de_origen',
-    };
     const TRAMITE_VALS = new Set(['visado_arg','visado_latam','estancia','renovación','renovacion','reagrupación','reagrupacion','pac','nòmada_digital','nomada_digital','no_lucrativa','emprendedor','workandholidays','visa_de_trabajo']);
     const TRAMITE_LABELS = { 'visado_arg':'Visado ARG','visado_latam':'Visado LATAM','estancia':'Estancia','renovación':'Renovación','renovacion':'Renovación','reagrupación':'Reagrupación','reagrupacion':'Reagrupación','pac':'PAC','nòmada_digital':'Nómada Digital','nomada_digital':'Nómada Digital','no_lucrativa':'No Lucrativa','emprendedor':'Emprendedor','workandholidays':'Workandholidays','visa_de_trabajo':'Visa de Trabajo' };
     const getFieldKey = f => { const r=f.key||f.id||f.fieldKey||''; return FIELD_ID_MAP[r]||r; };
@@ -1952,22 +1956,31 @@ function filterCampanas(tipo, btn) {
 
 function refreshCampanasFromGHL(sourceCounts, oppList, avgTicket, citasList) {
   console.log('[GHL] sourceCounts top keys:', Object.entries(sourceCounts).sort((a,b)=>b[1]-a[1]).slice(0,20).map(([k,v])=>k+'='+v).join(', '));
-  const wonBySrc = {};
-  oppList.filter(o => (o.status||'').toLowerCase() === 'won').forEach(o => {
-    const src = (o.source || o.leadSource || o.lead_source || '').toLowerCase().trim();
-    if(src) wonBySrc[src] = (wonBySrc[src] || 0) + 1;
-  });
 
-  // Build contact→canal map for citas cross-reference (always use all contacts for the map)
+  // Build contact→canal map from canal_referencia_dr custom field
   const contactCanal = {};
   (DATA.ghlLive.allContacts || []).forEach(c => {
     const fields = c.customFields || c.customField || [];
     if(Array.isArray(fields)) {
-      const fSrc = fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('canal_referencia'));
-      const src  = (fSrc?.value || fSrc?.fieldValue || c.source || '').toLowerCase().trim();
+      const fSrc = fields.find(f => {
+        const mappedKey = FIELD_ID_MAP[f.key||f.id||f.fieldKey||''] || f.key||f.id||f.fieldKey||'';
+        return mappedKey.includes('canal_referencia');
+      });
+      const src = (fSrc?.value || fSrc?.fieldValue || c.source || '').toLowerCase().trim();
       if(src && c.id) contactCanal[c.id] = src;
     }
   });
+
+  // Count won opps per canal — look up contact's canal field, not opp.source (often empty)
+  const wonBySrc = {};
+  oppList.filter(o => (o.status||'').toLowerCase() === 'won').forEach(o => {
+    const cid = o.contactId || o.contact_id || o.contact?.id;
+    const src = (cid && contactCanal[cid])
+      ? contactCanal[cid]
+      : (o.source || o.leadSource || o.lead_source || '').toLowerCase().trim();
+    if(src) wonBySrc[src] = (wonBySrc[src] || 0) + 1;
+  });
+  console.log('[GHL] wonBySrc:', Object.entries(wonBySrc).map(([k,v])=>k+'='+v).join(', '));
 
   // Count citas per canal — use provided list (period-filtered) or all citas
   const citasBySrc = {};
@@ -3496,14 +3509,6 @@ async function loadGHLData() {
       let src = null, pais = null, tramite = null, grupo = null;
 
       if(Array.isArray(fields)) {
-        // GHL V2 returns random IDs as field keys — hardcode known ID→key mappings
-        const FIELD_ID_MAP = {
-          'buvxaVIkvbHPOmzSz01C': 'canal_referencia_dr',
-          'qoxV5V0MkHUm4p0r0FLH': 'country',
-          'IXvjUwTB5rsZOUxyiyRP': 'grupo_familiar',
-          'IS0lgVEuhEDPIJ9BDLIB': 'tipo_de_trmite',  // "Viaje" — confirm if correct
-          'sCpv8TXTz1J0BC8SZS6p': 'pais_de_origen',  // "Otro país de Latinoamérica"
-        };
         const getKey = f => {
           const rawKey = f.key || f.id || f.fieldKey || '';
           return FIELD_ID_MAP[rawKey] || fieldIdToKey[rawKey] || rawKey;

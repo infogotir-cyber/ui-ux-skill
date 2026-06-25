@@ -3454,10 +3454,17 @@ async function loadGHLData() {
       let src = null, pais = null, tramite = null, grupo = null;
 
       if(Array.isArray(fields)) {
-        // Resolve field key: use fieldIdToKey map if available, then fall back to f.key/f.id/f.fieldKey
+        // GHL V2 returns random IDs as field keys — hardcode known ID→key mappings
+        const FIELD_ID_MAP = {
+          'buvxaVIkvbHPOmzSz01C': 'canal_referencia_dr',
+          'qoxV5V0MkHUm4p0r0FLH': 'country',
+          'IXvjUwTB5rsZOUxyiyRP': 'grupo_familiar',
+          'IS0lgVEuhEDPIJ9BDLIB': 'tipo_de_trmite',  // "Viaje" — confirm if correct
+          'sCpv8TXTz1J0BC8SZS6p': 'pais_de_origen',  // "Otro país de Latinoamérica"
+        };
         const getKey = f => {
           const rawKey = f.key || f.id || f.fieldKey || '';
-          return fieldIdToKey[rawKey] || rawKey;
+          return FIELD_ID_MAP[rawKey] || fieldIdToKey[rawKey] || rawKey;
         };
         const fSrc   = fields.find(f=>getKey(f).includes('canal_referencia'));
         const fPais  = fields.find(f=>getKey(f).includes('pais_de_origen') || getKey(f).includes('pa_s_de') || getKey(f) === 'country');

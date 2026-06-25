@@ -1610,8 +1610,8 @@ function recalcFromPeriod(p) {
 
   // Recalculate Campañas + Trámite + País with period-filtered contacts
   if(DATA.ghlLive.allContacts && DATA.ghlLive.allContacts.length > 0) {
-    const TRAMITE_VALS = new Set(['visado_arg','visado_latam','estancia','renovación','renovacion','reagrupación','reagrupacion','pac','nòmada_digital','nomada_digital','no_lucrativa','emprendedor','workandholidays','visa_de_trabajo']);
-    const TRAMITE_LABELS = { 'visado_arg':'Visado ARG','visado_latam':'Visado LATAM','estancia':'Estancia','renovación':'Renovación','renovacion':'Renovación','reagrupación':'Reagrupación','reagrupacion':'Reagrupación','pac':'PAC','nòmada_digital':'Nómada Digital','nomada_digital':'Nómada Digital','no_lucrativa':'No Lucrativa','emprendedor':'Emprendedor','workandholidays':'Workandholidays','visa_de_trabajo':'Visa de Trabajo' };
+    const TRAMITE_VALS = new Set(['visado_arg','visado arg','visado_latam','visado latam','estancia','renovación','renovacion','reagrupación','reagrupacion','pac','nòmada_digital','nomada_digital','nómada digital','nomada digital','no_lucrativa','no lucrativa','emprendedor','workandholidays','work and holidays','visa_de_trabajo','visa de trabajo','visado argentino','visado argentina','visado españa','visado espana']);
+    const TRAMITE_LABELS = { 'visado_arg':'Visado ARG','visado arg':'Visado ARG','visado_latam':'Visado LATAM','visado latam':'Visado LATAM','estancia':'Estancia','renovación':'Renovación','renovacion':'Renovación','reagrupación':'Reagrupación','reagrupacion':'Reagrupación','pac':'PAC','nòmada_digital':'Nómada Digital','nomada_digital':'Nómada Digital','nómada digital':'Nómada Digital','nomada digital':'Nómada Digital','no_lucrativa':'No Lucrativa','no lucrativa':'No Lucrativa','emprendedor':'Emprendedor','workandholidays':'Workandholidays','work and holidays':'Workandholidays','visa_de_trabajo':'Visa de Trabajo','visa de trabajo':'Visa de Trabajo','visado argentino':'Visado ARG','visado argentina':'Visado ARG','visado españa':'Visado ARG','visado espana':'Visado ARG' };
     const getFieldKey = f => { const r=f.key||f.id||f.fieldKey||''; return FIELD_ID_MAP[r]||r; };
 
     const sourceCounts = {};
@@ -1625,10 +1625,13 @@ function recalcFromPeriod(p) {
         const src = ((fSrc?.value||fSrc?.fieldValue||c.source||'')+'').toLowerCase().trim();
         if(src) sourceCounts[src] = (sourceCounts[src]||0)+1;
 
-        const fTram = fields.find(f=>{ const v=((f.value||f.fieldValue||'')+'').toLowerCase().trim(); return TRAMITE_VALS.has(v); });
+        // Find tramite field: prefer by key (tipo_de_trmite), fallback to value match
+        const fTramByKey = fields.find(f=>getFieldKey(f).includes('tipo_de_tr'));
+        const fTram = fTramByKey || fields.find(f=>{ const v=((f.value||f.fieldValue||'')+'').toLowerCase().trim(); return TRAMITE_VALS.has(v); });
         if(fTram) {
           const rv = Array.isArray(fTram.value||fTram.fieldValue) ? (fTram.value||fTram.fieldValue)[0] : (fTram.value||fTram.fieldValue);
-          const label = TRAMITE_LABELS[(rv+'').toLowerCase().trim()] || (rv+'');
+          const rvStr = (rv+'').toLowerCase().trim();
+          const label = TRAMITE_LABELS[rvStr] || (rv ? (rv+'') : null);
           if(label) { if(!byTramite[label]) byTramite[label]={leads:0,ventas:0,revenue:0}; byTramite[label].leads++; }
         }
 
@@ -1899,8 +1902,8 @@ function renderVentasCharts(days) {
 
     // ── Desglose por Servicio — compute directly from period-filtered won opps + contactMap ────
     const tramiteRev = {};
-    const TRAMITE_VALS_SVC = new Set(['visado_arg','visado_latam','estancia','renovación','renovacion','reagrupación','reagrupacion','pac','nòmada_digital','nomada_digital','no_lucrativa','emprendedor','workandholidays','visa_de_trabajo']);
-    const TRAMITE_LABELS_SVC = { 'visado_arg':'Visado ARG','visado_latam':'Visado LATAM','estancia':'Estancia','renovación':'Renovación','renovacion':'Renovación','reagrupación':'Reagrupación','reagrupacion':'Reagrupación','pac':'PAC','nòmada_digital':'Nómada Digital','nomada_digital':'Nómada Digital','no_lucrativa':'No Lucrativa','emprendedor':'Emprendedor','workandholidays':'Workandholidays','visa_de_trabajo':'Visa de Trabajo' };
+    const TRAMITE_VALS_SVC = new Set(['visado_arg','visado arg','visado_latam','visado latam','estancia','renovación','renovacion','reagrupación','reagrupacion','pac','nòmada_digital','nomada_digital','nómada digital','nomada digital','no_lucrativa','no lucrativa','emprendedor','workandholidays','work and holidays','visa_de_trabajo','visa de trabajo','visado argentino','visado argentina','visado españa','visado espana']);
+    const TRAMITE_LABELS_SVC = { 'visado_arg':'Visado ARG','visado arg':'Visado ARG','visado_latam':'Visado LATAM','visado latam':'Visado LATAM','estancia':'Estancia','renovación':'Renovación','renovacion':'Renovación','reagrupación':'Reagrupación','reagrupacion':'Reagrupación','pac':'PAC','nòmada_digital':'Nómada Digital','nomada_digital':'Nómada Digital','nómada digital':'Nómada Digital','nomada digital':'Nómada Digital','no_lucrativa':'No Lucrativa','no lucrativa':'No Lucrativa','emprendedor':'Emprendedor','workandholidays':'Workandholidays','work and holidays':'Workandholidays','visa_de_trabajo':'Visa de Trabajo','visa de trabajo':'Visa de Trabajo','visado argentino':'Visado ARG','visado argentina':'Visado ARG','visado españa':'Visado ARG','visado espana':'Visado ARG' };
     const svcContactMap = {};
     (gl.allContacts || []).forEach(c => { if(c.id) svcContactMap[c.id] = c; });
     wonPeriod.forEach(o => {
@@ -1909,7 +1912,8 @@ function renderVentasCharts(days) {
       if(!c) return;
       const fields = c.customFields || c.customField || [];
       if(!Array.isArray(fields)) return;
-      const fT = fields.find(f => { const v = ((f.value||f.fieldValue||'')+'').toLowerCase().trim(); return TRAMITE_VALS_SVC.has(v); });
+      const fTSvcByKey = fields.find(f => { const rk=f.key||f.id||f.fieldKey||''; const mk=FIELD_ID_MAP[rk]||rk; return mk.includes('tipo_de_tr'); });
+      const fT = fTSvcByKey || fields.find(f => { const v = ((f.value||f.fieldValue||'')+'').toLowerCase().trim(); return TRAMITE_VALS_SVC.has(v); });
       if(!fT) return;
       const rv = Array.isArray(fT.value||fT.fieldValue) ? (fT.value||fT.fieldValue)[0] : (fT.value||fT.fieldValue);
       const label = TRAMITE_LABELS_SVC[(rv+'').toLowerCase().trim()] || (rv+'');
@@ -3613,9 +3617,11 @@ async function loadGHLData() {
         };
         const fSrc   = fields.find(f=>getKey(f).includes('canal_referencia'));
         const fPais  = fields.find(f=>getKey(f).includes('pais_de_origen') || getKey(f).includes('pa_s_de') || getKey(f) === 'country');
-        const TRAMITE_VALS = new Set(['visado_arg','visado_latam','estancia','renovación','renovacion','reagrupación','reagrupacion','pac','nòmada_digital','nomada_digital','no_lucrativa','emprendedor','workandholidays','visa_de_trabajo']);
-        const TRAMITE_LABELS = { 'visado_arg':'Visado ARG','visado_latam':'Visado LATAM','estancia':'Estancia','renovación':'Renovación','renovacion':'Renovación','reagrupación':'Reagrupación','reagrupacion':'Reagrupación','pac':'PAC','nòmada_digital':'Nómada Digital','nomada_digital':'Nómada Digital','no_lucrativa':'No Lucrativa','emprendedor':'Emprendedor','workandholidays':'Workandholidays','visa_de_trabajo':'Visa de Trabajo' };
-        const fTram  = fields.find(f=>{
+        const TRAMITE_VALS = new Set(['visado_arg','visado arg','visado_latam','visado latam','estancia','renovación','renovacion','reagrupación','reagrupacion','pac','nòmada_digital','nomada_digital','nómada digital','nomada digital','no_lucrativa','no lucrativa','emprendedor','workandholidays','work and holidays','visa_de_trabajo','visa de trabajo','visado argentino','visado argentina','visado españa','visado espana']);
+        const TRAMITE_LABELS = { 'visado_arg':'Visado ARG','visado arg':'Visado ARG','visado_latam':'Visado LATAM','visado latam':'Visado LATAM','estancia':'Estancia','renovación':'Renovación','renovacion':'Renovación','reagrupación':'Reagrupación','reagrupacion':'Reagrupación','pac':'PAC','nòmada_digital':'Nómada Digital','nomada_digital':'Nómada Digital','nómada digital':'Nómada Digital','nomada digital':'Nómada Digital','no_lucrativa':'No Lucrativa','no lucrativa':'No Lucrativa','emprendedor':'Emprendedor','workandholidays':'Workandholidays','work and holidays':'Workandholidays','visa_de_trabajo':'Visa de Trabajo','visa de trabajo':'Visa de Trabajo','visado argentino':'Visado ARG','visado argentina':'Visado ARG','visado españa':'Visado ARG','visado espana':'Visado ARG' };
+        // Find tramite field: prefer by key (tipo_de_trmite), fallback to value match
+        const fTramByKey = fields.find(f=>getKey(f).includes('tipo_de_tr'));
+        const fTram = fTramByKey || fields.find(f=>{
           const v = ((f.value||f.fieldValue||'') + '').toLowerCase().trim();
           return TRAMITE_VALS.has(v);
         });
@@ -3682,6 +3688,13 @@ async function loadGHLData() {
 
     // Store full contact list for period filtering
     DATA.ghlLive.allContacts = contactList;
+    // Log sample of raw tramite field values to detect any unmatched formats
+    const tramiteSample = contactList.slice(0,50).map(c=>{
+      const fields=c.customFields||c.customField||[];
+      const fk=fields.find(f=>{ const rk=f.key||f.id||f.fieldKey||''; const mk=FIELD_ID_MAP[rk]||rk; return mk.includes('tipo_de_tr'); });
+      return fk ? (fk.value||fk.fieldValue||'(empty)') : null;
+    }).filter(Boolean);
+    console.log('[GHL] tramite raw sample (first 50):', JSON.stringify([...new Set(tramiteSample)]));
     console.log('[GHL] byTramite after contacts:', JSON.stringify(DATA.ghlLive.byTramite));
     console.log('[GHL] byCountry count:', Object.keys(DATA.ghlLive.byCountry).length);
 
@@ -3840,8 +3853,8 @@ async function loadGHLData() {
     // Won ventas → mark in byGrupo and byTramite (cross-reference contact fields)
     const contactMap = {};
     contactList.forEach(c => { if(c.id) contactMap[c.id] = c; });
-    const TRAMITE_VALS_WON = new Set(['visado_arg','visado_latam','estancia','renovación','renovacion','reagrupación','reagrupacion','pac','nòmada_digital','nomada_digital','no_lucrativa','emprendedor','workandholidays','visa_de_trabajo']);
-    const TRAMITE_LABELS_WON = { 'visado_arg':'Visado ARG','visado_latam':'Visado LATAM','estancia':'Estancia','renovación':'Renovación','renovacion':'Renovación','reagrupación':'Reagrupación','reagrupacion':'Reagrupación','pac':'PAC','nòmada_digital':'Nómada Digital','nomada_digital':'Nómada Digital','no_lucrativa':'No Lucrativa','emprendedor':'Emprendedor','workandholidays':'Workandholidays','visa_de_trabajo':'Visa de Trabajo' };
+    const TRAMITE_VALS_WON = new Set(['visado_arg','visado arg','visado_latam','visado latam','estancia','renovación','renovacion','reagrupación','reagrupacion','pac','nòmada_digital','nomada_digital','nómada digital','nomada digital','no_lucrativa','no lucrativa','emprendedor','workandholidays','work and holidays','visa_de_trabajo','visa de trabajo','visado argentino','visado argentina','visado españa','visado espana']);
+    const TRAMITE_LABELS_WON = { 'visado_arg':'Visado ARG','visado arg':'Visado ARG','visado_latam':'Visado LATAM','visado latam':'Visado LATAM','estancia':'Estancia','renovación':'Renovación','renovacion':'Renovación','reagrupación':'Reagrupación','reagrupacion':'Reagrupación','pac':'PAC','nòmada_digital':'Nómada Digital','nomada_digital':'Nómada Digital','nómada digital':'Nómada Digital','nomada digital':'Nómada Digital','no_lucrativa':'No Lucrativa','no lucrativa':'No Lucrativa','emprendedor':'Emprendedor','workandholidays':'Workandholidays','work and holidays':'Workandholidays','visa_de_trabajo':'Visa de Trabajo','visa de trabajo':'Visa de Trabajo','visado argentino':'Visado ARG','visado argentina':'Visado ARG','visado españa':'Visado ARG','visado espana':'Visado ARG' };
     oppList.forEach(o => {
       const cid = o.contactId || o.contact_id || o.contact?.id;
       const c   = cid ? contactMap[cid] : null;
@@ -3860,7 +3873,8 @@ async function loadGHLData() {
             DATA.ghlLive.byGrupo[g].revenue += val;
           }
           // byTramite — revenue from real won opps
-          const fT = fields.find(f=>{ const v=((f.value||f.fieldValue||'')+'').toLowerCase().trim(); return TRAMITE_VALS_WON.has(v); });
+          const fTWonByKey = fields.find(f=>{ const rk=f.key||f.id||f.fieldKey||''; const mk=FIELD_ID_MAP[rk]||rk; return mk.includes('tipo_de_tr'); });
+          const fT = fTWonByKey || fields.find(f=>{ const v=((f.value||f.fieldValue||'')+'').toLowerCase().trim(); return TRAMITE_VALS_WON.has(v); });
           if(fT) {
             const rv = Array.isArray(fT.value||fT.fieldValue) ? (fT.value||fT.fieldValue)[0] : (fT.value||fT.fieldValue);
             const label = TRAMITE_LABELS_WON[(rv+'').toLowerCase().trim()] || (rv+'');

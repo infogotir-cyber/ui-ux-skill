@@ -3346,14 +3346,19 @@ function initTiempos() {
 
   initChart('chart-tiempo-vendedor', mkOpts({
     chart:{ type:'bar', height:220 },
-    series:[{ name:'Días promedio hasta cierre', data:[18,24,31,15] }],
-    xaxis:{ categories:['María García','Carlos López','Pedro Sánchez','Ana Martínez'], labels:{ style:{ colors:'#64748b' } } },
+    series:[{ name:'Días promedio', data:[] }],
+    xaxis:{ categories:[], labels:{ style:{ colors:'#64748b' } } },
     yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter: v => v+'d' } },
-    colors:['#a78bfa'],
-    plotOptions:{ bar:{ borderRadius:4, horizontal:false, distributed:true, columnWidth:'50%' } },
+    plotOptions:{ bar:{ borderRadius:4, distributed:true, columnWidth:'50%' } },
     colors:['#4ade80','#3b82f6','#f87171','#f59e0b'],
-    legend:{ show:false }
+    legend:{ show:false },
+    noData:{ text:'Sin datos aún', style:{ color:'#64748b' } }
   }));
+
+  // Populate with real GHL data if available
+  if(GHL.connected && DATA.ghlLive.allOpps?.length > 0) {
+    updateTiemposFromGHL(DATA.ghlLive.allOpps);
+  }
 }
 
 function renderStageTimes(stageTimes) {

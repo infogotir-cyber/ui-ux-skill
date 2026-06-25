@@ -1578,21 +1578,54 @@ function recalcFromPeriod(p) {
     charts['chart-leads-ventas'].updateOptions({ xaxis:{ categories: dLabels } });
   }
 
-  // Recalculate Campañas with period-filtered data
+  // Recalculate Campañas + Trámite + País with period-filtered contacts
   if(DATA.ghlLive.allContacts && DATA.ghlLive.allContacts.length > 0) {
+    const FIELD_ID_MAP = {
+      'buvxaVIkvbHPOmzSz01C': 'canal_referencia_dr',
+      'qoxV5V0MkHUm4p0r0FLH': 'country',
+      'IXvjUwTB5rsZOUxyiyRP': 'grupo_familiar',
+      'IS0lgVEuhEDPIJ9BDLIB': 'tipo_de_trmite',
+      'sCpv8TXTz1J0BC8SZS6p': 'pais_de_origen',
+    };
+    const TRAMITE_VALS = new Set(['visado_arg','visado_latam','estancia','renovación','renovacion','reagrupación','reagrupacion','pac','nòmada_digital','nomada_digital','no_lucrativa','emprendedor','workandholidays','visa_de_trabajo']);
+    const TRAMITE_LABELS = { 'visado_arg':'Visado ARG','visado_latam':'Visado LATAM','estancia':'Estancia','renovación':'Renovación','renovacion':'Renovación','reagrupación':'Reagrupación','reagrupacion':'Reagrupación','pac':'PAC','nòmada_digital':'Nómada Digital','nomada_digital':'Nómada Digital','no_lucrativa':'No Lucrativa','emprendedor':'Emprendedor','workandholidays':'Workandholidays','visa_de_trabajo':'Visa de Trabajo' };
+    const getFieldKey = f => { const r=f.key||f.id||f.fieldKey||''; return FIELD_ID_MAP[r]||r; };
+
     const sourceCounts = {};
+    const byTramite = {};
+    const byCountry = {};
+
     contacts.forEach(c => {
       const fields = c.customFields || c.customField || [];
-      let src = '';
       if(Array.isArray(fields)) {
-        const f = fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('canal_referencia'));
-        src = (f?.value || f?.fieldValue || c.source || '').toLowerCase().trim();
-      } else { src = (c.source || '').toLowerCase().trim(); }
-      if(src) sourceCounts[src] = (sourceCounts[src] || 0) + 1;
+        const fSrc = fields.find(f=>getFieldKey(f).includes('canal_referencia'));
+        const src = ((fSrc?.value||fSrc?.fieldValue||c.source||'')+'').toLowerCase().trim();
+        if(src) sourceCounts[src] = (sourceCounts[src]||0)+1;
+
+        const fTram = fields.find(f=>{ const v=((f.value||f.fieldValue||'')+'').toLowerCase().trim(); return TRAMITE_VALS.has(v); });
+        if(fTram) {
+          const rv = Array.isArray(fTram.value||fTram.fieldValue) ? (fTram.value||fTram.fieldValue)[0] : (fTram.value||fTram.fieldValue);
+          const label = TRAMITE_LABELS[(rv+'').toLowerCase().trim()] || (rv+'');
+          if(label) { if(!byTramite[label]) byTramite[label]={leads:0,ventas:0,revenue:0}; byTramite[label].leads++; }
+        }
+
+        const paisStr = (c.country||'').toString().trim();
+        if(paisStr) { if(!byCountry[paisStr.toLowerCase()]) byCountry[paisStr.toLowerCase()]={leads:0,ventas:0}; byCountry[paisStr.toLowerCase()].leads++; }
+      } else {
+        const src = (c.source||'').toLowerCase().trim();
+        if(src) sourceCounts[src]=(sourceCounts[src]||0)+1;
+      }
     });
+
+    DATA.ghlLive.byTramite = byTramite;
+    DATA.ghlLive.byCountry = byCountry;
+
     const filteredCitas = filterByPeriod(DATA.ghlLive.allCitas || [], range, 'startTime');
     const avgTicket = totalVentas > 0 ? Math.round(totalRev / totalVentas) : 0;
     refreshCampanasFromGHL(sourceCounts, wonOpps, avgTicket, filteredCitas);
+
+    // Re-render tramite/country tabs if already open
+    if(sectionInited['conversion']) { initConvTramite(); initConvPais(); initConvSource(); }
   }
 }
 

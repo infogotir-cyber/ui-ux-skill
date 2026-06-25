@@ -3468,18 +3468,17 @@ async function loadGHLData() {
         };
         const fSrc   = fields.find(f=>getKey(f).includes('canal_referencia'));
         const fPais  = fields.find(f=>getKey(f).includes('pais_de_origen') || getKey(f).includes('pa_s_de') || getKey(f) === 'country');
-        const TRAMITE_VALUES = ['estancia','visado','viaje','renovación','renovacion','reagrupación','reagrupacion','pac','nómada','nomada','no lucrativa','emprendedor','work','visa de trabajo','residencia','autorización','autorizacion'];
+        const TRAMITE_VALS = new Set(['visado_arg','visado_latam','estancia','renovación','renovacion','reagrupación','reagrupacion','pac','nòmada_digital','nomada_digital','no_lucrativa','emprendedor','workandholidays','visa_de_trabajo']);
+        const TRAMITE_LABELS = { 'visado_arg':'Visado ARG','visado_latam':'Visado LATAM','estancia':'Estancia','renovación':'Renovación','renovacion':'Renovación','reagrupación':'Reagrupación','reagrupacion':'Reagrupación','pac':'PAC','nòmada_digital':'Nómada Digital','nomada_digital':'Nómada Digital','no_lucrativa':'No Lucrativa','emprendedor':'Emprendedor','workandholidays':'Workandholidays','visa_de_trabajo':'Visa de Trabajo' };
         const fTram  = fields.find(f=>{
-          const k=getKey(f);
-          if(k==='tipo_de_trmite'||k.includes('tipo_de_trmite')||k.includes('tipo_de_tr')||k.includes('tramite')) return true;
-          // fallback: detect by value matching known tramite types
           const v = ((f.value||f.fieldValue||'') + '').toLowerCase().trim();
-          return v.length > 2 && TRAMITE_VALUES.some(t => v.startsWith(t) || v === t);
+          return TRAMITE_VALS.has(v);
         });
         const fGrupo = fields.find(f=>getKey(f).includes('grupo_familiar'));
         src    = fSrc?.value  || fSrc?.fieldValue;
         pais   = fPais?.value || fPais?.fieldValue || c.country || null;
-        tramite= fTram?.value || fTram?.fieldValue || null;
+        const rawTramite = fTram?.value || fTram?.fieldValue || null;
+        tramite = rawTramite ? (TRAMITE_LABELS[rawTramite.toLowerCase().trim()] || rawTramite) : null;
         grupo  = fGrupo?.value || fGrupo?.fieldValue;
       }
 

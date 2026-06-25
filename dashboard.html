@@ -1649,6 +1649,12 @@ function recalcFromPeriod(p) {
 
     // Re-render tramite/country tabs if already open
     if(sectionInited['conversion']) { initConvTramite(); initConvPais(); initConvSource(); }
+
+    // Re-render valor section if already open (period-sensitive)
+    if(sectionInited['valor']) initValor();
+
+    // Re-render perdidas section if already open (period-sensitive)
+    if(sectionInited['perdidas']) initPerdidas();
   }
 }
 
@@ -2989,24 +2995,37 @@ function initPerdidasStage() {
 // ═══════════════════════════════════════
 function initValor() {
   const gl = DATA.ghlLive;
-  if(gl.totalWon > 0) {
-    const ticket = Math.round(gl.totalRevenue / gl.totalWon);
+  const range = getPeriodRange(DATA.period);
+  const getOppDate = o => { const r = o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.updatedAt||''; return typeof r==='number'?r:new Date(r).getTime(); };
+
+  // Filter won opps to selected period
+  const allWonOpps = (gl.allOpps||[]).filter(o=>(o.status||'').toLowerCase()==='won');
+  const wonPeriod = range
+    ? allWonOpps.filter(o=>{ const t=getOppDate(o); return t>=range.from && t<=range.to; })
+    : allWonOpps;
+
+  const periodRev = wonPeriod.reduce((s,o)=>s+(o.monetaryValue||0),0);
+  const periodWon = wonPeriod.length;
+
+  if(periodWon > 0 || gl.totalWon > 0) {
+    const ticket = periodWon > 0 ? Math.round(periodRev / periodWon) : Math.round(gl.totalRevenue / gl.totalWon);
     document.getElementById('valor-ticket').textContent = '€'+ticket.toLocaleString('es-ES');
     document.getElementById('valor-cltv').textContent = '€'+(ticket*2.25).toFixed(0);
-    document.getElementById('valor-clientes').textContent = gl.totalWon;
-    document.getElementById('valor-facturacion').textContent = '€'+gl.totalRevenue.toLocaleString('es-ES');
+    document.getElementById('valor-clientes').textContent = periodWon;
+    document.getElementById('valor-facturacion').textContent = '€'+periodRev.toLocaleString('es-ES');
   }
 
-  // Top 5 clients table — real won opps sorted by monetaryValue
-  const wonForTop = (gl.allOpps||[]).filter(o=>o.status==='won' && (o.monetaryValue||0) > 0)
+  // Top 5 clients table — filtered by period
+  const wonForTop = wonPeriod.filter(o=>(o.monetaryValue||0)>0)
     .sort((a,b)=>(b.monetaryValue||0)-(a.monetaryValue||0)).slice(0,5);
-  const top5Data = wonForTop.length >= 3 ? wonForTop.map((o,i)=>{
+  const top5Data = wonForTop.map((o,i)=>{
     const name = (o.contact?.name || o.contactName || o.name || 'Cliente').trim();
     const val  = '€'+(o.monetaryValue||0).toLocaleString('es-ES');
     const date = (o.closedDate||o.closeDate||'').slice(0,10) || '—';
     return { nombre:name, tramites:1, valor:val, ultimo:date };
-  }) : [];
-  document.getElementById('tbody-valor-top5').innerHTML = top5Data.map((c,i)=>`
+  });
+  document.getElementById('tbody-valor-top5').innerHTML = top5Data.length
+    ? top5Data.map((c,i)=>`
     <tr class="border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
       <td class="py-2 px-3">
         <div class="flex items-center gap-2">
@@ -3017,20 +3036,18 @@ function initValor() {
       <td class="py-2 px-3 text-right text-slate-300">${c.tramites}</td>
       <td class="py-2 px-3 text-right font-bold text-amber-400">${c.valor}</td>
       <td class="py-2 px-3 text-right text-slate-400 text-xs">${c.ultimo}</td>
-    </tr>`).join('');
+    </tr>`).join('')
+    : '<tr><td colspan="4" class="py-6 text-center text-slate-500 text-sm">Sin ventas en este período</td></tr>';
 
-  // Histograma distribución de valor — real from allOpps
-  const allWon = (gl.allOpps||[]).filter(o=>o.status==='won');
+  // Histograma distribución de valor — filtered by period
   let histData = [0,0,0,0];
-  if(allWon.length >= 3) {
-    allWon.forEach(o=>{
-      const v = o.monetaryValue||0;
-      if(v < 500)        histData[0]++;
-      else if(v < 1000)  histData[1]++;
-      else if(v < 2000)  histData[2]++;
-      else               histData[3]++;
-    });
-  }
+  wonPeriod.forEach(o=>{
+    const v = o.monetaryValue||0;
+    if(v < 500)        histData[0]++;
+    else if(v < 1000)  histData[1]++;
+    else if(v < 2000)  histData[2]++;
+    else               histData[3]++;
+  });
   initChart('chart-valor-histograma', mkOpts({
     chart:{ type:'bar', height:260 },
     series:[{ name:'Clientes', data: histData }],

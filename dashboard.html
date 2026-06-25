@@ -1284,128 +1284,61 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
 // ═══════════════════════════════════════
 const DATA = {
   period: 'mes',
-  kpis: {
-    semana: { leads:247, citas:89, realizadas:71, noshows:17, canceladas:8, asistencia:'80%', ventas:34, facturacion:'€42.800', ticket:'€1.259', convLlamada:'47.9%', conversion:'13.8%' },
-    mes:    { leads:891, citas:312, realizadas:248, noshows:61, canceladas:24, asistencia:'79%', ventas:118, facturacion:'€148.600', ticket:'€1.259', convLlamada:'47.6%', conversion:'13.2%' },
-    ano:    { leads:7840, citas:2680, realizadas:2134, noshows:496, canceladas:210, asistencia:'80%', ventas:1029, facturacion:'€1.295.000', ticket:'€1.258', convLlamada:'48.2%', conversion:'13.1%' }
-  },
+  kpis: { semana:{}, mes:{}, ano:{} },
   // Etapas exactas de tu pipeline Pre-venta en GHL
   funnel: [
-    { label:'New lead / sin clasificar', value:247, color:'#3b82f6', ghlStage:'new-lead' },
-    { label:'Cualificado',               value:198, color:'#6366f1', ghlStage:'cualificado' },
-    { label:'Llamada agendada',          value:89,  color:'#a78bfa', ghlStage:'llamada-agendada' },
-    { label:'Llamada realizada',         value:64,  color:'#c084fc', ghlStage:'llamada-realizada' },
-    { label:'Info y contrato enviado',   value:48,  color:'#f59e0b', ghlStage:'info-contrato-enviado' },
-    { label:'Pronto pago',               value:39,  color:'#fb923c', ghlStage:'pronto-pago' },
-    { label:'Pagado',                    value:34,  color:'#4ade80', ghlStage:'pagado' }
+    { label:'New lead / sin clasificar', value:0, color:'#3b82f6', ghlStage:'new-lead' },
+    { label:'Cualificado',               value:0, color:'#6366f1', ghlStage:'cualificado' },
+    { label:'Llamada agendada',          value:0, color:'#a78bfa', ghlStage:'llamada-agendada' },
+    { label:'Llamada realizada',         value:0, color:'#c084fc', ghlStage:'llamada-realizada' },
+    { label:'Info y contrato enviado',   value:0, color:'#f59e0b', ghlStage:'info-contrato-enviado' },
+    { label:'Pronto pago',               value:0, color:'#fb923c', ghlStage:'pronto-pago' },
+    { label:'Pagado',                    value:0, color:'#4ade80', ghlStage:'pagado' }
   ],
   // Pipeline Seguimiento — clientes que ya pagaron
   seguimiento: [
-    { label:'Nuevo cliente (derivar)',    value:34,  color:'#3b82f6' },
-    { label:'En proceso',                value:28,  color:'#6366f1' },
-    { label:'Presentado en evaluación',  value:21,  color:'#a78bfa' },
-    { label:'Resolución',                value:14,  color:'#f59e0b' },
-    { label:'Recurso',                   value:4,   color:'#f87171' },
-    { label:'Trámites posteriores',      value:9,   color:'#38bdf8' },
-    { label:'Renovación',                value:7,   color:'#4ade80' },
-    { label:'En pausa',                  value:3,   color:'#94a3b8' },
-    { label:'Cerrado',                   value:18,  color:'#1e293b' }
+    { label:'Nuevo cliente (derivar)',    value:0, color:'#3b82f6' },
+    { label:'En proceso',                value:0, color:'#6366f1' },
+    { label:'Presentado en evaluación',  value:0, color:'#a78bfa' },
+    { label:'Resolución',                value:0, color:'#f59e0b' },
+    { label:'Recurso',                   value:0, color:'#f87171' },
+    { label:'Trámites posteriores',      value:0, color:'#38bdf8' },
+    { label:'Renovación',                value:0, color:'#4ade80' },
+    { label:'En pausa',                  value:0, color:'#94a3b8' },
+    { label:'Cerrado',                   value:0, color:'#1e293b' }
   ],
   // Pipeline Proveedores — derivaciones y comisiones
   proveedores: [
-    { label:'Lead enviado',                      value:41, color:'#3b82f6' },
-    { label:'En contacto con partner',           value:29, color:'#6366f1' },
-    { label:'Confirmado',                        value:18, color:'#a78bfa' },
-    { label:'Compra realizada / Comisión pend.', value:11, color:'#f59e0b' },
-    { label:'Comisión pagada',                   value:8,  color:'#4ade80' },
-    { label:'Cerrado',                           value:3,  color:'#94a3b8' }
+    { label:'Lead enviado',                      value:0, color:'#3b82f6' },
+    { label:'En contacto con partner',           value:0, color:'#6366f1' },
+    { label:'Confirmado',                        value:0, color:'#a78bfa' },
+    { label:'Compra realizada / Comisión pend.', value:0, color:'#f59e0b' },
+    { label:'Comisión pagada',                   value:0, color:'#4ade80' },
+    { label:'Cerrado',                           value:0, color:'#94a3b8' }
   ],
-  vendedores: [
-    { nombre:'María García', llamadas:62, tiempo:'28 min', ventas:14, conv:'22.5%', facturacion:'€17.650', asistencia:'91%' },
-    { nombre:'Carlos López', llamadas:55, tiempo:'22 min', ventas:11, conv:'20.0%', facturacion:'€13.860', asistencia:'87%' },
-    { nombre:'Ana Martínez', llamadas:41, tiempo:'26 min', ventas:7, conv:'17.0%', facturacion:'€8.820', asistencia:'83%' },
-    { nombre:'Pedro Sánchez', llamadas:25, tiempo:'18 min', ventas:2, conv:'8.0%', facturacion:'€2.520', asistencia:'76%' }
-  ],
+  vendedores: [],
   campanas: [
-    // Afiliados externos — 8% comisión por venta cerrada (Pagado)
-    { canal:'Jesús Mosquera',       ghlVal:'jesús_mosquera',          tipo:'afiliado',  leads:18, citas:9,  ventas:4, conv:'22.2%', cpl:'€56',  roi:'385%', color:'#a78bfa', comision_pct:8 },
-    { canal:'Nasla Espinosa',       ghlVal:'nasla_espinosa',           tipo:'afiliado',  leads:14, citas:7,  ventas:3, conv:'21.4%', cpl:'€54',  roi:'392%', color:'#c084fc', comision_pct:8 },
-    { canal:'Wilmen Mendoza',       ghlVal:'wilmen_mendoza',           tipo:'afiliado',  leads:9,  citas:4,  ventas:1, conv:'11.1%', cpl:'€113', roi:'214%', color:'#818cf8', comision_pct:8 },
-    // Referidos orgánicos — sin coste
-    { canal:'Centro de Estudios',   ghlVal:'un_centro_de_estudios_me', tipo:'referido',  leads:12, citas:6,  ventas:3, conv:'25.0%', cpl:'€0',   roi:'∞',    color:'#4ade80', comision_pct:0 },
-    { canal:'Amigo / Familiar',     ghlVal:'un_amigo_o_familiar',      tipo:'referido',  leads:16, citas:8,  ventas:4, conv:'25.0%', cpl:'€0',   roi:'∞',    color:'#34d399', comision_pct:0 },
-    // Redes sociales pagadas
-    { canal:'Instagram',            ghlVal:'instagram',                tipo:'pagado',    leads:94, citas:38, ventas:14,conv:'14.9%', cpl:'€11',  roi:'520%', color:'#e1306c', comision_pct:0 },
-    { canal:'TikTok',               ghlVal:'tiktok',                   tipo:'pagado',    leads:47, citas:14, ventas:3, conv:'6.4%',  cpl:'€19',  roi:'185%', color:'#555555', comision_pct:0 },
-    { canal:'Facebook',             ghlVal:'facebook',                 tipo:'pagado',    leads:82, citas:28, ventas:10,conv:'12.2%', cpl:'€18',  roi:'340%', color:'#1877f2', comision_pct:0 },
-    // Inbound orgánico
-    { canal:'Sitio Web',            ghlVal:'sitio_web',                tipo:'organico',  leads:22, citas:8,  ventas:3, conv:'13.6%', cpl:'€0',   roi:'∞',    color:'#38bdf8', comision_pct:0 },
-    { canal:'Otro',                 ghlVal:'otro',                     tipo:'otro',      leads:8,  citas:2,  ventas:1, conv:'12.5%', cpl:'—',    roi:'—',    color:'#94a3b8', comision_pct:0 }
+    { canal:'Jesús Mosquera',       ghlVal:'jesús_mosquera',          tipo:'afiliado',  leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#a78bfa', comision_pct:8 },
+    { canal:'Nasla Espinosa',       ghlVal:'nasla_espinosa',           tipo:'afiliado',  leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#c084fc', comision_pct:8 },
+    { canal:'Wilmen Mendoza',       ghlVal:'wilmen_mendoza',           tipo:'afiliado',  leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#818cf8', comision_pct:8 },
+    { canal:'Centro de Estudios',   ghlVal:'un_centro_de_estudios_me', tipo:'referido',  leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#4ade80', comision_pct:0 },
+    { canal:'Amigo / Familiar',     ghlVal:'un_amigo_o_familiar',      tipo:'referido',  leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#34d399', comision_pct:0 },
+    { canal:'Instagram',            ghlVal:'instagram',                tipo:'pagado',    leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#e1306c', comision_pct:0 },
+    { canal:'TikTok',               ghlVal:'tiktok',                   tipo:'pagado',    leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#555555', comision_pct:0 },
+    { canal:'Facebook',             ghlVal:'facebook',                 tipo:'pagado',    leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#1877f2', comision_pct:0 },
+    { canal:'Sitio Web',            ghlVal:'sitio_web',                tipo:'organico',  leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#38bdf8', comision_pct:0 },
+    { canal:'Otro',                 ghlVal:'otro',                     tipo:'otro',      leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#94a3b8', comision_pct:0 }
   ],
-  // CPL afiliado = (ventas × ticket_prom × 8%) / leads
-  // Ej Jesús: (4 × 1259 × 0.08) / 18 = €56 CPL real
-  ticket_promedio: 1259,
+  ticket_promedio: 0,
   comision_afiliados_pct: 8,
   ghlSourceField: 'canal_referencia_dr',
-  // ── NEW: demo data for new sections ──────────────────────
-  conv_source: [
-    { fuente:'Meta Ads',   leads:176, opps:68,  ganadas:22, perdidas:46 },
-    { fuente:'Instagram',  leads:94,  opps:38,  ganadas:14, perdidas:24 },
-    { fuente:'Facebook',   leads:82,  opps:30,  ganadas:10, perdidas:20 },
-    { fuente:'Referidos',  leads:69,  opps:35,  ganadas:18, perdidas:17 },
-    { fuente:'YouTube',    leads:31,  opps:9,   ganadas:3,  perdidas:6  },
-    { fuente:'Google',     leads:28,  opps:11,  ganadas:5,  perdidas:6  },
-    { fuente:'Orgánico',   leads:22,  opps:8,   ganadas:3,  perdidas:5  },
-    { fuente:'Otros',      leads:8,   opps:3,   ganadas:1,  perdidas:2  }
-  ],
-  conv_pais: [
-    { pais:'Argentina',  leads:198, ventas:32 },
-    { pais:'Colombia',   leads:172, ventas:26 },
-    { pais:'Perú',       leads:141, ventas:19 },
-    { pais:'Ecuador',    leads:98,  ventas:14 },
-    { pais:'Venezuela',  leads:87,  ventas:11 },
-    { pais:'Otros',      leads:195, ventas:16 }
-  ],
-  conv_tramite: [
-    { tramite:'Visado Argentina', key:'visado_arg',       leads:198, ventas:32, revenue:40320 },
-    { tramite:'Visado LATAM',     key:'visado_latam',     leads:141, ventas:21, revenue:26460 },
-    { tramite:'Estancia',         key:'estancia',         leads:98,  ventas:14, revenue:14980 },
-    { tramite:'Renovación',       key:'renovación',       leads:87,  ventas:18, revenue:16380 },
-    { tramite:'Reagrupación',     key:'reagrupación',     leads:72,  ventas:12, revenue:14400 },
-    { tramite:'PAC',              key:'pac',              leads:48,  ventas:8,  revenue:8000  },
-    { tramite:'Nómada Digital',   key:'nòmada_digital',   leads:44,  ventas:6,  revenue:9000  },
-    { tramite:'No Lucrativa',     key:'no_lucrativa',     leads:38,  ventas:5,  revenue:5750  },
-    { tramite:'Emprendedor',      key:'emprendedor',      leads:31,  ventas:4,  revenue:6000  },
-    { tramite:'Work & Holidays',  key:'workandholidays',  leads:24,  ventas:3,  revenue:2700  },
-    { tramite:'Visa de Trabajo',  key:'visa_de_trabajo',  leads:10,  ventas:1,  revenue:1500  }
-  ],
-  conv_vendedor: [
-    { nombre:'María García', llamadas:62, opps:38, ventas:14, conv:'36.8%', facturacion:'€17.650', ticket:'€1.260' },
-    { nombre:'Carlos López', llamadas:55, opps:32, ventas:11, conv:'34.4%', facturacion:'€13.860', ticket:'€1.260' },
-    { nombre:'Ana Martínez', llamadas:41, opps:24, ventas:7,  conv:'29.2%', facturacion:'€8.820',  ticket:'€1.260' },
-    { nombre:'Pedro Sánchez',llamadas:25, opps:14, ventas:2,  conv:'14.3%', facturacion:'€2.520',  ticket:'€1.260' }
-  ],
-  perdidas_stage: [
-    { stage:'New Lead → Cualificado',       entraron:891, perdieron:693 },
-    { stage:'Cualificado → Cita',           entraron:198, perdieron:109 },
-    { stage:'Cita → Llamada',              entraron:89,  perdieron:25  },
-    { stage:'Llamada → Info+Contrato',     entraron:64,  perdieron:16  },
-    { stage:'Info → Pronto Pago',          entraron:48,  perdieron:9   },
-    { stage:'Pronto Pago → Pagado',        entraron:39,  perdieron:5   }
-  ],
-  valor_top5: [
-    { nombre:'Laura M.',   tramites:3, valor:'€4.200', ultimo:'Reagrupación Familiar' },
-    { nombre:'Ahmed K.',   tramites:2, valor:'€3.800', ultimo:'Visado Argentina' },
-    { nombre:'Fatima R.',  tramites:2, valor:'€3.500', ultimo:'Nómada Digital' },
-    { nombre:'Carlos V.',  tramites:3, valor:'€3.200', ultimo:'Renovación' },
-    { nombre:'María P.',   tramites:2, valor:'€2.900', ultimo:'Visado LATAM' }
-  ],
-  nq_evolucion: {
-    meses: ['Ene','Feb','Mar','Abr','May','Jun'],
-    fondos:  [5,7,8,10,11,38],
-    tiempo:  [3,5,6,7,8,27],
-    cue:     [2,3,4,5,6,19]
-  },
+  conv_source:   [],
+  conv_pais:     [],
+  conv_tramite:  [],
+  conv_vendedor: [],
+  perdidas_stage:[],
+  valor_top5:    [],
+  nq_evolucion:  { meses:[], fondos:[], tiempo:[], cue:[] },
   // ── ghlLive: populated by loadGHLData() ──────────────────
   ghlLive: {
     byCountry:  {},
@@ -1421,14 +1354,7 @@ const DATA = {
     allOpps:     [],
     allCitas:    []
   },
-  motivos_perdida: [
-    { motivo:'Precio muy alto', pct:34, color:'#f87171' },
-    { motivo:'No confía / no le da urgencia', pct:22, color:'#fb923c' },
-    { motivo:'Necesita consultarlo', pct:18, color:'#fbbf24' },
-    { motivo:'Ya tiene asesor', pct:13, color:'#a78bfa' },
-    { motivo:'Situación personal', pct:8, color:'#60a5fa' },
-    { motivo:'Sin motivo claro', pct:5, color:'#94a3b8' }
-  ],
+  motivos_perdida: [],
   ai_suggestions: [
     '¿Por qué bajaron las ventas este mes?',
     '¿Qué campaña convierte mejor?',
@@ -1540,21 +1466,7 @@ function setPeriod(p) {
   // If GHL data is loaded, recalculate everything from real data filtered by period
   if(GHL.connected && DATA.ghlLive.allContacts && DATA.ghlLive.allContacts.length > 0) {
     recalcFromPeriod(p);
-  } else {
-    // Fallback to demo data
-    const d = DATA.kpis[p];
-    document.getElementById('kpi-leads').textContent = d.leads;
-    document.getElementById('kpi-citas').textContent = d.citas;
-    document.getElementById('kpi-realizadas').textContent = d.realizadas;
-    document.getElementById('kpi-noshows').textContent = d.noshows;
-    document.getElementById('kpi-canceladas').textContent = d.canceladas;
-    document.getElementById('kpi-asistencia').textContent = d.asistencia;
-    document.getElementById('kpi-ventas').textContent = d.ventas;
-    document.getElementById('kpi-facturacion').textContent = d.facturacion;
-    document.getElementById('kpi-ticket').textContent = d.ticket;
-    document.getElementById('kpi-conv-llamada').textContent = d.convLlamada;
-    document.getElementById('kpi-conversion').textContent = d.conversion;
-  }
+  } // no fallback — show zeros until GHL is connected
 }
 
 function filterByPeriod(list, daysOrRange, dateField) {
@@ -1715,61 +1627,59 @@ function mkOpts(o) {
 // CHARTS: EJECUTIVO
 // ═══════════════════════════════════════
 function initEjecutivo() {
-  const days = ['1 Jun','3 Jun','5 Jun','7 Jun','9 Jun','11 Jun','13 Jun','15 Jun','17 Jun','19 Jun','21 Jun','23 Jun'];
+  // Leads vs ventas — populated by recalcFromPeriod once GHL data loads
   initChart('chart-leads-ventas', mkOpts({
     chart:{ type:'area', height:220, animations:{ enabled:true, easing:'easeinout', speed:600 } },
-    series:[
-      { name:'Leads', data:[18,24,19,28,31,22,26,33,27,35,29,38] },
-      { name:'Ventas', data:[2,3,2,4,3,2,4,5,3,4,3,5] }
-    ],
-    xaxis:{ categories:days, labels:{ style:{ colors:'#64748b', fontSize:'11px' } } },
+    series:[{ name:'Leads', data:[] }, { name:'Ventas', data:[] }],
+    xaxis:{ categories:[], labels:{ style:{ colors:'#64748b', fontSize:'11px' } } },
     yaxis:{ labels:{ style:{ colors:'#64748b' } } },
     colors:['#3b82f6','#4ade80'],
     fill:{ type:'gradient', gradient:{ shadeIntensity:1, opacityFrom:.4, opacityTo:.05, stops:[0,90,100] } },
     stroke:{ curve:'smooth', width:2 },
-    legend:{ labels:{ colors:'#94a3b8' } }
+    legend:{ labels:{ colors:'#94a3b8' } },
+    noData:{ text:'Conectá GHL para ver datos', style:{ color:'#64748b' } }
   }));
 
+  // Funnel conversion by stage — built from DATA.funnel (populated from GHL)
+  const f = DATA.funnel;
+  const convByStage = f.slice(1).map((s,i) => f[i].value > 0 ? Math.round(s.value/f[i].value*100) : 0);
+  const stageLabels = f.slice(1).map(s => s.label.slice(0,12));
   initChart('chart-conversion-etapa', mkOpts({
-    chart:{ type:'bar', height:220, },
-    series:[{ name:'Conversión %', data:[80,44,72,75,71,71] }],
-    xaxis:{ categories:['Lead→Cont','Cont→Cita','Cita→Llam','Llam→Prop','Prop→Venta','Global'], labels:{ style:{ colors:'#64748b', fontSize:'10px' } } },
+    chart:{ type:'bar', height:220 },
+    series:[{ name:'Conversión %', data: convByStage }],
+    xaxis:{ categories: stageLabels, labels:{ style:{ colors:'#64748b', fontSize:'10px' } } },
     yaxis:{ labels:{ style:{ colors:'#64748b' } }, max:100 },
-    colors:['#6366f1'],
-    plotOptions:{ bar:{ borderRadius:4, distributed:true } },
     colors:['#3b82f6','#6366f1','#a78bfa','#c084fc','#f59e0b','#4ade80'],
-    legend:{ show:false }
+    plotOptions:{ bar:{ borderRadius:4, distributed:true } },
+    legend:{ show:false },
+    noData:{ text:'Sin datos aún', style:{ color:'#64748b' } }
   }));
 
-  // Agrupar fuentes para el donut del ejecutivo
-  const donutGroups = [
-    { label:'Instagram',  v:94,  c:'#e1306c' },
-    { label:'Facebook',   v:82,  c:'#1877f2' },
-    { label:'TikTok',     v:47,  c:'#555' },
-    { label:'Referidos',  v:69,  c:'#4ade80' },  // sum: Jesus+Nasla+Wilmen+Centro+Amigo
-    { label:'Sitio Web',  v:22,  c:'#38bdf8' },
-    { label:'Otro',       v:8,   c:'#94a3b8' }
-  ];
-  initChart('chart-fuentes', mkOpts({
-    chart:{ type:'donut', height:220 },
-    series: donutGroups.map(x=>x.v),
-    labels: donutGroups.map(x=>x.label),
-    colors: donutGroups.map(x=>x.c),
-    legend:{ position:'bottom', labels:{ colors:'#94a3b8' } },
-    plotOptions:{ pie:{ donut:{ size:'65%' } } }
-  }));
+  // Sources donut — built from DATA.campanas (populated from GHL)
+  const camps = DATA.campanas.filter(c => c.leads > 0);
+  if(camps.length > 0) {
+    initChart('chart-fuentes', mkOpts({
+      chart:{ type:'donut', height:220 },
+      series: camps.map(c=>c.leads),
+      labels: camps.map(c=>c.canal),
+      colors: camps.map(c=>c.color),
+      legend:{ position:'bottom', labels:{ colors:'#94a3b8' } },
+      plotOptions:{ pie:{ donut:{ size:'65%' } } }
+    }));
+  } else {
+    const el = document.getElementById('chart-fuentes');
+    if(el) el.innerHTML = '<div class="text-xs text-slate-500 text-center py-8">Sin datos — conectá GHL para ver distribución de fuentes</div>';
+  }
 
   initChart('chart-comparativa', mkOpts({
     chart:{ type:'bar', height:220 },
-    series:[
-      { name:'Período anterior', data:[210, 756, 7120, 32600, 148200, 1172000] },
-      { name:'Período actual',   data:[247, 891, 7840, 42800, 148600, 1295000] }
-    ],
-    xaxis:{ categories:['Leads/S','Leads/M','Leads/A','Ventas/S €','Ventas/M €','Ventas/A €'], labels:{ style:{ colors:'#64748b', fontSize:'10px' } } },
-    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v => v>=1000?'€'+(v/1000).toFixed(0)+'k':v } },
+    series:[{ name:'Período anterior', data:[] }, { name:'Período actual', data:[] }],
+    xaxis:{ categories:['Leads','Citas','Ventas','Facturación €'], labels:{ style:{ colors:'#64748b', fontSize:'10px' } } },
+    yaxis:{ labels:{ style:{ colors:'#64748b' } } },
     colors:['#334155','#3b82f6'],
     plotOptions:{ bar:{ borderRadius:3, columnWidth:'60%' } },
-    legend:{ labels:{ colors:'#94a3b8' } }
+    legend:{ labels:{ colors:'#94a3b8' } },
+    noData:{ text:'Sin datos aún', style:{ color:'#64748b' } }
   }));
 }
 
@@ -1807,11 +1717,13 @@ function initEmbudo() {
 
   const losses = f.slice(1).map((s,i) => Math.round((f[i].value-s.value)/f[i].value*100));
   const labels = ['Cont.→Cita','Cita→Llam','Llam→Prop','Prop→Venta'].map((_,i)=>`${f[i+1].label}`);
+  const lossData = f.slice(1).map((s,i) => f[i].value > 0 ? Math.round((f[i].value - s.value) / f[i].value * 100) : 0);
+  const lossLabels = f.slice(1).map(s => s.label.slice(0,14));
   initChart('chart-funnel-perdidas', mkOpts({
     chart:{ type:'bar', height:220 },
-    series:[{ name:'% Pérdida', data:[20,28,25,29] }],
-    xaxis:{ categories:['Lead→Cont.','Cont.→Cita','Cita→Llam.','Prop.→Venta'], labels:{ style:{ colors:'#64748b', fontSize:'11px' } } },
-    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>v+'%' }, max:50 },
+    series:[{ name:'% Pérdida', data: lossData }],
+    xaxis:{ categories: lossLabels, labels:{ style:{ colors:'#64748b', fontSize:'11px' } } },
+    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>v+'%' }, max:100 },
     colors:['#f87171'],
     plotOptions:{ bar:{ borderRadius:4 } },
     legend:{ show:false }
@@ -1946,30 +1858,11 @@ function renderVentasCharts(days) {
     }
 
   } else {
-    // Demo fallback
-    initChart('chart-ventas-dia', mkOpts({
-      chart:{ type:'bar', height:220 },
-      series:[{ name:'Ventas €', data:[1200,980,1450,800,1680,2100,1380,950,1720,2400,1100,1850,1400,2800,1620,980,2100,1750,1300,2650,1480,900,2200,1900,1600,2380,1100,2700] }],
-      xaxis:{ categories:Array.from({length:28},(_,i)=>i+1+''), labels:{ style:{ colors:'#64748b', fontSize:'10px' } } },
-      yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>'€'+v } },
-      colors:['#3b82f6'], plotOptions:{ bar:{ borderRadius:3 } }
-    }));
-    const months = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
-    initChart('chart-facturacion-acum', mkOpts({
-      chart:{ type:'area', height:220 },
-      series:[{ name:'Facturación acum.', data:[78000,142000,201000,268000,319000,null,null,null,null,null,null,null] }],
-      xaxis:{ categories:months, labels:{ style:{ colors:'#64748b' } } },
-      yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>v?'€'+(v/1000).toFixed(0)+'k':'' } },
-      colors:['#f59e0b'], fill:{ type:'gradient', gradient:{ opacityFrom:.4, opacityTo:.05 } }, stroke:{ curve:'smooth', width:2 }
-    }));
-    initChart('chart-servicios', mkOpts({
-      chart:{ type:'bar', height:200 },
-      series:[{ name:'Facturación €', data:[18400,14200,6800,3400] }],
-      xaxis:{ categories:['Visados Estudios','Renovaciones','Reagrupación Familiar','Modificación Residencia'], labels:{ style:{ colors:'#64748b', fontSize:'11px' } } },
-      yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>'€'+v } },
-      colors:['#3b82f6','#6366f1','#a78bfa','#f59e0b'],
-      plotOptions:{ bar:{ borderRadius:4, distributed:true, horizontal:true } }, legend:{ show:false }
-    }));
+    // No GHL data — render empty charts
+    const emptyMsg = id => { const el=document.getElementById(id); if(el) el.innerHTML='<div class="text-xs text-slate-500 text-center py-8">Sin datos — conectá GHL para ver datos reales</div>'; };
+    emptyMsg('chart-ventas-dia');
+    emptyMsg('chart-facturacion-acum');
+    emptyMsg('chart-servicios');
   }
 }
 
@@ -2229,13 +2122,7 @@ function initVendedores() {
         revenue: d.revenue,
         llamadas: d.llamadas || 0
       }))
-    : DATA.vendedores.map(x => ({
-        nombre: x.nombre,
-        opps: x.llamadas,
-        ventas: x.ventas,
-        revenue: parseFloat((x.facturacion||'0').replace(/[€,.]/g,'')) || 0,
-        llamadas: x.llamadas
-      }));
+    : [];
 
   // Apply filter if configured
   if(filter.length > 0) {
@@ -2372,27 +2259,22 @@ function initLlamadas() {
       }));
     }
   } else {
-    // Demo fallback — fechas reales de los últimos 30 días
-    const DIAS_ES2 = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
-    const demoData = [3,5,2,4,6,3,5,4,7,4,6,5,3,4,6,5,4,5,6,4,3,5,4,6,5,7,4,5,6,4];
-    const demoLabels = Array.from({length:30},(_,i)=>{
-      const d=new Date(); d.setDate(d.getDate()-(29-i));
-      return DIAS_ES2[d.getDay()]+' '+d.getDate()+'/'+(d.getMonth()+1);
-    });
+    // No GHL data — empty charts
     initChart('chart-llamadas-dia', mkOpts({
       chart:{ type:'bar', height:240 },
-      series:[{ name:'Citas', data: demoData }],
-      xaxis:{ categories: demoLabels, labels:{ style:{ colors:'#64748b', fontSize:'9px' }, rotate:-45, rotateAlways:true } },
+      series:[{ name:'Citas', data:[] }],
+      xaxis:{ categories:[] },
       yaxis:{ labels:{ style:{ colors:'#64748b' } }, min:0 },
       colors:['#3b82f6'], plotOptions:{ bar:{ borderRadius:2 } },
-      dataLabels:{ enabled:true, style:{ colors:['#fff'], fontSize:'9px' } }
+      noData:{ text:'Conectá GHL para ver datos', style:{ color:'#64748b' } }
     }));
     initChart('chart-interes', mkOpts({
       chart:{ type:'donut', height:250 },
-      series:[47,31,22], labels:['Realizadas','No-show','Canceladas'],
+      series:[0,0,0], labels:['Realizadas','No-show','Canceladas'],
       colors:['#4ade80','#f87171','#fbbf24'],
       legend:{ position:'bottom', labels:{ colors:'#94a3b8' } },
-      plotOptions:{ pie:{ donut:{ size:'60%' } } }
+      plotOptions:{ pie:{ donut:{ size:'60%' } } },
+      noData:{ text:'Sin datos', style:{ color:'#64748b' } }
     }));
   }
 
@@ -2408,7 +2290,7 @@ function initLlamadas() {
         .sort((a,b)=>b[1]-a[1]).slice(0,6)
         .map(([motivo,cnt],i)=>({ motivo, pct: Math.round(cnt/lostTotal*100),
           color: ['#f87171','#fb923c','#fbbf24','#a78bfa','#60a5fa','#94a3b8'][i] }))
-    : DATA.motivos_perdida; // fallback to demo when no named reasons in GHL
+    : []; // no demo fallback
 
   const mp = document.getElementById('motivos-perdida');
   if(mp) {
@@ -2462,24 +2344,7 @@ function initIA() {
   `).join('');
 
   const insights = document.getElementById('ai-insights');
-  insights.innerHTML = `
-    <div class="flex gap-2 text-xs">
-      <div class="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5 flex-shrink-0"></div>
-      <span class="text-slate-400">No-shows en 19% — <strong class="text-slate-200">3 puntos sobre el límite</strong></span>
-    </div>
-    <div class="flex gap-2 text-xs">
-      <div class="w-1.5 h-1.5 rounded-full bg-green-400 mt-1.5 flex-shrink-0"></div>
-      <span class="text-slate-400">Instagram ROI 520% — <strong class="text-slate-200">mejor canal pagado</strong></span>
-    </div>
-    <div class="flex gap-2 text-xs">
-      <div class="w-1.5 h-1.5 rounded-full bg-amber-400 mt-1.5 flex-shrink-0"></div>
-      <span class="text-slate-400">Pipeline €141k sin trabajar — <strong class="text-slate-200">actuar esta semana</strong></span>
-    </div>
-    <div class="flex gap-2 text-xs">
-      <div class="w-1.5 h-1.5 rounded-full bg-blue-400 mt-1.5 flex-shrink-0"></div>
-      <span class="text-slate-400">María García 22.5% conv. — <strong class="text-slate-200">replicar su guión</strong></span>
-    </div>
-  `;
+  insights.innerHTML = `<div class="text-xs text-slate-500">Conectá GHL para ver insights automáticos basados en tus datos reales.</div>`;
 }
 
 function askAI(q) {
@@ -2982,8 +2847,8 @@ function initPerdidas() {
   // Only treat as real if there are named reasons (not just UUID fallbacks)
   const realReasons = Object.fromEntries(Object.entries(gl).filter(([k]) => k !== 'Sin motivo registrado'));
   const hasLive = Object.keys(realReasons).length > 0;
-  const labels = hasLive ? Object.keys(realReasons) : DATA.motivos_perdida.map(m=>m.motivo);
-  const values = hasLive ? Object.values(realReasons) : DATA.motivos_perdida.map(m=>m.pct);
+  const labels = hasLive ? Object.keys(realReasons) : [];
+  const values = hasLive ? Object.values(realReasons) : [];
   const colors = ['#f87171','#fb923c','#fbbf24','#a78bfa','#60a5fa','#94a3b8'];
 
   initChart('chart-perdidas-pie', mkOpts({
@@ -2997,16 +2862,13 @@ function initPerdidas() {
 
   initChart('chart-perdidas-evolucion', mkOpts({
     chart:{ type:'bar', height:280 },
-    series:[
-      { name:'Dinero',       data:[18,21,24,27,30,34] },
-      { name:'No cumple',    data:[10,12,14,16,19,22] },
-      { name:'No responde',  data:[8,9,11,13,15,18]   }
-    ],
-    xaxis:{ categories:['Ene','Feb','Mar','Abr','May','Jun'], labels:{ style:{ colors:'#64748b' } } },
+    series:[ { name:'Motivo 1', data:[] }, { name:'Motivo 2', data:[] } ],
+    xaxis:{ categories:[], labels:{ style:{ colors:'#64748b' } } },
     yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>v+'%' } },
     colors:['#f87171','#fb923c','#fbbf24'],
     plotOptions:{ bar:{ borderRadius:3, columnWidth:'60%' } },
-    legend:{ labels:{ colors:'#94a3b8' } }
+    legend:{ labels:{ colors:'#94a3b8' } },
+    noData:{ text:'Sin datos de motivos registrados en GHL', style:{ color:'#64748b' } }
   }));
 }
 
@@ -3054,7 +2916,7 @@ function initValor() {
     const val  = '€'+(o.monetaryValue||0).toLocaleString('es-ES');
     const date = (o.closedDate||o.closeDate||'').slice(0,10) || '—';
     return { nombre:name, tramites:1, valor:val, ultimo:date };
-  }) : DATA.valor_top5;
+  }) : [];
   document.getElementById('tbody-valor-top5').innerHTML = top5Data.map((c,i)=>`
     <tr class="border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
       <td class="py-2 px-3">
@@ -3079,8 +2941,6 @@ function initValor() {
       else if(v < 2000)  histData[2]++;
       else               histData[3]++;
     });
-  } else {
-    histData = [31, 48, 24, 15];
   }
   initChart('chart-valor-histograma', mkOpts({
     chart:{ type:'bar', height:260 },
@@ -3098,9 +2958,9 @@ function initValor() {
 // ═══════════════════════════════════════
 function initNoCualificados() {
   const gl = DATA.ghlLive.noQualified;
-  const fondos = gl.fondos || DATA.nq_evolucion.fondos[5];
-  const tiempo = gl.tiempo || DATA.nq_evolucion.tiempo[5];
-  const cue    = gl.cue    || DATA.nq_evolucion.cue[5];
+  const fondos = gl.fondos || 0;
+  const tiempo = gl.tiempo || 0;
+  const cue    = gl.cue    || 0;
   const total  = fondos + tiempo + cue;
 
   document.getElementById('nq-fondos').textContent = fondos;
@@ -3132,16 +2992,16 @@ function initNoCualificados() {
   }));
 
   const tendencias = [
-    { tag:'no cualificado / sin fondos', qty:fondos, color:'#f87171', trend:'↑ Alza' },
-    { tag:'no cualificado / excedido tiempo', qty:tiempo, color:'#fbbf24', trend:'→ Estable' },
-    { tag:'no cualificado / cue', qty:cue, color:'#a78bfa', trend:'↑ Alza' }
+    { tag:'no cualificado / sin fondos', qty:fondos, color:'#f87171' },
+    { tag:'no cualificado / excedido tiempo', qty:tiempo, color:'#fbbf24' },
+    { tag:'no cualificado / cue', qty:cue, color:'#a78bfa' }
   ];
   document.getElementById('tbody-nq-tabla').innerHTML = tendencias.map(r=>`
     <tr class="border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
       <td class="py-2 px-3"><code class="text-xs text-slate-400 bg-slate-800 px-1.5 py-0.5 rounded">${r.tag}</code></td>
       <td class="py-2 px-3 text-right font-bold text-white">${r.qty}</td>
       <td class="py-2 px-3 text-right text-slate-300">${total>0?((r.qty/total)*100).toFixed(1)+'%':'—'}</td>
-      <td class="py-2 px-3 text-right"><span class="text-xs" style="color:${r.color}">${r.trend}</span></td>
+      <td class="py-2 px-3 text-right"><span class="text-xs text-slate-500">—</span></td>
     </tr>`).join('');
 }
 
@@ -3166,13 +3026,7 @@ function initSegmentacion() {
     return { ...g, leads:d.leads||0, ventas:d.ventas||0, revenue:d.revenue||0 };
   }).filter(r => r.leads > 0 || !hasReal);
 
-  const displayRows = hasReal ? rows : [
-    { label:'Individuo',          color:'#3b82f6', leads:312, ventas:40, revenue:42000 },
-    { label:'Pareja / Matrimonio',color:'#a78bfa', leads:198, ventas:36, revenue:68040 },
-    { label:'Pareja con Hijos',   color:'#f59e0b', leads:89,  ventas:20, revenue:52800 },
-    { label:'Individuo con Hijos',color:'#4ade80', leads:67,  ventas:11, revenue:19800 },
-    { label:'Familia Ampliada',   color:'#f87171', leads:34,  ventas:7,  revenue:18480 }
-  ];
+  const displayRows = rows; // no demo fallback
 
   // Stat cards
   const cards = document.getElementById('seg-cards');
@@ -3224,31 +3078,24 @@ function initSegmentacion() {
     </tr>`;
   }).join('');
 
-  if(!hasReal) {
-    const note = document.createElement('div');
-    note.className = 'mt-4 text-xs text-slate-500 text-center';
-    note.textContent = 'Datos de ejemplo — conectar GHL para ver datos reales del campo grupo_familiar';
-    document.getElementById('s-segmentacion')?.appendChild(note);
-  }
 }
 
 // ═══════════════════════════════════════
 // TIEMPOS POR STAGE
 // ═══════════════════════════════════════
 function initTiempos() {
-  // Demo data until GHL loads
-  const stageColors = ['#3b82f6','#6366f1','#a78bfa','#c084fc','#f59e0b','#fb923c','#4ade80'];
-  const demoTimes = DATA.funnel.map((s,i) => ({ label: s.label, dias: [18,7,5,12,9,4,0][i]||0, color: s.color, count: s.value }));
-  renderStageTimes(demoTimes);
+  const realTimes = DATA.funnel.map(s => ({ label: s.label, dias: 0, color: s.color, count: s.value }));
+  renderStageTimes(realTimes);
 
   initChart('chart-dist-cierre', mkOpts({
     chart:{ type:'bar', height:220 },
-    series:[{ name:'Clientes', data:[3,8,12,7,4,2,1] }],
+    series:[{ name:'Clientes', data:[] }],
     xaxis:{ categories:['0-7d','8-14d','15-21d','22-30d','31-45d','46-60d','+60d'], labels:{ style:{ colors:'#64748b' } } },
     yaxis:{ labels:{ style:{ colors:'#64748b' } } },
     colors:['#3b82f6'],
     plotOptions:{ bar:{ borderRadius:4, columnWidth:'60%' } },
-    legend:{ show:false }
+    legend:{ show:false },
+    noData:{ text:'Sin datos aún', style:{ color:'#64748b' } }
   }));
 
   initChart('chart-tiempo-vendedor', mkOpts({

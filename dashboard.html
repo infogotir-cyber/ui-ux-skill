@@ -3590,22 +3590,13 @@ async function loadGHLData() {
     DATA.ghlLive.totalWon     = won;
     DATA.ghlLive.totalRevenue = revenue;
 
-    // Lost reasons — fetch label map from GHL, then tally
+    // Lost reasons — tally from opp fields (GHL stores text label directly in lostReason)
     DATA.ghlLive.lostReasons = {};
-    let lostReasonMap = {}; // id → label
-    try {
-      const lr = await ghlFetchV2('GET', `/opportunities/lost-reasons`, { locationId: GHL.locationId });
-      (lr.lostReasons || lr.data || []).forEach(r => { if(r.id) lostReasonMap[r.id] = r.name || r.label || r.id; });
-    } catch(_) {}
     oppList.filter(o=>(o.status||'').toLowerCase()==='lost').forEach(o => {
-      const rawId    = o.lostReasonId || o.lost_reason_id || null;
-      const rawLabel = o.lostReason   || o.lost_reason    || o.lostReasonLabel || o.reason || null;
-      const label = (rawId && lostReasonMap[rawId])
-        ? lostReasonMap[rawId]
-        : (rawLabel && String(rawLabel).trim() && !String(rawLabel).match(/^[0-9a-f]{20,}$/i))
-          ? String(rawLabel).trim()
-          : null;
-      const k = label || 'Sin motivo registrado';
+      const raw = o.lostReason || o.lost_reason || o.lostReasonLabel || o.reason || null;
+      // Skip UUIDs (long hex strings — these are internal GHL IDs with no label available)
+      const isUUID = raw && String(raw).match(/^[0-9a-f]{20,}$/i);
+      const k = (raw && !isUUID) ? String(raw).trim() : 'Sin motivo registrado';
       DATA.ghlLive.lostReasons[k] = (DATA.ghlLive.lostReasons[k]||0)+1;
     });
 
@@ -3681,26 +3672,16 @@ async function loadGHLData() {
 
       // GHL V2 calendar events endpoint — try multiple param/timestamp variants
       for(const cal of calListFinal) {
-        if(apptList.length > 0) break; // stop after first successful cal
-        // Variant A: ms timestamps
+        // ms timestamps (confirmed working)
         try {
           const ev = await ghlFetchV2('GET', `/calendars/events`, {
             calendarId: cal.id, locationId: GHL.locationId,
             startTime: startMs, endTime: endMs
           });
           const items = ev.events || ev.appointments || ev.data || [];
-          if(items.length > 0) { apptList = apptList.concat(items); console.log('[GHL] Cal (ms)', cal.name, '→', items.length); continue; }
-        } catch(_) {}
-        // Variant B: ISO timestamps
-        try {
-          const ev = await ghlFetchV2('GET', `/calendars/events`, {
-            calendarId: cal.id, locationId: GHL.locationId,
-            startTime: startISO, endTime: endISO
-          });
-          const items = ev.events || ev.appointments || ev.data || [];
-          if(items.length > 0) { apptList = apptList.concat(items); console.log('[GHL] Cal (ISO)', cal.name, '→', items.length); continue; }
-        } catch(_) {}
-        console.warn('[GHL] No appointments found for calendar:', cal.name);
+          apptList = apptList.concat(items);
+          console.log('[GHL] Cal', cal.name, '→', items.length, 'citas');
+        } catch(e) { console.warn('[GHL] Cal error:', cal.name, e.message); }
       }
 
       // Fallback: all calendars, no filter

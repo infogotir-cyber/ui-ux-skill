@@ -472,7 +472,7 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
           <svg viewBox="0 0 24 24" fill="none" stroke="#f87171" stroke-width="2" class="w-4 h-4"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
           <span class="text-sm font-semibold text-red-400">Mayor pérdida detectada</span>
         </div>
-        <p class="text-xs text-slate-400">Etapa <strong class="text-slate-200">Cita Agendada → Llamada Realizada</strong>: 28% de abandono. Causa probable: falta de seguimiento post-cita o confirmación débil.</p>
+        <p class="text-xs text-slate-400" id="funnel-perdida-msg">Cargando datos...</p>
       </div>
     </div>
   </div>
@@ -1796,6 +1796,29 @@ function initEmbudo() {
     legend:{ show:false },
     dataLabels:{ enabled:true, formatter:v=>v+'%', style:{ colors:['#fff'], fontSize:'11px' } }
   }));
+
+  // Update "Mayor pérdida" message dynamically from lossData
+  const msgEl = document.getElementById('funnel-perdida-msg');
+  if(msgEl) {
+    const maxLoss = Math.max(...lossData);
+    if(maxLoss === 0) {
+      msgEl.innerHTML = 'No se detectaron abandonos entre etapas en este período.';
+    } else {
+      const maxIdx = lossData.indexOf(maxLoss);
+      const prevStage = f[maxIdx].label;   // stage before the drop
+      const nextStage = f[maxIdx+1].label; // stage after the drop
+      const CAUSAS = {
+        'Cualificado':             'falta de calificación o primer contacto sin respuesta',
+        'Llamada agendada':        'no-shows o falta de confirmación previa a la llamada',
+        'Llamada realizada':       'propuesta no enviada o seguimiento post-llamada débil',
+        'Info y contrato enviado': 'objeciones de precio o falta de urgencia en el cierre',
+        'Pronto pago':             'el cliente no completó el pago — revisar seguimiento post-propuesta',
+        'Pagado':                  'cierre sin conversión final — revisar proceso de firma/onboarding',
+      };
+      const causa = CAUSAS[nextStage] || CAUSAS[prevStage] || 'revisar el proceso en esta etapa';
+      msgEl.innerHTML = `Etapa <strong class="text-slate-200">${prevStage} → ${nextStage}</strong>: ${maxLoss}% de abandono. Causa probable: ${causa}.`;
+    }
+  }
 }
 
 // ═══════════════════════════════════════

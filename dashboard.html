@@ -1616,6 +1616,9 @@ function recalcFromPeriod(p) {
   // Refresh ventas section if visible or already inited
   if(sectionInited['ventas']) renderVentasCharts(days);
 
+  // Refresh llamadas section if already inited
+  if(sectionInited['llamadas']) initLlamadas();
+
   // Refresh day-by-day chart for the selected period (range.from → range.to)
   const dayMap = {}, wonDayMap = {};
   for(let t=range.from; t<=range.to; t+=86400000) {
@@ -2269,13 +2272,21 @@ function initLlamadas() {
 
   // ── Stat cards ───────────────────────────────────────────
   if(hasReal) {
-    const total      = allCitas.length;
-    const realizadas = allCitas.filter(a=>['confirmed','showed','completed'].includes((a.appointmentStatus||a.status||'').toLowerCase())).length;
-    const noshows    = allCitas.filter(a=>['no-showed','noshow','no_show'].includes((a.appointmentStatus||a.status||'').toLowerCase())).length;
-    const canceladas = allCitas.filter(a=>['cancelled','canceled','invalid'].includes((a.appointmentStatus||a.status||'').toLowerCase())).length;
+    const range    = getPeriodRange(DATA.period || 'mes');
+    const citas    = filterByPeriod(allCitas, range, 'startTime');
+    const total      = citas.length;
+    const realizadas = citas.filter(a=>['confirmed','showed','completed'].includes((a.appointmentStatus||a.status||'').toLowerCase())).length;
+    const noshows    = citas.filter(a=>['no-showed','noshow','no_show'].includes((a.appointmentStatus||a.status||'').toLowerCase())).length;
+    const canceladas = citas.filter(a=>['cancelled','canceled','invalid'].includes((a.appointmentStatus||a.status||'').toLowerCase())).length;
     const asist      = total > 0 ? Math.round(realizadas/total*100) : 0;
-    const won        = DATA.ghlLive.totalWon || 0;
-    const convLL     = realizadas > 0 ? ((won/realizadas)*100).toFixed(1) : '—';
+    const wonPeriod  = (DATA.ghlLive.allOpps||[]).filter(o=>{
+      if((o.status||'').toLowerCase()!=='won') return false;
+      const raw=o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.updatedAt||'';
+      if(!raw) return true;
+      const t=typeof raw==='number'?raw:new Date(raw).getTime();
+      return t>=range.from&&t<=range.to;
+    }).length;
+    const convLL     = realizadas > 0 ? ((wonPeriod/realizadas)*100).toFixed(1) : '—';
     const el = id => document.getElementById(id);
     if(el('ll-total'))      el('ll-total').textContent      = total;
     if(el('ll-realizadas')) el('ll-realizadas').textContent = realizadas;
@@ -2284,37 +2295,52 @@ function initLlamadas() {
     if(el('ll-asistencia')) el('ll-asistencia').textContent = asist + '%';
     if(el('ll-conv'))       el('ll-conv').textContent       = convLL + '%';
 
-    // ── Llamadas por día (últimos 30 días) ───────────────────
+    // ── Llamadas por día (rango del período) ─────────────────
     const DIAS_ES = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];
     const dayMap = {};
-    for(let i=29;i>=0;i--){
-      const d=new Date(); d.setDate(d.getDate()-i);
-      dayMap[d.toISOString().slice(0,10)]=0;
+    for(let t=range.from; t<=range.to; t+=86400000) {
+      dayMap[new Date(t).toISOString().slice(0,10)] = 0;
     }
-    allCitas.forEach(a=>{ const k=(a.startTime||a.start||'').slice(0,10); if(k in dayMap) dayMap[k]++; });
+    citas.forEach(a => {
+      const raw = a.startTime || a.start || '';
+      const k = typeof raw === 'number'
+        ? new Date(raw).toISOString().slice(0,10)
+        : String(raw).slice(0,10);
+      if(k in dayMap) dayMap[k]++;
+    });
     const dKeys = Object.keys(dayMap);
     const dLabels = dKeys.map(k=>{
       const d=new Date(k+'T12:00:00');
       return DIAS_ES[d.getDay()]+' '+d.getDate()+'/'+(d.getMonth()+1);
     });
-    initChart('chart-llamadas-dia', mkOpts({
-      chart:{ type:'bar', height:240 },
-      series:[{ name:'Citas', data: dKeys.map(k=>dayMap[k]) }],
-      xaxis:{ categories: dLabels, labels:{ style:{ colors:'#64748b', fontSize:'9px' }, rotate:-45, rotateAlways:true } },
-      yaxis:{ labels:{ style:{ colors:'#64748b' } }, min:0, forceNiceScale:true },
-      colors:['#3b82f6'], plotOptions:{ bar:{ borderRadius:2 } },
-      dataLabels:{ enabled:true, style:{ colors:['#fff'], fontSize:'9px' } }
-    }));
+    const chartTitle = `Citas por Día`;
+    if(charts['chart-llamadas-dia']) {
+      charts['chart-llamadas-dia'].updateSeries([{ name:'Citas', data: dKeys.map(k=>dayMap[k]) }]);
+      charts['chart-llamadas-dia'].updateOptions({ xaxis:{ categories: dLabels } });
+    } else {
+      initChart('chart-llamadas-dia', mkOpts({
+        chart:{ type:'bar', height:240 },
+        series:[{ name:'Citas', data: dKeys.map(k=>dayMap[k]) }],
+        xaxis:{ categories: dLabels, labels:{ style:{ colors:'#64748b', fontSize:'9px' }, rotate:-45, rotateAlways:true } },
+        yaxis:{ labels:{ style:{ colors:'#64748b' } }, min:0, forceNiceScale:true },
+        colors:['#3b82f6'], plotOptions:{ bar:{ borderRadius:2 } },
+        dataLabels:{ enabled:true, style:{ colors:['#fff'], fontSize:'9px' } }
+      }));
+    }
 
     // ── Estado de citas (donut) ───────────────────────────────
-    initChart('chart-interes', mkOpts({
-      chart:{ type:'donut', height:250 },
-      series:[ realizadas, noshows, canceladas ],
-      labels:['Realizadas','No-show','Canceladas'],
-      colors:['#4ade80','#f87171','#fbbf24'],
-      legend:{ position:'bottom', labels:{ colors:'#94a3b8' } },
-      plotOptions:{ pie:{ donut:{ size:'60%' } } }
-    }));
+    if(charts['chart-interes']) {
+      charts['chart-interes'].updateSeries([realizadas, noshows, canceladas]);
+    } else {
+      initChart('chart-interes', mkOpts({
+        chart:{ type:'donut', height:250 },
+        series:[ realizadas, noshows, canceladas ],
+        labels:['Realizadas','No-show','Canceladas'],
+        colors:['#4ade80','#f87171','#fbbf24'],
+        legend:{ position:'bottom', labels:{ colors:'#94a3b8' } },
+        plotOptions:{ pie:{ donut:{ size:'60%' } } }
+      }));
+    }
   } else {
     // Demo fallback — fechas reales de los últimos 30 días
     const DIAS_ES2 = ['Dom','Lun','Mar','Mié','Jue','Vie','Sáb'];

@@ -3041,10 +3041,49 @@ function initPerdidas() {
     legend:{ labels:{ colors:'#94a3b8' } },
     noData:{ text: hasReal ? '' : 'Sin motivos registrados en GHL', style:{ color:'#64748b' } }
   }));
+
+  // Also refresh stage tab if it's currently visible
+  if(!document.getElementById('perd-tab-stage')?.classList.contains('hidden')) {
+    initPerdidasStage();
+  }
 }
 
 function initPerdidasStage() {
-  const d = DATA.perdidas_stage;
+  const gl = DATA.ghlLive;
+  const allOpps = gl.allOpps || [];
+  const range = getPeriodRange(DATA.period);
+  const stageIdMap = gl.stageIdMap || {};
+
+  // Use period-filtered opps
+  const opps = filterByPeriod(allOpps, range, 'createdAt');
+
+  // Count entraron (all opps in each stage) and perdieron (lost opps per stage)
+  const stageCounts = {};
+  opps.forEach(o => {
+    const sid = o.stageId || o.pipelineStageId || o.stage?.id || '';
+    const sname = o.pipelineStageName || o.stageName || o.stage?.name || (sid ? stageIdMap[sid] : '') || '';
+    if(!sname) return;
+    if(!stageCounts[sname]) stageCounts[sname] = { stage: sname, entraron: 0, perdieron: 0 };
+    stageCounts[sname].entraron++;
+    if((o.status||'').toLowerCase() === 'lost') stageCounts[sname].perdieron++;
+  });
+
+  const d = Object.values(stageCounts)
+    .filter(x => x.entraron > 0 && x.perdieron > 0)
+    .sort((a,b) => (b.perdieron/b.entraron) - (a.perdieron/a.entraron));
+
+  if(d.length === 0) {
+    initChart('chart-perdidas-stage', mkOpts({
+      chart:{ type:'bar', height:280 },
+      series:[{ name:'Tasa pérdida %', data:[] }],
+      xaxis:{ categories:[] },
+      noData:{ text:'Sin pérdidas registradas en este período', style:{ color:'#64748b' } }
+    }));
+    document.getElementById('tbody-perdidas-stage').innerHTML =
+      '<tr><td colspan="4" class="py-6 text-center text-slate-500 text-sm">Sin datos de pérdidas en este período</td></tr>';
+    return;
+  }
+
   initChart('chart-perdidas-stage', mkOpts({
     chart:{ type:'bar', height:280 },
     series:[{ name:'Tasa pérdida %', data: d.map(x=>parseFloat(((x.perdieron/x.entraron)*100).toFixed(1))) }],

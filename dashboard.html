@@ -3413,16 +3413,26 @@ async function fetchAllContacts() {
 
 async function fetchAllOpportunities(pipelineId) {
   let all = [], page = 1, hasMore = true;
+  // Determine which param style works (snake_case vs camelCase)
+  // GHL V2 uses location_id + pipeline_id for /opportunities/search
+  let useSnake = true;
   while(hasMore) {
-    const r = await ghlFetchV2('GET', `/opportunities/search`, {
-      location_id: GHL.locationId,
-      locationId:  GHL.locationId,
-      pipeline_id: pipelineId,
-      pipelineId:  pipelineId,
-      page, limit: 100
-    });
+    let r;
+    try {
+      r = useSnake
+        ? await ghlFetchV2('GET', `/opportunities/search`, { location_id: GHL.locationId, pipeline_id: pipelineId, page, limit: 100 })
+        : await ghlFetchV2('GET', `/opportunities/search`, { locationId: GHL.locationId, pipelineId, page, limit: 100 });
+    } catch(e) {
+      if(useSnake && e.message.includes('422')) {
+        useSnake = false; // switch to camelCase and retry
+        continue;
+      }
+      throw e;
+    }
     const batch = r.opportunities || r.data || [];
-    all = all.concat(batch);
+    // If pipelineId filter not supported, filter client-side
+    const filtered = pipelineId ? batch.filter(o => (o.pipelineId || o.pipeline_id || o.pipeline?.id) === pipelineId) : batch;
+    all = all.concat(filtered.length > 0 ? filtered : batch);
     const meta = r.meta || {};
     const totalCount = meta.total || meta.count || 0;
     hasMore = batch.length === 100 && (totalCount === 0 || all.length < totalCount);
@@ -3630,7 +3640,7 @@ async function loadGHLData() {
     document.getElementById('kpi-facturacion').textContent = '€'+revenue.toLocaleString('es-ES');
     if(avgTicket) document.getElementById('kpi-ticket').textContent = '€'+avgTicket.toLocaleString('es-ES');
     document.getElementById('kpi-conversion').textContent = total>0 ? ((won/total)*100).toFixed(1)+'%' : '0.0%';
-    console.log('[GHL] oppList:', oppList.length, 'won:', won, 'revenue:', revenue, 'pipeline:', preVenta?.name);
+    console.log('[GHL] oppList:', oppList.length, 'won:', won, 'revenue:', revenue);
 
     // Pipeline Pre-venta → funnel (nombres exactos de GHL, comparación case-insensitive)
     const STAGE_MAP = {

@@ -1658,6 +1658,9 @@ function recalcFromPeriod(p) {
 
     // Re-render perdidas section if already open (period-sensitive)
     if(sectionInited['perdidas']) initPerdidas();
+
+    // Update Dashboard Ejecutivo — Fuentes and Comparativa are period-sensitive
+    refreshEjecutivoPeriod(contacts, wonOpps, sourceCounts, days);
   }
 }
 
@@ -4086,6 +4089,62 @@ function buildMonthlyHistory(contactList, oppList) {
   const keys = Object.keys(months).sort();
   const labels = keys.map(k => { const [y,m]=k.split('-'); return ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'][+m-1]+' '+y.slice(2); });
   return { keys, labels, leads: keys.map(k=>months[k].leads), ventas: keys.map(k=>months[k].ventas), revenue: keys.map(k=>months[k].revenue) };
+}
+
+// Called on every period change — updates Fuentes donut + Comparativa with filtered data
+function refreshEjecutivoPeriod(contacts, wonOpps, sourceCounts, days) {
+  // ── Fuentes de Leads (donut) ──
+  const CANAL_COLORS = { 'afiliado':'#a78bfa','pagado':'#f59e0b','organico':'#38bdf8','otro':'#94a3b8' };
+  const ghlValToGroup = {};
+  DATA.campanas.forEach(camp => {
+    const key = (camp.ghlVal || camp.canal.toLowerCase()).trim();
+    const color = CANAL_COLORS[camp.tipo] || '#94a3b8';
+    const label = camp.tipo === 'afiliado' ? 'Referidos' : camp.canal;
+    ghlValToGroup[key] = { label, c: color };
+  });
+  const grouped = {};
+  Object.entries(sourceCounts).forEach(([k, v]) => {
+    const def = ghlValToGroup[k.toLowerCase().trim()] || { label:'Otro', c:'#94a3b8' };
+    grouped[def.label] = (grouped[def.label] || 0) + v;
+    grouped[def.label+'__c'] = grouped[def.label+'__c'] || def.c;
+  });
+  const fLabels = Object.keys(grouped).filter(k=>!k.endsWith('__c')).sort((a,b)=>grouped[b]-grouped[a]);
+  const fVals   = fLabels.map(l=>grouped[l]);
+  const fColors = fLabels.map(l=>grouped[l+'__c']||'#94a3b8');
+  if(fLabels.length > 0 && charts['chart-fuentes']) {
+    charts['chart-fuentes'].updateSeries(fVals);
+    charts['chart-fuentes'].updateOptions({ labels:fLabels, colors:fColors });
+  }
+
+  // ── Comparativa Períodos ──
+  if(!charts['chart-comparativa']) return;
+  const MONTHS_ES = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+  const getBucket = (dateStr) => {
+    if(!dateStr) return null;
+    const d = new Date(typeof dateStr==='number'?dateStr:dateStr);
+    if(isNaN(d)) return null;
+    if(days <= 60) return d.toISOString().slice(0,10);
+    if(days <= 180) { const day=d.getDay(); const diff=(day===0?-6:1-day); const mon=new Date(d); mon.setDate(d.getDate()+diff); return mon.toISOString().slice(0,10); }
+    return d.getFullYear()+'-'+(String(d.getMonth()+1).padStart(2,'0'));
+  };
+  const bucketLabel = (k) => {
+    if(days <= 60) { const d=new Date(k); return d.getDate()+' '+MONTHS_ES[d.getMonth()]; }
+    if(days <= 180) { const d=new Date(k); return d.getDate()+' '+MONTHS_ES[d.getMonth()]; }
+    const [y,m]=k.split('-'); return MONTHS_ES[+m-1]+' '+y.slice(2);
+  };
+  const bucketMap = {}, revMap = {};
+  contacts.forEach(c => { const k=getBucket(c.dateAdded||c.createdAt||''); if(k){ bucketMap[k]=(bucketMap[k]||0)+1; } });
+  wonOpps.forEach(o => { const k=getBucket(o.closedDate||o.closeDate||o.updatedAt||''); if(k){ revMap[k]=(revMap[k]||0)+(parseFloat(o.monetaryValue||o.monetary_value||0)||0); } });
+  const allKeys = [...new Set([...Object.keys(bucketMap),...Object.keys(revMap)])].sort();
+  if(allKeys.length === 0) return;
+  const cLabels  = allKeys.map(bucketLabel);
+  const cLeads   = allKeys.map(k=>bucketMap[k]||0);
+  const cRevenue = allKeys.map(k=>revMap[k]||0);
+  charts['chart-comparativa'].updateSeries([
+    { name:'Leads', data:cLeads },
+    { name:'Facturación €', data:cRevenue }
+  ]);
+  charts['chart-comparativa'].updateOptions({ xaxis:{ categories:cLabels } });
 }
 
 function refreshEjecutivoCharts(contactList, oppList, sourceCounts, won, revenue) {

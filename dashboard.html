@@ -1632,6 +1632,30 @@ function recalcFromPeriod(p) {
       }
     });
 
+    // Cross-reference won opps by tramite to get ventas + revenue per tramite
+    const TRAMITE_VALS_P = new Set(['visado_arg','visado arg','visado_latam','visado latam','estancia','renovación','renovacion','reagrupación','reagrupacion','pac','nòmada_digital','nomada_digital','nómada digital','nomada digital','no_lucrativa','no lucrativa','emprendedor','workandholidays','work and holidays','visa_de_trabajo','visa de trabajo','visado argentino','visado argentina','visado españa','visado espana']);
+    const TRAMITE_LABELS_P = { 'visado_arg':'Visado ARG','visado arg':'Visado ARG','visado_latam':'Visado LATAM','visado latam':'Visado LATAM','estancia':'Estancia','renovación':'Renovación','renovacion':'Renovación','reagrupación':'Reagrupación','reagrupacion':'Reagrupación','pac':'PAC','nòmada_digital':'Nómada Digital','nomada_digital':'Nómada Digital','nómada digital':'Nómada Digital','nomada digital':'Nómada Digital','no_lucrativa':'No Lucrativa','no lucrativa':'No Lucrativa','emprendedor':'Emprendedor','workandholidays':'Workandholidays','work and holidays':'Workandholidays','visa_de_trabajo':'Visa de Trabajo','visa de trabajo':'Visa de Trabajo','visado argentino':'Visado ARG','visado argentina':'Visado ARG','visado españa':'Visado ARG','visado espana':'Visado ARG' };
+    const contactMapP = {};
+    (DATA.ghlLive.allContacts || []).forEach(c => { if(c.id) contactMapP[c.id] = c; });
+    wonOpps.forEach(o => {
+      const cid = o.contactId || o.contact_id || o.contact?.id;
+      const c = contactMapP[cid];
+      if(!c) return;
+      const fields2 = c.customFields || c.customField || [];
+      if(!Array.isArray(fields2)) return;
+      const fTK = fields2.find(f=>{ const rk=f.key||f.id||f.fieldKey||''; const mk=FIELD_ID_MAP[rk]||rk; return mk.includes('tipo_de_tr'); });
+      const fT2 = fTK || fields2.find(f=>{ const v=((f.value||f.fieldValue||'')+'').toLowerCase().trim(); return TRAMITE_VALS_P.has(v); });
+      if(!fT2) return;
+      const rv2 = Array.isArray(fT2.value||fT2.fieldValue) ? (fT2.value||fT2.fieldValue)[0] : (fT2.value||fT2.fieldValue);
+      const label2 = TRAMITE_LABELS_P[(rv2+'').toLowerCase().trim()] || (rv2+'');
+      if(!label2) return;
+      if(!byTramite[label2]) byTramite[label2] = { leads:0, ventas:0, revenue:0 };
+      byTramite[label2].ventas++;
+      byTramite[label2].revenue += parseFloat(o.monetaryValue || o.monetary_value || 0) || 0;
+    });
+
+    const tramiteTotal = Object.values(byTramite).reduce((s,v)=>s+v.leads,0);
+    console.log(`[GHL] byTramite period: ${contacts.length} contacts filtered, ${tramiteTotal} have tramite filled. Breakdown:`, JSON.stringify(byTramite));
     DATA.ghlLive.byTramite = byTramite;
     DATA.ghlLive.byCountry = byCountry;
 

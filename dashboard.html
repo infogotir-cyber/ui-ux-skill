@@ -2460,10 +2460,9 @@ function generatePDF() {
     const prev = i>0?DATA.funnel[i-1].value:step.value;
     const pct = Math.round(step.value/DATA.funnel[0].value*100);
     const barW = 170*(step.value/DATA.funnel[0].value)*0.9;
-    doc.setFillColor(30,64,175);
-    doc.setGlobalAlpha(0.15+(i*0.1));
+    const blueShade = Math.round(80 + i * 25);
+    doc.setFillColor(30, 64, Math.min(blueShade, 220));
     doc.rect(20,y,barW,8,'F');
-    doc.setGlobalAlpha(1);
     doc.setFontSize(9);
     doc.setFont('helvetica','normal');
     doc.setTextColor(30,41,59);

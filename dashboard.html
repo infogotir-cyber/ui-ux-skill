@@ -1560,22 +1560,41 @@ function recalcFromPeriod(p) {
   // Refresh llamadas section if already inited
   if(sectionInited['llamadas']) initLlamadas();
 
-  // Refresh day-by-day chart for the selected period (range.from → range.to)
-  const dayMap = {}, wonDayMap = {};
+  // Rebuild leads/ventas chart bucketed by day/week/month depending on period length
+  const bucketMap = {}, wonBucketMap = {};
+  const MONTHS_ES = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+  const getBucket = (dateStr) => {
+    if(!dateStr) return null;
+    const d = new Date(typeof dateStr === 'number' ? dateStr : dateStr);
+    if(isNaN(d)) return null;
+    if(days <= 60) return d.toISOString().slice(0,10); // daily
+    if(days <= 180) { // weekly: bucket to Monday of the week
+      const day = d.getDay(); const diff = (day === 0 ? -6 : 1 - day);
+      const mon = new Date(d); mon.setDate(d.getDate() + diff);
+      return mon.toISOString().slice(0,10);
+    }
+    return d.getFullYear()+'-'+(String(d.getMonth()+1).padStart(2,'0')); // monthly
+  };
+  const bucketLabel = (k) => {
+    if(days <= 60) { const d=new Date(k); return d.getDate()+' '+MONTHS_ES[d.getMonth()]; }
+    if(days <= 180) { const d=new Date(k); return d.getDate()+' '+MONTHS_ES[d.getMonth()]; }
+    const [y,m] = k.split('-'); return MONTHS_ES[+m-1]+' '+y.slice(2);
+  };
+  // Pre-fill all buckets
   for(let t=range.from; t<=range.to; t+=86400000) {
-    const k=new Date(t).toISOString().slice(0,10);
-    dayMap[k]=0; wonDayMap[k]=0;
+    const k = getBucket(new Date(t).toISOString());
+    if(k && !(k in bucketMap)) { bucketMap[k]=0; wonBucketMap[k]=0; }
   }
-  contacts.forEach(c=>{ const k=(c.dateAdded||c.createdAt||'').slice(0,10); if(k in dayMap) dayMap[k]++; });
-  wonOpps.forEach(o=>{ const k=(o.closedDate||o.closeDate||'').slice(0,10); if(k in wonDayMap) wonDayMap[k]++; });
-  const dKeys   = Object.keys(dayMap);
-  const dLabels = dKeys.map(k=>{ const d=new Date(k); return d.getDate()+' '+(d.toLocaleString('es-ES',{month:'short'})); });
+  contacts.forEach(c=>{ const k=getBucket(c.dateAdded||c.createdAt||''); if(k && k in bucketMap) bucketMap[k]++; });
+  wonOpps.forEach(o=>{ const k=getBucket(o.closedDate||o.closeDate||o.updatedAt||''); if(k && k in wonBucketMap) wonBucketMap[k]++; });
+  const bKeys = Object.keys(bucketMap).sort();
+  const bLabels = bKeys.map(bucketLabel);
   if(charts['chart-leads-ventas']) {
     charts['chart-leads-ventas'].updateSeries([
-      { name:'Leads',  data: dKeys.map(k=>dayMap[k]) },
-      { name:'Ventas', data: dKeys.map(k=>wonDayMap[k]) }
+      { name:'Leads',  data: bKeys.map(k=>bucketMap[k]) },
+      { name:'Ventas', data: bKeys.map(k=>wonBucketMap[k]) }
     ]);
-    charts['chart-leads-ventas'].updateOptions({ xaxis:{ categories: dLabels } });
+    charts['chart-leads-ventas'].updateOptions({ xaxis:{ categories: bLabels } });
   }
 
   // Recalculate Campañas + Trámite + País with period-filtered contacts

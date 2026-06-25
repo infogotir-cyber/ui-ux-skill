@@ -4040,49 +4040,56 @@ function refreshEjecutivoCharts(contactList, oppList, sourceCounts, won, revenue
     charts['chart-conversion-etapa'].updateOptions({ xaxis:{ categories: etapaLabels } });
   }
 
-  // ── 3. Fuentes de leads (donut) ───────────────────────────────
-  const SOURCE_GROUPS = {
-    'instagram':            { label:'Instagram',  c:'#e1306c' },
-    'facebook':             { label:'Facebook',   c:'#1877f2' },
-    'tiktok':               { label:'TikTok',     c:'#888' },
-    'meta ads':             { label:'Meta Ads',   c:'#0866ff' },
-    'google':               { label:'Google',     c:'#4285f4' },
-    'sitio web':            { label:'Sitio Web',  c:'#38bdf8' },
-    'jesús mosquera':       { label:'Referidos',  c:'#a78bfa' },
-    'nasla espinosa':       { label:'Referidos',  c:'#a78bfa' },
-    'wilmen mendoza':       { label:'Referidos',  c:'#a78bfa' },
-    'centro de estudios':   { label:'Referidos',  c:'#4ade80' },
-    'amigo / familiar':     { label:'Referidos',  c:'#4ade80' },
+  // ── 3. Fuentes de leads (donut) — build from campanas ghlVal mappings ──────
+  // Build a reverse map: ghlVal → {label, color} from campanas config
+  const CANAL_COLORS = {
+    'afiliado': '#a78bfa', 'pagado': '#f59e0b', 'organico': '#38bdf8', 'otro': '#94a3b8'
   };
-  const grouped = {};
-  Object.entries(sourceCounts).forEach(([k,v]) => {
-    const def = SOURCE_GROUPS[k] || { label:'Otro', c:'#94a3b8' };
-    grouped[def.label] = (grouped[def.label]||0) + v;
-    grouped[def.label+'__c'] = grouped[def.label+'__c'] || def.c;
+  const ghlValToGroup = {};
+  DATA.campanas.forEach(camp => {
+    const key = (camp.ghlVal || camp.canal.toLowerCase()).trim();
+    const color = CANAL_COLORS[camp.tipo] || '#94a3b8';
+    // Group affiliates together as "Referidos", paid as their channel name
+    const label = camp.tipo === 'afiliado' ? 'Referidos'
+      : camp.tipo === 'pagado' ? camp.canal
+      : camp.canal;
+    ghlValToGroup[key] = { label, c: color };
   });
-  const fLabels = Object.keys(grouped).filter(k=>!k.endsWith('__c'));
-  const fVals   = fLabels.map(l=>grouped[l]);
-  const fColors = fLabels.map(l=>grouped[l+'__c']||'#94a3b8');
-  if(fLabels.length>0 && charts['chart-fuentes']) {
+
+  const grouped = {};
+  Object.entries(sourceCounts).forEach(([k, v]) => {
+    const def = ghlValToGroup[k.toLowerCase().trim()] || { label: 'Otro', c: '#94a3b8' };
+    grouped[def.label] = (grouped[def.label] || 0) + v;
+    grouped[def.label + '__c'] = grouped[def.label + '__c'] || def.c;
+  });
+  const fLabels = Object.keys(grouped).filter(k => !k.endsWith('__c')).sort((a,b)=>grouped[b]-grouped[a]);
+  const fVals   = fLabels.map(l => grouped[l]);
+  const fColors = fLabels.map(l => grouped[l + '__c'] || '#94a3b8');
+  if(fLabels.length > 0 && charts['chart-fuentes']) {
     charts['chart-fuentes'].updateSeries(fVals);
     charts['chart-fuentes'].updateOptions({ labels: fLabels, colors: fColors });
   }
 
-  // ── 4. Comparativa períodos — 12 meses reales de GHL ─────────
-  // Last 6 months vs previous 6 months (facturación mensual)
-  if(charts['chart-comparativa'] && hist.keys.length >= 2) {
+  // ── 4. Comparativa períodos — período actual vs período anterior ──────────
+  if(charts['chart-comparativa']) {
     const note = document.getElementById('comparativa-note');
     if(note) note.style.display = 'none';
-    // Show leads & revenue side by side per month (last 12 months)
+
+    // Build monthly history and show last 12 months (all months available)
+    const mKeys = hist.keys.slice(-12);
+    const mLabels = mKeys.map((_,i) => hist.labels[hist.keys.length - mKeys.length + i]);
+    const mLeads   = mKeys.map((_,i) => hist.leads[hist.keys.length - mKeys.length + i]);
+    const mRevenue = mKeys.map((_,i) => hist.revenue[hist.keys.length - mKeys.length + i]);
+
     charts['chart-comparativa'].updateSeries([
-      { name:'Leads', data: hist.leads },
-      { name:'Facturación €', data: hist.revenue }
+      { name: 'Leads',         data: mLeads   },
+      { name: 'Facturación €', data: mRevenue }
     ]);
     charts['chart-comparativa'].updateOptions({
-      xaxis:{ categories: hist.labels },
-      yaxis:[
-        { labels:{ style:{colors:'#64748b'}, formatter:v=>v } },
-        { opposite:true, labels:{ style:{colors:'#64748b'}, formatter:v=>'€'+(v>=1000?(v/1000).toFixed(0)+'k':v) } }
+      xaxis: { categories: mLabels },
+      yaxis: [
+        { seriesName:'Leads',         labels:{ style:{ colors:'#64748b' }, formatter:v=>v } },
+        { seriesName:'Facturación €', opposite:true, labels:{ style:{ colors:'#64748b' }, formatter:v=>'€'+(v>=1000?(v/1000).toFixed(1)+'k':v) } }
       ]
     });
   }

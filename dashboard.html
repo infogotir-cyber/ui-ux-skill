@@ -3410,12 +3410,15 @@ async function loadGHLData() {
     DATA.ghlLive.byGrupo    = {};
     DATA.ghlLive.noQualified = { cue:0, tiempo:0, fondos:0 };
 
-    // Debug: log custom field keys from first contact that has fields
-    const firstWithFields = contactList.find(c => (c.customFields||c.customField||[]).length > 0);
-    if(firstWithFields) {
-      const flds = firstWithFields.customFields || firstWithFields.customField || [];
-      console.log('[GHL] Custom field keys sample:', flds.map(f=>`${f.key||f.id||f.fieldKey}=${JSON.stringify(f.value||f.fieldValue)}`).join(' | '));
-    }
+    // Debug: log all unique custom field keys across first 10 contacts with fields
+    const fieldKeySeen = {};
+    contactList.slice(0,200).forEach(c => {
+      (c.customFields||c.customField||[]).forEach(f => {
+        const k = f.key||f.id||f.fieldKey||'';
+        if(k && !fieldKeySeen[k]) { fieldKeySeen[k] = f.value||f.fieldValue||''; }
+      });
+    });
+    console.log('[GHL] All custom field keys found:', Object.entries(fieldKeySeen).map(([k,v])=>`${k}=${JSON.stringify(v)}`).join(' | '));
 
     contactList.forEach(c => {
       const fields = c.customFields || c.customField || [];
@@ -3423,11 +3426,11 @@ async function loadGHLData() {
 
       if(Array.isArray(fields)) {
         const fSrc   = fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('canal_referencia'));
-        const fPais  = fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('pais_de_origen') || (f.key||f.id||f.fieldKey||'').includes('pais_origen') || (f.key||f.id||f.fieldKey||'').includes('country') || (f.key||f.id||f.fieldKey||'').includes('pa_s'));
-        const fTram  = fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('tipo_de_tr') || (f.key||f.id||f.fieldKey||'').includes('tramite') || (f.key||f.id||f.fieldKey||'').includes('tr_mite') || (f.key||f.id||f.fieldKey||'').includes('servicio'));
+        const fPais  = fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('pais_de_origen') || (f.key||f.id||f.fieldKey||'').includes('pais_origen') || (f.key||f.id||f.fieldKey||'').includes('pa_s_de') || (f.key||f.id||f.fieldKey||'').includes('country'));
+        const fTram  = fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('tipo_de_tr') || (f.key||f.id||f.fieldKey||'').includes('tramite') || (f.key||f.id||f.fieldKey||'').includes('tr_mite') || (f.key||f.id||f.fieldKey||'').includes('tipo_tr') || (f.key||f.id||f.fieldKey||'').includes('servicio'));
         const fGrupo = fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('grupo_familiar'));
         src    = fSrc?.value  || fSrc?.fieldValue;
-        pais   = fPais?.value || fPais?.fieldValue;
+        pais   = fPais?.value || fPais?.fieldValue || c.country || null;  // fallback to standard country field
         tramite= fTram?.value || fTram?.fieldValue;
         grupo  = fGrupo?.value || fGrupo?.fieldValue;
       }
@@ -3583,13 +3586,28 @@ async function loadGHLData() {
     // Fetch GHL users to resolve IDs → names
     let userMap = DATA.ghlLive.userMap || {};
     try {
-      const uRes = await fetch(`https://services.leadconnectorhq.com/users/?locationId=${GHL.locationId}&limit=100`, { headers: GHL.headers });
-      if(uRes.ok) {
-        const uData = await uRes.json();
-        const uList = uData.users || uData.data || [];
-        uList.forEach(u => { if(u.id) userMap[u.id] = (u.name || u.firstName+' '+u.lastName || u.email || u.id).trim(); });
-        DATA.ghlLive.userMap = userMap;
-        console.log('[GHL] Users loaded:', Object.entries(userMap).map(([id,n])=>n).join(', '));
+      // Try location-specific endpoint first (works with location-scoped tokens)
+      const uEndpoints = [
+        `https://services.leadconnectorhq.com/locations/${GHL.locationId}/users`,
+        `https://services.leadconnectorhq.com/users/?locationId=${GHL.locationId}&limit=100`
+      ];
+      for(const ep of uEndpoints) {
+        const uRes = await fetch(ep, { headers: GHL.headers });
+        if(uRes.ok) {
+          const uData = await uRes.json();
+          const uList = uData.users || uData.data || [];
+          uList.forEach(u => {
+            if(u.id) {
+              const n = (u.name || ((u.firstName||'') + ' ' + (u.lastName||'')).trim() || u.email || u.id).trim();
+              userMap[u.id] = n;
+            }
+          });
+          DATA.ghlLive.userMap = userMap;
+          console.log('[GHL] Users loaded:', Object.values(userMap).join(', '));
+          break;
+        } else {
+          console.warn('[GHL] Users endpoint', ep, 'returned', uRes.status);
+        }
       }
     } catch(e) { console.warn('[GHL] Could not fetch users:', e); }
 

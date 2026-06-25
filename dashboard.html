@@ -3478,9 +3478,12 @@ async function loadGHLData() {
 
       // Country accumulation
       if(pais) {
-        const k = pais.toLowerCase().trim();
-        if(!DATA.ghlLive.byCountry[k]) DATA.ghlLive.byCountry[k] = { leads:0, ventas:0 };
-        DATA.ghlLive.byCountry[k].leads++;
+        const paisStr = Array.isArray(pais) ? pais[0] : pais;
+        const k = (paisStr||'').toString().toLowerCase().trim();
+        if(k) {
+          if(!DATA.ghlLive.byCountry[k]) DATA.ghlLive.byCountry[k] = { leads:0, ventas:0 };
+          DATA.ghlLive.byCountry[k].leads++;
+        }
       }
       // Tramite accumulation
       if(tramite) {
@@ -3493,9 +3496,14 @@ async function loadGHLData() {
       }
       // Grupo familiar accumulation
       if(grupo) {
-        const k = (grupo||'').toLowerCase().trim();
-        if(!DATA.ghlLive.byGrupo[k]) DATA.ghlLive.byGrupo[k] = { leads:0, ventas:0, revenue:0 };
-        DATA.ghlLive.byGrupo[k].leads++;
+        const grupoKeys = Array.isArray(grupo) ? grupo : [grupo];
+        grupoKeys.forEach(g => {
+          const k = (g||'').toString().toLowerCase().trim();
+          if(k) {
+            if(!DATA.ghlLive.byGrupo[k]) DATA.ghlLive.byGrupo[k] = { leads:0, ventas:0, revenue:0 };
+            DATA.ghlLive.byGrupo[k].leads++;
+          }
+        });
       }
       // Tags — no cualificados
       const tags = c.tags || [];

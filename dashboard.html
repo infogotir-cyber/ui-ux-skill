@@ -1556,17 +1556,22 @@ function recalcFromPeriod(p) {
 
   // Recalculate funnel stage counts filtered by period
   const STAGE_MAP = {
-    'new lead /sin clasificar':0,'new lead / sin clasificar':0,
-    'cualificado':1,'cuailficado':1,'agendar llamada':1,
-    'llamada agendada':2,'llamada realizada':3,
+    'new lead /sin clasificar':0,'new lead / sin clasificar':0,'new lead/sin clasificar':0,
+    'new lead':0,'sin clasificar':0,'nuevo lead':0,
+    'cualificado':1,'cuailficado':1,'cualificada':1,'agendar llamada':1,'calificado':1,
+    'llamada agendada':2,'llamada_agendada':2,'cita agendada':2,
+    'llamada realizada':3,'llamada_realizada':3,'cita realizada':3,
     'información y contrato enviado':4,'informacion y contrato enviado':4,
-    'información y contrato  enviado':4,
-    'pronto pago':5,'pagado':6
+    'información y contrato  enviado':4,'info y contrato enviado':4,
+    'información y contrato':4,'informacion y contrato':4,
+    'pronto pago':5,'pago':5,
+    'pagado':6,'ganado':6,'won':6,'cerrado ganado':6
   };
   const stageCounts = new Array(7).fill(0);
   opps.forEach(o => {
-    const name = (o.pipelineStageName||o.stageName||o.stage?.name||'').toLowerCase().trim();
-    const idx = STAGE_MAP[name];
+    const nameAccented = (o.pipelineStageName||o.stageName||o.stage?.name||'').toLowerCase().trim();
+    const name = nameAccented.normalize('NFD').replace(/[̀-ͯ]/g,'');
+    const idx = STAGE_MAP[nameAccented] ?? STAGE_MAP[name];
     if(idx !== undefined) stageCounts[idx]++;
   });
   stageCounts.forEach((count,i) => { if(DATA.funnel[i]) DATA.funnel[i].value = count || 0; });
@@ -3636,22 +3641,40 @@ async function loadGHLData() {
     document.getElementById('kpi-conversion').textContent = total>0 ? ((won/total)*100).toFixed(1)+'%' : '0.0%';
     console.log('[GHL] oppList:', oppList.length, 'won:', won, 'revenue:', revenue);
 
-    // Pipeline Pre-venta → funnel (nombres exactos de GHL, comparación case-insensitive)
+    // Pipeline Pre-venta → funnel
+    // Log all unique stage names for debugging
+    const uniqueStages = [...new Set(oppList.map(o=>(o.pipelineStageName||o.stageName||o.stage?.name||o.stageId||'').trim()))].filter(Boolean);
+    console.log('[GHL] Stage names en pipeline:', uniqueStages);
+
     const STAGE_MAP = {
-      'new lead /sin clasificar':0,'new lead / sin clasificar':0,
-      'cualificado':1,'cuailficado':1,'agendar llamada':1,
-      'llamada agendada':2,'llamada realizada':3,
+      // Stage 0 — New lead
+      'new lead /sin clasificar':0,'new lead / sin clasificar':0,'new lead/sin clasificar':0,
+      'new lead':0,'sin clasificar':0,'nuevo lead':0,
+      // Stage 1 — Cualificado
+      'cualificado':1,'cuailficado':1,'cualificada':1,'agendar llamada':1,'calificado':1,
+      // Stage 2 — Llamada agendada
+      'llamada agendada':2,'llamada_agendada':2,'cita agendada':2,
+      // Stage 3 — Llamada realizada
+      'llamada realizada':3,'llamada_realizada':3,'cita realizada':3,
+      // Stage 4 — Info y contrato
       'información y contrato enviado':4,'informacion y contrato enviado':4,
-      'información y contrato  enviado':4,
-      'pronto pago':5,'pagado':6
+      'información y contrato  enviado':4,'info y contrato enviado':4,
+      'información y contrato':4,'informacion y contrato':4,
+      // Stage 5 — Pronto pago
+      'pronto pago':5,'pago':5,
+      // Stage 6 — Pagado / Ganado
+      'pagado':6,'ganado':6,'won':6,'cerrado ganado':6
     };
     const stageCounts = new Array(7).fill(0);
     oppList.forEach(o => {
-      const name = (o.pipelineStageName||o.stageName||o.stage?.name||'').toLowerCase().trim();
-      const idx = STAGE_MAP[name];
+      const name = (o.pipelineStageName||o.stageName||o.stage?.name||'').toLowerCase().trim()
+        .normalize('NFD').replace(/[̀-ͯ]/g,''); // strip accents for matching
+      const nameAccented = (o.pipelineStageName||o.stageName||o.stage?.name||'').toLowerCase().trim();
+      const idx = STAGE_MAP[nameAccented] ?? STAGE_MAP[name];
       if(idx !== undefined && Number.isInteger(idx)) stageCounts[idx]++;
     });
-    stageCounts.forEach((count,i) => { if(count>0 && DATA.funnel[i]) DATA.funnel[i].value = count; });
+    console.log('[GHL] stageCounts:', stageCounts);
+    stageCounts.forEach((count,i) => { if(DATA.funnel[i]) DATA.funnel[i].value = count; });
 
     // ── 3. CITAS / LLAMADAS (GHL Calendar) ──────────────────────
     try {

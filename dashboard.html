@@ -277,7 +277,14 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
         <option value="trimestre">Últimos 3 meses</option>
         <option value="semestre">Últimos 6 meses</option>
         <option value="ano">Este año (365d)</option>
+        <option value="custom">Personalizado...</option>
       </select>
+      <div id="custom-range" class="hidden flex items-center gap-1">
+        <input type="date" id="custom-from" class="bg-slate-800 border border-slate-700 text-white text-xs rounded-lg px-2 py-2 focus:outline-none focus:border-blue-500">
+        <span class="text-slate-500 text-xs">→</span>
+        <input type="date" id="custom-to" class="bg-slate-800 border border-slate-700 text-white text-xs rounded-lg px-2 py-2 focus:outline-none focus:border-blue-500">
+        <button onclick="applyCustomRange()" class="bg-blue-600 hover:bg-blue-700 text-white text-xs rounded-lg px-3 py-2 transition-colors">Aplicar</button>
+      </div>
     </div>
     <button onclick="toggleTheme()" class="toggle-theme">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="w-4 h-4" id="theme-icon"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -1487,6 +1494,7 @@ function toggleTheme() {
 // ═══════════════════════════════════════
 // Returns {from, to} timestamps in ms for each named period
 function getPeriodRange(p) {
+  if(p === 'custom' && DATA.customRange) return DATA.customRange;
   const now = Date.now();
   const d = n => n * 86400000;
   switch(p) {
@@ -1500,6 +1508,17 @@ function getPeriodRange(p) {
     default:           return { from: now - d(30),  to: now };
   }
 }
+
+function applyCustomRange() {
+  const fromVal = document.getElementById('custom-from').value;
+  const toVal   = document.getElementById('custom-to').value;
+  if(!fromVal || !toVal) return;
+  DATA.customRange = { from: new Date(fromVal).getTime(), to: new Date(toVal+'T23:59:59').getTime() };
+  DATA.period = 'custom';
+  if(GHL.connected && DATA.ghlLive.allContacts && DATA.ghlLive.allContacts.length > 0) {
+    recalcFromPeriod('custom');
+  }
+}
 const PERIOD_DAYS = { semana:7, mes:30, trimestre:90, semestre:180, ano:365,
                       semana_ant:7, mes_ant:30 }; // kept for renderVentasCharts compat
 
@@ -1507,6 +1526,16 @@ function setPeriod(p) {
   DATA.period = p;
   const sel = document.getElementById('period-select');
   if(sel) sel.value = p;
+  const customDiv = document.getElementById('custom-range');
+  if(customDiv) customDiv.classList.toggle('hidden', p !== 'custom');
+  if(p === 'custom') {
+    // Pre-fill with last 30 days if not set
+    const toEl = document.getElementById('custom-to');
+    const fromEl = document.getElementById('custom-from');
+    if(toEl && !toEl.value) toEl.value = new Date().toISOString().slice(0,10);
+    if(fromEl && !fromEl.value) { const d=new Date(); d.setDate(d.getDate()-30); fromEl.value = d.toISOString().slice(0,10); }
+    return; // wait for applyCustomRange
+  }
 
   // If GHL data is loaded, recalculate everything from real data filtered by period
   if(GHL.connected && DATA.ghlLive.allContacts && DATA.ghlLive.allContacts.length > 0) {
@@ -3732,8 +3761,9 @@ async function loadGHLData() {
     console.log('[GHL] oppList:', oppList.length, 'won:', won, 'revenue:', revenue);
 
     // Pipeline Pre-venta → funnel
-    // Log all unique stage names for debugging
-    const uniqueStages = [...new Set(oppList.map(o=>getStageName(o)||o.stageId||''))].filter(Boolean);
+    const _sm = DATA.ghlLive.stageIdMap || {};
+    const _getStage = o => { const d=o.pipelineStageName||o.stageName||o.stage?.name||''; if(d) return d.toLowerCase().trim(); const sid=o.stageId||o.pipelineStageId||o.stage?.id||''; return sid?(_sm[sid]||'').toLowerCase().trim():''; };
+    const uniqueStages = [...new Set(oppList.map(o=>_getStage(o)||o.stageId||''))].filter(Boolean);
     console.log('[GHL] Stage names en pipeline:', uniqueStages);
 
     const STAGE_MAP = {
@@ -3757,7 +3787,7 @@ async function loadGHLData() {
     };
     const stageCounts = new Array(7).fill(0);
     oppList.forEach(o => {
-      const nameAccented = getStageName(o);
+      const nameAccented = _getStage(o);
       const name = nameAccented.normalize('NFD').replace(/[̀-ͯ]/g,'');
       const idx = STAGE_MAP[nameAccented] ?? STAGE_MAP[name];
       if(idx !== undefined && Number.isInteger(idx)) stageCounts[idx]++;

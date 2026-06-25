@@ -1707,21 +1707,16 @@ function initEjecutivo() {
     noData:{ text:'Sin datos aún', style:{ color:'#64748b' } }
   }));
 
-  // Sources donut — built from DATA.campanas (populated from GHL)
-  const camps = DATA.campanas.filter(c => c.leads > 0);
-  if(camps.length > 0) {
-    initChart('chart-fuentes', mkOpts({
-      chart:{ type:'donut', height:220 },
-      series: camps.map(c=>c.leads),
-      labels: camps.map(c=>c.canal),
-      colors: camps.map(c=>c.color),
-      legend:{ position:'bottom', labels:{ colors:'#94a3b8' } },
-      plotOptions:{ pie:{ donut:{ size:'65%' } } }
-    }));
-  } else {
-    const el = document.getElementById('chart-fuentes');
-    if(el) el.innerHTML = '<div class="text-xs text-slate-500 text-center py-8">Sin datos — conectá GHL para ver distribución de fuentes</div>';
-  }
+  // Sources donut — always init, updated by refreshEjecutivoCharts once GHL loads
+  initChart('chart-fuentes', mkOpts({
+    chart:{ type:'donut', height:220 },
+    series: [1],
+    labels: ['Cargando...'],
+    colors: ['#1e293b'],
+    legend:{ position:'bottom', labels:{ colors:'#94a3b8' } },
+    plotOptions:{ pie:{ donut:{ size:'65%' } } },
+    noData:{ text:'Conectá GHL', style:{ color:'#64748b' } }
+  }));
 
   initChart('chart-comparativa', mkOpts({
     chart:{ type:'bar', height:220 },

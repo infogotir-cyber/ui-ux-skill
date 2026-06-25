@@ -3590,21 +3590,24 @@ async function loadGHLData() {
     DATA.ghlLive.totalWon     = won;
     DATA.ghlLive.totalRevenue = revenue;
 
-    // Lost reasons — try multiple GHL field names
+    // Lost reasons — fetch label map from GHL, then tally
     DATA.ghlLive.lostReasons = {};
+    let lostReasonMap = {}; // id → label
+    try {
+      const lr = await ghlFetchV2('GET', `/opportunities/lost-reasons`, { locationId: GHL.locationId });
+      (lr.lostReasons || lr.data || []).forEach(r => { if(r.id) lostReasonMap[r.id] = r.name || r.label || r.id; });
+    } catch(_) {}
     oppList.filter(o=>(o.status||'').toLowerCase()==='lost').forEach(o => {
-      const reason = o.lostReason || o.lost_reason || o.lostReasonLabel ||
-                     o.reason || o.lostReasonId || null;
-      if(reason && String(reason).trim()) {
-        const k = String(reason).trim();
-        DATA.ghlLive.lostReasons[k] = (DATA.ghlLive.lostReasons[k]||0)+1;
-      }
-      // No reason recorded — count separately
-      if(!reason || !String(reason).trim()) {
-        DATA.ghlLive.lostReasons['Sin motivo registrado'] = (DATA.ghlLive.lostReasons['Sin motivo registrado']||0)+1;
-      }
+      const rawId    = o.lostReasonId || o.lost_reason_id || null;
+      const rawLabel = o.lostReason   || o.lost_reason    || o.lostReasonLabel || o.reason || null;
+      const label = (rawId && lostReasonMap[rawId])
+        ? lostReasonMap[rawId]
+        : (rawLabel && String(rawLabel).trim() && !String(rawLabel).match(/^[0-9a-f]{20,}$/i))
+          ? String(rawLabel).trim()
+          : null;
+      const k = label || 'Sin motivo registrado';
+      DATA.ghlLive.lostReasons[k] = (DATA.ghlLive.lostReasons[k]||0)+1;
     });
-    console.log('[GHL] Lost reasons:', DATA.ghlLive.lostReasons);
 
     // Vendedor stats
     DATA.ghlLive.byVendedor = {};
@@ -3668,44 +3671,46 @@ async function loadGHLData() {
       // Get calendar list to find active sales calendars
       const calsResp = await ghlFetchV2('GET', `/calendars/`, { locationId: GHL.locationId });
       const calListAll = calsResp.calendars || calsResp.data || [];
-      const ACTIVE_CALS = ['asesoría gotir','asesoria gotir','mariano barcelona'];
+      const ACTIVE_CALS = ['asesoría gotir','asesoria gotir','asesoría gotir','mariano barcelona','mariano'];
       const calList = calListAll.filter(c => ACTIVE_CALS.some(n => (c.name||'').toLowerCase().includes(n)));
       const calListFinal = calList.length > 0 ? calList : calListAll;
 
+      const startISO = new Date(startMs).toISOString();
+      const endISO   = new Date(endMs).toISOString();
       let apptList = [];
 
-      // Method 1: correct GHL V2 endpoint per calendar (ms timestamps)
+      // GHL V2 calendar events endpoint — try multiple param/timestamp variants
       for(const cal of calListFinal) {
+        if(apptList.length > 0) break; // stop after first successful cal
+        // Variant A: ms timestamps
         try {
-          const ev = await ghlFetchV2('GET', `/calendars/events/appointments`, {
+          const ev = await ghlFetchV2('GET', `/calendars/events`, {
             calendarId: cal.id, locationId: GHL.locationId,
             startTime: startMs, endTime: endMs
           });
-          const items = ev.appointments || ev.events || ev.data || [];
-          console.log('[GHL] Cal', cal.name, '→', items.length, 'citas');
-          apptList = apptList.concat(items);
-        } catch(e) { console.warn('[GHL] Cal fetch error:', cal.name, e.message); }
+          const items = ev.events || ev.appointments || ev.data || [];
+          if(items.length > 0) { apptList = apptList.concat(items); console.log('[GHL] Cal (ms)', cal.name, '→', items.length); continue; }
+        } catch(_) {}
+        // Variant B: ISO timestamps
+        try {
+          const ev = await ghlFetchV2('GET', `/calendars/events`, {
+            calendarId: cal.id, locationId: GHL.locationId,
+            startTime: startISO, endTime: endISO
+          });
+          const items = ev.events || ev.appointments || ev.data || [];
+          if(items.length > 0) { apptList = apptList.concat(items); console.log('[GHL] Cal (ISO)', cal.name, '→', items.length); continue; }
+        } catch(_) {}
+        console.warn('[GHL] No appointments found for calendar:', cal.name);
       }
 
-      // Method 2: all appointments for location (no calendar filter)
+      // Fallback: all calendars, no filter
       if(apptList.length === 0) {
         try {
-          const ev2 = await ghlFetchV2('GET', `/calendars/events/appointments`, {
+          const ev = await ghlFetchV2('GET', `/calendars/events`, {
             locationId: GHL.locationId, startTime: startMs, endTime: endMs
           });
-          apptList = ev2.appointments || ev2.events || ev2.data || [];
-          console.log('[GHL] All-location appointments:', apptList.length);
-        } catch(_) {}
-      }
-
-      // Method 3: /appointments/ endpoint (legacy fallback)
-      if(apptList.length === 0) {
-        try {
-          const ap = await ghlFetchV2('GET', `/appointments/`, {
-            locationId: GHL.locationId, startTime: startMs, endTime: endMs, limit: 500
-          });
-          apptList = ap.appointments || ap.events || ap.data || [];
-          console.log('[GHL] /appointments/ fallback:', apptList.length);
+          apptList = ev.events || ev.appointments || ev.data || [];
+          console.log('[GHL] All-cal fallback:', apptList.length);
         } catch(_) {}
       }
       // Store full citas list for period filtering

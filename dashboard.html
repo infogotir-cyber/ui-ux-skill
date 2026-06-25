@@ -1853,27 +1853,11 @@ function renderVentasCharts(days) {
       }));
     }
 
-    // ── Desglose por Servicio (dinámico desde byTramite) ────
-    // Count revenue by tramite from won opportunities linked via contacts
-    // Best-effort: use byTramite lead counts + avg ticket as revenue estimate
-    // Real revenue per tramite requires contact→opp matching which GHL doesn't expose directly
+    // ── Desglose por Servicio (revenue real de oportunidades ganadas por trámite) ────
     const tramiteRev = {};
-    const tramiteMap = {
-      'visado_arg':'Visado Argentina','visado_latam':'Visado Latam',
-      'estancia':'Estancia','renovación':'Renovación','reagrupación':'Reagrupación Familiar',
-      'pac':'PAC','nòmada_digital':'Nómada Digital','no_lucrativa':'No Lucrativa',
-      'emprendedor':'Emprendedor','workandholidays':'Work & Holidays','visa_de_trabajo':'Visa de Trabajo'
-    };
-    // Use byTramite for lead counts, scale by overall conversion to estimate revenue
-    const convRate = gl.allOpps && gl.allOpps.length > 0 ?
-      (gl.allOpps.filter(o=>o.status==='won').length / (gl.allContacts||[]).length) : 0.13;
-    const avgTk = ticket > 0 ? ticket : (gl.totalRevenue && gl.totalWon ? Math.round(gl.totalRevenue / gl.totalWon) : 1259);
-
-    Object.entries(gl.byTramite || {}).forEach(([k, v]) => {
-      if(v.leads > 0) {
-        const label = tramiteMap[k] || k.replace(/_/g,' ').replace(/\b\w/g, c=>c.toUpperCase());
-        tramiteRev[label] = Math.round(v.leads * convRate * avgTk);
-      }
+    Object.entries(gl.byTramite || {}).forEach(([label, v]) => {
+      if(v.revenue > 0) tramiteRev[label] = v.revenue;
+      else if(v.ventas > 0) tramiteRev[label] = v.ventas; // count fallback if no monetary value set
     });
 
     const sorted = Object.entries(tramiteRev).sort((a,b) => b[1]-a[1]);
@@ -1881,26 +1865,31 @@ function renderVentasCharts(days) {
     const svcData   = sorted.map(([,v]) => v);
     const svcColors = ['#3b82f6','#6366f1','#a78bfa','#f59e0b','#10b981','#ec4899','#f97316','#06b6d4','#84cc16','#e11d48','#8b5cf6'];
 
+    const hasRealRev = svcData.some(v => v >= 10); // at least one tramite with €10+ means real revenue
+    const svcSeriesName = hasRealRev ? 'Ingresos €' : 'Ventas (unidades)';
+    const svcFmt = v => hasRealRev ? '€'+v.toLocaleString('es-ES') : v+' ventas';
+
     if(svcLabels.length === 0) {
       const el = document.getElementById('chart-servicios');
-      if(el) el.innerHTML = '<div class="text-xs text-slate-500 text-center py-8">Sin datos de trámites — se poblará automáticamente cuando los contactos tengan el campo <code class="text-slate-400">tipo_de_trámite</code> completado</div>';
+      if(el) el.innerHTML = '<div class="text-xs text-slate-500 text-center py-8">Sin datos — las oportunidades ganadas deben tener el campo <code class="text-slate-400">tipo_de_trámite</code> y un valor monetario</div>';
     } else if(charts['chart-servicios']) {
-      charts['chart-servicios'].updateSeries([{ name:'Ingresos est. €', data: svcData }]);
+      charts['chart-servicios'].updateSeries([{ name: svcSeriesName, data: svcData }]);
       charts['chart-servicios'].updateOptions({
         xaxis:{ categories: svcLabels },
         colors: svcColors.slice(0, svcLabels.length),
-        chart:{ height: Math.max(200, svcLabels.length * 40) }
+        chart:{ height: Math.max(200, svcLabels.length * 40) },
+        dataLabels:{ formatter: svcFmt }
       });
     } else {
       initChart('chart-servicios', mkOpts({
         chart:{ type:'bar', height: Math.max(200, svcLabels.length * 40) },
-        series:[{ name:'Ingresos est. €', data: svcData }],
+        series:[{ name: svcSeriesName, data: svcData }],
         xaxis:{ categories: svcLabels, labels:{ style:{ colors:'#64748b', fontSize:'11px' } } },
-        yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>'€'+v.toLocaleString('es-ES') } },
+        yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter: v => v.toLocaleString('es-ES') } },
         colors: svcColors.slice(0, svcLabels.length),
         plotOptions:{ bar:{ borderRadius:4, distributed:true, horizontal:true } },
         legend:{ show:false },
-        dataLabels:{ enabled:true, formatter:v=>'€'+v.toLocaleString('es-ES'), style:{ colors:['#fff'], fontSize:'10px' } }
+        dataLabels:{ enabled:true, formatter: svcFmt, style:{ colors:['#fff'], fontSize:'10px' } }
       }));
     }
 
@@ -3731,20 +3720,38 @@ async function loadGHLData() {
       if((o.status||'').toLowerCase()==='won') { DATA.ghlLive.byVendedor[uid].ventas++; DATA.ghlLive.byVendedor[uid].revenue += val; }
     });
 
-    // Won ventas → mark in byGrupo (cross-reference contact's grupo_familiar)
+    // Won ventas → mark in byGrupo and byTramite (cross-reference contact fields)
     const contactMap = {};
     contactList.forEach(c => { if(c.id) contactMap[c.id] = c; });
+    const TRAMITE_VALS_WON = new Set(['visado_arg','visado_latam','estancia','renovación','renovacion','reagrupación','reagrupacion','pac','nòmada_digital','nomada_digital','no_lucrativa','emprendedor','workandholidays','visa_de_trabajo']);
+    const TRAMITE_LABELS_WON = { 'visado_arg':'Visado ARG','visado_latam':'Visado LATAM','estancia':'Estancia','renovación':'Renovación','renovacion':'Renovación','reagrupación':'Reagrupación','reagrupacion':'Reagrupación','pac':'PAC','nòmada_digital':'Nómada Digital','nomada_digital':'Nómada Digital','no_lucrativa':'No Lucrativa','emprendedor':'Emprendedor','workandholidays':'Workandholidays','visa_de_trabajo':'Visa de Trabajo' };
     oppList.forEach(o => {
-      if(o.status !== 'won') return;
       const cid = o.contactId || o.contact_id || o.contact?.id;
       const c   = cid ? contactMap[cid] : null;
-      if(!c) return;
-      const fields = c.customFields || c.customField || [];
-      const fG = Array.isArray(fields) ? fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('grupo_familiar')) : null;
-      const g  = (fG?.value || fG?.fieldValue || '').toLowerCase().trim();
-      if(g && DATA.ghlLive.byGrupo[g]) {
-        DATA.ghlLive.byGrupo[g].ventas++;
-        DATA.ghlLive.byGrupo[g].revenue += (o.monetaryValue || 0);
+      const val = o.monetaryValue || o.monetary_value || 0;
+      const isWon = (o.status||'').toLowerCase() === 'won';
+
+      if(c) {
+        const fields = c.customFields || c.customField || [];
+        if(Array.isArray(fields)) {
+          // byGrupo
+          const fG = fields.find(f=>(FIELD_ID_MAP[f.key||f.id||f.fieldKey||'']||f.key||f.id||f.fieldKey||'').includes('grupo_familiar'));
+          const g  = (fG?.value || fG?.fieldValue || '').toLowerCase().trim();
+          if(isWon && g && DATA.ghlLive.byGrupo[g]) {
+            DATA.ghlLive.byGrupo[g].ventas++;
+            DATA.ghlLive.byGrupo[g].revenue += val;
+          }
+          // byTramite — revenue from real won opps
+          const fT = fields.find(f=>{ const v=((f.value||f.fieldValue||'')+'').toLowerCase().trim(); return TRAMITE_VALS_WON.has(v); });
+          if(fT) {
+            const rv = Array.isArray(fT.value||fT.fieldValue) ? (fT.value||fT.fieldValue)[0] : (fT.value||fT.fieldValue);
+            const label = TRAMITE_LABELS_WON[(rv+'').toLowerCase().trim()] || (rv+'');
+            if(label) {
+              if(!DATA.ghlLive.byTramite[label]) DATA.ghlLive.byTramite[label] = { leads:0, ventas:0, revenue:0 };
+              if(isWon) { DATA.ghlLive.byTramite[label].ventas++; DATA.ghlLive.byTramite[label].revenue += val; }
+            }
+          }
+        }
       }
     });
 

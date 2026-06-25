@@ -636,17 +636,24 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
 <!-- ══════════════════════════════════════════════════════════ -->
 <div id="s-vendedores" class="section p-6">
   <!-- Vendedores config panel -->
-  <div id="vendedores-config" class="card mb-4 border border-amber-800/40 bg-amber-950/20 hidden">
-    <div class="flex items-center gap-3 mb-3">
-      <svg class="w-4 h-4 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-      <h4 class="text-sm font-semibold text-amber-300">Configurar Vendedores</h4>
+  <div id="vendedores-config" class="card mb-4 border border-brand-800/40 bg-brand-950/10 hidden">
+    <div class="flex items-center gap-3 mb-4">
+      <svg class="w-4 h-4 text-brand-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/></svg>
+      <h4 class="text-sm font-semibold text-white">Vendedores activos</h4>
       <button onclick="document.getElementById('vendedores-config').classList.add('hidden')" class="ml-auto text-slate-500 hover:text-white text-xs">✕</button>
     </div>
-    <p class="text-xs text-slate-400 mb-3">Escribe los nombres o emails de los usuarios de GHL que son vendedores (uno por línea). Los demás usuarios (admin, soporte, etc.) serán ignorados en esta sección.</p>
-    <textarea id="vendedores-lista" rows="4" placeholder="ej:&#10;Juan Pérez&#10;maria@empresa.com&#10;Carlos Rodríguez" class="w-full bg-slate-900 border border-slate-700 rounded-lg p-3 text-sm text-white placeholder-slate-600 resize-none focus:outline-none focus:border-brand-500"></textarea>
-    <div class="flex gap-2 mt-3">
-      <button onclick="saveVendedoresConfig()" class="px-4 py-2 bg-brand-600 hover:bg-brand-500 text-white text-sm rounded-lg transition-colors">Guardar y recargar</button>
-      <button onclick="clearVendedoresConfig()" class="px-4 py-2 bg-slate-700 hover:bg-slate-600 text-white text-sm rounded-lg transition-colors">Mostrar todos</button>
+    <p class="text-xs text-slate-400 mb-3">Solo se muestran los vendedores configurados aquí. El ID de GHL es el que aparece en la URL del usuario en GoHighLevel (opcional, mejora la precisión).</p>
+    <div id="vendedores-config-list" class="space-y-2 mb-3"></div>
+    <div class="flex gap-2 items-end border-t border-slate-700/50 pt-3 mt-3">
+      <div class="flex-1">
+        <label class="text-xs text-slate-400 mb-1 block">Nombre para mostrar</label>
+        <input id="vend-new-name" type="text" placeholder="ej: Laura García" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-brand-500">
+      </div>
+      <div class="flex-1">
+        <label class="text-xs text-slate-400 mb-1 block">ID de GHL (opcional)</label>
+        <input id="vend-new-id" type="text" placeholder="ej: abc123XYZ..." class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-brand-500">
+      </div>
+      <button onclick="addVendedor()" class="px-4 py-2 bg-brand-600 hover:bg-brand-500 text-white text-sm rounded-lg transition-colors whitespace-nowrap">+ Agregar</button>
     </div>
   </div>
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 mb-6">
@@ -2222,22 +2229,32 @@ function initCampanas() {
 function initVendedores() {
   const gl = DATA.ghlLive.byVendedor;
   const hasReal = GHL.connected && gl && Object.keys(gl).length > 0;
-  const filter  = getVendedoresList(); // names/emails from config
+  const configured = getVendedoresConfig(); // [{name, ghlId}]
 
-  let entries = hasReal
-    ? Object.entries(gl).map(([uid, d]) => ({
-        nombre: d.name || uid,
-        opps: d.opps,
-        ventas: d.ventas,
-        revenue: d.revenue,
-        llamadas: d.llamadas || 0
-      }))
-    : [];
-
-  // Apply filter if configured
-  if(filter.length > 0) {
-    entries = entries.filter(e => filter.some(f => e.nombre.toLowerCase().includes(f)));
-  }
+  // Build entries only for configured vendedores
+  let entries = configured.map(cfg => {
+    // Try to match by GHL ID first, then by name substring
+    let found = null;
+    if(cfg.ghlId) {
+      found = gl[cfg.ghlId];
+    }
+    if(!found) {
+      const nameLower = cfg.name.toLowerCase();
+      // Also handle "Asesoría GOTIR" matching "Asesoría Nasla" or similar
+      const altNames = nameLower.includes('gotir') ? ['nasla','gotir','asesoria','asesoría'] : [nameLower];
+      const match = Object.entries(gl).find(([uid, d]) =>
+        altNames.some(a => (d.name||uid).toLowerCase().includes(a))
+      );
+      if(match) found = match[1];
+    }
+    return {
+      nombre: cfg.name, // always use configured display name
+      opps: found?.opps || 0,
+      ventas: found?.ventas || 0,
+      revenue: found?.revenue || 0,
+      llamadas: found?.llamadas || 0
+    };
+  });
 
   // Sort by revenue desc
   entries.sort((a,b) => b.revenue - a.revenue);
@@ -2929,16 +2946,24 @@ function initConvTramite() {
 }
 
 function initConvVendedor() {
-  const d = DATA.conv_vendedor;
   const gl = DATA.ghlLive.byVendedor;
-  const src = Object.keys(gl).length > 0
-    ? Object.values(gl).map(v=>({
-        nombre: v.name, llamadas:v.llamadas||'—', opps:v.opps||'—',
-        ventas:v.ventas, conv:((v.ventas/(v.opps||1))*100).toFixed(1)+'%',
-        facturacion:'€'+v.revenue.toLocaleString('es-ES'),
-        ticket: v.ventas>0?'€'+(v.revenue/v.ventas).toFixed(0):'—'
-      }))
-    : d;
+  const configured = getVendedoresConfig();
+  // Same logic as initVendedores: match by ID or name, use configured display name
+  const src = configured.map(cfg => {
+    let found = cfg.ghlId ? gl[cfg.ghlId] : null;
+    if(!found) {
+      const altNames = cfg.name.toLowerCase().includes('gotir') ? ['nasla','gotir','asesoria','asesoría'] : [cfg.name.toLowerCase()];
+      const match = Object.entries(gl).find(([uid,d]) => altNames.some(a=>(d.name||uid).toLowerCase().includes(a)));
+      if(match) found = match[1];
+    }
+    const v = found || { opps:0, ventas:0, revenue:0, llamadas:0 };
+    return {
+      nombre: cfg.name, llamadas: v.llamadas||0, opps: v.opps||0,
+      ventas: v.ventas, conv:((v.ventas/(v.opps||1))*100).toFixed(1)+'%',
+      facturacion:'€'+(v.revenue||0).toLocaleString('es-ES'),
+      ticket: v.ventas>0?'€'+((v.revenue||0)/v.ventas).toFixed(0):'—'
+    };
+  });
 
   const rankClasses = ['rank-1','rank-2','rank-3','rank-other'];
   document.getElementById('conv-vendedor-ranking').innerHTML = src.map((v,i)=>`
@@ -3409,29 +3434,65 @@ function getAdSpend() {
 }
 
 // ── Vendedores config (localStorage) ────────────────────────
-function loadVendedoresConfig() {
-  const saved = localStorage.getItem('gotir_vendedores') || '';
-  const ta = document.getElementById('vendedores-lista');
-  if(ta) ta.value = saved;
+// Storage format: [{name:'Mariano Barcelona', ghlId:'MEykm3D6Om8Siw8HUk2T'}, ...]
+const DEFAULT_VENDEDORES = [
+  { name: 'Mariano Barcelona', ghlId: 'MEykm3D6Om8Siw8HUk2T' },
+  { name: 'Asesoría GOTIR',    ghlId: '' }
+];
+
+function getVendedoresConfig() {
+  const raw = localStorage.getItem('gotir_vendedores_v2');
+  if(raw) { try { return JSON.parse(raw); } catch(e) {} }
+  return DEFAULT_VENDEDORES.map(v => Object.assign({}, v));
 }
+
 function saveVendedoresConfig() {
-  const val = (document.getElementById('vendedores-lista').value || '').trim();
-  localStorage.setItem('gotir_vendedores', val);
+  const list = getVendedoresConfig();
+  localStorage.setItem('gotir_vendedores_v2', JSON.stringify(list));
   document.getElementById('vendedores-config').classList.add('hidden');
   if(GHL.connected) { sectionInited['vendedores'] = false; initChartsForSection('vendedores'); }
-  showToast('Configuración de vendedores guardada');
+  showToast('Configuración guardada');
 }
-function clearVendedoresConfig() {
-  localStorage.removeItem('gotir_vendedores');
-  document.getElementById('vendedores-lista').value = '';
-  document.getElementById('vendedores-config').classList.add('hidden');
+
+function loadVendedoresConfig() {
+  const list = getVendedoresConfig();
+  const el = document.getElementById('vendedores-config-list');
+  if(!el) return;
+  el.innerHTML = list.map((v, i) => `
+    <div class="flex items-center gap-2 p-2 bg-slate-800/50 rounded-lg">
+      <div class="w-8 h-8 rounded-full bg-brand-700 flex items-center justify-center text-xs font-bold text-white flex-shrink-0">${v.name.split(' ').map(w=>w[0]).slice(0,2).join('')}</div>
+      <div class="flex-1 min-w-0">
+        <div class="text-sm font-medium text-white">${v.name}</div>
+        <div class="text-xs text-slate-500">${v.ghlId ? 'ID: '+v.ghlId.slice(0,12)+'...' : 'Sin ID (match por nombre)'}</div>
+      </div>
+      <button onclick="removeVendedor(${i})" class="text-slate-600 hover:text-red-400 text-xs px-2 py-1 transition-colors">✕</button>
+    </div>`).join('');
+}
+
+function addVendedor() {
+  const name = (document.getElementById('vend-new-name').value || '').trim();
+  const ghlId = (document.getElementById('vend-new-id').value || '').trim();
+  if(!name) { showToast('Ingresá un nombre'); return; }
+  const list = getVendedoresConfig();
+  list.push({ name, ghlId });
+  localStorage.setItem('gotir_vendedores_v2', JSON.stringify(list));
+  document.getElementById('vend-new-name').value = '';
+  document.getElementById('vend-new-id').value = '';
+  loadVendedoresConfig();
   if(GHL.connected) { sectionInited['vendedores'] = false; initChartsForSection('vendedores'); }
-  showToast('Mostrando todos los usuarios');
+  showToast(`${name} agregado`);
 }
-function getVendedoresList() {
-  const raw = localStorage.getItem('gotir_vendedores') || '';
-  return raw.split('\n').map(s=>s.trim().toLowerCase()).filter(Boolean);
+
+function removeVendedor(idx) {
+  const list = getVendedoresConfig();
+  list.splice(idx, 1);
+  localStorage.setItem('gotir_vendedores_v2', JSON.stringify(list));
+  loadVendedoresConfig();
+  if(GHL.connected) { sectionInited['vendedores'] = false; initChartsForSection('vendedores'); }
 }
+
+// Legacy compat
+function getVendedoresList() { return []; }
 
 function openGHLModal() {
   const modal = document.getElementById('ghl-modal');

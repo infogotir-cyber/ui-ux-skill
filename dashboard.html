@@ -1606,6 +1606,23 @@ function recalcFromPeriod(p) {
     ]);
     charts['chart-leads-ventas'].updateOptions({ xaxis:{ categories: dLabels } });
   }
+
+  // Recalculate Campañas with period-filtered data
+  if(DATA.ghlLive.allContacts && DATA.ghlLive.allContacts.length > 0) {
+    const sourceCounts = {};
+    contacts.forEach(c => {
+      const fields = c.customFields || c.customField || [];
+      let src = '';
+      if(Array.isArray(fields)) {
+        const f = fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('canal_referencia'));
+        src = (f?.value || f?.fieldValue || c.source || '').toLowerCase().trim();
+      } else { src = (c.source || '').toLowerCase().trim(); }
+      if(src) sourceCounts[src] = (sourceCounts[src] || 0) + 1;
+    });
+    const filteredCitas = filterByPeriod(DATA.ghlLive.allCitas || [], days, 'startTime');
+    const avgTicket = totalVentas > 0 ? Math.round(totalRev / totalVentas) : 0;
+    refreshCampanasFromGHL(sourceCounts, wonOpps, avgTicket, filteredCitas);
+  }
 }
 
 // ═══════════════════════════════════════
@@ -1939,14 +1956,14 @@ function filterCampanas(tipo, btn) {
   renderCampanasTable(tipo);
 }
 
-function refreshCampanasFromGHL(sourceCounts, oppList, avgTicket) {
+function refreshCampanasFromGHL(sourceCounts, oppList, avgTicket, citasList) {
   const wonBySrc = {};
   oppList.filter(o => (o.status||'').toLowerCase() === 'won').forEach(o => {
     const src = (o.source || o.leadSource || o.lead_source || '').toLowerCase().trim();
     if(src) wonBySrc[src] = (wonBySrc[src] || 0) + 1;
   });
 
-  // Build contact→canal map for citas cross-reference
+  // Build contact→canal map for citas cross-reference (always use all contacts for the map)
   const contactCanal = {};
   (DATA.ghlLive.allContacts || []).forEach(c => {
     const fields = c.customFields || c.customField || [];
@@ -1957,9 +1974,9 @@ function refreshCampanasFromGHL(sourceCounts, oppList, avgTicket) {
     }
   });
 
-  // Count citas per canal from allCitas
+  // Count citas per canal — use provided list (period-filtered) or all citas
   const citasBySrc = {};
-  (DATA.ghlLive.allCitas || []).forEach(a => {
+  (citasList || DATA.ghlLive.allCitas || []).forEach(a => {
     const cid = a.contactId || a.contact_id || a.contact?.id;
     const src  = cid ? (contactCanal[cid] || '') : '';
     if(src) citasBySrc[src] = (citasBySrc[src] || 0) + 1;

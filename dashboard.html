@@ -1762,18 +1762,24 @@ function initEmbudo() {
     `;
   });
 
-  const losses = f.slice(1).map((s,i) => Math.round((f[i].value-s.value)/f[i].value*100));
-  const labels = ['Cont.→Cita','Cita→Llam','Llam→Prop','Prop→Venta'].map((_,i)=>`${f[i+1].label}`);
-  const lossData = f.slice(1).map((s,i) => f[i].value > 0 ? Math.round((f[i].value - s.value) / f[i].value * 100) : 0);
   const lossLabels = f.slice(1).map(s => s.label.slice(0,14));
+  // % lost at each transition: clamp to [0,100] — negative means next stage has MORE leads
+  // (happens when leads skip stages in GHL), treat as 0% loss at that transition
+  const lossData = f.slice(1).map((s,i) => {
+    if(f[i].value <= 0) return 0;
+    const pct = Math.round((f[i].value - s.value) / f[i].value * 100);
+    return Math.max(0, Math.min(100, pct));
+  });
+  const lossColors = lossData.map(v => v >= 60 ? '#ef4444' : v >= 30 ? '#f97316' : '#fbbf24');
   initChart('chart-funnel-perdidas', mkOpts({
     chart:{ type:'bar', height:220 },
     series:[{ name:'% Pérdida', data: lossData }],
     xaxis:{ categories: lossLabels, labels:{ style:{ colors:'#64748b', fontSize:'11px' } } },
-    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>v+'%' }, max:100 },
-    colors:['#f87171'],
-    plotOptions:{ bar:{ borderRadius:4 } },
-    legend:{ show:false }
+    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>v+'%' }, min:0, max:100 },
+    colors: lossColors,
+    plotOptions:{ bar:{ borderRadius:4, distributed:true } },
+    legend:{ show:false },
+    dataLabels:{ enabled:true, formatter:v=>v+'%', style:{ colors:['#fff'], fontSize:'11px' } }
   }));
 }
 

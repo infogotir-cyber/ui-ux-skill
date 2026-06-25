@@ -3091,12 +3091,12 @@ function initValor() {
     document.getElementById('valor-facturacion').textContent = '€'+periodRev.toLocaleString('es-ES');
   }
 
-  // Top 5 clients table — filtered by period
-  const wonForTop = wonPeriod.filter(o=>(o.monetaryValue||0)>0)
+  // Top 5 clients table — include all won opps (even those without monetary value)
+  const wonForTop = [...wonPeriod]
     .sort((a,b)=>(b.monetaryValue||0)-(a.monetaryValue||0)).slice(0,5);
   const top5Data = wonForTop.map((o,i)=>{
     const name = (o.contact?.name || o.contactName || o.name || 'Cliente').trim();
-    const val  = '€'+(o.monetaryValue||0).toLocaleString('es-ES');
+    const val  = (o.monetaryValue||0) > 0 ? '€'+(o.monetaryValue||0).toLocaleString('es-ES') : '—';
     const date = (o.closedDate||o.closeDate||'').slice(0,10) || '—';
     return { nombre:name, tramites:1, valor:val, ultimo:date };
   });

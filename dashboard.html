@@ -2408,7 +2408,7 @@ function initLlamadas() {
         .sort((a,b)=>b[1]-a[1]).slice(0,6)
         .map(([motivo,cnt],i)=>({ motivo, pct: Math.round(cnt/lostTotal*100),
           color: ['#f87171','#fb923c','#fbbf24','#a78bfa','#60a5fa','#94a3b8'][i] }))
-    : lostTotal > 0 ? null : DATA.motivos_perdida;
+    : DATA.motivos_perdida; // fallback to demo when no named reasons in GHL
 
   const mp = document.getElementById('motivos-perdida');
   if(mp) {
@@ -2979,9 +2979,11 @@ function initConvVendedor() {
 // ═══════════════════════════════════════
 function initPerdidas() {
   const gl = DATA.ghlLive.lostReasons;
-  const hasLive = Object.keys(gl).length > 0;
-  const labels = hasLive ? Object.keys(gl) : ['Dinero','No cumple req.','No responde','Competencia','Más adelante','Otros'];
-  const values = hasLive ? Object.values(gl) : [34, 22, 18, 13, 8, 5];
+  // Only treat as real if there are named reasons (not just UUID fallbacks)
+  const realReasons = Object.fromEntries(Object.entries(gl).filter(([k]) => k !== 'Sin motivo registrado'));
+  const hasLive = Object.keys(realReasons).length > 0;
+  const labels = hasLive ? Object.keys(realReasons) : DATA.motivos_perdida.map(m=>m.motivo);
+  const values = hasLive ? Object.values(realReasons) : DATA.motivos_perdida.map(m=>m.pct);
   const colors = ['#f87171','#fb923c','#fbbf24','#a78bfa','#60a5fa','#94a3b8'];
 
   initChart('chart-perdidas-pie', mkOpts({

@@ -1971,8 +1971,9 @@ function renderCampanasTable(filter) {
   const tipoLabel = { afiliado:'Afiliado 6%', referido:'Referido', pagado:'Red Social', organico:'Orgánico', otro:'Otro' };
   const tipoColor = { afiliado:'text-purple-400', referido:'text-green-400', pagado:'text-brand-400', organico:'text-sky-400', otro:'text-slate-400' };
   tbody.innerHTML = c.map(x=>{
+    const comisionBase = (x.revenue || 0) > 0 ? x.revenue : x.ventas * (DATA.ticket_promedio || 0);
     const comision = x.comision_pct > 0
-      ? `<span class="text-amber-400 font-semibold">€${(x.ventas * DATA.ticket_promedio * x.comision_pct/100).toFixed(0)}</span>`
+      ? `<span class="text-amber-400 font-semibold">€${(comisionBase * x.comision_pct/100).toFixed(0)}</span>`
       : `<span class="text-slate-600">—</span>`;
     return `
     <tr class="border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
@@ -2017,14 +2018,18 @@ function refreshCampanasFromGHL(sourceCounts, oppList, avgTicket, citasList) {
     }
   });
 
-  // Count won opps per canal — look up contact's canal field, not opp.source (often empty)
+  // Count won opps + revenue per canal
   const wonBySrc = {};
+  const revBySrc = {};
   oppList.filter(o => (o.status||'').toLowerCase() === 'won').forEach(o => {
     const cid = o.contactId || o.contact_id || o.contact?.id;
     const src = (cid && contactCanal[cid])
       ? contactCanal[cid]
       : (o.source || o.leadSource || o.lead_source || '').toLowerCase().trim();
-    if(src) wonBySrc[src] = (wonBySrc[src] || 0) + 1;
+    if(src) {
+      wonBySrc[src] = (wonBySrc[src] || 0) + 1;
+      revBySrc[src] = (revBySrc[src] || 0) + (parseFloat(o.monetaryValue || o.monetary_value || 0) || 0);
+    }
   });
   console.log('[GHL] wonBySrc:', Object.entries(wonBySrc).map(([k,v])=>k+'='+v).join(', '));
 
@@ -2043,8 +2048,9 @@ function refreshCampanasFromGHL(sourceCounts, oppList, avgTicket, citasList) {
     const ventas = wonBySrc[key]    || wonBySrc[camp.canal.toLowerCase()]      || 0;
 
     if(leads  > 0) camp.leads  = leads;
-    camp.citas  = citas;   // always overwrite with real value (0 is correct too)
+    camp.citas  = citas;
     if(ventas > 0) camp.ventas = ventas;
+    camp.revenue = revBySrc[key] || revBySrc[camp.canal.toLowerCase()] || 0;
     camp.conv = camp.leads > 0 ? ((camp.ventas / camp.leads) * 100).toFixed(1) + '%' : '0%';
   });
 

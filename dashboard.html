@@ -2016,6 +2016,7 @@ function filterCampanas(tipo, btn) {
 }
 
 function refreshCampanasFromGHL(sourceCounts, oppList, avgTicket, citasList) {
+  console.log('[GHL] sourceCounts keys:', Object.entries(sourceCounts).sort((a,b)=>b[1]-a[1]).slice(0,20));
   const wonBySrc = {};
   oppList.filter(o => (o.status||'').toLowerCase() === 'won').forEach(o => {
     const src = (o.source || o.leadSource || o.lead_source || '').toLowerCase().trim();

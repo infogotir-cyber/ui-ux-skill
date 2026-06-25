@@ -3197,19 +3197,44 @@ function initNoCualificados() {
     plotOptions:{ pie:{ donut:{ size:'60%' } } }
   }));
 
-  const ev = DATA.nq_evolucion;
+  // Build monthly evolution from allOpps — last 6 months
+  const allOppsNQ = DATA.ghlLive.allOpps || [];
+  const MONTHS_ES_NQ = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+  const now = new Date();
+  const monthKeys = [];
+  for(let i=5; i>=0; i--) {
+    const d = new Date(now.getFullYear(), now.getMonth()-i, 1);
+    monthKeys.push(d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0'));
+  }
+  const evData = { fondos:{}, tiempo:{}, cue:{} };
+  monthKeys.forEach(k => { evData.fondos[k]=0; evData.tiempo[k]=0; evData.cue[k]=0; });
+  allOppsNQ.forEach(o => {
+    const tags = (o.tags||[]).map(t=>(t||'').toLowerCase().trim());
+    const dateStr = o.createdAt || o.dateAdded || '';
+    if(!dateStr) return;
+    const key = String(dateStr).slice(0,7);
+    if(!(key in evData.fondos)) return;
+    if(tags.some(t=>t.includes('sin fondos')))      evData.fondos[key]++;
+    if(tags.some(t=>t.includes('excedido tiempo'))) evData.tiempo[key]++;
+    if(tags.some(t=>t.includes('/ cue')||t==='no cualificado / cue')) evData.cue[key]++;
+  });
+  const evMeses  = monthKeys.map(k=>{ const [y,m]=k.split('-'); return MONTHS_ES_NQ[+m-1]+' '+y.slice(2); });
+  const evFondos = monthKeys.map(k=>evData.fondos[k]);
+  const evTiempo = monthKeys.map(k=>evData.tiempo[k]);
+  const evCue    = monthKeys.map(k=>evData.cue[k]);
   initChart('chart-nq-evolucion', mkOpts({
     chart:{ type:'line', height:260 },
     series:[
-      { name:'Sin fondos',     data: ev.fondos },
-      { name:'Excedido tiempo',data: ev.tiempo },
-      { name:'CUE',            data: ev.cue    }
+      { name:'Sin fondos',     data: evFondos },
+      { name:'Excedido tiempo',data: evTiempo },
+      { name:'CUE',            data: evCue    }
     ],
-    xaxis:{ categories: ev.meses, labels:{ style:{ colors:'#64748b' } } },
+    xaxis:{ categories: evMeses, labels:{ style:{ colors:'#64748b' } } },
     yaxis:{ labels:{ style:{ colors:'#64748b' } } },
     colors:['#f87171','#fbbf24','#a78bfa'],
     stroke:{ curve:'smooth', width:2 },
-    legend:{ labels:{ colors:'#94a3b8' } }
+    legend:{ labels:{ colors:'#94a3b8' } },
+    noData:{ text:'Sin datos de no cualificados', style:{ color:'#64748b' } }
   }));
 
   const tendencias = [

@@ -3478,7 +3478,8 @@ async function loadGHLData() {
         src    = fSrc?.value  || fSrc?.fieldValue;
         pais   = fPais?.value || fPais?.fieldValue || c.country || null;
         const rawTramite = fTram?.value || fTram?.fieldValue || null;
-        tramite = rawTramite ? (TRAMITE_LABELS[rawTramite.toLowerCase().trim()] || rawTramite) : null;
+        const rawTramiteStr = Array.isArray(rawTramite) ? rawTramite[0] : rawTramite;
+        tramite = rawTramiteStr ? (TRAMITE_LABELS[(rawTramiteStr+'').toLowerCase().trim()] || (rawTramiteStr+'')) : null;
         grupo  = fGrupo?.value || fGrupo?.fieldValue;
       }
 

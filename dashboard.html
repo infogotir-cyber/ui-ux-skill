@@ -2714,7 +2714,23 @@ function initConversion() {
 }
 
 function initConvSource() {
-  const d = DATA.conv_source;
+  // Build source data from ghlLive campanas (which uses sourceCounts + wonOpps)
+  const gl = DATA.ghlLive;
+  let d = DATA.conv_source;
+
+  if(GHL.connected && DATA.campanas && DATA.campanas.some(c=>c.leads > 0)) {
+    d = DATA.campanas
+      .filter(c => c.leads > 0)
+      .map(c => ({
+        fuente:   c.canal,
+        leads:    c.leads,
+        opps:     c.leads,
+        ganadas:  c.ventas,
+        perdidas: Math.max(0, c.leads - c.ventas)
+      }))
+      .sort((a,b) => b.leads - a.leads);
+  }
+
   initChart('chart-conv-source', mkOpts({
     chart:{ type:'bar', height:280 },
     series:[
@@ -2728,8 +2744,8 @@ function initConvSource() {
     legend:{ labels:{ colors:'#94a3b8' } }
   }));
 
-  document.getElementById('tbody-conv-source').innerHTML = d.map(x=>{
-    const conv = ((x.ganadas/x.leads)*100).toFixed(1);
+  document.getElementById('tbody-conv-source').innerHTML = d.length === 0 ? '<tr><td colspan="6" class="py-4 px-3 text-center text-slate-500">Sin datos en este período</td></tr>' : d.map(x=>{
+    const conv = x.leads > 0 ? ((x.ganadas/x.leads)*100).toFixed(1) : '0.0';
     return `<tr class="border-b border-slate-800/50 hover:bg-slate-800/30 transition-colors">
       <td class="py-2 px-3 text-slate-200 font-medium">${x.fuente}</td>
       <td class="py-2 px-3 text-right text-slate-300">${x.leads}</td>
@@ -3400,6 +3416,19 @@ async function fetchAllOpportunities(pipelineId) {
 
 async function loadGHLData() {
   try {
+    // ── 0. CUSTOM FIELD DEFINITIONS (ID → key map) ──────────
+    const fieldIdToKey = {};
+    try {
+      const cfRes = await fetch(`https://services.leadconnectorhq.com/locations/${GHL.locationId}/customFields`, { headers: GHL.headers });
+      if(cfRes.ok) {
+        const cfData = await cfRes.json();
+        (cfData.customFields || cfData.data || []).forEach(f => {
+          if(f.id && f.fieldKey) fieldIdToKey[f.id] = f.fieldKey;
+        });
+        console.log('[GHL] Custom field ID→key map:', Object.entries(fieldIdToKey).map(([id,k])=>k+'='+id.slice(0,8)).join(', '));
+      }
+    } catch(e) { console.warn('[GHL] Could not fetch custom fields:', e); }
+
     // ── 1. CONTACTS (todos — paginado) ───────────────────────
     showToast('Cargando todos los contactos de GHL...', false);
     const contactList = await fetchAllContacts();
@@ -3425,13 +3454,18 @@ async function loadGHLData() {
       let src = null, pais = null, tramite = null, grupo = null;
 
       if(Array.isArray(fields)) {
-        const fSrc   = fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('canal_referencia'));
-        const fPais  = fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('pais_de_origen') || (f.key||f.id||f.fieldKey||'').includes('pais_origen') || (f.key||f.id||f.fieldKey||'').includes('pa_s_de') || (f.key||f.id||f.fieldKey||'').includes('country'));
-        const fTram  = fields.find(f=>{const k=f.key||f.id||f.fieldKey||''; return k==='tipo_de_trmite'||k.includes('tipo_de_trmite')||k.includes('tipo_de_tr');});
-        const fGrupo = fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('grupo_familiar'));
+        // Resolve field key: use fieldIdToKey map if available, then fall back to f.key/f.id/f.fieldKey
+        const getKey = f => {
+          const rawKey = f.key || f.id || f.fieldKey || '';
+          return fieldIdToKey[rawKey] || rawKey;
+        };
+        const fSrc   = fields.find(f=>getKey(f).includes('canal_referencia'));
+        const fPais  = fields.find(f=>getKey(f).includes('pais_de_origen') || getKey(f).includes('pa_s_de') || getKey(f) === 'country');
+        const fTram  = fields.find(f=>{ const k=getKey(f); return k==='tipo_de_trmite'||k.includes('tipo_de_trmite')||k.includes('tipo_de_tr')||k.includes('tramite');});
+        const fGrupo = fields.find(f=>getKey(f).includes('grupo_familiar'));
         src    = fSrc?.value  || fSrc?.fieldValue;
-        pais   = fPais?.value || fPais?.fieldValue || c.country || null;  // fallback to standard country field
-        tramite= fTram?.value || fTram?.fieldValue || c.tipo_de_trmite || null;
+        pais   = fPais?.value || fPais?.fieldValue || c.country || null;
+        tramite= fTram?.value || fTram?.fieldValue || null;
         grupo  = fGrupo?.value || fGrupo?.fieldValue;
       }
 
@@ -3583,8 +3617,12 @@ async function loadGHLData() {
       DATA.ghlLive.lostReasons[k] = (DATA.ghlLive.lostReasons[k]||0)+1;
     });
 
+    // Known user ID → name hardcoded (from confirmed GHL data)
+    const KNOWN_USERS = {
+      'MEykm3D6Om8Siw8HUk2T': 'Mariano Barcelona',
+    };
     // Fetch GHL users to resolve IDs → names
-    let userMap = DATA.ghlLive.userMap || {};
+    let userMap = Object.assign({}, KNOWN_USERS, DATA.ghlLive.userMap || {});
     try {
       // Try location-specific endpoint first (works with location-scoped tokens)
       const uEndpoints = [

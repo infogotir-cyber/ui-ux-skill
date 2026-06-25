@@ -540,7 +540,7 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
   <!-- Source type summary cards -->
   <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
     <div class="stat-card border-l-4 border-purple-500">
-      <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">Afiliados (8% comisión)</div>
+      <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">Afiliados (6% comisión)</div>
       <div id="camp-sum-afiliados" class="text-2xl font-bold text-white">— leads</div>
       <div id="camp-sum-afiliados-sub" class="text-xs text-purple-400 mt-1">— conv. prom</div>
       <div class="text-xs text-slate-500 mt-0.5">Jesús · Nasla · Wilmen</div>
@@ -569,7 +569,7 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
   <div class="card mb-4">
     <div class="flex items-center justify-between mb-4">
       <div>
-        <h3 class="font-semibold text-white">Comisiones de Afiliados — 8% por venta cerrada</h3>
+        <h3 class="font-semibold text-white">Comisiones de Afiliados — 6% por venta cerrada</h3>
         <p class="text-xs text-slate-500 mt-0.5">Calculado sobre Monetary Value de oportunidades en etapa <span class="text-amber-400">Pagado</span></p>
       </div>
       <span id="camp-ticket-badge" class="badge badge-neutral">Cargando datos reales...</span>
@@ -622,7 +622,7 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
       <h3 class="font-semibold text-white">Tabla por Fuente de Captación</h3>
       <div class="flex gap-1">
         <button class="tab-btn active text-xs" onclick="filterCampanas('all',this)">Todos</button>
-        <button class="tab-btn text-xs" onclick="filterCampanas('afiliado',this)">Afiliados 8%</button>
+        <button class="tab-btn text-xs" onclick="filterCampanas('afiliado',this)">Afiliados 6%</button>
         <button class="tab-btn text-xs" onclick="filterCampanas('referido',this)">Referidos</button>
         <button class="tab-btn text-xs" onclick="filterCampanas('pagado',this)">Redes</button>
         <button class="tab-btn text-xs" onclick="filterCampanas('organico',this)">Orgánico</button>
@@ -1329,9 +1329,9 @@ const DATA = {
   ],
   vendedores: [],
   campanas: [
-    { canal:'Jesús Mosquera',       ghlVal:'jesús mosquera',                       tipo:'afiliado',  leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#a78bfa', comision_pct:8 },
-    { canal:'Nasla Espinosa',       ghlVal:'nasla espinosa',                        tipo:'afiliado',  leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#c084fc', comision_pct:8 },
-    { canal:'Wilmen Mendoza',       ghlVal:'wilmen mendoza',                        tipo:'afiliado',  leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#818cf8', comision_pct:8 },
+    { canal:'Jesús Mosquera',       ghlVal:'jesús mosquera',                       tipo:'afiliado',  leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#a78bfa', comision_pct:6 },
+    { canal:'Nasla Espinosa',       ghlVal:'nasla espinosa',                        tipo:'afiliado',  leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#c084fc', comision_pct:6 },
+    { canal:'Wilmen Mendoza',       ghlVal:'wilmen mendoza',                        tipo:'afiliado',  leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#818cf8', comision_pct:6 },
     { canal:'Centro de Estudios',   ghlVal:'un centro de estudios me pasó el contacto', tipo:'referido',  leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#4ade80', comision_pct:0 },
     { canal:'Amigo / Familiar',     ghlVal:'un amigo o familiar',                  tipo:'referido',  leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#34d399', comision_pct:0 },
     { canal:'Instagram',            ghlVal:'instagram',                             tipo:'pagado',    leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#e1306c', comision_pct:0 },
@@ -1341,7 +1341,7 @@ const DATA = {
     { canal:'Otro',                 ghlVal:'otro',                                  tipo:'otro',      leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#94a3b8', comision_pct:0 }
   ],
   ticket_promedio: 0,
-  comision_afiliados_pct: 8,
+  comision_afiliados_pct: 6,
   ghlSourceField: 'canal_referencia_dr',
   conv_source:   [],
   conv_pais:     [],
@@ -1949,7 +1949,7 @@ function initVentas() {
 function renderCampanasTable(filter) {
   const c = filter==='all' ? DATA.campanas : DATA.campanas.filter(x=>x.tipo===filter);
   const tbody = document.getElementById('tabla-campanas');
-  const tipoLabel = { afiliado:'Afiliado 8%', referido:'Referido', pagado:'Red Social', organico:'Orgánico', otro:'Otro' };
+  const tipoLabel = { afiliado:'Afiliado 6%', referido:'Referido', pagado:'Red Social', organico:'Orgánico', otro:'Otro' };
   const tipoColor = { afiliado:'text-purple-400', referido:'text-green-400', pagado:'text-brand-400', organico:'text-sky-400', otro:'text-slate-400' };
   tbody.innerHTML = c.map(x=>{
     const comision = x.comision_pct > 0
@@ -2059,21 +2059,36 @@ function refreshCampanasFromGHL(sourceCounts, oppList, avgTicket, citasList) {
       initials: c.canal.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2)
     }));
 
-  // Count leads per afiliado from sourceCounts (canal_referencia_dr on contact)
-  // Count ventas/revenue EXACT from oppList.source (GHL automation copies canal_referencia_dr → opp source)
+  // Build contactId → canal map to attribute won opps to correct afiliado
+  const afContactCanal = {};
+  (DATA.ghlLive.allContacts || []).forEach(c => {
+    const fields = c.customFields || c.customField || [];
+    if(Array.isArray(fields)) {
+      const fSrc = fields.find(f => {
+        const mk = FIELD_ID_MAP[f.key||f.id||f.fieldKey||''] || f.key||f.id||f.fieldKey||'';
+        return mk.includes('canal_referencia');
+      });
+      const src = (fSrc?.value || fSrc?.fieldValue || c.source || '').toLowerCase().trim();
+      if(src && c.id) afContactCanal[c.id] = src;
+    }
+  });
+
+  const COM_PCT = 0.06; // 6% commission
   const afiliadoData = AFILIADOS.map(af => {
     const leads = sourceCounts[af.key] || 0;
 
-    // Exact ventas: won opps whose source matches this afiliado's ghlVal
-    const wonOpps = oppList.filter(o => {
-      if(o.status !== 'won') return false;
-      const src = (o.source || o.leadSource || o.lead_source || '').toLowerCase().trim();
+    // Won opps attributed via contact's canal_referencia_dr field
+    const wonAfOpps = oppList.filter(o => {
+      if((o.status||'').toLowerCase() !== 'won') return false;
+      const cid = o.contactId || o.contact_id || o.contact?.id;
+      const src = (cid && afContactCanal[cid]) ? afContactCanal[cid]
+        : (o.source || o.leadSource || o.lead_source || '').toLowerCase().trim();
       return src === af.key;
     });
-    const ventas  = wonOpps.length;
-    const revenue = wonOpps.reduce((s,o) => s + (o.monetaryValue || o.monetary_value || 0), 0);
-    const comision = revenue * 0.08;
-    const cpl      = leads > 0 && comision > 0 ? Math.round(comision / leads) : 0;
+    const ventas  = wonAfOpps.length;
+    const revenue = wonAfOpps.reduce((s,o) => s + (o.monetaryValue || o.monetary_value || 0), 0);
+    const comision = revenue * COM_PCT;
+    const cpl      = leads > 0 && revenue > 0 ? Math.round(revenue * COM_PCT / leads) : 0;
     const roi      = comision > 0 ? Math.round((revenue - comision) / comision * 100) : 0;
     const conv     = leads > 0 ? ((ventas/leads)*100).toFixed(1) : '0';
     return { ...af, leads, ventas, revenue, comision, cpl, roi, conv };
@@ -2101,7 +2116,7 @@ function refreshCampanasFromGHL(sourceCounts, oppList, avgTicket, citasList) {
   if(el('camp-sum-organico-sub')) el('camp-sum-organico-sub').textContent = convStr('organico') + ' · CPL €0';
 
   if(avgTicket && el('camp-ticket-badge'))
-    el('camp-ticket-badge').textContent = `Ticket prom. €${avgTicket.toLocaleString('es-ES')} × 8% = €${(avgTicket*0.08).toFixed(1)}/venta`;
+    el('camp-ticket-badge').textContent = `Ticket prom. €${avgTicket.toLocaleString('es-ES')} × 6% = €${(avgTicket*0.06).toFixed(1)}/venta`;
 
   // ── Render afiliados cards ────────────────────────────────────
   const grid = el('camp-afiliados-grid');
@@ -2118,7 +2133,7 @@ function refreshCampanasFromGHL(sourceCounts, oppList, avgTicket, citasList) {
         </div>
         <div class="grid grid-cols-2 gap-2">
           <div><div class="text-xs text-slate-500">Facturación generada</div><div class="font-bold text-white">€${a.revenue.toLocaleString('es-ES')}</div></div>
-          <div><div class="text-xs text-slate-500">Comisión debida (8%)</div><div class="font-bold text-amber-400">€${a.comision.toFixed(1)}</div></div>
+          <div><div class="text-xs text-slate-500">Comisión debida (6%)</div><div class="font-bold text-amber-400">€${a.comision.toFixed(1)}</div></div>
           <div><div class="text-xs text-slate-500">CPL real</div><div class="font-semibold text-slate-300">€${a.cpl}</div></div>
           <div><div class="text-xs text-slate-500">ROI</div><div class="font-semibold ${a.roi>200?'text-green-400':'text-amber-400'}">${a.roi}%</div></div>
         </div>

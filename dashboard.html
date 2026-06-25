@@ -1318,16 +1318,16 @@ const DATA = {
   ],
   vendedores: [],
   campanas: [
-    { canal:'Jesús Mosquera',       ghlVal:'jesús_mosquera',          tipo:'afiliado',  leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#a78bfa', comision_pct:8 },
-    { canal:'Nasla Espinosa',       ghlVal:'nasla_espinosa',           tipo:'afiliado',  leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#c084fc', comision_pct:8 },
-    { canal:'Wilmen Mendoza',       ghlVal:'wilmen_mendoza',           tipo:'afiliado',  leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#818cf8', comision_pct:8 },
-    { canal:'Centro de Estudios',   ghlVal:'un_centro_de_estudios_me', tipo:'referido',  leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#4ade80', comision_pct:0 },
-    { canal:'Amigo / Familiar',     ghlVal:'un_amigo_o_familiar',      tipo:'referido',  leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#34d399', comision_pct:0 },
-    { canal:'Instagram',            ghlVal:'instagram',                tipo:'pagado',    leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#e1306c', comision_pct:0 },
-    { canal:'TikTok',               ghlVal:'tiktok',                   tipo:'pagado',    leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#555555', comision_pct:0 },
-    { canal:'Facebook',             ghlVal:'facebook',                 tipo:'pagado',    leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#1877f2', comision_pct:0 },
-    { canal:'Sitio Web',            ghlVal:'sitio_web',                tipo:'organico',  leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#38bdf8', comision_pct:0 },
-    { canal:'Otro',                 ghlVal:'otro',                     tipo:'otro',      leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#94a3b8', comision_pct:0 }
+    { canal:'Jesús Mosquera',       ghlVal:'jesús mosquera',                       tipo:'afiliado',  leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#a78bfa', comision_pct:8 },
+    { canal:'Nasla Espinosa',       ghlVal:'nasla espinosa',                        tipo:'afiliado',  leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#c084fc', comision_pct:8 },
+    { canal:'Wilmen Mendoza',       ghlVal:'wilmen mendoza',                        tipo:'afiliado',  leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#818cf8', comision_pct:8 },
+    { canal:'Centro de Estudios',   ghlVal:'un centro de estudios me pasó el contacto', tipo:'referido',  leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#4ade80', comision_pct:0 },
+    { canal:'Amigo / Familiar',     ghlVal:'un amigo o familiar',                  tipo:'referido',  leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#34d399', comision_pct:0 },
+    { canal:'Instagram',            ghlVal:'instagram',                             tipo:'pagado',    leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#e1306c', comision_pct:0 },
+    { canal:'TikTok',               ghlVal:'tiktok',                                tipo:'pagado',    leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#555555', comision_pct:0 },
+    { canal:'Facebook',             ghlVal:'facebook',                              tipo:'pagado',    leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#1877f2', comision_pct:0 },
+    { canal:'Sitio Web',            ghlVal:'sitio web',                             tipo:'organico',  leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#38bdf8', comision_pct:0 },
+    { canal:'Otro',                 ghlVal:'otro',                                  tipo:'otro',      leads:0, citas:0, ventas:0, conv:'0%', cpl:'—', roi:'—', color:'#94a3b8', comision_pct:0 }
   ],
   ticket_promedio: 0,
   comision_afiliados_pct: 8,
@@ -3530,6 +3530,8 @@ async function loadGHLData() {
 
     // Store full contact list for period filtering
     DATA.ghlLive.allContacts = contactList;
+    console.log('[GHL] byTramite after contacts:', JSON.stringify(DATA.ghlLive.byTramite));
+    console.log('[GHL] byCountry count:', Object.keys(DATA.ghlLive.byCountry).length);
 
     // ── 2. PIPELINES → OPPORTUNITIES ────────────────────────
     // Step 1: get pipelines to find Pre-venta pipeline ID

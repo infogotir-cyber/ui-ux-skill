@@ -1903,7 +1903,7 @@ function renderVentasCharts(days) {
     const TRAMITE_LABELS_SVC = { 'visado_arg':'Visado ARG','visado_latam':'Visado LATAM','estancia':'Estancia','renovación':'Renovación','renovacion':'Renovación','reagrupación':'Reagrupación','reagrupacion':'Reagrupación','pac':'PAC','nòmada_digital':'Nómada Digital','nomada_digital':'Nómada Digital','no_lucrativa':'No Lucrativa','emprendedor':'Emprendedor','workandholidays':'Workandholidays','visa_de_trabajo':'Visa de Trabajo' };
     const svcContactMap = {};
     (gl.allContacts || []).forEach(c => { if(c.id) svcContactMap[c.id] = c; });
-    wonOpps.forEach(o => {
+    wonPeriod.forEach(o => {
       const c = svcContactMap[o.contactId || o.contact_id || o.contact?.id];
       const val = o.monetaryValue || o.monetary_value || 0;
       if(!c) return;
@@ -2109,7 +2109,8 @@ function refreshCampanasFromGHL(sourceCounts, oppList, avgTicket, citasList) {
       return src === af.key;
     });
     const ventas  = wonAfOpps.length;
-    const revenue = wonAfOpps.reduce((s,o) => s + (o.monetaryValue || o.monetary_value || 0), 0);
+    const revenue = wonAfOpps.reduce((s,o) => s + (parseFloat(o.monetaryValue || o.monetary_value || 0) || 0), 0);
+    console.log(`[GHL] afiliado ${af.key}: ventas=${ventas} revenue=${revenue} wonAfOpps=${wonAfOpps.length} afContactCanal size=${Object.keys(afContactCanal).length}`);
     const comision = revenue * COM_PCT;
     const cpl      = leads > 0 && revenue > 0 ? Math.round(revenue * COM_PCT / leads) : 0;
     const roi      = comision > 0 ? Math.round((revenue - comision) / comision * 100) : 0;

@@ -3410,14 +3410,21 @@ async function loadGHLData() {
     DATA.ghlLive.byGrupo    = {};
     DATA.ghlLive.noQualified = { cue:0, tiempo:0, fondos:0 };
 
+    // Debug: log custom field keys from first contact that has fields
+    const firstWithFields = contactList.find(c => (c.customFields||c.customField||[]).length > 0);
+    if(firstWithFields) {
+      const flds = firstWithFields.customFields || firstWithFields.customField || [];
+      console.log('[GHL] Custom field keys sample:', flds.map(f=>`${f.key||f.id||f.fieldKey}=${JSON.stringify(f.value||f.fieldValue)}`).join(' | '));
+    }
+
     contactList.forEach(c => {
       const fields = c.customFields || c.customField || [];
       let src = null, pais = null, tramite = null, grupo = null;
 
       if(Array.isArray(fields)) {
         const fSrc   = fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('canal_referencia'));
-        const fPais  = fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('pais_de_origen'));
-        const fTram  = fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('tipo_de_tr'));
+        const fPais  = fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('pais_de_origen') || (f.key||f.id||f.fieldKey||'').includes('pais_origen') || (f.key||f.id||f.fieldKey||'').includes('country') || (f.key||f.id||f.fieldKey||'').includes('pa_s'));
+        const fTram  = fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('tipo_de_tr') || (f.key||f.id||f.fieldKey||'').includes('tramite') || (f.key||f.id||f.fieldKey||'').includes('tr_mite') || (f.key||f.id||f.fieldKey||'').includes('servicio'));
         const fGrupo = fields.find(f=>(f.key||f.id||f.fieldKey||'').includes('grupo_familiar'));
         src    = fSrc?.value  || fSrc?.fieldValue;
         pais   = fPais?.value || fPais?.fieldValue;
@@ -3573,11 +3580,24 @@ async function loadGHLData() {
       DATA.ghlLive.lostReasons[k] = (DATA.ghlLive.lostReasons[k]||0)+1;
     });
 
+    // Fetch GHL users to resolve IDs → names
+    let userMap = DATA.ghlLive.userMap || {};
+    try {
+      const uRes = await fetch(`https://services.leadconnectorhq.com/users/?locationId=${GHL.locationId}&limit=100`, { headers: GHL.headers });
+      if(uRes.ok) {
+        const uData = await uRes.json();
+        const uList = uData.users || uData.data || [];
+        uList.forEach(u => { if(u.id) userMap[u.id] = (u.name || u.firstName+' '+u.lastName || u.email || u.id).trim(); });
+        DATA.ghlLive.userMap = userMap;
+        console.log('[GHL] Users loaded:', Object.entries(userMap).map(([id,n])=>n).join(', '));
+      }
+    } catch(e) { console.warn('[GHL] Could not fetch users:', e); }
+
     // Vendedor stats
     DATA.ghlLive.byVendedor = {};
     oppList.forEach(o => {
       const uid  = o.assignedTo || o.assigned_to || o.userId || 'unknown';
-      const name = o.assignedToUser?.name || o.user?.name || uid;
+      const name = userMap[uid] || o.assignedToUser?.name || o.user?.name || uid;
       const val  = o.monetaryValue || o.monetary_value || 0;
       if(!DATA.ghlLive.byVendedor[uid]) DATA.ghlLive.byVendedor[uid] = { name, llamadas:0, opps:0, ventas:0, revenue:0 };
       DATA.ghlLive.byVendedor[uid].opps++;

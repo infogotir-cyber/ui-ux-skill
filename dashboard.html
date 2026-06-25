@@ -1521,8 +1521,8 @@ function recalcFromPeriod(p) {
   const opps     = filterByPeriod(allO, days, 'createdAt');
   const wonOpps  = allO.filter(o => {
     if((o.status||'').toLowerCase() !== 'won') return false;
-    const raw = o.closedDate || o.closeDate || o.date_closed || o.wonDate || '';
-    if(!raw) return false;
+    const raw = o.closedDate || o.closeDate || o.date_closed || o.wonDate || o.updatedAt || '';
+    if(!raw) return true; // no date → include (can't filter by date)
     const t = typeof raw === 'number' ? raw : new Date(raw).getTime();
     return t >= Date.now() - days * 86400000;
   });

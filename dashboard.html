@@ -1600,10 +1600,27 @@ function recalcFromPeriod(p) {
         // Find tramite field: prefer by key (tipo_de_trmite), fallback to value match
         const fTramByKey = fields.find(f=>getFieldKey(f).includes('tipo_de_tr'));
         const fTram = fTramByKey || fields.find(f=>{ const v=((f.value||f.fieldValue||'')+'').toLowerCase().trim(); return TRAMITE_VALS.has(v); });
-        if(fTram) {
-          const rv = Array.isArray(fTram.value||fTram.fieldValue) ? (fTram.value||fTram.fieldValue)[0] : (fTram.value||fTram.fieldValue);
-          const rvStr = (rv+'').toLowerCase().trim();
-          const label = TRAMITE_LABELS[rvStr] || (rv ? (rv+'') : null);
+        // Also check contact.opportunityData or top-level contact fields (GHL sometimes puts tramite on contact directly)
+        const tramiteRaw = fTram
+          ? (Array.isArray(fTram.value||fTram.fieldValue) ? (fTram.value||fTram.fieldValue)[0] : (fTram.value||fTram.fieldValue))
+          : null;
+        // Fallback: detect tramite from contact tags (e.g. "cualificado estancia", "estancia")
+        let tramiteFromTag = null;
+        if(!tramiteRaw) {
+          const tags = Array.isArray(c.tags) ? c.tags : (c.tags ? [c.tags] : []);
+          for(const tag of tags) {
+            const tl = (tag+'').toLowerCase().trim();
+            // Check if tag IS a tramite value
+            if(TRAMITE_VALS.has(tl)) { tramiteFromTag = tl; break; }
+            // Check if tag CONTAINS a tramite value (e.g. "cualificado estancia")
+            for(const v of TRAMITE_VALS) { if(tl.includes(v) || tl.includes(v.replace(/_/g,' '))) { tramiteFromTag = v; break; } }
+            if(tramiteFromTag) break;
+          }
+        }
+        const rvRaw = tramiteRaw || tramiteFromTag;
+        if(rvRaw) {
+          const rvStr = (rvRaw+'').toLowerCase().trim();
+          const label = TRAMITE_LABELS[rvStr] || (TRAMITE_VALS.has(rvStr) ? (rvRaw+'') : null);
           if(label) { if(!byTramite[label]) byTramite[label]={leads:0,ventas:0,revenue:0}; byTramite[label].leads++; }
         }
 
@@ -1623,13 +1640,21 @@ function recalcFromPeriod(p) {
     wonOpps.forEach(o => {
       const cid = o.contactId || o.contact_id || o.contact?.id;
       const c = contactMapP[cid];
-      if(!c) return;
-      const fields2 = c.customFields || c.customField || [];
-      if(!Array.isArray(fields2)) return;
+      const fields2 = Array.isArray(c?.customFields||c?.customField) ? (c.customFields||c.customField) : [];
       const fTK = fields2.find(f=>{ const rk=f.key||f.id||f.fieldKey||''; const mk=FIELD_ID_MAP[rk]||rk; return mk.includes('tipo_de_tr'); });
       const fT2 = fTK || fields2.find(f=>{ const v=((f.value||f.fieldValue||'')+'').toLowerCase().trim(); return TRAMITE_VALS_P.has(v); });
-      if(!fT2) return;
-      const rv2 = Array.isArray(fT2.value||fT2.fieldValue) ? (fT2.value||fT2.fieldValue)[0] : (fT2.value||fT2.fieldValue);
+      let rv2 = fT2 ? (Array.isArray(fT2.value||fT2.fieldValue) ? (fT2.value||fT2.fieldValue)[0] : (fT2.value||fT2.fieldValue)) : null;
+      // Fallback: check contact tags
+      if(!rv2 && c) {
+        const tags2 = Array.isArray(c.tags) ? c.tags : [];
+        for(const tag of tags2) {
+          const tl=(tag+'').toLowerCase().trim();
+          if(TRAMITE_VALS_P.has(tl)) { rv2=tl; break; }
+          for(const v of TRAMITE_VALS_P) { if(tl.includes(v)||tl.includes(v.replace(/_/g,' '))) { rv2=v; break; } }
+          if(rv2) break;
+        }
+      }
+      if(!rv2) return;
       const label2 = TRAMITE_LABELS_P[(rv2+'').toLowerCase().trim()] || (rv2+'');
       if(!label2) return;
       if(!byTramite[label2]) byTramite[label2] = { leads:0, ventas:0, revenue:0 };
@@ -3449,7 +3474,7 @@ function updateTiemposFromGHL(oppList) {
   // Log first 3 open opps to see what fields GHL returns
   const openOpps = oppList.filter(o=>{ const s=(o.status||'').toLowerCase(); return s==='open'||s==='active'||s===''; });
   console.log('[GHL] tiempos: total opps='+oppList.length+' open='+openOpps.length);
-  console.log('[GHL] tiempos sample:', JSON.stringify(openOpps.slice(0,2).map(o=>({ status:o.status, pipelineStageName:o.pipelineStageName, stageName:o.stageName, stageId:o.stageId, pipelineStageId:o.pipelineStageId }))));
+  console.log('[GHL] tiempos sample:', JSON.stringify(openOpps.slice(0,2).map(o=>({ status:o.status, pipelineStageId:o.pipelineStageId, updatedAt:o.updatedAt, dateUpdated:o.dateUpdated, lastUpdated:o.lastUpdated, createdAt:o.createdAt, dateAdded:o.dateAdded }))));
   openOpps.forEach(o => {
     const sid = o.stageId || o.pipelineStageId || o.stage?.id || '';
     const direct = o.pipelineStageName || o.stageName || o.stage?.name || '';
@@ -3458,7 +3483,8 @@ function updateTiemposFromGHL(oppList) {
     const nameNorm = nameRaw.normalize('NFD').replace(/[̀-ͯ]/g,'');
     const idx = STAGE_MAP_IDX[nameRaw] ?? STAGE_MAP_IDX[nameNorm];
     if(idx !== undefined) {
-      const dateStr = o.updatedAt || o.lastUpdated || o.dateUpdated || '';
+      // Use updatedAt as proxy for time in current stage; fallback to createdAt
+      const dateStr = o.updatedAt || o.lastUpdated || o.dateUpdated || o.createdAt || o.dateAdded || o.date_added || '';
       if(dateStr) {
         const days = Math.round((now - new Date(dateStr).getTime()) / MS_DAY);
         if(days >= 0 && days < 730) { stageDays[idx].count++; stageDays[idx].totalDays += days; }

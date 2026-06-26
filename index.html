@@ -516,7 +516,9 @@ function AnnualSection({
   tempItems,
   tempSnap,
   taxRate,
+  taxSnap,
   adsAmt,
+  adsAmtSnap,
   curMK,
   onJump
 }) {
@@ -524,15 +526,17 @@ function AnnualSection({
   function calcM(ni, mk) {
     const snapFixed = (fixedSnap && mk && fixedSnap[mk]) ? fixedSnap[mk] : fixedItems;
     const snapTemp = (tempSnap && mk && tempSnap[mk]) ? tempSnap[mk] : tempItems;
+    const snapTax = (taxSnap && mk && taxSnap[mk] !== undefined) ? taxSnap[mk] : taxRate;
+    const snapAds = (adsAmtSnap && mk && adsAmtSnap[mk] !== undefined) ? adsAmtSnap[mk] : adsAmt;
     const fixed = sum(snapFixed, "a"),
       temp = sum(snapTemp, "a"),
-      tax = Math.round(ni * taxRate);
+      tax = Math.round(ni * snapTax);
     let rem = ni - tax;
     const ff = Math.min(rem, fixed);
     rem -= ff;
     const cf = Math.min(rem, temp);
     rem -= cf;
-    const af = Math.min(rem, adsAmt);
+    const af = Math.min(rem, snapAds);
     rem -= af;
     return {
       tax,
@@ -908,6 +912,9 @@ function App(){
   var _tx=useState(0.40),taxRate=_tx[0],setTaxRate=_tx[1];
   var _ad=useState(10),adsAmt=_ad[0],setAdsAmt=_ad[1];
   var _atx=useState([]),adsTx=_atx[0],setAdsTx=_atx[1];
+  var _as=useState({}),adsAmtSnap=_as[0],setAdsAmtSnap=_as[1];
+  var _p5s=useState({}),p5Snap=_p5s[0],setP5Snap=_p5s[1];
+  var _txs=useState({}),taxSnap=_txs[0],setTaxSnap=_txs[1];
   var _go=useState({}),goals=_go[0],setGoals=_go[1];
   var _ef=useState(0),efEmp=_ef[0],setEfEmp=_ef[1];
   var _eh=useState([]),efEmpH=_eh[0],setEfEmpH=_eh[1];
@@ -949,6 +956,9 @@ function App(){
         if(kv.adsTx&&kv.adsTx.length) setAdsTx(kv.adsTx);
         if(kv.fixedSnap) setFixedSnap(kv.fixedSnap);
         if(kv.tempSnap) setTempSnap(kv.tempSnap);
+        if(kv.adsAmtSnap) setAdsAmtSnap(kv.adsAmtSnap);
+        if(kv.p5Snap) setP5Snap(kv.p5Snap);
+        if(kv.taxSnap) setTaxSnap(kv.taxSnap);
       }
       setLoading(false);
     });
@@ -971,9 +981,27 @@ function App(){
     ns[curMK]=v;
     saveTempSnap(ns);
   }
-  function saveP5(v){setP5Items(v);apiPost("/kv/p5Items",v);}
-  function saveTax(v){setTaxRate(v);apiPost("/kv/taxRate",{v:v});}
-  function saveAds(v){setAdsAmt(v);apiPost("/kv/adsAmt",{v:v});}
+  function saveP5Snap(v){setP5Snap(v);apiPost("/kv/p5Snap",v);}
+  function saveP5(v){
+    setP5Items(v);apiPost("/kv/p5Items",v);
+    var ns=Object.assign({},p5Snap);
+    sales.forEach(function(s){if(!ns[s.month])ns[s.month]=p5Items;});
+    ns[curMK]=v;saveP5Snap(ns);
+  }
+  function saveTaxSnap(v){setTaxSnap(v);apiPost("/kv/taxSnap",v);}
+  function saveTax(v){
+    setTaxRate(v);apiPost("/kv/taxRate",{v:v});
+    var ns=Object.assign({},taxSnap);
+    sales.forEach(function(s){if(!ns[s.month])ns[s.month]=taxRate;});
+    ns[curMK]=v;saveTaxSnap(ns);
+  }
+  function saveAdsAmtSnap(v){setAdsAmtSnap(v);apiPost("/kv/adsAmtSnap",v);}
+  function saveAds(v){
+    setAdsAmt(v);apiPost("/kv/adsAmt",{v:v});
+    var ns=Object.assign({},adsAmtSnap);
+    sales.forEach(function(s){if(!ns[s.month])ns[s.month]=adsAmt;});
+    ns[curMK]=v;saveAdsAmtSnap(ns);
+  }
   function saveAdsTx(v){setAdsTx(v);apiPost("/kv/adsTx",v);}
   function saveGoals(v){setGoals(v);apiPost("/kv/goals",v);}
   function saveEfEmp(v){setEfEmp(v);apiPost("/kv/efEmp",{v:v});}
@@ -1191,7 +1219,7 @@ function App(){
             : h("span",null,h("strong",null,"Mes saludable ("+fp(marg)+").")," Beneficio "+f(c.np)+". Diezmo: "+f(c.np*0.10)+" - Ahorro: "+f(c.np*0.20)+"."))
           }),
           Btn({onClick:function(){setETab(3);},bg:"transparent",fg:T2,mt:8,children:"+ Editar gastos y categorias"})),
-        eTab===2 && h(AnnualSection,{sales:sales,fixedItems:fixedItems,fixedSnap:fixedSnap,tempItems:tempItems,tempSnap:tempSnap,taxRate:taxRate,adsAmt:adsAmt,curMK:curMK,onJump:function(mk){setCurMK(mk);setManInc(null);setETab(1);}}),
+        eTab===2 && h(AnnualSection,{sales:sales,fixedItems:fixedItems,fixedSnap:fixedSnap,tempItems:tempItems,tempSnap:tempSnap,taxRate:taxRate,taxSnap:taxSnap,adsAmt:adsAmt,adsAmtSnap:adsAmtSnap,curMK:curMK,onJump:function(mk){setCurMK(mk);setManInc(null);setETab(1);}}),
         eTab===3 && h(ConfigSection,{fixedItems:fixedItems,tempItems:tempItems,p5Items:p5Items,taxRate:taxRate,onFixed:saveFixed,onTemp:saveTemp,onP5:saveP5,onTax:saveTax})),
       mainTab==="yo" && h(PersonalSection,{profile:yo,onUpdate:saveYo}),
       mainTab==="novia" && h(PersonalSection,{profile:novia,onUpdate:saveNovia})));

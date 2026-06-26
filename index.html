@@ -421,7 +421,7 @@ function PersonalSection(props){
                 h("span",{style:{fontSize:12,fontWeight:600,color:spent>0?dc:T3,minWidth:46,textAlign:"right",fontVariantNumeric:"tabular-nums"}},spent>0?(diff>0?"+":"")+fd(diff):"--"))),
             pctBar>0 && h("div",null,
               Bar({pct:pctBar,color:diff>=0?e.c:"#c0392b",h:4}),
-              h("div",{style:{fontSize:10,color:diff<0?"#c0392b":T3,marginTop:2}},pctBar+"% del presupuesto"+(diff<0?" -- te pasaste "+fd(Math.abs(diff)):"")));
+              h("div",{style:{fontSize:10,color:diff<0?"#c0392b":T3,marginTop:2}},pctBar+"% del presupuesto"+(diff<0?" -- te pasaste "+fd(Math.abs(diff)):""))));
         }),
         h("div",{key:"tot",style:{display:"flex",justifyContent:"space-between",alignItems:"center",paddingTop:10,borderTop:"0.5px solid "+BD2}},
           h("span",{style:{fontSize:13,fontWeight:600,color:T}},"Total"),

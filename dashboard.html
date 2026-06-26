@@ -1021,6 +1021,18 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
 
   <!-- Tab: Motivos -->
   <div id="perd-tab-motivos">
+    <!-- Config panel for lost reason labels (GHL API doesn't expose them) -->
+    <div class="mb-4 flex items-center gap-2">
+      <button onclick="toggleLostReasonConfig()" class="text-xs text-slate-400 hover:text-blue-400 flex items-center gap-1 border border-slate-700 rounded px-2 py-1">
+        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+        Etiquetar motivos de pérdida
+      </button>
+      <span class="text-xs text-slate-600">GHL no expone los nombres de motivos por API — asignálos acá una vez</span>
+    </div>
+    <div id="lost-reason-config-panel" class="hidden card mb-4 p-4">
+      <h4 class="text-sm font-semibold text-white mb-3">Asignar nombres a motivos de pérdida</h4>
+      <div id="lost-reason-config-list"></div>
+    </div>
     <div id="perd-motivos-cards" class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
       <div class="stat-card col-span-2 md:col-span-3 text-center text-slate-500 text-sm py-4">Conectá GHL para ver los motivos reales de pérdida</div>
     </div>
@@ -3003,8 +3015,11 @@ function initPerdidas() {
   const namedEntries = allEntries.filter(([k])=>k!=='Sin motivo registrado');
   const hasReal = namedEntries.length > 0;
 
+  // Refresh config panel if open
+  if(!document.getElementById('lost-reason-config-panel')?.classList.contains('hidden')) renderLostReasonConfig();
+
   // Update stat cards with real data if available
-  const cardContainer = document.querySelector('#perd-tab-motivos .grid');
+  const cardContainer = document.getElementById('perd-motivos-cards');
   if(cardContainer && hasReal && GHL.connected) {
     const cardColors = ['#f87171','#fb923c','#fbbf24','#a78bfa','#60a5fa','#94a3b8'];
     cardContainer.innerHTML = namedEntries.slice(0,6).map(([motivo,cnt],i) => {
@@ -3574,6 +3589,40 @@ function removeVendedor(idx) {
 // Legacy compat
 function getVendedoresList() { return []; }
 
+// ── Lost Reason manual labels (localStorage) ──────────────────
+function getLostReasonLabels() {
+  try { return JSON.parse(localStorage.getItem('gotir_lost_reasons_v1') || '{}'); } catch(e) { return {}; }
+}
+function saveLostReasonLabel(id, label) {
+  const map = getLostReasonLabels();
+  if(label) map[id] = label; else delete map[id];
+  localStorage.setItem('gotir_lost_reasons_v1', JSON.stringify(map));
+}
+function renderLostReasonConfig() {
+  const ids = DATA.ghlLive.lostReasonIds || {};
+  const saved = getLostReasonLabels();
+  const container = document.getElementById('lost-reason-config-list');
+  if(!container) return;
+  const uniqueIds = Object.keys(ids);
+  if(uniqueIds.length === 0) {
+    container.innerHTML = '<p class="text-slate-500 text-sm">No hay opps perdidas con ID de motivo en el período.</p>';
+    return;
+  }
+  container.innerHTML = uniqueIds.map(id => `
+    <div class="flex items-center gap-2 mb-2">
+      <span class="text-xs text-slate-500 font-mono w-20 shrink-0">${id.slice(0,8)}…</span>
+      <input type="text" value="${saved[id]||''}" placeholder="Nombre del motivo (ej: Dejo de contestar)"
+        onchange="saveLostReasonLabel('${id}',this.value);sectionInited['perdidas']=false;initChartsForSection('perdidas')"
+        class="flex-1 bg-slate-800 border border-slate-600 rounded px-2 py-1 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-blue-500">
+    </div>`).join('');
+}
+function toggleLostReasonConfig() {
+  const panel = document.getElementById('lost-reason-config-panel');
+  if(!panel) return;
+  panel.classList.toggle('hidden');
+  if(!panel.classList.contains('hidden')) renderLostReasonConfig();
+}
+
 function openGHLModal() {
   const modal = document.getElementById('ghl-modal');
   modal.style.display = 'flex';
@@ -3944,32 +3993,28 @@ async function loadGHLData() {
     DATA.ghlLive.totalWon     = won;
     DATA.ghlLive.totalRevenue = revenue;
 
-    // Lost reasons — resolve UUID → label using pipeline's lostReasons config
-    const lrMap = DATA.ghlLive.lostReasonIdMap || {};
-    console.log('[GHL] lostReasonIdMap size:', Object.keys(lrMap).length, JSON.stringify(lrMap));
+    // Lost reasons — resolve UUID → label
+    // GHL API doesn't expose lost reason labels with location tokens, so merge:
+    // 1. Pipeline lostReasons (usually empty), 2. Manual map from localStorage
+    const lrMap = Object.assign({}, DATA.ghlLive.lostReasonIdMap || {}, getLostReasonLabels());
     DATA.ghlLive.lostReasons = {};
+    DATA.ghlLive.lostReasonIds = {}; // track raw IDs for config UI
     oppList.filter(o=>(o.status||'').toLowerCase()==='lost').forEach(o => {
-      // GHL V2 may use lostReasonId (UUID) or lostReason (text) or lostReasonLabel
-      const rawId  = o.lostReasonId || o.lost_reason_id || null;
-      const rawTxt = o.lostReason   || o.lost_reason    || o.lostReasonLabel || o.reason || null;
-      // Try ID resolution first, then text
+      const rawId  = String(o.lostReasonId || o.lost_reason_id || '').trim();
+      const rawTxt = o.lostReason || o.lost_reason || o.lostReasonLabel || o.reason || null;
       let label = null;
-      if(rawId) label = lrMap[String(rawId).trim()] || null;
+      if(rawId) label = lrMap[rawId] || null;
       if(!label && rawTxt) {
         const s = String(rawTxt).trim();
-        const isUUID = /^[0-9a-f]{8}-?[0-9a-f]{4}-?[0-9a-f]{4}-?[0-9a-f]{4}-?[0-9a-f]{12}$/i.test(s) || /^[A-Za-z0-9]{20,}$/.test(s);
+        const isUUID = /^[A-Za-z0-9]{16,}$/.test(s);
         label = isUUID ? (lrMap[s] || null) : (s || null);
       }
+      // If we have an ID but no label, use a stable short label so they're grouped
+      if(!label && rawId) label = 'Motivo ' + rawId.slice(0,8);
       const k = label || 'Sin motivo registrado';
       DATA.ghlLive.lostReasons[k] = (DATA.ghlLive.lostReasons[k]||0)+1;
+      if(rawId) DATA.ghlLive.lostReasonIds[rawId] = k;
     });
-    // Log sample lost opp fields to debug missing reasons
-    const sampleLost = oppList.filter(o=>(o.status||'').toLowerCase()==='lost').slice(0,3);
-    console.log('[GHL] lostReasons:', JSON.stringify(DATA.ghlLive.lostReasons));
-    // Log ALL fields of a lost opp with a lostReasonId set (to find text field)
-    const lostWithId = oppList.filter(o=>(o.status||'').toLowerCase()==='lost' && (o.lostReasonId||o.lost_reason_id));
-    if(lostWithId.length > 0) console.log('[GHL] FULL lost opp with ID:', JSON.stringify(lostWithId[0]));
-    else console.log('[GHL] sample lost opp fields:', JSON.stringify(sampleLost.map(o=>({ lostReason:o.lostReason, lostReasonId:o.lostReasonId, reason:o.reason, lost_reason:o.lost_reason, keys: Object.keys(o).filter(k=>k.toLowerCase().includes('lost')||k.toLowerCase().includes('reason')) }))));
 
 
     // Known user ID → name hardcoded (from confirmed GHL data)

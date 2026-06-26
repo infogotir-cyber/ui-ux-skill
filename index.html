@@ -282,9 +282,10 @@ function PersonalSection(props){
     else{var p=pmk.split("-"),y=parseInt(p[0]),m=parseInt(p[1]);var dt=new Date(y,m-1+d,1);setPmk(dt.getFullYear()+"-"+String(dt.getMonth()+1).padStart(2,"0"));}
   }
 
-  // Categorias para Presupuesto: activas + eliminadas que tienen transacciones este mes
-  var seenCatIds=profile.exp.map(function(e){return e.id;});
-  var catRows=profile.exp.map(function(e){return {id:e.id,n:e.n,c:e.c,budget:e.a,orphan:false};});
+  // Categorias para Presupuesto: usar snapshot del mes si existe, si no la lista actual
+  var monthExp=(profile.expSnap&&profile.expSnap[pmk])?profile.expSnap[pmk]:profile.exp;
+  var seenCatIds=monthExp.map(function(e){return e.id;});
+  var catRows=monthExp.map(function(e){return {id:e.id,n:e.n,c:e.c,budget:e.a,orphan:false};});
   monthTx.forEach(function(t){
     if(t.catId&&seenCatIds.indexOf(t.catId)<0){
       catRows.push({id:t.catId,n:(t.catName||"Cat. eliminada")+" (hist.)",c:T3,budget:0,orphan:true});
@@ -513,6 +514,7 @@ function AnnualSection({
   fixedItems,
   fixedSnap,
   tempItems,
+  tempSnap,
   taxRate,
   adsAmt,
   curMK,
@@ -521,8 +523,9 @@ function AnnualSection({
   const [year, setYear] = useState(parseInt(mkY(curMK)));
   function calcM(ni, mk) {
     const snapFixed = (fixedSnap && mk && fixedSnap[mk]) ? fixedSnap[mk] : fixedItems;
+    const snapTemp = (tempSnap && mk && tempSnap[mk]) ? tempSnap[mk] : tempItems;
     const fixed = sum(snapFixed, "a"),
-      temp = sum(tempItems, "a"),
+      temp = sum(snapTemp, "a"),
       tax = Math.round(ni * taxRate);
     let rem = ni - tax;
     const ff = Math.min(rem, fixed);
@@ -913,6 +916,7 @@ function App(){
   var _ld=useState(true),loading=_ld[0],setLoading=_ld[1];
   var _rp=useState({}),realPaid=_rp[0],setRealPaid=_rp[1];
   var _fs=useState({}),fixedSnap=_fs[0],setFixedSnap=_fs[1];
+  var _ts=useState({}),tempSnap=_ts[0],setTempSnap=_ts[1];
   var _sn=useState(""),newSaleN=_sn[0],setNewSaleN=_sn[1];
   var _sa=useState(""),newSaleA=_sa[0],setNewSaleA=_sa[1];
   var _ss=useState("Visa"),newSaleSvc=_ss[0],setNewSaleSvc=_ss[1];
@@ -944,6 +948,7 @@ function App(){
         if(kv.realPaid) setRealPaid(kv.realPaid);
         if(kv.adsTx&&kv.adsTx.length) setAdsTx(kv.adsTx);
         if(kv.fixedSnap) setFixedSnap(kv.fixedSnap);
+        if(kv.tempSnap) setTempSnap(kv.tempSnap);
       }
       setLoading(false);
     });
@@ -958,7 +963,14 @@ function App(){
     ns[curMK]=v;
     saveFixedSnap(ns);
   }
-  function saveTemp(v){setTempItems(v);apiPost("/kv/tempItems",v);}
+  function saveTempSnap(v){setTempSnap(v);apiPost("/kv/tempSnap",v);}
+  function saveTemp(v){
+    setTempItems(v);apiPost("/kv/tempItems",v);
+    var ns=Object.assign({},tempSnap);
+    sales.forEach(function(s){if(!ns[s.month])ns[s.month]=tempItems;});
+    ns[curMK]=v;
+    saveTempSnap(ns);
+  }
   function saveP5(v){setP5Items(v);apiPost("/kv/p5Items",v);}
   function saveTax(v){setTaxRate(v);apiPost("/kv/taxRate",{v:v});}
   function saveAds(v){setAdsAmt(v);apiPost("/kv/adsAmt",{v:v});}
@@ -966,8 +978,28 @@ function App(){
   function saveGoals(v){setGoals(v);apiPost("/kv/goals",v);}
   function saveEfEmp(v){setEfEmp(v);apiPost("/kv/efEmp",{v:v});}
   function saveEfEmpH(v){setEfEmpH(v);apiPost("/kv/efEmpHistory",v);}
-  function saveYo(v){setYo(v);apiPost("/kv/yo",v);}
-  function saveNovia(v){setNovia(v);apiPost("/kv/novia",v);}
+  function saveYo(v){
+    if(JSON.stringify(v.exp)!==JSON.stringify(yo.exp)){
+      var snap=Object.assign({},v.expSnap||{});
+      (v.transactions||[]).forEach(function(t){
+        var mk=t.month||(t.date?(function(){var p=t.date.split("/");return p.length===3?p[2]+"-"+p[1]:todayMK();})():todayMK());
+        if(!snap[mk])snap[mk]=yo.exp;
+      });
+      v=Object.assign({},v,{expSnap:snap});
+    }
+    setYo(v);apiPost("/kv/yo",v);
+  }
+  function saveNovia(v){
+    if(JSON.stringify(v.exp)!==JSON.stringify(novia.exp)){
+      var snap=Object.assign({},v.expSnap||{});
+      (v.transactions||[]).forEach(function(t){
+        var mk=t.month||(t.date?(function(){var p=t.date.split("/");return p.length===3?p[2]+"-"+p[1]:todayMK();})():todayMK());
+        if(!snap[mk])snap[mk]=novia.exp;
+      });
+      v=Object.assign({},v,{expSnap:snap});
+    }
+    setNovia(v);apiPost("/kv/novia",v);
+  }
   function saveRealPaid(v){setRealPaid(v);apiPost("/kv/realPaid",v);}
 
   function changeMonth(d,target){
@@ -1159,7 +1191,7 @@ function App(){
             : h("span",null,h("strong",null,"Mes saludable ("+fp(marg)+").")," Beneficio "+f(c.np)+". Diezmo: "+f(c.np*0.10)+" - Ahorro: "+f(c.np*0.20)+"."))
           }),
           Btn({onClick:function(){setETab(3);},bg:"transparent",fg:T2,mt:8,children:"+ Editar gastos y categorias"})),
-        eTab===2 && h(AnnualSection,{sales:sales,fixedItems:fixedItems,fixedSnap:fixedSnap,tempItems:tempItems,taxRate:taxRate,adsAmt:adsAmt,curMK:curMK,onJump:function(mk){setCurMK(mk);setManInc(null);setETab(1);}}),
+        eTab===2 && h(AnnualSection,{sales:sales,fixedItems:fixedItems,fixedSnap:fixedSnap,tempItems:tempItems,tempSnap:tempSnap,taxRate:taxRate,adsAmt:adsAmt,curMK:curMK,onJump:function(mk){setCurMK(mk);setManInc(null);setETab(1);}}),
         eTab===3 && h(ConfigSection,{fixedItems:fixedItems,tempItems:tempItems,p5Items:p5Items,taxRate:taxRate,onFixed:saveFixed,onTemp:saveTemp,onP5:saveP5,onTax:saveTax})),
       mainTab==="yo" && h(PersonalSection,{profile:yo,onUpdate:saveYo}),
       mainTab==="novia" && h(PersonalSection,{profile:novia,onUpdate:saveNovia})));

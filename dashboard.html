@@ -3428,13 +3428,14 @@ function updateTiemposFromGHL(oppList) {
   const MS_DAY = 86400000;
 
   // Tiempo hasta cierre (won opps)
-  const wonWithDates = oppList.filter(o => o.status==='won' && (o.closedDate||o.closeDate) && o.createdAt);
+  const wonWithDates = oppList.filter(o => (o.status||'').toLowerCase()==='won' && o.createdAt);
   if(wonWithDates.length > 0) {
     const days = wonWithDates.map(o => {
-      const closed = new Date(o.closedDate||o.closeDate).getTime();
+      const closedStr = o.closedDate || o.closeDate || o.date_closed || o.wonDate || o.updatedAt || '';
+      const closed = closedStr ? new Date(closedStr).getTime() : Date.now();
       const created = new Date(o.createdAt).getTime();
       return Math.max(0, Math.round((closed - created) / MS_DAY));
-    }).filter(d => d >= 0 && d < 365);
+    }).filter(d => d >= 0 && d < 730);
     if(days.length > 0) {
       const avg = Math.round(days.reduce((a,b)=>a+b,0)/days.length);
       const min = Math.min(...days);
@@ -3499,7 +3500,8 @@ function updateTiemposFromGHL(oppList) {
   const vendorDays = {};
   wonWithDates.forEach(o => {
     const name = o.assignedTo?.name || o.assignedToUser?.name || o.assignedToUser || 'Sin asignar';
-    const days = Math.max(0, Math.round((new Date(o.closedDate||o.closeDate).getTime() - new Date(o.createdAt).getTime()) / MS_DAY));
+    const closedStr2 = o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.updatedAt||'';
+    const days = Math.max(0, Math.round(((closedStr2?new Date(closedStr2).getTime():Date.now()) - new Date(o.createdAt).getTime()) / MS_DAY));
     if(!vendorDays[name]) vendorDays[name] = { total:0, count:0 };
     vendorDays[name].total += days;
     vendorDays[name].count++;

@@ -3045,9 +3045,10 @@ function initPerdidas() {
 
   // Update stat cards with real data if available
   const cardContainer = document.getElementById('perd-motivos-cards');
-  if(cardContainer && hasReal && GHL.connected) {
+  if(cardContainer && total > 0) {
     const cardColors = ['#f87171','#fb923c','#fbbf24','#a78bfa','#60a5fa','#94a3b8'];
-    cardContainer.innerHTML = namedEntries.slice(0,6).map(([motivo,cnt],i) => {
+    const showEntries = namedEntries.length > 0 ? namedEntries : allEntries;
+    cardContainer.innerHTML = showEntries.slice(0,6).map(([motivo,cnt],i) => {
       const pct = Math.round(cnt/total*100);
       return `<div class="stat-card" style="border-left:3px solid ${cardColors[i]}">
         <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">${motivo}</div>

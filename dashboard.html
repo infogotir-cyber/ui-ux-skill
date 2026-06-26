@@ -3616,9 +3616,22 @@ function removeVendedor(idx) {
 // Legacy compat
 function getVendedoresList() { return []; }
 
-// ── Lost Reason manual labels (localStorage) ──────────────────
+// ── Lost Reason manual labels (localStorage + hardcoded known IDs) ──────────
+const KNOWN_LOST_REASONS = {
+  '6a3d691c5d1cfc684f0a06ed': 'Dejo de contestar',
+  '6981ebac1ba06c1cd7e6a4db': 'Lo hizo con otra empresa',
+  '697ca9001fd4b239e18d6984': 'Ya está en España',
+  '696663bdcbe57d652b0c870a': 'Tiene ciudadanía',
+  '693896b3d87b9a68ea46ac80': 'Otro trámite',
+  '692f29cbe92a65783079cf96': 'No interesado',
+  '692f25fe7ab49e3d1405e15a': 'Fondos insuficientes',
+  '692f24cb725ca9322dfa9a70': 'Fuera de tiempo',
+};
 function getLostReasonLabels() {
-  try { return JSON.parse(localStorage.getItem('gotir_lost_reasons_v1') || '{}'); } catch(e) { return {}; }
+  try {
+    const manual = JSON.parse(localStorage.getItem('gotir_lost_reasons_v1') || '{}');
+    return Object.assign({}, KNOWN_LOST_REASONS, manual); // manual overrides hardcoded
+  } catch(e) { return Object.assign({}, KNOWN_LOST_REASONS); }
 }
 function saveLostReasonLabel(id, label) {
   const map = getLostReasonLabels();

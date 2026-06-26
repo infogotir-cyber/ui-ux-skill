@@ -3966,7 +3966,10 @@ async function loadGHLData() {
     // Log sample lost opp fields to debug missing reasons
     const sampleLost = oppList.filter(o=>(o.status||'').toLowerCase()==='lost').slice(0,3);
     console.log('[GHL] lostReasons:', JSON.stringify(DATA.ghlLive.lostReasons));
-    console.log('[GHL] sample lost opp fields:', JSON.stringify(sampleLost.map(o=>({ lostReason:o.lostReason, lostReasonId:o.lostReasonId, reason:o.reason, lost_reason:o.lost_reason, keys: Object.keys(o).filter(k=>k.toLowerCase().includes('lost')||k.toLowerCase().includes('reason')) }))));
+    // Log ALL fields of a lost opp with a lostReasonId set (to find text field)
+    const lostWithId = oppList.filter(o=>(o.status||'').toLowerCase()==='lost' && (o.lostReasonId||o.lost_reason_id));
+    if(lostWithId.length > 0) console.log('[GHL] FULL lost opp with ID:', JSON.stringify(lostWithId[0]));
+    else console.log('[GHL] sample lost opp fields:', JSON.stringify(sampleLost.map(o=>({ lostReason:o.lostReason, lostReasonId:o.lostReasonId, reason:o.reason, lost_reason:o.lost_reason, keys: Object.keys(o).filter(k=>k.toLowerCase().includes('lost')||k.toLowerCase().includes('reason')) }))));
 
 
     // Known user ID → name hardcoded (from confirmed GHL data)

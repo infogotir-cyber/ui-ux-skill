@@ -1021,37 +1021,8 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
 
   <!-- Tab: Motivos -->
   <div id="perd-tab-motivos">
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
-      <div class="stat-card" style="border-left:3px solid #f87171">
-        <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">Dinero / Precio</div>
-        <div class="text-2xl font-bold text-white">34%</div>
-        <div class="text-xs text-red-400 mt-1">Principal motivo</div>
-      </div>
-      <div class="stat-card" style="border-left:3px solid #fb923c">
-        <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">No Cumple Requisitos</div>
-        <div class="text-2xl font-bold text-white">22%</div>
-        <div class="text-xs text-orange-400 mt-1">CUE / sin fondos</div>
-      </div>
-      <div class="stat-card" style="border-left:3px solid #fbbf24">
-        <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">No Responde</div>
-        <div class="text-2xl font-bold text-white">18%</div>
-        <div class="text-xs text-amber-400 mt-1">Sin contacto</div>
-      </div>
-      <div class="stat-card" style="border-left:3px solid #a78bfa">
-        <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">Eligió Competencia</div>
-        <div class="text-2xl font-bold text-white">13%</div>
-        <div class="text-xs text-purple-400 mt-1">Otro proveedor</div>
-      </div>
-      <div class="stat-card" style="border-left:3px solid #60a5fa">
-        <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">Lo Hará Más Adelante</div>
-        <div class="text-2xl font-bold text-white">8%</div>
-        <div class="text-xs text-blue-400 mt-1">Falta urgencia</div>
-      </div>
-      <div class="stat-card" style="border-left:3px solid #94a3b8">
-        <div class="text-xs text-slate-500 mb-1 uppercase tracking-wide">Otros</div>
-        <div class="text-2xl font-bold text-white">5%</div>
-        <div class="text-xs text-slate-400 mt-1">Sin clasificar</div>
-      </div>
+    <div id="perd-motivos-cards" class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+      <div class="stat-card col-span-2 md:col-span-3 text-center text-slate-500 text-sm py-4">Conectá GHL para ver los motivos reales de pérdida</div>
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
       <div class="card">
@@ -3450,22 +3421,32 @@ function updateTiemposFromGHL(oppList) {
 
   // Tiempo en stage actual (open opps — approx via updatedAt)
   const STAGE_MAP_IDX = {
-    'new lead /sin clasificar':0,'new lead / sin clasificar':0,
-    'cualificado':1,'cuailficado':1,'agendar llamada':1,
-    'llamada agendada':2,'llamada realizada':3,
-    'información y contrato enviado':4,'informacion y contrato enviado':4,
-    'información y contrato  enviado':4,
-    'pronto pago':5,'pagado':6
+    'new lead /sin clasificar':0,'new lead / sin clasificar':0,'new lead/sin clasificar':0,'new lead':0,'sin clasificar':0,'nuevo lead':0,
+    'cualificado':1,'cuailficado':1,'agendar llamada':1,'calificado':1,'cualificada':1,
+    'llamada agendada':2,'cita agendada':2,
+    'llamada realizada':3,'cita realizada':3,
+    'información y contrato enviado':4,'informacion y contrato enviado':4,'información y contrato  enviado':4,'info y contrato enviado':4,'información y contrato':4,
+    'pronto pago':5,'pago':5,
+    'pagado':6,'ganado':6,'won':6
   };
+  const stageIdMapT = DATA.ghlLive.stageIdMap || {};
   const stageDays = DATA.funnel.map(s => ({ label:s.label, color:s.color, count:0, totalDays:0 }));
-  oppList.filter(o=>o.status==='open'||o.status==='active'||!o.status).forEach(o => {
-    const name = (o.pipelineStageName||o.stageName||'').toLowerCase().trim();
-    const idx = STAGE_MAP_IDX[name];
-    if(idx !== undefined && o.updatedAt) {
-      const days = Math.round((now - new Date(o.updatedAt).getTime()) / MS_DAY);
-      if(days >= 0 && days < 365) {
-        stageDays[idx].count++;
-        stageDays[idx].totalDays += days;
+  // Log first 3 open opps to see what fields GHL returns
+  const openOpps = oppList.filter(o=>{ const s=(o.status||'').toLowerCase(); return s==='open'||s==='active'||s===''; });
+  console.log('[GHL] tiempos: total opps='+oppList.length+' open='+openOpps.length);
+  console.log('[GHL] tiempos sample:', JSON.stringify(openOpps.slice(0,2).map(o=>({ status:o.status, pipelineStageName:o.pipelineStageName, stageName:o.stageName, stageId:o.stageId, pipelineStageId:o.pipelineStageId }))));
+  openOpps.forEach(o => {
+    const sid = o.stageId || o.pipelineStageId || o.stage?.id || '';
+    const direct = o.pipelineStageName || o.stageName || o.stage?.name || '';
+    const resolved = direct || (sid ? (stageIdMapT[sid] || '') : '');
+    const nameRaw = resolved.toLowerCase().trim();
+    const nameNorm = nameRaw.normalize('NFD').replace(/[̀-ͯ]/g,'');
+    const idx = STAGE_MAP_IDX[nameRaw] ?? STAGE_MAP_IDX[nameNorm];
+    if(idx !== undefined) {
+      const dateStr = o.updatedAt || o.lastUpdated || o.dateUpdated || '';
+      if(dateStr) {
+        const days = Math.round((now - new Date(dateStr).getTime()) / MS_DAY);
+        if(days >= 0 && days < 730) { stageDays[idx].count++; stageDays[idx].totalDays += days; }
       }
     }
   });
@@ -3940,17 +3921,28 @@ async function loadGHLData() {
 
     // Lost reasons — resolve UUID → label using pipeline's lostReasons config
     const lrMap = DATA.ghlLive.lostReasonIdMap || {};
+    console.log('[GHL] lostReasonIdMap size:', Object.keys(lrMap).length, JSON.stringify(lrMap));
     DATA.ghlLive.lostReasons = {};
     oppList.filter(o=>(o.status||'').toLowerCase()==='lost').forEach(o => {
-      const raw = o.lostReason || o.lost_reason || o.lostReasonLabel || o.reason || null;
-      const rawStr = raw ? String(raw).trim() : '';
-      // Resolve UUID → human label via pipeline config; fall back to raw text if not a UUID
-      const isUUID = rawStr.match(/^[0-9a-f-]{20,}$/i);
-      const label = isUUID ? (lrMap[rawStr] || null) : (rawStr || null);
+      // GHL V2 may use lostReasonId (UUID) or lostReason (text) or lostReasonLabel
+      const rawId  = o.lostReasonId || o.lost_reason_id || null;
+      const rawTxt = o.lostReason   || o.lost_reason    || o.lostReasonLabel || o.reason || null;
+      // Try ID resolution first, then text
+      let label = null;
+      if(rawId) label = lrMap[String(rawId).trim()] || null;
+      if(!label && rawTxt) {
+        const s = String(rawTxt).trim();
+        const isUUID = /^[0-9a-f]{8}-?[0-9a-f]{4}-?[0-9a-f]{4}-?[0-9a-f]{4}-?[0-9a-f]{12}$/i.test(s) || /^[A-Za-z0-9]{20,}$/.test(s);
+        label = isUUID ? (lrMap[s] || null) : (s || null);
+      }
       const k = label || 'Sin motivo registrado';
       DATA.ghlLive.lostReasons[k] = (DATA.ghlLive.lostReasons[k]||0)+1;
     });
+    // Log sample lost opp fields to debug missing reasons
+    const sampleLost = oppList.filter(o=>(o.status||'').toLowerCase()==='lost').slice(0,3);
     console.log('[GHL] lostReasons:', JSON.stringify(DATA.ghlLive.lostReasons));
+    console.log('[GHL] sample lost opp fields:', JSON.stringify(sampleLost.map(o=>({ lostReason:o.lostReason, lostReasonId:o.lostReasonId, reason:o.reason, lost_reason:o.lost_reason, keys: Object.keys(o).filter(k=>k.toLowerCase().includes('lost')||k.toLowerCase().includes('reason')) }))));
+
 
     // Known user ID → name hardcoded (from confirmed GHL data)
     const KNOWN_USERS = {

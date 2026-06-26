@@ -3422,7 +3422,7 @@ function updateTiemposFromGHL(oppList) {
   // Tiempo en stage actual (open opps — approx via updatedAt)
   const STAGE_MAP_IDX = {
     'new lead /sin clasificar':0,'new lead / sin clasificar':0,'new lead/sin clasificar':0,'new lead':0,'sin clasificar':0,'nuevo lead':0,
-    'cualificado':1,'cuailficado':1,'agendar llamada':1,'calificado':1,'cualificada':1,
+    'cualificado':1,'cuailficado':1,'cuailificado':1,'agendar llamada':1,'calificado':1,'cualificada':1,'cualificados':1,
     'llamada agendada':2,'cita agendada':2,
     'llamada realizada':3,'cita realizada':3,
     'información y contrato enviado':4,'informacion y contrato enviado':4,'información y contrato  enviado':4,'info y contrato enviado':4,'información y contrato':4,
@@ -3839,6 +3839,31 @@ async function loadGHLData() {
         (p.stages || []).forEach(s => { if(s.id) stageIdMap[s.id] = s.name || ''; });
         (p.lostReasons || []).forEach(r => { if(r.id && r.name) lostReasonIdMap[r.id] = r.name; });
       });
+      // Fetch lost reasons from dedicated endpoint (GHL stores them separately)
+      try {
+        const lrResp = await ghlFetchV2('GET', `/opportunities/lost-reasons`, { locationId: GHL.locationId });
+        const lrList = lrResp.lostReasons || lrResp.reasons || lrResp.data || [];
+        lrList.forEach(r => {
+          const id = r.id || r._id || r.lostReasonId || '';
+          const name = r.name || r.label || r.title || '';
+          if(id && name) lostReasonIdMap[id] = name;
+        });
+        console.log('[GHL] Lost reasons endpoint returned:', lrList.length, 'items', JSON.stringify(lrList.slice(0,3)));
+      } catch(e) { console.log('[GHL] Lost reasons endpoint error:', e.message); }
+      // Fallback: fetch each pipeline individually (full detail may include lostReasons)
+      if(Object.keys(lostReasonIdMap).length === 0) {
+        for(const p of pipelineList) {
+          try {
+            const pd = await ghlFetchV2('GET', `/opportunities/pipelines/${p.id}`, { locationId: GHL.locationId });
+            const pl = pd.pipeline || pd;
+            (pl.lostReasons || pl.lost_reasons || []).forEach(r => {
+              const id = r.id || r._id || ''; const name = r.name || r.label || '';
+              if(id && name) lostReasonIdMap[id] = name;
+            });
+          } catch(e) {}
+        }
+        console.log('[GHL] After pipeline fallback, lostReasonIdMap size:', Object.keys(lostReasonIdMap).length);
+      }
       DATA.ghlLive.stageIdMap = stageIdMap;
       DATA.ghlLive.lostReasonIdMap = lostReasonIdMap;
       console.log('[GHL] Stage ID map:', stageIdMap);

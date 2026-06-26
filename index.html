@@ -950,7 +950,14 @@ function App(){
   },[]);
 
   function saveFixedSnap(v){setFixedSnap(v);apiPost("/kv/fixedSnap",v);}
-  function saveFixed(v){setFixedItems(v);apiPost("/kv/fixedItems",v);var ns=Object.assign({},fixedSnap);ns[curMK]=v;saveFixedSnap(ns);}
+  function saveFixed(v){
+    setFixedItems(v);apiPost("/kv/fixedItems",v);
+    var ns=Object.assign({},fixedSnap);
+    // Freeze all past months that have sales but no snapshot yet (with old list before this change)
+    sales.forEach(function(s){if(!ns[s.month])ns[s.month]=fixedItems;});
+    ns[curMK]=v;
+    saveFixedSnap(ns);
+  }
   function saveTemp(v){setTempItems(v);apiPost("/kv/tempItems",v);}
   function saveP5(v){setP5Items(v);apiPost("/kv/p5Items",v);}
   function saveTax(v){setTaxRate(v);apiPost("/kv/taxRate",{v:v});}

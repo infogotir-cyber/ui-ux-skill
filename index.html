@@ -807,6 +807,77 @@ function AnnualSection({
     }
   }, fp(avgM))))))));
 }
+function Fase4Block(props){
+  var adsAmt=props.adsAmt,saveAds=props.saveAds,adsTx=props.adsTx,saveAdsTx=props.saveAdsTx,curMK=props.curMK,af=props.af;
+  var _d=useState(""),desc=_d[0],setDesc=_d[1];
+  var _a=useState(""),amt=_a[0],setAmt=_a[1];
+  var _dt=useState(function(){var d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}),date=_dt[0],setDate=_dt[1];
+  var _open=useState(false),open=_open[0],setOpen=_open[1];
+
+  var monthTx=adsTx.filter(function(t){return t.month===curMK;});
+  var totalSpent=monthTx.reduce(function(a,t){return a+t.amt;},0);
+  var diff=adsAmt-totalSpent;
+  var pct=adsAmt>0?Math.min(100,Math.round(totalSpent/adsAmt*100)):0;
+  var bc=diff>=0?AC:"#D32F2F";
+
+  function todayISO(){var d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");}
+  function fmtDate(iso){if(!iso)return "";var p=iso.split("-");return p[2]+"/"+p[1]+"/"+p[0];}
+
+  function addTx(){
+    var a=parseFloat(amt);
+    if(!(a>0)){return;}
+    var tx={id:Date.now(),desc:desc||"Publicidad",amt:a,month:curMK,date:fmtDate(date||todayISO())};
+    saveAdsTx(adsTx.concat([tx]));
+    setDesc("");setAmt("");setDate(todayISO());
+  }
+
+  return h("div",null,
+    Lbl({label:"Fase 4 - Publicidad (variable)",color:AC}),
+    h("div",{style:{background:S,border:"0.5px solid "+BD,borderRadius:10,overflow:"hidden",marginBottom:6}},
+      h("div",{style:{padding:"8px 12px 6px",display:"flex",justifyContent:"space-between",alignItems:"flex-start"}},
+        h("div",null,
+          h("div",{style:{fontSize:13,fontWeight:500,color:T}},"Presupuesto publicidad"),
+          h("div",{style:{fontSize:11,color:T2}},"Meta Ads, Google Ads")),
+        h("div",{style:{textAlign:"right"}},
+          h("div",{style:{fontSize:13,fontWeight:500,color:bc,fontVariantNumeric:"tabular-nums"}},f(totalSpent)+" / "+f(adsAmt)),
+          totalSpent>0 && h("div",{style:{fontSize:11,color:bc,marginTop:1}},diff>=0?"Quedan "+f(diff):"Pasado en "+f(Math.abs(diff))))
+      ),
+      Bar({pct:pct,color:bc}),
+      h("div",{style:{padding:"8px 12px 12px",display:"flex",flexDirection:"column",gap:8}},
+        h("div",{style:{fontSize:11,fontWeight:600,color:T2,letterSpacing:"0.06em",textTransform:"uppercase",marginBottom:2}},"Presupuesto mensual"),
+        h("div",{style:{display:"flex",alignItems:"center",gap:8}},
+          h("input",{type:"range",min:"10",max:"1000",step:"10",value:adsAmt,onChange:function(e){saveAds(parseInt(e.target.value));},style:{flex:1,WebkitAppearance:"none",height:4,borderRadius:2,background:S2,outline:"none",cursor:"pointer"}}),
+          h("span",{style:{fontSize:12,fontWeight:500,color:AC,minWidth:54,textAlign:"right",fontVariantNumeric:"tabular-nums"}},f(adsAmt))),
+        h("div",{style:{display:"flex",gap:6,flexWrap:"wrap"}},
+          [10,50,100,200,500].map(function(v){return h("button",{key:v,onClick:function(){saveAds(v);},style:{fontSize:11,padding:"3px 10px",borderRadius:20,border:"0.5px solid "+(adsAmt===v?AC:BD2),background:adsAmt===v?AC:"transparent",color:adsAmt===v?"white":T2,cursor:"pointer"}},v);})),
+        h("div",{style:{height:"0.5px",background:BD,margin:"4px 0"}}),
+        h("div",{style:{fontSize:11,fontWeight:600,color:T2,letterSpacing:"0.06em",textTransform:"uppercase",marginBottom:4}},"Registrar gasto"),
+        h("input",{placeholder:"Descripcion (ej: Meta Ads)",value:desc,onChange:function(e){setDesc(e.target.value);},onKeyDown:function(e){if(e.key==="Enter")addTx();},style:{fontSize:13,padding:"7px 10px",borderRadius:8,border:"0.5px solid "+BD2,background:S2,color:T,width:"100%",marginBottom:6}}),
+        h("div",{style:{display:"flex",gap:8,marginBottom:6}},
+          h("div",{style:{flex:1}},
+            h("div",{style:{fontSize:11,color:T2,marginBottom:4}},"Monto (EUR)"),
+            h("input",{type:"number",placeholder:"0",min:"0",step:"0.01",value:amt,onChange:function(e){setAmt(e.target.value);},onKeyDown:function(e){if(e.key==="Enter")addTx();},style:{fontSize:13,padding:"7px 10px",borderRadius:8,border:"0.5px solid "+BD2,background:S2,color:T,width:"100%"}})),
+          h("div",{style:{flex:1}},
+            h("div",{style:{fontSize:11,color:T2,marginBottom:4}},"Fecha"),
+            h("input",{type:"date",value:date,onChange:function(e){setDate(e.target.value);},style:{fontSize:13,padding:"7px 10px",borderRadius:8,border:"0.5px solid "+BD2,background:S2,color:T,width:"100%"}}))),
+        Btn({onClick:addTx,mt:0,children:"+ Registrar"}),
+        monthTx.length>0 && h("div",null,
+          h("button",{onClick:function(){setOpen(!open);},style:{fontSize:11,color:AC,background:"none",border:"none",cursor:"pointer",padding:"6px 0 2px",display:"block"}},open?"Ocultar movimientos":"Ver movimientos del mes ("+monthTx.length+")"),
+          open && h("div",null,
+            monthTx.slice().reverse().map(function(tx){
+              return h("div",{key:tx.id,style:{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"5px 0",borderBottom:"0.5px solid "+BD}},
+                h("div",null,
+                  h("div",{style:{fontSize:12,fontWeight:500,color:T}},tx.desc),
+                  h("div",{style:{fontSize:10,color:T3}},tx.date)),
+                h("div",{style:{display:"flex",alignItems:"center",gap:8}},
+                  h("span",{style:{fontSize:12,fontWeight:500,color:AC,fontVariantNumeric:"tabular-nums"}},fd(tx.amt)),
+                  h("button",{onClick:function(){saveAdsTx(adsTx.filter(function(x){return x.id!==tx.id;}));},style:{background:"none",border:"none",cursor:"pointer",color:T3,fontSize:15,padding:"0 2px"}},"x")));
+            }),
+            h("div",{style:{display:"flex",justifyContent:"space-between",padding:"6px 0",fontSize:12,fontWeight:600,borderTop:"0.5px solid "+BD2,marginTop:2}},
+              h("span",{style:{color:T}},"Total gastado"),
+              h("span",{style:{color:bc,fontVariantNumeric:"tabular-nums"}},fd(totalSpent))))))));
+}
+
 function App(){
   var _mt=useState("empresa"),mainTab=_mt[0],setMainTab=_mt[1];
   var _et=useState(0),eTab=_et[0],setETab=_et[1];
@@ -818,6 +889,7 @@ function App(){
   var _pi=useState(IP5),p5Items=_pi[0],setP5Items=_pi[1];
   var _tx=useState(0.40),taxRate=_tx[0],setTaxRate=_tx[1];
   var _ad=useState(10),adsAmt=_ad[0],setAdsAmt=_ad[1];
+  var _atx=useState([]),adsTx=_atx[0],setAdsTx=_atx[1];
   var _go=useState({}),goals=_go[0],setGoals=_go[1];
   var _ef=useState(0),efEmp=_ef[0],setEfEmp=_ef[1];
   var _eh=useState([]),efEmpH=_eh[0],setEfEmpH=_eh[1];
@@ -854,6 +926,7 @@ function App(){
         if(kv.yo) setYo(kv.yo);
         if(kv.novia) setNovia(kv.novia);
         if(kv.realPaid) setRealPaid(kv.realPaid);
+        if(kv.adsTx&&kv.adsTx.length) setAdsTx(kv.adsTx);
       }
       setLoading(false);
     });
@@ -864,6 +937,7 @@ function App(){
   function saveP5(v){setP5Items(v);apiPost("/kv/p5Items",v);}
   function saveTax(v){setTaxRate(v);apiPost("/kv/taxRate",{v:v});}
   function saveAds(v){setAdsAmt(v);apiPost("/kv/adsAmt",{v:v});}
+  function saveAdsTx(v){setAdsTx(v);apiPost("/kv/adsTx",v);}
   function saveGoals(v){setGoals(v);apiPost("/kv/goals",v);}
   function saveEfEmp(v){setEfEmp(v);apiPost("/kv/efEmp",{v:v});}
   function saveEfEmpH(v){setEfEmpH(v);apiPost("/kv/efEmpHistory",v);}
@@ -1029,18 +1103,7 @@ function App(){
           h(BucketCard,{bkt:{label:"Fase 1 - Gastos fijos ("+f(fixed)+")",fill:c.ff,target:fixed,color:"#D32F2F",id:"f1"},fixedItems:fixedItems,tempItems:tempItems,setTempItems:saveTemp,realPaid:realPaid,onRealPaid:function(id,v){saveRealPaid(Object.assign({},realPaid,{[id]:v}));}}),
           h(BucketCard,{bkt:{label:"Fase 2 - Impuestos ("+fp(Math.round(taxRate*100))+")",fill:c.tax,target:ni,pct:Math.round(taxRate*100),color:"#8B3A1A",id:"f2"},fixedItems:fixedItems,tempItems:tempItems,setTempItems:saveTemp,realPaid:realPaid,onRealPaid:function(id,v){saveRealPaid(Object.assign({},realPaid,{[id]:v}));}}),
           h(BucketCard,{bkt:{label:"Fase 3 - Compromisos ("+f(temp)+")",fill:c.cf,target:temp,color:"#BA7517",id:"f3"},fixedItems:fixedItems,tempItems:tempItems,setTempItems:saveTemp,realPaid:realPaid,onRealPaid:function(id,v){saveRealPaid(Object.assign({},realPaid,{[id]:v}));}}),
-          Lbl({label:"Fase 4 - Publicidad (variable)",color:AC}),
-          h("div",{style:{background:S,border:"0.5px solid "+BD,borderRadius:10,overflow:"hidden",marginBottom:6}},
-            h("div",{style:{padding:"8px 12px 6px",display:"flex",justifyContent:"space-between"}},
-              h("div",null,h("div",{style:{fontSize:13,fontWeight:500,color:T}},"Presupuesto publicidad"),h("div",{style:{fontSize:11,color:T2}},"Meta Ads, Google Ads")),
-              h("div",{style:{fontSize:13,fontWeight:500,color:AC,fontVariantNumeric:"tabular-nums"}},f(adsAmt))),
-            Bar({pct:adsAmt>0?Math.round(c.af/adsAmt*100):0,color:AC}),
-            h("div",{style:{padding:"6px 12px 12px",display:"flex",flexDirection:"column",gap:8}},
-              h("div",{style:{display:"flex",alignItems:"center",gap:8}},
-                h("input",{type:"range",min:"10",max:"500",step:"10",value:adsAmt,onChange:function(e){saveAds(parseInt(e.target.value));},style:{flex:1,WebkitAppearance:"none",height:4,borderRadius:2,background:S2,outline:"none",cursor:"pointer"}}),
-                h("span",{style:{fontSize:12,fontWeight:500,color:AC,minWidth:54,textAlign:"right",fontVariantNumeric:"tabular-nums"}},f(adsAmt))),
-              h("div",{style:{display:"flex",gap:6,flexWrap:"wrap"}},
-                [10,50,100,200,500].map(function(v){return h("button",{key:v,onClick:function(){saveAds(v);},style:{fontSize:11,padding:"3px 10px",borderRadius:20,border:"0.5px solid "+(adsAmt===v?AC:BD2),background:adsAmt===v?AC:"transparent",color:adsAmt===v?"white":T2,cursor:"pointer"}},v);})))),
+          h(Fase4Block,{adsAmt:adsAmt,saveAds:saveAds,adsTx:adsTx,saveAdsTx:saveAdsTx,curMK:curMK,af:c.af}),
           Lbl({label:"Fase 5 - Beneficio neto"+(c.np>0?" ("+f(c.np)+")":""),color:"#2c394a"}),
           p5Items.map(function(b){
             var fill=c.np*(b.p/100);

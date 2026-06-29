@@ -1711,6 +1711,41 @@ function recalcFromPeriod(p) {
     // Re-render seguimiento KPIs if already open (period-sensitive)
     if(sectionInited['seguimiento']) initSeguimiento();
 
+    // Recalculate byVendedor for the current period and re-render if open
+    const allOppsV = DATA.ghlLive.allOpps || [];
+    const periodOpps = filterByPeriod(allOppsV, range, 'createdAt');
+    const periodWon  = allOppsV.filter(o => {
+      if((o.status||'').toLowerCase()!=='won') return false;
+      const raw = o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.updatedAt||'';
+      if(!raw) return false;
+      const t = typeof raw==='number'?raw:new Date(raw).getTime();
+      return t>=range.from&&t<=range.to;
+    });
+    const userMapV = DATA.ghlLive.userMap || {};
+    const KNOWN_V = { 'MEykm3D6Om8Siw8HUk2T':'Mariano Barcelona' };
+    const byVendedorPeriod = {};
+    periodOpps.forEach(o => {
+      const uid = o.assignedTo||o.assigned_to||o.userId||'unknown';
+      const name = KNOWN_V[uid]||userMapV[uid]||o.assignedToUser?.name||o.user?.name||uid;
+      if(!byVendedorPeriod[uid]) byVendedorPeriod[uid]={name,llamadas:0,opps:0,ventas:0,revenue:0};
+      byVendedorPeriod[uid].opps++;
+    });
+    periodWon.forEach(o => {
+      const uid = o.assignedTo||o.assigned_to||o.userId||'unknown';
+      const name = KNOWN_V[uid]||userMapV[uid]||o.assignedToUser?.name||o.user?.name||uid;
+      if(!byVendedorPeriod[uid]) byVendedorPeriod[uid]={name,llamadas:0,opps:0,ventas:0,revenue:0};
+      byVendedorPeriod[uid].ventas++;
+      byVendedorPeriod[uid].revenue += parseFloat(o.monetaryValue||o.monetary_value||0)||0;
+    });
+    // Llamadas from filtered citas
+    const citasPeriod = filterByPeriod(DATA.ghlLive.allCitas||[], range, 'startTime');
+    citasPeriod.forEach(c => {
+      const uid = c.assignedUserId||c.userId||c.calendarId||'';
+      if(uid && byVendedorPeriod[uid]) byVendedorPeriod[uid].llamadas++;
+    });
+    DATA.ghlLive.byVendedor = byVendedorPeriod;
+    if(sectionInited['vendedores']) initVendedores();
+
     // Update Dashboard Ejecutivo — Fuentes and Comparativa are period-sensitive
     refreshEjecutivoPeriod(contacts, wonOpps, sourceCounts, days);
   }

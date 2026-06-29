@@ -4245,10 +4245,15 @@ async function loadGHLData() {
       'MEykm3D6Om8Siw8HUk2T': 'Mariano Barcelona',
     };
     // Fetch GHL users to resolve IDs → names
-    let userMap = Object.assign({}, KNOWN_USERS, DATA.ghlLive.userMap || {});
+    // Merge manual vendedor config (ghlId → name) so names resolve even when API fails
+    const vendConfig = getVendedoresConfig();
+    const vendMapFromConfig = {};
+    vendConfig.forEach(v => { if(v.ghlId && v.nombre) vendMapFromConfig[v.ghlId] = v.nombre; });
+    let userMap = Object.assign({}, KNOWN_USERS, vendMapFromConfig, DATA.ghlLive.userMap || {});
     try {
       // Try location-specific endpoint first (works with location-scoped tokens)
       const uEndpoints = [
+        `https://services.leadconnectorhq.com/users?locationId=${GHL.locationId}&limit=100`,
         `https://services.leadconnectorhq.com/locations/${GHL.locationId}/users`,
         `https://services.leadconnectorhq.com/users/?locationId=${GHL.locationId}&limit=100`
       ];

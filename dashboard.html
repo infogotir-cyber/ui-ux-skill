@@ -2880,19 +2880,11 @@ function generatePDF() {
         </div>
       </div>
 
-      <!-- OPORTUNIDADES ABIERTAS -->
-      <div class="section-title" style="margin-top:20px">Estado del Pipeline</div>
-      <div class="kpi-grid-3">
-        ${kpiCard('Total en Pipeline', allO.filter(o=>(o.status||'').toLowerCase()==='open').length, 'Oportunidades abiertas')}
-        ${kpiCard('Oportunidades Período', periodO.length, 'Creadas en el período')}
-        ${kpiCard('Valor Potencial', '€'+(allO.filter(o=>(o.status||'').toLowerCase()==='open').reduce((s,o)=>s+(parseFloat(o.monetaryValue||0)||0),0)).toLocaleString('es-ES'), 'Pipeline activo total')}
-      </div>
-
     </div>
 
     <div style="page-break-before:always"></div>
 
-    <!-- PÁGINA 2 — RECOMENDACIONES -->
+    <!-- PÁGINA 2 — PIPELINE + RECOMENDACIONES -->
     <div class="header" style="margin-top:0">
       <div class="header-left">
         <h1>GOTIR</h1>
@@ -2904,6 +2896,14 @@ function generatePDF() {
       </div>
     </div>
     <div class="body">
+      <!-- ESTADO DEL PIPELINE -->
+      <div class="section-title">Estado del Pipeline</div>
+      <div class="kpi-grid-3" style="margin-bottom:24px">
+        ${kpiCard('Total en Pipeline', allO.filter(o=>(o.status||'').toLowerCase()==='open').length, 'Oportunidades abiertas')}
+        ${kpiCard('Oportunidades Período', periodO.length, 'Creadas en el período')}
+        ${kpiCard('Valor Potencial', '€'+(allO.filter(o=>(o.status||'').toLowerCase()==='open').reduce((s,o)=>s+(parseFloat(o.monetaryValue||0)||0),0)).toLocaleString('es-ES'), 'Pipeline activo total')}
+      </div>
+
       <div class="section-title">Recomendaciones Estratégicas</div>
 
       <div class="rec-item urgent">

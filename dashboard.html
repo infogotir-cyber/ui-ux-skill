@@ -733,10 +733,10 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
 <!-- ══════════════════════════════════════════════════════════ -->
 <div id="s-seguimiento" class="section p-6">
   <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Clientes Activos</div><div class="text-2xl font-bold text-white">86</div><span class="badge badge-up">+6 este mes</span></div>
-    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">En Trámite</div><div class="text-2xl font-bold text-white">49</div><span class="badge badge-neutral">en proceso</span></div>
-    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Renovaciones</div><div class="text-2xl font-bold text-white">7</div><span class="badge badge-up">oportunidad</span></div>
-    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Cerrados OK</div><div class="text-2xl font-bold text-white">18</div><span class="badge badge-up">este mes</span></div>
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Clientes Activos</div><div class="text-2xl font-bold text-white" id="seg-kpi-activos">—</div><span class="text-xs text-slate-500">expedientes abiertos</span></div>
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">En Trámite</div><div class="text-2xl font-bold text-white" id="seg-kpi-tramite">—</div><span class="text-xs text-slate-500">en proceso activo</span></div>
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Renovaciones</div><div class="text-2xl font-bold text-white" id="seg-kpi-renovaciones">—</div><span class="text-xs text-slate-500">oportunidad</span></div>
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Cerrados OK</div><div class="text-2xl font-bold text-white" id="seg-kpi-cerrados">—</div><span id="seg-kpi-cerrados-label" class="text-xs text-slate-500">en el período</span></div>
   </div>
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
     <div class="card">
@@ -1707,6 +1707,9 @@ function recalcFromPeriod(p) {
 
     // Re-render perdidas section if already open (period-sensitive)
     if(sectionInited['perdidas']) initPerdidas();
+
+    // Re-render seguimiento KPIs if already open (period-sensitive)
+    if(sectionInited['seguimiento']) initSeguimiento();
 
     // Update Dashboard Ejecutivo — Fuentes and Comparativa are period-sensitive
     refreshEjecutivoPeriod(contacts, wonOpps, sourceCounts, days);
@@ -2751,6 +2754,31 @@ function initChartsForSection(id) {
 // ═══════════════════════════════════════
 function initSeguimiento() {
   const s = DATA.seguimiento;
+  const segOpps = DATA.ghlLive.segOpps || [];
+
+  // Period-sensitive KPIs
+  if(segOpps.length > 0) {
+    const range = getPeriodRange(DATA.period);
+    const SEG_ACTIVE = new Set(['en proceso','nuevo cliente (derivar)','presentado en evaluación','presentado en evaluacion','resolución','resolucion','recurso','trámites posteriores','tramites posteriores']);
+    const stageMap = DATA.ghlLive.stageIdMap || {};
+    const getSN = o => { const d=o.pipelineStageName||o.stageName||o.stage?.name||''; if(d) return d.toLowerCase().trim(); const sid=o.stageId||o.pipelineStageId||''; return (sid?stageMap[sid]||'':'').toLowerCase().trim(); };
+    const open = segOpps.filter(o=>(o.status||'').toLowerCase()==='open');
+    const activos = open.length;
+    const enTramite = open.filter(o=>SEG_ACTIVE.has(getSN(o))).length;
+    const renovaciones = open.filter(o=>{const n=getSN(o);return n.includes('renovaci');}).length;
+    const cerradosEnPeriod = segOpps.filter(o=>{
+      if((o.status||'').toLowerCase()!=='won') return false;
+      const raw=o.closedDate||o.closeDate||o.updatedAt||'';
+      if(!raw) return false;
+      const t=typeof raw==='number'?raw:new Date(raw).getTime();
+      return t>=range.from&&t<=range.to;
+    }).length;
+    const el = id => document.getElementById(id);
+    if(el('seg-kpi-activos')) el('seg-kpi-activos').textContent = activos;
+    if(el('seg-kpi-tramite')) el('seg-kpi-tramite').textContent = enTramite;
+    if(el('seg-kpi-renovaciones')) el('seg-kpi-renovaciones').textContent = renovaciones;
+    if(el('seg-kpi-cerrados')) el('seg-kpi-cerrados').textContent = cerradosEnPeriod;
+  }
   // Bar chart of stages
   initChart('chart-seguimiento-etapas', mkOpts({
     chart:{ type:'bar', height:260 },
@@ -4030,6 +4058,7 @@ async function loadGHLData() {
           if(idx !== undefined) segCounts[idx]++;
         });
         segCounts.forEach((count,i) => { if(DATA.seguimiento[i]) DATA.seguimiento[i].value = count; });
+        DATA.ghlLive.segOpps = segOpps; // store for period-filtered KPIs
         if(sectionInited['seguimiento']) { sectionInited['seguimiento']=false; initChartsForSection('seguimiento'); }
       }
 

@@ -1474,7 +1474,7 @@ function recalcFromPeriod(p) {
   const wonOpps  = allO.filter(o => {
     if((o.status||'').toLowerCase() !== 'won') return false;
     const raw = o.closedDate || o.closeDate || o.date_closed || o.wonDate || o.updatedAt || '';
-    if(!raw) return true; // no date - include without filtering
+    if(!raw) return false;
     const t = typeof raw === 'number' ? raw : new Date(raw).getTime();
     return t >= range.from && t <= range.to;
   });
@@ -2438,7 +2438,7 @@ function initLlamadas() {
     const wonPeriod  = (DATA.ghlLive.allOpps||[]).filter(o=>{
       if((o.status||'').toLowerCase()!=='won') return false;
       const raw=o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.updatedAt||'';
-      if(!raw) return true;
+      if(!raw) return false;
       const t=typeof raw==='number'?raw:new Date(raw).getTime();
       return t>=range.from&&t<=range.to;
     }).length;
@@ -2524,7 +2524,7 @@ function initLlamadas() {
   const periodLostEj = allOppsEj.filter(o => {
     if((o.status||'').toLowerCase() !== 'lost') return false;
     const raw = o.closedDate||o.closeDate||o.date_closed||o.updatedAt||o.createdAt||o.dateAdded||'';
-    if(!raw) return true;
+    if(!raw) return false;
     const t = typeof raw==='number'?raw:new Date(raw).getTime();
     return t >= rangeEj.from && t <= rangeEj.to;
   });
@@ -3186,7 +3186,7 @@ function initPerdidas() {
   const periodLost = allOpps.filter(o => {
     if((o.status||'').toLowerCase() !== 'lost') return false;
     const raw = o.closedDate||o.closeDate||o.date_closed||o.updatedAt||o.createdAt||o.dateAdded||'';
-    if(!raw) return true; // include if no date
+    if(!raw) return false;
     const t = typeof raw==='number'?raw:new Date(raw).getTime();
     return t >= range.from && t <= range.to;
   });
@@ -3623,7 +3623,7 @@ function updateTiemposFromGHL(oppList, period) {
   const wonWithDates = oppList.filter(o => {
     if((o.status||'').toLowerCase() !== 'won') return false;
     const raw = o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.updatedAt||'';
-    if(!raw) return true;
+    if(!raw) return false;
     const t = typeof raw==='number'?raw:new Date(raw).getTime();
     return t >= range.from && t <= range.to;
   });

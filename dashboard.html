@@ -1509,7 +1509,7 @@ function recalcFromPeriod(p) {
   const pctBadge = (cur, prev, el) => {
     const b = document.getElementById(el);
     if(!b) return;
-    if(prev === 0) { b.textContent = cur > 0 ? 'Nuevo' : '—'; b.className='badge badge-up'; return; }
+    if(prev === 0) { b.textContent = cur > 0 ? '+∞%' : '—'; b.className = cur > 0 ? 'badge badge-up' : 'badge badge-neutral'; return; }
     const pct = Math.round((cur-prev)/prev*100);
     b.textContent = (pct>=0?'+':'')+pct+'%';
     b.className = 'badge '+(pct>=0?'badge-up':'badge-down');

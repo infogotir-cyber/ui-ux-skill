@@ -2517,16 +2517,35 @@ function initLlamadas() {
     }));
   }
 
-  // Motivos de pérdida (from lostReasons)
-  const lostRaw = DATA.ghlLive.lostReasons;
-  const lostKeys = Object.keys(lostRaw).filter(k => k !== 'Sin motivo registrado');
-  const lostTotal = Object.values(lostRaw).reduce((s,v)=>s+v,0);
-  const sinMotivo = lostRaw['Sin motivo registrado'] || 0;
+  // Motivos de pérdida — period-filtered
+  const lrLabelsEj = getLostReasonLabels();
+  const allOppsEj  = DATA.ghlLive.allOpps || [];
+  const rangeEj    = getPeriodRange(DATA.period);
+  const periodLostEj = allOppsEj.filter(o => {
+    if((o.status||'').toLowerCase() !== 'lost') return false;
+    const raw = o.closedDate||o.closeDate||o.date_closed||o.updatedAt||o.createdAt||o.dateAdded||'';
+    if(!raw) return true;
+    const t = typeof raw==='number'?raw:new Date(raw).getTime();
+    return t >= rangeEj.from && t <= rangeEj.to;
+  });
+  const lostRaw = {};
+  let sinMotivo = 0;
+  periodLostEj.forEach(o => {
+    const rawId  = String(o.lostReasonId||o.lost_reason_id||'').trim();
+    const rawTxt = o.lostReason||o.lost_reason||o.lostReasonLabel||o.reason||null;
+    let label = null;
+    if(rawId) label = lrLabelsEj[rawId]||null;
+    if(!label && rawTxt) { const s=String(rawTxt).trim(); const isUUID=/^[A-Za-z0-9]{16,}$/.test(s); label=isUUID?(lrLabelsEj[s]||null):(s||null); }
+    if(!label && rawId) label='Motivo '+rawId.slice(0,8);
+    if(label) lostRaw[label] = (lostRaw[label]||0)+1;
+    else sinMotivo++;
+  });
+  const lostKeys = Object.keys(lostRaw);
+  const lostTotal = Object.values(lostRaw).reduce((s,v)=>s+v,0) + sinMotivo;
   const hasRealReasons = lostKeys.length > 0;
 
   const motivos = hasRealReasons
-    ? Object.entries(lostRaw).filter(([k])=>k!=='Sin motivo registrado')
-        .sort((a,b)=>b[1]-a[1]).slice(0,6)
+    ? Object.entries(lostRaw).sort((a,b)=>b[1]-a[1]).slice(0,6)
         .map(([motivo,cnt],i)=>({ motivo, pct: Math.round(cnt/lostTotal*100),
           color: ['#f87171','#fb923c','#fbbf24','#a78bfa','#60a5fa','#94a3b8'][i] }))
     : []; // no demo fallback
@@ -2563,13 +2582,17 @@ function initLlamadas() {
     plotOptions:{ bar:{ borderRadius:4, distributed:true, horizontal:true } },
     legend:{ show:false }
   }));
-  // Note under chart if many have no reason
-  if(sinMotivo > 0 && lostTotal > 0) {
-    const pctSin = Math.round(sinMotivo/lostTotal*100);
-    const note = document.createElement('div');
-    note.className = 'text-xs text-slate-500 mt-2 text-center';
-    note.textContent = `${pctSin}% de las pérdidas (${sinMotivo}) no tienen motivo registrado en GHL`;
-    document.getElementById('chart-objeciones')?.after(note);
+  // Note under chart if many have no reason (replace previous note)
+  const objContainer = document.getElementById('chart-objeciones')?.parentElement;
+  if(objContainer) {
+    objContainer.querySelectorAll('.sin-motivo-note').forEach(n=>n.remove());
+    if(sinMotivo > 0 && lostTotal > 0) {
+      const pctSin = Math.round(sinMotivo/lostTotal*100);
+      const note = document.createElement('div');
+      note.className = 'sin-motivo-note text-xs text-slate-500 mt-2 text-center';
+      note.textContent = `${pctSin}% de las pérdidas (${sinMotivo}) no tienen motivo registrado en GHL`;
+      document.getElementById('chart-objeciones')?.after(note);
+    }
   }
 }
 

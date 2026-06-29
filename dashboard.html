@@ -1471,9 +1471,11 @@ function recalcFromPeriod(p) {
   const allO  = DATA.ghlLive.allOpps     || [];
   const contacts = filterByPeriod(allC, range, 'dateAdded');
   const opps     = filterByPeriod(allO, range, 'createdAt');
+  // For won opps: prefer explicit close date, fall back to createdAt (NOT updatedAt which reflects last edit)
+  const wonOppDate = o => o.closedDate || o.closeDate || o.date_closed || o.wonDate || o.createdAt || o.dateAdded || '';
   const wonOpps  = allO.filter(o => {
     if((o.status||'').toLowerCase() !== 'won') return false;
-    const raw = o.closedDate || o.closeDate || o.date_closed || o.wonDate || o.updatedAt || '';
+    const raw = wonOppDate(o);
     if(!raw) return false;
     const t = typeof raw === 'number' ? raw : new Date(raw).getTime();
     return t >= range.from && t <= range.to;
@@ -1497,7 +1499,7 @@ function recalcFromPeriod(p) {
   const prevContacts = filterByPeriod(allC, prevRange, 'dateAdded');
   const prevWonOpps  = allO.filter(o => {
     if((o.status||'').toLowerCase() !== 'won') return false;
-    const raw = o.closedDate || o.closeDate || o.date_closed || o.wonDate || o.updatedAt || '';
+    const raw = wonOppDate(o);
     if(!raw) return false;
     const t = typeof raw === 'number' ? raw : new Date(raw).getTime();
     return t >= prevRange.from && t <= prevRange.to;
@@ -1597,7 +1599,7 @@ function recalcFromPeriod(p) {
     if(k && !(k in bucketMap)) { bucketMap[k]=0; wonBucketMap[k]=0; }
   }
   contacts.forEach(c=>{ const k=getBucket(c.dateAdded||c.createdAt||''); if(k && k in bucketMap) bucketMap[k]++; });
-  wonOpps.forEach(o=>{ const k=getBucket(o.closedDate||o.closeDate||o.updatedAt||''); if(k && k in wonBucketMap) wonBucketMap[k]++; });
+  wonOpps.forEach(o=>{ const k=getBucket(o.closedDate||o.closeDate||o.createdAt||o.dateAdded||''); if(k && k in wonBucketMap) wonBucketMap[k]++; });
   const bKeys = Object.keys(bucketMap).sort();
   const bLabels = bKeys.map(bucketLabel);
   if(charts['chart-leads-ventas']) {
@@ -1726,7 +1728,7 @@ function recalcFromPeriod(p) {
     const periodOpps = filterByPeriod(allOppsV, range, 'createdAt');
     const periodWon  = allOppsV.filter(o => {
       if((o.status||'').toLowerCase()!=='won') return false;
-      const raw = o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.updatedAt||'';
+      const raw = o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.createdAt||o.dateAdded||'';
       if(!raw) return false;
       const t = typeof raw==='number'?raw:new Date(raw).getTime();
       return t>=range.from&&t<=range.to;
@@ -1934,7 +1936,7 @@ function renderVentasCharts(days) {
   // ── Stat cards ────────────────────────────────────────────
   if(hasReal) {
     const cutoff = Date.now() - days * 86400000;
-    const getDate = o => { const r = o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.updatedAt||''; return typeof r==='number'?r:new Date(r).getTime(); };
+    const getDate = o => { const r = o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.createdAt||o.dateAdded||''; return typeof r==='number'?r:new Date(r).getTime(); };
     const wonPeriod = gl.allOpps.filter(o => (o.status||'').toLowerCase()==='won' && getDate(o) >= cutoff);
     const revPeriod = wonPeriod.reduce((s,o) => s + (o.monetaryValue || 0), 0);
     const ticket    = wonPeriod.length > 0 ? Math.round(revPeriod / wonPeriod.length) : 0;
@@ -1956,7 +1958,7 @@ function renderVentasCharts(days) {
       dayMap[d.toISOString().slice(0,10)] = 0;
     }
     wonPeriod.forEach(o => {
-      const raw = o.closedDate || o.closeDate || o.date_closed || o.wonDate || o.updatedAt || '';
+      const raw = o.closedDate || o.closeDate || o.date_closed || o.wonDate || o.createdAt || o.dateAdded || '';
       const k = (typeof raw === 'number') ? new Date(raw).toISOString().slice(0,10) : String(raw).slice(0,10);
       if(k in dayMap) dayMap[k] += (o.monetaryValue || 0);
     });
@@ -2439,7 +2441,7 @@ function initLlamadas() {
     const asist      = total > 0 ? Math.round(realizadas/total*100) : 0;
     const wonPeriod  = (DATA.ghlLive.allOpps||[]).filter(o=>{
       if((o.status||'').toLowerCase()!=='won') return false;
-      const raw=o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.updatedAt||'';
+      const raw=o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.createdAt||o.dateAdded||'';
       if(!raw) return false;
       const t=typeof raw==='number'?raw:new Date(raw).getTime();
       return t>=range.from&&t<=range.to;
@@ -2525,7 +2527,7 @@ function initLlamadas() {
   const rangeEj    = getPeriodRange(DATA.period);
   const periodLostEj = allOppsEj.filter(o => {
     if((o.status||'').toLowerCase() !== 'lost') return false;
-    const raw = o.closedDate||o.closeDate||o.date_closed||o.updatedAt||o.createdAt||o.dateAdded||'';
+    const raw = o.closedDate||o.closeDate||o.date_closed||o.createdAt||o.dateAdded||'';
     if(!raw) return false;
     const t = typeof raw==='number'?raw:new Date(raw).getTime();
     return t >= rangeEj.from && t <= rangeEj.to;
@@ -2836,7 +2838,7 @@ function initSeguimiento() {
     const renovaciones = open.filter(o=>{const n=getSN(o);return n.includes('renovaci');}).length;
     const cerradosEnPeriod = segOpps.filter(o=>{
       if((o.status||'').toLowerCase()!=='won') return false;
-      const raw=o.closedDate||o.closeDate||o.updatedAt||'';
+      const raw=o.closedDate||o.closeDate||o.createdAt||o.dateAdded||'';
       if(!raw) return false;
       const t=typeof raw==='number'?raw:new Date(raw).getTime();
       return t>=range.from&&t<=range.to;
@@ -2984,7 +2986,7 @@ function initConversion() {
     const periodO = filterByPeriod(allO, range, 'createdAt');
     const periodWon = allO.filter(o => {
       if((o.status||'').toLowerCase()!=='won') return false;
-      const raw=o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.updatedAt||'';
+      const raw=o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.createdAt||o.dateAdded||'';
       if(!raw) return false;
       const t=typeof raw==='number'?raw:new Date(raw).getTime();
       return t>=range.from&&t<=range.to;
@@ -3187,7 +3189,7 @@ function initPerdidas() {
   const lrLabels = getLostReasonLabels();
   const periodLost = allOpps.filter(o => {
     if((o.status||'').toLowerCase() !== 'lost') return false;
-    const raw = o.closedDate||o.closeDate||o.date_closed||o.updatedAt||o.createdAt||o.dateAdded||'';
+    const raw = o.closedDate||o.closeDate||o.date_closed||o.createdAt||o.dateAdded||'';
     if(!raw) return false;
     const t = typeof raw==='number'?raw:new Date(raw).getTime();
     return t >= range.from && t <= range.to;
@@ -3260,7 +3262,7 @@ function initPerdidas() {
       if(!label && rawTxt) { const s=String(rawTxt).trim(); const isUUID=/^[A-Za-z0-9]{16,}$/.test(s); label=isUUID?(lrLabels[s]||null):(s||null); }
       if(!label && rawId) label='Motivo '+rawId.slice(0,8);
       if(!label||!buckets[label]) return;
-      const raw=o.closedDate||o.closeDate||o.date_closed||o.updatedAt||o.createdAt||o.dateAdded||'';
+      const raw=o.closedDate||o.closeDate||o.date_closed||o.createdAt||o.dateAdded||'';
       const mk = raw ? new Date(typeof raw==='number'?raw:raw).toISOString().slice(0,7) : monthKeys[0];
       if(buckets[label][mk]!==undefined) buckets[label][mk]++;
     });
@@ -3346,7 +3348,7 @@ function initPerdidasStage() {
 function initValor() {
   const gl = DATA.ghlLive;
   const range = getPeriodRange(DATA.period);
-  const getOppDate = o => { const r = o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.updatedAt||''; return typeof r==='number'?r:new Date(r).getTime(); };
+  const getOppDate = o => { const r = o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.createdAt||o.dateAdded||''; return typeof r==='number'?r:new Date(r).getTime(); };
 
   // Filter won opps to selected period
   const allWonOpps = (gl.allOpps||[]).filter(o=>(o.status||'').toLowerCase()==='won');
@@ -3637,14 +3639,14 @@ function updateTiemposFromGHL(oppList, period) {
   // Tiempo hasta cierre (won opps in period)
   const wonWithDates = oppList.filter(o => {
     if((o.status||'').toLowerCase() !== 'won') return false;
-    const raw = o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.updatedAt||'';
+    const raw = o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.createdAt||o.dateAdded||'';
     if(!raw) return false;
     const t = typeof raw==='number'?raw:new Date(raw).getTime();
     return t >= range.from && t <= range.to;
   });
   if(wonWithDates.length > 0) {
     const days = wonWithDates.map(o => {
-      const closedStr = o.closedDate || o.closeDate || o.date_closed || o.wonDate || o.updatedAt || '';
+      const closedStr = o.closedDate || o.closeDate || o.date_closed || o.wonDate || o.createdAt || o.dateAdded || '';
       const closed = closedStr ? new Date(closedStr).getTime() : Date.now();
       const createdStr = o.createdAt || o.dateAdded || o.date_added || '';
       const created = createdStr ? new Date(createdStr).getTime() : (closed - 30*MS_DAY);
@@ -3714,7 +3716,7 @@ function updateTiemposFromGHL(oppList, period) {
   const vendorDays = {};
   wonWithDates.forEach(o => {
     const name = o.assignedTo?.name || o.assignedToUser?.name || o.assignedToUser || 'Sin asignar';
-    const closedStr2 = o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.updatedAt||'';
+    const closedStr2 = o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.createdAt||o.dateAdded||'';
     const closedTs2 = closedStr2 ? new Date(closedStr2).getTime() : Date.now();
     const createdStr2 = o.createdAt||o.dateAdded||o.date_added||'';
     const createdTs2 = createdStr2 ? new Date(createdStr2).getTime() : (closedTs2 - 30*MS_DAY);
@@ -4563,7 +4565,7 @@ function buildMonthlyHistory(contactList, oppList, period) {
       if(months[key]) months[key].leads++;
     });
     oppList.filter(o=>(o.status||'').toLowerCase()==='won').forEach(o => {
-      const dateStr = o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.updatedAt||'';
+      const dateStr = o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.createdAt||o.dateAdded||'';
       if(!dateStr) return;
       const t = typeof dateStr==='number'?dateStr:new Date(dateStr).getTime();
       if(t<range.from||t>range.to) return;
@@ -4580,7 +4582,7 @@ function buildMonthlyHistory(contactList, oppList, period) {
       if(months[key]) months[key].leads++;
     });
     oppList.filter(o=>(o.status||'').toLowerCase()==='won').forEach(o => {
-      const dateStr = o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.updatedAt||'';
+      const dateStr = o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.createdAt||o.dateAdded||'';
       const key = (typeof dateStr==='number') ? new Date(dateStr).toISOString().slice(0,7) : String(dateStr).slice(0,7);
       if(months[key]) { months[key].ventas++; months[key].revenue += parseFloat(o.monetaryValue||o.monetary_value||0)||0; }
     });
@@ -4633,7 +4635,7 @@ function refreshEjecutivoPeriod(contacts, wonOpps, sourceCounts, days) {
   };
   const bucketMap = {}, revMap = {};
   contacts.forEach(c => { const k=getBucket(c.dateAdded||c.createdAt||''); if(k){ bucketMap[k]=(bucketMap[k]||0)+1; } });
-  wonOpps.forEach(o => { const k=getBucket(o.closedDate||o.closeDate||o.updatedAt||''); if(k){ revMap[k]=(revMap[k]||0)+(parseFloat(o.monetaryValue||o.monetary_value||0)||0); } });
+  wonOpps.forEach(o => { const k=getBucket(o.closedDate||o.closeDate||o.createdAt||o.dateAdded||''); if(k){ revMap[k]=(revMap[k]||0)+(parseFloat(o.monetaryValue||o.monetary_value||0)||0); } });
   const allKeys = [...new Set([...Object.keys(bucketMap),...Object.keys(revMap)])].sort();
   if(allKeys.length === 0) return;
   const cLabels  = allKeys.map(bucketLabel);

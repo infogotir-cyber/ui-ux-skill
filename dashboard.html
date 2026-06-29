@@ -565,29 +565,17 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
     </div>
   </div>
 
-  <!-- Gasto publicitario manual (para calcular CPL real de redes pagadas) -->
+  <!-- Gasto publicitario por período -->
   <div id="adspend-panel" class="card mb-4 border border-slate-700/50">
     <div class="flex items-center justify-between mb-3">
       <div>
-        <h4 class="font-semibold text-white text-sm">Gasto publicitario mensual</h4>
-        <p class="text-xs text-slate-500 mt-0.5">Ingresá el gasto de cada red para calcular CPL y ROI reales</p>
+        <h4 class="font-semibold text-white text-sm">Gasto publicitario por período</h4>
+        <p class="text-xs text-slate-500 mt-0.5">Agregá períodos de gasto — el CPL y ROI se calculan automáticamente según el período seleccionado</p>
       </div>
-      <button onclick="saveAdSpend()" class="px-3 py-1.5 bg-brand-600 hover:bg-brand-500 text-white text-xs rounded-lg transition-colors">Guardar</button>
+      <button onclick="addAdSpendRow()" class="px-3 py-1.5 bg-brand-600 hover:bg-brand-500 text-white text-xs rounded-lg transition-colors">+ Agregar período</button>
     </div>
-    <div class="grid grid-cols-3 gap-3">
-      <div>
-        <label class="text-xs text-slate-400 mb-1 block">Instagram €/mes</label>
-        <input id="adspend-instagram" type="number" placeholder="ej: 500" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-brand-500">
-      </div>
-      <div>
-        <label class="text-xs text-slate-400 mb-1 block">TikTok €/mes</label>
-        <input id="adspend-tiktok" type="number" placeholder="ej: 300" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-brand-500">
-      </div>
-      <div>
-        <label class="text-xs text-slate-400 mb-1 block">Facebook €/mes</label>
-        <input id="adspend-facebook" type="number" placeholder="ej: 400" class="w-full bg-slate-900 border border-slate-700 rounded-lg px-3 py-2 text-sm text-white placeholder-slate-600 focus:outline-none focus:border-brand-500">
-      </div>
-    </div>
+    <div id="adspend-rows" class="space-y-2"></div>
+    <div id="adspend-empty" class="text-xs text-slate-500 py-2 hidden">No hay períodos de gasto registrados. Agregá uno con el botón.</div>
   </div>
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
     <div class="card">
@@ -2164,11 +2152,12 @@ function refreshCampanasFromGHL(sourceCounts, oppList, avgTicket, citasList) {
     camp.conv = camp.leads > 0 ? ((camp.ventas / camp.leads) * 100).toFixed(1) + '%' : '0%';
   });
 
-  // Apply real CPL from ad spend config for paid channels
-  const adSpend = getAdSpend();
+  // Apply real CPL from ad spend config for paid channels — period-prorated
+  const adSpendPeriod = getAdSpendForPeriod(getPeriodRange(DATA.period));
   DATA.campanas.forEach(camp => {
     if(camp.tipo === 'pagado' && camp.leads > 0) {
-      const spend = adSpend[(camp.ghlVal||camp.canal.toLowerCase())] || 0;
+      const key = (camp.ghlVal || camp.canal.toLowerCase()).trim();
+      const spend = adSpendPeriod[key] || adSpendPeriod[camp.canal.toLowerCase()] || 0;
       if(spend > 0) {
         const cplVal = Math.round(spend / camp.leads);
         camp.cpl = '€' + cplVal;
@@ -2179,8 +2168,8 @@ function refreshCampanasFromGHL(sourceCounts, oppList, avgTicket, citasList) {
     }
   });
 
-  // Load ad spend inputs if panel is in DOM
-  loadAdSpend();
+  // Render ad spend period rows
+  renderAdSpendRows();
 
   // ── Per-afiliado stats from oppList (won opps whose contact source = afiliado) ──
   // GHL doesn't link opp→contact source directly, so we use the canal name match
@@ -3753,27 +3742,79 @@ let GHL = { apiKey:'', locationId:'', version:'v1', connected:false };
 
 function selectAPIVersion(v) { GHL.version = 'v2'; }
 
-// ── Ad spend config (localStorage) ──────────────────────────
-function loadAdSpend() {
-  const saved = JSON.parse(localStorage.getItem('gotir_adspend') || '{}');
-  ['instagram','tiktok','facebook'].forEach(k => {
-    const el = document.getElementById('adspend-'+k);
-    if(el && saved[k]) el.value = saved[k];
-  });
-  return saved;
+// ── Ad spend config (localStorage) — per-period entries ──────────────────────────
+// Storage format: [{from:'2026-06-15', to:'2026-06-29', instagram:100, tiktok:0, facebook:0}, ...]
+function getAdSpendEntries() {
+  try { return JSON.parse(localStorage.getItem('gotir_adspend_v2') || '[]'); } catch(e) { return []; }
 }
-function saveAdSpend() {
-  const data = {};
-  ['instagram','tiktok','facebook'].forEach(k => {
-    const v = parseFloat(document.getElementById('adspend-'+k)?.value) || 0;
-    if(v > 0) data[k] = v;
-  });
-  localStorage.setItem('gotir_adspend', JSON.stringify(data));
-  showToast('Gasto publicitario guardado');
+function saveAdSpendEntries(entries) {
+  localStorage.setItem('gotir_adspend_v2', JSON.stringify(entries));
+}
+function renderAdSpendRows() {
+  const entries = getAdSpendEntries();
+  const container = document.getElementById('adspend-rows');
+  const empty = document.getElementById('adspend-empty');
+  if(!container) return;
+  if(entries.length === 0) { container.innerHTML = ''; if(empty) empty.classList.remove('hidden'); return; }
+  if(empty) empty.classList.add('hidden');
+  container.innerHTML = entries.map((e, i) => `
+    <div class="grid grid-cols-[auto_auto_1fr_1fr_1fr_auto] gap-2 items-end bg-slate-800/40 rounded-lg px-3 py-2">
+      <div><div class="text-xs text-slate-500 mb-1">Desde</div><input type="date" value="${e.from||''}" onchange="updateAdSpendEntry(${i},'from',this.value)" class="bg-slate-900 border border-slate-700 text-white text-xs rounded px-2 py-1.5 focus:outline-none focus:border-brand-500 w-32"></div>
+      <div><div class="text-xs text-slate-500 mb-1">Hasta</div><input type="date" value="${e.to||''}" onchange="updateAdSpendEntry(${i},'to',this.value)" class="bg-slate-900 border border-slate-700 text-white text-xs rounded px-2 py-1.5 focus:outline-none focus:border-brand-500 w-32"></div>
+      <div><div class="text-xs text-slate-500 mb-1">Instagram €</div><input type="number" value="${e.instagram||''}" placeholder="0" onchange="updateAdSpendEntry(${i},'instagram',this.value)" class="bg-slate-900 border border-slate-700 text-white text-xs rounded px-2 py-1.5 w-full focus:outline-none focus:border-brand-500"></div>
+      <div><div class="text-xs text-slate-500 mb-1">TikTok €</div><input type="number" value="${e.tiktok||''}" placeholder="0" onchange="updateAdSpendEntry(${i},'tiktok',this.value)" class="bg-slate-900 border border-slate-700 text-white text-xs rounded px-2 py-1.5 w-full focus:outline-none focus:border-brand-500"></div>
+      <div><div class="text-xs text-slate-500 mb-1">Facebook €</div><input type="number" value="${e.facebook||''}" placeholder="0" onchange="updateAdSpendEntry(${i},'facebook',this.value)" class="bg-slate-900 border border-slate-700 text-white text-xs rounded px-2 py-1.5 w-full focus:outline-none focus:border-brand-500"></div>
+      <div class="pb-0.5"><button onclick="removeAdSpendEntry(${i})" class="text-red-400 hover:text-red-300 text-xs px-2 py-1.5 rounded hover:bg-red-900/20 transition-colors">✕</button></div>
+    </div>`).join('');
+}
+function addAdSpendRow() {
+  const entries = getAdSpendEntries();
+  const today = new Date().toISOString().slice(0,10);
+  const monthAgo = new Date(Date.now()-30*86400000).toISOString().slice(0,10);
+  entries.push({ from: monthAgo, to: today, instagram: 0, tiktok: 0, facebook: 0 });
+  saveAdSpendEntries(entries);
+  renderAdSpendRows();
+}
+function updateAdSpendEntry(idx, field, value) {
+  const entries = getAdSpendEntries();
+  if(!entries[idx]) return;
+  entries[idx][field] = field==='from'||field==='to' ? value : (parseFloat(value)||0);
+  saveAdSpendEntries(entries);
   if(sectionInited['campanas']) { sectionInited['campanas']=false; initChartsForSection('campanas'); }
 }
+function removeAdSpendEntry(idx) {
+  const entries = getAdSpendEntries();
+  entries.splice(idx, 1);
+  saveAdSpendEntries(entries);
+  renderAdSpendRows();
+  if(sectionInited['campanas']) { sectionInited['campanas']=false; initChartsForSection('campanas'); }
+}
+function loadAdSpend() { renderAdSpendRows(); return getAdSpend(); }
 function getAdSpend() {
-  return JSON.parse(localStorage.getItem('gotir_adspend') || '{}');
+  // Legacy: return flat object for backward compat — use getAdSpendForPeriod() for accurate CPL
+  try { return JSON.parse(localStorage.getItem('gotir_adspend') || '{}'); } catch(e) { return {}; }
+}
+function getAdSpendForPeriod(range) {
+  // Sum spend entries that overlap with range, prorated by overlap fraction
+  const entries = getAdSpendEntries();
+  const result = { instagram:0, tiktok:0, facebook:0 };
+  entries.forEach(e => {
+    if(!e.from || !e.to) return;
+    const eFrom = new Date(e.from).getTime();
+    const eTo   = new Date(e.to+'T23:59:59').getTime();
+    const overlapFrom = Math.max(eFrom, range.from);
+    const overlapTo   = Math.min(eTo,   range.to);
+    if(overlapFrom >= overlapTo) return;
+    const entryLen  = eTo - eFrom;
+    const overlapFrac = entryLen > 0 ? (overlapTo - overlapFrom) / entryLen : 1;
+    result.instagram += (parseFloat(e.instagram)||0) * overlapFrac;
+    result.tiktok    += (parseFloat(e.tiktok)||0)    * overlapFrac;
+    result.facebook  += (parseFloat(e.facebook)||0)  * overlapFrac;
+  });
+  result.instagram = Math.round(result.instagram);
+  result.tiktok    = Math.round(result.tiktok);
+  result.facebook  = Math.round(result.facebook);
+  return result;
 }
 
 // ── Vendedores config (localStorage) ────────────────────────

@@ -1711,6 +1711,11 @@ function recalcFromPeriod(p) {
     // Re-render conversion section if already open (period-sensitive)
     if(sectionInited['conversion']) initConversion();
 
+    // Re-render tiempos if already open (period-sensitive)
+    if(sectionInited['tiempos'] && DATA.ghlLive.allOpps?.length > 0) {
+      updateTiemposFromGHL(DATA.ghlLive.allOpps, p);
+    }
+
     // Re-render seguimiento KPIs if already open (period-sensitive)
     if(sectionInited['seguimiento']) initSeguimiento();
 
@@ -3562,7 +3567,7 @@ function initTiempos() {
 
   // Populate with real GHL data if available
   if(GHL.connected && DATA.ghlLive.allOpps?.length > 0) {
-    updateTiemposFromGHL(DATA.ghlLive.allOpps);
+    updateTiemposFromGHL(DATA.ghlLive.allOpps, DATA.period);
   }
 }
 
@@ -3585,13 +3590,20 @@ function renderStageTimes(stageTimes) {
     </div>`).join('');
 }
 
-function updateTiemposFromGHL(oppList) {
+function updateTiemposFromGHL(oppList, period) {
   if(!oppList || oppList.length === 0) return;
   const now = Date.now();
   const MS_DAY = 86400000;
+  const range = getPeriodRange(period || DATA.period || 'todo');
 
-  // Tiempo hasta cierre (won opps)
-  const wonWithDates = oppList.filter(o => (o.status||'').toLowerCase()==='won');
+  // Tiempo hasta cierre (won opps in period)
+  const wonWithDates = oppList.filter(o => {
+    if((o.status||'').toLowerCase() !== 'won') return false;
+    const raw = o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.updatedAt||'';
+    if(!raw) return true;
+    const t = typeof raw==='number'?raw:new Date(raw).getTime();
+    return t >= range.from && t <= range.to;
+  });
   if(wonWithDates.length > 0) {
     const days = wonWithDates.map(o => {
       const closedStr = o.closedDate || o.closeDate || o.date_closed || o.wonDate || o.updatedAt || '';
@@ -4444,8 +4456,7 @@ async function loadGHLData() {
     showToast('Datos reales de GoHighLevel cargados');
     refreshLiveSections();
     refreshEjecutivoCharts(contactList, oppList, sourceCounts, won, revenue);
-    updateTiemposFromGHL(oppList);
-    // Apply current period filter now that full data is stored
+    // Apply current period filter now that full data is stored (also calls updateTiemposFromGHL)
     recalcFromPeriod(DATA.period || 'mes');
 
   } catch(e) {

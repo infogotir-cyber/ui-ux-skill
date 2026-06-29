@@ -2632,156 +2632,341 @@ function sendAI() {
 }
 
 // ═══════════════════════════════════════
-// PDF GENERATION
+// PDF GENERATION — opens a styled print window with real GHL data
 // ═══════════════════════════════════════
 function generatePDF() {
-  const { jsPDF } = window.jspdf;
-  const doc = new jsPDF({ orientation:'portrait', unit:'mm', format:'a4' });
+  const gl     = DATA.ghlLive;
+  const period = DATA.period || 'mes';
+  const range  = getPeriodRange(period);
+  const periodLabel = { semana:'Esta semana (7d)', semana_ant:'Semana anterior', mes:'Últimos 30 días',
+    mes_ant:'Mes anterior', trimestre:'Últimos 3 meses', semestre:'Últimos 6 meses',
+    ano:'Este año', custom:'Personalizado', todo:'Todo' }[period] || period;
+  const dateStr = new Date().toLocaleDateString('es-ES',{day:'2-digit',month:'long',year:'numeric'});
 
-  // Header
-  doc.setFillColor(30,64,175);
-  doc.rect(0,0,210,40,'F');
-  doc.setTextColor(255,255,255);
-  doc.setFontSize(24);
-  doc.setFont('helvetica','bold');
-  doc.text('GOTIR',20,20);
-  doc.setFontSize(11);
-  doc.setFont('helvetica','normal');
-  doc.text('Business Intelligence Report',20,29);
-  doc.setFontSize(10);
-  doc.text(`Generado: ${new Date().toLocaleDateString('es-ES',{day:'2-digit',month:'long',year:'numeric'})}`,20,37);
-
-  let y = 55;
-  doc.setTextColor(30,41,59);
-  doc.setFontSize(14);
-  doc.setFont('helvetica','bold');
-  doc.text('Resumen Ejecutivo',20,y);
-  y += 8;
-
-  doc.setFontSize(10);
-  doc.setFont('helvetica','normal');
-  doc.setTextColor(71,85,105);
-  const summary = `Este informe presenta el análisis completo de la actividad comercial de GOTIR para el período actual. Los datos han sido extraídos y procesados automáticamente desde GoHighLevel.`;
-  const lines = doc.splitTextToSize(summary,170);
-  doc.text(lines,20,y);
-  y += lines.length*5 + 8;
-
-  // KPIs
-  doc.setFontSize(12);
-  doc.setFont('helvetica','bold');
-  doc.setTextColor(30,41,59);
-  doc.text('Métricas Clave del Período',20,y);
-  y += 8;
-
-  const kpiData = [
-    ['Leads Generados','247','+18% vs ant.'],
-    ['Citas Agendadas','89','+12% vs ant.'],
-    ['Ventas Cerradas','34','-5% vs ant.'],
-    ['Facturación Total','€42.800','+23% vs ant.'],
-    ['Ticket Promedio','€1.259','+7% vs ant.'],
-    ['Conversión Total','13.8%','-2% vs ant.'],
-    ['Llamadas Realizadas','183','+9% vs ant.'],
-    ['No-Shows','17','+3% (ALERTA)']
-  ];
-
-  kpiData.forEach((row,i)=>{
-    const xOffset = (i%2)*95;
-    const yOffset = Math.floor(i/2)*14;
-    doc.setFillColor(248,250,252);
-    doc.roundedRect(20+xOffset, y+yOffset, 88, 12, 2,2,'F');
-    doc.setFontSize(9);
-    doc.setFont('helvetica','normal');
-    doc.setTextColor(100,116,139);
-    doc.text(row[0],24,y+yOffset+5);
-    doc.setFont('helvetica','bold');
-    doc.setTextColor(15,23,42);
-    doc.text(row[1],24,y+yOffset+10);
-    doc.setFont('helvetica','normal');
-    doc.setFontSize(8);
-    doc.setTextColor(row[2].includes('-')?220:22, row[2].includes('-')?38:163, row[2].includes('-')?38:74);
-    doc.text(row[2],72,y+yOffset+10);
+  // ── Collect real data ────────────────────────────────────────
+  const allC = gl.allContacts || [], allO = gl.allOpps || [], allCitas = gl.allCitas || [];
+  const periodC = filterByPeriod(allC, range, 'dateAdded');
+  const periodO = filterByPeriod(allO, range, 'createdAt');
+  const wonOppDateFn = o => o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.createdAt||o.dateAdded||'';
+  const periodWon = allO.filter(o => {
+    if((o.status||'').toLowerCase()!=='won') return false;
+    const raw=wonOppDateFn(o); if(!raw) return false;
+    const t=typeof raw==='number'?raw:new Date(raw).getTime();
+    return t>=range.from&&t<=range.to;
   });
+  const periodCitas = filterByPeriod(allCitas, range, 'startTime');
+  const realizadas = periodCitas.filter(a=>['confirmed','showed','completed'].includes((a.appointmentStatus||a.status||'').toLowerCase())).length;
+  const noshows    = periodCitas.filter(a=>['no-showed','noshow','no_show'].includes((a.appointmentStatus||a.status||'').toLowerCase())).length;
+  const canceladas = periodCitas.filter(a=>['cancelled','canceled','invalid'].includes((a.appointmentStatus||a.status||'').toLowerCase())).length;
+  const totalLeads  = periodC.length;
+  const totalVentas = periodWon.length;
+  const totalRev    = periodWon.reduce((s,o)=>s+(parseFloat(o.monetaryValue||o.monetary_value||0)||0),0);
+  const ticket      = totalVentas>0 ? Math.round(totalRev/totalVentas) : 0;
+  const conv        = totalLeads>0  ? ((totalVentas/totalLeads)*100).toFixed(1) : '0';
+  const asistencia  = periodCitas.length>0 ? Math.round(realizadas/periodCitas.length*100) : 0;
+  const convLL      = realizadas>0 ? ((totalVentas/realizadas)*100).toFixed(1) : '0';
 
-  y += 4*14 + 12;
+  // Funnel from real data
+  const funnelData = DATA.funnel.map(s => ({ label:s.label, value:s.value, color:s.color }));
+  const funnelMax  = Math.max(...funnelData.map(s=>s.value), 1);
 
-  // Funnel
-  doc.setFontSize(12);
-  doc.setFont('helvetica','bold');
-  doc.setTextColor(30,41,59);
-  doc.text('Embudo Comercial',20,y);
-  y += 8;
+  // Vendedores
+  const byV    = gl.byVendedor || {};
+  const vRows  = Object.values(byV).filter(v=>v.opps>0||v.ventas>0)
+    .sort((a,b)=>b.ventas-a.ventas).slice(0,6);
 
-  DATA.funnel.forEach((step,i)=>{
-    const prev = i>0?DATA.funnel[i-1].value:step.value;
-    const pct = Math.round(step.value/DATA.funnel[0].value*100);
-    const barW = 170*(step.value/DATA.funnel[0].value)*0.9;
-    const blueShade = Math.round(80 + i * 25);
-    doc.setFillColor(30, 64, Math.min(blueShade, 220));
-    doc.rect(20,y,barW,8,'F');
-    doc.setFontSize(9);
-    doc.setFont('helvetica','normal');
-    doc.setTextColor(30,41,59);
-    doc.text(`${step.label}: ${step.value} (${pct}%)`,22,y+5.5);
-    y += 11;
+  // Lost reasons (period)
+  const lrLabels = getLostReasonLabels();
+  const periodLost = allO.filter(o => {
+    if((o.status||'').toLowerCase()!=='lost') return false;
+    const raw=o.closedDate||o.closeDate||o.date_closed||o.updatedAt||o.createdAt||o.dateAdded||'';
+    if(!raw) return false;
+    const t=typeof raw==='number'?raw:new Date(raw).getTime();
+    return t>=range.from&&t<=range.to;
   });
-
-  y += 5;
-
-  // Vendors
-  doc.setFontSize(12);
-  doc.setFont('helvetica','bold');
-  doc.setTextColor(30,41,59);
-  doc.text('Rendimiento por Vendedor',20,y);
-  y += 8;
-
-  DATA.vendedores.forEach((v,i)=>{
-    doc.setFillColor(i===0?245:248, i===0?158:250, i===0?11:252);
-    doc.roundedRect(20,y,170,10,2,2,i===0?'F':'');
-    doc.setFontSize(9);
-    doc.setFont(i===0?'helvetica':'helvetica', i===0?'bold':'normal');
-    doc.setTextColor(30,41,59);
-    doc.text(`${i+1}. ${v.nombre}`,24,y+7);
-    doc.text(`${v.ventas} ventas`,90,y+7);
-    doc.text(v.conv,120,y+7);
-    doc.text(v.facturacion,145,y+7);
-    y += 12;
+  const lostCounts={};
+  periodLost.forEach(o=>{
+    const rawId=String(o.lostReasonId||o.lost_reason_id||'').trim();
+    const rawTxt=o.lostReason||o.lost_reason||null;
+    let label=null;
+    if(rawId) label=lrLabels[rawId]||null;
+    if(!label&&rawTxt){const s=String(rawTxt).trim();label=/^[A-Za-z0-9]{16,}$/.test(s)?(lrLabels[s]||null):(s||null);}
+    if(!label&&rawId) label='Motivo '+rawId.slice(0,8);
+    const k=label||'Sin motivo';
+    lostCounts[k]=(lostCounts[k]||0)+1;
   });
+  const lostEntries = Object.entries(lostCounts).sort((a,b)=>b[1]-a[1]).slice(0,6);
+  const lostTotal = lostEntries.reduce((s,[,v])=>s+v,0);
 
-  y += 5;
-
-  // Recommendations
-  if(y > 240) { doc.addPage(); y = 20; }
-  doc.setFontSize(12);
-  doc.setFont('helvetica','bold');
-  doc.setTextColor(30,41,59);
-  doc.text('Recomendaciones IA',20,y);
-  y += 8;
-
-  const recs = [
-    '1. URGENTE: Reducir no-shows (19% actual) con confirmación doble WhatsApp → potencial +€8.000/mes',
-    '2. Aumentar presupuesto Instagram 30% — ROI 520% es el mejor canal pagado',
-    '3. Lanzar programa de referidos con incentivo €75 — conversión del 19.5%',
-    '4. Coaching comercial para Pedro Sánchez — gap de 14.5 puntos con María García',
-    '5. Trabajar pipeline activo (112 leads, €141.000 potencial) esta semana'
-  ];
-  doc.setFontSize(9);
-  doc.setFont('helvetica','normal');
-  doc.setTextColor(71,85,105);
-  recs.forEach(r=>{
-    const recLines = doc.splitTextToSize(r,170);
-    doc.text(recLines,20,y);
-    y += recLines.length*5+3;
+  // Sources
+  const srcCounts = {};
+  periodC.forEach(c=>{
+    const fields=c.customFields||c.customField||[];
+    let src='';
+    if(Array.isArray(fields)){const f=fields.find(f=>{ const k=FIELD_ID_MAP[f.key||f.id||f.fieldKey||'']||f.key||f.id||f.fieldKey||''; return k==='canal_referencia_dr'||k==='canal referencia dr'; }); if(f) src=(f.value||f.fieldValue||'').toLowerCase().trim();}
+    if(!src) src=(c.source||'otro').toLowerCase();
+    srcCounts[src]=(srcCounts[src]||0)+1;
   });
+  const srcEntries = Object.entries(srcCounts).sort((a,b)=>b[1]-a[1]).slice(0,6);
 
-  // Footer
-  doc.setFillColor(15,23,42);
-  doc.rect(0,282,210,15,'F');
-  doc.setTextColor(148,163,184);
-  doc.setFontSize(8);
-  doc.text('GOTIR Business Intelligence Platform — Generado automáticamente',20,291);
-  doc.text(`Página 1`,185,291);
+  // ── Build HTML ───────────────────────────────────────────────
+  const kpiCard = (label, value, sub='', color='#1e3a5f') => `
+    <div style="background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:14px 16px;min-width:0">
+      <div style="font-size:10px;color:#64748b;font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:4px">${label}</div>
+      <div style="font-size:22px;font-weight:800;color:#0f172a;line-height:1">${value}</div>
+      ${sub?`<div style="font-size:11px;color:${color};margin-top:4px;font-weight:500">${sub}</div>`:''}
+    </div>`;
 
-  doc.save(`GOTIR_Report_${new Date().toISOString().slice(0,10)}.pdf`);
+  const funnelBars = funnelData.map((s,i) => {
+    const pct = Math.round(s.value/funnelMax*100);
+    const colors = ['#3b82f6','#6366f1','#8b5cf6','#a78bfa','#f59e0b','#f97316','#4ade80'];
+    return `<div style="margin-bottom:8px">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:3px">
+        <span style="font-size:11px;color:#334155;font-weight:500">${s.label}</span>
+        <span style="font-size:11px;color:#64748b">${s.value} leads</span>
+      </div>
+      <div style="background:#e2e8f0;border-radius:4px;height:10px;overflow:hidden">
+        <div style="background:${colors[i]||'#3b82f6'};height:100%;width:${pct}%;border-radius:4px"></div>
+      </div>
+    </div>`;
+  }).join('');
+
+  const vTable = vRows.length > 0 ? `
+    <table style="width:100%;border-collapse:collapse;font-size:11px">
+      <thead><tr style="background:#1e40af;color:#fff">
+        <th style="padding:8px 10px;text-align:left;border-radius:6px 0 0 0">Vendedor</th>
+        <th style="padding:8px 10px;text-align:right">Leads</th>
+        <th style="padding:8px 10px;text-align:right">Ventas</th>
+        <th style="padding:8px 10px;text-align:right">Facturación</th>
+        <th style="padding:8px 10px;text-align:right;border-radius:0 6px 0 0">Conv.%</th>
+      </tr></thead>
+      <tbody>${vRows.map((v,i)=>`
+        <tr style="background:${i%2===0?'#f8fafc':'#fff'}">
+          <td style="padding:7px 10px;font-weight:600;color:#0f172a">${i===0?'🥇 ':i===1?'🥈 ':i===2?'🥉 ':''}${v.name||'—'}</td>
+          <td style="padding:7px 10px;text-align:right;color:#475569">${v.opps||0}</td>
+          <td style="padding:7px 10px;text-align:right;font-weight:700;color:#16a34a">${v.ventas||0}</td>
+          <td style="padding:7px 10px;text-align:right;font-weight:600;color:#1e40af">€${(v.revenue||0).toLocaleString('es-ES')}</td>
+          <td style="padding:7px 10px;text-align:right"><span style="background:${(v.opps||0)>0&&(v.ventas/v.opps*100)>15?'#dcfce7':'#fef3c7'};color:${(v.opps||0)>0&&(v.ventas/v.opps*100)>15?'#15803d':'#92400e'};padding:2px 6px;border-radius:4px;font-weight:600">${v.opps>0?((v.ventas/v.opps)*100).toFixed(1):0}%</span></td>
+        </tr>`).join('')}
+      </tbody>
+    </table>` : '<p style="color:#94a3b8;font-size:12px">Sin datos de vendedores en este período</p>';
+
+  const lostRows = lostEntries.length > 0 ? lostEntries.map(([motivo,cnt],i)=>{
+    const pct=Math.round(cnt/lostTotal*100);
+    const colors=['#f87171','#fb923c','#fbbf24','#a78bfa','#60a5fa','#94a3b8'];
+    return `<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
+      <div style="width:10px;height:10px;border-radius:50%;background:${colors[i]};flex-shrink:0"></div>
+      <div style="flex:1;font-size:11px;color:#334155">${motivo}</div>
+      <div style="width:80px;background:#e2e8f0;border-radius:4px;height:8px;overflow:hidden">
+        <div style="background:${colors[i]};width:${pct}%;height:100%"></div>
+      </div>
+      <div style="width:40px;text-align:right;font-size:11px;font-weight:700;color:#0f172a">${pct}%</div>
+      <div style="width:30px;text-align:right;font-size:10px;color:#64748b">${cnt}</div>
+    </div>`;
+  }).join('') : '<p style="color:#94a3b8;font-size:12px">Sin pérdidas en este período</p>';
+
+  const srcRows = srcEntries.map(([src,cnt],i)=>{
+    const pct=Math.round(cnt/totalLeads*100);
+    const colors=['#3b82f6','#8b5cf6','#f59e0b','#10b981','#f87171','#94a3b8'];
+    return `<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px">
+      <div style="width:10px;height:10px;border-radius:50%;background:${colors[i]};flex-shrink:0"></div>
+      <div style="flex:1;font-size:11px;color:#334155;text-transform:capitalize">${src||'Otro'}</div>
+      <div style="width:80px;background:#e2e8f0;border-radius:4px;height:8px;overflow:hidden">
+        <div style="background:${colors[i]};width:${pct}%;height:100%"></div>
+      </div>
+      <div style="width:35px;text-align:right;font-size:11px;font-weight:700;color:#0f172a">${pct}%</div>
+      <div style="width:30px;text-align:right;font-size:10px;color:#64748b">${cnt}</div>
+    </div>`;
+  }).join('');
+
+  const html = `<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8">
+  <title>GOTIR Report ${dateStr}</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Segoe UI',Arial,sans-serif;color:#0f172a;background:#fff;font-size:12px}
+    .page{width:210mm;min-height:297mm;padding:0;background:#fff}
+    .header{background:linear-gradient(135deg,#1e3a8a 0%,#1e40af 60%,#2563eb 100%);color:#fff;padding:28px 32px 24px;display:flex;justify-content:space-between;align-items:flex-end}
+    .header-left h1{font-size:32px;font-weight:900;letter-spacing:-1px;margin-bottom:2px}
+    .header-left p{font-size:13px;opacity:.85;font-weight:400}
+    .header-right{text-align:right;font-size:11px;opacity:.8}
+    .header-right strong{font-size:13px;opacity:1;display:block;margin-bottom:2px}
+    .body{padding:24px 32px}
+    .section-title{font-size:15px;font-weight:800;color:#1e3a8a;border-bottom:2px solid #dbeafe;padding-bottom:6px;margin-bottom:14px;margin-top:24px;text-transform:uppercase;letter-spacing:.03em}
+    .section-title:first-child{margin-top:0}
+    .kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:8px}
+    .kpi-grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:16px}
+    .card h4{font-size:12px;font-weight:700;color:#1e3a8a;margin-bottom:12px;text-transform:uppercase;letter-spacing:.04em}
+    .alert-bar{background:#fef3c7;border:1px solid #f59e0b;border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:10px;margin-bottom:14px}
+    .alert-bar .icon{font-size:18px}
+    .alert-bar p{font-size:11px;color:#92400e;font-weight:600}
+    .rec-item{display:flex;gap:10px;padding:8px 12px;border-radius:8px;margin-bottom:6px;background:#f8fafc;border-left:3px solid #3b82f6}
+    .rec-item.urgent{background:#fff7ed;border-left-color:#f97316}
+    .rec-num{font-weight:800;color:#1e40af;min-width:18px;font-size:12px}
+    .rec-text{font-size:11px;color:#334155;line-height:1.5}
+    .footer{background:#0f172a;color:#94a3b8;padding:10px 32px;display:flex;justify-content:space-between;font-size:9px;margin-top:auto}
+    .badge-up{color:#16a34a;font-weight:700;font-size:10px}
+    .badge-down{color:#dc2626;font-weight:700;font-size:10px}
+    .badge-neutral{color:#64748b;font-weight:700;font-size:10px}
+    @media print{body{-webkit-print-color-adjust:exact;print-color-adjust:exact}.page-break{page-break-before:always}}
+  </style></head><body>
+  <div class="page">
+    <div class="header">
+      <div class="header-left">
+        <h1>GOTIR</h1>
+        <p>Business Intelligence Report</p>
+      </div>
+      <div class="header-right">
+        <strong>${periodLabel}</strong>
+        Generado: ${dateStr}
+      </div>
+    </div>
+    <div class="body">
+
+      <!-- ALERTA si hay no-shows altos -->
+      ${noshows > 0 && periodCitas.length > 0 && (noshows/periodCitas.length) > 0.10 ? `
+      <div class="alert-bar">
+        <div class="icon">⚠️</div>
+        <p>Tasa de no-shows alta: ${Math.round(noshows/periodCitas.length*100)}% (${noshows} de ${periodCitas.length} citas). Impacto estimado en ingresos perdidos.</p>
+      </div>` : ''}
+
+      <!-- KPIs PRINCIPALES -->
+      <div class="section-title">Métricas Clave del Período</div>
+      <div class="kpi-grid">
+        ${kpiCard('Leads Generados', totalLeads)}
+        ${kpiCard('Ventas Cerradas', totalVentas)}
+        ${kpiCard('Facturación Total', totalRev>0?'€'+totalRev.toLocaleString('es-ES'):'€0')}
+        ${kpiCard('Ticket Promedio', ticket>0?'€'+ticket.toLocaleString('es-ES'):'—')}
+      </div>
+      <div class="kpi-grid" style="margin-top:10px">
+        ${kpiCard('Citas Agendadas', periodCitas.length, periodCitas.length>0?`${realizadas} realizadas · ${noshows} no-shows`:'', '#475569')}
+        ${kpiCard('Asistencia', asistencia+'%', periodCitas.length>0?`Realizadas / Agendadas`:'')}
+        ${kpiCard('Conv. Llamada→Venta', convLL+'%', 'Ventas / Realizadas')}
+        ${kpiCard('Conversión Total', conv+'%', 'Ventas / Leads')}
+      </div>
+
+      <!-- EMBUDO + FUENTES -->
+      <div class="two-col" style="margin-top:20px">
+        <div>
+          <div class="section-title">Embudo Comercial</div>
+          ${funnelBars}
+        </div>
+        <div>
+          <div class="section-title">Fuentes de Captación</div>
+          ${srcRows || '<p style="color:#94a3b8;font-size:12px">Sin datos de fuentes</p>'}
+        </div>
+      </div>
+
+      <!-- VENDEDORES -->
+      <div class="section-title" style="margin-top:20px">Rendimiento por Vendedor</div>
+      ${vTable}
+
+      <!-- PÉRDIDAS -->
+      <div class="two-col" style="margin-top:20px">
+        <div>
+          <div class="section-title">Motivos de Pérdida</div>
+          <div style="font-size:10px;color:#64748b;margin-bottom:8px">${periodLost.length} oportunidades perdidas en el período</div>
+          ${lostRows}
+        </div>
+        <div>
+          <div class="section-title">Resumen de Citas</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+            ${kpiCard('Total Citas', periodCitas.length)}
+            ${kpiCard('Realizadas', realizadas, '', '#15803d')}
+            ${kpiCard('No-Shows', noshows, noshows>0?'Requieren seguimiento':'', noshows>2?'#dc2626':'#64748b')}
+            ${kpiCard('Canceladas', canceladas)}
+          </div>
+        </div>
+      </div>
+
+      <!-- OPORTUNIDADES ABIERTAS -->
+      <div class="section-title" style="margin-top:20px">Estado del Pipeline</div>
+      <div class="kpi-grid-3">
+        ${kpiCard('Total en Pipeline', allO.filter(o=>(o.status||'').toLowerCase()==='open').length, 'Oportunidades abiertas')}
+        ${kpiCard('Oportunidades Período', periodO.length, 'Creadas en el período')}
+        ${kpiCard('Valor Potencial', '€'+(allO.filter(o=>(o.status||'').toLowerCase()==='open').reduce((s,o)=>s+(parseFloat(o.monetaryValue||0)||0),0)).toLocaleString('es-ES'), 'Pipeline activo total')}
+      </div>
+
+    </div>
+
+    <div style="page-break-before:always"></div>
+
+    <!-- PÁGINA 2 — RECOMENDACIONES -->
+    <div class="header" style="margin-top:0">
+      <div class="header-left">
+        <h1>GOTIR</h1>
+        <p>Recomendaciones y Análisis IA</p>
+      </div>
+      <div class="header-right">
+        <strong>${periodLabel}</strong>
+        ${dateStr}
+      </div>
+    </div>
+    <div class="body">
+      <div class="section-title">Recomendaciones Estratégicas</div>
+
+      <div class="rec-item urgent">
+        <div class="rec-num">1</div>
+        <div class="rec-text"><strong>URGENTE — Reducir No-Shows (${asistencia<85?`${100-asistencia}% de pérdida`:'mantener tasa actual'})</strong><br>
+        Implementar confirmación doble por WhatsApp 24h y 2h antes de cada cita. Con ${noshows} no-shows en el período, el potencial recuperable es €${(noshows*ticket).toLocaleString('es-ES')}.</div>
+      </div>
+
+      <div class="rec-item">
+        <div class="rec-num">2</div>
+        <div class="rec-text"><strong>Optimizar pipeline activo</strong><br>
+        ${allO.filter(o=>(o.status||'').toLowerCase()==='open').length} oportunidades abiertas con valor potencial de €${(allO.filter(o=>(o.status||'').toLowerCase()==='open').reduce((s,o)=>s+(parseFloat(o.monetaryValue||0)||0),0)).toLocaleString('es-ES')}. Priorizar seguimiento a leads en etapas avanzadas (Info y contrato, Pronto pago).</div>
+      </div>
+
+      <div class="rec-item">
+        <div class="rec-num">3</div>
+        <div class="rec-text"><strong>Mejorar tasa de conversión (${conv}% actual)</strong><br>
+        ${parseFloat(conv)<10?'La tasa de conversión es baja. Revisar guión de ventas y proceso de calificación de leads.':'La conversión es aceptable. Foco en aumentar volumen de leads cualificados.'}</div>
+      </div>
+
+      <div class="rec-item">
+        <div class="rec-num">4</div>
+        <div class="rec-text"><strong>Canal de captación prioritario</strong><br>
+        ${srcEntries.length>0?`El canal "${srcEntries[0][0]}" genera el mayor volumen (${srcEntries[0][1]} leads, ${Math.round(srcEntries[0][1]/totalLeads*100)}%). Invertir más recursos en este canal.`:'Activar tracking de fuentes en GHL para identificar el canal más rentable.'}</div>
+      </div>
+
+      ${lostEntries.length>0?`
+      <div class="rec-item">
+        <div class="rec-num">5</div>
+        <div class="rec-text"><strong>Trabajar el principal motivo de pérdida: "${lostEntries[0][0]}"</strong><br>
+        ${lostEntries[0][1]} oportunidades (${Math.round(lostEntries[0][1]/lostTotal*100)}%) se pierden por este motivo. Crear objeción específica en el guión de ventas para abordarlo proactivamente.</div>
+      </div>` : ''}
+
+      <!-- TABLA RESUMEN PERÍODO -->
+      <div class="section-title" style="margin-top:24px">Resumen Comparativo del Período</div>
+      <table style="width:100%;border-collapse:collapse;font-size:11px;margin-top:4px">
+        <thead><tr style="background:#dbeafe">
+          <th style="padding:8px 10px;text-align:left;color:#1e3a8a">Métrica</th>
+          <th style="padding:8px 10px;text-align:right;color:#1e3a8a">Valor del Período</th>
+          <th style="padding:8px 10px;text-align:left;color:#1e3a8a">Observación</th>
+        </tr></thead>
+        <tbody>
+          <tr style="background:#f8fafc"><td style="padding:7px 10px;font-weight:600">Leads generados</td><td style="padding:7px 10px;text-align:right;font-weight:700">${totalLeads}</td><td style="padding:7px 10px;color:#64748b">Contactos nuevos en el período</td></tr>
+          <tr><td style="padding:7px 10px;font-weight:600">Citas realizadas</td><td style="padding:7px 10px;text-align:right;font-weight:700">${realizadas} / ${periodCitas.length}</td><td style="padding:7px 10px;color:#64748b">Asistencia: ${asistencia}%</td></tr>
+          <tr style="background:#f8fafc"><td style="padding:7px 10px;font-weight:600">Ventas cerradas</td><td style="padding:7px 10px;text-align:right;font-weight:700">${totalVentas}</td><td style="padding:7px 10px;color:#64748b">Conv. llamada→venta: ${convLL}%</td></tr>
+          <tr><td style="padding:7px 10px;font-weight:600">Facturación</td><td style="padding:7px 10px;text-align:right;font-weight:700">€${totalRev.toLocaleString('es-ES')}</td><td style="padding:7px 10px;color:#64748b">Ticket promedio: €${ticket.toLocaleString('es-ES')}</td></tr>
+          <tr style="background:#f8fafc"><td style="padding:7px 10px;font-weight:600">Pérdidas</td><td style="padding:7px 10px;text-align:right;font-weight:700">${periodLost.length}</td><td style="padding:7px 10px;color:#64748b">${lostEntries.length>0?'Principal motivo: '+lostEntries[0][0]:'Sin motivos registrados'}</td></tr>
+          <tr><td style="padding:7px 10px;font-weight:600">Pipeline abierto</td><td style="padding:7px 10px;text-align:right;font-weight:700">${allO.filter(o=>(o.status||'').toLowerCase()==='open').length} opps</td><td style="padding:7px 10px;color:#64748b">€${(allO.filter(o=>(o.status||'').toLowerCase()==='open').reduce((s,o)=>s+(parseFloat(o.monetaryValue||0)||0),0)).toLocaleString('es-ES')} potencial</td></tr>
+        </tbody>
+      </table>
+
+    </div>
+    <div class="footer">
+      <span>GOTIR Business Intelligence Platform — Generado automáticamente desde GoHighLevel</span>
+      <span>${dateStr} · Período: ${periodLabel}</span>
+    </div>
+  </div>
+  <script>window.onload=()=>{ setTimeout(()=>window.print(),400); }<\/script>
+  </body></html>`;
+
+  const w = window.open('','_blank','width=900,height=700');
+  w.document.write(html);
+  w.document.close();
 }
 
 // ═══════════════════════════════════════

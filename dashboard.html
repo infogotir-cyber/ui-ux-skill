@@ -773,10 +773,10 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
 <!-- ══════════════════════════════════════════════════════════ -->
 <div id="s-proveedores" class="section p-6">
   <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Leads Derivados</div><div class="text-2xl font-bold text-white">41</div><span class="badge badge-up">este mes</span></div>
-    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Comisiones Cobradas</div><div class="text-2xl font-bold text-white">8</div><span class="badge badge-neutral">cerradas</span></div>
-    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Comisiones Pend.</div><div class="text-2xl font-bold text-white">11</div><span class="badge badge-up">por cobrar</span></div>
-    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Ingresos Comisiones</div><div class="text-2xl font-bold text-white">€3.200</div><span class="badge badge-up">+18%</span></div>
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Leads Derivados</div><div class="text-2xl font-bold text-white" id="prov-kpi-leads">—</div><span class="text-xs text-slate-500">total enviados</span></div>
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Comisiones Cobradas</div><div class="text-2xl font-bold text-white" id="prov-kpi-cobradas">—</div><span class="text-xs text-slate-500">comisión pagada</span></div>
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Comisiones Pend.</div><div class="text-2xl font-bold text-white" id="prov-kpi-pendientes">—</div><span class="text-xs text-slate-500">compra realizada, sin pagar</span></div>
+    <div class="stat-card"><div class="text-xs text-slate-500 mb-2 uppercase tracking-wide">Ingresos Comisiones</div><div class="text-2xl font-bold text-white" id="prov-kpi-ingresos">—</div><span class="text-xs text-slate-500">de comisiones cobradas</span></div>
   </div>
   <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
     <div class="card">
@@ -2809,6 +2809,20 @@ function initSeguimiento() {
 // ═══════════════════════════════════════
 function initProveedores() {
   const p = DATA.proveedores;
+  const provOpps = DATA.ghlLive.provOpps || [];
+  if(provOpps.length > 0) {
+    const stageMap = DATA.ghlLive.stageIdMap || {};
+    const getSN = o => { const d=o.pipelineStageName||o.stageName||o.stage?.name||''; if(d) return d.toLowerCase().trim(); const sid=o.stageId||o.pipelineStageId||''; return (sid?stageMap[sid]||'':'').toLowerCase().trim(); };
+    const leadsTotal = provOpps.length;
+    const cobradas   = provOpps.filter(o=>{ const n=getSN(o); return n.includes('comisi') && (n.includes('pagad')||n.includes('cerrad')); }).length;
+    const pendientes = provOpps.filter(o=>{ const n=getSN(o); return n.includes('pendiente')||n.includes('pend.'); }).length;
+    const ingresos   = provOpps.filter(o=>{ const n=getSN(o); return n.includes('comisi') && (n.includes('pagad')||n.includes('cerrad')); }).reduce((s,o)=>s+(parseFloat(o.monetaryValue||o.monetary_value||0)||0),0);
+    const el = id => document.getElementById(id);
+    if(el('prov-kpi-leads')) el('prov-kpi-leads').textContent = leadsTotal;
+    if(el('prov-kpi-cobradas')) el('prov-kpi-cobradas').textContent = cobradas;
+    if(el('prov-kpi-pendientes')) el('prov-kpi-pendientes').textContent = pendientes;
+    if(el('prov-kpi-ingresos')) el('prov-kpi-ingresos').textContent = ingresos > 0 ? '€'+ingresos.toLocaleString('es-ES') : '€0';
+  }
 
   // Funnel
   const pf = document.getElementById('proveedores-funnel');
@@ -4080,6 +4094,7 @@ async function loadGHLData() {
           if(idx !== undefined) provCounts[idx]++;
         });
         provCounts.forEach((count,i) => { if(DATA.proveedores[i]) DATA.proveedores[i].value = count; });
+        DATA.ghlLive.provOpps = provOpps; // store for KPI cards
         if(sectionInited['proveedores']) { sectionInited['proveedores']=false; initChartsForSection('proveedores'); }
       }
     } catch(e) { console.warn('Opportunities load failed:', e.message); }

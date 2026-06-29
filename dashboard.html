@@ -307,7 +307,7 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
         <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2" class="w-5 h-5 opacity-60"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       </div>
       <div class="text-3xl font-bold text-white mb-1" id="kpi-leads">247</div>
-      <div class="flex items-center gap-2"><span class="badge badge-up">+18%</span><span class="text-xs text-slate-500">vs período ant.</span></div>
+      <div class="flex items-center gap-2"><span id="badge-leads-pct" class="badge badge-up">+18%</span><span class="text-xs text-slate-500">vs período ant.</span></div>
     </div>
     <div class="stat-card">
       <div class="flex justify-between items-start mb-3">
@@ -355,7 +355,7 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
         <svg viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2" class="w-5 h-5 opacity-60"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
       </div>
       <div class="text-3xl font-bold text-white mb-1" id="kpi-ventas">34</div>
-      <div class="flex items-center gap-2"><span class="badge badge-down">-5%</span><span class="text-xs text-slate-500">vs período ant.</span></div>
+      <div class="flex items-center gap-2"><span id="badge-ventas-pct" class="badge badge-down">-5%</span><span class="text-xs text-slate-500">vs período ant.</span></div>
     </div>
     <div class="stat-card">
       <div class="flex justify-between items-start mb-3">
@@ -363,7 +363,7 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
         <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2" class="w-5 h-5 opacity-60"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
       </div>
       <div class="text-3xl font-bold text-white mb-1" id="kpi-facturacion">€42.800</div>
-      <div class="flex items-center gap-2"><span class="badge badge-up">+23%</span><span class="text-xs text-slate-500">vs período ant.</span></div>
+      <div class="flex items-center gap-2"><span id="badge-facturacion-pct" class="badge badge-up">+23%</span><span class="text-xs text-slate-500">vs período ant.</span></div>
     </div>
     <div class="stat-card">
       <div class="flex justify-between items-start mb-3">
@@ -371,7 +371,7 @@ body{font-family:'Fira Sans',sans-serif;background:#0a0f1e;color:#e2e8f0;min-hei
         <svg viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="2" class="w-5 h-5 opacity-60"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
       </div>
       <div class="text-3xl font-bold text-white mb-1" id="kpi-ticket">€1.259</div>
-      <div class="flex items-center gap-2"><span class="badge badge-up">+7%</span><span class="text-xs text-slate-500">vs período ant.</span></div>
+      <div class="flex items-center gap-2"><span id="badge-ticket-pct" class="badge badge-up">+7%</span><span class="text-xs text-slate-500">vs período ant.</span></div>
     </div>
     <div class="stat-card">
       <div class="flex justify-between items-start mb-3">
@@ -1490,6 +1490,34 @@ function recalcFromPeriod(p) {
   document.getElementById('kpi-facturacion').textContent= totalRev>0 ? '€'+totalRev.toLocaleString('es-ES') : '€0';
   document.getElementById('kpi-ticket').textContent     = ticket>0 ? '€'+ticket.toLocaleString('es-ES') : '—';
   document.getElementById('kpi-conversion').textContent = conv;
+
+  // Calculate previous period for comparison badges
+  const periodLen = range.to - range.from;
+  const prevRange = { from: range.from - periodLen, to: range.from };
+  const prevContacts = filterByPeriod(allC, prevRange, 'dateAdded');
+  const prevWonOpps  = allO.filter(o => {
+    if((o.status||'').toLowerCase() !== 'won') return false;
+    const raw = o.closedDate || o.closeDate || o.date_closed || o.wonDate || o.updatedAt || '';
+    if(!raw) return false;
+    const t = typeof raw === 'number' ? raw : new Date(raw).getTime();
+    return t >= prevRange.from && t <= prevRange.to;
+  });
+  const prevLeads   = prevContacts.length;
+  const prevVentas  = prevWonOpps.length;
+  const prevRev     = prevWonOpps.reduce((s,o)=>s+(parseFloat(o.monetaryValue||o.monetary_value||0)||0),0);
+  const prevTicket  = prevVentas>0 ? Math.round(prevRev/prevVentas) : 0;
+  const pctBadge = (cur, prev, el) => {
+    const b = document.getElementById(el);
+    if(!b) return;
+    if(prev === 0) { b.textContent = cur > 0 ? 'Nuevo' : '—'; b.className='badge badge-up'; return; }
+    const pct = Math.round((cur-prev)/prev*100);
+    b.textContent = (pct>=0?'+':'')+pct+'%';
+    b.className = 'badge '+(pct>=0?'badge-up':'badge-down');
+  };
+  pctBadge(totalLeads,  prevLeads,   'badge-leads-pct');
+  pctBadge(totalVentas, prevVentas,  'badge-ventas-pct');
+  pctBadge(totalRev,    prevRev,     'badge-facturacion-pct');
+  pctBadge(ticket,      prevTicket,  'badge-ticket-pct');
 
   // Recalculate citas from filtered calendar events (stored in ghlLive.allCitas)
   if(DATA.ghlLive.allCitas) {

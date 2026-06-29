@@ -1474,7 +1474,7 @@ function recalcFromPeriod(p) {
   const wonOpps  = allO.filter(o => {
     if((o.status||'').toLowerCase() !== 'won') return false;
     const raw = o.closedDate || o.closeDate || o.date_closed || o.wonDate || o.updatedAt || '';
-    if(!raw) return true; // no date → include (can't filter by date)
+    if(!raw) return true; // no date - include without filtering
     const t = typeof raw === 'number' ? raw : new Date(raw).getTime();
     return t >= range.from && t <= range.to;
   });

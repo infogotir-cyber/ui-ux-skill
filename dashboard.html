@@ -3151,9 +3151,30 @@ function initConvVendedor() {
 // CHARTS: PÉRDIDAS
 // ═══════════════════════════════════════
 function initPerdidas() {
-  const gl = DATA.ghlLive.lostReasons || {};
+  // Compute lost reasons filtered by current period
+  const allOpps = DATA.ghlLive.allOpps || [];
+  const range = getPeriodRange(DATA.period);
+  const lrLabels = getLostReasonLabels();
+  const periodLost = allOpps.filter(o => {
+    if((o.status||'').toLowerCase() !== 'lost') return false;
+    const raw = o.closedDate||o.closeDate||o.date_closed||o.updatedAt||o.createdAt||o.dateAdded||'';
+    if(!raw) return true; // include if no date
+    const t = typeof raw==='number'?raw:new Date(raw).getTime();
+    return t >= range.from && t <= range.to;
+  });
+  const glCounted = {};
+  periodLost.forEach(o => {
+    const rawId  = String(o.lostReasonId || o.lost_reason_id || '').trim();
+    const rawTxt = o.lostReason || o.lost_reason || o.lostReasonLabel || o.reason || null;
+    let label = null;
+    if(rawId) label = lrLabels[rawId] || null;
+    if(!label && rawTxt) { const s=String(rawTxt).trim(); const isUUID=/^[A-Za-z0-9]{16,}$/.test(s); label = isUUID?(lrLabels[s]||null):(s||null); }
+    if(!label && rawId) label = 'Motivo '+rawId.slice(0,8);
+    const k = label || 'Sin motivo registrado';
+    glCounted[k] = (glCounted[k]||0)+1;
+  });
   const colors = ['#f87171','#fb923c','#fbbf24','#a78bfa','#60a5fa','#94a3b8'];
-  const allEntries = Object.entries(gl).sort((a,b)=>b[1]-a[1]);
+  const allEntries = Object.entries(glCounted).sort((a,b)=>b[1]-a[1]);
   const total = allEntries.reduce((s,[,v])=>s+v, 0);
   const namedEntries = allEntries.filter(([k])=>k!=='Sin motivo registrado');
   const hasReal = namedEntries.length > 0;
@@ -3189,18 +3210,42 @@ function initPerdidas() {
     noData:{ text: GHL.connected ? 'Cargando...' : 'Conectá GHL', style:{ color:'#64748b' } }
   }));
 
-  initChart('chart-perdidas-evolucion', mkOpts({
-    chart:{ type:'bar', height:280 },
-    series: hasReal
-      ? namedEntries.slice(0,3).map(([k,v],i)=>({ name:k, data:[v] }))
-      : [{ name:'Sin datos', data:[] }],
-    xaxis:{ categories: hasReal ? ['Total'] : [], labels:{ style:{ colors:'#64748b' } } },
-    yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>v+' opps' } },
-    colors: colors,
-    plotOptions:{ bar:{ borderRadius:3, columnWidth:'60%' } },
-    legend:{ labels:{ colors:'#94a3b8' } },
-    noData:{ text: hasReal ? '' : 'Sin motivos registrados en GHL', style:{ color:'#64748b' } }
-  }));
+  // Evolución mensual — build monthly buckets within the period
+  {
+    const MONTHS_ES = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+    const monthKeys = [];
+    const fromD = new Date(range.from); fromD.setDate(1);
+    const toD   = new Date(range.to);
+    const cur   = new Date(fromD);
+    while(cur <= toD) { monthKeys.push(cur.toISOString().slice(0,7)); cur.setMonth(cur.getMonth()+1); }
+    if(!monthKeys.length) monthKeys.push(new Date(range.from).toISOString().slice(0,7));
+    const top3 = namedEntries.slice(0,3).map(([k])=>k);
+    const buckets = {}; // motivo -> { YYYY-MM: count }
+    top3.forEach(m=>{ buckets[m]={}; monthKeys.forEach(k=>{ buckets[m][k]=0; }); });
+    periodLost.forEach(o => {
+      const rawId  = String(o.lostReasonId||o.lost_reason_id||'').trim();
+      const rawTxt = o.lostReason||o.lost_reason||o.lostReasonLabel||o.reason||null;
+      let label = null;
+      if(rawId) label = lrLabels[rawId]||null;
+      if(!label && rawTxt) { const s=String(rawTxt).trim(); const isUUID=/^[A-Za-z0-9]{16,}$/.test(s); label=isUUID?(lrLabels[s]||null):(s||null); }
+      if(!label && rawId) label='Motivo '+rawId.slice(0,8);
+      if(!label||!buckets[label]) return;
+      const raw=o.closedDate||o.closeDate||o.date_closed||o.updatedAt||o.createdAt||o.dateAdded||'';
+      const mk = raw ? new Date(typeof raw==='number'?raw:raw).toISOString().slice(0,7) : monthKeys[0];
+      if(buckets[label][mk]!==undefined) buckets[label][mk]++;
+    });
+    const mLabels = monthKeys.map(k=>{ const[y,m]=k.split('-'); return MONTHS_ES[+m-1]+' '+y.slice(2); });
+    initChart('chart-perdidas-evolucion', mkOpts({
+      chart:{ type:'bar', height:280 },
+      series: top3.length ? top3.map(m=>({ name:m, data:monthKeys.map(k=>buckets[m][k]||0) })) : [{ name:'Sin datos', data:[] }],
+      xaxis:{ categories: top3.length ? mLabels : [], labels:{ style:{ colors:'#64748b' } } },
+      yaxis:{ labels:{ style:{ colors:'#64748b' }, formatter:v=>v+' opps' } },
+      colors: colors,
+      plotOptions:{ bar:{ borderRadius:3, columnWidth:'60%' } },
+      legend:{ labels:{ colors:'#94a3b8' } },
+      noData:{ text:'Sin motivos registrados en GHL', style:{ color:'#64748b' } }
+    }));
+  }
 
   // Also refresh stage tab if it's currently visible
   if(!document.getElementById('perd-tab-stage')?.classList.contains('hidden')) {

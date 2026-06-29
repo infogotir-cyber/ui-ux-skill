@@ -1711,6 +1711,8 @@ function recalcFromPeriod(p) {
     // Re-render conversion section if already open (period-sensitive)
     if(sectionInited['conversion']) initConversion();
 
+    if(sectionInited['nocualificados']) initNoCualificados();
+
     // Re-render tiempos if already open (period-sensitive)
     if(sectionInited['tiempos'] && DATA.ghlLive.allOpps?.length > 0) {
       updateTiemposFromGHL(DATA.ghlLive.allOpps, p);
@@ -3411,11 +3413,27 @@ function initValor() {
 // CHARTS: NO CUALIFICADOS
 // ═══════════════════════════════════════
 function initNoCualificados() {
-  const gl = DATA.ghlLive.noQualified;
-  const fondos = gl.fondos || 0;
-  const tiempo = gl.tiempo || 0;
-  const cue    = gl.cue    || 0;
-  const total  = fondos + tiempo + cue;
+  // Compute period-filtered counts from allContacts using dateAdded as proxy
+  // (GHL does not expose tag-applied date; dateAdded = when contact entered CRM)
+  const allContacts = DATA.ghlLive.allContacts || [];
+  const range = getPeriodRange(DATA.period);
+  const MONTHS_ES_NQ = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+
+  const periodContacts = allContacts.filter(c => {
+    const raw = c.dateAdded || c.createdAt || '';
+    if(!raw) return false;
+    const t = typeof raw === 'number' ? raw : new Date(raw).getTime();
+    return t >= range.from && t <= range.to;
+  });
+
+  let fondos = 0, tiempo = 0, cue = 0;
+  periodContacts.forEach(c => {
+    const tags = (c.tags || []).map(t => (t||'').toLowerCase().trim());
+    if(tags.some(t => t.includes('sin fondos')))      fondos++;
+    if(tags.some(t => t.includes('excedido tiempo'))) tiempo++;
+    if(tags.some(t => t.includes('/ cue') || t === 'no cualificado / cue')) cue++;
+  });
+  const total = fondos + tiempo + cue;
 
   document.getElementById('nq-fondos').textContent = fondos;
   document.getElementById('nq-tiempo').textContent = tiempo;
@@ -3427,40 +3445,37 @@ function initNoCualificados() {
     labels:['Sin fondos','Excedido tiempo','CUE'],
     colors:['#f87171','#fbbf24','#a78bfa'],
     legend:{ position:'bottom', labels:{ colors:'#94a3b8' } },
-    plotOptions:{ pie:{ donut:{ size:'60%' } } }
+    plotOptions:{ pie:{ donut:{ size:'60%' } } },
+    noData:{ text:'Sin no-cualificados en este período', style:{ color:'#64748b' } }
   }));
 
-  // Build monthly evolution from allOpps — last 6 months
-  const allOppsNQ = DATA.ghlLive.allOpps || [];
-  const MONTHS_ES_NQ = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
-  const now = new Date();
+  // Monthly evolution within period
   const monthKeys = [];
-  for(let i=5; i>=0; i--) {
-    const d = new Date(now.getFullYear(), now.getMonth()-i, 1);
-    monthKeys.push(d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0'));
-  }
+  const fromD = new Date(range.from); fromD.setDate(1);
+  const toD   = new Date(range.to);
+  const cur   = new Date(fromD);
+  while(cur <= toD) { monthKeys.push(cur.getFullYear()+'-'+String(cur.getMonth()+1).padStart(2,'0')); cur.setMonth(cur.getMonth()+1); }
+  if(!monthKeys.length) monthKeys.push(new Date(range.from).toISOString().slice(0,7));
+
   const evData = { fondos:{}, tiempo:{}, cue:{} };
   monthKeys.forEach(k => { evData.fondos[k]=0; evData.tiempo[k]=0; evData.cue[k]=0; });
-  allOppsNQ.forEach(o => {
-    const tags = (o.tags||[]).map(t=>(t||'').toLowerCase().trim());
-    const dateStr = o.createdAt || o.dateAdded || '';
-    if(!dateStr) return;
-    const key = String(dateStr).slice(0,7);
+  periodContacts.forEach(c => {
+    const tags = (c.tags||[]).map(t=>(t||'').toLowerCase().trim());
+    const raw = c.dateAdded || c.createdAt || '';
+    if(!raw) return;
+    const key = new Date(typeof raw==='number'?raw:raw).toISOString().slice(0,7);
     if(!(key in evData.fondos)) return;
     if(tags.some(t=>t.includes('sin fondos')))      evData.fondos[key]++;
     if(tags.some(t=>t.includes('excedido tiempo'))) evData.tiempo[key]++;
     if(tags.some(t=>t.includes('/ cue')||t==='no cualificado / cue')) evData.cue[key]++;
   });
   const evMeses  = monthKeys.map(k=>{ const [y,m]=k.split('-'); return MONTHS_ES_NQ[+m-1]+' '+y.slice(2); });
-  const evFondos = monthKeys.map(k=>evData.fondos[k]);
-  const evTiempo = monthKeys.map(k=>evData.tiempo[k]);
-  const evCue    = monthKeys.map(k=>evData.cue[k]);
   initChart('chart-nq-evolucion', mkOpts({
     chart:{ type:'line', height:260 },
     series:[
-      { name:'Sin fondos',     data: evFondos },
-      { name:'Excedido tiempo',data: evTiempo },
-      { name:'CUE',            data: evCue    }
+      { name:'Sin fondos',      data: monthKeys.map(k=>evData.fondos[k]) },
+      { name:'Excedido tiempo', data: monthKeys.map(k=>evData.tiempo[k]) },
+      { name:'CUE',             data: monthKeys.map(k=>evData.cue[k])    }
     ],
     xaxis:{ categories: evMeses, labels:{ style:{ colors:'#64748b' } } },
     yaxis:{ labels:{ style:{ colors:'#64748b' } } },

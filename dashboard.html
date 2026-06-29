@@ -1708,6 +1708,9 @@ function recalcFromPeriod(p) {
     // Re-render perdidas section if already open (period-sensitive)
     if(sectionInited['perdidas']) initPerdidas();
 
+    // Re-render conversion section if already open (period-sensitive)
+    if(sectionInited['conversion']) initConversion();
+
     // Re-render seguimiento KPIs if already open (period-sensitive)
     if(sectionInited['seguimiento']) initSeguimiento();
 
@@ -2942,20 +2945,30 @@ function initConversion() {
   const gl = DATA.ghlLive;
   const hasReal = GHL.connected && (gl.allContacts||[]).length > 0;
 
-  // ── Stat cards ───────────────────────────────────────────
-  if(gl.totalOpps > 0) {
-    const el = id => document.getElementById(id);
-    if(el('conv-opps-total')) el('conv-opps-total').textContent = gl.totalOpps;
-    if(el('conv-won-total'))  el('conv-won-total').textContent  = gl.totalWon;
-    if(el('conv-ratio'))      el('conv-ratio').textContent      = ((gl.totalWon/gl.totalOpps)*100).toFixed(1)+'%';
+  // ── Stat cards — period-filtered ─────────────────────────
+  const el = id => document.getElementById(id);
+  if(hasReal) {
+    const range = getPeriodRange(DATA.period);
     const allC = gl.allContacts||[], allO = gl.allOpps||[];
-    if(el('conv-leads-total'))  el('conv-leads-total').textContent  = allC.length;
-    if(el('conv-lead-to-opp'))  el('conv-lead-to-opp').textContent  = allC.length>0 ? ((allO.length/allC.length)*100).toFixed(1)+'%' : '—';
+    const periodC = filterByPeriod(allC, range, 'dateAdded');
+    const periodO = filterByPeriod(allO, range, 'createdAt');
+    const periodWon = allO.filter(o => {
+      if((o.status||'').toLowerCase()!=='won') return false;
+      const raw=o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.updatedAt||'';
+      if(!raw) return false;
+      const t=typeof raw==='number'?raw:new Date(raw).getTime();
+      return t>=range.from&&t<=range.to;
+    });
+    if(el('conv-leads-total')) el('conv-leads-total').textContent = periodC.length;
+    if(el('conv-opps-total'))  el('conv-opps-total').textContent  = periodO.length;
+    if(el('conv-won-total'))   el('conv-won-total').textContent   = periodWon.length;
+    if(el('conv-ratio'))       el('conv-ratio').textContent       = periodO.length>0 ? ((periodWon.length/periodO.length)*100).toFixed(1)+'%' : '0%';
+    if(el('conv-lead-to-opp')) el('conv-lead-to-opp').textContent = periodC.length>0 ? ((periodO.length/periodC.length)*100).toFixed(1)+'%' : '—';
   }
 
-  // ── General chart — real 12-month history ────────────────
+  // ── General chart — period-aware monthly history ─────────
   if(hasReal) {
-    const hist = buildMonthlyHistory(gl.allContacts, gl.allOpps);
+    const hist = buildMonthlyHistory(gl.allContacts, gl.allOpps, DATA.period);
     initChart('chart-conv-general', mkOpts({
       chart:{ type:'bar', height:280 },
       series:[
@@ -4424,30 +4437,57 @@ function getSnapshotRange(daysAgo, spanDays) {
   return entries[entries.length - 1][1];
 }
 
-function buildMonthlyHistory(contactList, oppList) {
-  // Build 12-month series from GHL createdAt / closedDate
+function buildMonthlyHistory(contactList, oppList, period) {
+  // Build month buckets for the selected period (or last 12 months if no period)
+  const MONTHS_ES = ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
   const months = {};
-  for(let i = 11; i >= 0; i--) {
-    const d = new Date(); d.setDate(1); d.setMonth(d.getMonth() - i);
-    const key = d.toISOString().slice(0,7); // YYYY-MM
-    months[key] = { leads:0, ventas:0, revenue:0 };
-  }
-  contactList.forEach(c => {
-    const key = (c.dateAdded||c.createdAt||'').slice(0,7);
-    if(months[key]) months[key].leads++;
-  });
-  oppList.filter(o=>(o.status||'').toLowerCase()==='won').forEach(o => {
-    const dateStr = o.closedDate || o.closeDate || o.date_closed || o.wonDate || o.updatedAt || '';
-    const key = (typeof dateStr === 'number')
-      ? new Date(dateStr).toISOString().slice(0,7)
-      : String(dateStr).slice(0,7);
-    if(months[key]) {
-      months[key].ventas++;
-      months[key].revenue += o.monetaryValue||o.monetary_value||0;
+  if(period && period !== 'all') {
+    const range = getPeriodRange(period);
+    const from = new Date(range.from); from.setDate(1);
+    const to   = new Date(range.to);
+    const cur  = new Date(from);
+    while(cur <= to) {
+      const key = cur.toISOString().slice(0,7);
+      months[key] = { leads:0, ventas:0, revenue:0 };
+      cur.setMonth(cur.getMonth()+1);
     }
-  });
+    // ensure at least one bucket
+    if(Object.keys(months).length === 0) {
+      months[from.toISOString().slice(0,7)] = { leads:0, ventas:0, revenue:0 };
+    }
+    contactList.forEach(c => {
+      const raw = c.dateAdded||c.createdAt||'';
+      if(!raw) return;
+      const t = typeof raw==='number'?raw:new Date(raw).getTime();
+      if(t<range.from||t>range.to) return;
+      const key = new Date(t).toISOString().slice(0,7);
+      if(months[key]) months[key].leads++;
+    });
+    oppList.filter(o=>(o.status||'').toLowerCase()==='won').forEach(o => {
+      const dateStr = o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.updatedAt||'';
+      if(!dateStr) return;
+      const t = typeof dateStr==='number'?dateStr:new Date(dateStr).getTime();
+      if(t<range.from||t>range.to) return;
+      const key = new Date(t).toISOString().slice(0,7);
+      if(months[key]) { months[key].ventas++; months[key].revenue += parseFloat(o.monetaryValue||o.monetary_value||0)||0; }
+    });
+  } else {
+    for(let i = 11; i >= 0; i--) {
+      const d = new Date(); d.setDate(1); d.setMonth(d.getMonth() - i);
+      months[d.toISOString().slice(0,7)] = { leads:0, ventas:0, revenue:0 };
+    }
+    contactList.forEach(c => {
+      const key = (c.dateAdded||c.createdAt||'').slice(0,7);
+      if(months[key]) months[key].leads++;
+    });
+    oppList.filter(o=>(o.status||'').toLowerCase()==='won').forEach(o => {
+      const dateStr = o.closedDate||o.closeDate||o.date_closed||o.wonDate||o.updatedAt||'';
+      const key = (typeof dateStr==='number') ? new Date(dateStr).toISOString().slice(0,7) : String(dateStr).slice(0,7);
+      if(months[key]) { months[key].ventas++; months[key].revenue += parseFloat(o.monetaryValue||o.monetary_value||0)||0; }
+    });
+  }
   const keys = Object.keys(months).sort();
-  const labels = keys.map(k => { const [y,m]=k.split('-'); return ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'][+m-1]+' '+y.slice(2); });
+  const labels = keys.map(k => { const [y,m]=k.split('-'); return MONTHS_ES[+m-1]+' '+y.slice(2); });
   return { keys, labels, leads: keys.map(k=>months[k].leads), ventas: keys.map(k=>months[k].ventas), revenue: keys.map(k=>months[k].revenue) };
 }
 

@@ -50,7 +50,9 @@ body {
   color: var(--tblr-secondary-color, #7c8598);
   opacity: .7;
 }
-.navbar-vertical .nav-link { border-radius: 8px; margin: 1px 0; }
+.navbar-vertical .nav-link { border-radius: 8px; margin: 1px 0; padding-right: .5rem; }
+.navbar-vertical .nav-link .badge { font-size: .58rem; padding: .2rem .4rem; }
+@media (max-width: 991px) { #sidebar-menu { padding-right: .25rem; } }
 .navbar-vertical .nav-item.active .nav-link {
   background: linear-gradient(90deg, rgba(99, 102, 241, .22), rgba(139, 92, 246, .05));
   color: #fff;

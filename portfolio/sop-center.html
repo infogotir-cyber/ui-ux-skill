@@ -1,0 +1,894 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark" data-bs-theme-primary="indigo">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Business SOP Manager — Sabrina Navarro | Automation OS</title>
+  <meta name="description" content="A searchable SOP library with categories, checklists, version history and AI-generated summaries." />
+  <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+
+  <link href="./assets/css/tabler.min.css" rel="stylesheet" />
+  <link href="./assets/css/tabler-vendors.min.css" rel="stylesheet" />
+  <link href="./assets/css/tabler-themes.min.css" rel="stylesheet" />
+  <link href="./assets/css/tabler-marketing.min.css" rel="stylesheet" />
+  <link href="./assets/css/custom.css" rel="stylesheet" />
+  
+</head>
+<body class="theme-dark">
+  <a href="#content" class="visually-hidden-focusable skip-link">Skip to main content</a>
+
+  <div class="page">
+    <!-- SIDEBAR -->
+    <aside class="navbar navbar-vertical navbar-expand-lg" data-bs-theme="dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar-menu" aria-controls="sidebar-menu" aria-expanded="false" aria-label="Toggle sidebar navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="index.html" class="navbar-brand navbar-brand-autodark">
+          <span class="brand-mark">SN</span>
+          <span class="brand-word">
+            <strong>Sabrina Navarro</strong>
+            <small>Automation OS</small>
+          </span>
+        </a>
+        <div class="navbar-nav flex-row d-lg-none">
+          <div class="nav-item dropdown">
+            <a href="#" class="nav-link d-flex lh-1 p-0" data-bs-toggle="dropdown" aria-label="Open menu">
+              <span class="avatar avatar-sm" style="background-image:url(./assets/img/sabrina-navarro-avatar.jpg)"></span>
+            </a>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse" id="sidebar-menu">
+          <ul class="navbar-nav pt-lg-3">
+            <li class="nav-item">
+      <a class="nav-link" href="index.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M5 12l-2 0l9 -9l9 9l-2 0" /> <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /> <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg></span>
+        <span class="nav-link-title">Home</span>
+        
+      </a>
+    </li><li class="nav-item">
+      <a class="nav-link" href="about.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /> <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg></span>
+        <span class="nav-link-title">About</span>
+        
+      </a>
+    </li><li class="nav-item">
+      <a class="nav-link" href="services.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 9a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2l0 -9" /> <path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" /> <path d="M12 12l0 .01" /> <path d="M3 13a20 20 0 0 0 18 0" /></svg></span>
+        <span class="nav-link-title">Services</span>
+        
+      </a>
+    </li><li class="nav-item nav-section-label mt-3 mb-1"><span>Live Platform Demos</span></li><li class="nav-item">
+      <a class="nav-link" href="dashboard.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M5 4h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1" /> <path d="M5 16h4a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1" /> <path d="M15 12h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1" /> <path d="M15 4h4a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1" /></svg></span>
+        <span class="nav-link-title">CRM Dashboard</span>
+        <span class="badge badge-sm bg-azure-lt ms-auto">Demo</span>
+      </a>
+    </li><li class="nav-item">
+      <a class="nav-link" href="workflow-gallery.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /> <path d="M19 7a2 2 0 1 0 0 -4a2 2 0 0 0 0 4" /> <path d="M11 19h5.5a3.5 3.5 0 0 0 0 -7h-8a3.5 3.5 0 0 1 0 -7h4.5" /></svg></span>
+        <span class="nav-link-title">Workflow Gallery</span>
+        <span class="badge badge-sm bg-azure-lt ms-auto">Demo</span>
+      </a>
+    </li><li class="nav-item active">
+      <a class="nav-link" href="sop-center.html" aria-current="page">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M19 4v16h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12" /> <path d="M19 16h-12a2 2 0 0 0 -2 2" /> <path d="M9 8h6" /></svg></span>
+        <span class="nav-link-title">SOP Center</span>
+        <span class="badge badge-sm bg-azure-lt ms-auto">Demo</span>
+      </a>
+    </li><li class="nav-item">
+      <a class="nav-link" href="automation-monitor.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 12h4l3 8l4 -16l3 8h4" /></svg></span>
+        <span class="nav-link-title">Automation Monitor</span>
+        <span class="badge badge-sm bg-azure-lt ms-auto">Demo</span>
+      </a>
+    </li><li class="nav-item">
+      <a class="nav-link" href="prompt-library.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6" /></svg></span>
+        <span class="nav-link-title">Prompt Library</span>
+        <span class="badge badge-sm bg-azure-lt ms-auto">Demo</span>
+      </a>
+    </li><li class="nav-item nav-section-label mt-3 mb-1"><span>Portfolio</span></li><li class="nav-item">
+      <a class="nav-link" href="projects.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M4 5a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -4" /> <path d="M4 15a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -4" /> <path d="M14 15a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -4" /> <path d="M14 7l6 0" /> <path d="M17 4l0 6" /></svg></span>
+        <span class="nav-link-title">Projects</span>
+        
+      </a>
+    </li><li class="nav-item">
+      <a class="nav-link" href="case-studies.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M6 4h11a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-11a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1m3 0v18" /> <path d="M13 8l2 0" /> <path d="M13 12l2 0" /></svg></span>
+        <span class="nav-link-title">Case Studies</span>
+        
+      </a>
+    </li><li class="nav-item">
+      <a class="nav-link" href="contact.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" /> <path d="M3 7l9 6l9 -6" /></svg></span>
+        <span class="nav-link-title">Contact</span>
+        
+      </a>
+    </li>
+          </ul>
+
+          <div class="sidebar-footer mt-auto pt-3 d-none d-lg-block">
+            <a href="contact.html" class="sidebar-cta">
+              <span class="sidebar-cta-title">Available for projects</span>
+              <span class="sidebar-cta-sub">Let's automate your operations →</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="page-wrapper">
+      
+      <div class="page-header d-print-none">
+        <div class="container-xl-fluid">
+          <div class="row g-2 align-items-center">
+            <div class="col">
+              <div class="page-pretitle">Demo Project · SOP Center</div>
+              <h2 class="page-title">Business SOP Manager</h2>
+              <div class="text-secondary mt-1">A searchable SOP library with categories, checklists, version history and AI-generated summaries.</div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <main id="content" class="page-body">
+        <div class="container-xl-fluid">
+          
+<div class="demo-ribbon">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /> <path d="M12 9h.01" /> <path d="M11 12h1v4h1" /></svg>
+    <span>Concept Project — SOP content written to demonstrate documentation structure and depth, not an actual client's internal procedures.</span>
+  </div>
+
+<div class="row g-4">
+  <div class="col-lg-3">
+    <div class="card mb-3">
+      <div class="card-body">
+        <div class="input-icon mb-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="input-icon-addon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 10a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /> <path d="M21 21l-6 -6" /></svg>
+          <input type="text" class="form-control" id="sop-search" placeholder="Search SOPs..." />
+        </div>
+        <div class="fw-medium small text-secondary mb-2">CATEGORIES</div>
+        <div class="list-group list-group-flush" id="sop-categories">
+          <a href="#" class="list-group-item list-group-item-action active" data-category-filter="">All SOPs <span class="badge bg-secondary-lt float-end">10</span></a>
+          <a href="#" class="list-group-item list-group-item-action" data-category-filter="Sales & Lead Handling">Sales & Lead Handling <span class="badge bg-secondary-lt float-end">1</span></a><a href="#" class="list-group-item list-group-item-action" data-category-filter="CRM & Automation">CRM & Automation <span class="badge bg-secondary-lt float-end">3</span></a><a href="#" class="list-group-item list-group-item-action" data-category-filter="Field Operations">Field Operations <span class="badge bg-secondary-lt float-end">2</span></a><a href="#" class="list-group-item list-group-item-action" data-category-filter="Customer Service">Customer Service <span class="badge bg-secondary-lt float-end">2</span></a><a href="#" class="list-group-item list-group-item-action" data-category-filter="Admin & Finance">Admin & Finance <span class="badge bg-secondary-lt float-end">1</span></a><a href="#" class="list-group-item list-group-item-action" data-category-filter="Onboarding">Onboarding <span class="badge bg-secondary-lt float-end">1</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-9">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <div class="text-secondary" id="sop-count">10 standard operating procedures</div>
+    </div>
+    <div id="sop-list">
+      <div class="card mb-3 sop-item" data-title="qualifying a new roofing lead" data-category="Sales & Lead Handling">
+    <div class="card-header cursor-pointer" data-bs-toggle="collapse" data-bs-target="#sop-collapse-0" role="button" style="cursor:pointer;">
+      <div class="d-flex align-items-center gap-3 flex-fill">
+        <span class="avatar avatar-sm bg-indigo-lt"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M19 4v16h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12" /> <path d="M19 16h-12a2 2 0 0 0 -2 2" /> <path d="M9 8h6" /></svg></span>
+        <div class="flex-fill">
+          <h3 class="card-title mb-0">Qualifying a New Roofing Lead</h3>
+          <div class="text-secondary small">Sales & Lead Handling · v3.2 · Updated Feb 14, 2026</div>
+        </div>
+      </div>
+      <div class="card-actions"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M6 9l6 6l6 -6" /></svg></div>
+    </div>
+    <div class="collapse" id="sop-collapse-0">
+      <div class="card-body">
+        <div class="d-flex gap-2 p-3 mb-3 rounded" style="background:rgba(99,102,241,.08); border:1px solid rgba(99,102,241,.25);">
+          <span class="text-indigo flex-none"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6" /></svg></span>
+          <div>
+            <div class="fw-medium small mb-1">AI Summary</div>
+            <div class="text-secondary small">Every new lead must be contacted within 10 minutes, scored using the AI priority model, and either booked for inspection or moved to nurture within one business day.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-7">
+            <h4 class="mb-2">Steps</h4>
+            <ol class="mb-4">
+              <li class="text-secondary mb-1">Confirm lead source and contact details are complete in GoHighLevel.</li><li class="text-secondary mb-1">Check the AI priority score generated by the intake automation (Webhook → OpenAI → CRM field update).</li><li class="text-secondary mb-1">Call the homeowner within 10 minutes during business hours; leave a voicemail + auto text if no answer.</li><li class="text-secondary mb-1">If interested, book an inspection directly in the shared calendar and trigger the confirmation sequence.</li><li class="text-secondary mb-1">If not ready, tag as "Nurture" and enroll in the 90-day drip campaign.</li>
+            </ol>
+            <h4 class="mb-2">Checklist</h4>
+            <div class="mb-2">
+              <label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" checked>
+                <span class="form-check-label">Lead source logged</span>
+              </label><label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" >
+                <span class="form-check-label">Priority score reviewed</span>
+              </label><label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" >
+                <span class="form-check-label">First contact attempted <10 min</span>
+              </label><label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" >
+                <span class="form-check-label">Inspection booked or nurture tag applied</span>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <h4 class="mb-2 d-flex align-items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M12 8l0 4l2 2" /> <path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5" /></svg> Version History</h4>
+            <ul class="list-unstyled">
+              <li class="d-flex gap-2 mb-3">
+                <span class="badge bg-indigo-lt text-indigo">v3.2</span>
+                <div>
+                  <div class="small fw-medium">Current version</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Feb 14, 2026 · Sabrina Navarro</div>
+                </div>
+              </li><li class="d-flex gap-2 mb-3">
+                <span class="badge bg-secondary-lt text-secondary">v3.1</span>
+                <div>
+                  <div class="small text-secondary">Clarified steps based on team feedback</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Dec 2025 · Sabrina Navarro</div>
+                </div>
+              </li><li class="d-flex gap-2 mb-3">
+                <span class="badge bg-secondary-lt text-secondary">v2.0</span>
+                <div>
+                  <div class="small text-secondary">Initial documented version</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Sep 2025 · Sabrina Navarro</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><div class="card mb-3 sop-item" data-title="crm data entry standards" data-category="CRM & Automation">
+    <div class="card-header cursor-pointer" data-bs-toggle="collapse" data-bs-target="#sop-collapse-1" role="button" style="cursor:pointer;">
+      <div class="d-flex align-items-center gap-3 flex-fill">
+        <span class="avatar avatar-sm bg-cyan-lt"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M19 4v16h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12" /> <path d="M19 16h-12a2 2 0 0 0 -2 2" /> <path d="M9 8h6" /></svg></span>
+        <div class="flex-fill">
+          <h3 class="card-title mb-0">CRM Data Entry Standards</h3>
+          <div class="text-secondary small">CRM & Automation · v2.0 · Updated Jan 30, 2026</div>
+        </div>
+      </div>
+      <div class="card-actions"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M6 9l6 6l6 -6" /></svg></div>
+    </div>
+    <div class="collapse" id="sop-collapse-1">
+      <div class="card-body">
+        <div class="d-flex gap-2 p-3 mb-3 rounded" style="background:rgba(99,102,241,.08); border:1px solid rgba(99,102,241,.25);">
+          <span class="text-indigo flex-none"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6" /></svg></span>
+          <div>
+            <div class="fw-medium small mb-1">AI Summary</div>
+            <div class="text-secondary small">Consistent naming, stage usage and required fields keep automations (scoring, routing, reporting) accurate. No deal should move stage without required fields filled.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-7">
+            <h4 class="mb-2">Steps</h4>
+            <ol class="mb-4">
+              <li class="text-secondary mb-1">Use "Firstname Lastname" format for all contact records — no nicknames or all-caps.</li><li class="text-secondary mb-1">Every deal must have: roof type, estimated value, source, and assigned rep before leaving the "New Lead" stage.</li><li class="text-secondary mb-1">Stage changes must reflect reality the same day — do not batch updates weekly.</li><li class="text-secondary mb-1">Attach CompanyCam project link to the deal record after every site visit.</li><li class="text-secondary mb-1">Lost deals require a lost-reason tag (Price, Timing, Competitor, Unresponsive, Insurance Denied).</li>
+            </ol>
+            <h4 class="mb-2">Checklist</h4>
+            <div class="mb-2">
+              <label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" checked>
+                <span class="form-check-label">Naming convention followed</span>
+              </label><label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" >
+                <span class="form-check-label">Required fields complete</span>
+              </label><label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" >
+                <span class="form-check-label">CompanyCam linked</span>
+              </label><label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" >
+                <span class="form-check-label">Lost reason tagged if applicable</span>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <h4 class="mb-2 d-flex align-items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M12 8l0 4l2 2" /> <path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5" /></svg> Version History</h4>
+            <ul class="list-unstyled">
+              <li class="d-flex gap-2 mb-3">
+                <span class="badge bg-indigo-lt text-indigo">v2.0</span>
+                <div>
+                  <div class="small fw-medium">Current version</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Jan 30, 2026 · Sabrina Navarro</div>
+                </div>
+              </li><li class="d-flex gap-2 mb-3">
+                <span class="badge bg-secondary-lt text-secondary">v1.9</span>
+                <div>
+                  <div class="small text-secondary">Clarified steps based on team feedback</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Dec 2025 · Sabrina Navarro</div>
+                </div>
+              </li><li class="d-flex gap-2 mb-3">
+                <span class="badge bg-secondary-lt text-secondary">v1.0</span>
+                <div>
+                  <div class="small text-secondary">Initial documented version</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Sep 2025 · Sabrina Navarro</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><div class="card mb-3 sop-item" data-title="n8n workflow deployment checklist" data-category="CRM & Automation">
+    <div class="card-header cursor-pointer" data-bs-toggle="collapse" data-bs-target="#sop-collapse-2" role="button" style="cursor:pointer;">
+      <div class="d-flex align-items-center gap-3 flex-fill">
+        <span class="avatar avatar-sm bg-cyan-lt"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M19 4v16h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12" /> <path d="M19 16h-12a2 2 0 0 0 -2 2" /> <path d="M9 8h6" /></svg></span>
+        <div class="flex-fill">
+          <h3 class="card-title mb-0">n8n Workflow Deployment Checklist</h3>
+          <div class="text-secondary small">CRM & Automation · v1.6 · Updated Feb 10, 2026</div>
+        </div>
+      </div>
+      <div class="card-actions"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M6 9l6 6l6 -6" /></svg></div>
+    </div>
+    <div class="collapse" id="sop-collapse-2">
+      <div class="card-body">
+        <div class="d-flex gap-2 p-3 mb-3 rounded" style="background:rgba(99,102,241,.08); border:1px solid rgba(99,102,241,.25);">
+          <span class="text-indigo flex-none"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6" /></svg></span>
+          <div>
+            <div class="fw-medium small mb-1">AI Summary</div>
+            <div class="text-secondary small">A pre-flight checklist to avoid broken automations in production: test in staging, verify credentials, confirm error workflow, and document the change.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-7">
+            <h4 class="mb-2">Steps</h4>
+            <ol class="mb-4">
+              <li class="text-secondary mb-1">Build and test the workflow in the staging n8n instance with sample payloads.</li><li class="text-secondary mb-1">Verify all credentials (OpenAI, GoHighLevel, Google Sheets, Slack) are scoped correctly and not expiring soon.</li><li class="text-secondary mb-1">Attach a dedicated Error Workflow that posts failures to the #automation-alerts Slack channel.</li><li class="text-secondary mb-1">Add a short description and tag the workflow with owner + last-reviewed date.</li><li class="text-secondary mb-1">Promote to production during low-traffic hours and monitor the execution log for 24 hours.</li>
+            </ol>
+            <h4 class="mb-2">Checklist</h4>
+            <div class="mb-2">
+              <label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" checked>
+                <span class="form-check-label">Tested in staging</span>
+              </label><label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" >
+                <span class="form-check-label">Credentials verified</span>
+              </label><label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" >
+                <span class="form-check-label">Error workflow attached</span>
+              </label><label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" >
+                <span class="form-check-label">Documented</span>
+              </label><label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" >
+                <span class="form-check-label">Monitored post-deploy</span>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <h4 class="mb-2 d-flex align-items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M12 8l0 4l2 2" /> <path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5" /></svg> Version History</h4>
+            <ul class="list-unstyled">
+              <li class="d-flex gap-2 mb-3">
+                <span class="badge bg-indigo-lt text-indigo">v1.6</span>
+                <div>
+                  <div class="small fw-medium">Current version</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Feb 10, 2026 · Sabrina Navarro</div>
+                </div>
+              </li><li class="d-flex gap-2 mb-3">
+                <span class="badge bg-secondary-lt text-secondary">v1.5</span>
+                <div>
+                  <div class="small text-secondary">Clarified steps based on team feedback</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Dec 2025 · Sabrina Navarro</div>
+                </div>
+              </li><li class="d-flex gap-2 mb-3">
+                <span class="badge bg-secondary-lt text-secondary">v1.0</span>
+                <div>
+                  <div class="small text-secondary">Initial documented version</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Sep 2025 · Sabrina Navarro</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><div class="card mb-3 sop-item" data-title="handling insurance claim escalations" data-category="Customer Service">
+    <div class="card-header cursor-pointer" data-bs-toggle="collapse" data-bs-target="#sop-collapse-3" role="button" style="cursor:pointer;">
+      <div class="d-flex align-items-center gap-3 flex-fill">
+        <span class="avatar avatar-sm bg-purple-lt"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M19 4v16h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12" /> <path d="M19 16h-12a2 2 0 0 0 -2 2" /> <path d="M9 8h6" /></svg></span>
+        <div class="flex-fill">
+          <h3 class="card-title mb-0">Handling Insurance Claim Escalations</h3>
+          <div class="text-secondary small">Customer Service · v2.3 · Updated Feb 2, 2026</div>
+        </div>
+      </div>
+      <div class="card-actions"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M6 9l6 6l6 -6" /></svg></div>
+    </div>
+    <div class="collapse" id="sop-collapse-3">
+      <div class="card-body">
+        <div class="d-flex gap-2 p-3 mb-3 rounded" style="background:rgba(99,102,241,.08); border:1px solid rgba(99,102,241,.25);">
+          <span class="text-indigo flex-none"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6" /></svg></span>
+          <div>
+            <div class="fw-medium small mb-1">AI Summary</div>
+            <div class="text-secondary small">When a homeowner reports a denied or delayed insurance claim, escalate to the estimator within 4 hours and keep the customer informed at every step.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-7">
+            <h4 class="mb-2">Steps</h4>
+            <ol class="mb-4">
+              <li class="text-secondary mb-1">Log the escalation as a high-priority task assigned to the estimator on file.</li><li class="text-secondary mb-1">Request claim documentation from the homeowner (denial letter, adjuster report).</li><li class="text-secondary mb-1">Estimator reviews scope vs. adjuster estimate and prepares a supplement package if justified.</li><li class="text-secondary mb-1">Office manager schedules a call with the homeowner within 24 hours to explain next steps.</li><li class="text-secondary mb-1">Track resolution status weekly until claim is closed.</li>
+            </ol>
+            <h4 class="mb-2">Checklist</h4>
+            <div class="mb-2">
+              <label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" checked>
+                <span class="form-check-label">Escalation logged as high priority</span>
+              </label><label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" >
+                <span class="form-check-label">Documentation requested</span>
+              </label><label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" >
+                <span class="form-check-label">Supplement reviewed</span>
+              </label><label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" >
+                <span class="form-check-label">Homeowner updated within 24h</span>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <h4 class="mb-2 d-flex align-items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M12 8l0 4l2 2" /> <path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5" /></svg> Version History</h4>
+            <ul class="list-unstyled">
+              <li class="d-flex gap-2 mb-3">
+                <span class="badge bg-indigo-lt text-indigo">v2.3</span>
+                <div>
+                  <div class="small fw-medium">Current version</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Feb 2, 2026 · Priya Nair</div>
+                </div>
+              </li><li class="d-flex gap-2 mb-3">
+                <span class="badge bg-secondary-lt text-secondary">v2.2</span>
+                <div>
+                  <div class="small text-secondary">Clarified steps based on team feedback</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Dec 2025 · Priya Nair</div>
+                </div>
+              </li><li class="d-flex gap-2 mb-3">
+                <span class="badge bg-secondary-lt text-secondary">v1.0</span>
+                <div>
+                  <div class="small text-secondary">Initial documented version</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Sep 2025 · Sabrina Navarro</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><div class="card mb-3 sop-item" data-title="storm damage inspection protocol" data-category="Field Operations">
+    <div class="card-header cursor-pointer" data-bs-toggle="collapse" data-bs-target="#sop-collapse-4" role="button" style="cursor:pointer;">
+      <div class="d-flex align-items-center gap-3 flex-fill">
+        <span class="avatar avatar-sm bg-green-lt"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M19 4v16h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12" /> <path d="M19 16h-12a2 2 0 0 0 -2 2" /> <path d="M9 8h6" /></svg></span>
+        <div class="flex-fill">
+          <h3 class="card-title mb-0">Storm Damage Inspection Protocol</h3>
+          <div class="text-secondary small">Field Operations · v1.9 · Updated Jan 18, 2026</div>
+        </div>
+      </div>
+      <div class="card-actions"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M6 9l6 6l6 -6" /></svg></div>
+    </div>
+    <div class="collapse" id="sop-collapse-4">
+      <div class="card-body">
+        <div class="d-flex gap-2 p-3 mb-3 rounded" style="background:rgba(99,102,241,.08); border:1px solid rgba(99,102,241,.25);">
+          <span class="text-indigo flex-none"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6" /></svg></span>
+          <div>
+            <div class="fw-medium small mb-1">AI Summary</div>
+            <div class="text-secondary small">Standardized photo documentation and measurement process so every estimate is backed by verifiable evidence for both the homeowner and the insurance adjuster.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-7">
+            <h4 class="mb-2">Steps</h4>
+            <ol class="mb-4">
+              <li class="text-secondary mb-1">Photograph all four roof slopes plus close-ups of any hail bruising or wind damage.</li><li class="text-secondary mb-1">Upload all photos to CompanyCam immediately and tag the associated CRM deal.</li><li class="text-secondary mb-1">Measure roof square footage and note pitch, layers, and any decking issues.</li><li class="text-secondary mb-1">Complete the digital inspection form before leaving the property.</li><li class="text-secondary mb-1">Notify the assigned rep that inspection is complete so the estimate workflow can start.</li>
+            </ol>
+            <h4 class="mb-2">Checklist</h4>
+            <div class="mb-2">
+              <label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" checked>
+                <span class="form-check-label">All slopes photographed</span>
+              </label><label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" >
+                <span class="form-check-label">CompanyCam upload tagged to deal</span>
+              </label><label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" >
+                <span class="form-check-label">Measurements recorded</span>
+              </label><label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" >
+                <span class="form-check-label">Inspection form submitted</span>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <h4 class="mb-2 d-flex align-items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M12 8l0 4l2 2" /> <path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5" /></svg> Version History</h4>
+            <ul class="list-unstyled">
+              <li class="d-flex gap-2 mb-3">
+                <span class="badge bg-indigo-lt text-indigo">v1.9</span>
+                <div>
+                  <div class="small fw-medium">Current version</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Jan 18, 2026 · Carlos Medina</div>
+                </div>
+              </li><li class="d-flex gap-2 mb-3">
+                <span class="badge bg-secondary-lt text-secondary">v1.8</span>
+                <div>
+                  <div class="small text-secondary">Clarified steps based on team feedback</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Dec 2025 · Carlos Medina</div>
+                </div>
+              </li><li class="d-flex gap-2 mb-3">
+                <span class="badge bg-secondary-lt text-secondary">v1.0</span>
+                <div>
+                  <div class="small text-secondary">Initial documented version</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Sep 2025 · Sabrina Navarro</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><div class="card mb-3 sop-item" data-title="post-install review request sequence" data-category="Customer Service">
+    <div class="card-header cursor-pointer" data-bs-toggle="collapse" data-bs-target="#sop-collapse-5" role="button" style="cursor:pointer;">
+      <div class="d-flex align-items-center gap-3 flex-fill">
+        <span class="avatar avatar-sm bg-purple-lt"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M19 4v16h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12" /> <path d="M19 16h-12a2 2 0 0 0 -2 2" /> <path d="M9 8h6" /></svg></span>
+        <div class="flex-fill">
+          <h3 class="card-title mb-0">Post-Install Review Request Sequence</h3>
+          <div class="text-secondary small">Customer Service · v1.4 · Updated Feb 5, 2026</div>
+        </div>
+      </div>
+      <div class="card-actions"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M6 9l6 6l6 -6" /></svg></div>
+    </div>
+    <div class="collapse" id="sop-collapse-5">
+      <div class="card-body">
+        <div class="d-flex gap-2 p-3 mb-3 rounded" style="background:rgba(99,102,241,.08); border:1px solid rgba(99,102,241,.25);">
+          <span class="text-indigo flex-none"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6" /></svg></span>
+          <div>
+            <div class="fw-medium small mb-1">AI Summary</div>
+            <div class="text-secondary small">Automated but human-monitored: review requests go out 3 days after job completion, with any rating below 4 stars routed directly to the office manager same-day.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-7">
+            <h4 class="mb-2">Steps</h4>
+            <ol class="mb-4">
+              <li class="text-secondary mb-1">Job is marked "Complete" in GoHighLevel by the production crew lead.</li><li class="text-secondary mb-1">Automation waits 3 days, then sends an email + SMS review request with direct Google review link.</li><li class="text-secondary mb-1">If no response after 5 days, a single reminder is sent.</li><li class="text-secondary mb-1">Any rating below 4 stars triggers an immediate Slack alert to the office manager for personal follow-up.</li>
+            </ol>
+            <h4 class="mb-2">Checklist</h4>
+            <div class="mb-2">
+              <label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" checked>
+                <span class="form-check-label">Job marked complete accurately</span>
+              </label><label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" >
+                <span class="form-check-label">Review sequence enrolled</span>
+              </label><label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" >
+                <span class="form-check-label">Low ratings escalated same day</span>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <h4 class="mb-2 d-flex align-items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M12 8l0 4l2 2" /> <path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5" /></svg> Version History</h4>
+            <ul class="list-unstyled">
+              <li class="d-flex gap-2 mb-3">
+                <span class="badge bg-indigo-lt text-indigo">v1.4</span>
+                <div>
+                  <div class="small fw-medium">Current version</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Feb 5, 2026 · Sabrina Navarro</div>
+                </div>
+              </li><li class="d-flex gap-2 mb-3">
+                <span class="badge bg-secondary-lt text-secondary">v1.3</span>
+                <div>
+                  <div class="small text-secondary">Clarified steps based on team feedback</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Dec 2025 · Sabrina Navarro</div>
+                </div>
+              </li><li class="d-flex gap-2 mb-3">
+                <span class="badge bg-secondary-lt text-secondary">v1.0</span>
+                <div>
+                  <div class="small text-secondary">Initial documented version</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Sep 2025 · Sabrina Navarro</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><div class="card mb-3 sop-item" data-title="onboarding a new sales rep" data-category="Onboarding">
+    <div class="card-header cursor-pointer" data-bs-toggle="collapse" data-bs-target="#sop-collapse-6" role="button" style="cursor:pointer;">
+      <div class="d-flex align-items-center gap-3 flex-fill">
+        <span class="avatar avatar-sm bg-azure-lt"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M19 4v16h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12" /> <path d="M19 16h-12a2 2 0 0 0 -2 2" /> <path d="M9 8h6" /></svg></span>
+        <div class="flex-fill">
+          <h3 class="card-title mb-0">Onboarding a New Sales Rep</h3>
+          <div class="text-secondary small">Onboarding · v2.1 · Updated Jan 12, 2026</div>
+        </div>
+      </div>
+      <div class="card-actions"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M6 9l6 6l6 -6" /></svg></div>
+    </div>
+    <div class="collapse" id="sop-collapse-6">
+      <div class="card-body">
+        <div class="d-flex gap-2 p-3 mb-3 rounded" style="background:rgba(99,102,241,.08); border:1px solid rgba(99,102,241,.25);">
+          <span class="text-indigo flex-none"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6" /></svg></span>
+          <div>
+            <div class="fw-medium small mb-1">AI Summary</div>
+            <div class="text-secondary small">A 5-day ramp covering CRM access, pipeline stages, estimating software, and shadowing two live inspections before taking solo leads.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-7">
+            <h4 class="mb-2">Steps</h4>
+            <ol class="mb-4">
+              <li class="text-secondary mb-1">Day 1: CRM + email + Slack access provisioned; review CRM Data Entry Standards SOP.</li><li class="text-secondary mb-1">Day 2: Walkthrough of pipeline stages, lead scoring, and task assignment logic.</li><li class="text-secondary mb-1">Day 3: Shadow an experienced rep on 2 live calls and 1 inspection.</li><li class="text-secondary mb-1">Day 4: Practice estimate building and quote sending in a sandbox account.</li><li class="text-secondary mb-1">Day 5: Take first solo lead with manager review of the full deal cycle.</li>
+            </ol>
+            <h4 class="mb-2">Checklist</h4>
+            <div class="mb-2">
+              <label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" checked>
+                <span class="form-check-label">Systems access granted</span>
+              </label><label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" >
+                <span class="form-check-label">Pipeline training complete</span>
+              </label><label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" >
+                <span class="form-check-label">Shadowed live inspection</span>
+              </label><label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" >
+                <span class="form-check-label">First solo lead reviewed</span>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <h4 class="mb-2 d-flex align-items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M12 8l0 4l2 2" /> <path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5" /></svg> Version History</h4>
+            <ul class="list-unstyled">
+              <li class="d-flex gap-2 mb-3">
+                <span class="badge bg-indigo-lt text-indigo">v2.1</span>
+                <div>
+                  <div class="small fw-medium">Current version</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Jan 12, 2026 · Priya Nair</div>
+                </div>
+              </li><li class="d-flex gap-2 mb-3">
+                <span class="badge bg-secondary-lt text-secondary">v2.0</span>
+                <div>
+                  <div class="small text-secondary">Clarified steps based on team feedback</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Dec 2025 · Priya Nair</div>
+                </div>
+              </li><li class="d-flex gap-2 mb-3">
+                <span class="badge bg-secondary-lt text-secondary">v1.0</span>
+                <div>
+                  <div class="small text-secondary">Initial documented version</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Sep 2025 · Sabrina Navarro</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><div class="card mb-3 sop-item" data-title="quote & contract approval workflow" data-category="Admin & Finance">
+    <div class="card-header cursor-pointer" data-bs-toggle="collapse" data-bs-target="#sop-collapse-7" role="button" style="cursor:pointer;">
+      <div class="d-flex align-items-center gap-3 flex-fill">
+        <span class="avatar avatar-sm bg-yellow-lt"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M19 4v16h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12" /> <path d="M19 16h-12a2 2 0 0 0 -2 2" /> <path d="M9 8h6" /></svg></span>
+        <div class="flex-fill">
+          <h3 class="card-title mb-0">Quote & Contract Approval Workflow</h3>
+          <div class="text-secondary small">Admin & Finance · v1.3 · Updated Jan 25, 2026</div>
+        </div>
+      </div>
+      <div class="card-actions"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M6 9l6 6l6 -6" /></svg></div>
+    </div>
+    <div class="collapse" id="sop-collapse-7">
+      <div class="card-body">
+        <div class="d-flex gap-2 p-3 mb-3 rounded" style="background:rgba(99,102,241,.08); border:1px solid rgba(99,102,241,.25);">
+          <span class="text-indigo flex-none"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6" /></svg></span>
+          <div>
+            <div class="fw-medium small mb-1">AI Summary</div>
+            <div class="text-secondary small">Quotes above $30,000 require estimator + owner sign-off before sending; all others can be sent directly by the assigned rep.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-7">
+            <h4 class="mb-2">Steps</h4>
+            <ol class="mb-4">
+              <li class="text-secondary mb-1">Rep builds the quote in the estimating tool using current material pricing.</li><li class="text-secondary mb-1">Quotes under $30,000 are sent directly to the homeowner by the rep.</li><li class="text-secondary mb-1">Quotes at or above $30,000 are routed to the estimator and owner for approval first.</li><li class="text-secondary mb-1">Once approved, contract is generated for e-signature and logged to the CRM automatically.</li>
+            </ol>
+            <h4 class="mb-2">Checklist</h4>
+            <div class="mb-2">
+              <label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" checked>
+                <span class="form-check-label">Pricing verified against current price sheet</span>
+              </label><label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" >
+                <span class="form-check-label">Approval routed if ≥ $30,000</span>
+              </label><label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" >
+                <span class="form-check-label">Contract logged after signature</span>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <h4 class="mb-2 d-flex align-items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M12 8l0 4l2 2" /> <path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5" /></svg> Version History</h4>
+            <ul class="list-unstyled">
+              <li class="d-flex gap-2 mb-3">
+                <span class="badge bg-indigo-lt text-indigo">v1.3</span>
+                <div>
+                  <div class="small fw-medium">Current version</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Jan 25, 2026 · Sabrina Navarro</div>
+                </div>
+              </li><li class="d-flex gap-2 mb-3">
+                <span class="badge bg-secondary-lt text-secondary">v1.2</span>
+                <div>
+                  <div class="small text-secondary">Clarified steps based on team feedback</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Dec 2025 · Sabrina Navarro</div>
+                </div>
+              </li><li class="d-flex gap-2 mb-3">
+                <span class="badge bg-secondary-lt text-secondary">v1.0</span>
+                <div>
+                  <div class="small text-secondary">Initial documented version</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Sep 2025 · Sabrina Navarro</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><div class="card mb-3 sop-item" data-title="slack alerting standards for automations" data-category="CRM & Automation">
+    <div class="card-header cursor-pointer" data-bs-toggle="collapse" data-bs-target="#sop-collapse-8" role="button" style="cursor:pointer;">
+      <div class="d-flex align-items-center gap-3 flex-fill">
+        <span class="avatar avatar-sm bg-cyan-lt"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M19 4v16h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12" /> <path d="M19 16h-12a2 2 0 0 0 -2 2" /> <path d="M9 8h6" /></svg></span>
+        <div class="flex-fill">
+          <h3 class="card-title mb-0">Slack Alerting Standards for Automations</h3>
+          <div class="text-secondary small">CRM & Automation · v1.1 · Updated Feb 8, 2026</div>
+        </div>
+      </div>
+      <div class="card-actions"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M6 9l6 6l6 -6" /></svg></div>
+    </div>
+    <div class="collapse" id="sop-collapse-8">
+      <div class="card-body">
+        <div class="d-flex gap-2 p-3 mb-3 rounded" style="background:rgba(99,102,241,.08); border:1px solid rgba(99,102,241,.25);">
+          <span class="text-indigo flex-none"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6" /></svg></span>
+          <div>
+            <div class="fw-medium small mb-1">AI Summary</div>
+            <div class="text-secondary small">Keep signal-to-noise high: only route time-sensitive or exception events to Slack, and always include a direct CRM link in the alert.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-7">
+            <h4 class="mb-2">Steps</h4>
+            <ol class="mb-4">
+              <li class="text-secondary mb-1">Route only exceptions and time-sensitive events (errors, high-priority leads, low reviews) to Slack.</li><li class="text-secondary mb-1">Routine confirmations (e.g. every successful sync) stay in the execution log only.</li><li class="text-secondary mb-1">Every alert must include a direct link back to the relevant CRM record.</li><li class="text-secondary mb-1">Review channel noise monthly and mute/adjust rules that are ignored.</li>
+            </ol>
+            <h4 class="mb-2">Checklist</h4>
+            <div class="mb-2">
+              <label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" checked>
+                <span class="form-check-label">Only exceptions routed to Slack</span>
+              </label><label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" >
+                <span class="form-check-label">Alerts include CRM link</span>
+              </label><label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" >
+                <span class="form-check-label">Monthly noise review scheduled</span>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <h4 class="mb-2 d-flex align-items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M12 8l0 4l2 2" /> <path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5" /></svg> Version History</h4>
+            <ul class="list-unstyled">
+              <li class="d-flex gap-2 mb-3">
+                <span class="badge bg-indigo-lt text-indigo">v1.1</span>
+                <div>
+                  <div class="small fw-medium">Current version</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Feb 8, 2026 · Sabrina Navarro</div>
+                </div>
+              </li><li class="d-flex gap-2 mb-3">
+                <span class="badge bg-secondary-lt text-secondary">v1.0</span>
+                <div>
+                  <div class="small text-secondary">Clarified steps based on team feedback</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Dec 2025 · Sabrina Navarro</div>
+                </div>
+              </li><li class="d-flex gap-2 mb-3">
+                <span class="badge bg-secondary-lt text-secondary">v1.0</span>
+                <div>
+                  <div class="small text-secondary">Initial documented version</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Sep 2025 · Sabrina Navarro</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><div class="card mb-3 sop-item" data-title="material ordering & job scheduling" data-category="Field Operations">
+    <div class="card-header cursor-pointer" data-bs-toggle="collapse" data-bs-target="#sop-collapse-9" role="button" style="cursor:pointer;">
+      <div class="d-flex align-items-center gap-3 flex-fill">
+        <span class="avatar avatar-sm bg-green-lt"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M19 4v16h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12" /> <path d="M19 16h-12a2 2 0 0 0 -2 2" /> <path d="M9 8h6" /></svg></span>
+        <div class="flex-fill">
+          <h3 class="card-title mb-0">Material Ordering & Job Scheduling</h3>
+          <div class="text-secondary small">Field Operations · v1.7 · Updated Feb 1, 2026</div>
+        </div>
+      </div>
+      <div class="card-actions"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M6 9l6 6l6 -6" /></svg></div>
+    </div>
+    <div class="collapse" id="sop-collapse-9">
+      <div class="card-body">
+        <div class="d-flex gap-2 p-3 mb-3 rounded" style="background:rgba(99,102,241,.08); border:1px solid rgba(99,102,241,.25);">
+          <span class="text-indigo flex-none"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6" /></svg></span>
+          <div>
+            <div class="fw-medium small mb-1">AI Summary</div>
+            <div class="text-secondary small">Materials are ordered as soon as a contract is signed, with delivery timed 2 days ahead of the scheduled crew start date.</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-7">
+            <h4 class="mb-2">Steps</h4>
+            <ol class="mb-4">
+              <li class="text-secondary mb-1">Trigger material list generation from the approved quote line items.</li><li class="text-secondary mb-1">Place supplier order within 24 hours of contract signature.</li><li class="text-secondary mb-1">Confirm delivery date lands at least 2 business days before crew start.</li><li class="text-secondary mb-1">Add job to the production calendar and notify the crew lead via Slack.</li>
+            </ol>
+            <h4 class="mb-2">Checklist</h4>
+            <div class="mb-2">
+              <label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" checked>
+                <span class="form-check-label">Material list generated from quote</span>
+              </label><label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" >
+                <span class="form-check-label">Order placed within 24h</span>
+              </label><label class="form-check mb-2">
+                <input class="form-check-input" type="checkbox" >
+                <span class="form-check-label">Crew notified on production calendar</span>
+              </label>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <h4 class="mb-2 d-flex align-items-center gap-2"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M12 8l0 4l2 2" /> <path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5" /></svg> Version History</h4>
+            <ul class="list-unstyled">
+              <li class="d-flex gap-2 mb-3">
+                <span class="badge bg-indigo-lt text-indigo">v1.7</span>
+                <div>
+                  <div class="small fw-medium">Current version</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Feb 1, 2026 · Priya Nair</div>
+                </div>
+              </li><li class="d-flex gap-2 mb-3">
+                <span class="badge bg-secondary-lt text-secondary">v1.6</span>
+                <div>
+                  <div class="small text-secondary">Clarified steps based on team feedback</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Dec 2025 · Priya Nair</div>
+                </div>
+              </li><li class="d-flex gap-2 mb-3">
+                <span class="badge bg-secondary-lt text-secondary">v1.0</span>
+                <div>
+                  <div class="small text-secondary">Initial documented version</div>
+                  <div class="text-secondary" style="font-size:.72rem;">Sep 2025 · Sabrina Navarro</div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    </div>
+    <div class="text-center text-secondary py-5 d-none" id="sop-empty">No SOPs match your search.</div>
+  </div>
+</div>
+
+        </div>
+      </main>
+
+      <footer class="footer footer-transparent d-print-none">
+        <div class="container-xl">
+          <div class="row text-center align-items-center flex-row-reverse">
+            <div class="col-lg-auto ms-lg-auto">
+              <ul class="list-inline list-inline-dots mb-0">
+                <li class="list-inline-item"><a href="https://www.linkedin.com/in/sabrina-navarro-7b7960206/" target="_blank" rel="noreferrer" class="link-secondary">LinkedIn</a></li>
+                <li class="list-inline-item"><a href="https://www.upwork.com/freelancers/~018063efb3d9ad444e?mp_source=share" target="_blank" rel="noreferrer" class="link-secondary">Upwork</a></li>
+                <li class="list-inline-item"><a href="mailto:sabrinabelindanavarro@gmail.com" class="link-secondary">sabrinabelindanavarro@gmail.com</a></li>
+              </ul>
+            </div>
+            <div class="col-12 col-lg-auto mt-3 mt-lg-0">
+              <ul class="list-inline list-inline-dots mb-0">
+                <li class="list-inline-item">© 2026 Sabrina Navarro — AI Automation Specialist, Valencia, Spain</li>
+                <li class="list-inline-item">All platform data on this site is illustrative demo content</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script src="./assets/js/tabler.min.js"></script>
+  
+  <script src="./assets/js/sop.js"></script>
+  <script src="./assets/js/site.js"></script>
+  
+</body>
+</html>

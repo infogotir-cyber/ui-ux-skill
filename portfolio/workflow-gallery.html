@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark" data-bs-theme-primary="indigo">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Lead Qualification Automation — Sabrina Navarro | Automation OS</title>
+  <meta name="description" content="An interactive n8n-style workflow canvas showing a real lead qualification automation: OpenAI scoring, Google Sheets, GoHighLevel, email and Slack." />
+  <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+
+  <link href="./assets/css/tabler.min.css" rel="stylesheet" />
+  <link href="./assets/css/tabler-vendors.min.css" rel="stylesheet" />
+  <link href="./assets/css/tabler-themes.min.css" rel="stylesheet" />
+  <link href="./assets/css/tabler-marketing.min.css" rel="stylesheet" />
+  <link href="./assets/css/custom.css" rel="stylesheet" />
+  
+</head>
+<body class="theme-dark">
+  <a href="#content" class="visually-hidden-focusable skip-link">Skip to main content</a>
+
+  <div class="page">
+    <!-- SIDEBAR -->
+    <aside class="navbar navbar-vertical navbar-expand-lg" data-bs-theme="dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar-menu" aria-controls="sidebar-menu" aria-expanded="false" aria-label="Toggle sidebar navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="index.html" class="navbar-brand navbar-brand-autodark">
+          <span class="brand-mark">SN</span>
+          <span class="brand-word">
+            <strong>Sabrina Navarro</strong>
+            <small>Automation OS</small>
+          </span>
+        </a>
+        <div class="navbar-nav flex-row d-lg-none">
+          <div class="nav-item dropdown">
+            <a href="#" class="nav-link d-flex lh-1 p-0" data-bs-toggle="dropdown" aria-label="Open menu">
+              <span class="avatar avatar-sm" style="background-image:url(./assets/img/sabrina-navarro-avatar.jpg)"></span>
+            </a>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse" id="sidebar-menu">
+          <ul class="navbar-nav pt-lg-3">
+            <li class="nav-item">
+      <a class="nav-link" href="index.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M5 12l-2 0l9 -9l9 9l-2 0" /> <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /> <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg></span>
+        <span class="nav-link-title">Home</span>
+        
+      </a>
+    </li><li class="nav-item">
+      <a class="nav-link" href="about.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /> <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg></span>
+        <span class="nav-link-title">About</span>
+        
+      </a>
+    </li><li class="nav-item">
+      <a class="nav-link" href="services.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 9a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2l0 -9" /> <path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" /> <path d="M12 12l0 .01" /> <path d="M3 13a20 20 0 0 0 18 0" /></svg></span>
+        <span class="nav-link-title">Services</span>
+        
+      </a>
+    </li><li class="nav-item nav-section-label mt-3 mb-1"><span>Live Platform Demos</span></li><li class="nav-item">
+      <a class="nav-link" href="dashboard.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M5 4h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1" /> <path d="M5 16h4a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1" /> <path d="M15 12h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1" /> <path d="M15 4h4a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1" /></svg></span>
+        <span class="nav-link-title">CRM Dashboard</span>
+        <span class="badge badge-sm bg-azure-lt ms-auto">Demo</span>
+      </a>
+    </li><li class="nav-item active">
+      <a class="nav-link" href="workflow-gallery.html" aria-current="page">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /> <path d="M19 7a2 2 0 1 0 0 -4a2 2 0 0 0 0 4" /> <path d="M11 19h5.5a3.5 3.5 0 0 0 0 -7h-8a3.5 3.5 0 0 1 0 -7h4.5" /></svg></span>
+        <span class="nav-link-title">Workflow Gallery</span>
+        <span class="badge badge-sm bg-azure-lt ms-auto">Demo</span>
+      </a>
+    </li><li class="nav-item">
+      <a class="nav-link" href="sop-center.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M19 4v16h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12" /> <path d="M19 16h-12a2 2 0 0 0 -2 2" /> <path d="M9 8h6" /></svg></span>
+        <span class="nav-link-title">SOP Center</span>
+        <span class="badge badge-sm bg-azure-lt ms-auto">Demo</span>
+      </a>
+    </li><li class="nav-item">
+      <a class="nav-link" href="automation-monitor.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 12h4l3 8l4 -16l3 8h4" /></svg></span>
+        <span class="nav-link-title">Automation Monitor</span>
+        <span class="badge badge-sm bg-azure-lt ms-auto">Demo</span>
+      </a>
+    </li><li class="nav-item">
+      <a class="nav-link" href="prompt-library.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6" /></svg></span>
+        <span class="nav-link-title">Prompt Library</span>
+        <span class="badge badge-sm bg-azure-lt ms-auto">Demo</span>
+      </a>
+    </li><li class="nav-item nav-section-label mt-3 mb-1"><span>Portfolio</span></li><li class="nav-item">
+      <a class="nav-link" href="projects.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M4 5a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -4" /> <path d="M4 15a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -4" /> <path d="M14 15a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -4" /> <path d="M14 7l6 0" /> <path d="M17 4l0 6" /></svg></span>
+        <span class="nav-link-title">Projects</span>
+        
+      </a>
+    </li><li class="nav-item">
+      <a class="nav-link" href="case-studies.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M6 4h11a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-11a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1m3 0v18" /> <path d="M13 8l2 0" /> <path d="M13 12l2 0" /></svg></span>
+        <span class="nav-link-title">Case Studies</span>
+        
+      </a>
+    </li><li class="nav-item">
+      <a class="nav-link" href="contact.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" /> <path d="M3 7l9 6l9 -6" /></svg></span>
+        <span class="nav-link-title">Contact</span>
+        
+      </a>
+    </li>
+          </ul>
+
+          <div class="sidebar-footer mt-auto pt-3 d-none d-lg-block">
+            <a href="contact.html" class="sidebar-cta">
+              <span class="sidebar-cta-title">Available for projects</span>
+              <span class="sidebar-cta-sub">Let's automate your operations →</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="page-wrapper">
+      
+      <div class="page-header d-print-none">
+        <div class="container-xl-fluid">
+          <div class="row g-2 align-items-center">
+            <div class="col">
+              <div class="page-pretitle">Demo Project · Workflow Gallery</div>
+              <h2 class="page-title">Lead Qualification Automation</h2>
+              <div class="text-secondary mt-1">An interactive n8n-style workflow canvas showing a real lead qualification automation: OpenAI scoring, Google Sheets, GoHighLevel, email and Slack.</div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <main id="content" class="page-body">
+        <div class="container-xl-fluid">
+          
+<div class="demo-ribbon">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /> <path d="M12 9h.01" /> <path d="M11 12h1v4h1" /></svg>
+    <span>Concept Project — this is a working visual simulation of a real n8n automation, not a connected backend. Drag the nodes, then press Run to see it execute.</span>
+  </div>
+
+<div class="d-flex flex-wrap justify-content-between align-items-center mb-3 gap-2">
+  <div>
+    <h1 class="page-title mb-1">Lead Qualification Automation</h1>
+    <div class="text-secondary">Lead Form → OpenAI scoring → Google Sheets → GoHighLevel → Email → Slack</div>
+  </div>
+  <div class="btn-list">
+    <button class="btn btn-outline-light" id="wf-reset"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M20 11a8.1 8.1 0 0 0 -15.5 -2m-.5 -4v4h4" /> <path d="M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" /> <path d="M12 9l0 3" /> <path d="M12 15l.01 0" /></svg> Reset layout</button>
+    <button class="btn btn-gradient" id="wf-run"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M7 4v16l13 -8l-13 -8" /></svg> Run workflow</button>
+  </div>
+</div>
+
+<div class="row g-3">
+  <div class="col-lg-9">
+    <div class="wf-canvas" id="wf-canvas" style="height: 460px;">
+      <div style="position:relative; width:1970px; height:380px;">
+        <svg id="wf-svg" width="1970" height="380" style="position:absolute; top:0; left:0; pointer-events:none;">
+          <defs>
+            <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L6,3 z" fill="#6366f1" />
+            </marker>
+          </defs>
+        </svg>
+        <div class="wf-node" id="n1" data-node style="left:40px; top:140px;">
+    <div class="wf-port wf-port-in"></div>
+    <div class="wf-node-head">
+      <span class="avatar avatar-sm bg-indigo-lt"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M9 5h-2a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-12a2 2 0 0 0 -2 -2h-2" /> <path d="M9 5a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2a2 2 0 0 1 -2 2h-2a2 2 0 0 1 -2 -2" /> <path d="M9 12l.01 0" /> <path d="M13 12l2 0" /> <path d="M9 16l.01 0" /> <path d="M13 16l2 0" /></svg></span>
+      <span>Lead Form Submitted</span>
+    </div>
+    <div class="wf-node-body">Trigger · Website / Facebook Ad</div>
+    <div class="wf-port wf-port-out"></div>
+  </div><div class="wf-node" id="n2" data-node style="left:320px; top:140px;">
+    <div class="wf-port wf-port-in"></div>
+    <div class="wf-node-head">
+      <span class="avatar avatar-sm bg-cyan-lt"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M4.876 13.61a4 4 0 1 0 6.124 3.39h6" /> <path d="M15.066 20.502a4 4 0 1 0 1.934 -7.502c-.706 0 -1.424 .179 -2 .5l-3 -5.5" /> <path d="M16 8a4 4 0 1 0 -8 0c0 1.506 .77 2.818 2 3.5l-3 5.5" /></svg></span>
+      <span>Webhook Received</span>
+    </div>
+    <div class="wf-node-body">n8n · POST /lead-intake</div>
+    <div class="wf-port wf-port-out"></div>
+  </div><div class="wf-node" id="n3" data-node style="left:600px; top:60px;">
+    <div class="wf-port wf-port-in"></div>
+    <div class="wf-node-head">
+      <span class="avatar avatar-sm bg-violet-lt"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M11.217 19.384a3.501 3.501 0 0 0 6.783 -1.217v-5.167l-6 -3.35" /> <path d="M5.214 15.014a3.501 3.501 0 0 0 4.446 5.266l4.34 -2.534v-6.946" /> <path d="M6 7.63c-1.391 -.236 -2.787 .395 -3.534 1.689a3.474 3.474 0 0 0 1.271 4.745l4.263 2.514l6 -3.348" /> <path d="M12.783 4.616a3.501 3.501 0 0 0 -6.783 1.217v5.067l6 3.45" /> <path d="M18.786 8.986a3.501 3.501 0 0 0 -4.446 -5.266l-4.34 2.534v6.946" /> <path d="M18 16.302c1.391 .236 2.787 -.395 3.534 -1.689a3.474 3.474 0 0 0 -1.271 -4.745l-4.308 -2.514l-5.955 3.42" /></svg></span>
+      <span>OpenAI Lead Analysis</span>
+    </div>
+    <div class="wf-node-body">GPT scoring model</div>
+    <div class="wf-port wf-port-out"></div>
+  </div><div class="wf-node" id="n4" data-node style="left:880px; top:140px;">
+    <div class="wf-port wf-port-in"></div>
+    <div class="wf-node-head">
+      <span class="avatar avatar-sm bg-yellow-lt"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M11.18 20.274l-2.18 .726v-8.5l-4.48 -4.928a2 2 0 0 1 -.52 -1.345v-2.227h16v2.172a2 2 0 0 1 -.586 1.414l-4.414 4.414v3" /> <path d="M15 19l2 2l4 -4" /></svg></span>
+      <span>Priority Score</span>
+    </div>
+    <div class="wf-node-body">Condition · Score ≥ 70?</div>
+    <div class="wf-port wf-port-out"></div>
+  </div><div class="wf-node" id="n5" data-node style="left:1160px; top:60px;">
+    <div class="wf-port wf-port-in"></div>
+    <div class="wf-node-head">
+      <span class="avatar avatar-sm bg-green-lt"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14" /> <path d="M3 10h18" /> <path d="M10 3v18" /></svg></span>
+      <span>Log to Google Sheets</span>
+    </div>
+    <div class="wf-node-body">Sheets · Leads Tracker tab</div>
+    <div class="wf-port wf-port-out"></div>
+  </div><div class="wf-node" id="n6" data-node style="left:1440px; top:140px;">
+    <div class="wf-port wf-port-in"></div>
+    <div class="wf-node-head">
+      <span class="avatar avatar-sm bg-pink-lt"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M5 4h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1" /> <path d="M5 16h4a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1" /> <path d="M15 12h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1" /> <path d="M15 4h4a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1" /></svg></span>
+      <span>Upsert in GoHighLevel</span>
+    </div>
+    <div class="wf-node-body">CRM · Create/update contact</div>
+    <div class="wf-port wf-port-out"></div>
+  </div><div class="wf-node" id="n7" data-node style="left:1720px; top:60px;">
+    <div class="wf-port wf-port-in"></div>
+    <div class="wf-node-head">
+      <span class="avatar avatar-sm bg-azure-lt"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" /> <path d="M3 7l9 6l9 -6" /></svg></span>
+      <span>Automatic Email</span>
+    </div>
+    <div class="wf-node-body">Email · Instant confirmation</div>
+    <div class="wf-port wf-port-out"></div>
+  </div><div class="wf-node" id="n8" data-node style="left:1720px; top:260px;">
+    <div class="wf-port wf-port-in"></div>
+    <div class="wf-node-head">
+      <span class="avatar avatar-sm bg-purple-lt"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M12 12v-6a2 2 0 0 1 4 0v6m0 -2a2 2 0 1 1 2 2h-6" /> <path d="M12 12h6a2 2 0 0 1 0 4h-6m2 0a2 2 0 1 1 -2 2v-6" /> <path d="M12 12v6a2 2 0 0 1 -4 0v-6m0 2a2 2 0 1 1 -2 -2h6" /> <path d="M12 12h-6a2 2 0 0 1 0 -4h6m-2 0a2 2 0 1 1 2 -2v6" /></svg></span>
+      <span>Slack Notification</span>
+    </div>
+    <div class="wf-node-body">Slack · #new-leads channel</div>
+    <div class="wf-port wf-port-out"></div>
+  </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="card mb-3" style="max-height:280px; overflow:auto;">
+      <div class="card-header"><h3 class="card-title">Node details</h3></div>
+      <div class="card-body" id="wf-detail">
+        <p class="text-secondary small mb-0">Click a node on the canvas to see what it does.</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header"><h3 class="card-title">Execution log</h3></div>
+      <div class="card-body p-0">
+        <div id="wf-log" class="p-3 text-mono small" style="max-height:260px; overflow:auto; color:#9aa4c0;">
+          <div class="text-secondary">Press "Run workflow" to simulate a live execution.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card mt-3">
+  <div class="card-header"><h3 class="card-title">Prompt behind the "OpenAI Lead Analysis" node</h3></div>
+  <div class="card-body">
+    <pre class="text-mono small text-secondary p-3 rounded" style="background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); white-space:pre-wrap;">You are a lead-qualification assistant for a residential roofing company.
+Given the lead details below, return a JSON object with:
+- "priority_score" (0-100)
+- "reasoning" (1-2 sentences)
+- "recommended_action" (one of: "call_immediately", "schedule_inspection", "nurture")
+
+Weigh recent storm/hail events, insurance coverage mentioned, roof age, and urgency language higher.
+
+Lead details:
+{{lead_name}}, {{address}}, source: {{source}}, message: "{{message}}"</pre>
+  </div>
+</div>
+
+<section class="mt-5">
+  <div class="section-eyebrow mb-2 reveal">Workflow gallery</div>
+  <h2 class="mb-4 reveal">A few more automations running day to day</h2>
+  <div class="row row-cards stagger">
+    <div class="col-sm-6 col-lg-3">
+      <div class="card card-hover h-100">
+        <div class="card-body">
+          <h4 class="card-title">Missed Call → Text-Back</h4>
+          <p class="text-secondary small">Turns a missed call into an instant, personalized text so storm leads never go cold.</p>
+          <div class="d-flex flex-column gap-2 mt-3">
+            <div class="d-flex align-items-center gap-2">
+              <span class="avatar avatar-xs bg-indigo-lt"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" /> <path d="M15 9l5 -5" /> <path d="M15 5l0 4l4 0" /></svg></span>
+              <span class="small">Missed Call</span>
+              
+            </div><div class="ms-2" style="border-left:1px dashed rgba(255,255,255,.15); height:10px;"></div><div class="d-flex align-items-center gap-2">
+              <span class="avatar avatar-xs bg-indigo-lt"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /> <path d="M12 12l3 2" /> <path d="M12 7v5" /></svg></span>
+              <span class="small">Delay 60s</span>
+              
+            </div><div class="ms-2" style="border-left:1px dashed rgba(255,255,255,.15); height:10px;"></div><div class="d-flex align-items-center gap-2">
+              <span class="avatar avatar-xs bg-indigo-lt"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M4.698 4.034l16.302 7.966l-16.302 7.966a.503 .503 0 0 1 -.546 -.124a.555 .555 0 0 1 -.12 -.568l2.468 -7.274l-2.468 -7.274a.555 .555 0 0 1 .12 -.568a.503 .503 0 0 1 .546 -.124" /> <path d="M6.5 12h14.5" /></svg></span>
+              <span class="small">SMS Reply</span>
+              
+            </div><div class="ms-2" style="border-left:1px dashed rgba(255,255,255,.15); height:10px;"></div><div class="d-flex align-items-center gap-2">
+              <span class="avatar avatar-xs bg-indigo-lt"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M5 4h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1" /> <path d="M5 16h4a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1" /> <path d="M15 12h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1" /> <path d="M15 4h4a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1" /></svg></span>
+              <span class="small">CRM Log</span>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><div class="col-sm-6 col-lg-3">
+      <div class="card card-hover h-100">
+        <div class="card-body">
+          <h4 class="card-title">Post-Install Review Requests</h4>
+          <p class="text-secondary small">Automatically requests a review after every completed job, escalating anything below 4 stars.</p>
+          <div class="d-flex flex-column gap-2 mt-3">
+            <div class="d-flex align-items-center gap-2">
+              <span class="avatar avatar-xs bg-indigo-lt"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /> <path d="M9 12l2 2l4 -4" /></svg></span>
+              <span class="small">Job Complete</span>
+              
+            </div><div class="ms-2" style="border-left:1px dashed rgba(255,255,255,.15); height:10px;"></div><div class="d-flex align-items-center gap-2">
+              <span class="avatar avatar-xs bg-indigo-lt"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /> <path d="M12 12l3 2" /> <path d="M12 7v5" /></svg></span>
+              <span class="small">Wait 3 Days</span>
+              
+            </div><div class="ms-2" style="border-left:1px dashed rgba(255,255,255,.15); height:10px;"></div><div class="d-flex align-items-center gap-2">
+              <span class="avatar avatar-xs bg-indigo-lt"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M4.698 4.034l16.302 7.966l-16.302 7.966a.503 .503 0 0 1 -.546 -.124a.555 .555 0 0 1 -.12 -.568l2.468 -7.274l-2.468 -7.274a.555 .555 0 0 1 .12 -.568a.503 .503 0 0 1 .546 -.124" /> <path d="M6.5 12h14.5" /></svg></span>
+              <span class="small">Email + SMS</span>
+              
+            </div><div class="ms-2" style="border-left:1px dashed rgba(255,255,255,.15); height:10px;"></div><div class="d-flex align-items-center gap-2">
+              <span class="avatar avatar-xs bg-indigo-lt"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M12 12v-6a2 2 0 0 1 4 0v6m0 -2a2 2 0 1 1 2 2h-6" /> <path d="M12 12h6a2 2 0 0 1 0 4h-6m2 0a2 2 0 1 1 -2 2v-6" /> <path d="M12 12v6a2 2 0 0 1 -4 0v-6m0 2a2 2 0 1 1 -2 -2h6" /> <path d="M12 12h-6a2 2 0 0 1 0 -4h6m-2 0a2 2 0 1 1 2 -2v6" /></svg></span>
+              <span class="small">Low Rating → Slack</span>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><div class="col-sm-6 col-lg-3">
+      <div class="card card-hover h-100">
+        <div class="card-body">
+          <h4 class="card-title">Slack Daily Pipeline Digest</h4>
+          <p class="text-secondary small">A GPT-written morning summary of new leads, won deals and stalled pipeline sent straight to the team channel.</p>
+          <div class="d-flex flex-column gap-2 mt-3">
+            <div class="d-flex align-items-center gap-2">
+              <span class="avatar avatar-xs bg-indigo-lt"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /> <path d="M12 12l3 2" /> <path d="M12 7v5" /></svg></span>
+              <span class="small">8:00 AM Schedule</span>
+              
+            </div><div class="ms-2" style="border-left:1px dashed rgba(255,255,255,.15); height:10px;"></div><div class="d-flex align-items-center gap-2">
+              <span class="avatar avatar-xs bg-indigo-lt"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M5 4h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1" /> <path d="M5 16h4a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1" /> <path d="M15 12h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1" /> <path d="M15 4h4a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1" /></svg></span>
+              <span class="small">Query CRM</span>
+              
+            </div><div class="ms-2" style="border-left:1px dashed rgba(255,255,255,.15); height:10px;"></div><div class="d-flex align-items-center gap-2">
+              <span class="avatar avatar-xs bg-indigo-lt"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M11.217 19.384a3.501 3.501 0 0 0 6.783 -1.217v-5.167l-6 -3.35" /> <path d="M5.214 15.014a3.501 3.501 0 0 0 4.446 5.266l4.34 -2.534v-6.946" /> <path d="M6 7.63c-1.391 -.236 -2.787 .395 -3.534 1.689a3.474 3.474 0 0 0 1.271 4.745l4.263 2.514l6 -3.348" /> <path d="M12.783 4.616a3.501 3.501 0 0 0 -6.783 1.217v5.067l6 3.45" /> <path d="M18.786 8.986a3.501 3.501 0 0 0 -4.446 -5.266l-4.34 2.534v6.946" /> <path d="M18 16.302c1.391 .236 2.787 -.395 3.534 -1.689a3.474 3.474 0 0 0 -1.271 -4.745l-4.308 -2.514l-5.955 3.42" /></svg></span>
+              <span class="small">AI Summary</span>
+              
+            </div><div class="ms-2" style="border-left:1px dashed rgba(255,255,255,.15); height:10px;"></div><div class="d-flex align-items-center gap-2">
+              <span class="avatar avatar-xs bg-indigo-lt"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M12 12v-6a2 2 0 0 1 4 0v6m0 -2a2 2 0 1 1 2 2h-6" /> <path d="M12 12h6a2 2 0 0 1 0 4h-6m2 0a2 2 0 1 1 -2 2v-6" /> <path d="M12 12v6a2 2 0 0 1 -4 0v-6m0 2a2 2 0 1 1 -2 -2h6" /> <path d="M12 12h-6a2 2 0 0 1 0 -4h6m-2 0a2 2 0 1 1 2 -2v6" /></svg></span>
+              <span class="small">Post to Slack</span>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><div class="col-sm-6 col-lg-3">
+      <div class="card card-hover h-100">
+        <div class="card-body">
+          <h4 class="card-title">Contract Signed → Crew Notify</h4>
+          <p class="text-secondary small">The moment a contract is e-signed, production gets everything it needs to schedule the job.</p>
+          <div class="d-flex flex-column gap-2 mt-3">
+            <div class="d-flex align-items-center gap-2">
+              <span class="avatar avatar-xs bg-indigo-lt"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14" /> <path d="M9 12l2 2l4 -4" /></svg></span>
+              <span class="small">Contract Signed</span>
+              
+            </div><div class="ms-2" style="border-left:1px dashed rgba(255,255,255,.15); height:10px;"></div><div class="d-flex align-items-center gap-2">
+              <span class="avatar avatar-xs bg-indigo-lt"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14" /> <path d="M3 10h18" /> <path d="M10 3v18" /></svg></span>
+              <span class="small">Log to Sheets</span>
+              
+            </div><div class="ms-2" style="border-left:1px dashed rgba(255,255,255,.15); height:10px;"></div><div class="d-flex align-items-center gap-2">
+              <span class="avatar avatar-xs bg-indigo-lt"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /> <path d="M11.87 21.48a1.992 1.992 0 0 1 -1.283 -.58l-4.244 -4.243a8 8 0 1 1 13.355 -3.474" /> <path d="M15 19l2 2l4 -4" /></svg></span>
+              <span class="small">Create CompanyCam</span>
+              
+            </div><div class="ms-2" style="border-left:1px dashed rgba(255,255,255,.15); height:10px;"></div><div class="d-flex align-items-center gap-2">
+              <span class="avatar avatar-xs bg-indigo-lt"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M12 12v-6a2 2 0 0 1 4 0v6m0 -2a2 2 0 1 1 2 2h-6" /> <path d="M12 12h6a2 2 0 0 1 0 4h-6m2 0a2 2 0 1 1 -2 2v-6" /> <path d="M12 12v6a2 2 0 0 1 -4 0v-6m0 2a2 2 0 1 1 -2 -2h6" /> <path d="M12 12h-6a2 2 0 0 1 0 -4h6m-2 0a2 2 0 1 1 2 -2v6" /></svg></span>
+              <span class="small">Notify Crew</span>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+        </div>
+      </main>
+
+      <footer class="footer footer-transparent d-print-none">
+        <div class="container-xl">
+          <div class="row text-center align-items-center flex-row-reverse">
+            <div class="col-lg-auto ms-lg-auto">
+              <ul class="list-inline list-inline-dots mb-0">
+                <li class="list-inline-item"><a href="https://www.linkedin.com/in/sabrina-navarro-7b7960206/" target="_blank" rel="noreferrer" class="link-secondary">LinkedIn</a></li>
+                <li class="list-inline-item"><a href="https://www.upwork.com/freelancers/~018063efb3d9ad444e?mp_source=share" target="_blank" rel="noreferrer" class="link-secondary">Upwork</a></li>
+                <li class="list-inline-item"><a href="mailto:sabrinabelindanavarro@gmail.com" class="link-secondary">sabrinabelindanavarro@gmail.com</a></li>
+              </ul>
+            </div>
+            <div class="col-12 col-lg-auto mt-3 mt-lg-0">
+              <ul class="list-inline list-inline-dots mb-0">
+                <li class="list-inline-item">© 2026 Sabrina Navarro — AI Automation Specialist, Valencia, Spain</li>
+                <li class="list-inline-item">All platform data on this site is illustrative demo content</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script src="./assets/js/tabler.min.js"></script>
+  <script>window.SN_WF_NODES = [{"id":"n1","type":"trigger","label":"Lead Form Submitted","subtitle":"Trigger · Website / Facebook Ad","icon":"clipboard-list","color":"indigo","x":40,"y":140,"detail":"Fires whenever a homeowner submits the storm-damage inspection form on the website or a Facebook Lead Ad. Payload includes name, address, phone, and a free-text message."},{"id":"n2","type":"webhook","label":"Webhook Received","subtitle":"n8n · POST /lead-intake","icon":"webhook","color":"cyan","x":320,"y":140,"detail":"n8n receives the raw payload, validates required fields (name, phone, address) and normalizes phone formatting before passing it downstream."},{"id":"n3","type":"ai","label":"OpenAI Lead Analysis","subtitle":"GPT scoring model","icon":"brand-openai","color":"violet","x":600,"y":60,"detail":"Runs the lead through the \"Roofing Lead Priority Scoring\" prompt — weighing storm recency, insurance coverage language, and urgency to output a 0–100 score plus reasoning."},{"id":"n4","type":"condition","label":"Priority Score","subtitle":"Condition · Score ≥ 70?","icon":"filter-check","color":"yellow","x":880,"y":140,"detail":"Branches the workflow: scores 70+ are treated as high-priority and routed for immediate call + fast-track scheduling; lower scores are enrolled in the nurture sequence instead."},{"id":"n5","type":"sheets","label":"Log to Google Sheets","subtitle":"Sheets · Leads Tracker tab","icon":"table","color":"green","x":1160,"y":60,"detail":"Every lead — regardless of score — is appended to the shared Leads Tracker spreadsheet for reporting, with the AI score and reasoning included as columns."},{"id":"n6","type":"crm","label":"Upsert in GoHighLevel","subtitle":"CRM · Create/update contact","icon":"layout-dashboard","color":"pink","x":1440,"y":140,"detail":"Creates or updates the contact record in GoHighLevel, sets the priority score as a custom field, and assigns the deal to the correct pipeline stage and rep."},{"id":"n7","type":"email","label":"Automatic Email","subtitle":"Email · Instant confirmation","icon":"mail","color":"azure","x":1720,"y":60,"detail":"Sends an instant, friendly confirmation email to the homeowner confirming their request was received and setting expectations for next steps."},{"id":"n8","type":"slack","label":"Slack Notification","subtitle":"Slack · #new-leads channel","icon":"brand-slack","color":"purple","x":1720,"y":260,"detail":"Posts a formatted card to the #new-leads Slack channel with the homeowner's details, AI score, and a direct link to the CRM record for the assigned rep."}];
+window.SN_WF_EDGES = [["n1","n2"],["n2","n3"],["n3","n4"],["n4","n5"],["n5","n6"],["n6","n7"],["n6","n8"]];</script>
+  <script src="./assets/js/workflow.js"></script>
+  <script src="./assets/js/site.js"></script>
+  
+</body>
+</html>

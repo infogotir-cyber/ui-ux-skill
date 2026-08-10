@@ -1,0 +1,951 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark" data-bs-theme-primary="indigo">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Automation Monitoring Dashboard — Sabrina Navarro | Automation OS</title>
+  <meta name="description" content="Live-style monitoring for a portfolio of n8n automations: executions, success rate, errors, running workflows and detailed logs." />
+  <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+
+  <link href="./assets/css/tabler.min.css" rel="stylesheet" />
+  <link href="./assets/css/tabler-vendors.min.css" rel="stylesheet" />
+  <link href="./assets/css/tabler-themes.min.css" rel="stylesheet" />
+  <link href="./assets/css/tabler-marketing.min.css" rel="stylesheet" />
+  <link href="./assets/css/custom.css" rel="stylesheet" />
+  
+</head>
+<body class="theme-dark">
+  <a href="#content" class="visually-hidden-focusable skip-link">Skip to main content</a>
+
+  <div class="page">
+    <!-- SIDEBAR -->
+    <aside class="navbar navbar-vertical navbar-expand-lg" data-bs-theme="dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar-menu" aria-controls="sidebar-menu" aria-expanded="false" aria-label="Toggle sidebar navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="index.html" class="navbar-brand navbar-brand-autodark">
+          <span class="brand-mark">SN</span>
+          <span class="brand-word">
+            <strong>Sabrina Navarro</strong>
+            <small>Automation OS</small>
+          </span>
+        </a>
+        <div class="navbar-nav flex-row d-lg-none">
+          <div class="nav-item dropdown">
+            <a href="#" class="nav-link d-flex lh-1 p-0" data-bs-toggle="dropdown" aria-label="Open menu">
+              <span class="avatar avatar-sm" style="background-image:url(./assets/img/sabrina-navarro-avatar.jpg)"></span>
+            </a>
+          </div>
+        </div>
+        <div class="collapse navbar-collapse" id="sidebar-menu">
+          <ul class="navbar-nav pt-lg-3">
+            <li class="nav-item">
+      <a class="nav-link" href="index.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M5 12l-2 0l9 -9l9 9l-2 0" /> <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" /> <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" /></svg></span>
+        <span class="nav-link-title">Home</span>
+        
+      </a>
+    </li><li class="nav-item">
+      <a class="nav-link" href="about.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /> <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /></svg></span>
+        <span class="nav-link-title">About</span>
+        
+      </a>
+    </li><li class="nav-item">
+      <a class="nav-link" href="services.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 9a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2l0 -9" /> <path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" /> <path d="M12 12l0 .01" /> <path d="M3 13a20 20 0 0 0 18 0" /></svg></span>
+        <span class="nav-link-title">Services</span>
+        
+      </a>
+    </li><li class="nav-item nav-section-label mt-3 mb-1"><span>Live Platform Demos</span></li><li class="nav-item">
+      <a class="nav-link" href="dashboard.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M5 4h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1" /> <path d="M5 16h4a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1" /> <path d="M15 12h4a1 1 0 0 1 1 1v6a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1" /> <path d="M15 4h4a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1v-2a1 1 0 0 1 1 -1" /></svg></span>
+        <span class="nav-link-title">CRM Dashboard</span>
+        <span class="badge badge-sm bg-azure-lt ms-auto">Demo</span>
+      </a>
+    </li><li class="nav-item">
+      <a class="nav-link" href="workflow-gallery.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /> <path d="M19 7a2 2 0 1 0 0 -4a2 2 0 0 0 0 4" /> <path d="M11 19h5.5a3.5 3.5 0 0 0 0 -7h-8a3.5 3.5 0 0 1 0 -7h4.5" /></svg></span>
+        <span class="nav-link-title">Workflow Gallery</span>
+        <span class="badge badge-sm bg-azure-lt ms-auto">Demo</span>
+      </a>
+    </li><li class="nav-item">
+      <a class="nav-link" href="sop-center.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M19 4v16h-12a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12" /> <path d="M19 16h-12a2 2 0 0 0 -2 2" /> <path d="M9 8h6" /></svg></span>
+        <span class="nav-link-title">SOP Center</span>
+        <span class="badge badge-sm bg-azure-lt ms-auto">Demo</span>
+      </a>
+    </li><li class="nav-item active">
+      <a class="nav-link" href="automation-monitor.html" aria-current="page">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 12h4l3 8l4 -16l3 8h4" /></svg></span>
+        <span class="nav-link-title">Automation Monitor</span>
+        <span class="badge badge-sm bg-azure-lt ms-auto">Demo</span>
+      </a>
+    </li><li class="nav-item">
+      <a class="nav-link" href="prompt-library.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M16 18a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m0 -12a2 2 0 0 1 2 2a2 2 0 0 1 2 -2a2 2 0 0 1 -2 -2a2 2 0 0 1 -2 2m-7 12a6 6 0 0 1 6 -6a6 6 0 0 1 -6 -6a6 6 0 0 1 -6 6a6 6 0 0 1 6 6" /></svg></span>
+        <span class="nav-link-title">Prompt Library</span>
+        <span class="badge badge-sm bg-azure-lt ms-auto">Demo</span>
+      </a>
+    </li><li class="nav-item nav-section-label mt-3 mb-1"><span>Portfolio</span></li><li class="nav-item">
+      <a class="nav-link" href="projects.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M4 5a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -4" /> <path d="M4 15a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -4" /> <path d="M14 15a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1l0 -4" /> <path d="M14 7l6 0" /> <path d="M17 4l0 6" /></svg></span>
+        <span class="nav-link-title">Projects</span>
+        
+      </a>
+    </li><li class="nav-item">
+      <a class="nav-link" href="case-studies.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M6 4h11a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-11a1 1 0 0 1 -1 -1v-14a1 1 0 0 1 1 -1m3 0v18" /> <path d="M13 8l2 0" /> <path d="M13 12l2 0" /></svg></span>
+        <span class="nav-link-title">Case Studies</span>
+        
+      </a>
+    </li><li class="nav-item">
+      <a class="nav-link" href="contact.html">
+        <span class="nav-link-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10" /> <path d="M3 7l9 6l9 -6" /></svg></span>
+        <span class="nav-link-title">Contact</span>
+        
+      </a>
+    </li>
+          </ul>
+
+          <div class="sidebar-footer mt-auto pt-3 d-none d-lg-block">
+            <a href="contact.html" class="sidebar-cta">
+              <span class="sidebar-cta-title">Available for projects</span>
+              <span class="sidebar-cta-sub">Let's automate your operations →</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="page-wrapper">
+      
+      <div class="page-header d-print-none">
+        <div class="container-xl-fluid">
+          <div class="row g-2 align-items-center">
+            <div class="col">
+              <div class="page-pretitle">Demo Project · Automation Monitor</div>
+              <h2 class="page-title">Automation Monitoring Dashboard</h2>
+              <div class="text-secondary mt-1">Live-style monitoring for a portfolio of n8n automations: executions, success rate, errors, running workflows and detailed logs.</div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      <main id="content" class="page-body">
+        <div class="container-xl-fluid">
+          
+<div class="demo-ribbon">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /> <path d="M12 9h.01" /> <path d="M11 12h1v4h1" /></svg>
+    <span>Concept Project — simulated execution data representing what a live n8n monitoring dashboard looks like across a portfolio of automations.</span>
+  </div>
+
+<div class="row row-cards mb-4">
+  <div class="col-sm-6 col-lg-3">
+    <div class="card card-sm">
+      <div class="card-body p-3">
+        <div class="row align-items-center">
+          <div class="col-auto">
+            <span class="bg-indigo-lt avatar avatar-square"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 12h4l3 8l4 -16l3 8h4" /></svg></span>
+          </div>
+          <div class="col">
+            <div class="subheader">Executions Today</div>
+            <div class="h3 m-0 p-0">412</div>
+            
+          </div>
+          <div class="col-auto">
+            <span class="text-green d-inline-flex align-items-center lh-1">+8.2%<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon ms-0 icon-sm" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 17l6 -6l4 4l8 -8" /> <path d="M14 7l7 0l0 7" /></svg></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-lg-3">
+    <div class="card card-sm">
+      <div class="card-body p-3">
+        <div class="row align-items-center">
+          <div class="col-auto">
+            <span class="bg-green-lt avatar avatar-square"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /> <path d="M9 12l2 2l4 -4" /></svg></span>
+          </div>
+          <div class="col">
+            <div class="subheader">Success Rate</div>
+            <div class="h3 m-0 p-0">97.1%</div>
+            
+          </div>
+          <div class="col-auto">
+            <span class="text-green d-inline-flex align-items-center lh-1">+0.4%<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon ms-0 icon-sm" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 17l6 -6l4 4l8 -8" /> <path d="M14 7l7 0l0 7" /></svg></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-lg-3">
+    <div class="card card-sm">
+      <div class="card-body p-3">
+        <div class="row align-items-center">
+          <div class="col-auto">
+            <span class="bg-red-lt avatar avatar-square"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /> <path d="M10 10l4 4m0 -4l-4 4" /></svg></span>
+          </div>
+          <div class="col">
+            <div class="subheader">Errors (24h)</div>
+            <div class="h3 m-0 p-0">12</div>
+            
+          </div>
+          <div class="col-auto">
+            <span class="text-green d-inline-flex align-items-center lh-1">-3<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon ms-0 icon-sm" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 17l6 -6l4 4l8 -8" /> <path d="M14 7l7 0l0 7" /></svg></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-lg-3">
+    <div class="card card-sm">
+      <div class="card-body p-3">
+        <div class="row align-items-center">
+          <div class="col-auto">
+            <span class="bg-azure-lt avatar avatar-square"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M12 7v5l2 2" /> <path d="M17 22l5 -3l-5 -3l0 6" /> <path d="M13.017 20.943a9 9 0 1 1 7.831 -7.292" /></svg></span>
+          </div>
+          <div class="col">
+            <div class="subheader">Running Now</div>
+            <div class="h3 m-0 p-0">5</div>
+            <div class="text-secondary small">live workflows</div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 col-lg-3">
+    <div class="card card-sm">
+      <div class="card-body p-3">
+        <div class="row align-items-center">
+          <div class="col-auto">
+            <span class="bg-purple-lt avatar avatar-square"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 12a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /> <path d="M12 12l3 2" /> <path d="M12 7v5" /></svg></span>
+          </div>
+          <div class="col">
+            <div class="subheader">Avg Execution Time</div>
+            <div class="h3 m-0 p-0">2.4s</div>
+            
+          </div>
+          <div class="col-auto">
+            <span class="text-green d-inline-flex align-items-center lh-1">-0.3s<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon ms-0 icon-sm" aria-hidden="true"><path stroke="none" d="M0 0h24v24H0z" fill="none" /> <path d="M3 17l6 -6l4 4l8 -8" /> <path d="M14 7l7 0l0 7" /></svg></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row g-4 mb-4">
+  <div class="col-lg-7">
+    <div class="card">
+      <div class="card-header"><h3 class="card-title">Executions — last 24 hours</h3></div>
+      <div class="card-body"><div id="chart-executions" style="height:230px;"></div></div>
+    </div>
+  </div>
+  <div class="col-lg-5">
+    <div class="card">
+      <div class="card-header"><h3 class="card-title">Success vs. errors</h3></div>
+      <div class="card-body"><div id="chart-success" style="height:230px;"></div></div>
+    </div>
+  </div>
+</div>
+
+<div class="row g-4 mb-4">
+  <div class="col-lg-5">
+    <div class="card">
+      <div class="card-header"><h3 class="card-title">Workflows</h3></div>
+      <div class="table-responsive">
+        <table class="table table-vcenter card-table">
+          <thead><tr><th>Workflow</th><th>Trigger</th><th>Runs</th><th>Success</th></tr></thead>
+          <tbody>
+            <tr>
+              <td class="fw-medium small">Lead Qualification Automation</td>
+              <td class="text-secondary small">Webhook</td>
+              <td class="text-secondary small">6</td>
+              <td>
+                <div class="d-flex align-items-center gap-2">
+                  <div class="progress progress-sm flex-fill" style="width:60px;"><div class="progress-bar bg-green" style="width:100%"></div></div>
+                  <span class="small text-secondary">100%</span>
+                </div>
+              </td>
+            </tr><tr>
+              <td class="fw-medium small">Storm Damage Lead Router</td>
+              <td class="text-secondary small">Webhook</td>
+              <td class="text-secondary small">10</td>
+              <td>
+                <div class="d-flex align-items-center gap-2">
+                  <div class="progress progress-sm flex-fill" style="width:60px;"><div class="progress-bar bg-yellow" style="width:80%"></div></div>
+                  <span class="small text-secondary">80%</span>
+                </div>
+              </td>
+            </tr><tr>
+              <td class="fw-medium small">Missed Call Text-Back</td>
+              <td class="text-secondary small">Webhook</td>
+              <td class="text-secondary small">6</td>
+              <td>
+                <div class="d-flex align-items-center gap-2">
+                  <div class="progress progress-sm flex-fill" style="width:60px;"><div class="progress-bar bg-red" style="width:50%"></div></div>
+                  <span class="small text-secondary">50%</span>
+                </div>
+              </td>
+            </tr><tr>
+              <td class="fw-medium small">Google Sheets → GoHighLevel Sync</td>
+              <td class="text-secondary small">Schedule (15 min)</td>
+              <td class="text-secondary small">15</td>
+              <td>
+                <div class="d-flex align-items-center gap-2">
+                  <div class="progress progress-sm flex-fill" style="width:60px;"><div class="progress-bar bg-yellow" style="width:80%"></div></div>
+                  <span class="small text-secondary">80%</span>
+                </div>
+              </td>
+            </tr><tr>
+              <td class="fw-medium small">Post-Install Review Requests</td>
+              <td class="text-secondary small">Schedule (daily)</td>
+              <td class="text-secondary small">10</td>
+              <td>
+                <div class="d-flex align-items-center gap-2">
+                  <div class="progress progress-sm flex-fill" style="width:60px;"><div class="progress-bar bg-yellow" style="width:90%"></div></div>
+                  <span class="small text-secondary">90%</span>
+                </div>
+              </td>
+            </tr><tr>
+              <td class="fw-medium small">Invoice Reminder Sequence</td>
+              <td class="text-secondary small">Schedule (daily)</td>
+              <td class="text-secondary small">7</td>
+              <td>
+                <div class="d-flex align-items-center gap-2">
+                  <div class="progress progress-sm flex-fill" style="width:60px;"><div class="progress-bar bg-green" style="width:100%"></div></div>
+                  <span class="small text-secondary">100%</span>
+                </div>
+              </td>
+            </tr><tr>
+              <td class="fw-medium small">Slack Daily Pipeline Digest</td>
+              <td class="text-secondary small">Schedule (8:00 AM)</td>
+              <td class="text-secondary small">2</td>
+              <td>
+                <div class="d-flex align-items-center gap-2">
+                  <div class="progress progress-sm flex-fill" style="width:60px;"><div class="progress-bar bg-green" style="width:100%"></div></div>
+                  <span class="small text-secondary">100%</span>
+                </div>
+              </td>
+            </tr><tr>
+              <td class="fw-medium small">Contract Signed → Crew Notify</td>
+              <td class="text-secondary small">Webhook</td>
+              <td class="text-secondary small">4</td>
+              <td>
+                <div class="d-flex align-items-center gap-2">
+                  <div class="progress progress-sm flex-fill" style="width:60px;"><div class="progress-bar bg-green" style="width:100%"></div></div>
+                  <span class="small text-secondary">100%</span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-7">
+    <div class="card">
+      <div class="card-header d-flex">
+        <h3 class="card-title">Execution Log</h3>
+        <div class="card-actions">
+          <select class="form-select form-select-sm" id="log-filter" style="max-width:160px;">
+            <option value="">All statuses</option>
+            <option value="success">Success</option>
+            <option value="error">Error</option>
+            <option value="running">Running</option>
+          </select>
+        </div>
+      </div>
+      <div class="table-responsive" style="max-height:520px; overflow-y:auto;">
+        <table class="table table-vcenter card-table" id="log-table">
+          <thead style="position:sticky; top:0; background:var(--tblr-card-bg,#0e1017); z-index:1;">
+            <tr><th></th><th>ID</th><th>Workflow</th><th>Trigger</th><th>Status</th><th>Duration</th><th>When</th><th>Detail</th></tr>
+          </thead>
+          <tbody><tr data-status="running" data-workflow="missed call text-back">
+    <td><span class="status-dot bg-azure status-dot-animated"></span></td>
+    <td class="text-mono text-secondary">EXEC-98233</td>
+    <td class="fw-medium">Missed Call Text-Back</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Webhook</span></td>
+    <td><span class="badge bg-azure-lt text-azure">Running</span></td>
+    <td class="text-secondary">—</td>
+    <td class="text-secondary small">12m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="google sheets → gohighlevel sync">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98245</td>
+    <td class="fw-medium">Google Sheets → GoHighLevel Sync</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (15 min)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">5.38s</td>
+    <td class="text-secondary small">15m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="storm damage lead router">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98249</td>
+    <td class="fw-medium">Storm Damage Lead Router</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Webhook</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">1.35s</td>
+    <td class="text-secondary small">53m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="contract signed → crew notify">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98262</td>
+    <td class="fw-medium">Contract Signed → Crew Notify</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Webhook</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">1.44s</td>
+    <td class="text-secondary small">1h 3m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="missed call text-back">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98268</td>
+    <td class="fw-medium">Missed Call Text-Back</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Webhook</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">0.81s</td>
+    <td class="text-secondary small">1h 49m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="google sheets → gohighlevel sync">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98212</td>
+    <td class="fw-medium">Google Sheets → GoHighLevel Sync</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (15 min)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">5.84s</td>
+    <td class="text-secondary small">2h 21m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="missed call text-back">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98221</td>
+    <td class="fw-medium">Missed Call Text-Back</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Webhook</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">0.92s</td>
+    <td class="text-secondary small">2h 23m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="storm damage lead router">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98239</td>
+    <td class="fw-medium">Storm Damage Lead Router</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Webhook</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">0.73s</td>
+    <td class="text-secondary small">2h 27m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="lead qualification automation">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98248</td>
+    <td class="fw-medium">Lead Qualification Automation</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Webhook</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">1.55s</td>
+    <td class="text-secondary small">2h 29m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="contract signed → crew notify">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98266</td>
+    <td class="fw-medium">Contract Signed → Crew Notify</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Webhook</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">1.14s</td>
+    <td class="text-secondary small">2h 33m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="post-install review requests">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98234</td>
+    <td class="fw-medium">Post-Install Review Requests</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (daily)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">4.62s</td>
+    <td class="text-secondary small">2h 40m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="google sheets → gohighlevel sync">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98211</td>
+    <td class="fw-medium">Google Sheets → GoHighLevel Sync</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (15 min)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">3.44s</td>
+    <td class="text-secondary small">3h 27m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="post-install review requests">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98251</td>
+    <td class="fw-medium">Post-Install Review Requests</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (daily)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">4.37s</td>
+    <td class="text-secondary small">3h 36m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="post-install review requests">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98220</td>
+    <td class="fw-medium">Post-Install Review Requests</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (daily)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">4.02s</td>
+    <td class="text-secondary small">4h 36m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="slack daily pipeline digest">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98243</td>
+    <td class="fw-medium">Slack Daily Pipeline Digest</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (8:00 AM)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">3.24s</td>
+    <td class="text-secondary small">4h 56m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="invoice reminder sequence">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98238</td>
+    <td class="fw-medium">Invoice Reminder Sequence</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (daily)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">3.61s</td>
+    <td class="text-secondary small">6h 53m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="lead qualification automation">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98242</td>
+    <td class="fw-medium">Lead Qualification Automation</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Webhook</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">2.04s</td>
+    <td class="text-secondary small">6h 54m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="storm damage lead router">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98263</td>
+    <td class="fw-medium">Storm Damage Lead Router</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Webhook</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">1.49s</td>
+    <td class="text-secondary small">6h 59m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="invoice reminder sequence">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98247</td>
+    <td class="fw-medium">Invoice Reminder Sequence</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (daily)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">2.48s</td>
+    <td class="text-secondary small">8h 2m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="google sheets → gohighlevel sync">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98241</td>
+    <td class="fw-medium">Google Sheets → GoHighLevel Sync</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (15 min)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">4.37s</td>
+    <td class="text-secondary small">8h 23m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="post-install review requests">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98213</td>
+    <td class="fw-medium">Post-Install Review Requests</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (daily)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">4.04s</td>
+    <td class="text-secondary small">8h 31m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="storm damage lead router">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98261</td>
+    <td class="fw-medium">Storm Damage Lead Router</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Webhook</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">0.73s</td>
+    <td class="text-secondary small">9h 26m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="post-install review requests">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98231</td>
+    <td class="fw-medium">Post-Install Review Requests</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (daily)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">2.86s</td>
+    <td class="text-secondary small">9h 42m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="error" data-workflow="google sheets → gohighlevel sync">
+    <td><span class="status-dot bg-red "></span></td>
+    <td class="text-mono text-secondary">EXEC-98246</td>
+    <td class="fw-medium">Google Sheets → GoHighLevel Sync</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (15 min)</span></td>
+    <td><span class="badge bg-red-lt text-red">Error</span></td>
+    <td class="text-secondary">6.04s</td>
+    <td class="text-secondary small">10h 8m ago</td>
+    <td class="text-secondary small"><span class="text-red">Missing required field: phone number</span></td>
+  </tr><tr data-status="success" data-workflow="slack daily pipeline digest">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98265</td>
+    <td class="fw-medium">Slack Daily Pipeline Digest</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (8:00 AM)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">5.27s</td>
+    <td class="text-secondary small">10h 19m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="google sheets → gohighlevel sync">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98270</td>
+    <td class="fw-medium">Google Sheets → GoHighLevel Sync</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (15 min)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">2.64s</td>
+    <td class="text-secondary small">11h 42m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="google sheets → gohighlevel sync">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98267</td>
+    <td class="fw-medium">Google Sheets → GoHighLevel Sync</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (15 min)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">4.45s</td>
+    <td class="text-secondary small">12h 3m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="post-install review requests">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98244</td>
+    <td class="fw-medium">Post-Install Review Requests</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (daily)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">2.16s</td>
+    <td class="text-secondary small">12h 6m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="contract signed → crew notify">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98226</td>
+    <td class="fw-medium">Contract Signed → Crew Notify</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Webhook</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">1.59s</td>
+    <td class="text-secondary small">13h 8m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="running" data-workflow="storm damage lead router">
+    <td><span class="status-dot bg-azure status-dot-animated"></span></td>
+    <td class="text-mono text-secondary">EXEC-98219</td>
+    <td class="fw-medium">Storm Damage Lead Router</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Webhook</span></td>
+    <td><span class="badge bg-azure-lt text-azure">Running</span></td>
+    <td class="text-secondary">—</td>
+    <td class="text-secondary small">13h 22m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="storm damage lead router">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98224</td>
+    <td class="fw-medium">Storm Damage Lead Router</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Webhook</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">0.80s</td>
+    <td class="text-secondary small">13h 30m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="google sheets → gohighlevel sync">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98227</td>
+    <td class="fw-medium">Google Sheets → GoHighLevel Sync</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (15 min)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">4.18s</td>
+    <td class="text-secondary small">13h 31m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="lead qualification automation">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98259</td>
+    <td class="fw-medium">Lead Qualification Automation</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Webhook</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">3.50s</td>
+    <td class="text-secondary small">14h ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="storm damage lead router">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98222</td>
+    <td class="fw-medium">Storm Damage Lead Router</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Webhook</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">0.96s</td>
+    <td class="text-secondary small">14h 7m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="invoice reminder sequence">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98214</td>
+    <td class="fw-medium">Invoice Reminder Sequence</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (daily)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">2.17s</td>
+    <td class="text-secondary small">14h 57m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="google sheets → gohighlevel sync">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98250</td>
+    <td class="fw-medium">Google Sheets → GoHighLevel Sync</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (15 min)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">5.95s</td>
+    <td class="text-secondary small">16h 11m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="invoice reminder sequence">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98215</td>
+    <td class="fw-medium">Invoice Reminder Sequence</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (daily)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">2.78s</td>
+    <td class="text-secondary small">16h 48m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="google sheets → gohighlevel sync">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98235</td>
+    <td class="fw-medium">Google Sheets → GoHighLevel Sync</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (15 min)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">4.29s</td>
+    <td class="text-secondary small">17h 37m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="running" data-workflow="missed call text-back">
+    <td><span class="status-dot bg-azure status-dot-animated"></span></td>
+    <td class="text-mono text-secondary">EXEC-98264</td>
+    <td class="fw-medium">Missed Call Text-Back</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Webhook</span></td>
+    <td><span class="badge bg-azure-lt text-azure">Running</span></td>
+    <td class="text-secondary">—</td>
+    <td class="text-secondary small">17h 58m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="running" data-workflow="post-install review requests">
+    <td><span class="status-dot bg-azure status-dot-animated"></span></td>
+    <td class="text-mono text-secondary">EXEC-98255</td>
+    <td class="fw-medium">Post-Install Review Requests</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (daily)</span></td>
+    <td><span class="badge bg-azure-lt text-azure">Running</span></td>
+    <td class="text-secondary">—</td>
+    <td class="text-secondary small">19h 3m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="google sheets → gohighlevel sync">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98218</td>
+    <td class="fw-medium">Google Sheets → GoHighLevel Sync</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (15 min)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">3.58s</td>
+    <td class="text-secondary small">20h 9m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="invoice reminder sequence">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98260</td>
+    <td class="fw-medium">Invoice Reminder Sequence</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (daily)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">2.02s</td>
+    <td class="text-secondary small">20h 18m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="lead qualification automation">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98225</td>
+    <td class="fw-medium">Lead Qualification Automation</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Webhook</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">2.78s</td>
+    <td class="text-secondary small">20h 25m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="storm damage lead router">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98232</td>
+    <td class="fw-medium">Storm Damage Lead Router</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Webhook</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">1.49s</td>
+    <td class="text-secondary small">20h 34m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="lead qualification automation">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98237</td>
+    <td class="fw-medium">Lead Qualification Automation</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Webhook</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">2.89s</td>
+    <td class="text-secondary small">21h 12m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="missed call text-back">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98228</td>
+    <td class="fw-medium">Missed Call Text-Back</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Webhook</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">0.46s</td>
+    <td class="text-secondary small">22h 17m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="contract signed → crew notify">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98230</td>
+    <td class="fw-medium">Contract Signed → Crew Notify</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Webhook</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">1.79s</td>
+    <td class="text-secondary small">22h 25m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="invoice reminder sequence">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98257</td>
+    <td class="fw-medium">Invoice Reminder Sequence</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (daily)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">3.50s</td>
+    <td class="text-secondary small">22h 31m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="post-install review requests">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98223</td>
+    <td class="fw-medium">Post-Install Review Requests</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (daily)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">3.68s</td>
+    <td class="text-secondary small">22h 46m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="error" data-workflow="google sheets → gohighlevel sync">
+    <td><span class="status-dot bg-red "></span></td>
+    <td class="text-mono text-secondary">EXEC-98254</td>
+    <td class="fw-medium">Google Sheets → GoHighLevel Sync</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (15 min)</span></td>
+    <td><span class="badge bg-red-lt text-red">Error</span></td>
+    <td class="text-secondary">5.98s</td>
+    <td class="text-secondary small">23h 37m ago</td>
+    <td class="text-secondary small"><span class="text-red">OpenAI request timeout after 8s</span></td>
+  </tr><tr data-status="success" data-workflow="post-install review requests">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98240</td>
+    <td class="fw-medium">Post-Install Review Requests</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (daily)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">2.27s</td>
+    <td class="text-secondary small">25h 17m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="error" data-workflow="missed call text-back">
+    <td><span class="status-dot bg-red "></span></td>
+    <td class="text-mono text-secondary">EXEC-98229</td>
+    <td class="fw-medium">Missed Call Text-Back</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Webhook</span></td>
+    <td><span class="badge bg-red-lt text-red">Error</span></td>
+    <td class="text-secondary">0.94s</td>
+    <td class="text-secondary small">25h 45m ago</td>
+    <td class="text-secondary small"><span class="text-red">Missing required field: phone number</span></td>
+  </tr><tr data-status="success" data-workflow="post-install review requests">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98258</td>
+    <td class="fw-medium">Post-Install Review Requests</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (daily)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">3.87s</td>
+    <td class="text-secondary small">26h 28m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="running" data-workflow="google sheets → gohighlevel sync">
+    <td><span class="status-dot bg-azure status-dot-animated"></span></td>
+    <td class="text-mono text-secondary">EXEC-98253</td>
+    <td class="fw-medium">Google Sheets → GoHighLevel Sync</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (15 min)</span></td>
+    <td><span class="badge bg-azure-lt text-azure">Running</span></td>
+    <td class="text-secondary">—</td>
+    <td class="text-secondary small">26h 34m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="error" data-workflow="storm damage lead router">
+    <td><span class="status-dot bg-red "></span></td>
+    <td class="text-mono text-secondary">EXEC-98236</td>
+    <td class="fw-medium">Storm Damage Lead Router</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Webhook</span></td>
+    <td><span class="badge bg-red-lt text-red">Error</span></td>
+    <td class="text-secondary">0.99s</td>
+    <td class="text-secondary small">26h 53m ago</td>
+    <td class="text-secondary small"><span class="text-red">OpenAI request timeout after 8s</span></td>
+  </tr><tr data-status="success" data-workflow="google sheets → gohighlevel sync">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98269</td>
+    <td class="fw-medium">Google Sheets → GoHighLevel Sync</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (15 min)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">2.92s</td>
+    <td class="text-secondary small">27h ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="invoice reminder sequence">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98252</td>
+    <td class="fw-medium">Invoice Reminder Sequence</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (daily)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">3.24s</td>
+    <td class="text-secondary small">27h 11m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="storm damage lead router">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98216</td>
+    <td class="fw-medium">Storm Damage Lead Router</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Webhook</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">1.74s</td>
+    <td class="text-secondary small">28h 10m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="lead qualification automation">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98217</td>
+    <td class="fw-medium">Lead Qualification Automation</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Webhook</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">1.81s</td>
+    <td class="text-secondary small">28h 40m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr><tr data-status="success" data-workflow="google sheets → gohighlevel sync">
+    <td><span class="status-dot bg-green "></span></td>
+    <td class="text-mono text-secondary">EXEC-98256</td>
+    <td class="fw-medium">Google Sheets → GoHighLevel Sync</td>
+    <td><span class="chip-tool" style="font-size:.72rem;padding:.2rem .5rem;">Schedule (15 min)</span></td>
+    <td><span class="badge bg-green-lt text-green">Success</span></td>
+    <td class="text-secondary">4.62s</td>
+    <td class="text-secondary small">29h 10m ago</td>
+    <td class="text-secondary small">—</td>
+  </tr></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+        </div>
+      </main>
+
+      <footer class="footer footer-transparent d-print-none">
+        <div class="container-xl">
+          <div class="row text-center align-items-center flex-row-reverse">
+            <div class="col-lg-auto ms-lg-auto">
+              <ul class="list-inline list-inline-dots mb-0">
+                <li class="list-inline-item"><a href="https://www.linkedin.com/in/sabrina-navarro-7b7960206/" target="_blank" rel="noreferrer" class="link-secondary">LinkedIn</a></li>
+                <li class="list-inline-item"><a href="https://www.upwork.com/freelancers/~018063efb3d9ad444e?mp_source=share" target="_blank" rel="noreferrer" class="link-secondary">Upwork</a></li>
+                <li class="list-inline-item"><a href="mailto:sabrinabelindanavarro@gmail.com" class="link-secondary">sabrinabelindanavarro@gmail.com</a></li>
+              </ul>
+            </div>
+            <div class="col-12 col-lg-auto mt-3 mt-lg-0">
+              <ul class="list-inline list-inline-dots mb-0">
+                <li class="list-inline-item">© 2026 Sabrina Navarro — AI Automation Specialist, Valencia, Spain</li>
+                <li class="list-inline-item">All platform data on this site is illustrative demo content</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <script src="./assets/js/tabler.min.js"></script>
+  <script>
+window.SN_MON_HOURS = ["00:00","01:00","02:00","03:00","04:00","05:00","06:00","07:00","08:00","09:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00","19:00","20:00","21:00","22:00","23:00"];
+window.SN_MON_COUNTS = [27,12,21,23,11,11,20,9,23,30,19,16,16,17,17,17,20,23,28,27,29,20,9,12];
+window.SN_MON_SUCCESS = [51,4,5];
+</script>
+  <script src="./assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+  <script src="./assets/js/monitor.js"></script>
+  <script src="./assets/js/site.js"></script>
+  
+</body>
+</html>

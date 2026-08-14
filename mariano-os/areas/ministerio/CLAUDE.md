@@ -95,6 +95,23 @@ Ver `areas/personal/CLAUDE.md` para el contexto completo. Contiene las listas "S
   Mariano coordina tarea, fecha límite y reporte; luego él reporta al responsable general de Ruge.
 - Mariano es el encargado de logística en esta edición — no está confirmado si lo será en futuras.
 
+### Pendientes de cargar en ClickUp — bloqueados por rate limit (registrado 14 agosto 2026)
+La API de ClickUp volvió a bloquear por rate limit al intentar escribir hoy (mismo patrón ya descrito
+en la sección 8 de este documento) — según el mensaje de error, no se libera hasta dentro de ~18hs.
+Quedan dos cosas pendientes de cargar en cuanto se libere, ambas avisadas por Mariano hoy:
+
+1. **Retrospectiva de logística Ruge (reto de inicio de año)** — llamada de hoy (14 ago) de Mariano
+   con **Marco Guanuchi** y **David Luzuriaga** (su equipo de logística) para evaluar aciertos y
+   errores del área de logística en el Ruge de principio de año, como base para este año. Mariano va
+   a grabar la llamada, pedirle un resumen a una IA, y pasármelo. **Cuando llegue ese resumen**: crear
+   una tarea/nota en la lista "Equipo y Reuniones" (`901220315541`) con el contenido completo — no es
+   solo un recordatorio, es el resumen real de la llamada.
+2. **Reunión de inventario con las comisiones** — miércoles 19 de agosto 2026, 19:00hs, con las
+   comisiones de Seguridad, Cocina y Producción (entre otras) para revisar qué hay, qué falta y qué
+   hay que comprar del inventario de Ruge. Crear tarea recordatorio en cuanto se libere el rate limit,
+   en "Equipo y Reuniones" (`901220315541`) o "Preparación por Día" (`901220315548`) — a confirmar
+   cuál encaja mejor cuando se cargue.
+
 ### Lista "Eventos puntuales" — ID `901220372534` (dentro del folder Liderazgo)
 Se creó el 14 de agosto de 2026 para eventos de un solo día con invitado especial. Diseño: una
 tarea por evento, con una subtarea por cada uno de los 10 líderes con: entradas asignadas,

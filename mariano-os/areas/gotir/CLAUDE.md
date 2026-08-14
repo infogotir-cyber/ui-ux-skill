@@ -40,45 +40,71 @@ Estas son las direcciones vigentes hoy:
    ídem, ver "Contexto operativo adicional" (la app "GOTIR Finanzas" es candidata a ser la fuente
    operativa de esta dirección).
 4. **Facturación** (`direcciones/facturacion/`) — conectada a **Holded**. Facturación a clientes,
-   cobros. Mariano la separó explícitamente de "finanzas" como una dirección propia, no como una
-   sub-tarea de finanzas.
+   cobros, y **todos los pagos salientes de GOTIR** (incluidos los pagos a proveedores/agencias
+   como Exxo — ver nota de confirmación abajo). Mariano la separó explícitamente de "finanzas"
+   como una dirección propia, no como una sub-tarea de finanzas.
 5. **RR. HH.** (`direcciones/rrhh/`) — gestión y verificación de contratos firmados con
    prestadores de servicio y abogados (ej. Sebastián, María, Gisella — ver
    `direcciones/comercial/CLAUDE.md`). No es RR. HH. en el sentido tradicional de empleados en
    nómina, sino gestión contractual de colaboradores externos — confirmar si también cubre personal
    interno si en algún momento GOTIR contrata.
-6. **Legal** — probablemente dos ramas distintas, a confirmar si se separan en dos direcciones o
-   quedan como sub-áreas de una misma `direcciones/legal/`:
-   - Legal comercial (contratos, aspectos legales del negocio en sí).
-   - Legal extranjería (el corazón del servicio que vende GOTIR — trámites migratorios de
-     clientes). Esta es probablemente la más crítica operativamente, dado que es el producto.
+6. **Legal** — dos ramas confirmadas, con roles bien distintos (14 agosto 2026, ver detalle abajo):
+   - **Legal comercial**: el propio sistema (vos, como director/asesor) actuando como abogado de
+     Mariano para la gestión de GOTIR como empresa — contratos, aspectos corporativos, manejo del
+     negocio en sí. No es un tercero externo, es un rol de asesoría que cumple este sistema.
+   - **Legal extranjería**: el conocimiento/consulta de normativa migratoria que sostiene el
+     servicio que GOTIR vende. Aclaración importante de Mariano: **GOTIR no vende asesoría legal en
+     sí** — Mariano informa a los clientes sobre el proceso migratorio, y a veces tiene preguntas
+     puntuales de extranjería para consultarle a este sistema. Es apoyo de conocimiento de producto,
+     no un servicio legal formal de terceros.
+   - Las dos siguen viviendo, por ahora, bajo un único `direcciones/legal/CLAUDE.md` (no se separó
+     en dos carpetas) — si en la práctica conviene dividirlo en dos documentos más adelante,
+     proponérselo a Mariano cuando haya contenido real de cada rama, no antes.
 7. **IT** (`direcciones/it/`) — tecnología: automatizaciones, corrección de errores, mantenimiento
    y arreglos de GoHighLevel. Dirección nueva, agregada 14 agosto 2026. Todavía sin `CLAUDE.md`
    propio.
 
-**Dirección adicional en evaluación (sugerida por Mariano, NO decidida ni construida)**:
-Operaciones / Atención al cliente — seguimiento del servicio ya vendido a cada cliente (trámites en
-curso, estado de cada expediente), separada de Comercial (que es antes de la venta) y de Legal-
-extranjería (que es el conocimiento técnico del trámite en sí). No la des por armada ni le crees
-carpeta todavía — es una propuesta a evaluar cuando llegue el momento, no una decisión tomada.
+**Dirección adicional en evaluación — Operaciones / Atención al cliente**: Mariano confirmó que
+quiere avanzar con esta (14 agosto 2026), pero todavía no dio el contenido real necesario para
+construirla. Antes de crear `direcciones/operaciones/CLAUDE.md`, hace falta que confirme:
+- ¿Existe hoy algún seguimiento, aunque sea informal, del estado de cada expediente/trámite en
+  curso (más allá de lo que hacen Sebastián, María y Gisella por su cuenta)? ¿Dónde vive eso hoy
+  (nada centralizado, WhatsApp, Excel, GHL)?
+- ¿Qué etapas tiene el proceso de un cliente ya vendido, desde que paga hasta que termina el
+  trámite (ej. presentación de expediente → resolución → TIE)? — ver
+  `direcciones/comercial/CLAUDE.md` sección 1.2 para los plazos generales ya documentados de
+  estancia por estudios, pero falta el detalle de seguimiento operativo día a día.
+- ¿Quién hace el seguimiento de cada caso hoy — Mariano, Sebastián/María, Gisella, alguien más?
+- ¿Qué necesitaría que este sistema le avise proactivamente (ej. expedientes atrasados, clientes
+  sin respuesta hace X días, plazos por vencer)?
+No armar carpeta ni estructura de ClickUp/GHL para esto hasta tener esas respuestas.
 
 Cuando Mariano empiece a dar contexto real de una dirección sin `CLAUDE.md` todavía, creá el
 archivo correspondiente dentro de `direcciones/<nombre>/CLAUDE.md` siguiendo el mismo estilo de
 detalle que `areas/ministerio/CLAUDE.md` o `direcciones/comercial/CLAUDE.md` — con IDs reales,
 nombres reales, y sin inventar estructura que él no haya dado.
 
-### Pendientes de confirmar sobre esta lista (registrados 14 agosto 2026, no resolver por tu cuenta)
-- **Pagos a la agencia de marketing** — no está definido si viven en `facturacion/` (porque es un
-  pago saliente) o en `marketing/` (porque es el proveedor de esa dirección). Lectura propuesta por
-  Mariano mismo, pendiente de confirmar: la relación con la agencia y su desempeño vive en
-  `marketing/`, pero el pago en sí se registra en `facturacion/`.
-- **Nombre de la agencia de marketing — resuelto (14 agosto 2026)**: es **Exxo**. En un mensaje
-  previo había aparecido transcrita como "XO" (Mariano mismo marcó que no estaba seguro si era el
-  nombre real o una mala transcripción por voz); Mariano confirmó directamente que el nombre
-  correcto es Exxo. Usar siempre "Exxo" de acá en adelante.
-- **Legal**: si "legal comercial" y "legal extranjería" quedan como una sola dirección
-  (`direcciones/legal/`) o se separan en dos.
-- **Operaciones / Atención al cliente**: si se termina construyendo como dirección propia o no.
+### Pendientes ya resueltos (dejado como registro, 14 agosto 2026)
+- **Pagos a la agencia de marketing (Exxo) — resuelto**: van en `facturacion/`, como cualquier otro
+  pago saliente de GOTIR. La relación con Exxo y su desempeño se sigue evaluando desde
+  `marketing/`, pero el pago en sí es de facturación. **Dato operativo importante que Mariano dio
+  al confirmar esto**: los pagos históricos a Exxo (hechos en pesos argentinos y en dólares) **no
+  están cargados en los datos financieros de GOTIR** (ni en la app "GOTIR Finanzas" ni en ningún
+  otro lugar centralizado) — los gestionó por separado. Esto es un hueco real en los datos, no una
+  decisión de diseño: cuando se construya `direcciones/facturacion/CLAUDE.md`, hay que confirmar
+  con Mariano si quiere cargar ese historial o arrancar la dirección desde el próximo pago en
+  adelante.
+- **Nombre de la agencia de marketing — resuelto**: es **Exxo**. En un mensaje previo había
+  aparecido transcrita como "XO"; Mariano confirmó directamente que el nombre correcto es Exxo.
+  Usar siempre "Exxo" de acá en adelante.
+- **Legal, si se separa en dos — resuelto**: sí son dos roles distintos (legal comercial = este
+  sistema asesorando la gestión de la empresa; legal extranjería = conocimiento de producto sobre
+  normativa migratoria), pero por ahora comparten un solo documento `direcciones/legal/CLAUDE.md`
+  — ver detalle en el punto 6 de la lista de arriba.
+
+### Pendiente real que queda abierto
+- **Operaciones / Atención al cliente**: Mariano quiere avanzar, pero falta que responda las
+  preguntas listadas arriba antes de poder construir el documento.
 
 ## Orden de construcción recomendado
 Coherente con la filosofía general de "rama por rama" (ver `CLAUDE.md` raíz): no armar las 7 juntas.

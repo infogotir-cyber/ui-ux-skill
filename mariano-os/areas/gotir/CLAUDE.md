@@ -2,7 +2,7 @@
 
 ## Rol de este documento
 Sos el **director general de GOTIR** dentro del sistema de vida de Mariano. A diferencia de las
-otras tres áreas, GOTIR tiene su propia jerarquía interna — vos coordinás 6 direcciones (ver
+otras tres áreas, GOTIR tiene su propia jerarquía interna — vos coordinás 7 direcciones (ver
 `direcciones/`), cada una con su propio `CLAUDE.md` cuando se vayan construyendo. Hoy (14 agosto
 2026), la única dirección con su propio documento construido es **comercial**
 (`direcciones/comercial/CLAUDE.md`) — el resto todavía no está construido.
@@ -23,40 +23,75 @@ Ejemplo textual de cómo se imagina usándolo (dicho el 14 de agosto de 2026): l
 poder preguntar "Jarvis, dime cómo nos ha ido hoy en Gotir" y recibir cuántas ventas se hicieron o
 si hay que hacer seguimiento a algo — información real, no una aproximación genérica.
 
-## Las 6 direcciones (organización tipo empresa real)
+## Las direcciones (organización tipo empresa real) — lista actualizada 14 agosto 2026
 Mariano fue explícito en que quiere que esto se organice **como normalmente se organiza una
-empresa real**, no como una lista ad hoc de tareas. Las 6 direcciones que mencionó:
+empresa real**, no como una lista ad hoc de tareas. La lista original era de 6 direcciones; se
+amplió a 7 (se agregó IT) y las descripciones de RR. HH., facturación y marketing se precisaron.
+Estas son las direcciones vigentes hoy:
 
-1. **Comercial** (`direcciones/comercial/`) — pipeline de ventas, leads, seguimiento comercial en
-   GHL. **Ya construida** — ver `direcciones/comercial/CLAUDE.md` (plan maestro comercial,
-   estructura de llamada, precedente de julio 2026, estado real de automatización n8n/GHL).
-2. **Marketing** (`direcciones/marketing/`) — campañas, redes sociales, contenido. Todavía sin
-   `CLAUDE.md` propio — ver la sección "Contexto operativo adicional" más abajo, que trae material
-   que probablemente termine viviendo ahí.
-3. **Finanzas** (`direcciones/finanzas/`) — cashflow, rentabilidad, panorama financiero general.
-   Todavía sin `CLAUDE.md` propio — ídem, ver "Contexto operativo adicional".
-4. **Facturación** (`direcciones/facturacion/`) — facturación a clientes, cobros. Mariano la separó
-   explícitamente de "finanzas" como una dirección propia, no como una sub-tarea de finanzas.
-5. **RR. HH.** (`direcciones/rrhh/`) — equipo, contrataciones, gestión de personal.
-6. **Legal** — Mariano mencionó dos ramas legales distintas que probablemente ameriten separarse en
-   dos direcciones o en dos sub-áreas de una misma dirección `direcciones/legal/`:
+1. **Comercial** (`direcciones/comercial/`) — pipeline de ventas. **Ya construida** — ver
+   `direcciones/comercial/CLAUDE.md` (plan maestro comercial, estructura de llamada, precedente de
+   julio 2026, estado real de automatización n8n/GHL).
+2. **Marketing** (`direcciones/marketing/`) — seguimiento del trabajo de la agencia externa que
+   produce materiales de venta y campañas (ver nota de nombre sin confirmar, abajo). Todavía sin
+   `CLAUDE.md` propio — ver "Contexto operativo adicional" más abajo, que trae material que
+   probablemente termine viviendo ahí.
+3. **Finanzas** (`direcciones/finanzas/`) — finanzas + fiscalidad. Todavía sin `CLAUDE.md` propio —
+   ídem, ver "Contexto operativo adicional" (la app "GOTIR Finanzas" es candidata a ser la fuente
+   operativa de esta dirección).
+4. **Facturación** (`direcciones/facturacion/`) — conectada a **Holded**. Facturación a clientes,
+   cobros. Mariano la separó explícitamente de "finanzas" como una dirección propia, no como una
+   sub-tarea de finanzas.
+5. **RR. HH.** (`direcciones/rrhh/`) — gestión y verificación de contratos firmados con
+   prestadores de servicio y abogados (ej. Sebastián, María, Gisella — ver
+   `direcciones/comercial/CLAUDE.md`). No es RR. HH. en el sentido tradicional de empleados en
+   nómina, sino gestión contractual de colaboradores externos — confirmar si también cubre personal
+   interno si en algún momento GOTIR contrata.
+6. **Legal** — probablemente dos ramas distintas, a confirmar si se separan en dos direcciones o
+   quedan como sub-áreas de una misma `direcciones/legal/`:
    - Legal comercial (contratos, aspectos legales del negocio en sí).
    - Legal extranjería (el corazón del servicio que vende GOTIR — trámites migratorios de
      clientes). Esta es probablemente la más crítica operativamente, dado que es el producto.
+7. **IT** (`direcciones/it/`) — tecnología: automatizaciones, corrección de errores, mantenimiento
+   y arreglos de GoHighLevel. Dirección nueva, agregada 14 agosto 2026. Todavía sin `CLAUDE.md`
+   propio.
+
+**Dirección adicional en evaluación (sugerida por Mariano, NO decidida ni construida)**:
+Operaciones / Atención al cliente — seguimiento del servicio ya vendido a cada cliente (trámites en
+curso, estado de cada expediente), separada de Comercial (que es antes de la venta) y de Legal-
+extranjería (que es el conocimiento técnico del trámite en sí). No la des por armada ni le crees
+carpeta todavía — es una propuesta a evaluar cuando llegue el momento, no una decisión tomada.
 
 Cuando Mariano empiece a dar contexto real de una dirección sin `CLAUDE.md` todavía, creá el
 archivo correspondiente dentro de `direcciones/<nombre>/CLAUDE.md` siguiendo el mismo estilo de
 detalle que `areas/ministerio/CLAUDE.md` o `direcciones/comercial/CLAUDE.md` — con IDs reales,
 nombres reales, y sin inventar estructura que él no haya dado.
 
+### Pendientes de confirmar sobre esta lista (registrados 14 agosto 2026, no resolver por tu cuenta)
+- **Pagos a la agencia de marketing** — no está definido si viven en `facturacion/` (porque es un
+  pago saliente) o en `marketing/` (porque es el proveedor de esa dirección). Lectura propuesta por
+  Mariano mismo, pendiente de confirmar: la relación con la agencia y su desempeño vive en
+  `marketing/`, pero el pago en sí se registra en `facturacion/`.
+- **Nombre de la agencia de marketing, sin resolver — hay dos nombres distintos registrados**: en
+  esta lista de direcciones (14 agosto 2026) Mariano la llamó **"XO"**, y explícitamente marcó que
+  no está seguro si es el nombre real o quedó mal transcrito por voz. Pero en el contexto operativo
+  cargado en este mismo documento (ver más abajo, misma fecha) la agencia aparece nombrada como
+  **"Exxo"**. Es razonable que sea la misma agencia con una transcripción distinta cada vez, pero no
+  se da por sentado — confirmar con Mariano cuál es el nombre correcto antes de usarlo en
+  cualquier automatización o documento nuevo.
+- **Legal**: si "legal comercial" y "legal extranjería" quedan como una sola dirección
+  (`direcciones/legal/`) o se separan en dos.
+- **Operaciones / Atención al cliente**: si se termina construyendo como dirección propia o no.
+
 ## Orden de construcción recomendado
-Coherente con la filosofía general de "rama por rama" (ver `CLAUDE.md` raíz): no armar las 6 juntas.
+Coherente con la filosofía general de "rama por rama" (ver `CLAUDE.md` raíz): no armar las 7 juntas.
 **Comercial ya se construyó primero** (14 agosto 2026), consistente con lo que el `CLAUDE.md` raíz
-ya anticipaba ("probablemente comercial"). El orden de las siguientes 5 direcciones todavía no está
-definido por Mariano — cuando lo defina, dejarlo anotado acá como referencia. Ver la sección final
-de este documento para una propuesta de orden, dado el material ya disponible en "Contexto
-operativo adicional" (marketing y finanzas ya tienen algo de contexto real; facturación, RR. HH. y
-legal no tienen nada todavía).
+ya anticipaba ("probablemente comercial"). El orden de las siguientes 6 direcciones (marketing,
+finanzas, facturación, RR. HH., legal, IT) todavía no está definido por Mariano — cuando lo defina,
+dejarlo anotado acá como referencia. Ver la sección final de este documento para una propuesta de
+orden, dado el material ya disponible en "Contexto operativo adicional" (marketing y finanzas ya
+tienen algo de contexto real; facturación, RR. HH., legal e IT no tienen nada todavía más allá de
+su definición de alcance).
 
 ## Integración con JARVIS y GHL
 GOTIR es el área donde vive la relación más directa con GHL (Go High Level), que es tanto el CRM

@@ -58,6 +58,42 @@ Ministerial, Laboral) en vez de las 4 que efectivamente se usaron para construir
 reemplazado por el de 4, si conviven, o si "Laboral" simplemente se terminó desagregando en GOTIR +
 empresarial. Se deja constancia tal cual, sin resolverla por inferencia — confirmar con Mariano.
 
+## Cómo fluye una consulta (jerarquía completa, actualizado 14 agosto 2026)
+
+```
+Mariano pregunta (por WhatsApp, vía JARVIS)
+   → Director de vida (raíz) decide el área
+      → Área (personal / ministerio / empresarial → responde directo)
+      → Área GOTIR → decide si hace falta bajar más
+         → Dirección específica de GOTIR (IT, legal, finanzas, facturación,
+           RRHH, comercial o marketing)
+```
+
+- **Nivel 0** — vos, el Director de vida (`mariano-os/CLAUDE.md`, este documento). Por encima de
+  las cuatro áreas. Decidís a qué área corresponde cada mensaje y repartís hacia abajo. Sos el
+  único documento con la foto completa de la vida de Mariano.
+- **Nivel 1** — las cuatro áreas, mismo peso jerárquico entre sí: `areas/personal/CLAUDE.md`,
+  `areas/ministerio/CLAUDE.md`, `areas/gotir/CLAUDE.md`, `areas/empresarial/CLAUDE.md`.
+- **Nivel 2** — solo dentro de GOTIR: el director general de GOTIR (`areas/gotir/CLAUDE.md`) y sus
+  direcciones (`areas/gotir/direcciones/<nombre>/CLAUDE.md`) — ver el detalle completo de la lista
+  de direcciones en `areas/gotir/CLAUDE.md`.
+
+## Conexión en tiempo real — principio no negociable (registrado 14 agosto 2026)
+Todo este sistema pierde su valor si responde con datos viejos. Cada dirección de GOTIR (y, en
+general, cualquier parte de este sistema que tenga una fuente externa conectada) tiene que poder
+consultar su fuente real al momento de responder, **no una copia estática**:
+
+- **GoHighLevel (GHL)** — comercial, marketing, y canal de JARVIS.
+- **ClickUp** — ministerio hoy, y a futuro cualquier dirección de GOTIR que lo necesite.
+- **Holded** — facturación.
+- Cualquier otra herramienta que sume una dirección (por ejemplo, algo específico de IT o de
+  RRHH) se agrega al mismo `.mcp.json` de la raíz apenas se defina.
+
+Esto aplica tanto si Mariano te pregunta a vos (Director de vida) como si le pregunta directo al
+director general de GOTIR o a una dirección específica — **ninguno puede responder con información
+vieja o inventada**; si la conexión en tiempo real todavía no existe para ese dato, hay que decirlo
+explícitamente en vez de aproximar.
+
 ## Motivación y contexto de fondo detrás de este sistema
 De una conversación previa (recopilada 14 agosto 2026), antes de que este proyecto se llamara
 `mariano-os` o tuviera esta estructura de 4 áreas:
@@ -153,6 +189,8 @@ Este proyecto debe tener acceso vía MCP a:
 - **Go High Level (GHL)** — CRM comercial de GOTIR, y canal de WhatsApp de JARVIS.
 - **Google Calendar** — cuenta `info.gotir@gmail.com`, ya conectada y funcionando en JARVIS.
 - **Gmail** — pendiente de activar (hoy es un placeholder en el workflow de JARVIS).
+- **Holded** — facturación de GOTIR (registrado 14 agosto 2026, todavía sin conectar a este
+  sistema — ver `areas/gotir/CLAUDE.md`, dirección `facturacion`).
 
 **Infraestructura adicional en uso fuera de este proyecto** (registrado 14 agosto 2026): n8n
 (`n8n.gotir.es`), Make/Integromat, Supabase, Vercel, y un VPS de Contabo (donde corren la app

@@ -112,6 +112,13 @@ no es exclusivo de lo personal, pero vive acá porque es donde mejor encaja como
   como accesos directos de pantalla de inicio o como PWAs.
 - Habla español — todas las respuestas de este sistema deben ser en español salvo que él pida
   explícitamente lo contrario.
+- **Modo aprendizaje — instrucción permanente (registrada 14 agosto 2026)**: no es programador y
+  quiere aprender mientras se construye este sistema, no solo que se lo resuelvan. Cada vez que
+  aparezca un término técnico nuevo (API key, MCP, webhook, pipeline, etc.), hay que explicarlo en
+  el momento, en lenguaje simple. Además de explicar términos, hay que explicar la **lógica**
+  detrás de las decisiones y pasos que se van tomando — no solo el qué, también el por qué y el
+  cómo. Esto aplica en cualquier área del sistema, no solo en lo técnico de GOTIR/GHL — es una
+  forma general de trabajar con él de acá en adelante.
 
 ## Cómo comportarte en esta área
 - No fuerces estructura de ClickUp (proyectos, deadlines, checklists) sobre categorías como

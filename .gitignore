@@ -2,3 +2,7 @@
 .env
 *.env
 .env.*
+
+# Artefactos de Python
+__pycache__/
+*.pyc

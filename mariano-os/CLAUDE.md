@@ -218,13 +218,27 @@ Este proyecto debe tener acceso vía MCP a:
   falló — no por el token, sino porque la política de red de este entorno de Claude Code bloqueaba
   la salida a `services.leadconnectorhq.com` (dominio de la API de GHL) con un error 403. **Decisión
   de Mariano**: ajustar la política de red de este entorno (en vez de rutear todo a través de n8n),
-  para no depender de que n8n/JARVIS esté sano para poder consultar GHL y tomar decisiones. Pendiente
-  de que Mariano habilite ese dominio en la configuración del entorno y se vuelva a probar la
-  conexión. **Nota importante que sigue en pie**: esto solo resuelve el acceso a GHL desde este
-  entorno de Claude Code — la conexión de JARVIS/n8n a GHL (para que funcione también por WhatsApp)
-  es una integración aparte, todavía sin resolver, porque los MCP tools de n8n disponibles hoy en
-  esta sesión solo permiten leer/ejecutar workflows, no editar la lógica interna de las ramas
-  "Placeholder — GHL" ya existentes ahí.
+  para no depender de que n8n/JARVIS esté sano para poder consultar GHL y tomar decisiones.
+
+  **Conexión validada (14 agosto 2026)**: Mariano habilitó el dominio en la política de red del
+  entorno. Se reprobó la conexión — el túnel TLS a `services.leadconnectorhq.com` se establece sin
+  bloqueo — y se hizo una llamada real autenticada (`GET /locations/{locationId}` con el Private
+  Integration Token, header `Version: 2021-07-28`) que devolvió 200 con los datos reales de la
+  location de GOTIR (nombre, dirección, configuración, permisos). **El acceso directo a la API de
+  GHL desde este entorno de Claude Code queda confirmado y funcionando.** El token vive en `.env`
+  en la raíz del repo (gitignored, nunca versionado); como el contenedor de cada sesión es efímero,
+  el token se pierde entre sesiones y Mariano tiene que volver a pasarlo cuando haga falta —
+  pendiente evaluar si conviene un mecanismo de secretos persistente en vez de repetir esto cada
+  vez.
+
+  **Pendiente inmediato**: con la conexión ya validada, falta construir el servidor MCP propio
+  (`.mcp.json` no existe todavía) que exponga las operaciones de lectura/escritura sobre GHL
+  (contactos, oportunidades, pipelines, calendarios, formularios) como tools reutilizables, en vez
+  de llamadas sueltas a la API por curl. **Nota importante que sigue en pie**: esto solo resuelve el
+  acceso a GHL desde este entorno de Claude Code — la conexión de JARVIS/n8n a GHL (para que
+  funcione también por WhatsApp) es una integración aparte, todavía sin resolver, porque los MCP
+  tools de n8n disponibles hoy en esta sesión solo permiten leer/ejecutar workflows, no editar la
+  lógica interna de las ramas "Placeholder — GHL" ya existentes ahí.
 
   Toda acción de creación o escritura contra GHL requiere confirmación explícita de Mariano antes de
   ejecutarse — ver "Regla de creación/escritura" más arriba — construir la conexión no cambia esa

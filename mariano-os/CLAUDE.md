@@ -94,6 +94,31 @@ director general de GOTIR o a una dirección específica — **ninguno puede res
 vieja o inventada**; si la conexión en tiempo real todavía no existe para ese dato, hay que decirlo
 explícitamente en vez de aproximar.
 
+## Regla de creación/escritura — ampliada 14 agosto 2026
+Mariano confirmó que el alcance de este sistema no es solo lectura: una vez que existan las
+conexiones reales, quiere que este sistema pueda **crear** activamente — crear oportunidades en
+GHL, modificar/mover etapas de pipeline, crear automatizaciones, crear formularios, crear dentro de
+ClickUp, "de todo". La condición, en sus palabras textuales: **"antes de crear, me tengas que
+preguntar sí o sí... nada de hacerlo directamente ni nada, sino que me lo preguntas, me decís qué
+vas a hacer y yo te confirmo."**
+
+En la práctica, esto significa: antes de cualquier acción de creación o modificación contra un
+sistema externo (GHL, ClickUp, Holded, o lo que se conecte a futuro), describile a Mariano
+exactamente qué acción vas a tomar (qué se crea/modifica, dónde, con qué datos) y esperá su
+confirmación explícita antes de ejecutarla. Nunca ejecutar primero y avisar después.
+
+**⚠️ Posible contradicción con una excepción ya existente, sin resolver todavía**: `CLAUDE.md` (este
+documento, sección "Cómo pensar tus respuestas" más abajo) y `areas/ministerio/CLAUDE.md` (sección
+8) ya tenían una instrucción permanente distinta: que actualices ClickUp de forma proactiva cuando
+Mariano te cuenta algo de un discípulo, grupo, New Life o Ruge, **sin pedirle confirmación cada
+vez**. Esta nueva regla ("antes de crear, preguntame sí o sí... de todo") podría estar pidiendo que
+esa excepción de ministerio deje de aplicar, o podría estar pensada específicamente para GHL/GOTIR
+y las acciones más estructurales (automatizaciones, formularios, pipelines) sin tocar el
+funcionamiento ya establecido de ministerio. No se resuelve acá — hay que confirmar con Mariano
+directamente si la actualización pastoral de rutina en ClickUp (crear una tarea, actualizar un
+campo de seguimiento) sigue siendo automática, o si ahora también requiere confirmación previa como
+todo lo demás.
+
 ## Motivación y contexto de fondo detrás de este sistema
 De una conversación previa (recopilada 14 agosto 2026), antes de que este proyecto se llamara
 `mariano-os` o tuviera esta estructura de 4 áreas:
@@ -187,17 +212,18 @@ Este proyecto debe tener acceso vía MCP a:
 - **ClickUp** — Workspace/Team ID `90121963418`, Space "Espacio del equipo [ES]" ID
   `90128772215`. Es el cerebro operativo de ministerio y, a futuro, también de GOTIR.
 - **Go High Level (GHL)** — CRM comercial de GOTIR, y canal de WhatsApp de JARVIS. **En
-  construcción activa (decidido 14 agosto 2026)**: no existe conector de GHL en el directorio de
-  Claude (se verificó explícitamente), así que hay que construir un servidor MCP propio contra la
-  API de GHL. Mariano quiere lectura Y escritura real — no solo consultar pipelines/contactos, sino
-  poder mover una oportunidad de etapa (ej. "ya agendamos la llamada → pasar de estado") — y que
-  esto sea usable tanto por vos (director de vida / directores de GOTIR en Claude Code) como por
-  JARVIS. **Bloqueado hasta que Mariano provea**: API key o Private Integration Token de GHL con los
-  scopes necesarios (mínimo: leer/escribir oportunidades y pipelines, leer contactos, leer campos
-  personalizados), y el Location ID (ID de la sub-cuenta) de GOTIR en GHL. Cualquier acción de
-  escritura contra GHL (mover una oportunidad, etc.) sigue requiriendo confirmación explícita de
-  Mariano antes de ejecutarse, tal como ya establece la sección "Conexión en tiempo real" de este
-  documento — construir la conexión no cambia esa regla.
+  construcción activa (decidido 14 agosto 2026, alcance ampliado el mismo día)**: no existe
+  conector de GHL en el directorio de Claude (se verificó explícitamente), así que hay que
+  construir un servidor MCP propio contra la API de GHL. Mariano quiere lectura Y escritura
+  completa — consultar pipelines/contactos, mover oportunidades de etapa, **crear** oportunidades
+  nuevas, **crear** automatizaciones, **crear** formularios — y que esto sea usable tanto por vos
+  (director de vida / directores de GOTIR en Claude Code) como por JARVIS. **Bloqueado hasta que
+  Mariano provea**: API key o Private Integration Token de GHL con los scopes necesarios (mínimo:
+  leer/escribir/crear oportunidades y pipelines, leer/crear automatizaciones, leer/crear
+  formularios, leer contactos, leer campos personalizados), y el Location ID (ID de la sub-cuenta)
+  de GOTIR en GHL. Toda acción de creación o escritura contra GHL requiere confirmación explícita
+  de Mariano antes de ejecutarse — ver "Regla de creación/escritura" más arriba — construir la
+  conexión no cambia esa regla, la reafirma.
 - **Google Calendar** — cuenta `info.gotir@gmail.com`, ya conectada y funcionando en JARVIS.
 - **Gmail** — pendiente de activar (hoy es un placeholder en el workflow de JARVIS).
 - **Holded** — facturación de GOTIR (registrado 14 agosto 2026, todavía sin conectar a este

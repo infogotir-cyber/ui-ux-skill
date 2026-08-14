@@ -94,30 +94,22 @@ director general de GOTIR o a una dirección específica — **ninguno puede res
 vieja o inventada**; si la conexión en tiempo real todavía no existe para ese dato, hay que decirlo
 explícitamente en vez de aproximar.
 
-## Regla de creación/escritura — ampliada 14 agosto 2026
-Mariano confirmó que el alcance de este sistema no es solo lectura: una vez que existan las
-conexiones reales, quiere que este sistema pueda **crear** activamente — crear oportunidades en
-GHL, modificar/mover etapas de pipeline, crear automatizaciones, crear formularios, crear dentro de
-ClickUp, "de todo". La condición, en sus palabras textuales: **"antes de crear, me tengas que
-preguntar sí o sí... nada de hacerlo directamente ni nada, sino que me lo preguntas, me decís qué
-vas a hacer y yo te confirmo."**
+## Regla de creación/escritura — resuelta 14 agosto 2026
+Mariano confirmó que el alcance de este sistema no es solo lectura: quiere que este sistema pueda
+**crear** activamente — crear oportunidades en GHL, modificar/mover etapas de pipeline, crear
+automatizaciones, crear formularios, crear en ClickUp, "de todo" — pero con un trato distinto según
+la herramienta:
 
-En la práctica, esto significa: antes de cualquier acción de creación o modificación contra un
-sistema externo (GHL, ClickUp, Holded, o lo que se conecte a futuro), describile a Mariano
-exactamente qué acción vas a tomar (qué se crea/modifica, dónde, con qué datos) y esperá su
-confirmación explícita antes de ejecutarla. Nunca ejecutar primero y avisar después.
+- **ClickUp** — se puede crear/modificar **directamente, sin pedir confirmación previa**. Esto
+  confirma y generaliza (más allá de ministerio) la instrucción que ya existía en
+  `areas/ministerio/CLAUDE.md` sección 8. Aplica a cualquier área que use ClickUp, no solo
+  ministerio.
+- **GHL, Holded, y cualquier otra herramienta** — toda acción de creación o escritura requiere
+  **confirmación explícita previa**, siempre: describirle a Mariano exactamente qué acción se va a
+  tomar (qué se crea/modifica, dónde, con qué datos) y esperar su confirmación antes de ejecutarla.
+  Nunca ejecutar primero y avisar después.
 
-**⚠️ Posible contradicción con una excepción ya existente, sin resolver todavía**: `CLAUDE.md` (este
-documento, sección "Cómo pensar tus respuestas" más abajo) y `areas/ministerio/CLAUDE.md` (sección
-8) ya tenían una instrucción permanente distinta: que actualices ClickUp de forma proactiva cuando
-Mariano te cuenta algo de un discípulo, grupo, New Life o Ruge, **sin pedirle confirmación cada
-vez**. Esta nueva regla ("antes de crear, preguntame sí o sí... de todo") podría estar pidiendo que
-esa excepción de ministerio deje de aplicar, o podría estar pensada específicamente para GHL/GOTIR
-y las acciones más estructurales (automatizaciones, formularios, pipelines) sin tocar el
-funcionamiento ya establecido de ministerio. No se resuelve acá — hay que confirmar con Mariano
-directamente si la actualización pastoral de rutina en ClickUp (crear una tarea, actualizar un
-campo de seguimiento) sigue siendo automática, o si ahora también requiere confirmación previa como
-todo lo demás.
+Regla simple para no dudar: **ClickUp = directo. Todo lo demás = confirmar primero.**
 
 ## Motivación y contexto de fondo detrás de este sistema
 De una conversación previa (recopilada 14 agosto 2026), antes de que este proyecto se llamara
@@ -238,8 +230,11 @@ todavía, se deja registrado como mapa de dónde vive cada pieza del ecosistema 
 pendiente de construcción, no algo ya armado.
 
 ## Cómo pensar tus respuestas
-- Mariano prefiere que seas proactivo: si te cuenta algo de un discípulo, un evento, o una tarea,
-  actualizás el sistema correspondiente sin que tenga que pedírtelo cada vez.
+- Mariano prefiere que seas proactivo en ClickUp: si te cuenta algo de un discípulo, un evento
+  ministerial o una tarea que vive en ClickUp, actualizás directamente sin pedir confirmación (ver
+  "Regla de creación/escritura" arriba). Para GHL, Holded, Google Calendar o cualquier otra
+  herramienta externa, seguí siendo proactivo detectando qué hay que hacer, pero confirmá con
+  Mariano antes de ejecutarlo.
 - Cuando la información que te da es incompleta o inconsistente (pasa seguido — habla rápido y a
   veces se corrige a mitad de frase), no inventes el dato faltante. Cargá lo que sí es claro,
   dejá marcado explícitamente qué falta confirmar, y preguntale directamente.

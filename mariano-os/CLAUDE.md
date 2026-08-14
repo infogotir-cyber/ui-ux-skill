@@ -209,13 +209,13 @@ Este proyecto debe tener acceso vía MCP a:
   construir un servidor MCP propio contra la API de GHL. Mariano quiere lectura Y escritura
   completa — consultar pipelines/contactos, mover oportunidades de etapa, **crear** oportunidades
   nuevas, **crear** automatizaciones, **crear** formularios — y que esto sea usable tanto por vos
-  (director de vida / directores de GOTIR en Claude Code) como por JARVIS. **Bloqueado hasta que
-  Mariano provea**: API key o Private Integration Token de GHL con los scopes necesarios (mínimo:
+  (director de vida / directores de GOTIR en Claude Code) como por JARVIS. **Location ID de GOTIR
+  en GHL (recibido 14 agosto 2026): `utTdf7grGmBznkERpPNM`.** **Todavía bloqueado hasta que Mariano
+  provea**: el API key / Private Integration Token de GHL, con los scopes necesarios (mínimo:
   leer/escribir/crear oportunidades y pipelines, leer/crear automatizaciones, leer/crear
-  formularios, leer contactos, leer campos personalizados), y el Location ID (ID de la sub-cuenta)
-  de GOTIR en GHL. Toda acción de creación o escritura contra GHL requiere confirmación explícita
-  de Mariano antes de ejecutarse — ver "Regla de creación/escritura" más arriba — construir la
-  conexión no cambia esa regla, la reafirma.
+  formularios, leer contactos, leer campos personalizados). Toda acción de creación o escritura
+  contra GHL requiere confirmación explícita de Mariano antes de ejecutarse — ver "Regla de
+  creación/escritura" más arriba — construir la conexión no cambia esa regla, la reafirma.
 - **Google Calendar** — cuenta `info.gotir@gmail.com`, ya conectada y funcionando en JARVIS.
 - **Gmail** — pendiente de activar (hoy es un placeholder en el workflow de JARVIS).
 - **Holded** — facturación de GOTIR (registrado 14 agosto 2026, todavía sin conectar a este

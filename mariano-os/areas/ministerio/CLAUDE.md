@@ -102,10 +102,48 @@ Quedan dos cosas pendientes de cargar en cuanto se libere, ambas avisadas por Ma
 
 1. **Retrospectiva de logística Ruge (reto de inicio de año)** — llamada de hoy (14 ago) de Mariano
    con **Marco Guanuchi** y **David Luzuriaga** (su equipo de logística) para evaluar aciertos y
-   errores del área de logística en el Ruge de principio de año, como base para este año. Mariano va
-   a grabar la llamada, pedirle un resumen a una IA, y pasármelo. **Cuando llegue ese resumen**: crear
-   una tarea/nota en la lista "Equipo y Reuniones" (`901220315541`) con el contenido completo — no es
-   solo un recordatorio, es el resumen real de la llamada.
+   errores del área de logística en el Ruge de principio de año, como base para este año. El resumen
+   de IA (Gemini) salió muy pobre (solo un hiper-resumen, sin transcripción), así que Mariano compartió
+   en cambio sus propias notas tomadas en un Excel durante la reunión — **contenido real, ya recibido,
+   listo para cargar en "Equipo y Reuniones" (`901220315541`) en cuanto se libere el rate limit**.
+   ⚠️ Mariano aclaró que son notas de **parte** de la reunión, no necesariamente completas.
+
+   **A corregir → cómo corregirlo** (agrupado por tema para que sea legible; en la fuente original es
+   una sola tabla plana):
+   - *Comunicaciones/radios*: que las radios tengan mayor alcance y sean al menos 15 → alquilar 15
+     radios VHF (a repetir: los 2 teléfonos de largo alcance que ya usaron). Poner número a cada radio
+     y nombre de quién es responsable. Baterías extras y cargarlas antes. Definir canales de radio por
+     área.
+   - *Transporte*: se necesita 1 camión cerrado + 1 camión abierto + coche para pastores + otro coche
+     (el camión pequeño usado esta vez no sirve, buscar uno más grande). Prever dinero para cargar
+     combustible.
+   - *Check-in y carga*: se subieron al camión cosas que no correspondían — cada equipo debe velar por
+     lo que le toca llevar, y logística debe revisar y hacer el check-in en el camión. Cargar por
+     áreas, con el encargado de cada área presente. Check-in de personas: mesas con impresiones ya
+     listas, caja para guardar hojas, un encargado + un ayudante. Cajas listas con bolsas para la
+     primera requisa (la primera requisa se queda en la iglesia — "hablar esto", sin resolver). La
+     pólvora la debe llevar la comisión de Eventos, no logística.
+   - *Vestimenta*: camisas y gorras con talle doble de grande. Hacer con computadora una pegatina
+     prolija para cada camisa/gorra con nombre y talla.
+   - *Comida*: definir tamaño de corte de carne (sin resolver en las notas). Cambiar el desayuno — que
+     no sea siempre "chivito con huevos". Comprar butano extra para las cocinas. Termos: figuran 9 en
+     bodega pero solo hay 8 — falta confirmar el faltante.
+   - *Terreno/instalaciones*: antorchas — faltan 2, y ver cómo prenderlas (ponerlas a cargar al sol con
+     anticipación). Elementos para las prédicas (copa de cristal). El equipo no tenía agua en terreno.
+     Revisar que no quede basura. La tierra tenía piedras y ladrillos — buscar otra tierra. Estacas
+     para la piscina. Para la cruz: buscar pico o cortafierro para el hueco, o hacerlo días antes —
+     David puede prestar herramienta de obra. Armar estructura para el cartel luminoso. Altavoz (ítem
+     suelto, sin desarrollar en las notas).
+   - *Bienestar del equipo*: la noche del viernes hay que atender al equipo para que tenga agua y
+     comida, y llevarles agua al cuarto. Ver dónde va a dormir el equipo, intentar que estén juntos.
+     El sábado hay que traer las mochilas del equipo de "la Lloma" a la nave.
+   - *Rutas*: que todos tengan Wikiloc cargado con las rutas.
+   - *Compras/administrativo*: crear cuenta de Amazon para Ruge. Pedirle a Marco los links para repetir
+     las compras del año pasado. Pedir el itinerario.
+
+   **A repetir (lo que funcionó)**: los 2 teléfonos de largo alcance para comunicación — el resto de
+   la columna "Cosas a repetir" y "Observaciones" de la tabla original quedó vacío en las notas de
+   Mariano.
 2. **Reunión de inventario con las comisiones** — miércoles 19 de agosto 2026, 19:00hs, con las
    comisiones de Seguridad, Cocina y Producción (entre otras) para revisar qué hay, qué falta y qué
    hay que comprar del inventario de Ruge. Crear tarea recordatorio en cuanto se libere el rate limit,

@@ -231,10 +231,49 @@ Este proyecto debe tener acceso vía MCP a:
   pendiente evaluar si conviene un mecanismo de secretos persistente en vez de repetir esto cada
   vez.
 
-  **Pendiente inmediato**: con la conexión ya validada, falta construir el servidor MCP propio
-  (`.mcp.json` no existe todavía) que exponga las operaciones de lectura/escritura sobre GHL
-  (contactos, oportunidades, pipelines, calendarios, formularios) como tools reutilizables, en vez
-  de llamadas sueltas a la API por curl. **Nota importante que sigue en pie**: esto solo resuelve el
+  **Servidor MCP construido y probado (14 agosto 2026)**: `mariano-os/mcp-servers/ghl/server.py`,
+  registrado en `.mcp.json` (raíz del repo). Detalles técnicos:
+  - Python de un solo archivo con dependencias inline (PEP 723) — se ejecuta con
+    `uv run --script`, sin paso de instalación manual ni `requirements.txt`; `uv` ya está
+    disponible en el entorno remoto de Claude Code. Usa `mcp<2.0.0` (FastMCP) a propósito: la
+    versión 2.0.0 de la librería `mcp` renombró `FastMCP` a `MCPServer` y cambió la ruta de
+    import — se fijó el rango de versión para no romperse con ese cambio.
+  - Lee el token desde `.env` en la raíz del repo (nunca hardcodeado), y detecta el proxy TLS de
+    este entorno remoto (`/root/.ccr/ca-bundle.crt`) por presencia de archivo, no por variable de
+    entorno heredada — más robusto porque el proceso que lanza el servidor MCP puede no heredar el
+    `environ` completo. Fuera de este entorno (ej. corriendo local) cae al bundle default de
+    certifi sin configuración extra.
+  - `.mcp.json` reenvía explícitamente `HTTPS_PROXY`/`HTTP_PROXY`/`NO_PROXY`/`SSL_CERT_FILE` al
+    subproceso — se confirmó empíricamente que sin este passthrough las conexiones salientes del
+    servidor MCP quedan bloqueadas por el firewall de red del entorno remoto (error "Host not in
+    allowlist"), aunque el dominio ya esté habilitado, porque el launcher de MCP no hereda el
+    entorno completo por default.
+  - 15 tools: lectura (`ghl_get_location`, `ghl_search_contacts`, `ghl_get_contact`,
+    `ghl_list_pipelines`, `ghl_search_opportunities`, `ghl_get_opportunity`, `ghl_list_calendars`,
+    `ghl_list_calendar_events`, `ghl_list_forms`, `ghl_get_form_submissions`) y escritura
+    (`ghl_create_contact`, `ghl_update_contact`, `ghl_create_opportunity`,
+    `ghl_update_opportunity`, `ghl_create_appointment`).
+  - **La regla de confirmación queda reforzada a nivel de código, no solo de instrucción**: toda
+    tool de escritura tiene un parámetro `confirm` que por default es `False`; si se llama así,
+    devuelve un resumen de la acción sin ejecutarla en vez de crear/modificar algo en GHL. Solo
+    ejecuta de verdad si se la llama explícitamente con `confirm=True`, lo cual solo debería pasar
+    después de que Mariano confirmó.
+  - Probado de punta a punta (14 agosto 2026): handshake MCP, listado de los 15 tools,
+    `ghl_list_pipelines` trajo en vivo los 3 pipelines reales de GOTIR (Pre-venta, Proveedores,
+    Seguimiento) con sus etapas, y se confirmó que `ghl_create_contact` sin `confirm=True` no
+    ejecuta nada.
+  - **Limitaciones conocidas, dejadas registradas en vez de improvisadas**: (1) `ghl_list_forms` y
+    `ghl_get_form_submissions` son de solo lectura porque la API pública de GHL no ofrece un
+    endpoint para crear formularios — se crean a mano en el builder de GHL, no por API. (2)
+    `ghl_list_calendar_events` devolvió `401 not authorized for this scope` en la prueba — el
+    Private Integration Token actual no tiene habilitado el scope de eventos de calendario; hay
+    que agregarlo desde la configuración de la Private Integration en GHL y pedir un token nuevo
+    cuando haga falta usar esa tool.
+  - Falta armar las evaluaciones formales de calidad del servidor (Fase 4 de la skill
+    `mcp-builder`) — se salteó a propósito por ser un servidor interno de un solo usuario, no uno
+    para publicar; se puede retomar si en algún momento se comparte fuera de este proyecto.
+
+  **Nota importante que sigue en pie**: esto solo resuelve el
   acceso a GHL desde este entorno de Claude Code — la conexión de JARVIS/n8n a GHL (para que
   funcione también por WhatsApp) es una integración aparte, todavía sin resolver, porque los MCP
   tools de n8n disponibles hoy en esta sesión solo permiten leer/ejecutar workflows, no editar la

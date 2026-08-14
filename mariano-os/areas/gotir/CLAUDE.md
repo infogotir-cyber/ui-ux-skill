@@ -32,10 +32,10 @@ Estas son las direcciones vigentes hoy:
 1. **Comercial** (`direcciones/comercial/`) — pipeline de ventas. **Ya construida** — ver
    `direcciones/comercial/CLAUDE.md` (plan maestro comercial, estructura de llamada, precedente de
    julio 2026, estado real de automatización n8n/GHL).
-2. **Marketing** (`direcciones/marketing/`) — seguimiento del trabajo de la agencia externa que
-   produce materiales de venta y campañas (ver nota de nombre sin confirmar, abajo). Todavía sin
-   `CLAUDE.md` propio — ver "Contexto operativo adicional" más abajo, que trae material que
-   probablemente termine viviendo ahí.
+2. **Marketing** (`direcciones/marketing/`) — seguimiento del trabajo de la agencia externa
+   **Exxo**, que produce materiales de venta y campañas. Todavía sin `CLAUDE.md` propio — ver
+   "Contexto operativo adicional" más abajo, que trae material que probablemente termine viviendo
+   ahí.
 3. **Finanzas** (`direcciones/finanzas/`) — finanzas + fiscalidad. Todavía sin `CLAUDE.md` propio —
    ídem, ver "Contexto operativo adicional" (la app "GOTIR Finanzas" es candidata a ser la fuente
    operativa de esta dirección).
@@ -72,13 +72,10 @@ nombres reales, y sin inventar estructura que él no haya dado.
   pago saliente) o en `marketing/` (porque es el proveedor de esa dirección). Lectura propuesta por
   Mariano mismo, pendiente de confirmar: la relación con la agencia y su desempeño vive en
   `marketing/`, pero el pago en sí se registra en `facturacion/`.
-- **Nombre de la agencia de marketing, sin resolver — hay dos nombres distintos registrados**: en
-  esta lista de direcciones (14 agosto 2026) Mariano la llamó **"XO"**, y explícitamente marcó que
-  no está seguro si es el nombre real o quedó mal transcrito por voz. Pero en el contexto operativo
-  cargado en este mismo documento (ver más abajo, misma fecha) la agencia aparece nombrada como
-  **"Exxo"**. Es razonable que sea la misma agencia con una transcripción distinta cada vez, pero no
-  se da por sentado — confirmar con Mariano cuál es el nombre correcto antes de usarlo en
-  cualquier automatización o documento nuevo.
+- **Nombre de la agencia de marketing — resuelto (14 agosto 2026)**: es **Exxo**. En un mensaje
+  previo había aparecido transcrita como "XO" (Mariano mismo marcó que no estaba seguro si era el
+  nombre real o una mala transcripción por voz); Mariano confirmó directamente que el nombre
+  correcto es Exxo. Usar siempre "Exxo" de acá en adelante.
 - **Legal**: si "legal comercial" y "legal extranjería" quedan como una sola dirección
   (`direcciones/legal/`) o se separan en dos.
 - **Operaciones / Atención al cliente**: si se termina construyendo como dirección propia o no.

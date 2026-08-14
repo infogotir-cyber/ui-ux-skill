@@ -111,14 +111,14 @@ nombres reales, y sin inventar estructura que él no haya dado.
   - Esta decisión aplica como política general de facturación/finanzas de GOTIR — todavía no se
     definió si es retroactiva (ver el punto de arriba sobre el historial de Exxo) o solo hacia
     adelante.
-  - **⚠️ Tensión sin resolver, detectada al cruzar esto con `direcciones/comercial/CLAUDE.md`**: en
-    la llamada con Hector (sección 3.2 del documento comercial), una de las formas en que Mariano
-    maneja la objeción de precio en economías inestables (caso Venezuela) es ofrecer **pago en
-    cripto** como flexibilidad real al cliente, precisamente para evitar las pérdidas de las casas
-    de cambio. Esa práctica comercial, ya documentada como algo que "se debe mantener", parece
-    chocar con esta nueva política de evitar criptomonedas. No se resuelve acá — hace falta que
-    Mariano confirme si la política de centralización aplica solo a cómo GOTIR paga a sus propios
-    proveedores (como Exxo), o también a qué formas de pago le sigue ofreciendo a sus clientes.
+  - **Tensión con `direcciones/comercial/CLAUDE.md` — resuelta (14 agosto 2026)**: la llamada con
+    Hector (sección 3.2 del documento comercial) documentaba el pago en cripto como una flexibilidad
+    que "se debe mantener" para clientes en economías inestables (caso Venezuela). Mariano confirmó
+    que esa decisión fue puntual, tomada en un momento de necesidad urgente de liquidez, y que **no**
+    la quiere mantener. La política de centralización aplica tanto a pagos a proveedores (Exxo,
+    etc.) como a las formas de pago que se le ofrecen a los clientes — todo en euros, a las cuentas
+    de la empresa en España, sin dólares, pesos argentinos ni criptomonedas. Ya se actualizó la nota
+    correspondiente en `direcciones/comercial/CLAUDE.md`.
 - **Nombre de la agencia de marketing — resuelto**: es **Exxo**. En un mensaje previo había
   aparecido transcrita como "XO"; Mariano confirmó directamente que el nombre correcto es Exxo.
   Usar siempre "Exxo" de acá en adelante.

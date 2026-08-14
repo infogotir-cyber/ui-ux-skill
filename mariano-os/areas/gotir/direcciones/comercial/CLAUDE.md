@@ -207,6 +207,17 @@ Hector: fisioterapeuta venezolano interesado en Ourense. Esta llamada se usó co
 
 > Principio: la objeción de precio en economías inestables casi nunca es sobre el valor del servicio — es sobre la logística real del dinero (remesas, tipo de cambio, liquidez). Resolver la logística importa más que argumentar el precio.
 
+> **⚠️ Actualización de política — 14 agosto 2026, NO repetir la parte de cripto/dólares de acá en
+> adelante**: Mariano confirmó que la opción de cripto ofrecida en esta llamada fue una decisión
+> puntual tomada en un momento de necesidad de liquidez urgente, no una práctica que quiera
+> mantener. Decidió centralizar todos los cobros de GOTIR en euros, a cuentas de la empresa en
+> España (Stripe/PayPal vía GHL, todo facturado por Holded) — sin dólares, sin pesos argentinos, ni
+> criptomonedas, ni para pagos a proveedores ni como opción de pago para clientes. El resto del
+> criterio de esta llamada (transparencia sobre riesgos, resolver la logística del dinero antes que
+> el precio, ofrecer flexibilidad real) sigue vigente — lo que cambió específicamente es *qué*
+> formas de pago están sobre la mesa, no el criterio de fondo. Ver `areas/gotir/CLAUDE.md`, sección
+> "Política de centralización de pagos".
+
 **Errores identificados a corregir (de esta llamada específica):**
 1. **Terminó la llamada sin próxima acción + fecha + responsable** — quedó abierto a que el cliente decida cuándo volver a escribir. Este es el error que más plata cuesta y el que menos cuesta corregir.
 2. Entregó mucha información de golpe (3 ciudades, 3 cursos, precios, financiación) sin pausas de confirmación — probablemente contribuyó a que el precio se sintiera más pesado de lo que era.
@@ -217,7 +228,7 @@ Hector: fisioterapeuta venezolano interesado en Ourense. Esta llamada se usó co
 - Rapport genuino desde su propia historia migratoria, no como técnica sino porque es real.
 - Paciencia real con interrupciones de la vida del cliente (llamadas de familia, niños) sin perder el hilo comercial.
 - Reencuadre de precio como inversión sin ponerse defensivo ni ceder en el valor del servicio.
-- Ofrecer soluciones concretas a los obstáculos que el cliente plantea (ej. pago con tarjeta vs. cripto según la limitación específica que mencione) en vez de repetir la misma opción para todos.
+- Ofrecer soluciones concretas a los obstáculos que el cliente plantea, dentro de las formas de pago vigentes en euros (Stripe/PayPal vía GHL, transferencia, Bizum) — antes se citaba "pago con tarjeta vs. cripto" como ejemplo de esto, pero la opción de cripto ya no aplica desde la política de centralización de pagos (ver nota arriba).
 
 **Por qué sigue siendo relevante hoy**: los errores #1 y #2 de esta llamada son exactamente los mismos patrones que la estructura de llamada (sección 2) y el baseline de julio (sección 3.1) ya habían identificado como las fugas más caras (falta de próxima acción concreta, saturación de información antes del precio). Esta llamada es la evidencia concreta y con nombre propio de un problema que hasta entonces era solo un patrón estadístico — por eso se usa como caso de referencia al entrenar/revisar el criterio comercial.
 

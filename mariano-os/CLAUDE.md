@@ -186,7 +186,18 @@ piezas técnicas que no estaban en la descripción de arriba:
 Este proyecto debe tener acceso vía MCP a:
 - **ClickUp** — Workspace/Team ID `90121963418`, Space "Espacio del equipo [ES]" ID
   `90128772215`. Es el cerebro operativo de ministerio y, a futuro, también de GOTIR.
-- **Go High Level (GHL)** — CRM comercial de GOTIR, y canal de WhatsApp de JARVIS.
+- **Go High Level (GHL)** — CRM comercial de GOTIR, y canal de WhatsApp de JARVIS. **En
+  construcción activa (decidido 14 agosto 2026)**: no existe conector de GHL en el directorio de
+  Claude (se verificó explícitamente), así que hay que construir un servidor MCP propio contra la
+  API de GHL. Mariano quiere lectura Y escritura real — no solo consultar pipelines/contactos, sino
+  poder mover una oportunidad de etapa (ej. "ya agendamos la llamada → pasar de estado") — y que
+  esto sea usable tanto por vos (director de vida / directores de GOTIR en Claude Code) como por
+  JARVIS. **Bloqueado hasta que Mariano provea**: API key o Private Integration Token de GHL con los
+  scopes necesarios (mínimo: leer/escribir oportunidades y pipelines, leer contactos, leer campos
+  personalizados), y el Location ID (ID de la sub-cuenta) de GOTIR en GHL. Cualquier acción de
+  escritura contra GHL (mover una oportunidad, etc.) sigue requiriendo confirmación explícita de
+  Mariano antes de ejecutarse, tal como ya establece la sección "Conexión en tiempo real" de este
+  documento — construir la conexión no cambia esa regla.
 - **Google Calendar** — cuenta `info.gotir@gmail.com`, ya conectada y funcionando en JARVIS.
 - **Gmail** — pendiente de activar (hoy es un placeholder en el workflow de JARVIS).
 - **Holded** — facturación de GOTIR (registrado 14 agosto 2026, todavía sin conectar a este

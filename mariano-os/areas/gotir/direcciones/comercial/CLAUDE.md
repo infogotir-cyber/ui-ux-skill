@@ -266,7 +266,41 @@ Hector: fisioterapeuta venezolano interesado en Ourense. Esta llamada se usó co
 
 ## 5. Estructura de GHL (pipelines, etapas, campos, automatizaciones)
 
-**No hay ninguna fuente disponible (documentos del proyecto ni n8n) que defina esto.** No se debe inventar pipelines, nombres de etapas, campos personalizados ni automatizaciones de GHL que no estén confirmados por Mariano directamente. Si esta sección se necesita completar, pedirle a Mariano que la dicte o la pegue tal cual existe en su cuenta de GHL — no reconstruirla por inferencia a partir del proceso comercial descrito arriba (el proceso describe lo que *debería* reflejarse en GHL, no necesariamente lo que ya está configurado ahí).
+**Sin conexión en vivo todavía (verificado 14 agosto 2026)**: no existe un conector de GoHighLevel
+disponible en el directorio de conectores de Claude ni en `.mcp.json` — se comprobó explícitamente
+al buscarlo. Hoy este sistema no puede leer GHL en tiempo real. Ver `CLAUDE.md` raíz, sección
+"Conexión en tiempo real — principio no negociable": mientras no exista esa conexión, no se
+inventa ni se aproxima estructura de GHL — se documenta acá solo lo que Mariano dicta directamente,
+y se marca explícitamente qué falta confirmar o ver en vivo.
+
+**Lo que Mariano dictó directamente el 14 de agosto de 2026** (primera vez que se documenta algo
+real de la estructura de GHL — antes de esto, la sección estaba vacía por falta de fuente):
+
+- **Pipeline "Preventa"** — cubre desde que entra un lead hasta que paga. Estados mencionados por
+  Mariano, en el orden en que los nombró (⚠️ lista **no confirmada como completa** — dijo
+  textualmente que "hay un montón de estados" dentro de esta pipeline, más de los que enumeró):
+  Lead → Lead calificado → Completó el formulario → Agendó llamada → Tuvimos la llamada → Pronto a
+  pago (y otros estados intermedios sin nombrar todavía).
+- **Pipeline "Seguimiento"** — arranca cuando el cliente ya pagó y se le está dando el servicio.
+  Estados todavía no detallados por Mariano.
+- **Posible tercera pipeline** — Mariano mencionó que "creo que hay una pipeline más", pero no
+  recordó cuál en el momento. **Sin confirmar, no inventar su nombre ni propósito.**
+- **Formularios por trámite** — confirmó que existen formularios distintos según el tipo de trámite
+  (visados, estancias, otros), pero no detalló todavía cuáles ni sus campos.
+
+**Pendiente explícito para completar esta sección**: Mariano pidió que este sistema pueda "ver bien
+todo lo que tenemos organizado en GoHighLevel" y entender la organización real antes de proponer
+mejoras — eso requiere resolver la conexión en vivo (construir un conector/servidor MCP a GHL usando
+su API key, o algún otro camino técnico) o, como alternativa mientras tanto, que Mariano dicte o
+pegue directamente la lista completa de estados de cada pipeline, los campos personalizados, y el
+nombre/propósito de la tercera pipeline. Hasta que pase una de las dos cosas, cualquier "mejora o
+cambio" que se proponga sobre GHL debe basarse solo en lo confirmado arriba, no en inferencia.
+
+No se debe inventar pipelines, nombres de etapas, campos personalizados ni automatizaciones de GHL
+que no estén confirmados por Mariano directamente o vistos en vivo una vez que exista la conexión —
+no reconstruirla por inferencia a partir del proceso comercial descrito en las secciones 1-2 de este
+documento (el proceso describe lo que *debería* reflejarse en GHL, no necesariamente lo que ya está
+configurado ahí).
 
 ---
 

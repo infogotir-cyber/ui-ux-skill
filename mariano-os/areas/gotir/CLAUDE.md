@@ -58,8 +58,10 @@ Estas son las direcciones vigentes hoy:
      puntuales de extranjería para consultarle a este sistema. Es apoyo de conocimiento de producto,
      no un servicio legal formal de terceros.
    - Las dos siguen viviendo, por ahora, bajo un único `direcciones/legal/CLAUDE.md` (no se separó
-     en dos carpetas) — si en la práctica conviene dividirlo en dos documentos más adelante,
-     proponérselo a Mariano cuando haya contenido real de cada rama, no antes.
+     en dos carpetas) — Mariano confirmó explícitamente que prefiere que compartan documento,
+     porque ambas ramas necesitan manejar la misma base de conocimiento legal profunda, aunque el
+     destinatario final de cada respuesta sea distinto (una es para Mariano gestionando GOTIR, la
+     otra es para que Mariano le responda a un cliente).
 7. **IT** (`direcciones/it/`) — tecnología: automatizaciones, corrección de errores, mantenimiento
    y arreglos de GoHighLevel. Dirección nueva, agregada 14 agosto 2026. Todavía sin `CLAUDE.md`
    propio.
@@ -94,6 +96,29 @@ nombres reales, y sin inventar estructura que él no haya dado.
   decisión de diseño: cuando se construya `direcciones/facturacion/CLAUDE.md`, hay que confirmar
   con Mariano si quiere cargar ese historial o arrancar la dirección desde el próximo pago en
   adelante.
+
+- **Política de centralización de pagos — decisión confirmada por Mariano (14 agosto 2026)**: a
+  partir de ahora quiere centralizar todos los cobros/pagos de GOTIR a través de las cuentas de la
+  empresa en España, usando:
+  - Links de pago de **Stripe** y **PayPal**, generados desde **GoHighLevel**.
+  - Todo pasando por **Holded** (el nombre correcto es Holded — Mariano lo mencionó como "Hundred"
+    en un mensaje de voz, se deja registrado por si vuelve a aparecer transcrito así) para que la
+    facturación se genere automáticamente.
+  - Transferencias bancarias o Bizum también se facturan, dentro del mismo circuito.
+  - **Explícitamente quiere evitar** manejar dólares, pesos (ARS) o criptomonedas de ahora en
+    adelante, porque ese dinero queda "por afuera" del sistema — no se guarda en ningún lado
+    centralizado y no se puede automatizar. Esta es la razón de fondo, en sus propias palabras.
+  - Esta decisión aplica como política general de facturación/finanzas de GOTIR — todavía no se
+    definió si es retroactiva (ver el punto de arriba sobre el historial de Exxo) o solo hacia
+    adelante.
+  - **⚠️ Tensión sin resolver, detectada al cruzar esto con `direcciones/comercial/CLAUDE.md`**: en
+    la llamada con Hector (sección 3.2 del documento comercial), una de las formas en que Mariano
+    maneja la objeción de precio en economías inestables (caso Venezuela) es ofrecer **pago en
+    cripto** como flexibilidad real al cliente, precisamente para evitar las pérdidas de las casas
+    de cambio. Esa práctica comercial, ya documentada como algo que "se debe mantener", parece
+    chocar con esta nueva política de evitar criptomonedas. No se resuelve acá — hace falta que
+    Mariano confirme si la política de centralización aplica solo a cómo GOTIR paga a sus propios
+    proveedores (como Exxo), o también a qué formas de pago le sigue ofreciendo a sus clientes.
 - **Nombre de la agencia de marketing — resuelto**: es **Exxo**. En un mensaje previo había
   aparecido transcrita como "XO"; Mariano confirmó directamente que el nombre correcto es Exxo.
   Usar siempre "Exxo" de acá en adelante.

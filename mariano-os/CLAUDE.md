@@ -210,12 +210,25 @@ Este proyecto debe tener acceso vía MCP a:
   completa — consultar pipelines/contactos, mover oportunidades de etapa, **crear** oportunidades
   nuevas, **crear** automatizaciones, **crear** formularios — y que esto sea usable tanto por vos
   (director de vida / directores de GOTIR en Claude Code) como por JARVIS. **Location ID de GOTIR
-  en GHL (recibido 14 agosto 2026): `utTdf7grGmBznkERpPNM`.** **Todavía bloqueado hasta que Mariano
-  provea**: el API key / Private Integration Token de GHL, con los scopes necesarios (mínimo:
-  leer/escribir/crear oportunidades y pipelines, leer/crear automatizaciones, leer/crear
-  formularios, leer contactos, leer campos personalizados). Toda acción de creación o escritura
-  contra GHL requiere confirmación explícita de Mariano antes de ejecutarse — ver "Regla de
-  creación/escritura" más arriba — construir la conexión no cambia esa regla, la reafirma.
+  en GHL (recibido 14 agosto 2026): `utTdf7grGmBznkERpPNM`.** **Token recibido (14 agosto 2026)**:
+  Private Integration Token de GHL, guardado en `.env` en la raíz del repo (nunca en archivos que
+  se suben a git — ver `.gitignore`), con scopes de contactos, oportunidades, pipelines (incluida
+  creación), calendarios, formularios, campos personalizados, conversaciones y
+  pagos/productos. **Estado real de la conexión (14 agosto 2026)**: la primera prueba de conexión
+  falló — no por el token, sino porque la política de red de este entorno de Claude Code bloqueaba
+  la salida a `services.leadconnectorhq.com` (dominio de la API de GHL) con un error 403. **Decisión
+  de Mariano**: ajustar la política de red de este entorno (en vez de rutear todo a través de n8n),
+  para no depender de que n8n/JARVIS esté sano para poder consultar GHL y tomar decisiones. Pendiente
+  de que Mariano habilite ese dominio en la configuración del entorno y se vuelva a probar la
+  conexión. **Nota importante que sigue en pie**: esto solo resuelve el acceso a GHL desde este
+  entorno de Claude Code — la conexión de JARVIS/n8n a GHL (para que funcione también por WhatsApp)
+  es una integración aparte, todavía sin resolver, porque los MCP tools de n8n disponibles hoy en
+  esta sesión solo permiten leer/ejecutar workflows, no editar la lógica interna de las ramas
+  "Placeholder — GHL" ya existentes ahí.
+
+  Toda acción de creación o escritura contra GHL requiere confirmación explícita de Mariano antes de
+  ejecutarse — ver "Regla de creación/escritura" más arriba — construir la conexión no cambia esa
+  regla, la reafirma.
 - **Google Calendar** — cuenta `info.gotir@gmail.com`, ya conectada y funcionando en JARVIS.
 - **Gmail** — pendiente de activar (hoy es un placeholder en el workflow de JARVIS).
 - **Holded** — facturación de GOTIR (registrado 14 agosto 2026, todavía sin conectar a este

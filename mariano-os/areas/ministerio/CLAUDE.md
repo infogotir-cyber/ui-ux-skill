@@ -86,7 +86,8 @@ Ver `areas/personal/CLAUDE.md` para el contexto completo. Contiene las listas "S
   verificar propiedad existente). El detalle línea por línea de qué falta de cada comisión está
   cargado en ClickUp, no hace falta duplicarlo acá — consultalo ahí.
 - Lista "Preparación por Día" — ID `901220315548`.
-- Equipo de logística: Marco Guanuchi y David Luzuriaga.
+- Equipo de logística: Marco Guanuchi, David Luzuriaga y **Julio César** (se sumó al equipo el 17
+  agosto 2026 — antes eran solo Marco y David).
 - Estructura del evento: jueves salida en bus desde la iglesia con senderistas y equipo, primera
   caminata al primer punto, logística de suministro (agua, altavoz, cuerdas) durante los 4 días.
   Ruge es un retiro de hombres en una montaña en Valencia, con logística de insumos, transporte

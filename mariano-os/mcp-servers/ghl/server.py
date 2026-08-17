@@ -64,7 +64,7 @@ async def ghl_request(
     path: str,
     params: dict[str, Any] | None = None,
     json_body: dict[str, Any] | None = None,
-    location_param: str = "locationId",
+    location_param: str | None = "locationId",
 ) -> dict[str, Any]:
     if not GHL_TOKEN:
         raise GHLConfigError(
@@ -79,7 +79,11 @@ async def ghl_request(
     # La mayoria de los endpoints de GHL v2 esperan "locationId" (camelCase),
     # pero /opportunities/search es una excepcion documentada de la propia API
     # de GHL y exige "location_id" (snake_case) — de ahi este parametro.
-    params.setdefault(location_param, GHL_LOCATION_ID)
+    # Algunos endpoints (ej. GET /contacts/:id/notes) no aceptan locationId
+    # de ninguna forma (ni body ni query) — pasar location_param=None para
+    # esos casos y que no se agregue nada.
+    if location_param is not None:
+        params.setdefault(location_param, GHL_LOCATION_ID)
 
     headers = {
         "Authorization": f"Bearer {GHL_TOKEN}",
@@ -273,6 +277,32 @@ async def ghl_update_contact(
 
     await ghl_request("PUT", f"/contacts/{contact_id}", json_body=body)
     return f"Contacto {contact_id} actualizado."
+
+
+@mcp.tool()
+async def ghl_list_contact_notes(contact_id: str) -> str:
+    """Lista las notas ya cargadas en un contacto de GHL (ej. resumenes de llamadas anteriores).
+
+    Usa esto antes de armar un mensaje de seguimiento o un resumen nuevo,
+    para no repetir contexto que ya esta cargado. Cae bajo el scope
+    "contacts.readonly" (GET /contacts/:contactId/notes), ya habilitado.
+
+    Args:
+        contact_id: id del contacto (lo devuelve ghl_search_contacts).
+    """
+    data = await ghl_request("GET", f"/contacts/{contact_id}/notes", location_param=None)
+    notes = data.get("notes", [])
+    if not notes:
+        return "Este contacto no tiene notas cargadas."
+    lines = [f"{len(notes)} nota(s):"]
+    for n in notes:
+        # bodyText es la version en texto plano; body trae HTML (notas que
+        # vienen de Fathom, por ejemplo) — se prefiere bodyText si existe.
+        texto = n.get("bodyText") or n.get("body", "")
+        lines.append(
+            f"--- {n.get('dateAdded') or '(sin fecha)'} (note_id={n.get('id')}) ---\n{texto}"
+        )
+    return "\n".join(lines)
 
 
 @mcp.tool()

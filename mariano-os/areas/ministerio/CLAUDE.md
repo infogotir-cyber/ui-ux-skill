@@ -194,9 +194,16 @@ dentro de un grupo que lidera otra persona** — para no sobrecargar a una sola 
   Sueltos de la retrospectiva (cortafierro/cincel para la cruz). El tema puntual de las **carnes**
   (crítico — hubo un problema de tamaño en un reto anterior) lo ve David junto con Adrián Rivera
   específicamente, confirmado por Mariano el 17 agosto 2026.
-- **Mariano**: Proponer compra a administración de la iglesia; además tomó personalmente el
-  contacto con **Richard** (sobrino de Marco Jurado) para cinta reflectante y figuras de premios,
-  y centraliza con Juliana (administración) la lista de compras que David arme el miércoles.
+- **Mariano**: es el **coordinador general** de todo el reparto, no ejecuta tareas de campo — su
+  rol es armar la propuesta de presupuesto para administración de la iglesia, recibir los
+  presupuestos/listas que arman Marco, Julio y David (ej. la lista de compras que David arme el
+  miércoles) y pasarlos a Juliana (administración), ser el punto de contacto general con Marco
+  Jurado, y controlar que los otros tres cumplan lo que se comprometieron a hacer. **Corrección 17
+  agosto 2026**: en una primera versión de este registro se le había asignado a Mariano la tarea
+  puntual de llamar a Richard (sobrino de Marco Jurado) por cinta reflectante y figuras de premios
+  — Mariano aclaró que eso está mal, esa tarea es parte del bloque de Julio (vía Marco Jurado como
+  contacto), y su propio rol es de coordinación/control, no de ejecución de tareas de compra
+  individuales.
 
 **Dentro del bloque más urgente (Confirmar alquiler, vence 19 ago, encargado general Julio) se
 repartió por persona para no sobrecargar a nadie**: Marco Guanuchi habla con **Andrés Uquillas**

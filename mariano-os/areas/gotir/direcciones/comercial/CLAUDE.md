@@ -353,7 +353,10 @@ queda anotado tal cual, **sin asumir para quién es cada uno**:
     agosto 2026** (`DELETE /users/`, confirmado por la API, con efecto en unos minutos).
   - **Micol Navarro** (`micolnavarro7@gmail.com`) — es **hermana de Sabrina Navarro**. Colabora de
     vez en cuando con marketing y edición de videos. Mariano prefiere que su perfil **siga activo**
-    — no borrar.
+    — no borrar. **Es trabajo pago** (confirmado 17 ago 2026): cobra poco, pero Mariano le paga por
+    cada trabajo que hace — no es una colaboración gratuita/informal. Cualquier tarea nueva que se le
+    pida (ej. editar un directo) implica un pago pendiente a registrar en
+    `direcciones/finanzas/CLAUDE.md` cuando se confirme el monto.
   - **Jonathan Barrionuevo** — era **closer** también, ya no trabaja ni va a trabajar con GOTIR. No
     tenía cuenta activa en `GET /users/` — nada que borrar por ese lado, el calendario que le quedó
     es un resabio visual sin cuenta detrás.

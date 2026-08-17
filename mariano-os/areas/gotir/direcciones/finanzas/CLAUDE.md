@@ -17,25 +17,30 @@
 Mariano fue explícito en que GOTIR está pasando un momento financiero ajustado (es también la razón
 del descuento que le hizo Exxo ese mes — ver `direcciones/marketing/CLAUDE.md`). Deudas reales
 pendientes al 17 de agosto, tal como las dio, **sin convertir monedas ni sumarlas por mi cuenta**
-(son monedas distintas — EUR, USD, ARS — no comparables directamente sin un tipo de cambio real):
+(son monedas distintas — EUR, USD, ARS — no comparables directamente sin un tipo de cambio real),
+ordenadas por prioridad (confirmada por Mariano el 17 agosto 2026):
 
-- **Sabrina Navarro** — **350 EUR**, sueldo de julio 2026. Instrucción específica de Mariano: este
-  pago **no se le hace a ella directamente** — hay que pagarlo **al dueño del departamento donde
-  ella alquila** (pago dirigido, no un depósito a su cuenta). ⚠️ Nota de contexto: el `CLAUDE.md`
-  raíz registra que "Sabrina ya no trabaja en GOTIR", pero acá se le debe sueldo de julio — no se
-  resuelve la aparente tensión por mi cuenta, puede ser un pago retroactivo de cuando todavía
-  colaboraba parcialmente; no asumir. Ver también `direcciones/comercial/CLAUDE.md` sección 5.2
-  para el contexto personal (se trata con discreción).
-- **Exxo Studio** — **USD 237**, saldo pendiente del plan de agosto (de un total de USD 517, se
-  pagaron USD 280 — ver `direcciones/marketing/CLAUDE.md` sección 1 para el detalle completo).
-- **Matías Macho** (cliente) — **140.000 ARS**. Mariano lo mencionó como "un cliente" al que le debe
-  este monto — **no se especificó el motivo** (¿reembolso, comisión, pago de más?). No asumir, solo
-  dejar registrado que es una deuda de GOTIR hacia un cliente, no al revés.
-- **Micol Navarro** — **406.000 ARS**. Es una cuota de una deuda que **Sabrina** está pagando (a
-  Micol, que es su hermana), y esa cuota **cuenta como parte del sueldo de julio que Mariano le debe
-  a Sabrina** — es decir, en vez de pagarle esa porción del sueldo directamente a Sabrina, se le paga
-  a Micol para cubrir la cuota de la deuda de Sabrina con ella. Estructura de pago dirigido, igual
-  que con lo del departamento arriba.
+1. 🔴 **PRIORIDAD — Micol Navarro** — **406.000 ARS**. Es una cuota de una deuda que **Sabrina**
+   está pagando (a Micol, que es su hermana), y esa cuota **cuenta como parte del sueldo de julio
+   que Mariano le debe a Sabrina** — es decir, en vez de pagarle esa porción del sueldo directamente
+   a Sabrina, se le paga a Micol para cubrir la cuota de la deuda de Sabrina con ella. Estructura de
+   pago dirigido, igual que con lo del departamento abajo. **Esta es la deuda que Mariano marcó como
+   la más urgente de resolver de todas.**
+2. **Sabrina Navarro** — **350 EUR**, resto del sueldo de julio 2026 (la parte que no va a Micol).
+   Instrucción específica de Mariano: este pago **no se le hace a ella directamente** — hay que
+   pagarlo **al dueño del departamento donde ella alquila** (pago dirigido, no un depósito a su
+   cuenta). ⚠️ Nota de contexto: el `CLAUDE.md` raíz registra que "Sabrina ya no trabaja en GOTIR",
+   pero acá se le debe sueldo de julio — no se resuelve la aparente tensión por mi cuenta, puede ser
+   un pago retroactivo de cuando todavía colaboraba parcialmente; no asumir. Ver también
+   `direcciones/comercial/CLAUDE.md` sección 5.2 para el contexto personal (se trata con discreción).
+3. **Exxo Studio** — **USD 237**, saldo pendiente del plan de agosto (de un total de USD 517, se
+   pagaron USD 280 — ver `direcciones/marketing/CLAUDE.md` sección 1 para el detalle completo).
+4. **Matías Macho** (cliente) — **140.000 ARS**. Mariano lo mencionó como "un cliente" al que le
+   debe este monto — **no se especificó el motivo** (¿reembolso, comisión, pago de más?). No asumir,
+   solo dejar registrado que es una deuda de GOTIR hacia un cliente, no al revés.
+
+El orden 2-4 es solo el orden en que Mariano las mencionó, no una prioridad confirmada — únicamente
+la de Micol (punto 1) está explícitamente marcada como la más urgente.
 
 ### Necesidad de caja operativa (no es una deuda, es un requerimiento activo)
 - Mariano necesita tener **dinero en pesos argentinos disponible en su cuenta de MercadoPago** para

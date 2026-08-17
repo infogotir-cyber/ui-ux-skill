@@ -274,6 +274,100 @@ async def ghl_update_contact(
     return f"Contacto {contact_id} actualizado."
 
 
+@mcp.tool()
+async def ghl_add_contact_note(
+    contact_id: str,
+    note: str,
+    confirm: bool = False,
+) -> str:
+    """Agrega una nota al contacto en GHL (ej. resumen de una llamada). Requiere confirmacion.
+
+    Pensada para el proceso de "despues de colgar" documentado en
+    direcciones/comercial/CLAUDE.md: pegar el resumen de la llamada (formato
+    Fathom) como nota del contacto. Misma regla que el resto de las tools de
+    escritura: primero confirm=False para mostrarle el texto a Mariano,
+    despues confirm=True si el aprueba.
+
+    NOTA TECNICA (17 agosto 2026): esta tool es nueva y todavia no se probo
+    contra la API real — el Private Integration Token actual no tiene
+    habilitado el scope de notas de contacto. Hay que agregarlo desde la
+    configuracion de la Private Integration en GHL, pedir un token nuevo, y
+    validar esta tool de punta a punta antes de confiar en ella sin revisar
+    el resultado a mano en GHL la primera vez.
+
+    Args:
+        contact_id: id del contacto al que se le agrega la nota.
+        note: Texto completo de la nota.
+        confirm: Poner True solo despues de que Mariano confirmo la accion.
+    """
+    if not note.strip():
+        return "No se paso texto para la nota."
+
+    if not confirm:
+        return (
+            f"NO EJECUTADO (falta confirmacion). Se agregaria esta nota al contacto {contact_id}:\n"
+            f"---\n{note}\n---\n"
+            "Describile esto a Mariano y volve a llamar con confirm=True solo si el confirma."
+        )
+
+    data = await ghl_request(
+        "POST", f"/contacts/{contact_id}/notes", json_body={"body": note}
+    )
+    n = data.get("note", data)
+    return f"Nota agregada al contacto {contact_id} (note_id={n.get('id', '?')})."
+
+
+@mcp.tool()
+async def ghl_create_task(
+    contact_id: str,
+    title: str,
+    due_date: str,
+    body: str = "",
+    confirm: bool = False,
+) -> str:
+    """Crea una tarea de seguimiento asociada a un contacto en GHL. Requiere confirmacion.
+
+    Pensada para la "proxima accion + fecha" que pide la regla de oro
+    comercial (direcciones/comercial/CLAUDE.md) despues de cada llamada.
+    Misma regla de confirmacion que el resto de las tools de escritura.
+
+    NOTA TECNICA (17 agosto 2026): tool nueva, todavia no probada contra la
+    API real por el mismo motivo que ghl_add_contact_note (falta scope en el
+    Private Integration Token). Validar de punta a punta (y revisar el
+    resultado a mano en GHL la primera vez) antes de confiar en ella.
+
+    Args:
+        contact_id: id del contacto al que se le asocia la tarea.
+        title: Titulo corto de la tarea (ej. "Seguimiento Frank Sojo").
+        due_date: Fecha limite en formato ISO 8601 (ej. "2026-08-19T10:00:00+02:00").
+        body: Descripcion/detalle de la tarea (opcional).
+        confirm: Poner True solo despues de que Mariano confirmo la accion.
+    """
+    if not title.strip():
+        return "Falta el titulo de la tarea."
+    if not due_date.strip():
+        return "Falta la fecha limite de la tarea."
+
+    payload = {"title": title, "dueDate": due_date, "completed": False}
+    if body:
+        payload["body"] = body
+
+    if not confirm:
+        return (
+            f"NO EJECUTADO (falta confirmacion). Se crearia esta tarea para el contacto {contact_id}:\n"
+            f"  titulo: {title}\n"
+            f"  fecha limite: {due_date}\n"
+            f"  detalle: {body or '—'}\n"
+            "Describile esto a Mariano y volve a llamar con confirm=True solo si el confirma."
+        )
+
+    data = await ghl_request(
+        "POST", f"/contacts/{contact_id}/tasks", json_body=payload
+    )
+    t = data if isinstance(data, dict) else {}
+    return f"Tarea creada para el contacto {contact_id} (task_id={t.get('id', '?')})."
+
+
 # ---------------------------------------------------------------------------
 # Pipelines / oportunidades
 # ---------------------------------------------------------------------------

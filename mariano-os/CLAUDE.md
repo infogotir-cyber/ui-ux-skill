@@ -263,13 +263,23 @@ Este proyecto debe tener acceso vía MCP a:
     `ghl_list_pipelines` trajo en vivo los 3 pipelines reales de GOTIR (Pre-venta, Proveedores,
     Seguimiento) con sus etapas, y se confirmó que `ghl_create_contact` sin `confirm=True` no
     ejecuta nada.
-  - **Limitaciones conocidas, dejadas registradas en vez de improvisadas**: (1) `ghl_list_forms` y
-    `ghl_get_form_submissions` son de solo lectura porque la API pública de GHL no ofrece un
-    endpoint para crear formularios — se crean a mano en el builder de GHL, no por API. (2)
-    `ghl_list_calendar_events` devolvió `401 not authorized for this scope` en la prueba — el
-    Private Integration Token actual no tiene habilitado el scope de eventos de calendario; hay
-    que agregarlo desde la configuración de la Private Integration en GHL y pedir un token nuevo
-    cuando haga falta usar esa tool.
+  - **Limitación conocida que sigue en pie**: `ghl_list_forms` y `ghl_get_form_submissions` son de
+    solo lectura porque la API pública de GHL no ofrece un endpoint para crear formularios — se
+    crean a mano en el builder de GHL, no por API.
+  - **Resuelto (17 agosto 2026)**: el scope `calendars/events` (que causaba el 401 en
+    `ghl_list_calendar_events`) ya está habilitado y probado — Mariano editó el Private Integration
+    Token existente para agregar el paquete completo de scopes de la sección de abajo. El proceso de
+    edición en GHL resultó ser más largo de lo esperado: (a) la interfaz mostró primero una pantalla
+    de "Rotar y caducar este Token", generando un secreto nuevo (`pit-6ef02ff0...`) que convive con
+    el viejo (`pit-68222b6d...`) durante un período de gracia de ~7 días, sin ser todavía el
+    "principal"; (b) con el token nuevo pero sin forzar el fin del período de gracia, los scopes
+    nuevos no se activaban (probado con `users.readonly`, que sí funcionaba, y `calendars/events`,
+    que seguía en 401 — descartando que fuera demora de propagación); (c) forzar "Expirado ahora" en
+    el token viejo activó de inmediato los permisos del nuevo; (d) aun así, el chip específico de
+    `calendars/events.readonly`/`write` no había quedado guardado la primera vez — hubo que
+    buscarlo explícitamente en el buscador de permisos y volver a agregarlo. Lección para la próxima
+    vez que haga falta editar scopes: no asumir que un chip visible en la UI significa que quedó
+    guardado — probar la tool real después de cada cambio en vez de confiar en la pantalla.
   - **Resuelto (17 agosto 2026)**: el proceso documentado en `direcciones/comercial/CLAUDE.md`
     sección "Después de colgar" (pegar resumen de Fathom en la nota del contacto, crear tarea con
     próxima acción) ya se puede ejecutar por API — se agregaron `ghl_add_contact_note` y

@@ -333,10 +333,21 @@ queda anotado tal cual, **sin asumir para quién es cada uno**:
 - **Asesoría GOTIR** (`Sl5Of5SLsAgTrwxhwoAE`) — tipo personal, slots de 60 min.
 - **Mariano Barcelona** (`DaiTSbSX6zMA7wIclOgw`) — personal, 30 min.
 - Calendarios personales de: Sabrina Navarro, Pamela Jordan, Micol Navarro, Jonathan Barrionuevo,
-  Rocío Jury (30-60 min c/u). ⚠️ Nota: Sabrina Navarro ya no trabaja en GOTIR (ver `CLAUDE.md` raíz)
-  pero su calendario personal sigue configurado — no confirmado si sigue en uso o es un resabio a
-  limpiar. Pamela Jordan, Micol Navarro y Jonathan Barrionuevo no están documentados en ningún otro
-  lugar de este sistema — no asumir su rol, confirmar con Mariano quiénes son.
+  Rocío Jury (30-60 min c/u).
+
+  **Identidades resueltas en gran parte (17 agosto 2026)**, cruzando contra `GET /users/` de GHL (se
+  habilitó el scope `users.readonly` ese mismo día):
+  - **Sabrina Navarro** (`sabriinavarro.sn@gmail.com`) — sigue como usuario **admin activo** en GHL
+    (`deleted: false`), pese a que `CLAUDE.md` raíz dice que ya no trabaja en GOTIR. Esto confirma
+    que el calendario no es un error de configuración — la cuenta en sí sigue viva. Sigue sin
+    confirmarse si es un resabio administrativo sin dar de baja o si todavía colabora de alguna
+    forma — no asumir ninguna de las dos, preguntarle a Mariano directamente.
+  - **Pamela Jordan** (`comercial.gotir@gmail.com`) — admin activa. El email sugiere que está en el
+    área comercial, coherente con tener su propio calendario de citas — sin confirmar el rol exacto.
+  - **Micol Navarro** (`micolnavarro7@gmail.com`) — admin activa. Sin más contexto sobre su rol.
+  - **Jonathan Barrionuevo** — **no aparece en la lista de usuarios de GHL** (ni activo ni dado de
+    baja) pese a tener un calendario propio configurado — a diferencia de los otros tres, esto no se
+    pudo resolver con este método. Sigue sin identificar, confirmar con Mariano.
 
 ### 5.3 Formularios (10 reales, por primera vez con nombres y IDs completos)
 
@@ -358,9 +369,42 @@ trámites). El resto trae información nueva que **no estaba documentada y no se
   de trabajo como prioritarios) — confirmar con Mariano qué son y si son servicios activos o leads
   de algo distinto (ej. Alquiler IberoLocations podría no ser ni siquiera un trámite de inmigración).
 - "Carolina Chapo" y "María García Serrano" no coinciden por nombre completo con los colaboradores
-  ya documentados en la sección 0 (Sebastián, María, Gisella) — **no asumir que "María García
-  Serrano" es la misma "María" de 250€/caso** solo porque comparten nombre de pila; confirmar con
-  Mariano antes de dar por hecho la identidad.
+  ya documentados en la sección 0 (Sebastián, María, Gisella). **Actualización 17 agosto 2026**: se
+  confirmó vía `GET /users/` que ambas son usuarias reales y activas en GHL — "Chapo abogados"
+  (`visados@carolinachapo.com`, rol `user`) y "María García Serrano"
+  (`mariagarciaserranoabogada@gmail.com` — el email dice literalmente "abogada", rol `user`). Esto
+  confirma que son estudios de abogados externos reales, coherente con el patrón de colaboración con
+  estudios ya documentado en la sección 0. **Sigue sin confirmarse** si "María García Serrano" es la
+  misma "María" del dúo Sebastián/María de 250€/caso — el apellido no coincide con nada ya escrito,
+  así que se sigue sin asumir, solo se corrobora que es una abogada real, no un dato inventado.
+
+### 5.3.1 Usuarios de GHL (traído en vivo 17 agosto 2026, vía `GET /users/`)
+
+Lista completa de usuarios de la location, útil como referencia cruzada para identificar personas
+que aparecen en calendarios/formularios/pipelines sin contexto:
+- Mariano Barcelona — `info.gotir@gmail.com` (admin)
+- Asesoria GOTIR — `asesoria.gotir@gmail.com` (admin) — cuenta genérica de asesoría comercial.
+- Clientes GOTIR — `clientes@gotir.es` (admin) — cuenta genérica de cara al cliente.
+- Belén Campana — `adm.gotir.es@gmail.com` (admin) — el email sugiere administración de GOTIR;
+  **no confirmado** si es la misma "Juliana" mencionada como única persona del área administrativa
+  de la iglesia en el contexto de ministerio (son organizaciones distintas — iglesia vs. GOTIR — así
+  que probablemente NO sea la misma persona; se anota la duda solo por si acaso, sin asumir nada).
+- Pamela Jordan — `comercial.gotir@gmail.com` (admin) — ver 5.2.
+- Micol Navarro — `micolnavarro7@gmail.com` (admin) — ver 5.2.
+- Sabrina Navarro — `sabriinavarro.sn@gmail.com` (admin) — ver 5.2.
+- Rocío Jury — `rociojury@gmail.com` (admin) — mismo nombre y apellido que la discípula de FM4.3 en
+  ministerio; no confirmado si es la misma persona colaborando también en GOTIR, aunque es plausible.
+- Agustin Zaya — `agustinzaya@exxoweb.com` (admin) — dominio `exxoweb.com` confirma que es de
+  **Exxo**, la agencia de marketing ya documentada en `areas/gotir/CLAUDE.md`.
+- Gisela Justribo — `licgisellajustribo@gmail.com` (admin) — probablemente la misma "Gisella"
+  (visado de estudios desde origen, arma grupo de WhatsApp) ya documentada en la sección 0, con
+  variante de ortografía del nombre ("Gisela" vs. "Gisella") — el prefijo "lic" en el email
+  (licenciada) es coherente, pero no se confirma al 100% sin que Mariano lo diga.
+- Wilmen Mendoza — `wilmenmendoza@yahoo.com` (user) — el especialista en visados de Venezuela
+  mencionado en la llamada con Frank Sojo (17 ago) — confirma que es un usuario real de GHL, no solo
+  una mención verbal.
+- Chapo abogados — `visados@carolinachapo.com` (user) — ver arriba.
+- María García Serrano — `mariagarciaserranoabogada@gmail.com` (user) — ver arriba.
 
 ### 5.4 Lo que sigue sin poder verse (limitación real de la API, no de este sistema)
 
@@ -438,14 +482,22 @@ Lista honesta de lo que este documento *no* puede responder todavía porque no h
   de leer los datos reales:
   - Confirmar el propósito de la pipeline **Proveedores** (¿es el flujo de comisiones a
     Sebastián/María/estudios colaboradores, u otra cosa?) — sección 5.1.
-  - Confirmar quiénes son **Pamela Jordan**, **Micol Navarro** y **Jonathan Barrionuevo** (aparecen
-    con calendario propio en GHL pero no están documentados en ningún lugar de este sistema), y si
-    el calendario de **Sabrina Navarro** sigue en uso pese a que ya no trabaja en GOTIR — sección
-    5.2.
+  - ~~Confirmar quiénes son Pamela Jordan, Micol Navarro y Jonathan Barrionuevo~~ — **resuelto en
+    parte el 17 agosto 2026** vía `GET /users/`: Pamela Jordan y Micol Navarro son usuarias admin
+    reales de GHL (ver sección 5.2), aunque su rol exacto sigue sin confirmar. **Jonathan
+    Barrionuevo sigue sin identificar** — no aparece ni siquiera en la lista de usuarios de GHL.
+    **Sabrina Navarro**: confirmado que su cuenta sigue activa (no dada de baja) — falta confirmar
+    si realmente sigue colaborando o es un resabio administrativo — sección 5.2.
   - Confirmar qué son los formularios **"Apostilla"** y **"Alquiler IberoLocations"** (no encajan en
-    los servicios descritos en la sección 1.1), y si **"Carolina Chapo"** / **"María García
-    Serrano"** (formularios de trámites derivados) son colaboradores nuevos o los mismos ya
-    documentados con otro nombre — sección 5.3.
+    los servicios descritos en la sección 1.1) — sección 5.3.
+  - ~~Si "Carolina Chapo" / "María García Serrano" son colaboradores nuevos~~ — **resuelto en parte
+    el 17 agosto 2026**: ambas son usuarias reales de GHL, "María García Serrano" confirmada como
+    abogada por su propio email. Sigue sin confirmar si es la misma "María" del dúo Sebastián/María
+    — sección 5.3.
+  - Confirmar si **Belén Campana** (`adm.gotir.es@gmail.com`, admin de GHL) es la misma "Juliana"
+    del área administrativa de la iglesia mencionada en el contexto de Graduación New Life —
+    probablemente no, son organizaciones distintas, pero queda la duda anotada sin resolver —
+    sección 5.3.1.
   - Campos personalizados de contacto/oportunidad: la API no se pudo consultar todavía (el servidor
     MCP no tiene tool para eso) — sección 5.4.
 - Contenido exacto del mini-funnel pre-llamada (qué recibe el lead antes de agendar, más allá de su propósito general).

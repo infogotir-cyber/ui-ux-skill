@@ -55,9 +55,11 @@ la de Micol (punto 1) está explícitamente marcada como la más urgente.
   es para Gisella y la otra mitad para GOTIR** (ver el reparto 50/50 confirmado en
   `direcciones/comercial/CLAUDE.md`, sección 1.2) — es decir, aproximadamente **152.500 ARS netos
   para GOTIR** de este cobro (cálculo directo sobre lo que dio Mariano, no un dato que él haya dado
-  literalmente en pesos). Contacto verificado en GHL (`id=OvKjvt9MQvLiS2R6ofDG`) — existe como
-  contacto pero **todavía sin oportunidad cargada** en ningún pipeline; no se creó ninguna sin que
-  Mariano lo pida.
+  literalmente en pesos). Contacto verificado en GHL (`id=OvKjvt9MQvLiS2R6ofDG`). **Actualizado 17
+  agosto 2026**: se cargó la nota completa de contexto (timing, ciudad origen/destino, motivo,
+  laboral, formación) y se creó la oportunidad **"Regina Epifanio - Visado estudios origen"**
+  (`id=bmu3mMXm0aVco9buvdAv`) en el pipeline Pre-venta, directo en la etapa **"Pronto pago"**, valor
+  668€ (el total del servicio).
 - **Enrique Donna** — supuestamente paga **esta semana** (semana del 17 de agosto), en pesos
   argentinos, **al menos el 50% de dos visas**. ⚠️ Monto exacto todavía sin confirmar — Mariano dijo
   explícitamente "aún no sé cuánto". No asumir que es el mismo monto que Regina Epifanio ni que son

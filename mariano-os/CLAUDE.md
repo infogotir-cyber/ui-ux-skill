@@ -299,6 +299,17 @@ Este proyecto debe tener acceso vía MCP a:
     `location_id` (snake_case). Se agregó un parámetro `location_param` a `ghl_request` para poder
     override por endpoint, y se lo usa específicamente en `ghl_search_opportunities`. Verificado
     funcionando después del fix (trajo en vivo la oportunidad real de un contacto).
+  - **Segundo bug del mismo estilo, corregido el mismo día**: `ghl_create_opportunity` fallaba con
+    `422 locationId can't be undefined`. A diferencia del anterior, acá GHL no lo busca ni en query
+    param ni en un nombre alternativo — lo exige **dentro del body JSON** del POST, algo que
+    `ghl_request` no hace por default (solo agrega `locationId` como query param). Se agregó
+    `"locationId": GHL_LOCATION_ID` directo al body de `ghl_create_opportunity`,
+    `ghl_create_contact` y `ghl_create_appointment` (las tres tools que hacen POST de creación —
+    las de `PUT`/actualización no lo necesitan, GHL ya sabe la location por el ID del recurso en la
+    URL). Verificado funcionando: se creó una oportunidad real (Regina Epifanio) después del fix.
+    **Patrón a tener en cuenta para futuras tools nuevas**: los endpoints de creación (`POST`) de
+    GHL v2 tienden a pedir `locationId` en el body, no en la URL — revisarlo de entrada la próxima
+    vez en lugar de esperar a que falle.
   - Falta armar las evaluaciones formales de calidad del servidor (Fase 4 de la skill
     `mcp-builder`) — se salteó a propósito por ser un servidor interno de un solo usuario, no uno
     para publicar; se puede retomar si en algún momento se comparte fuera de este proyecto.

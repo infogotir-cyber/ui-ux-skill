@@ -201,6 +201,7 @@ async def ghl_create_contact(
     """
     tags = tags or []
     body = {
+        "locationId": GHL_LOCATION_ID,
         "firstName": first_name,
         "lastName": last_name or None,
         "email": email or None,
@@ -491,6 +492,7 @@ async def ghl_create_opportunity(
         confirm: Poner True solo despues de que Mariano confirmo la accion.
     """
     body = {
+        "locationId": GHL_LOCATION_ID,
         "pipelineId": pipeline_id,
         "pipelineStageId": stage_id,
         "name": name,
@@ -639,6 +641,7 @@ async def ghl_create_appointment(
         confirm: Poner True solo despues de que Mariano confirmo la accion.
     """
     body = {
+        "locationId": GHL_LOCATION_ID,
         "calendarId": calendar_id,
         "contactId": contact_id,
         "startTime": start_time,

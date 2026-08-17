@@ -33,9 +33,9 @@ Estas son las direcciones vigentes hoy:
    `direcciones/comercial/CLAUDE.md` (plan maestro comercial, estructura de llamada, precedente de
    julio 2026, estado real de automatización n8n/GHL).
 2. **Marketing** (`direcciones/marketing/`) — seguimiento del trabajo de la agencia externa
-   **Exxo**, que produce materiales de venta y campañas. Todavía sin `CLAUDE.md` propio — ver
-   "Contexto operativo adicional" más abajo, que trae material que probablemente termine viviendo
-   ahí.
+   **Exxo**, que produce materiales de venta y campañas. **Ya construida (17 agosto 2026)** — ver
+   `direcciones/marketing/CLAUDE.md` (relación comercial y precios con Exxo, plan de foco de agosto
+   2026 "menos frentes, más resultado", cronograma real con fechas).
 3. **Finanzas** (`direcciones/finanzas/`) — finanzas + fiscalidad. Todavía sin `CLAUDE.md` propio —
    ídem, ver "Contexto operativo adicional" (la app "GOTIR Finanzas" es candidata a ser la fuente
    operativa de esta dirección).
@@ -133,13 +133,12 @@ nombres reales, y sin inventar estructura que él no haya dado.
 
 ## Orden de construcción recomendado
 Coherente con la filosofía general de "rama por rama" (ver `CLAUDE.md` raíz): no armar las 7 juntas.
-**Comercial ya se construyó primero** (14 agosto 2026), consistente con lo que el `CLAUDE.md` raíz
-ya anticipaba ("probablemente comercial"). El orden de las siguientes 6 direcciones (marketing,
-finanzas, facturación, RR. HH., legal, IT) todavía no está definido por Mariano — cuando lo defina,
-dejarlo anotado acá como referencia. Ver la sección final de este documento para una propuesta de
-orden, dado el material ya disponible en "Contexto operativo adicional" (marketing y finanzas ya
-tienen algo de contexto real; facturación, RR. HH., legal e IT no tienen nada todavía más allá de
-su definición de alcance).
+**Comercial se construyó primero** (14 agosto 2026), consistente con lo que el `CLAUDE.md` raíz ya
+anticipaba ("probablemente comercial"). **Marketing se construyó segunda** (17 agosto 2026), no por
+un orden planeado sino porque Mariano compartió el plan real de Exxo ese día — mismo criterio que
+con comercial: se construye cuando llega contexto real, no por anticipado. El orden de las 5
+direcciones restantes (finanzas, facturación, RR. HH., legal, IT) sigue sin definir — cuando
+Mariano dé contexto real de alguna, esa es la que sigue.
 
 ## Integración con JARVIS y GHL
 GOTIR es el área donde vive la relación más directa con GHL (Go High Level), que es tanto el CRM
@@ -172,16 +171,10 @@ sigue siendo cierto específicamente para GHL/ClickUp como fuente de datos conec
 sistema* (`mariano-os`). Pero sí existe infraestructura operativa real de GOTIR, fuera de este
 sistema, descrita abajo — no confundir "no conectado a mariano-os" con "no existe".
 
-### Landing page / marketing digital
-- Mariano construyó e iteró extensamente sobre una landing page HTML para la consultoría.
-- Cubre múltiples tipos de visado (Nómada Digital, PAC, No Lucrativo, Emprendedor, Work & Holiday,
-  Estudios, Reagrupación, Empresas) con un selector dinámico de visado.
-- Usa formularios embebidos de GHL (iframe) con asignaciones específicas por tipo de visado. El
-  dominio de esos formularios es `link.apisystem.tech`.
-- Colores de marca: navy `#002c49`, azul `#006bad`, amarillo `#ffd600`; fuente Asap; incluye
-  testimonios de clientes.
-- Landing page en producción con sub-landings en `https://landing.gotir.es/elige-tu-tramite`, con
-  enrutamiento por país/región (Argentina, LATAM, Europa, resto del mundo).
+### Landing page / marketing digital — trasladado a `direcciones/marketing/CLAUDE.md`
+Ídem el punto anterior: se movió al documento de Marketing el 17 de agosto de 2026, junto con la
+nota de que no está confirmado cómo se relaciona con el desarrollo de web nuevo que Exxo está
+dando de alta ese mes — no duplicarlo acá.
 
 ### GOTIR Finanzas (app interna)
 - App web de gestión financiera a medida que cubre finanzas de la empresa y personales.
@@ -200,26 +193,9 @@ sistema, descrita abajo — no confundir "no conectado a mariano-os" con "no exi
 - Objetivo: enviar automáticamente preguntas de actualización de estado y actualizar etapas del
   pipeline sin herramientas externas.
 
-### Partnerships y marketing (agencia Exxo)
-- Necesita sumar más estudios de abogados colaboradores (no depender solo de Sebastián/María — ver
-  `direcciones/comercial/CLAUDE.md`), porque los estudios chicos se van de vacaciones, se saturan
-  si crece el volumen de estancias, o pueden dejar de querer trabajar con GOTIR.
-- Trabaja con la agencia de marketing **Exxo** para producir materiales de venta (PDF/video).
-- **Estrategia 1 (estudios de abogados/gestores)**: ofrecerles que GOTIR les resuelva la "primera
-  parte" (atención, requisitos, cierre de venta, plataforma, matriculación a curso, seguro,
-  certificado médico) de sus propios clientes, a cambio de una comisión a negociar por estudio — en
-  paralelo a la colaboración inversa ya existente (GOTIR paga 250€ al abogado por la "segunda
-  parte", ver documento comercial). Se está preparando un PDF de venta con reseñas, capturas/video
-  de la plataforma.
-- **Estrategia 2 (universidades/escuelas de negocio)**: venderse como partners/comerciales de
-  matriculación para instituciones, con foco en visados y estancias por estudios, ofreciendo
-  captación todo el año y contenido (directos, podcasts). Ya trabaja con EU Business School,
-  Albali, ISDE/ISIE y CEI.
-- Marketing general: presencia en redes sociales, sitio web, y por lanzar nueva campaña de Ads en
-  Meta.
-- Lo que mejor está funcionando hoy: directos con centros de formación y colaboraciones con
-  influencers pagadas por comisión por cliente cerrado, con tracking automatizado y transparente
-  (formulario, llamada agendada, pago) para los influencers.
+### Partnerships y marketing (agencia Exxo) — trasladado a `direcciones/marketing/CLAUDE.md`
+Este contenido se movió al documento propio de Marketing cuando se construyó, el 17 de agosto de
+2026 (junto con el plan real de agosto de Exxo) — no duplicarlo acá, consultarlo ahí.
 
 ## Cómo comportarte en esta área
 - No inventes nombres de clientes, cifras de ventas ni datos financieros que no estén ya

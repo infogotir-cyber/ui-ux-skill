@@ -65,6 +65,7 @@ async def ghl_request(
     params: dict[str, Any] | None = None,
     json_body: dict[str, Any] | None = None,
     location_param: str | None = "locationId",
+    api_version: str | None = None,
 ) -> dict[str, Any]:
     if not GHL_TOKEN:
         raise GHLConfigError(
@@ -87,7 +88,10 @@ async def ghl_request(
 
     headers = {
         "Authorization": f"Bearer {GHL_TOKEN}",
-        "Version": GHL_API_VERSION,
+        # Casi todos los endpoints usan GHL_API_VERSION, pero algunos (ej.
+        # POST /conversations/messages) exigen una version distinta —
+        # api_version permite pisarla para esos casos puntuales.
+        "Version": api_version or GHL_API_VERSION,
         "Accept": "application/json",
     }
 
@@ -737,6 +741,69 @@ async def ghl_get_form_submissions(form_id: str, limit: int = 20) -> str:
             f"contact_id={s.get('contactId')} | submission_id={s.get('id')}"
         )
     return "\n".join(lines)
+
+
+# ---------------------------------------------------------------------------
+# Mensajeria / conversaciones
+# ---------------------------------------------------------------------------
+
+
+@mcp.tool()
+async def ghl_send_message(
+    contact_id: str,
+    message: str,
+    channel: Literal["WhatsApp", "SMS", "Email"] = "WhatsApp",
+    confirm: bool = False,
+) -> str:
+    """Manda un mensaje (por defecto WhatsApp) a un contacto de GHL. Requiere confirmacion explicita.
+
+    Sale desde el numero de WhatsApp de GOTIR conectado en GHL (+34603289674,
+    el mismo que aparece en el tag "wa: +34603289674" de los contactos que ya
+    tuvieron conversacion por ahi) — no hace falta elegir remitente, GHL usa
+    el canal ya conectado en la location. Accion IRREVERSIBLE (es un mensaje
+    real a un cliente): primero confirm=False para mostrarle a Mariano el
+    texto exacto y el destinatario, y solo confirm=True despues de que el
+    confirme explicitamente ESE mensaje para ESA persona.
+
+    NOTA TECNICA (17 agosto 2026): POST /conversations/messages exige el
+    header Version 2021-04-15 (distinto del default 2021-07-28 que usa el
+    resto del servidor) — por eso pasa api_version explicito. El scope
+    necesario es "conversations/message.write", ya habilitado en el token.
+
+    Args:
+        contact_id: id del contacto destinatario (lo devuelve ghl_search_contacts).
+        message: Texto del mensaje a enviar.
+        channel: "WhatsApp" (default), "SMS" o "Email".
+        confirm: Poner True solo despues de que Mariano confirmo este mensaje puntual.
+    """
+    if not message.strip():
+        return "No se paso texto para el mensaje."
+
+    if not confirm:
+        return (
+            f"NO EJECUTADO (falta confirmacion). Se mandaria por {channel} al contacto "
+            f"{contact_id}:\n---\n{message}\n---\n"
+            "Describile esto a Mariano tal cual y volve a llamar con confirm=True solo "
+            "si el confirma explicitamente este mensaje para esta persona."
+        )
+
+    body = {
+        "type": channel,
+        "contactId": contact_id,
+        "message": message,
+    }
+    if channel == "WhatsApp":
+        body["fromNumber"] = "+34603289674"
+
+    data = await ghl_request(
+        "POST",
+        "/conversations/messages",
+        json_body=body,
+        location_param=None,
+        api_version="2021-04-15",
+    )
+    m = data.get("message", data)
+    return f"Mensaje enviado al contacto {contact_id} (message_id={m.get('id', data.get('messageId', '?'))})."
 
 
 # ---------------------------------------------------------------------------

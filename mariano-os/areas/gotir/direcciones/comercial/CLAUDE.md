@@ -13,7 +13,7 @@
 ## 0. Quién es quién / cómo leer esto
 
 - **Mariano**: único responsable del área comercial de GOTIR (setter, closer, seguimiento). Fundador de GOTIR. Capacidad real: ~2-3 llamadas comerciales por día. También lidera un área ministerial (Impact Global / New Life / Ruge) — eso comparte infraestructura de automatización (ClickUp) pero **no es parte del negocio GOTIR**, se menciona en la sección 4 solo porque aparece en el mismo workflow de n8n.
-- **Colaboradores externos mencionados**: Sebastián y María (abogados, estancia por estudios, 250€ por caso), Gisella (visado de estudios desde origen, arma grupo de WhatsApp cuando faltan ≤6 meses para la presentación).
+- **Colaboradores externos mencionados**: Sebastián y María — **María confirmada como María García Serrano** (`mariagarciaserranoabogada@gmail.com`, ver sección 5.3.1) — (abogados, estancia por estudios, 250€ por caso), Gisella (visado de estudios desde origen, arma grupo de WhatsApp cuando faltan ≤6 meses para la presentación).
 - **Situación de fondo que explica casi todas las decisiones de abajo**: presión financiera actual + Mariano es el único cuello de botella comercial. Cualquier propuesta nueva debe protegerle tiempo, no consumírselo.
 
 ---
@@ -328,9 +328,12 @@ el servicio:
 
 8 calendarios configurados. Solo el propósito de dos es deducible con confianza del nombre; el resto
 queda anotado tal cual, **sin asumir para quién es cada uno**:
-- **GOTIR** (`6CRhAWYRRL8gMpwwdOyi`) — tipo colectivo, slots de 60 min. Candidato más probable al
-  "[link]" de agendar llamada que se menciona en la sección 1.5/2 de este documento, a confirmar.
-- **Asesoría GOTIR** (`Sl5Of5SLsAgTrwxhwoAE`) — tipo personal, slots de 60 min.
+- **GOTIR** (`6CRhAWYRRL8gMpwwdOyi`) — tipo colectivo, slots de 60 min.
+- **Asesoría GOTIR** (`Sl5Of5SLsAgTrwxhwoAE`) — tipo personal, slots de 60 min. **Confirmado (17 ago
+  2026) directamente por Mariano: es el calendario real que usa para agendar las llamadas
+  comerciales** (`asesoria.gotir@gmail.com`, el mismo usuario con el que atendió la llamada con
+  Frank Sojo el 17 ago — la nota completa de esa llamada vive en GHL, en el contacto de Frank, no
+  duplicada acá) — resuelve el "[link]" de agendar llamada mencionado en la sección 1.5/2.
 - **Mariano Barcelona** (`DaiTSbSX6zMA7wIclOgw`) — personal, 30 min.
 - Calendarios personales de: Sabrina Navarro, Pamela Jordan, Micol Navarro, Jonathan Barrionuevo,
   Rocío Jury (30-60 min c/u).
@@ -345,9 +348,10 @@ queda anotado tal cual, **sin asumir para quién es cada uno**:
   - **Pamela Jordan** (`comercial.gotir@gmail.com`) — admin activa. El email sugiere que está en el
     área comercial, coherente con tener su propio calendario de citas — sin confirmar el rol exacto.
   - **Micol Navarro** (`micolnavarro7@gmail.com`) — admin activa. Sin más contexto sobre su rol.
-  - **Jonathan Barrionuevo** — **no aparece en la lista de usuarios de GHL** (ni activo ni dado de
-    baja) pese a tener un calendario propio configurado — a diferencia de los otros tres, esto no se
-    pudo resolver con este método. Sigue sin identificar, confirmar con Mariano.
+  - **Jonathan Barrionuevo** — no aparece en la lista de usuarios de GHL porque **ya no trabaja ni
+    va a trabajar con GOTIR** (confirmado por Mariano, 17 ago 2026) — era **closer** (cerraba
+    ventas). Su calendario es un resabio de cuando estaba activo; su cuenta de usuario ya se dio de
+    baja, por eso no aparece en `GET /users/` aunque el calendario en sí no se borró.
 
 ### 5.3 Formularios (10 reales, por primera vez con nombres y IDs completos)
 
@@ -368,15 +372,12 @@ trámites). El resto trae información nueva que **no estaba documentada y no se
   1.1 de este documento (que solo lista estancias/visados de estudios y modificación de residencia
   de trabajo como prioritarios) — confirmar con Mariano qué son y si son servicios activos o leads
   de algo distinto (ej. Alquiler IberoLocations podría no ser ni siquiera un trámite de inmigración).
-- "Carolina Chapo" y "María García Serrano" no coinciden por nombre completo con los colaboradores
-  ya documentados en la sección 0 (Sebastián, María, Gisella). **Actualización 17 agosto 2026**: se
-  confirmó vía `GET /users/` que ambas son usuarias reales y activas en GHL — "Chapo abogados"
-  (`visados@carolinachapo.com`, rol `user`) y "María García Serrano"
-  (`mariagarciaserranoabogada@gmail.com` — el email dice literalmente "abogada", rol `user`). Esto
-  confirma que son estudios de abogados externos reales, coherente con el patrón de colaboración con
-  estudios ya documentado en la sección 0. **Sigue sin confirmarse** si "María García Serrano" es la
-  misma "María" del dúo Sebastián/María de 250€/caso — el apellido no coincide con nada ya escrito,
-  así que se sigue sin asumir, solo se corrobora que es una abogada real, no un dato inventado.
+- "Carolina Chapo" y "María García Serrano" — **resuelto 17 agosto 2026**: ambas son usuarias reales
+  y activas en GHL — "Chapo abogados" (`visados@carolinachapo.com`, rol `user`) y "María García
+  Serrano" (`mariagarciaserranoabogada@gmail.com`, rol `user`). **Mariano confirmó directamente que
+  María García Serrano ES la misma "María" del dúo Sebastián/María** (250€/caso, estancia por
+  estudios, sección 0/1.2) — de ahora en más referirse a ella con el apellido completo cuando haga
+  falta precisión. Carolina Chapo queda como colaboradora externa nueva, sin más contexto todavía.
 
 ### 5.3.1 Usuarios de GHL (traído en vivo 17 agosto 2026, vía `GET /users/`)
 
@@ -385,10 +386,10 @@ que aparecen en calendarios/formularios/pipelines sin contexto:
 - Mariano Barcelona — `info.gotir@gmail.com` (admin)
 - Asesoria GOTIR — `asesoria.gotir@gmail.com` (admin) — cuenta genérica de asesoría comercial.
 - Clientes GOTIR — `clientes@gotir.es` (admin) — cuenta genérica de cara al cliente.
-- Belén Campana — `adm.gotir.es@gmail.com` (admin) — el email sugiere administración de GOTIR;
-  **no confirmado** si es la misma "Juliana" mencionada como única persona del área administrativa
-  de la iglesia en el contexto de ministerio (son organizaciones distintas — iglesia vs. GOTIR — así
-  que probablemente NO sea la misma persona; se anota la duda solo por si acaso, sin asumir nada).
+- Belén Campana — `adm.gotir.es@gmail.com` (admin) — **confirmado por Mariano (17 ago 2026): NO es
+  Juliana** (son personas distintas). Era la mano derecha de Mariano, lo ayudaba en todo, pero **ya
+  no trabaja ni va a trabajar con GOTIR** — mismo caso que Jonathan Barrionuevo, su cuenta sigue
+  activa en GHL como resabio administrativo.
 - Pamela Jordan — `comercial.gotir@gmail.com` (admin) — ver 5.2.
 - Micol Navarro — `micolnavarro7@gmail.com` (admin) — ver 5.2.
 - Sabrina Navarro — `sabriinavarro.sn@gmail.com` (admin) — ver 5.2.
@@ -482,22 +483,18 @@ Lista honesta de lo que este documento *no* puede responder todavía porque no h
   de leer los datos reales:
   - Confirmar el propósito de la pipeline **Proveedores** (¿es el flujo de comisiones a
     Sebastián/María/estudios colaboradores, u otra cosa?) — sección 5.1.
-  - ~~Confirmar quiénes son Pamela Jordan, Micol Navarro y Jonathan Barrionuevo~~ — **resuelto en
-    parte el 17 agosto 2026** vía `GET /users/`: Pamela Jordan y Micol Navarro son usuarias admin
-    reales de GHL (ver sección 5.2), aunque su rol exacto sigue sin confirmar. **Jonathan
-    Barrionuevo sigue sin identificar** — no aparece ni siquiera en la lista de usuarios de GHL.
-    **Sabrina Navarro**: confirmado que su cuenta sigue activa (no dada de baja) — falta confirmar
-    si realmente sigue colaborando o es un resabio administrativo — sección 5.2.
+  - ~~Confirmar quiénes son Pamela Jordan, Micol Navarro y Jonathan Barrionuevo~~ y
+    ~~Belén Campana~~ — **resuelto 17 agosto 2026**: Pamela Jordan y Micol Navarro son usuarias
+    admin reales de GHL (rol exacto sin confirmar). Jonathan Barrionuevo y Belén Campana ya no
+    trabajan ni van a trabajar con GOTIR (closer y mano derecha de Mariano, respectivamente) — sus
+    calendarios/cuentas son resabios. Belén **no** es la misma persona que "Juliana" (ministerio).
+    Sabrina Navarro sigue con cuenta activa; sigue sin confirmar si realmente colabora o es resabio
+    — sección 5.2.
   - Confirmar qué son los formularios **"Apostilla"** y **"Alquiler IberoLocations"** (no encajan en
     los servicios descritos en la sección 1.1) — sección 5.3.
-  - ~~Si "Carolina Chapo" / "María García Serrano" son colaboradores nuevos~~ — **resuelto en parte
-    el 17 agosto 2026**: ambas son usuarias reales de GHL, "María García Serrano" confirmada como
-    abogada por su propio email. Sigue sin confirmar si es la misma "María" del dúo Sebastián/María
-    — sección 5.3.
-  - Confirmar si **Belén Campana** (`adm.gotir.es@gmail.com`, admin de GHL) es la misma "Juliana"
-    del área administrativa de la iglesia mencionada en el contexto de Graduación New Life —
-    probablemente no, son organizaciones distintas, pero queda la duda anotada sin resolver —
-    sección 5.3.1.
+  - ~~Si "Carolina Chapo" / "María García Serrano" son colaboradores nuevos~~ — **resuelto 17 agosto
+    2026**: ambas son usuarias reales de GHL. **María García Serrano es la "María" del dúo
+    Sebastián/María**, confirmado por Mariano — sección 5.3.
   - Campos personalizados de contacto/oportunidad: la API no se pudo consultar todavía (el servidor
     MCP no tiene tool para eso) — sección 5.4.
 - Contenido exacto del mini-funnel pre-llamada (qué recibe el lead antes de agendar, más allá de su propósito general).

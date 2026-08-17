@@ -32,13 +32,20 @@
     agosto: USD 217.
 - Los PDFs de venta y las plantillas de mail van incluidos en el plan mensual, sin costo aparte.
 
-**⚠️ Discrepancia detectada, sin resolver — pagos en USD**: Exxo factura en dólares
-estadounidenses. Esto choca con la "Política de centralización de pagos" que Mariano definió en
+**Estado real de pago de agosto (registrado 17 agosto 2026): pago parcial, queda un pendiente.**
+Mariano solo pudo pagarle a Exxo **USD 280**, con fondos que tenía disponibles en Argentina —
+**faltan USD 237** de los 517 totales. Sin fecha definida para completarlo, depende de cuándo tenga
+el dinero. Queda como deuda pendiente con Exxo, a hacer seguimiento cuando se retome el tema.
+
+**⚠️ Discrepancia detectada, sin resolver — pagos en USD (y en este caso, en parte con fondos en
+ARS)**: Exxo factura en dólares estadounidenses, y el pago parcial de agosto salió de fondos en
+Argentina. Esto choca con la "Política de centralización de pagos" que Mariano definió en
 `areas/gotir/CLAUDE.md` (14 agosto 2026), que dice explícitamente que los pagos a proveedores
 —**Exxo incluido, nombrado ahí mismo como ejemplo**— deberían centralizarse en euros, evitando
 dólares, pesos argentinos y criptomonedas. No se resuelve acá si es una excepción consciente
-(Exxo es una agencia extranjera, puede no haber alternativa real) o algo que la política no
-contempló — confirmar con Mariano cuando se construya `direcciones/facturacion/CLAUDE.md`.
+(Exxo es una agencia extranjera, puede no haber alternativa real, y la situación financiera ajustada
+puede haber forzado a usar lo que hubiera disponible) o algo que la política no contempló —
+confirmar con Mariano cuando se construya `direcciones/facturacion/CLAUDE.md`.
 
 ## 2. Foco de agosto 2026 — "Menos frentes, más resultado"
 

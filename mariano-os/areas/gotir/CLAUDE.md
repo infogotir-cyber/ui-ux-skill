@@ -36,9 +36,9 @@ Estas son las direcciones vigentes hoy:
    **Exxo**, que produce materiales de venta y campañas. **Ya construida (17 agosto 2026)** — ver
    `direcciones/marketing/CLAUDE.md` (relación comercial y precios con Exxo, plan de foco de agosto
    2026 "menos frentes, más resultado", cronograma real con fechas).
-3. **Finanzas** (`direcciones/finanzas/`) — finanzas + fiscalidad. Todavía sin `CLAUDE.md` propio —
-   ídem, ver "Contexto operativo adicional" (la app "GOTIR Finanzas" es candidata a ser la fuente
-   operativa de esta dirección).
+3. **Finanzas** (`direcciones/finanzas/`) — finanzas + fiscalidad. **Ya construida (17 agosto
+   2026)** — ver `direcciones/finanzas/CLAUDE.md` (deudas reales pendientes, necesidad de caja
+   operativa, la app "GOTIR Finanzas").
 4. **Facturación** (`direcciones/facturacion/`) — conectada a **Holded**. Facturación a clientes,
    cobros, y **todos los pagos salientes de GOTIR** (incluidos los pagos a proveedores/agencias
    como Exxo — ver nota de confirmación abajo). Mariano la separó explícitamente de "finanzas"
@@ -134,11 +134,12 @@ nombres reales, y sin inventar estructura que él no haya dado.
 ## Orden de construcción recomendado
 Coherente con la filosofía general de "rama por rama" (ver `CLAUDE.md` raíz): no armar las 7 juntas.
 **Comercial se construyó primero** (14 agosto 2026), consistente con lo que el `CLAUDE.md` raíz ya
-anticipaba ("probablemente comercial"). **Marketing se construyó segunda** (17 agosto 2026), no por
-un orden planeado sino porque Mariano compartió el plan real de Exxo ese día — mismo criterio que
-con comercial: se construye cuando llega contexto real, no por anticipado. El orden de las 5
-direcciones restantes (finanzas, facturación, RR. HH., legal, IT) sigue sin definir — cuando
-Mariano dé contexto real de alguna, esa es la que sigue.
+anticipaba ("probablemente comercial"). **Marketing y Finanzas se construyeron después, el mismo 17
+de agosto de 2026**, no por un orden planeado sino porque Mariano compartió contexto real de ambas
+ese día (el plan de Exxo, y después la situación de deudas pendientes) — mismo criterio que con
+comercial: se construye cuando llega contexto real, no por anticipado. El orden de las 4 direcciones
+restantes (facturación, RR. HH., legal, IT) sigue sin definir — cuando Mariano dé contexto real de
+alguna, esa es la que sigue.
 
 ## Integración con JARVIS y GHL
 GOTIR es el área donde vive la relación más directa con GHL (Go High Level), que es tanto el CRM
@@ -176,16 +177,9 @@ sistema, descrita abajo — no confundir "no conectado a mariano-os" con "no exi
 nota de que no está confirmado cómo se relaciona con el desarrollo de web nuevo que Exxo está
 dando de alta ese mes — no duplicarlo acá.
 
-### GOTIR Finanzas (app interna)
-- App web de gestión financiera a medida que cubre finanzas de la empresa y personales.
-- Desplegada en un VPS de Contabo.
-- Construida en React puro + Node.js + SQLite.
-- Usa un sistema de 5 fases/buckets, tracking de ventas, fondos de emergencia, control de
-  presupuesto personal, y seguimiento de diezmo.
-- Una segunda app ("Panel de KPIs") también está desplegada en el mismo servidor — hecha por
-  Sabrina con Claude Code; para mantenerla actualizada hay que subir el código y la aplicación al
-  VPS. (Sabrina ya no trabaja en GOTIR — ver `CLAUDE.md` raíz, sección "Motivación y contexto de
-  fondo", donde Mariano menciona que gran parte de lo técnico lo hacía ella.)
+### GOTIR Finanzas (app interna) — trasladado a `direcciones/finanzas/CLAUDE.md`
+Se movió al documento de Finanzas el 17 de agosto de 2026, junto con las deudas reales pendientes
+que Mariano compartió ese mismo día — no duplicarlo acá.
 
 ### Automatización de leads de proveedores
 - Mariano está diseñando un sistema de gestión de leads de proveedores usando el Workflow AI

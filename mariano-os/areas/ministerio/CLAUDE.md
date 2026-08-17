@@ -75,8 +75,9 @@ pendiente de confirmar.
 #### Graduación New Life — 1 sept 2026 (registrado 17 agosto 2026)
 Tarea madre creada en "Tareas Operativas Recurrentes": **"Graduación New Life — 1 sept 2026"** — ID
 `869ejzpf3` (https://app.clickup.com/t/869ejzpf3). Mariano avisó que faltan varias cosas por
-confirmar/hacer y hay que apurarse. Las 5 subtareas de abajo **quedaron bloqueadas por rate limit de
-ClickUp (~21hs, mismo patrón de siempre)** — crearlas como subtareas de `869ejzpf3` apenas se libere:
+confirmar/hacer y hay que apurarse. Las 9 subtareas de abajo **quedaron bloqueadas por rate limit de
+ClickUp (sigue bloqueado, ~21hs cada vez que se reintenta)** — crearlas como subtareas de
+`869ejzpf3` apenas se libere:
 
 1. **Certificados — verificar impresión (Juliana)**, urgente, vencimiento sugerido 25 ago. El PDF ya
    fue enviado a Mariano; **Juliana** (única persona del área administrativa de la iglesia) dijo que
@@ -97,6 +98,22 @@ ClickUp (~21hs, mismo patrón de siempre)** — crearlas como subtareas de `869e
    nota). Se había indicado toga (sobretodo negro) por estudiante, pero sale 25€ c/u — muy caro y ya
    es muy tarde para avisarles a los estudiantes que deben pagarlo. Descartada para el 1 sept 2026;
    tenerla en cuenta para la próxima graduación, avisando con más anticipación si se quiere cobrar.
+6. **Producción y roles de servicio (Carlos Prado)** — agregado 17 ago. Carlos encabeza producción;
+   Mariano ya le pidió armar un rol/turnos para gente sirviendo en producción, redes sociales, etc.
+   Falta seguimiento de que efectivamente lo esté armando.
+7. **Rol de servidores (Margot)** — agregado 17 ago. Mariano ya le pidió a Margot armar el rol de
+   servidores para que haya gente sirviendo durante la graduación. Falta seguimiento.
+8. **Impact Worship — banda de música (David Valera)** — agregado 17 ago. Mariano ya le pidió a David
+   Valera coordinar Impact Worship para que haya banda en vivo durante la graduación. Falta
+   seguimiento. ⚠️ Mismo nombre y apellido que el David Valera de FM4.5 (discípulo que se activa el 5
+   sept, ver sección 3/4) — no confirmado si es la misma persona, no asumirlo sin que Mariano lo
+   confirme.
+9. **Cronograma de Costa Rica (Pablo Carranza) → reenviar a Carlos Prado → avisar al pastor** —
+   agregado 17 ago, tarea de Mariano mismo. Cadena de coordinación pendiente: (a) Mariano tiene que
+   estar pendiente de que **Pablo Carranza** (equipo de Costa Rica) le envíe el cronograma de la
+   graduación; (b) apenas lo tenga, reenviárselo a **Carlos Prado** para que coordine todos los temas
+   de producción con el cronograma real; (c) una vez confirmado, hablar con **el pastor** para que
+   prepare alguna enseñanza para el evento.
 
 ### Folder: Vida Personal & Espiritual (ID `901212988023`)
 Ojo: pese al nombre, este folder vive dentro del espacio de ministerio en ClickUp por razones

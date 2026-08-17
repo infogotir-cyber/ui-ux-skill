@@ -60,6 +60,16 @@ la de Micol (punto 1) está explícitamente marcada como la más urgente.
   laboral, formación) y se creó la oportunidad **"Regina Epifanio - Visado estudios origen"**
   (`id=bmu3mMXm0aVco9buvdAv`) en el pipeline Pre-venta, directo en la etapa **"Pronto pago"**, valor
   668€ (el total del servicio).
+  - **Contacto/oportunidad duplicados detectados y resueltos parcialmente (17 agosto 2026)**: existía
+    otro contacto de la misma persona — "Regina Lucia" (`contact_id=vXvPgYTIctXeNlM6juoh`, con
+    teléfono `+541149148059`) con su propia oportunidad vieja ("Regina Lucia Epifanio",
+    `id=Q4OXfkauBNkLO5ibprGz`, 0€, sin moverse desde el 12 ago). Mariano confirmó que es la misma
+    persona. Se marcó esa oportunidad vieja como **perdida** — la activa es la nueva de arriba. **No
+    se pudo fusionar el contacto viejo con el nuevo por API** — al intentar copiarle el teléfono al
+    contacto nuevo, GHL lo rechazó con "This location does not allow duplicated contacts" (de hecho
+    confirma que son la misma persona). **Pendiente real**: Mariano tiene que fusionar los dos
+    contactos a mano desde el panel de GHL (opción "combinar contactos") — el servidor MCP no tiene
+    forma de hacerlo, GHL no expone esa función por API pública.
 - **Enrique Donna** — supuestamente paga **esta semana** (semana del 17 de agosto), en pesos
   argentinos, **al menos el 50% de dos visas**. ⚠️ Monto exacto todavía sin confirmar — Mariano dijo
   explícitamente "aún no sé cuánto". No asumir que es el mismo monto que Regina Epifanio ni que son

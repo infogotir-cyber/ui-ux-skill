@@ -58,6 +58,13 @@ la de Micol (punto 1) está explícitamente marcada como la más urgente.
   literalmente en pesos). Contacto verificado en GHL (`id=OvKjvt9MQvLiS2R6ofDG`) — existe como
   contacto pero **todavía sin oportunidad cargada** en ningún pipeline; no se creó ninguna sin que
   Mariano lo pida.
+- **Enrique Donna** — supuestamente paga **esta semana** (semana del 17 de agosto), en pesos
+  argentinos, **al menos el 50% de dos visas**. ⚠️ Monto exacto todavía sin confirmar — Mariano dijo
+  explícitamente "aún no sé cuánto". No asumir que es el mismo monto que Regina Epifanio ni que son
+  el mismo tipo de trámite (dijo "visas" en general, no necesariamente visado de estudios desde
+  origen) — falta que Mariano lo precise. **No se encontró como contacto en GHL** buscando "Enrique
+  Donna" — puede ser que el nombre esté escrito distinto en el sistema, o que todavía no esté
+  cargado como contacto.
 
 ## 2. Cómo comportarte en esta área
 

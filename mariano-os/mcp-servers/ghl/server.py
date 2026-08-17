@@ -826,6 +826,69 @@ async def ghl_send_message(
     )
 
 
+@mcp.tool()
+async def ghl_read_conversation(contact_id: str, limit: int = 20) -> str:
+    """Lee el historial real de mensajes (WhatsApp/SMS/Email) con un contacto de GHL.
+
+    Usa esto SIEMPRE antes de proponerle a Mariano un mensaje de seguimiento
+    nuevo para un contacto — instruccion explicita suya (17 agosto 2026): "ve
+    al chat de whatsapp y lee que fue lo ultimo se hablo" antes de redactar
+    cualquier propuesta. No asumas que las notas de GHL o lo que Mariano
+    recuerda de memoria son el ultimo intercambio real.
+
+    NOTA TECNICA: requiere el scope "conversations/message.readonly" (distinto
+    del de escritura). Si devuelve 401, ese scope no esta habilitado todavia.
+
+    LIMITACION CONOCIDA (verificada 17 agosto 2026): si un mensaje es un nota
+    de voz de WhatsApp (audio), esta tool NO lo transcribe — el entorno de
+    Claude Code Remote bloquea por politica de proxy el acceso a los hosts
+    donde viven los modelos de transcripcion (Hugging Face, Azure), asi que no
+    se pudo montar transcripcion automatica ahi. Esos mensajes se marcan como
+    "[audio, sin transcribir]" en la salida — para esos casos hay que seguir
+    pidiendole a Mariano que cuente el contenido, como se viene haciendo.
+
+    Args:
+        contact_id: id del contacto (lo devuelve ghl_search_contacts).
+        limit: maximo de mensajes a traer, del mas reciente al mas viejo (1-100, default 20).
+    """
+    limit = max(1, min(limit, 100))
+    search = await ghl_request(
+        "GET", "/conversations/search", params={"contactId": contact_id, "limit": 1}
+    )
+    convs = search.get("conversations", [])
+    if not convs:
+        return "Este contacto no tiene ninguna conversacion registrada en GHL."
+    conversation_id = convs[0]["id"]
+
+    data = await ghl_request(
+        "GET",
+        f"/conversations/{conversation_id}/messages",
+        params={"limit": limit},
+        location_param=None,
+    )
+    messages = data.get("messages", {}).get("messages", [])
+    if not messages:
+        return "La conversacion existe pero no tiene mensajes."
+
+    AUDIO_EXT = (".ogg", ".oga", ".opus", ".mp3", ".m4a", ".wav", ".aac", ".amr")
+    lines = [f"{len(messages)} mensaje(s) (del mas reciente al mas viejo):"]
+    for m in messages:
+        direction = "ENTRANTE (contacto)" if m.get("direction") == "inbound" else "saliente (GOTIR)"
+        fecha = m.get("dateAdded", "?")
+        tipo = m.get("messageType", "?")
+        body = (m.get("body") or "").strip()
+        attachments = m.get("attachments") or []
+        audio_flags = [a for a in attachments if a.lower().endswith(AUDIO_EXT)]
+        if audio_flags:
+            body = (body + " " if body else "") + f"[audio, sin transcribir: {audio_flags[0]}]"
+        if not body:
+            # actividades internas (cambio de etapa, cita creada, etc.) sin texto
+            activity = m.get("activity", {})
+            body = f"(actividad interna: {activity.get('title', tipo)})"
+        lines.append(f"--- {fecha} | {direction} | tipo={tipo} ---\n{body}")
+    return "\n".join(lines)
+
+
 # ---------------------------------------------------------------------------
 # Usuarios
 # ---------------------------------------------------------------------------

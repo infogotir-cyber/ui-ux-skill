@@ -492,6 +492,14 @@ por vez**, no procesar la lista entera de una — "vale anda preguntandome de a 
 nota o si se algo de esa persona o no". También pidió, antes de esto, limpiar del pipeline los casos
 que no deberían estar ahí (notas reales que Mariano tiene en WhatsApp pero nunca subió a GHL).
 
+**Regla permanente agregada 17 agosto 2026, tras el caso de Sebastián Gimenez**: antes de proponerle
+a Mariano cualquier mensaje de seguimiento nuevo para un contacto, usar `ghl_read_conversation` para
+leer el historial real del chat — no alcanza con las notas de GHL ni con lo que Mariano recuerda de
+memoria (con Sebastián había un mensaje manual reciente que no estaba en ningún lado más que en el
+chat real). Esta tool no transcribe notas de voz de WhatsApp (limitación de entorno, ver
+`CLAUDE.md` raíz) — si el último mensaje relevante es un audio, hay que pedirle a Mariano que
+cuente el contenido, como ya se viene haciendo.
+
 **Caso 1 — Sebastián Gimenez** (`contact_id=Ma0BBzRU86lESAKjiHqd`) — **resuelto 17 agosto 2026**:
 - Mariano no tenía notas propias en WhatsApp para este caso — se armó el mensaje de seguimiento
   leyendo las notas ya cargadas en GHL (vía `ghl_list_contact_notes`) más sus tags (`reunion-agendada`,
@@ -518,10 +526,36 @@ que no deberían estar ahí (notas reales que Mariano tiene en WhatsApp pero nun
   prioridad baja (a diferencia del duplicado de Regina Epifanio, este no tiene datos reales cargados
   que se puedan perder).
 
+**Caso 2 — Enrique Eduardo Aguilar** (`contact_id=Q5FBh8Be5ujYviVJVg6c`, oportunidad
+`id=1hf61joLaDSIMWZMAtyW`, 670€) — **en curso 17 agosto 2026**:
+- Primera confusión real a tener en cuenta: Mariano mezcló dos veces las notas de este caso con las
+  de otro lead distinto, **Enrique Esmilse Donna** (`contact_id=h5lkSakInpSPfQ33coQQ`, el mismo que
+  estaba pendiente en `direcciones/finanzas/CLAUDE.md` sección 1.1 — ese pendiente queda resuelto,
+  es este contacto). Se distinguieron por evidencia técnica: teléfono de Donna con código de
+  Argentina (+549, coincide con "Viedma, Río Negro") vs. teléfono de Aguilar con código de Brasil
+  (+55, coincide con "Natal, Brasil" — confirmado también porque el email de Aguilar tiene "1957",
+  su año de nacimiento, 69 años en 2026). **Si en el futuro aparecen notas de "Enrique" sin apellido
+  claro, verificar código de país del teléfono antes de asumir a cuál de los dos pertenecen.**
+- Perfil real (dado por Mariano, ya cargado como nota en GHL): 69 años, ciudadano estadounidense
+  jubilado, argentino de nacimiento (madre española), ex personal trainer, vive en Natal (Brasil)
+  con esposa brasileña. Gasista y plomero matriculado en Argentina (quiere curso RITE acá); también
+  camionero especializado en cargas peligrosas/frío — pendiente que Mariano averigüe sobre el CAP.
+  Vendría solo primero, después su esposa. Destino: Ciudad Real. Sin el dinero suficiente todavía.
+  Sugerencia ya dada: estancia por estudios (ISIE o Maude), viviendo en Rafelbuñol.
+- **No tiene notas ni conversación real en GHL para leer** (`ghl_read_conversation` solo trae
+  mensajes automáticos: recordatorios de cita, confirmaciones — nada de una conversación real). El
+  contexto real vino de un audio de WhatsApp que Mariano escuchó y resumió (ver limitación de
+  transcripción de audio en `CLAUDE.md` raíz): Enrique está juntando el dinero para viajar y **quedó
+  en llamar él mismo a Mariano cuando llegue a noviembre 2026** (su fecha tentativa de viaje) con el
+  dinero completo — compromiso atado a esa fecha puntual, no abierto. Por eso no correspondía un
+  mensaje de seguimiento activo ahora (iría en contra de lo que el propio cliente pidió) — en cambio
+  se preparó nota completa + tarea de chequeo preventivo para el 26 de octubre de 2026 (antes de
+  noviembre, por si no llamó). **Pendiente de confirmación de Mariano para cargar ambas en GHL.**
+
 **Pendiente — resto de la lista "llamar hoy"** (mismo ritmo, uno a la vez, preguntando antes de
-actuar en cada caso): Enrique Eduardo Aguilar (670€), Héctor Ojeda (825€, ya tiene una retrospectiva
-de llamada documentada — ver sección 3), Luisana Junguittu (825€), Felipe Nogues Martinena (670€),
-Samuel Salgan (670€), Maria Taly Navarro, Marylaura Guerrero (750€).
+actuar en cada caso): Héctor Ojeda (825€, ya tiene una retrospectiva de llamada documentada — ver
+sección 3), Luisana Junguittu (825€), Felipe Nogues Martinena (670€), Samuel Salgan (670€), Maria
+Taly Navarro, Marylaura Guerrero (750€).
 
 ---
 

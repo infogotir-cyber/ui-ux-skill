@@ -352,6 +352,26 @@ Este proyecto debe tener acceso vía MCP a:
     mande el mensaje manualmente desde su telefono. Caso real: mensaje de seguimiento a Sebastián
     Gimenez (`contact_id=Ma0BBzRU86lESAKjiHqd`) — ver `direcciones/comercial/CLAUDE.md` para el
     detalle completo y el estado pendiente.
+  - **21 tools (ampliado a 21 el 17 agosto 2026, más tarde el mismo día)**: se agregó
+    `ghl_read_conversation` (lee el historial real de mensajes de una conversación vía `GET
+    /conversations/:id/messages`, sin `confirm` porque es de solo lectura). Mariano dio una
+    instrucción permanente: **antes de proponerle cualquier mensaje de seguimiento nuevo, hay que
+    leer primero qué fue lo último que se habló en el chat real** — no alcanza con las notas de GHL
+    ni con lo que él recuerda de memoria (ya pasó una vez con Sebastián Gimenez que había un mensaje
+    manual reciente que no estaba en las notas). Requiere el scope `conversations/message.readonly`,
+    que Mariano agregó ese mismo día — probado de punta a punta contra el chat real de Enrique
+    Eduardo Aguilar, funciona.
+    **Limitación real y permanente (no es un bug a arreglar)**: si un mensaje es una nota de voz de
+    WhatsApp, esta tool NO la transcribe. Se intentó montar transcripción local (se instaló
+    `ffmpeg` y `faster-whisper` vía pip/apt, ambos correctos) pero el proxy de este entorno de
+    Claude Code Remote **bloquea por política explícita** los hosts donde viven los modelos de
+    Whisper (`huggingface.co` y `openaipublic.azureedge.net`, ambos devuelven 403 de la gateway,
+    "policy denial" — no es un timeout ni un error de red transitorio, se confirmó con
+    `$HTTPS_PROXY/__agentproxy/status`). No vale la pena reintentar con otra librería de ASR, el
+    problema es el host bloqueado, no la herramienta. Los mensajes de audio se marcan en la salida
+    como `[audio, sin transcribir]` — para esos casos hay que seguir pidiéndole a Mariano que
+    cuente el contenido (como ya se venía haciendo). Si algún día este servidor corre fuera de este
+    proxy (ej. en la máquina de Mariano), la misma librería debería funcionar sin cambios de código.
 
   **Lista completa de scopes del Private Integration Token (verificada 17 agosto 2026)** — Mariano
   no puede editar el token existente en su cuenta de GHL, tiene que crear uno nuevo; se armó esta

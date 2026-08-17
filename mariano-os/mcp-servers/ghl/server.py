@@ -288,12 +288,11 @@ async def ghl_add_contact_note(
     escritura: primero confirm=False para mostrarle el texto a Mariano,
     despues confirm=True si el aprueba.
 
-    NOTA TECNICA (17 agosto 2026): esta tool es nueva y todavia no se probo
-    contra la API real — el Private Integration Token actual no tiene
-    habilitado el scope de notas de contacto. Hay que agregarlo desde la
-    configuracion de la Private Integration en GHL, pedir un token nuevo, y
-    validar esta tool de punta a punta antes de confiar en ella sin revisar
-    el resultado a mano en GHL la primera vez.
+    NOTA TECNICA (17 agosto 2026): usa el mismo scope "contacts.write" que ya
+    esta habilitado en el token actual (POST /contacts/:contactId/notes cae
+    bajo ese scope segun la doc oficial de GHL, no existe un scope separado
+    de "notas") — no hace falta ningun permiso nuevo. Probada de punta a
+    punta contra un contacto real, funciona.
 
     Args:
         contact_id: id del contacto al que se le agrega la nota.
@@ -331,10 +330,10 @@ async def ghl_create_task(
     comercial (direcciones/comercial/CLAUDE.md) despues de cada llamada.
     Misma regla de confirmacion que el resto de las tools de escritura.
 
-    NOTA TECNICA (17 agosto 2026): tool nueva, todavia no probada contra la
-    API real por el mismo motivo que ghl_add_contact_note (falta scope en el
-    Private Integration Token). Validar de punta a punta (y revisar el
-    resultado a mano en GHL la primera vez) antes de confiar en ella.
+    NOTA TECNICA (17 agosto 2026): mismo caso que ghl_add_contact_note — usa
+    el scope "contacts.write" ya habilitado, sin permisos nuevos. Probada de
+    punta a punta contra un contacto real, funciona (la respuesta viene
+    envuelta en {"task": {...}}, ya contemplado en el parseo).
 
     Args:
         contact_id: id del contacto al que se le asocia la tarea.
@@ -364,7 +363,7 @@ async def ghl_create_task(
     data = await ghl_request(
         "POST", f"/contacts/{contact_id}/tasks", json_body=payload
     )
-    t = data if isinstance(data, dict) else {}
+    t = data.get("task", data)
     return f"Tarea creada para el contacto {contact_id} (task_id={t.get('id', '?')})."
 
 

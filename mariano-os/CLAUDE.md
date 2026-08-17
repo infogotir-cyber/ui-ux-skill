@@ -248,11 +248,12 @@ Este proyecto debe tener acceso vía MCP a:
     servidor MCP quedan bloqueadas por el firewall de red del entorno remoto (error "Host not in
     allowlist"), aunque el dominio ya esté habilitado, porque el launcher de MCP no hereda el
     entorno completo por default.
-  - 15 tools: lectura (`ghl_get_location`, `ghl_search_contacts`, `ghl_get_contact`,
-    `ghl_list_pipelines`, `ghl_search_opportunities`, `ghl_get_opportunity`, `ghl_list_calendars`,
-    `ghl_list_calendar_events`, `ghl_list_forms`, `ghl_get_form_submissions`) y escritura
-    (`ghl_create_contact`, `ghl_update_contact`, `ghl_create_opportunity`,
-    `ghl_update_opportunity`, `ghl_create_appointment`).
+  - 17 tools (ampliado de 15 a 17 el 17 agosto 2026): lectura (`ghl_get_location`,
+    `ghl_search_contacts`, `ghl_get_contact`, `ghl_list_pipelines`, `ghl_search_opportunities`,
+    `ghl_get_opportunity`, `ghl_list_calendars`, `ghl_list_calendar_events`, `ghl_list_forms`,
+    `ghl_get_form_submissions`) y escritura (`ghl_create_contact`, `ghl_update_contact`,
+    `ghl_create_opportunity`, `ghl_update_opportunity`, `ghl_create_appointment`,
+    `ghl_add_contact_note`, `ghl_create_task`).
   - **La regla de confirmación queda reforzada a nivel de código, no solo de instrucción**: toda
     tool de escritura tiene un parámetro `confirm` que por default es `False`; si se llama así,
     devuelve un resumen de la acción sin ejecutarla en vez de crear/modificar algo en GHL. Solo
@@ -268,14 +269,20 @@ Este proyecto debe tener acceso vía MCP a:
     `ghl_list_calendar_events` devolvió `401 not authorized for this scope` en la prueba — el
     Private Integration Token actual no tiene habilitado el scope de eventos de calendario; hay
     que agregarlo desde la configuración de la Private Integration en GHL y pedir un token nuevo
-    cuando haga falta usar esa tool. (3) **No existe ninguna tool para agregar notas a un contacto
-    ni para crear tareas de seguimiento en GHL** (descubierto 17 agosto 2026, al querer cargar el
-    resumen de una llamada comercial real) — el proceso documentado en
-    `direcciones/comercial/CLAUDE.md` sección "Después de colgar" (pegar resumen de Fathom en la
-    nota del contacto, crear tarea con próxima acción) no se puede ejecutar todavía por API; falta
-    agregar tools `ghl_add_contact_note` y `ghl_create_task` (o equivalente) al servidor. Mientras
-    tanto, el seguimiento se resuelve con recordatorios fuera de GHL (`send_later` de este mismo
-    sistema) — no es una solución definitiva, solo un parche.
+    cuando haga falta usar esa tool.
+  - **Resuelto (17 agosto 2026)**: el proceso documentado en `direcciones/comercial/CLAUDE.md`
+    sección "Después de colgar" (pegar resumen de Fathom en la nota del contacto, crear tarea con
+    próxima acción) ya se puede ejecutar por API — se agregaron `ghl_add_contact_note` y
+    `ghl_create_task` al servidor, probadas de punta a punta contra un contacto real (Frank Sojo).
+    **Corrección importante sobre un supuesto propio, anotado para no repetir el error**: en un
+    primer momento se asumió (por analogía con el caso de `ghl_list_calendar_events`) que estas dos
+    tools iban a necesitar un scope nuevo en el Private Integration Token — eso era incorrecto. Se
+    verificó contra `docs/oauth/Scopes.md` del repo oficial `GoHighLevel/highlevel-api-docs`: GHL no
+    tiene scopes separados de "notas" ni "tareas" — `POST /contacts/:contactId/notes` y
+    `POST /contacts/:contactId/tasks` caen bajo el scope general `contacts.write`, que ya estaba
+    habilitado desde el principio. Lección: no asumir que un endpoint nuevo necesita un scope nuevo
+    sin confirmarlo contra la documentación oficial — la única falla real conocida de scope hasta
+    ahora sigue siendo la de `calendars/events` del punto (2).
   - **Bug corregido (17 agosto 2026)**: `ghl_search_opportunities` fallaba siempre con `422` —
     `ghl_request` agrega por default el parámetro `locationId` (camelCase) a toda llamada, pero el
     endpoint `/opportunities/search` de GHL es una excepción documentada de su propia API y exige
@@ -285,6 +292,41 @@ Este proyecto debe tener acceso vía MCP a:
   - Falta armar las evaluaciones formales de calidad del servidor (Fase 4 de la skill
     `mcp-builder`) — se salteó a propósito por ser un servidor interno de un solo usuario, no uno
     para publicar; se puede retomar si en algún momento se comparte fuera de este proyecto.
+
+  **Lista completa de scopes del Private Integration Token (verificada 17 agosto 2026)** — Mariano
+  no puede editar el token existente en su cuenta de GHL, tiene que crear uno nuevo; se armó esta
+  lista para que la habilite completa de una sola vez y cubra tanto lo que ya usan las 17 tools
+  actuales como lo que probablemente haga falta a corto plazo. Nombres verificados contra la tabla
+  oficial de scopes del repo público `GoHighLevel/highlevel-api-docs`
+  (`docs/oauth/Scopes.md`) — en la pantalla de creación de la Private Integration en GHL pueden
+  aparecer agrupados por categoría con toggles de lectura/escritura en vez de como texto plano, pero
+  el nombre técnico es el mismo:
+
+  *Ya en uso por las 17 tools actuales:*
+  - `contacts.readonly` / `contacts.write` — contactos, notas de contacto y tareas de contacto (no
+    hay scope separado de "notas" ni "tareas", van dentro de contacts).
+  - `opportunities.readonly` / `opportunities.write` — oportunidades y pipelines.
+  - `calendars.readonly` — listar calendarios.
+  - `calendars/events.readonly` / `calendars/events.write` — eventos/citas de calendario. **Este es
+    el que faltaba en el token anterior** (causaba el error 401 en `ghl_list_calendar_events`).
+  - `forms.readonly` — listar formularios y leer submissions.
+  - `locations.readonly` — datos generales de la location de GOTIR.
+
+  *No usadas todavía por ninguna tool, pero prudente habilitar ahora ya que se está creando el token
+  de cero (evita tener que repetir este proceso pronto):*
+  - `locations/customFields.readonly` / `locations/customFields.write` — campos personalizados,
+    mencionados en el alcance original que Mariano pidió el 14 agosto pero todavía sin tool propia.
+  - `locations/tags.readonly` / `locations/tags.write` — gestión de etiquetas a nivel location.
+  - `conversations.readonly` / `conversations.write` y `conversations/message.readonly` /
+    `conversations/message.write` — leer y mandar mensajes de WhatsApp/conversaciones, parte del
+    alcance original ("conversaciones") y necesario el día que se conecte JARVIS de verdad a GHL.
+  - `payments/orders.readonly`, `payments/transactions.readonly`, `products.readonly`,
+    `products/prices.readonly` — pagos/productos, parte del alcance original que Mariano ya había
+    pedido el 14 agosto.
+
+  *No incluir (fuera del alcance de este sistema, son de nivel Agencia no Sub-Account, o no
+  aplican):* scopes de `locations.write` (crear/borrar locations enteras), `oauth.*`,
+  `saas/location.write`, `socialplanner/*` (redes sociales, no es parte de lo que pidió Mariano).
 
   **Nota importante que sigue en pie**: esto solo resuelve el
   acceso a GHL desde este entorno de Claude Code — la conexión de JARVIS/n8n a GHL (para que

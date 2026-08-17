@@ -64,6 +64,7 @@ async def ghl_request(
     path: str,
     params: dict[str, Any] | None = None,
     json_body: dict[str, Any] | None = None,
+    location_param: str = "locationId",
 ) -> dict[str, Any]:
     if not GHL_TOKEN:
         raise GHLConfigError(
@@ -75,7 +76,10 @@ async def ghl_request(
         raise GHLConfigError("Falta GHL_LOCATION_ID en el .env de la raiz del repo.")
 
     params = dict(params or {})
-    params.setdefault("locationId", GHL_LOCATION_ID)
+    # La mayoria de los endpoints de GHL v2 esperan "locationId" (camelCase),
+    # pero /opportunities/search es una excepcion documentada de la propia API
+    # de GHL y exige "location_id" (snake_case) — de ahi este parametro.
+    params.setdefault(location_param, GHL_LOCATION_ID)
 
     headers = {
         "Authorization": f"Bearer {GHL_TOKEN}",
@@ -326,7 +330,9 @@ async def ghl_search_opportunities(
     if query:
         params["q"] = query
 
-    data = await ghl_request("GET", "/opportunities/search", params=params)
+    data = await ghl_request(
+        "GET", "/opportunities/search", params=params, location_param="location_id"
+    )
     opps = data.get("opportunities", [])
     if not opps:
         return "No se encontraron oportunidades con ese criterio."

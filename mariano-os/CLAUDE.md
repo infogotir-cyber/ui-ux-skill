@@ -268,7 +268,20 @@ Este proyecto debe tener acceso vía MCP a:
     `ghl_list_calendar_events` devolvió `401 not authorized for this scope` en la prueba — el
     Private Integration Token actual no tiene habilitado el scope de eventos de calendario; hay
     que agregarlo desde la configuración de la Private Integration en GHL y pedir un token nuevo
-    cuando haga falta usar esa tool.
+    cuando haga falta usar esa tool. (3) **No existe ninguna tool para agregar notas a un contacto
+    ni para crear tareas de seguimiento en GHL** (descubierto 17 agosto 2026, al querer cargar el
+    resumen de una llamada comercial real) — el proceso documentado en
+    `direcciones/comercial/CLAUDE.md` sección "Después de colgar" (pegar resumen de Fathom en la
+    nota del contacto, crear tarea con próxima acción) no se puede ejecutar todavía por API; falta
+    agregar tools `ghl_add_contact_note` y `ghl_create_task` (o equivalente) al servidor. Mientras
+    tanto, el seguimiento se resuelve con recordatorios fuera de GHL (`send_later` de este mismo
+    sistema) — no es una solución definitiva, solo un parche.
+  - **Bug corregido (17 agosto 2026)**: `ghl_search_opportunities` fallaba siempre con `422` —
+    `ghl_request` agrega por default el parámetro `locationId` (camelCase) a toda llamada, pero el
+    endpoint `/opportunities/search` de GHL es una excepción documentada de su propia API y exige
+    `location_id` (snake_case). Se agregó un parámetro `location_param` a `ghl_request` para poder
+    override por endpoint, y se lo usa específicamente en `ghl_search_opportunities`. Verificado
+    funcionando después del fix (trajo en vivo la oportunidad real de un contacto).
   - Falta armar las evaluaciones formales de calidad del servidor (Fase 4 de la skill
     `mcp-builder`) — se salteó a propósito por ser un servidor interno de un solo usuario, no uno
     para publicar; se puede retomar si en algún momento se comparte fuera de este proyecto.

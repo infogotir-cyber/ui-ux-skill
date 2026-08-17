@@ -312,21 +312,49 @@ Este proyecto debe tener acceso vía MCP a:
   - `forms.readonly` — listar formularios y leer submissions.
   - `locations.readonly` — datos generales de la location de GOTIR.
 
-  *No usadas todavía por ninguna tool, pero prudente habilitar ahora ya que se está creando el token
-  de cero (evita tener que repetir este proceso pronto):*
+  *No usadas todavía por ninguna tool, pero con un plan concreto ya documentado que las va a
+  necesitar pronto (habilitar ahora, ya que se está creando el token de cero):*
   - `locations/customFields.readonly` / `locations/customFields.write` — campos personalizados,
-    mencionados en el alcance original que Mariano pidió el 14 agosto pero todavía sin tool propia.
+    parte del alcance original que Mariano pidió el 14 agosto pero todavía sin tool propia.
   - `locations/tags.readonly` / `locations/tags.write` — gestión de etiquetas a nivel location.
   - `conversations.readonly` / `conversations.write` y `conversations/message.readonly` /
     `conversations/message.write` — leer y mandar mensajes de WhatsApp/conversaciones, parte del
     alcance original ("conversaciones") y necesario el día que se conecte JARVIS de verdad a GHL.
-  - `payments/orders.readonly`, `payments/transactions.readonly`, `products.readonly`,
-    `products/prices.readonly` — pagos/productos, parte del alcance original que Mariano ya había
-    pedido el 14 agosto.
+  - `payments/orders.readonly`, `payments/transactions.readonly`, `payments/subscriptions.readonly`
+    — pagos y financiaciones en cuotas (GOTIR vende con planes de 2, 7, 10, 12 cuotas), parte del
+    alcance original de pagos/productos.
+  - `products.readonly`, `products/prices.readonly` — productos/precios, ídem.
+  - `users.readonly` — lista los usuarios/staff de la location. Sirve concretamente para resolver un
+    pendiente ya detectado en `direcciones/comercial/CLAUDE.md` sección 5.2: hay calendarios de GHL
+    con nombres (Pamela Jordan, Micol Navarro, Jonathan Barrionuevo) que no están documentados en
+    ningún lado — con este scope se podría consultar quiénes son directamente por API en vez de
+    tener que preguntarle a Mariano.
+  - `workflows.readonly` — lista los workflows configurados en GHL. Relevante para la
+    "Automatización de leads de proveedores" que Mariano ya describió en `areas/gotir/CLAUDE.md`
+    ("Workflow AI nativo de GoHighLevel"), que todavía no se construyó.
 
-  *No incluir (fuera del alcance de este sistema, son de nivel Agencia no Sub-Account, o no
-  aplican):* scopes de `locations.write` (crear/borrar locations enteras), `oauth.*`,
-  `saas/location.write`, `socialplanner/*` (redes sociales, no es parte de lo que pidió Mariano).
+  *Opcionales de costo casi nulo (no hay ninguna necesidad concreta documentada todavía, pero como
+  ya se está creando el token de cero, tildarlos ahora evita una tercera vuelta más adelante si
+  surge la necesidad) — a discreción de Mariano, no imprescindibles:*
+  - `calendars.write` — crear/editar calendarios (hoy solo se leen).
+  - `locations/customValues.readonly` / `locations/customValues.write` — "valores personalizados"
+    de la location (variables reutilizables en plantillas), distinto de los custom fields.
+  - `locations/tasks.readonly` — búsqueda de tareas a nivel location completa (no por contacto).
+  - `campaigns.readonly` — campañas de email/SMS, relevante el día que se construya
+    `direcciones/marketing/CLAUDE.md`.
+  - `businesses.readonly` — agrupar contactos bajo una empresa (podría servir para modelar
+    colaboradores B2B como Exxo o los estudios de abogados).
+
+  *No incluir (fuera del alcance de este sistema, son de nivel Agencia no Sub-Account, se
+  superponen con una herramienta que GOTIR ya decidió usar en su lugar, o son features que Mariano
+  no pidió):* `locations.write` (crear/borrar locations enteras, es de Agencia), `oauth.*` y
+  `saas/*` (Agencia), `socialplanner/*` (redes sociales, no pedido), `invoices.*` /
+  `invoices/schedule.*` / `invoices/template.*` (GOTIR ya decidió que la facturación pasa por
+  Holded, no por el módulo de invoices de GHL — ver "Política de centralización de pagos" en
+  `areas/gotir/CLAUDE.md`), `blogs/*` y `courses.write` (funciones de GHL que GOTIR no usa),
+  `objects/*` (objetos personalizados avanzados, no hay caso de uso), `snapshots.readonly`
+  (plantillas de location, uso de Agencia), `medias.*`, `links.*`, `funnels/*`, `emails/builder.*` /
+  `emails/schedule.readonly`, `surveys.readonly` — ninguno tiene un uso documentado hoy.
 
   **Nota importante que sigue en pie**: esto solo resuelve el
   acceso a GHL desde este entorno de Claude Code — la conexión de JARVIS/n8n a GHL (para que

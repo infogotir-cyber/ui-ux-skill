@@ -56,7 +56,7 @@ pendiente de confirmar.
 
 ### Folder: New Life (ID `901212988018`)
 - Lista "Ciclos y Alumnos" — ID `901220315606` (vacía, pendiente de cargar ciclo actual y alumnos).
-- Lista "Tareas Operativas Recurrentes" — ID `901220315608` (vacía).
+- Lista "Tareas Operativas Recurrentes" — ID `901220315608`.
 - Equipo de apoyo operativo de Mariano en New Life: Adrián Caro e Ingrid Guaño.
 - Cada ciclo de New Life arranca con **Encuentro**: un retiro de un día, ~2 veces al año (uno hacia
   marzo).
@@ -68,8 +68,35 @@ pendiente de confirmar.
   de deserciones — todavía viven fuera de ClickUp.
 - Después de New Life viene **Lanzamiento** (2/año, debe enviar la lista definitiva de candidatos)
   y Graduación (certificados con nombres revisados y enviados a Costa Rica, coordinación con
-  Producción, Impact Worship, el pastor, decoración con globos, regalo de galleta personalizada,
-  togas y bandas "New Life").
+  Producción, Impact Worship, el pastor, decoración, un detalle por estudiante, togas y bandas
+  "New Life" — descripción general del proceso recurrente; ver el detalle real del ciclo actual
+  abajo).
+
+#### Graduación New Life — 1 sept 2026 (registrado 17 agosto 2026)
+Tarea madre creada en "Tareas Operativas Recurrentes": **"Graduación New Life — 1 sept 2026"** — ID
+`869ejzpf3` (https://app.clickup.com/t/869ejzpf3). Mariano avisó que faltan varias cosas por
+confirmar/hacer y hay que apurarse. Las 5 subtareas de abajo **quedaron bloqueadas por rate limit de
+ClickUp (~21hs, mismo patrón de siempre)** — crearlas como subtareas de `869ejzpf3` apenas se libere:
+
+1. **Certificados — verificar impresión (Juliana)**, urgente, vencimiento sugerido 25 ago. El PDF ya
+   fue enviado a Mariano; **Juliana** (única persona del área administrativa de la iglesia) dijo que
+   los iba a imprimir — falta confirmar si ya lo hizo.
+2. **Bandas — links de proveedores (Adrián Caro)**, vencimiento sugerido 25 ago. Adrián tiene que
+   entregar 2 links de proveedores de bandas **personalizadas** con el texto "New Life" y 2 links de
+   bandas **genéricas sin personalizar** (opción más económica) — falta confirmar si ya los buscó.
+3. **Chocolate decorado "completado" — comprar y decorar (Adrián Caro)**, vencimiento sugerido 28
+   ago. Detalle por estudiante: un chocolate decorado con un papel que diga "completado". Adrián
+   tiene que elegir y comprar el chocolate, reportarle a Mariano qué chocolate es/dónde lo compra/
+   cuánto cuesta (para pasar presupuesto), y encargarse de la decoración de cada uno. Mariano fue
+   explícito: no alcanza con que esté delegado, necesita que Adrián lo haga de verdad y reporte.
+4. **Decoración — globos, sillas y Ferrero Rocher (Ingrid Guaño + Lurbin)**, vencimiento sugerido 28
+   ago. Ingrid coordina con **Lurbin** (decoradora, apoyo externo) y tiene que reportar el estado de:
+   decoración con globos, forrado de las sillas, y un detalle para los estudiantes con bombones
+   Ferrero Rocher.
+5. **Togas — descartadas para esta graduación, evaluar para la próxima** (sin vencimiento, es una
+   nota). Se había indicado toga (sobretodo negro) por estudiante, pero sale 25€ c/u — muy caro y ya
+   es muy tarde para avisarles a los estudiantes que deben pagarlo. Descartada para el 1 sept 2026;
+   tenerla en cuenta para la próxima graduación, avisando con más anticipación si se quiere cobrar.
 
 ### Folder: Vida Personal & Espiritual (ID `901212988023`)
 Ojo: pese al nombre, este folder vive dentro del espacio de ministerio en ClickUp por razones

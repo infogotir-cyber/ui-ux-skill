@@ -166,6 +166,53 @@ Reuniones" (`901220315541`):
    (https://app.clickup.com/t/869ejwtz6), con fecha de vencimiento 19 ago 2026 19:00. Comisiones
    confirmadas por Mariano: Seguridad, Cocina, Producción (y otras sin nombrar todavía).
 
+### Reparto de tareas por persona — llamada de logística 17 ago 2026, 21:00hs
+Reunión con **Marco Guanuchi**, **David Luzuriaga** y **Julio César Navia** (recién sumado al
+equipo ese mismo día). Fuente: transcripción completa de la llamada + el Excel
+`Ruge_reparto_tareas_17ago2026.xlsx` que Mariano fue completando en vivo durante la reunión
+(columnas Encargado y Fecha límite) y que después se terminó de ordenar con este sistema — versión
+final entregada a Mariano como `Ruge_reparto_tareas_17ago2026_actualizado.xlsx`, con tres hojas:
+"Resumen por bloque" (fecha límite y notas por grupo de tareas), "Detalle completo por ítem"
+(214 ítems del inventario original, sin tocar — se repartió por bloque, no por ítem) y "Reparto
+detallado por persona" (la misma información organizada por persona, distinguiendo quién es
+**encargado general de un grupo de tareas** de quién se hace cargo de **una tarea específica
+dentro de un grupo que lidera otra persona** — para no sobrecargar a una sola persona).
+
+**Encargados generales por grupo de tareas:**
+- **Marco Guanuchi**: Producción-confirmar préstamos (cámara/dron), Gestión con Costa Rica,
+  Confirmar préstamos (altavoz/cuerdas/estuche insulina/mantel/mesas/radios iglesia), La Voz-comprar
+  (corrobora, la compra la hace la familia de Marco Jurado), Buscar proveedores y comparar precios,
+  Checklist de inventario del miércoles, Verificar TERMOS en bodega (discrepancia 9 vs 8,
+  detectada en la retrospectiva).
+- **Julio César Navia**: Encargar fabricación (rótulos/pegatinas), Decidir compra o préstamo
+  (alargador/pala), Confirmar alquiler (⚠️ **el bloque más urgente, vence 19 ago** — bus, camión,
+  furgoneta, radios VHF, teléfonos satelitales, troncos), Comprar no perecedero, Comprar/recibir/
+  almacenar lo comprado (es el único del equipo que vive en Valencia, por eso coordina la
+  recepción — se mueve en metro/bus, no tiene carnet de conducir todavía).
+- **David Luzuriaga**: Completar cantidad faltante de logística, y los 5 bloques de Cocina
+  completos (contacto real: **Adrián Rivera**, no solo Marco Chiriguaya como se pensaba antes) +
+  Sueltos de la retrospectiva (cortafierro/cincel para la cruz). El tema puntual de las **carnes**
+  (crítico — hubo un problema de tamaño en un reto anterior) lo ve David junto con Adrián Rivera
+  específicamente, confirmado por Mariano el 17 agosto 2026.
+- **Mariano**: Proponer compra a administración de la iglesia; además tomó personalmente el
+  contacto con **Richard** (sobrino de Marco Jurado) para cinta reflectante y figuras de premios,
+  y centraliza con Juliana (administración) la lista de compras que David arme el miércoles.
+
+**Dentro del bloque más urgente (Confirmar alquiler, vence 19 ago, encargado general Julio) se
+repartió por persona para no sobrecargar a nadie**: Marco Guanuchi habla con **Andrés Uquillas**
+(quien alquiló el bus la vez pasada) y busca la empresa de radios VHF/teléfonos satelitales; Julio
+habla con Mateo y Jefferson (camión cerrado/furgoneta) y con el vendedor de troncos (vía Marco
+Jurado, para el 2-3 de octubre) y le hace seguimiento a Marco por el bus; David busca dónde alquilar
+la pick-up/camión de caja abierta.
+
+**Pendiente sin cerrar en esta llamada**: el bloque "Logística — Verificar propiedad existente"
+(arena piscina, bolsas de provisiones, cajas de requisa, cuerdas elásticas piscina, estacas,
+fideos) sigue sin encargado — depende de la reunión presencial del miércoles 19 ago, y además Marco
+y Julio identificaron que parte de esos ítems (arena, cajas de requisa, cuerdas de piscina, y la
+paja del bloque de compras) los gestionó el equipo de **Eventos** (Mauricio y Cristian) en el reto
+anterior, no Logística — Julio le va a preguntar a Mauricio quién compró y dónde antes de asignar
+un encargado final. No asumir un reparto ahí hasta que esa respuesta llegue.
+
 ### Lista "Eventos puntuales" — ID `901220372534` (dentro del folder Liderazgo)
 Se creó el 14 de agosto de 2026 para eventos de un solo día con invitado especial. Diseño: una
 tarea por evento, con una subtarea por cada uno de los 10 líderes con: entradas asignadas,

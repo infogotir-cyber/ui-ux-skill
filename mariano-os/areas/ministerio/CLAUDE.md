@@ -95,60 +95,20 @@ Ver `areas/personal/CLAUDE.md` para el contexto completo. Contiene las listas "S
   Mariano coordina tarea, fecha límite y reporte; luego él reporta al responsable general de Ruge.
 - Mariano es el encargado de logística en esta edición — no está confirmado si lo será en futuras.
 
-### Pendientes de cargar en ClickUp — bloqueados por rate limit (registrado 14 agosto 2026)
-La API de ClickUp volvió a bloquear por rate limit al intentar escribir hoy (mismo patrón ya descrito
-en la sección 8 de este documento) — según el mensaje de error, no se libera hasta dentro de ~18hs.
-Quedan dos cosas pendientes de cargar en cuanto se libere, ambas avisadas por Mariano hoy:
+### Tareas de Ruge cargadas en ClickUp (14 agosto 2026)
+El rate limit de la API se liberó antes de lo esperado. Ambas quedaron creadas en "Equipo y
+Reuniones" (`901220315541`):
 
-1. **Retrospectiva de logística Ruge (reto de inicio de año)** — llamada de hoy (14 ago) de Mariano
-   con **Marco Guanuchi** y **David Luzuriaga** (su equipo de logística) para evaluar aciertos y
-   errores del área de logística en el Ruge de principio de año, como base para este año. El resumen
-   de IA (Gemini) salió muy pobre (solo un hiper-resumen, sin transcripción), así que Mariano compartió
-   en cambio sus propias notas tomadas en un Excel durante la reunión — **contenido real, ya recibido,
-   listo para cargar en "Equipo y Reuniones" (`901220315541`) en cuanto se libere el rate limit**.
-   ⚠️ Mariano aclaró que son notas de **parte** de la reunión, no necesariamente completas.
-
-   **A corregir → cómo corregirlo** (agrupado por tema para que sea legible; en la fuente original es
-   una sola tabla plana):
-   - *Comunicaciones/radios*: que las radios tengan mayor alcance y sean al menos 15 → alquilar 15
-     radios VHF (a repetir: los 2 teléfonos de largo alcance que ya usaron). Poner número a cada radio
-     y nombre de quién es responsable. Baterías extras y cargarlas antes. Definir canales de radio por
-     área.
-   - *Transporte*: se necesita 1 camión cerrado + 1 camión abierto + coche para pastores + otro coche
-     (el camión pequeño usado esta vez no sirve, buscar uno más grande). Prever dinero para cargar
-     combustible.
-   - *Check-in y carga*: se subieron al camión cosas que no correspondían — cada equipo debe velar por
-     lo que le toca llevar, y logística debe revisar y hacer el check-in en el camión. Cargar por
-     áreas, con el encargado de cada área presente. Check-in de personas: mesas con impresiones ya
-     listas, caja para guardar hojas, un encargado + un ayudante. Cajas listas con bolsas para la
-     primera requisa (la primera requisa se queda en la iglesia — "hablar esto", sin resolver). La
-     pólvora la debe llevar la comisión de Eventos, no logística.
-   - *Vestimenta*: camisas y gorras con talle doble de grande. Hacer con computadora una pegatina
-     prolija para cada camisa/gorra con nombre y talla.
-   - *Comida*: definir tamaño de corte de carne (sin resolver en las notas). Cambiar el desayuno — que
-     no sea siempre "chivito con huevos". Comprar butano extra para las cocinas. Termos: figuran 9 en
-     bodega pero solo hay 8 — falta confirmar el faltante.
-   - *Terreno/instalaciones*: antorchas — faltan 2, y ver cómo prenderlas (ponerlas a cargar al sol con
-     anticipación). Elementos para las prédicas (copa de cristal). El equipo no tenía agua en terreno.
-     Revisar que no quede basura. La tierra tenía piedras y ladrillos — buscar otra tierra. Estacas
-     para la piscina. Para la cruz: buscar pico o cortafierro para el hueco, o hacerlo días antes —
-     David puede prestar herramienta de obra. Armar estructura para el cartel luminoso. Altavoz (ítem
-     suelto, sin desarrollar en las notas).
-   - *Bienestar del equipo*: la noche del viernes hay que atender al equipo para que tenga agua y
-     comida, y llevarles agua al cuarto. Ver dónde va a dormir el equipo, intentar que estén juntos.
-     El sábado hay que traer las mochilas del equipo de "la Lloma" a la nave.
-   - *Rutas*: que todos tengan Wikiloc cargado con las rutas.
-   - *Compras/administrativo*: crear cuenta de Amazon para Ruge. Pedirle a Marco los links para repetir
-     las compras del año pasado. Pedir el itinerario.
-
-   **A repetir (lo que funcionó)**: los 2 teléfonos de largo alcance para comunicación — el resto de
-   la columna "Cosas a repetir" y "Observaciones" de la tabla original quedó vacío en las notas de
-   Mariano.
-2. **Reunión de inventario con las comisiones** — miércoles 19 de agosto 2026, 19:00hs, con las
-   comisiones de Seguridad, Cocina y Producción (entre otras) para revisar qué hay, qué falta y qué
-   hay que comprar del inventario de Ruge. Crear tarea recordatorio en cuanto se libere el rate limit,
-   en "Equipo y Reuniones" (`901220315541`) o "Preparación por Día" (`901220315548`) — a confirmar
-   cuál encaja mejor cuando se cargue.
+1. **"Retrospectiva logística Ruge — reto inicio de año (14 ago 2026)"** — ID `869ejwty5`
+   (https://app.clickup.com/t/869ejwty5). Contiene el resumen completo de las notas de Mariano de la
+   llamada con **Marco Guanuchi** y **David Luzuriaga** (equipo de logística), agrupado por tema
+   (comunicaciones/radios, transporte, check-in y carga, vestimenta, comida, terreno/instalaciones,
+   bienestar del equipo, rutas, compras/administrativo). El resumen de IA (Gemini) había salido muy
+   pobre, así que se usó en cambio el Excel de notas propias de Mariano. ⚠️ Son notas de **parte** de
+   la reunión, no necesariamente completas — si aparece más contenido, sumarlo a esta misma tarea.
+2. **"Reunión de inventario Ruge con comisiones — miér 19 ago, 19:00hs"** — ID `869ejwtz6`
+   (https://app.clickup.com/t/869ejwtz6), con fecha de vencimiento 19 ago 2026 19:00. Comisiones
+   confirmadas por Mariano: Seguridad, Cocina, Producción (y otras sin nombrar todavía).
 
 ### Lista "Eventos puntuales" — ID `901220372534` (dentro del folder Liderazgo)
 Se creó el 14 de agosto de 2026 para eventos de un solo día con invitado especial. Diseño: una
@@ -183,9 +143,10 @@ límite de pago.
 - Dos invitados en proceso de evangelización, todavía sin entrada confirmada, NO cuentan en la
   meta: Jesús Blanco y "Alejandro" (apellido pendiente). Mariano los sigue invitando activamente.
 
-**Tarea pendiente de crear (bloqueada por rate limit de la API el 14 ago, crear apenas se pueda):**
-"Lanzamiento — 5 sept 2026 — Activación de nuevos líderes", en la misma lista `901220372534`, con
-el contenido descrito en la sección 4 más abajo.
+**Tarea "Lanzamiento — 5 sept 2026 — Activación de nuevos líderes"** — ID `869ejwu0q`
+(https://app.clickup.com/t/869ejwu0q), en la misma lista `901220372534`, fecha 5 sept 2026. Creada
+el 14 ago 2026 apenas se liberó el rate limit que la había bloqueado antes; contenido según la
+sección 4 más abajo.
 
 ## 3. Composición REAL y actual de los grupos (corregido 14 agosto 2026)
 Esto es importante: hay una diferencia entre "quién aparece nombrado en un grupo" y "quién es

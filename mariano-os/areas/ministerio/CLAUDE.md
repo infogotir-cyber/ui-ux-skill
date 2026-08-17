@@ -75,7 +75,7 @@ pendiente de confirmar.
 #### Graduación New Life — 1 sept 2026 (registrado 17 agosto 2026)
 Tarea madre creada en "Tareas Operativas Recurrentes": **"Graduación New Life — 1 sept 2026"** — ID
 `869ejzpf3` (https://app.clickup.com/t/869ejzpf3). Mariano avisó que faltan varias cosas por
-confirmar/hacer y hay que apurarse. Las 9 subtareas de abajo **quedaron bloqueadas por rate limit de
+confirmar/hacer y hay que apurarse. Las 10 subtareas de abajo **quedaron bloqueadas por rate limit de
 ClickUp (sigue bloqueado, ~21hs cada vez que se reintenta)** — crearlas como subtareas de
 `869ejzpf3` apenas se libere:
 
@@ -114,6 +114,17 @@ ClickUp (sigue bloqueado, ~21hs cada vez que se reintenta)** — crearlas como s
    graduación; (b) apenas lo tenga, reenviárselo a **Carlos Prado** para que coordine todos los temas
    de producción con el cronograma real; (c) una vez confirmado, hablar con **el pastor** para que
    prepare alguna enseñanza para el evento.
+10. **🔴 Armar presupuesto general y cobro anticipado a estudiantes** — agregado 17 ago, la más
+    urgente de todas: **quedan 15 días y los estudiantes todavía no saben que tienen que pagar para
+    la graduación, ni cuánto**. Tarea de Mariano mismo, depende de que le confirmen antes:
+    - Adrián (ítems 2 y 3: costo de bandas + costo del chocolate)
+    - Ingrid (ítem 4: costo de decoración con Lurbin)
+
+    Con esos 3 datos Mariano arma el presupuesto general, lo divide entre los estudiantes que van a
+    la graduación, le avisa a los pastores que va a mandarle a cada estudiante un mensaje pidiendo el
+    pago anticipado de un monto X — el objetivo explícito es que la graduación no le genere gastos a
+    la iglesia. Sin esto resuelto pronto, se corre el riesgo de no llegar a tiempo a cobrar antes del
+    1 sept.
 
 ### Folder: Vida Personal & Espiritual (ID `901212988023`)
 Ojo: pese al nombre, este folder vive dentro del espacio de ministerio en ClickUp por razones

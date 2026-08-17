@@ -324,6 +324,22 @@ Este proyecto debe tener acceso vía MCP a:
     pasar por el servidor MCP, en vez de bloquear la tarea. Las tools quedan igual en el código para
     la próxima sesión, que debería levantarlas bien desde cero. Si se repite este problema, no vale
     la pena seguir reintentando reinicios — usar `curl` directo como salida rápida.
+  - **20 tools (ampliado a 20 el 17 agosto 2026)**: se agregó `ghl_send_message` (mandar WhatsApp/SMS/
+    Email a un contacto vía `POST /conversations/messages`, mismo patrón `confirm=False/True`).
+    **Detalle técnico importante**: este endpoint exige el header `Version: 2021-04-15`, distinto del
+    `2021-07-28` que usa el resto del servidor — se agregó un parámetro `api_version` opcional a
+    `ghl_request` para poder pisarlo caso por caso. Requiere el scope `conversations/message.write`
+    (agregado al token ese mismo día por Mariano). El `fromNumber` se fija siempre a
+    `+34603289674` (el número de WhatsApp de GOTIR conectado en la location — confirmado contra el
+    tag `wa: +34603289674` que GHL le pone a los contactos con conversación real por ese canal), así
+    no hace falta que quien llama la tool lo adivine. **Probada de punta a punta el 17 agosto 2026**:
+    primer intento devolvió `401 not authorized for this scope` (el token todavía no tenía
+    `conversations/message.write`); después de que Mariano lo agregó, el mismo `curl` funcionó
+    (`201`, `message_id=FpWxhGezl7IgaxeIKGa2`) — se usó `curl` directo en vez del tool MCP porque
+    `ghl_send_message` tampoco apareció descubierta en esta sesión (mismo problema de discovery lag
+    del punto anterior). Primer uso real: mensaje de seguimiento a Sebastián Gimenez
+    (`contact_id=Ma0BBzRU86lESAKjiHqd`) retomando la charla comercial, con el texto redactado a partir
+    de sus notas reales en GHL — ver `direcciones/comercial/CLAUDE.md`.
 
   **Lista completa de scopes del Private Integration Token (verificada 17 agosto 2026)** — Mariano
   no puede editar el token existente en su cuenta de GHL, tiene que crear uno nuevo; se armó esta

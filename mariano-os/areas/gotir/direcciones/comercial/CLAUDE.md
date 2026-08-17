@@ -484,6 +484,40 @@ PRÓXIMA ACCIÓN
 - El baseline de julio (sección 3.1) es una **reconstrucción manual**, no un reporte automático del CRM — esto importa porque significa que hoy no hay un dashboard o proceso recurrente que genere estos números solo; alguien tiene que rearmarlos a mano cada vez que se quiera comparar un mes contra este baseline.
 - Los ~6.821€ de ingresos de julio, para que no se malinterprete en el futuro: **no** son la métrica de éxito de las mejoras de proceso que se están implementando ahora (guion, plantilla Fathom, próxima acción con fecha, detección de nivel de conciencia) — esas mejoras se miden contra los números de conversión por etapa (formulario, no-show, seguimiento perdido) de una cohorte nueva, no contra ingresos de meses anteriores.
 
+### 6.3 Revisión de pipeline persona por persona (iniciada 17 agosto 2026)
+
+Mariano pidió revisar uno por uno los contactos activos en pipeline ("llamar hoy" y similares) antes
+de mandar mensajes o mover etapas, con instrucción explícita de ritmo: **preguntar de a una persona
+por vez**, no procesar la lista entera de una — "vale anda preguntandome de a uno y te digo si tengo
+nota o si se algo de esa persona o no". También pidió, antes de esto, limpiar del pipeline los casos
+que no deberían estar ahí (notas reales que Mariano tiene en WhatsApp pero nunca subió a GHL).
+
+**Caso 1 — Sebastián Gimenez** (`contact_id=Ma0BBzRU86lESAKjiHqd`) — **resuelto 17 agosto 2026**:
+- Mariano no tenía notas propias en WhatsApp para este caso — se armó el mensaje de seguimiento
+  leyendo las notas ya cargadas en GHL (vía `ghl_list_contact_notes`) más sus tags (`reunion-agendada`,
+  `🔥caliente`, `requiere seguimiento`, `wa: +34603289674`).
+- Al revisar la conversación real (`GET /conversations/search`) apareció contexto que no estaba en
+  las notas: el 13 de agosto Mariano ya le había escrito manualmente por WhatsApp *"Seba, ya te envié
+  el correo, me confirmas si te llegó bien?"*, sin respuesta desde entonces.
+- Mariano aprobó mandar el mensaje igual con el texto original (sin ajustarlo para mencionar ese
+  correo) y dio la orden explícita de enviarlo de verdad: *"Mandalo así desde el numero de whatsapp
+  que yo uso."*
+- **Mensaje enviado 17 agosto 2026** vía `POST /conversations/messages` (WhatsApp, desde
+  `+34603289674`, `message_id=FpWxhGezl7IgaxeIKGa2`, respuesta `201`):
+  > "Hola Sebastián! ¿Cómo estás? Quería retomar contacto después de nuestra charla — te iba a mandar
+  > las opciones con los pagos para que puedas ir definiendo la escuela y viendo también la situación
+  > de tu novia. ¿Llegaste a verlo? Contame en qué quedaste pensando así seguimos — los cupos se van
+  > completando y para llegar cómodos en noviembre/diciembre conviene ir asegurando el lugar."
+- Se detectó además un contacto duplicado de esta misma persona (`contact_id=6do6xCQ4rBwytUBIrzWz`,
+  tag "cualificado visado", sin notas ni oportunidad propia) — **pendiente de decidir con Mariano**,
+  prioridad baja (a diferencia del duplicado de Regina Epifanio, este no tiene datos reales cargados
+  que se puedan perder).
+
+**Pendiente — resto de la lista "llamar hoy"** (mismo ritmo, uno a la vez, preguntando antes de
+actuar en cada caso): Enrique Eduardo Aguilar (670€), Héctor Ojeda (825€, ya tiene una retrospectiva
+de llamada documentada — ver sección 3), Luisana Junguittu (825€), Felipe Nogues Martinena (670€),
+Samuel Salgan (670€), Maria Taly Navarro, Marylaura Guerrero (750€).
+
 ---
 
 ## 7. Abierto / pendiente de confirmar por Mariano

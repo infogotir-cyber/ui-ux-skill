@@ -199,6 +199,31 @@ límite de pago.
 - Dos invitados en proceso de evangelización, todavía sin entrada confirmada, NO cuentan en la
   meta: Jesús Blanco y "Alejandro" (apellido pendiente). Mariano los sigue invitando activamente.
 
+#### Retrospectiva del evento (registrada 17 agosto 2026, evento ya pasó)
+Pendiente de cargar en ClickUp (agregar como actualización a la tarea `869ej5fvj` — **bloqueado por
+el mismo rate limit de ClickUp que sigue activo**, cargar apenas se libere):
+
+- **Problema detectado — pagos desorganizados hasta último momento**: Mariano no supo, hasta el
+  mismo día del evento, si todos sus discípulos habían pagado sus entradas. Caso concreto: Lisandro
+  Tapia no sabía si su madre había pagado o no, y no se lo pudo confirmar a tiempo — esto explica por
+  qué el pendiente #4 de la lista de arriba (confirmación de Lisandro) nunca se resolvió realmente,
+  no es un dato que haya quedado sin cargar, es que la confusión fue real y persistió durante todo el
+  proceso.
+- **Cambio de proceso decidido para la próxima vez (política, no solo para este evento)**: de ahora
+  en más, Mariano va a **cobrarles primero a sus discípulos y recién después entregarles las
+  entradas** — en vez del modelo de esta vez (repartir entradas primero y esperar que coordinen el
+  pago después), que generó que ni los propios discípulos supieran si habían pagado o no.
+- **Asistencia real confirmada**: fueron **todos** los discípulos de Mariano, incluyendo **Mateo
+  Arteaga, David Valera y Sabrina Navarro** — pese a que estos tres todavía no son formalmente
+  discípulos activos (se activan recién con el Lanzamiento del 5 sept, ver sección 3/4). También
+  asistieron algunas ovejas de sus discípulos e invitados de primera vez.
+- **Pendiente abierto**: Mariano ya pidió el listado completo de esas ovejas/invitados a sus
+  discípulos — todavía no lo tiene. Apenas lo consiga, lo va a confirmar para completar el registro
+  de asistencia real.
+- **Para qué sirve este registro**: Mariano quiere usar este evento como **línea base** — la próxima
+  vez que se haga un evento similar, comparar contra este para medir si de verdad se mejoró (mismo
+  criterio que ya se usa con el baseline comercial de julio en `direcciones/comercial/CLAUDE.md`).
+
 **Tarea "Lanzamiento — 5 sept 2026 — Activación de nuevos líderes"** — ID `869ejwu0q`
 (https://app.clickup.com/t/869ejwu0q), en la misma lista `901220372534`, fecha 5 sept 2026. Creada
 el 14 ago 2026 apenas se liberó el rate limit que la había bloqueado antes; contenido según la

@@ -302,6 +302,17 @@ Este proyecto debe tener acceso vía MCP a:
   - Falta armar las evaluaciones formales de calidad del servidor (Fase 4 de la skill
     `mcp-builder`) — se salteó a propósito por ser un servidor interno de un solo usuario, no uno
     para publicar; se puede retomar si en algún momento se comparte fuera de este proyecto.
+  - **19 tools (ampliado de 17 a 19 el 17 agosto 2026)**: se agregaron `ghl_list_users` y
+    `ghl_delete_user` (borrar un usuario, con `confirm` obligatorio como el resto de las tools de
+    escritura). **Limitación técnica del entorno detectada al agregarlas**: a diferencia de las
+    veces anteriores que se agregaron tools nuevas al servidor (mismo día), esta vez el descubrimiento
+    de las 2 tools nuevas no se propagó a esta sesión de Claude Code pese a reiniciar el subproceso
+    varias veces (incluso con `kill -9`) — las llamadas a tools ya existentes seguían funcionando
+    contra el proceso nuevo, pero `ghl_list_users`/`ghl_delete_user` seguían sin aparecer. Se
+    resolvió el caso puntual (borrar dos usuarios) llamando la API de GHL directo con `curl`, sin
+    pasar por el servidor MCP, en vez de bloquear la tarea. Las tools quedan igual en el código para
+    la próxima sesión, que debería levantarlas bien desde cero. Si se repite este problema, no vale
+    la pena seguir reintentando reinicios — usar `curl` directo como salida rápida.
 
   **Lista completa de scopes del Private Integration Token (verificada 17 agosto 2026)** — Mariano
   no puede editar el token existente en su cuenta de GHL, tiene que crear uno nuevo; se armó esta

@@ -707,6 +707,57 @@ async def ghl_get_form_submissions(form_id: str, limit: int = 20) -> str:
 
 
 # ---------------------------------------------------------------------------
+# Usuarios
+# ---------------------------------------------------------------------------
+
+
+@mcp.tool()
+async def ghl_list_users() -> str:
+    """Lista los usuarios (staff/colaboradores) configurados en la location de GHL."""
+    data = await ghl_request("GET", "/users/", params={})
+    users = data.get("users", [])
+    if not users:
+        return "No hay usuarios configurados."
+    lines = [f"{len(users)} usuario(s):"]
+    for u in users:
+        role = u.get("roles", {})
+        lines.append(
+            f"- {u.get('name')} | id={u.get('id')} | email={u.get('email') or '—'} | "
+            f"rol={role.get('role') or '—'} | dado_de_baja={u.get('deleted', False)}"
+        )
+    return "\n".join(lines)
+
+
+@mcp.tool()
+async def ghl_delete_user(user_id: str, user_name: str, confirm: bool = False) -> str:
+    """Borra (da de baja) un usuario de GHL. Requiere confirmacion explicita de Mariano.
+
+    Accion irreversible por API — borrar un usuario no se puede deshacer
+    llamando esta misma tool al reves. Misma regla que el resto de las tools
+    de escritura: primero confirm=False para mostrarle a Mariano exactamente
+    quien se borraria, y solo confirm=True despues de que el confirme
+    explicitamente cada persona por nombre.
+
+    Args:
+        user_id: id del usuario a borrar (lo devuelve ghl_list_users).
+        user_name: nombre del usuario, solo para mostrarlo en el mensaje de
+            confirmacion (no se manda a la API).
+        confirm: Poner True solo despues de que Mariano confirmo la accion
+            para ESTA persona en particular.
+    """
+    if not confirm:
+        return (
+            f"NO EJECUTADO (falta confirmacion). Se borraria el usuario '{user_name}' "
+            f"(id={user_id}) de GHL — esto NO se puede deshacer.\n"
+            "Describile esto a Mariano y volve a llamar con confirm=True solo si el confirma "
+            "explicitamente esta persona."
+        )
+
+    await ghl_request("DELETE", f"/users/{user_id}")
+    return f"Usuario '{user_name}' (id={user_id}) borrado de GHL."
+
+
+# ---------------------------------------------------------------------------
 # Location
 # ---------------------------------------------------------------------------
 

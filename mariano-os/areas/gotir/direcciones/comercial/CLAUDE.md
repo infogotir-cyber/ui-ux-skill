@@ -338,20 +338,24 @@ queda anotado tal cual, **sin asumir para quién es cada uno**:
 - Calendarios personales de: Sabrina Navarro, Pamela Jordan, Micol Navarro, Jonathan Barrionuevo,
   Rocío Jury (30-60 min c/u).
 
-  **Identidades resueltas en gran parte (17 agosto 2026)**, cruzando contra `GET /users/` de GHL (se
-  habilitó el scope `users.readonly` ese mismo día):
-  - **Sabrina Navarro** (`sabriinavarro.sn@gmail.com`) — sigue como usuario **admin activo** en GHL
-    (`deleted: false`), pese a que `CLAUDE.md` raíz dice que ya no trabaja en GOTIR. Esto confirma
-    que el calendario no es un error de configuración — la cuenta en sí sigue viva. Sigue sin
-    confirmarse si es un resabio administrativo sin dar de baja o si todavía colabora de alguna
-    forma — no asumir ninguna de las dos, preguntarle a Mariano directamente.
-  - **Pamela Jordan** (`comercial.gotir@gmail.com`) — admin activa. El email sugiere que está en el
-    área comercial, coherente con tener su propio calendario de citas — sin confirmar el rol exacto.
-  - **Micol Navarro** (`micolnavarro7@gmail.com`) — admin activa. Sin más contexto sobre su rol.
-  - **Jonathan Barrionuevo** — no aparece en la lista de usuarios de GHL porque **ya no trabaja ni
-    va a trabajar con GOTIR** (confirmado por Mariano, 17 ago 2026) — era **closer** (cerraba
-    ventas). Su calendario es un resabio de cuando estaba activo; su cuenta de usuario ya se dio de
-    baja, por eso no aparece en `GET /users/` aunque el calendario en sí no se borró.
+  **Identidades resueltas (17 agosto 2026)**, cruzando contra `GET /users/` de GHL (se habilitó el
+  scope `users.readonly` ese mismo día) y confirmadas directamente por Mariano:
+  - **Sabrina Navarro** (`sabriinavarro.sn@gmail.com`) — cuenta activa, **se deja tal cual a
+    propósito**: es pareja de Mariano y trabajó en GOTIR antes; él tiene la expectativa de que
+    vuelva a estar en su vida y a colaborar en GOTIR más adelante, por eso prefiere no borrar el
+    perfil por ahora. Tratar como información personal, con discreción.
+  - **Pamela Jordan** — era **closer** (cerraba ventas), igual que Jonathan Barrionuevo — **ya no
+    trabaja ni va a trabajar con GOTIR**. Mariano pidió borrar su perfil de GHL — **hecho el 17
+    agosto 2026** (`DELETE /users/`, confirmado por la API, con efecto en unos minutos).
+  - **Micol Navarro** (`micolnavarro7@gmail.com`) — es **hermana de Sabrina Navarro**. Colabora de
+    vez en cuando con marketing y edición de videos. Mariano prefiere que su perfil **siga activo**
+    — no borrar.
+  - **Jonathan Barrionuevo** — era **closer** también, ya no trabaja ni va a trabajar con GOTIR. No
+    tenía cuenta activa en `GET /users/` — nada que borrar por ese lado, el calendario que le quedó
+    es un resabio visual sin cuenta detrás.
+  - **Belén Campana** (`adm.gotir.es@gmail.com`) — era la mano derecha de Mariano, lo ayudaba en
+    todo; ya no trabaja ni va a trabajar con GOTIR. **No es la misma persona que "Juliana"**
+    (ministerio, organización distinta). Perfil borrado el 17 agosto 2026, mismo proceso que Pamela.
 
 ### 5.3 Formularios (10 reales, por primera vez con nombres y IDs completos)
 
@@ -368,10 +372,15 @@ queda anotado tal cual, **sin asumir para quién es cada uno**:
 
 Los 3 primeros coinciden con lo esperado por la sección 1 (visados/estancias por estudios + otros
 trámites). El resto trae información nueva que **no estaba documentada y no se debe asumir**:
-- "Apostilla" y "Alquiler IberoLocations" no están descritos como servicios/trámites en la sección
-  1.1 de este documento (que solo lista estancias/visados de estudios y modificación de residencia
-  de trabajo como prioritarios) — confirmar con Mariano qué son y si son servicios activos o leads
-  de algo distinto (ej. Alquiler IberoLocations podría no ser ni siquiera un trámite de inmigración).
+- "Apostilla" y "Alquiler IberoLocations" — **resuelto 17 agosto 2026**: ninguno es un trámite
+  migratorio de los descritos en la sección 1.1, son servicios/leads aparte.
+  - **Apostilla**: Mariano dijo que **ya no tiene sentido** — servicio descontinuado. Pendiente
+    borrarlo del builder de GHL — **no se pudo hacer por API**, la API pública de GHL no ofrece
+    endpoint para borrar formularios (mismo límite que ya existe para crearlos, ver `CLAUDE.md`
+    raíz) — hay que borrarlo a mano en el builder.
+  - **Alquiler IberoLocations**: formulario real y activo — conecta con **IberoLocations**, una
+    empresa externa que busca alquileres a pedido para los clientes, sobre todo en Madrid. No es un
+    trámite migratorio, es un servicio complementario de vivienda.
 - "Carolina Chapo" y "María García Serrano" — **resuelto 17 agosto 2026**: ambas son usuarias reales
   y activas en GHL — "Chapo abogados" (`visados@carolinachapo.com`, rol `user`) y "María García
   Serrano" (`mariagarciaserranoabogada@gmail.com`, rol `user`). **Mariano confirmó directamente que
@@ -386,11 +395,8 @@ que aparecen en calendarios/formularios/pipelines sin contexto:
 - Mariano Barcelona — `info.gotir@gmail.com` (admin)
 - Asesoria GOTIR — `asesoria.gotir@gmail.com` (admin) — cuenta genérica de asesoría comercial.
 - Clientes GOTIR — `clientes@gotir.es` (admin) — cuenta genérica de cara al cliente.
-- Belén Campana — `adm.gotir.es@gmail.com` (admin) — **confirmado por Mariano (17 ago 2026): NO es
-  Juliana** (son personas distintas). Era la mano derecha de Mariano, lo ayudaba en todo, pero **ya
-  no trabaja ni va a trabajar con GOTIR** — mismo caso que Jonathan Barrionuevo, su cuenta sigue
-  activa en GHL como resabio administrativo.
-- Pamela Jordan — `comercial.gotir@gmail.com` (admin) — ver 5.2.
+- ~~Belén Campana~~ — perfil **borrado el 17 agosto 2026** (ver 5.2), ya no aparece en `GET /users/`.
+- ~~Pamela Jordan~~ — perfil **borrado el 17 agosto 2026** (ver 5.2), ya no aparece en `GET /users/`.
 - Micol Navarro — `micolnavarro7@gmail.com` (admin) — ver 5.2.
 - Sabrina Navarro — `sabriinavarro.sn@gmail.com` (admin) — ver 5.2.
 - Rocío Jury — `rociojury@gmail.com` (admin) — mismo nombre y apellido que la discípula de FM4.3 en
@@ -483,15 +489,15 @@ Lista honesta de lo que este documento *no* puede responder todavía porque no h
   de leer los datos reales:
   - Confirmar el propósito de la pipeline **Proveedores** (¿es el flujo de comisiones a
     Sebastián/María/estudios colaboradores, u otra cosa?) — sección 5.1.
-  - ~~Confirmar quiénes son Pamela Jordan, Micol Navarro y Jonathan Barrionuevo~~ y
-    ~~Belén Campana~~ — **resuelto 17 agosto 2026**: Pamela Jordan y Micol Navarro son usuarias
-    admin reales de GHL (rol exacto sin confirmar). Jonathan Barrionuevo y Belén Campana ya no
-    trabajan ni van a trabajar con GOTIR (closer y mano derecha de Mariano, respectivamente) — sus
-    calendarios/cuentas son resabios. Belén **no** es la misma persona que "Juliana" (ministerio).
-    Sabrina Navarro sigue con cuenta activa; sigue sin confirmar si realmente colabora o es resabio
-    — sección 5.2.
-  - Confirmar qué son los formularios **"Apostilla"** y **"Alquiler IberoLocations"** (no encajan en
-    los servicios descritos en la sección 1.1) — sección 5.3.
+  - ~~Confirmar quiénes son Pamela Jordan, Micol Navarro, Jonathan Barrionuevo y Belén Campana~~ —
+    **resuelto por completo 17 agosto 2026**: los cuatro eran/son colaboradores identificados (ver
+    sección 5.2). Pamela y Belén, ex-closer y ex-mano derecha respectivamente, con perfiles ya
+    borrados de GHL a pedido de Mariano. Micol (hermana de Sabrina) sigue activa colaborando en
+    marketing/edición. Sabrina Navarro se deja activa a propósito, es información personal — ver 5.2.
+  - ~~Confirmar qué son los formularios "Apostilla" y "Alquiler IberoLocations"~~ — **resuelto 17
+    agosto 2026**: Apostilla descontinuado (pendiente borrarlo a mano en el builder, sin endpoint de
+    API); Alquiler IberoLocations es un servicio real de vivienda con una empresa externa — sección
+    5.3.
   - ~~Si "Carolina Chapo" / "María García Serrano" son colaboradores nuevos~~ — **resuelto 17 agosto
     2026**: ambas son usuarias reales de GHL. **María García Serrano es la "María" del dúo
     Sebastián/María**, confirmado por Mariano — sección 5.3.

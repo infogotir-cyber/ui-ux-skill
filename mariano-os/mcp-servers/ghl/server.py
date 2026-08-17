@@ -770,6 +770,20 @@ async def ghl_send_message(
     resto del servidor) — por eso pasa api_version explicito. El scope
     necesario es "conversations/message.write", ya habilitado en el token.
 
+    ADVERTENCIA IMPORTANTE (probada 17 agosto 2026 con un mensaje real que
+    NO llego a destino): esta API devuelve 201 con un message_id apenas
+    ACEPTA el pedido en su cola — eso no confirma entrega real. Si el canal
+    de WhatsApp de la location esta desconectado (pasa con integraciones no
+    oficiales, no la WhatsApp Business Platform de Meta), GHL igual responde
+    201 y el mensaje queda visible en el panel de Conversaciones con un
+    icono de advertencia y "Try again", sin llegar nunca al contacto. Esta
+    tool no puede verificar eso por si sola todavia (falta el scope
+    conversations/message.readonly para poder chequear el estado real del
+    mensaje despues de mandarlo) — despues de llamarla con confirm=True,
+    quien la use tiene que pedirle a Mariano que confirme en el panel de
+    GHL (Conversaciones) que el mensaje se ve entregado, no asumir exito
+    solo por la respuesta 201 de esta tool.
+
     Args:
         contact_id: id del contacto destinatario (lo devuelve ghl_search_contacts).
         message: Texto del mensaje a enviar.
@@ -803,7 +817,13 @@ async def ghl_send_message(
         api_version="2021-04-15",
     )
     m = data.get("message", data)
-    return f"Mensaje enviado al contacto {contact_id} (message_id={m.get('id', data.get('messageId', '?'))})."
+    msg_id = m.get("id", data.get("messageId", "?"))
+    return (
+        f"GHL acepto el mensaje al contacto {contact_id} (message_id={msg_id}), status 2xx. "
+        "OJO: esto NO confirma entrega real (ver advertencia en la descripcion de esta tool) — "
+        "pedile a Mariano que confirme en el panel de Conversaciones de GHL que el mensaje se "
+        "ve entregado antes de darlo por mandado."
+    )
 
 
 # ---------------------------------------------------------------------------

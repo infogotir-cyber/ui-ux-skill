@@ -332,14 +332,26 @@ Este proyecto debe tener acceso vía MCP a:
     (agregado al token ese mismo día por Mariano). El `fromNumber` se fija siempre a
     `+34603289674` (el número de WhatsApp de GOTIR conectado en la location — confirmado contra el
     tag `wa: +34603289674` que GHL le pone a los contactos con conversación real por ese canal), así
-    no hace falta que quien llama la tool lo adivine. **Probada de punta a punta el 17 agosto 2026**:
-    primer intento devolvió `401 not authorized for this scope` (el token todavía no tenía
-    `conversations/message.write`); después de que Mariano lo agregó, el mismo `curl` funcionó
-    (`201`, `message_id=FpWxhGezl7IgaxeIKGa2`) — se usó `curl` directo en vez del tool MCP porque
-    `ghl_send_message` tampoco apareció descubierta en esta sesión (mismo problema de discovery lag
-    del punto anterior). Primer uso real: mensaje de seguimiento a Sebastián Gimenez
-    (`contact_id=Ma0BBzRU86lESAKjiHqd`) retomando la charla comercial, con el texto redactado a partir
-    de sus notas reales en GHL — ver `direcciones/comercial/CLAUDE.md`.
+    no hace falta que quien llama la tool lo adivine. **Probada de punta a punta el 17 agosto 2026,
+    con resultado importante para tener en cuenta**: primer intento devolvió `401 not authorized for
+    this scope` (el token todavía no tenía `conversations/message.write`); después de que Mariano lo
+    agregó, el mismo `curl` devolvió `201` (`message_id=FpWxhGezl7IgaxeIKGa2`) — pero **un `201` de
+    `POST /conversations/messages` NO garantiza que el mensaje se haya entregado de verdad**. Al
+    revisar el panel de Conversaciones de GHL, el mensaje real a Sebastián Gimenez quedó marcado con
+    ⚠️ y "Try again": el canal de WhatsApp de esta location (una integración no oficial, no la
+    WhatsApp Business Platform de Meta) estaba desconectado en ese momento, y GHL igual devuelve
+    `201` al aceptar el pedido en su cola aunque no pueda entregarlo. Un segundo intento agregando
+    `conversationProviderId` tampoco lo resolvió (mismo problema de fondo: el canal estaba
+    desconectado, no un tema de parámetros del body). **Lección**: para esta tool, `201` solo
+    confirma que GHL aceptó el pedido, no que el mensaje llegó — habría que agregar el scope
+    `conversations/message.readonly` (todavía no habilitado, dio 401 al intentar `GET
+    /conversations/messages/:id` y `GET /conversations/:id/messages` para verificar) y chequear el
+    estado real antes de darle un envío por confirmado a Mariano. Mientras el canal de WhatsApp de la
+    location no esté conectado, esta tool no sirve para mandar nada real — hay que avisarle a Mariano
+    que lo reconecte primero (botón "Conectar WhatsApp" en el panel de Conversaciones de GHL) o que
+    mande el mensaje manualmente desde su telefono. Caso real: mensaje de seguimiento a Sebastián
+    Gimenez (`contact_id=Ma0BBzRU86lESAKjiHqd`) — ver `direcciones/comercial/CLAUDE.md` para el
+    detalle completo y el estado pendiente.
 
   **Lista completa de scopes del Private Integration Token (verificada 17 agosto 2026)** — Mariano
   no puede editar el token existente en su cuenta de GHL, tiene que crear uno nuevo; se armó esta

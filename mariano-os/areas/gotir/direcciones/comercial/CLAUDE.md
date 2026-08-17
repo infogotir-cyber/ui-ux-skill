@@ -502,12 +502,17 @@ que no deberían estar ahí (notas reales que Mariano tiene en WhatsApp pero nun
 - Mariano aprobó mandar el mensaje igual con el texto original (sin ajustarlo para mencionar ese
   correo) y dio la orden explícita de enviarlo de verdad: *"Mandalo así desde el numero de whatsapp
   que yo uso."*
-- **Mensaje enviado 17 agosto 2026** vía `POST /conversations/messages` (WhatsApp, desde
-  `+34603289674`, `message_id=FpWxhGezl7IgaxeIKGa2`, respuesta `201`):
-  > "Hola Sebastián! ¿Cómo estás? Quería retomar contacto después de nuestra charla — te iba a mandar
-  > las opciones con los pagos para que puedas ir definiendo la escuela y viendo también la situación
-  > de tu novia. ¿Llegaste a verlo? Contame en qué quedaste pensando así seguimos — los cupos se van
-  > completando y para llegar cómodos en noviembre/diciembre conviene ir asegurando el lugar."
+- **Intento de envío 17 agosto 2026 — FALLÓ, no le llegó a Sebastián**: `POST /conversations/messages`
+  devolvió `201` dos veces (`message_id=FpWxhGezl7IgaxeIKGa2` sin `conversationProviderId`, después
+  `message_id=3Dtvm8SM0KR2fRYnmt3r` agregando el `conversationProviderId` de la conversación existente
+  por si hacía falta rutear el mensaje) — un `201` de GHL **no significa entrega real**. Mariano
+  confirmó mirando el panel de Conversaciones de GHL que los 3 intentos (los 2 por API + un
+  "Try again" manual de él) quedaron con ⚠️ y "Try again", y el compositor mostraba **"WhatsApp no
+  está conectado. Conectar WhatsApp."** — el canal de WhatsApp de esta location (una integración *no
+  oficial*, no la Business Platform de Meta, según aclaró Mariano) estaba desconectado en ese momento,
+  nada que ver con el body del request. El texto del mensaje (arriba) **no llegó a Sebastián todavía**.
+  Queda pendiente reconectar el canal (botón "Conectar WhatsApp" en GHL, probablemente re-vincular por
+  QR) o que Mariano lo mande manualmente desde su teléfono como hizo el 13 de agosto.
 - Se detectó además un contacto duplicado de esta misma persona (`contact_id=6do6xCQ4rBwytUBIrzWz`,
   tag "cualificado visado", sin notas ni oportunidad propia) — **pendiente de decidir con Mariano**,
   prioridad baja (a diferencia del duplicado de Regina Epifanio, este no tiene datos reales cargados

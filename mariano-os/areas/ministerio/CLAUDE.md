@@ -220,6 +220,68 @@ paja del bloque de compras) los gestionó el equipo de **Eventos** (Mauricio y C
 anterior, no Logística — Julio le va a preguntar a Mauricio quién compró y dónde antes de asignar
 un encargado final. No asumir un reparto ahí hasta que esa respuesta llegue.
 
+### Reparto final de Ruge verificado contra el inventario real (17 ago 2026) — fuente de verdad
+El excel que se fue armando en la reunión (166 ítems "pendiente gestionar") se cruzó item por item
+contra `INVENTARIO_2026_RUGE.xlsx`, el inventario real que Mariano subió (200 ítems: 166 "pendiente
+gestionar" + 34 ya en "ALMACEN RUGE" que igual necesitan que alguien los revise/confirme). Se
+detectó que faltaban esos 34 en el detalle original — se sumaron: 7 de cocina (van con David,
+confirmar con Adrián Rivera) y 26 de logística/eventos que **nunca se discutieron en la llamada**
+(banderas, lonas, cruz de madera, kit de primeros auxilios, machete, mantas térmicas, etc.) —
+quedaron sin encargado a propósito, no se inventó ninguno.
+
+**Archivos fuente de verdad, guardados en `areas/ministerio/recursos/`:**
+- `INVENTARIO_2026_RUGE_original.xlsx` — el inventario real de 200 ítems tal como lo subió Mariano.
+- `Ruge_reparto_tareas_17ago2026_actualizado.xlsx` — maestro con 3 hojas: "Resumen por bloque",
+  "Detalle completo por ítem" (202 filas: 200 del inventario real + 2 ítems "fuera del inventario
+  formal" de la retrospectiva — nota: son 3 en total pero uno, TERMOS, ya viene del inventario real
+  con estado ALMACEN RUGE y se cuenta ahí, no dos veces), "Reparto detallado por persona".
+- `Ruge_reparto_por_persona_17ago2026.xlsx` — **la versión que Mariano confirmó como definitiva el
+  17 ago 2026** ("nos quedamos por ahora con esta versión"): una hoja por persona (Marco, Julio,
+  David, Mariano) con ítem, si es tarea de su grupo o una tarea específica dentro de otro grupo,
+  detalle/con quién hablar, la otra comisión con la que hay que revisarlo (del inventario real),
+  estado (pendiente gestionar / almacén Ruge) y fecha límite (nunca posterior al 10 sept, por pedido
+  explícito de Mariano) — más una hoja **"Sin asignar responsable"** con los 49 ítems sin encargado
+  claro, con una columna vacía para que Mariano la complete a mano. **Si Mariano dice que ya asignó
+  algo ahí, la próxima vez que se toque este tema hay que releer ese archivo, puede estar
+  desactualizado en este documento.**
+- `ruge_reparto_lookup.md` — tabla generada automáticamente (ítem → persona → bloque → fecha
+  límite) para responder rápido "¿quién se encarga de X?" sin abrir el excel. **Regenerar con el
+  script correspondiente cada vez que cambie el reparto** (no editar a mano, se desincroniza).
+
+**Meta explícita de Mariano (17 ago 2026): todos los ítems del reparto confirmados (comprado,
+prestado, alquilado o verificado según corresponda) antes del 20 de septiembre de 2026.**
+
+### Política de recordatorios de Ruge (pedida por Mariano 17 ago 2026)
+Mariano no quiere tener que revisar el excel él mismo para saber qué se vence — pidió que el
+sistema le avise proactivamente a medida que se acercan las fechas límite, con un mensaje ya
+redactado listo para copiar y pegar a la persona correspondiente. Ejemplo textual que dio: *"El 19
+de agosto se vence lo de reservar el Bus, entonces me envías recordatorio con propuesta de mensaje
+así copio y envío a Marco Guanuchi pidiendo confirmación a ver si ya lo gestionó, y así con cada
+ítem."*
+
+Cómo comportarse:
+- Cuando se acerque (1-2 días antes) o llegue la fecha límite de un bloque/ítem sin confirmación de
+  que ya se resolvió, avisarle a Mariano con: qué es, quién es el encargado, y un mensaje de
+  WhatsApp ya redactado (tono directo, pidiendo confirmación de gestión) listo para que Mariano lo
+  copie y mande él mismo — no mandarlo por GHL ni por ningún canal automático, esto es ministerio,
+  no GOTIR, y además no hay integración de WhatsApp para estos contactos.
+- Si Mariano confirma en la conversación que algo ya se resolvió, actualizar el estado en
+  `ruge_reparto_lookup.md`/el excel correspondiente — no hay hoy un campo de "confirmado" separado,
+  agregar una nota en la fila o llevar registro acá si hace falta.
+- El 18 de agosto (rate limit de ClickUp liberado, ver abajo) hay que sincronizar todo este reparto
+  a la lista "Inventario" de ClickUp (ID `901220315543`) — asignar cada tarea al usuario de ClickUp
+  correspondiente a cada persona, para que las fechas límite y el estado vivan ahí también, no solo
+  en el excel.
+
+### Rate limit de ClickUp (17 ago 2026, 21:59 UTC)
+Al intentar traer la lista de Inventario completa (`clickup_filter_tasks`, list_id
+`901220315543`) para verificar el reparto contra ClickUp, la API devolvió "Rate limit exceeded,
+espera 859 minutos" (~14h20m, libera aprox. 18 ago ~12:00-13:00 UTC / 14:00-15:00 hora Madrid). Se
+programó un recordatorio interno para reintentar la sincronización pasado ese horario — si por
+algún motivo no se retomó solo, Mariano puede simplemente pedir "actualiza ClickUp con el reparto
+de Ruge" y hay que ir directo a asignar cada tarea de la lista de Inventario según
+`ruge_reparto_lookup.md`.
+
 ### Lista "Eventos puntuales" — ID `901220372534` (dentro del folder Liderazgo)
 Se creó el 14 de agosto de 2026 para eventos de un solo día con invitado especial. Diseño: una
 tarea por evento, con una subtarea por cada uno de los 10 líderes con: entradas asignadas,

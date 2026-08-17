@@ -46,6 +46,10 @@ Con estancia por estudios pasó una versión más leve del mismo problema: el mo
 **Visado de estudios desde origen (ej. Argentina)**
 - GOTIR hace la "primera parte"; Gisella arma el grupo de WhatsApp y hace seguimiento hasta el TIE (crea el grupo cuando faltan ≤6 meses para la presentación).
 - **Precio: 668€, repartido 50/50** (primer 50% al inicio, segundo 50% cerca de la presentación).
+- **Reparto confirmado 17 agosto 2026**: de cada cuota de 334€ (el 50% del total), **la mitad es
+  para Gisella y la otra mitad para GOTIR** — o sea, 167€/167€ por cuota, 334€/334€ en el total del
+  servicio. No estaba especificado antes cuánto se llevaba Gisella, solo que hacía la "segunda
+  parte"; ahora queda con el monto exacto.
 - Deja menos margen directo que la estancia, pero suma comisión de curso y seguro (el certificado médico se hace en origen, sin comisión).
 
 **Requisitos clave — estancia por estudios**

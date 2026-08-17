@@ -48,6 +48,17 @@ la de Micol (punto 1) está explícitamente marcada como la más urgente.
   Exxo — ver `direcciones/marketing/CLAUDE.md` secciones 2 y 3). Sin monto específico dado todavía —
   es una necesidad recurrente mientras la campaña esté activa, no un pago puntual.
 
+## 1.1 Próximos ingresos (registrado 17 agosto 2026)
+
+- **Regina Epifanio** — paga el **50% del servicio de visado de estudios desde origen**, en pesos
+  argentinos. Según la conversión que dio Mariano: **334€ ≈ 305.000 ARS**. De ese monto, **la mitad
+  es para Gisella y la otra mitad para GOTIR** (ver el reparto 50/50 confirmado en
+  `direcciones/comercial/CLAUDE.md`, sección 1.2) — es decir, aproximadamente **152.500 ARS netos
+  para GOTIR** de este cobro (cálculo directo sobre lo que dio Mariano, no un dato que él haya dado
+  literalmente en pesos). Contacto verificado en GHL (`id=OvKjvt9MQvLiS2R6ofDG`) — existe como
+  contacto pero **todavía sin oportunidad cargada** en ningún pipeline; no se creó ninguna sin que
+  Mariano lo pida.
+
 ## 2. Cómo comportarte en esta área
 
 - No convertir ni sumar montos en distintas monedas por cuenta propia — presentarlos tal como

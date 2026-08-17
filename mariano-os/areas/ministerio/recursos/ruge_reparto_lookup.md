@@ -5,12 +5,16 @@
 **Meta de Mariano: todos los ítems confirmados (comprados/prestados/alquilados/verificados) antes del 20 de septiembre de 2026.** Ver política de recordatorios en `areas/ministerio/CLAUDE.md`.
 
 
-## Marco Guanuchi (23 ítems)
+## Marco Guanuchi (35 ítems)
 
 | Ítem | Bloque | Fecha límite |
 |---|---|---|
 | CÁMARA DE FOTOS | Producción — Confirmar préstamos | 26 ago |
 | DRON DJI PRO 5 | Producción — Confirmar préstamos | 26 ago |
+| BOLSAS DE PROVISIONES YA HECHAS | Logística — Verificar propiedad existente | 9 sept |
+| CAJAS ORGANIZADORAS 1ª REQUISA | Logística — Verificar propiedad existente | 9 sept |
+| CAJAS ORGANIZADORAS 2ª REQUISA | Logística — Verificar propiedad existente | 9 sept |
+| FIDEOS RINTIN INSTANTÁNEOS | Logística — Verificar propiedad existente | 9 sept |
 | BANDERA DE ESPAÑA PARA CAMISA | Logística — Gestión con Costa Rica | 26 ago |
 | CAMISETAS RUGE | Logística — Gestión con Costa Rica | 26 ago |
 | ETIQUETAS DE MOCHILAS | Logística — Gestión con Costa Rica | 26 ago |
@@ -20,20 +24,28 @@
 | ALTAVOCES | Logística — Confirmar préstamos | 26 ago |
 | CUERDAS PARA SEGURIDAD 20M | Logística — Confirmar préstamos | 26 ago |
 | ESTUCHE DE INSULINA | Logística — Confirmar préstamos | 26 ago |
-| MANTEL NEGRO PARA MESA DE CAMISETAS | Logística — Confirmar préstamos | 26 ago |
+| MANTEL VERDE PARA MESA DE CAMISETAS | Logística — Confirmar préstamos | 26 ago |
 | MESA PORTÁTIL PARA CAMISETAS | Logística — Confirmar préstamos | 26 ago |
 | RADIOS DE COMUNICACIÓN DE IGLESIA | Logística — Confirmar préstamos | 26 ago |
 | TRANSPORTE PASTORAL | Logística — Confirmar préstamos | 26 ago |
-| ALARGADOR ELÉCTRICO | Logística — Confirmar préstamos | 26 ago |
 | ALQUILER DE AUTOBÚS 55 PLAZAS | Logística — Confirmar alquiler | 19 ago (miercoles) - MAXIMA URGENCIA |
 | RADIOS DE COMUNICACIÓN GRAN ALCANCE VHF | Logística — Confirmar alquiler | 19 ago (miercoles) - MAXIMA URGENCIA |
 | TELÉFONO SATELITAL | Logística — Confirmar alquiler | 19 ago (miercoles) - MAXIMA URGENCIA |
+| ATÚN | Logística — Comprar (no perecedero) | 9 sept |
+| BARRAS ENERGÉTICAS DE FRUTOS SECOS | Logística — Comprar (no perecedero) | 9 sept |
+| CARAMELOS SURTIDOS | Logística — Comprar (no perecedero) | 9 sept |
+| COLA CAO | Logística — Comprar (no perecedero) | 9 sept |
+| GALLETAS DE DULCE CON CHOCOLATE BLANCO | Logística — Comprar (no perecedero) | 9 sept |
+| GALLETAS DIGESTIVAS MANZANA Y AVENA | Logística — Comprar (no perecedero) | 9 sept |
+| MINIS CEREAL RELLENO DE LECHE | Logística — Comprar (no perecedero) | 9 sept |
+| SNICKERS | Logística — Comprar (no perecedero) | 9 sept |
+| TANG BEBIDA INSTANTÁNEA | Logística — Comprar (no perecedero) | 9 sept |
 | CARAMELOS CON PROPÓLEO | La Voz — Comprar | 9 sept |
 | MIEL CON LIMÓN | La Voz — Comprar | 9 sept |
 | SPRAY ANTIINFLAMATORIO PARA GARGANTA CON PROPÓLEO | La Voz — Comprar | 9 sept |
 | TERMOS | Logística — Verificar TERMOS en bodega (nuevo) | 19 ago (miercoles) |
 
-## Julio Cesar Navia (16 ítems)
+## Julio Cesar Navia (17 ítems)
 
 | Ítem | Bloque | Fecha límite |
 |---|---|---|
@@ -43,6 +55,7 @@
 | PEGATINA CON NOMBRE PROVISIONES 20x13CM | Logística — Encargar fabricación | 26 ago |
 | ALARGADOR ELÉCTRICO PARA LETRERO RUGE ILUMINADO | Logística — Decidir compra o préstamo | 26 ago |
 | PALA METÁLICA NORMAL PARA COGER EL CARBÓN | Logística — Decidir compra o préstamo | 26 ago |
+| ALARGADOR ELÉCTRICO | Logística — Confirmar préstamos | 26 ago |
 | CAMIÓN CAJA CERRADA | Logística — Confirmar alquiler | 19 ago (miercoles) - MAXIMA URGENCIA |
 | FURGONETA GRANDE | Logística — Confirmar alquiler | 19 ago (miercoles) - MAXIMA URGENCIA |
 | TRONCOS | Logística — Confirmar alquiler | 19 ago (miercoles) - MAXIMA URGENCIA |
@@ -54,11 +67,21 @@
 | FUEGOS PIROTÉCNICOS CON BATERÍA EN FRÍO | Logística — Comprar (no perecedero) | 9 sept |
 | GUANTES DE PROTECCIÓN | Logística — Comprar (no perecedero) | 9 sept |
 
-## David Luzuriaga (114 ítems)
+## David Luzuriaga (150 ítems)
 
 | Ítem | Bloque | Fecha límite |
 |---|---|---|
+| ARENA PARA BORDE PISCINA 25KG | Logística — Verificar propiedad existente | 9 sept |
+| CUERDAS ELÁSTICAS PISCINA NEGRAS 20M | Logística — Verificar propiedad existente | 2026-09-02 00:00:00 |
+| ESTACAS | Logística — Verificar propiedad existente | 2026-09-02 00:00:00 |
 | CAMIÓN CAJA ABIERTA | Logística — Confirmar alquiler | 19 ago (miercoles) - MAXIMA URGENCIA |
+| ARENA PARA MEZCLA DE LODO 25KG | Logística — Comprar (no perecedero) | 2026-09-02 00:00:00 |
+| PAJA EN FARDO GRANDE | Logística — Comprar (no perecedero) | 2026-09-02 00:00:00 |
+| PASTILLAS PARA ENCENDER FOGATA | Logística — Comprar (no perecedero) | 2026-09-02 00:00:00 |
+| PRECINTO TRANSPARENTE | Logística — Comprar (no perecedero) | 2026-09-02 00:00:00 |
+| TAMBOR Y PALOS | Logística — Comprar (no perecedero) | 2026-09-02 00:00:00 |
+| TIERRA ORGÁNICA SACOS GRANDES | Logística — Comprar (no perecedero) | 2026-09-02 00:00:00 |
+| BOLSA PLÁSTICA NEGRA PARA EMPACAR | Logística — Comprar (no perecedero) | 2026-09-02 00:00:00 |
 | AGUA PARA SENDERISTAS 5L | Logística — Completar cantidad faltante | 26 ago (revisar el miercoles) |
 | ANTORCHAS DE LED SOLARES | Logística — Completar cantidad faltante | 26 ago (revisar el miercoles) |
 | CAL NATURAL | Logística — Completar cantidad faltante | 26 ago (revisar el miercoles) |
@@ -103,68 +126,68 @@
 | VASOS DE CARTON PARA CAFÉ 50 UNIDADES | Cocina — Completar cantidad faltante | 26 ago |
 | VASOS PLASTICOS PARA BEBIDA 100 UNIDADES | Cocina — Completar cantidad faltante | 26 ago |
 | CAFÉ SOLUBLE BOTE | Cocina — Completar cantidad faltante | 26 ago |
-| BALLETAS DE COCINA PAQUETES DE 3 UNIDADES | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| CUBO PARA FREGAR | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| ESCOBAS PARA BARRER | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| ESTROPAJO DE METAL | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| ESTROPAJO PARA LAVAR PLATOS | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| FREGASUELOS | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| LABAVAJILLAS DE PLATOS | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| LEJIA NORMAL LIQUIDA | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| MOCHOS PARA FREGAR | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| PAPEL DE COCINA EN ROLLO | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| RECOGEDOR DE BASURA | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| CARBÓN BOLSAS DE 5 KILOS | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| PASTILLAS PARA ENCENDER FUEGO | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| ACEITE GIRASOL 5 LITROS | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| ACHOTE PASTA | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| ACUARIUS DE 2 LITROS (pastores) | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| AJINO MOTO | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| AJO ACEITE EN BOTE PARA UNTAR DE 800 ML | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| AJO EN POLVO | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| AJO NATURAL EN MALLAS | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| ALUBIAS NEGRAS DE BOTE | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| APIO | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| ARROZ LARGO | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| AZUCAR BLANCA BOLSAS DE 1 KILO | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| BEBIDA COCA COLA MEDIO LITRO | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| BEBIDA ISOTÓNICA COLOR AZUL | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| CARNE CHULETA DE TERNERA SIN HUESO 250G | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| CARNE PICADA MIXTA PARA SPAGUETIS | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| CEBOLLA BLANCA | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| CEBOLLA ROJA | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| CHULETA DE AGUJA DE CERDO | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| CILANTRO | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| COCA COLAS DE 2 LITROS (pastores) | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| COMIDO EN BOTE | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| HUEVOS CUBETAS DE 12 | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| LECHE ENTERA DE 1 LITRO | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| LIMÓN | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| LONGANIZAS | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| MAÍZ DULCE | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| MORCILLAS | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| OREGANO EN BOTE | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| PAN DE BARRA | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| PATATAS GRANDES 200G | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| PEREGIL EN BOTE | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| PIMIENTA NEGRA | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| PIMIENTO VERDE | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| PIMIENTON ROJO DULCE EN BOTE | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| PLATANO DE FREIR (MADURO) | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| POLLO CUARTOS TRASEROS | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| POLLO ENTEROS (pastores) | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| PUERRO | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| QUESO FRESCO COSTEÑO | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| SAL NORMAL | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| SPAGUETIS | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| TOMATE NATURAL | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| TOMILLO EN BOTE | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| TORTILLA DE PATATA EN PAQUETE | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| ZUMOS DE NARANJA 2L | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| ZUMOS MULTIFRUTAS 2L (pastores) | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 28 sept |
-| Cruz — pico/cortafierro para el hueco | Sueltos de la retrospectiva (fuera del inventario formal) | - |
-| Elementos para las prédicas (copa de cristal) | Sueltos de la retrospectiva (fuera del inventario formal) | - |
-| Protocolo de numeración de radios y responsable por radio | Sueltos de la retrospectiva (fuera del inventario formal) | - |
+| BALLETAS DE COCINA PAQUETES DE 3 UNIDADES | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| CUBO PARA FREGAR | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| ESCOBAS PARA BARRER | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| ESTROPAJO DE METAL | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| ESTROPAJO PARA LAVAR PLATOS | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| FREGASUELOS | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| LABAVAJILLAS DE PLATOS | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| LEJIA NORMAL LIQUIDA | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| MOCHOS PARA FREGAR | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| PAPEL DE COCINA EN ROLLO | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| RECOGEDOR DE BASURA | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| CARBÓN BOLSAS DE 5 KILOS | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| PASTILLAS PARA ENCENDER FUEGO | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| ACEITE GIRASOL 5 LITROS | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| ACHOTE PASTA | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| ACUARIUS DE 2 LITROS (pastores) | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| AJINO MOTO | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| AJO ACEITE EN BOTE PARA UNTAR DE 800 ML | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| AJO EN POLVO | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| AJO NATURAL EN MALLAS | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| ALUBIAS NEGRAS DE BOTE | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| APIO | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| ARROZ LARGO | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| AZUCAR BLANCA BOLSAS DE 1 KILO | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| BEBIDA COCA COLA MEDIO LITRO | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| BEBIDA ISOTÓNICA COLOR AZUL | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| CARNE CHULETA DE TERNERA SIN HUESO 250G | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| CARNE PICADA MIXTA PARA SPAGUETIS | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| CEBOLLA BLANCA | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| CEBOLLA ROJA | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| CHULETA DE AGUJA DE CERDO | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| CILANTRO | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| COCA COLAS DE 2 LITROS (pastores) | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| COMIDO EN BOTE | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| HUEVOS CUBETAS DE 12 | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| LECHE ENTERA DE 1 LITRO | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| LIMÓN | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| LONGANIZAS | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| MAÍZ DULCE | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| MORCILLAS | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| OREGANO EN BOTE | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| PAN DE BARRA | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| PATATAS GRANDES 200G | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| PEREGIL EN BOTE | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| PIMIENTA NEGRA | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| PIMIENTO VERDE | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| PIMIENTON ROJO DULCE EN BOTE | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| PLATANO DE FREIR (MADURO) | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| POLLO CUARTOS TRASEROS | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| POLLO ENTEROS (pastores) | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| PUERRO | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| QUESO FRESCO COSTEÑO | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| SAL NORMAL | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| SPAGUETIS | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| TOMATE NATURAL | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| TOMILLO EN BOTE | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| TORTILLA DE PATATA EN PAQUETE | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| ZUMOS DE NARANJA 2L | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| ZUMOS MULTIFRUTAS 2L (pastores) | Cocina — Comprar limpieza y alimentación (perecedero, cerca de octubre) | 26 ago |
+| Cruz — pico/cortafierro para el hueco | Sueltos de la retrospectiva (fuera del inventario formal) | 26 ago |
+| Elementos para las prédicas (copa de cristal) | Sueltos de la retrospectiva (fuera del inventario formal) | 26 ago |
+| Protocolo de numeración de radios y responsable por radio | Sueltos de la retrospectiva (fuera del inventario formal) | 26 ago |
 | NEVERAS AZULES PARA ALIMENTOS | Cocina — Pendientes varios | 26 ago |
 | PAPEL ALUMINIO | Cocina — Pendientes varios | 26 ago |
 | SERVILLETAS PAQUETES | Cocina — Pendientes varios | 26 ago |
@@ -172,64 +195,41 @@
 | CARETILLA PARA ENCENDER EL CARBON | Cocina — Pendientes varios | 26 ago |
 | PARRILLA METALICA PARA ASAR GRANDE | Cocina — Pendientes varios | 26 ago |
 | CAJAS DE AZUCAR INDIVIDUALES | Cocina — Pendientes varios | 26 ago |
+| ADAPTADOR DE GRIFO | Logística — Verificar propiedad existente | 2026-09-02 00:00:00 |
+| BANDERAS DE ESPAÑA | Logística — Verificar propiedad existente | 2026-09-02 00:00:00 |
+| BANDERAS DE TRIBU | Logística — Verificar propiedad existente | 2026-09-02 00:00:00 |
+| BATERIA MARCA BOSH | Logística — Verificar propiedad existente | 2026-09-02 00:00:00 |
+| BIDON DE AGUA CAPACIDAD 1.000 LITROS | Logística — Verificar propiedad existente | 2026-09-02 00:00:00 |
+| BUTANO PORTABLE PARA COCINAS DE SENDERISTAS | Logística — Verificar propiedad existente | 2026-09-02 00:00:00 |
+| CABLES DE CONEXIÓN DE BATERIA A CRUZ | Logística — Verificar propiedad existente | 2026-09-02 00:00:00 |
+| CAJAS DE MADERA PARA RECIBIR PROVISIONES Y AGUA(OFRENDA) | Logística — Verificar propiedad existente | 2026-09-02 00:00:00 |
+| CAPAZOS NEGROS | Logística — Verificar propiedad existente | 2026-09-02 00:00:00 |
+| COCINAS PORTATILES DE GAS | Logística — Verificar propiedad existente | 2026-09-02 00:00:00 |
+| CONECTOR RAPIDO DE GRIFO | Logística — Verificar propiedad existente | 2026-09-02 00:00:00 |
+| CONEXIÓN PARA ADAPTADOR IBC CON GRIFO PARA BIDON | Logística — Verificar propiedad existente | 2026-09-02 00:00:00 |
+| CRUZ DE MADERA CON ILUMINACION LED | Logística — Verificar propiedad existente | 2026-09-02 00:00:00 |
+| KIT PRIMEROS AUXILIOS | Logística — Verificar propiedad existente | 2026-09-02 00:00:00 |
+| LEÑA PARA FOGATA | Logística — Verificar propiedad existente | 2026-09-02 00:00:00 |
+| LONA DE BIENVENIDOS PARA RECIBIR VISITA Y STAND | Logística — Verificar propiedad existente | 2026-09-02 00:00:00 |
+| LONA VERTICAL DE RUGE (LLEGADA A XODOS PIEDRA ) | Logística — Verificar propiedad existente | 2026-09-02 00:00:00 |
+| LONAS AZULES LAS MAS GRANDES | Logística — Verificar propiedad existente | 2026-09-02 00:00:00 |
+| LONAS ROJAS | Logística — Verificar propiedad existente | 2026-09-02 00:00:00 |
+| LONAS VERDES QUE VAN A SUELO DEBAJO DE LA PRINCIPAL | Logística — Verificar propiedad existente | 2026-09-02 00:00:00 |
+| MACHETE | Logística — Verificar propiedad existente | 2026-09-02 00:00:00 |
+| MANGUERA VERDE | Logística — Verificar propiedad existente | 2026-09-02 00:00:00 |
+| MANTAS TERMICAS | Logística — Verificar propiedad existente | 2026-09-02 00:00:00 |
+| PALAS PEQUEÑAS PARA TRIBUS | Logística — Verificar propiedad existente | 2026-09-02 00:00:00 |
+| PLASTICOS NEGROS GRANDES | Logística — Verificar propiedad existente | 2026-09-02 00:00:00 |
+| ROTULO LUMINOSO SUPERIOR RUGE (LLEGADA A  CENA DEL REY) | Logística — Verificar propiedad existente | 2026-09-02 00:00:00 |
 
 ## Mariano Barcelona (0 ítems)
 
 | Ítem | Bloque | Fecha límite |
 |---|---|---|
 
-## Sin asignar todavía (49 ítems)
+## Sin asignar todavía (0 ítems)
 
 No se discutieron en la llamada del 17 ago o dependen de una respuesta pendiente (Mauricio/Eventos por el lote de piscina). Mariano los está completando a mano en la hoja "Sin asignar responsable" de `Ruge_reparto_por_persona_17ago2026.xlsx` — **antes de responder quién se encarga de uno de estos, revisar si ese archivo ya lo tiene completado**, puede estar desactualizado acá.
 
 | Ítem | Bloque |
 |---|---|
-| ARENA PARA BORDE PISCINA 25KG | Logística — Verificar propiedad existente |
-| BOLSAS DE PROVISIONES YA HECHAS | Logística — Verificar propiedad existente |
-| CAJAS ORGANIZADORAS 1ª REQUISA | Logística — Verificar propiedad existente |
-| CAJAS ORGANIZADORAS 2ª REQUISA | Logística — Verificar propiedad existente |
-| CUERDAS ELÁSTICAS PISCINA NEGRAS 20M | Logística — Verificar propiedad existente |
-| ESTACAS | Logística — Verificar propiedad existente |
-| FIDEOS RINTIN INSTANTÁNEOS | Logística — Verificar propiedad existente |
-| ARENA PARA MEZCLA DE LODO 25KG | Logística — Comprar (no perecedero) |
-| PAJA EN FARDO GRANDE | Logística — Comprar (no perecedero) |
-| PASTILLAS PARA ENCENDER FOGATA | Logística — Comprar (no perecedero) |
-| PRECINTO TRANSPARENTE | Logística — Comprar (no perecedero) |
-| TAMBOR Y PALOS | Logística — Comprar (no perecedero) |
-| TIERRA ORGÁNICA SACOS GRANDES | Logística — Comprar (no perecedero) |
-| ATÚN | Logística — Comprar (no perecedero) |
-| BARRAS ENERGÉTICAS DE FRUTOS SECOS | Logística — Comprar (no perecedero) |
-| BOLSA PLÁSTICA NEGRA PARA EMPACAR | Logística — Comprar (no perecedero) |
-| CARAMELOS SURTIDOS | Logística — Comprar (no perecedero) |
-| COLA CAO | Logística — Comprar (no perecedero) |
-| GALLETAS DE DULCE CON CHOCOLATE BLANCO | Logística — Comprar (no perecedero) |
-| GALLETAS DIGESTIVAS MANZANA Y AVENA | Logística — Comprar (no perecedero) |
-| MINIS CEREAL RELLENO DE LECHE | Logística — Comprar (no perecedero) |
-| SNICKERS | Logística — Comprar (no perecedero) |
-| TANG BEBIDA INSTANTÁNEA | Logística — Comprar (no perecedero) |
-| ADAPTADOR DE GRIFO | Logística — Verificar propiedad existente |
-| BANDERAS DE ESPAÑA | Logística — Verificar propiedad existente |
-| BANDERAS DE TRIBU | Logística — Verificar propiedad existente |
-| BATERIA MARCA BOSH | Logística — Verificar propiedad existente |
-| BIDON DE AGUA CAPACIDAD 1.000 LITROS | Logística — Verificar propiedad existente |
-| BUTANO PORTABLE PARA COCINAS DE SENDERISTAS | Logística — Verificar propiedad existente |
-| CABLES DE CONEXIÓN DE BATERIA A CRUZ | Logística — Verificar propiedad existente |
-| CAJAS DE MADERA PARA RECIBIR PROVISIONES Y AGUA(OFRENDA) | Logística — Verificar propiedad existente |
-| CAPAZOS NEGROS | Logística — Verificar propiedad existente |
-| COCINAS PORTATILES DE GAS | Logística — Verificar propiedad existente |
-| CONECTOR RAPIDO DE GRIFO | Logística — Verificar propiedad existente |
-| CONEXIÓN PARA ADAPTADOR IBC CON GRIFO PARA BIDON | Logística — Verificar propiedad existente |
-| CRUZ DE MADERA CON ILUMINACION LED | Logística — Verificar propiedad existente |
-| KIT PRIMEROS AUXILIOS | Logística — Verificar propiedad existente |
-| LEÑA PARA FOGATA | Logística — Verificar propiedad existente |
-| LONA DE BIENVENIDOS PARA RECIBIR VISITA Y STAND | Logística — Verificar propiedad existente |
-| LONA VERTICAL DE RUGE (LLEGADA A XODOS PIEDRA ) | Logística — Verificar propiedad existente |
-| LONAS AZULES LAS MAS GRANDES | Logística — Verificar propiedad existente |
-| LONAS ROJAS | Logística — Verificar propiedad existente |
-| LONAS VERDES QUE VAN A SUELO DEBAJO DE LA PRINCIPAL | Logística — Verificar propiedad existente |
-| MACHETE | Logística — Verificar propiedad existente |
-| MANGUERA VERDE | Logística — Verificar propiedad existente |
-| MANTAS TERMICAS | Logística — Verificar propiedad existente |
-| PALAS PEQUEÑAS PARA TRIBUS | Logística — Verificar propiedad existente |
-| PLASTICOS NEGROS GRANDES | Logística — Verificar propiedad existente |
-| ROTULO LUMINOSO SUPERIOR RUGE (LLEGADA A  CENA DEL REY) | Logística — Verificar propiedad existente |

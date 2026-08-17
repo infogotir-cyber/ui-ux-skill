@@ -224,32 +224,40 @@ un encargado final. No asumir un reparto ahí hasta que esa respuesta llegue.
 El excel que se fue armando en la reunión (166 ítems "pendiente gestionar") se cruzó item por item
 contra `INVENTARIO_2026_RUGE.xlsx`, el inventario real que Mariano subió (200 ítems: 166 "pendiente
 gestionar" + 34 ya en "ALMACEN RUGE" que igual necesitan que alguien los revise/confirme). Se
-detectó que faltaban esos 34 en el detalle original — se sumaron: 7 de cocina (van con David,
-confirmar con Adrián Rivera) y 26 de logística/eventos que **nunca se discutieron en la llamada**
-(banderas, lonas, cruz de madera, kit de primeros auxilios, machete, mantas térmicas, etc.) —
-quedaron sin encargado a propósito, no se inventó ninguno.
+detectó que faltaban esos 34 en el detalle original y se sumaron. Mariano después descargó el
+archivo "por persona", lo completó a mano (asignó los que habían quedado sin encargado) y lo
+resubió como **versión definitiva ("ahora sí tengo el final final", 17 ago 2026, noche)** — esa
+subida ya está incorporada acá. **Los 202 ítems del inventario tienen encargado, cero sin
+asignar.** Único cambio de nombre que hizo Mariano: "MANTEL NEGRO PARA MESA DE CAMISETAS" pasó a
+ser "MANTEL VERDE PARA MESA DE CAMISETAS" (coincide con lo dicho en la llamada — hay que comprarlo
+de color verde).
 
 **Archivos fuente de verdad, guardados en `areas/ministerio/recursos/`:**
 - `INVENTARIO_2026_RUGE_original.xlsx` — el inventario real de 200 ítems tal como lo subió Mariano.
 - `Ruge_reparto_tareas_17ago2026_actualizado.xlsx` — maestro con 3 hojas: "Resumen por bloque",
-  "Detalle completo por ítem" (202 filas: 200 del inventario real + 2 ítems "fuera del inventario
-  formal" de la retrospectiva — nota: son 3 en total pero uno, TERMOS, ya viene del inventario real
-  con estado ALMACEN RUGE y se cuenta ahí, no dos veces), "Reparto detallado por persona".
-- `Ruge_reparto_por_persona_17ago2026.xlsx` — **la versión que Mariano confirmó como definitiva el
-  17 ago 2026** ("nos quedamos por ahora con esta versión"): una hoja por persona (Marco, Julio,
-  David, Mariano) con ítem, si es tarea de su grupo o una tarea específica dentro de otro grupo,
-  detalle/con quién hablar, la otra comisión con la que hay que revisarlo (del inventario real),
-  estado (pendiente gestionar / almacén Ruge) y fecha límite (nunca posterior al 10 sept, por pedido
-  explícito de Mariano) — más una hoja **"Sin asignar responsable"** con los 49 ítems sin encargado
-  claro, con una columna vacía para que Mariano la complete a mano. **Si Mariano dice que ya asignó
-  algo ahí, la próxima vez que se toque este tema hay que releer ese archivo, puede estar
-  desactualizado en este documento.**
+  "Detalle completo por ítem" (202 filas, encargado/fecha/notas ya sincronizados con la versión
+  definitiva de Mariano), "Reparto detallado por persona". Para los 4 bloques que terminaron
+  repartidos entre más de una persona a nivel ítem (Confirmar préstamos, Confirmar alquiler,
+  Verificar propiedad existente, Comprar no perecedero), la columna Encargado de "Resumen por
+  bloque" dice "Ver detalle por ítem (repartido)" — el reparto real está en `ruge_reparto_lookup.md`
+  o en la hoja de detalle, no asumir un solo encargado para esos 4 bloques.
+- `Ruge_reparto_por_persona_17ago2026.xlsx` — **archivo definitivo tal cual lo subió Mariano el 17
+  ago 2026 de noche, sin reformatear** (para no arriesgar perder algo de su edición): una hoja por
+  persona (Marco 35 ítems, Julio 17, David 150, Mariano 0 ítems + 4 tareas de coordinación) con
+  ítem, bloque, si es tarea de su grupo o una tarea específica dentro de otro grupo, detalle/con
+  quién hablar (ya con los contactos finales, ej. "Administración (Juliana)" para varios), la otra
+  comisión con la que revisarlo, estado y fecha límite. **Ya no existe hoja "Sin asignar
+  responsable" — no hace falta, no quedó ningún ítem sin encargado.**
 - `ruge_reparto_lookup.md` — tabla generada automáticamente (ítem → persona → bloque → fecha
-  límite) para responder rápido "¿quién se encarga de X?" sin abrir el excel. **Regenerar con el
-  script correspondiente cada vez que cambie el reparto** (no editar a mano, se desincroniza).
+  límite) para responder rápido "¿quién se encarga de X?" sin abrir el excel — **ya actualizada con
+  la versión definitiva, 202/202 con encargado**. Regenerar con el script correspondiente si el
+  reparto vuelve a cambiar (no editar a mano, se desincroniza).
 
 **Meta explícita de Mariano (17 ago 2026): todos los ítems del reparto confirmados (comprado,
-prestado, alquilado o verificado según corresponda) antes del 20 de septiembre de 2026.**
+prestado, alquilado o verificado según corresponda) antes del 20 de septiembre de 2026.** Pidió
+explícitamente poder preguntar en cualquier momento "¿quién se encarga de tal ítem?" (dio el
+ejemplo del adaptador de grifo) y recibir la respuesta correcta al instante — para eso está
+`ruge_reparto_lookup.md`, hay que usarlo como primera fuente antes de decir "no sé" o de adivinar.
 
 ### Política de recordatorios de Ruge (pedida por Mariano 17 ago 2026)
 Mariano no quiere tener que revisar el excel él mismo para saber qué se vence — pidió que el
@@ -273,13 +281,15 @@ Cómo comportarse:
   correspondiente a cada persona, para que las fechas límite y el estado vivan ahí también, no solo
   en el excel.
 
-### Rate limit de ClickUp (17 ago 2026, 21:59 UTC)
+### Rate limit de ClickUp (confirmado dos veces, 17 ago 2026, 21:59 y 22:30 UTC)
 Al intentar traer la lista de Inventario completa (`clickup_filter_tasks`, list_id
 `901220315543`) para verificar el reparto contra ClickUp, la API devolvió "Rate limit exceeded,
-espera 859 minutos" (~14h20m, libera aprox. 18 ago ~12:00-13:00 UTC / 14:00-15:00 hora Madrid). Se
-programó un recordatorio interno para reintentar la sincronización pasado ese horario — si por
-algún motivo no se retomó solo, Mariano puede simplemente pedir "actualiza ClickUp con el reparto
-de Ruge" y hay que ir directo a asignar cada tarea de la lista de Inventario según
+espera 859 minutos"; reintentado 30 min después con `clickup_get_workspace_members`, seguía
+bloqueado ("794 minutos") — confirma que es un límite real que se va descontando, no un error
+puntual. Libera aprox. 18 ago ~12:00-13:00 UTC / 14:00-15:00 hora Madrid. Ya hay un `send_later`
+programado para ese horario (con margen) que retoma esta sesión y sincroniza automáticamente. Si
+por algún motivo no se retomó solo, Mariano puede simplemente pedir "actualiza ClickUp con el
+reparto de Ruge" y hay que ir directo a asignar cada tarea de la lista de Inventario según
 `ruge_reparto_lookup.md`.
 
 ### Lista "Eventos puntuales" — ID `901220372534` (dentro del folder Liderazgo)

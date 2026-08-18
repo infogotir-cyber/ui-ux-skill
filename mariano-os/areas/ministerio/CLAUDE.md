@@ -72,35 +72,40 @@ pendiente de confirmar.
   "New Life" — descripción general del proceso recurrente; ver el detalle real del ciclo actual
   abajo).
 
-#### Graduación New Life — 1 sept 2026 (registrado 17 agosto 2026)
+#### Graduación New Life — 1 sept 2026 (registrado 17 agosto 2026, actualizado 18 ago 2026)
 Tarea madre creada en "Tareas Operativas Recurrentes": **"Graduación New Life — 1 sept 2026"** — ID
-`869ejzpf3` (https://app.clickup.com/t/869ejzpf3). Mariano avisó que faltan varias cosas por
-confirmar/hacer y hay que apurarse. Las 10 subtareas de abajo **quedaron bloqueadas por rate limit de
-ClickUp (sigue bloqueado, ~21hs cada vez que se reintenta)** — crearlas como subtareas de
-`869ejzpf3` apenas se libere:
+`869ejzpf3` (https://app.clickup.com/t/869ejzpf3). Las 10 subtareas de abajo **ya están creadas en
+ClickUp** (se habían quedado solo documentadas acá por el rate limit viejo del conector oficial —
+con el servidor MCP propio, 18 ago 2026, se crearon todas): `869ekhmgx`, `869ekhmh2`, `869ekhmhn`,
+`869ekhmjn`, `869ekhmke`, `869ekhmkx`, `869ekhmmr`, `869ekhmnk`, `869ekhmp4`, `869ekhmq1` (en ese
+orden, 1 a 10).
+
+**Cambio importante de responsables (18 agosto 2026)** — ver contexto sensible completo más abajo:
+la pastora tomó de vuelta las tareas de bandas y chocolate del equipo de Mariano, y se las
+reasignó directo a Juliana y Carlos Prado. La decoración (ítem 4) sigue siendo de Ingrid+Lurbin,
+todavía sin resolver.
 
 1. **Certificados — verificar impresión (Juliana)**, urgente, vencimiento sugerido 25 ago. El PDF ya
    fue enviado a Mariano; **Juliana** (única persona del área administrativa de la iglesia) dijo que
    los iba a imprimir — falta confirmar si ya lo hizo.
-2. **Bandas — links de proveedores (Adrián Caro)**, vencimiento sugerido 25 ago. Adrián tiene que
-   entregar 2 links de proveedores de bandas **personalizadas** con el texto "New Life" y 2 links de
-   bandas **genéricas sin personalizar** (opción más económica) — falta confirmar si ya los buscó.
-3. **Chocolate decorado "completado" — comprar y decorar (Adrián Caro)**, vencimiento sugerido 28
-   ago. Detalle por estudiante: un chocolate decorado con un papel que diga "completado". Adrián
-   tiene que elegir y comprar el chocolate, reportarle a Mariano qué chocolate es/dónde lo compra/
-   cuánto cuesta (para pasar presupuesto), y encargarse de la decoración de cada uno. Mariano fue
-   explícito: no alcanza con que esté delegado, necesita que Adrián lo haga de verdad y reporte.
-4. **Decoración — globos, sillas y Ferrero Rocher (Ingrid Guaño + Lurbin)**, vencimiento sugerido 28
-   ago. Ingrid coordina con **Lurbin** (decoradora, apoyo externo) y tiene que reportar el estado de:
-   decoración con globos, forrado de las sillas, y un detalle para los estudiantes con bombones
-   Ferrero Rocher.
+2. **Bandas — RESUELTO por Juliana (18 ago), ya NO es tarea de Adrián Caro/equipo de Mariano**. Se
+   había pedido a Adrián buscar links de proveedores de bandas personalizadas y genéricas, pero
+   llegó tarde. La pastora le pidió directo a Juliana ir a comprar bandas genéricas a un "chino".
+3. **Chocolate decorado "completado" — RESUELTO por Juliana + Carlos Prado (18 ago), ya NO es tarea
+   de Adrián Caro/equipo de Mariano**. Juliana compra los chocolates en Mercadona; Carlos Prado
+   (producción) vela por que se haga el sticker de decoración de cada uno.
+4. **Decoración — globos, sillas y Ferrero Rocher (Ingrid Guaño + Lurbin)** — SIGUE PENDIENTE (18
+   ago), sin cambios de responsable. Ingrid coordina con **Lurbin** (decoradora, apoyo externo) pero
+   todavía no compró nada — es el único costo que sigue faltando para el presupuesto (ítem 10).
+   Vencimiento sugerido 28 ago, ya urgente.
 5. **Togas — descartadas para esta graduación, evaluar para la próxima** (sin vencimiento, es una
    nota). Se había indicado toga (sobretodo negro) por estudiante, pero sale 25€ c/u — muy caro y ya
    es muy tarde para avisarles a los estudiantes que deben pagarlo. Descartada para el 1 sept 2026;
    tenerla en cuenta para la próxima graduación, avisando con más anticipación si se quiere cobrar.
 6. **Producción y roles de servicio (Carlos Prado)** — agregado 17 ago. Carlos encabeza producción;
    Mariano ya le pidió armar un rol/turnos para gente sirviendo en producción, redes sociales, etc.
-   Falta seguimiento de que efectivamente lo esté armando.
+   Falta seguimiento de que efectivamente lo esté armando. (Ahora Carlos también vela por el sticker
+   del chocolate, ítem 3.)
 7. **Rol de servidores (Margot)** — agregado 17 ago. Mariano ya le pidió a Margot armar el rol de
    servidores para que haya gente sirviendo durante la graduación. Falta seguimiento.
 8. **Impact Worship — banda de música (David Valera)** — agregado 17 ago. Mariano ya le pidió a David
@@ -114,17 +119,35 @@ ClickUp (sigue bloqueado, ~21hs cada vez que se reintenta)** — crearlas como s
    graduación; (b) apenas lo tenga, reenviárselo a **Carlos Prado** para que coordine todos los temas
    de producción con el cronograma real; (c) una vez confirmado, hablar con **el pastor** para que
    prepare alguna enseñanza para el evento.
-10. **🔴 Armar presupuesto general y cobro anticipado a estudiantes** — agregado 17 ago, la más
-    urgente de todas: **quedan 15 días y los estudiantes todavía no saben que tienen que pagar para
-    la graduación, ni cuánto**. Tarea de Mariano mismo, depende de que le confirmen antes:
-    - Adrián (ítems 2 y 3: costo de bandas + costo del chocolate)
-    - Ingrid (ítem 4: costo de decoración con Lurbin)
+10. **🔴 Armar presupuesto general y cobro anticipado a estudiantes** — la más urgente de todas:
+    **los estudiantes todavía no saben que tienen que pagar para la graduación, ni cuánto**. Tarea de
+    Mariano mismo. **Actualización 18 ago**: con bandas y chocolate resueltos directo por Juliana
+    (fuera del presupuesto que arma el equipo de Mariano), el único dato que sigue faltando de
+    verdad es el costo de decoración (ítem 4, Ingrid) — **pregunta abierta sin resolver**: no está
+    confirmado si los costos de bandas/chocolate que ahora paga Juliana igual se prorratean entre
+    los estudiantes o quedan a cargo de la iglesia directamente, no asumir.
 
-    Con esos 3 datos Mariano arma el presupuesto general, lo divide entre los estudiantes que van a
+    Con ese dato Mariano arma el presupuesto general, lo divide entre los estudiantes que van a
     la graduación, le avisa a los pastores que va a mandarle a cada estudiante un mensaje pidiendo el
     pago anticipado de un monto X — el objetivo explícito es que la graduación no le genere gastos a
     la iglesia. Sin esto resuelto pronto, se corre el riesgo de no llegar a tiempo a cobrar antes del
     1 sept.
+
+##### Contexto sensible — la pastora se enojó por la demora (18 agosto 2026)
+Mismo criterio que el contexto sensible de la Tarde Profética más abajo: **no va a ClickUp**, queda
+solo en el sistema privado, es para entender el contexto real, no un pendiente operativo.
+
+Con la fecha ya cerca, la pastora se enojó mucho porque Mariano no había desarrollado bien ni a
+tiempo las tareas que había delegado a su equipo de New Life: la compra de chocolates, el sticker
+de decoración de cada chocolate (delegado a Adrián Caro), y la compra de bandas de graduación
+(habían buscado links de proveedores en vez de resolver rápido comprando algo genérico). Como
+consecuencia, la pastora le sacó esas tareas al equipo de Mariano y se las asignó directo a
+**Juliana** (comprar bandas en un "chino" y chocolates en Mercadona) y a **Carlos Prado** (su
+esposo, cabeza de producción de la iglesia — que vele por el sticker del chocolate). Es la
+**tercera instancia** en pocos días de liderazgo pastoral mostrando insatisfacción real con la
+ejecución/reporte a tiempo de Mariano y su equipo alrededor de un evento (después del Pastor Fabio
+y la Pastora Mirna por la Tarde Profética, ver más abajo) — patrón que vale la pena que Mariano
+tenga presente, no un hecho aislado.
 
 ### Folder: Vida Personal & Espiritual (ID `901212988023`)
 Ojo: pese al nombre, este folder vive dentro del espacio de ministerio en ClickUp por razones

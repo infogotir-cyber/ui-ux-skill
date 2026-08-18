@@ -517,6 +517,53 @@ más de un nodo Internal Notification (podría haber otro con el mismo problema 
 hay otros textos estáticos en el resto del workflow con el mismo error — revisarlo completo la
 próxima vez que se abra.
 
+### 5.6 Cierre del caso Pri Rocha (18 agosto 2026) — dos caminos, dos workflows
+
+Continuación de 5.5. Mariano aclaró que Pri Rocha deriva dos tipos de cliente por caminos
+distintos, y cada uno necesitó su propia solución:
+
+- **Estancias por estudios** → formulario "Estancias Estudios", cierra Mariano, pasa por el
+  pipeline **Pre-venta**. Ya cubierto por la rama "Pri Rocha" agregada a "Notificacion
+  influencers" (sección 5.5) — el campo "Canal referencia (Dr)" ya existía en ese formulario
+  (confirmado por Mariano). **No se probó de punta a punta con un envío real** (las pruebas del
+  día fueron todas por el formulario de María) — queda pendiente de probar cuando surja un caso
+  real o una prueba dedicada.
+- **Nómada digital** → formulario "Trámites derivados a María García Serrano", pipeline
+  **Proveedores**. No lo cubre "Notificacion influencers" (trigger scopeado a cambios de etapa en
+  Pre-venta, nunca se dispara para Proveedores). Se armó un workflow nuevo y separado en vez de
+  tocar "María García Serrano - tramites" (para no arriesgar la secuencia ya en producción):
+  **"Notificar Pri Rocha Nomada Digital"** (`c3d18da5-4813-4414-85d7-b97b78e326fe`, publicado) —
+  mismo trigger (Form Submitted = ese formulario) que el workflow existente, corre en paralelo,
+  con Condition ("Canal referencia (Dr)" es "Pri Rocha") → Internal Notification (SMS, Custom
+  Number, +351969515147) → FINAL. **Probado con éxito** (18 ago, 20:04 UTC) — el SMS llegó.
+
+**Corrección de número (18 agosto 2026)**: durante las pruebas se descubrió que `+34603289674`
+(documentado antes como "el WhatsApp de GOTIR") es en realidad la línea laboral personal de
+Mariano — la centralita real termina en **3469** (`+34604363469`). Ver corrección completa en
+`CLAUDE.md` raíz, sección de herramientas conectadas / GHL.
+
+**Bug menor pendiente, no bloqueante**: el SMS de "Notificar Pri Rocha Nomada Digital" salió desde
+`+34603289674` (línea de Mariano) en vez de la centralita (`...3469`), a pesar de que el nodo
+Internal Notification tiene la misma configuración que los que sí usan la centralita (Jesús/Nasla/
+Wilmen). Diagnóstico agotado por API: el campo de workflow "Número de origen" (Configuración →
+Detalles del remitente) está vacío en AMBOS workflows (el que funciona bien y el nuevo) y muestra
+"No Data" — no hay números cargados en absoluto en "Sistema telefónico" de GHL. No se encontró
+registro de conversación/mensaje vía API para el número de Pri Rocha (los envíos a "Custom Number"
+no generan un contacto/conversación rastreable). **Sin resolver** — próximos pasos sugeridos: (a)
+revisar la pestaña "Registros de ejecución" del workflow para ver si GHL expone ahí el número real
+usado, o (b) contactar soporte de GHL, ya que dos workflows con configuración idéntica dan
+resultados distintos — probablemente algo a nivel de cuenta que la API pública no expone. No
+bloquea el uso real (el mensaje sí llega), es un detalle de imagen de marca a corregir cuando haya
+tiempo.
+
+**Aclaración sobre pruebas repetidas con el mismo contacto (18 agosto 2026)**: al probar dos veces
+con el mismo teléfono/email pero distinto nombre, GHL matcheó al mismo contact_id existente
+(`dhZ4EyB1jWVm3ui4TPGX`) en vez de crear uno nuevo — como ese contacto ya había entrado una vez a
+"María García Serrano - tramites", no volvió a dispararse (comportamiento default de GHL: sin
+reingreso a menos que se habilite explícitamente), mientras que sí entró a
+"Notificar Pri Rocha Nomada Digital" por ser su primera vez ahí. **No es un bug** — con clientes
+reales (teléfono/email genuinamente nuevos) el workflow de María se dispara normal para cada uno.
+
 ---
 
 ## 6. Piezas sueltas (todo lo demás que no encajó arriba)

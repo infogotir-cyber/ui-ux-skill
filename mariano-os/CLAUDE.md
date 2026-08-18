@@ -330,9 +330,13 @@ Este proyecto debe tener acceso vía MCP a:
     `2021-07-28` que usa el resto del servidor — se agregó un parámetro `api_version` opcional a
     `ghl_request` para poder pisarlo caso por caso. Requiere el scope `conversations/message.write`
     (agregado al token ese mismo día por Mariano). El `fromNumber` se fija siempre a
-    `+34603289674` (el número de WhatsApp de GOTIR conectado en la location — confirmado contra el
-    tag `wa: +34603289674` que GHL le pone a los contactos con conversación real por ese canal), así
-    no hace falta que quien llama la tool lo adivine. **Probada de punta a punta el 17 agosto 2026,
+    `+34603289674`. **Corrección importante (18 agosto 2026)**: este número NO es la centralita de
+    GOTIR como se había asumido acá — es la línea laboral personal de Mariano en GOTIR. La
+    centralita real (la que se usa para las notificaciones automáticas, ej. a Jesús
+    Mosquera/Nasla/Wilmen) termina en **3469** (`+34604363469`, confirmado contra el tag
+    `wa: +34604363469` que GHL le pone a los contactos). Revisar si `ghl_send_message` debería
+    usar el número de la centralita en vez del de Mariano — no se corrigió el código todavía, solo
+    se deja anotado el dato correcto. **Probada de punta a punta el 17 agosto 2026,
     con resultado importante para tener en cuenta**: primer intento devolvió `401 not authorized for
     this scope` (el token todavía no tenía `conversations/message.write`); después de que Mariano lo
     agregó, el mismo `curl` devolvió `201` (`message_id=FpWxhGezl7IgaxeIKGa2`) — pero **un `201` de

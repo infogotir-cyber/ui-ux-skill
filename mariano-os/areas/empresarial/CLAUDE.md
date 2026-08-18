@@ -140,6 +140,25 @@ dado en esta dirección — es un interés declarado, no un proyecto en marcha.
   precios, son solo imágenes. Útiles como material visual crudo para una futura landing page, no
   aportan datos nuevos de negocio.
 
+- **Decisión de estrategia tomada por Mariano (17 agosto 2026)**: en vez de esperar a tener
+  presupuesto para publicidad paga, construir ahora mismo (con Claude, sin costo de desarrollo) una
+  web/landing propia con buen **SEO y GEO** (optimización para que la encuentren tanto buscadores
+  tradicionales como motores de IA/LLMs) — para quedar indexado y encontrable orgánicamente sin
+  gastar en ads todavía; la publicidad paga queda para más adelante, cuando tenga capacidad
+  económica, tal como ya había dicho.
+- **Motivación de fondo, explícita**: quiere diversificar más allá de GOTIR, que depende de leyes
+  y decisiones de gobiernos — dio el ejemplo concreto de que una nueva pandemia complicaría mucho
+  ese negocio. Este proyecto de Costa Rica sería un ingreso no correlacionado con esa dependencia.
+- **Pendiente antes de empezar a construir** (preguntado a Mariano el 17 agosto 2026, sin responder
+  todavía): nombre/marca propia para actuar como referidor (no puede usar "GOTIR" ni los nombres de
+  los desarrolladores/proyectos como si fueran suyos), si la web va bilingüe inglés/español desde el
+  arranque o prioriza inglés primero, y si se espera la lista de precios de Matambú (pedida a
+  Gilberto, todavía sin llegar) antes de arrancar o se construye ya con Nawi + Serena Blue y se suma
+  Matambú después.
+- **Nota para más adelante, no bloqueante**: si esto escala en serio, vale la pena que Mariano
+  chequee si captar inversionistas de EE.UU. para inversión inmobiliaria extranjera tiene algún
+  requisito de registro/disclosure — no confirmado, no asumir una respuesta.
+
 No hay más proyectos empresariales fuera de GOTIR registrados en memoria además de estos cuatro
 (encimeras acrílicas, interés en importación/exportación, el tema de educación en marketing
 digital sin resolver, y los referidos inmobiliarios de Costa Rica).

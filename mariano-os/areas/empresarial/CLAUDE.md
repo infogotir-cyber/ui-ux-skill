@@ -87,8 +87,37 @@ dado en esta dirección — es un interés declarado, no un proyecto en marcha.
      tiempo en esto.
   5. Presupuesto: **0€ por ahora** — no va a gastar mientras no tenga el extra. Más adelante,
      cuando lo tenga, contempla invertir **~200-300€/mes** en landing page + publicidad.
-- **Sigue pendiente**: el material de los proyectos (Mariano lo va a subir) — sin eso no se puede
-  evaluar precio real ni ángulo de venta para armar cualquier landing/campaña.
+- **Los 3 proyectos, con datos reales (material recibido y revisado 17 agosto 2026)**:
+  - **Matambú** (Sámara Beach, Guanacaste) — el más avanzado: originalmente 45 lotes, quedan ~30.
+    Ya tiene calles, pozos y estructura eléctrica en construcción. Es el único de los tres con pauta
+    paga activa en redes hoy. Sin PDF de precios recibido todavía (pendiente).
+  - **Serena Blue Residences** (Corozalito) — condominios + casas + mall + zonas comunes, "bosque
+    tropical seco". Lista de precios recibida (`2026__1_AGOSTO_Lista_de_Precios_SERENA_BLUE_.pdf`):
+    casas (Homes) desde **US$438.500 hasta US$563.700** (3-4 habitaciones); condominios (Torres A/B)
+    desde **US$323.400 hasta US$451.600** según piso y tipo. Entregas: condos Torre A desde
+    ene/mar 2027, Torre B julio 2028; casas desde enero 2027.
+  - **Nawi Forest** (Corozalito, Nandayure, Guanacaste) — "bosque tropical húmedo", lotes agrícolas
+    exclusivos, el proyecto que maneja Kris Chacón como gerente comercial. PDF de material recibido:
+    - Lotes desde 5.000 m² (53.820 sqft), **precio de pre-venta desde US$150.000** (solo terreno).
+      Opción de terreno + villa a medida con cotización aparte, sin precio publicado.
+    - Ubicado en Nandayure, Península de Nicoya — una de las 5 "Blue Zones" del mundo (longevidad),
+      a 10 min de Playa Corozalito.
+    - Respaldado por dos desarrolladoras que dan garantía al proyecto: **Citizen Inmobiliaria**
+      (+30 años de experiencia) y **Gold Tropical Business** — ambas ligadas a Edgar y a "Valeria".
+    - Contacto oficial del proyecto: WhatsApp +506 7076-8857, info@nawiforest.com, nawiforest.com.
+  - **Perfil de cliente, según Mariano**: la mayoría busca estas propiedades **por inversión**, no
+    para vivir — coincide con el dato del propio material de Nawi (hasta 600% de apreciación en la
+    costa de Guanacaste 2020-2024, extranjeros con los mismos derechos de propiedad que locales).
+- **Por qué esto cambia la evaluación de la landing page/publicidad**: con comisión del 6%, **una
+  sola venta de Nawi (desde US$150.000) da ~US$9.000 de comisión; una de Serena Blue (US$323k-564k)
+  da entre ~US$19.400 y ~US$33.800**. Son montos muy altos por venta individual — el argumento de
+  "el 6% es mucho porque son propiedades caras" que dio Mariano el 17 agosto se confirma con
+  números reales. Esto no cambia la recomendación de fondo (armar red primero, sin gastar, dado que
+  hoy no hay presupuesto ni urgencia) pero sí el peso de la oportunidad: alcanza con **una sola
+  venta cerrada** para que la inversión de 200-300€/mes en landing + publicidad se pague muchas
+  veces — es un argumento fuerte para reinvertir apenas se cierre la primera venta orgánica.
+- **Sigue pendiente**: lista de precios de Matambú (Mariano no la subió todavía, solo la de Serena
+  Blue y el PDF completo de Nawi).
 
 No hay más proyectos empresariales fuera de GOTIR registrados en memoria además de estos cuatro
 (encimeras acrílicas, interés en importación/exportación, el tema de educación en marketing

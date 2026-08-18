@@ -76,20 +76,19 @@ dado en esta dirección — es un interés declarado, no un proyecto en marcha.
   depender solo de su red de contactos personal — el argumento a favor es que, siendo propiedades
   muy costosas, el 6% de comisión es un monto grande, así que justificaría invertir en la
   infraestructura de captación.
-- **Pendiente de precisar antes de poder evaluar la viabilidad con criterio** (preguntado a
-  Mariano el 17 agosto 2026, sin responder todavía):
-  1. Rango de precio de las propiedades/proyectos (para poder estimar el valor real de una venta y
-     de la comisión del 6%).
-  2. Tamaño real de su red actual de posibles inversionistas de EE.UU./Europa — ¿arranca de cero
-     con leads fríos, o ya tiene contactos concretos en mente?
-  3. Si el acuerdo con Edgar/Gilberto es exclusivo para Mariano o si hay otros captando leads para
-     los mismos proyectos.
-  4. Urgencia/plazos reales de los proyectos de Edgar (¿necesitan vender ya, o es un negocio sin
-     apuro?).
-  5. Presupuesto que Mariano tendría en mente para landing page + publicidad, considerando la
-     situación financiera ajustada de GOTIR ahora mismo (ver `areas/gotir/direcciones/finanzas/CLAUDE.md`)
-     — este proyecto competiría por su tiempo y posiblemente por caja con las prioridades ya
-     documentadas ahí.
+- **Respondido por Mariano (17 agosto 2026)**:
+  1. Rango de precio de las propiedades/proyectos — pendiente, va a subir el material que le mandó
+     el equipo de Edgar para que se revise directamente.
+  2. Tamaño de red: **arranca de cero** — el plan es ir generando contactos en reuniones y eventos,
+     no tiene ya una cartera de inversionistas armada.
+  3. No es exclusivo, pero **hay muy pocos vendedores** cubriendo todos estos proyectos — baja
+     competencia relativa aunque no haya exclusividad formal.
+  4. **Sin apuro** — ni Mariano ni (según entiende) los proyectos de Edgar tienen urgencia de
+     tiempo en esto.
+  5. Presupuesto: **0€ por ahora** — no va a gastar mientras no tenga el extra. Más adelante,
+     cuando lo tenga, contempla invertir **~200-300€/mes** en landing page + publicidad.
+- **Sigue pendiente**: el material de los proyectos (Mariano lo va a subir) — sin eso no se puede
+  evaluar precio real ni ángulo de venta para armar cualquier landing/campaña.
 
 No hay más proyectos empresariales fuera de GOTIR registrados en memoria además de estos cuatro
 (encimeras acrílicas, interés en importación/exportación, el tema de educación en marketing

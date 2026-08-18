@@ -374,17 +374,52 @@ propio de ClickUp — ya no depende del rate limit del conector oficial:
   Arteaga, David Valera y Sabrina Navarro** — pese a que estos tres todavía no son formalmente
   discípulos activos (se activan recién con el Lanzamiento del 5 sept, ver sección 3/4). También
   asistieron algunas ovejas de sus discípulos e invitados de primera vez.
-- **Listado de asistencia real recibido (18 agosto 2026)**, cargado como comentario en la tarea
-  `869ej5fvj` (comment_id `90120253914268`):
-  - FM4.1: Dris, Alejandro, Fito Arteaga, Nidia, Adrián, Ingri, Mauricio.
+- **Listado de asistencia real, versión final (recibido y aclarado 18 agosto 2026)**, cargado como
+  comentarios en la tarea `869ej5fvj` (comment_id `90120253914268` y aclaración
+  `90120253914789`):
+  - FM4.1: Dris, Alejandro (apellido pendiente — el mismo invitado en evangelización mencionado
+    arriba, distinto del siguiente), Alejandro Arteaga / "Fito" (aclarado por Mariano: "Fito
+    Arteaga" = Alejandro Arteaga, no Mateo Arteaga — son personas distintas), Nidia, Adrián, Ingri,
+    Mauricio.
   - FM4.2: Miguel (pagó en la puerta), Diego, Rebeca.
   - FM4.3: Margorie (pagó en la puerta), Rocío, Jacobo, Paulina, Lisandro.
-  - **Pregunta abierta sin resolver, no asumida por inferencia**: este listado no incluye a Mateo
-    Arteaga, David Valera ni Sabrina Navarro, pese a que la retrospectiva de más arriba dice que
-    los tres asistieron. En cambio aparece "Fito Arteaga" en FM4.1, nombre no visto antes. Falta
-    confirmar con Mariano si Fito Arteaga = Mateo Arteaga (apodo) y si David Valera / Sabrina
-    Navarro asistieron de verdad o no — no dar el registro de asistencia por cerrado hasta
-    resolver esto.
+  - También confirmados por Mariano (18 ago): **Mateo Arteaga, David Valera y Sabrina Navarro** —
+    coincide con lo que ya decía esta retrospectiva, solo habían quedado fuera del listado escrito
+    a mano por grupo. Registro de asistencia real ya cerrado, sin preguntas abiertas.
+
+#### Contexto sensible — mensaje del Pastor Fabio Calderón previo al evento (14 agosto 2026)
+Mariano compartió esto el 18 de agosto para que quede registrado junto a la retrospectiva — es
+contexto pastoral delicado, tratarlo con discreción (no es para exponer, es para que el sistema
+entienda la presión real detrás del cambio de proceso). **No se subió a ClickUp** — queda solo
+acá, en el sistema privado — salvo que Mariano pida explícitamente lo contrario.
+
+El viernes 14 de agosto, al ver que solo se habían reportado ~10 entradas vendidas para la Tarde
+Profética (el día siguiente), el Pastor Fabio Calderón le escribió a Mariano expresando
+preocupación fuerte: que ni la propia gente de los líderes iba a asistir, que estos eventos son
+para ganar almas y le dolía verlos "perder" en cambio, que revisando por código de líder no
+llegaba ni la mitad de la gente que se reporta semanalmente en los grupos, que le preocupaba tanto
+el reporte bajo como el silencio de los líderes al respecto, que representaba un golpe financiero
+fuerte para la iglesia, y que sentía que la estrategia pensada para ganar jóvenes no se había
+entendido ni trabajado como tal.
+
+**Por qué importa dejarlo anotado**: esto es lo que estaba en juego detrás del cambio de proceso
+que Mariano decidió en la retrospectiva (cobrar primero, entregar entradas después) — no fue solo
+una mejora operativa, fue una respuesta directa a una reprimenda pastoral real por bajo reporte y
+silencio de los líderes. Tenerlo en cuenta para futuros eventos: el reporte temprano y honesto de
+entradas/asistencia no es un detalle administrativo menor, tiene peso pastoral y financiero real
+para Mariano frente a su liderazgo.
+
+**Segunda instancia (17 agosto 2026, "el lunes")**: Mariano mandó el listado de asistencia real a
+su liderazgo. La Pastora Mirna Gómez le respondió también con dureza, por la demora en responder
+algo que se le venía consultando y que hacía falta para logística del propio evento (buscar
+sillas, organizar) — le dijo, en sus palabras, que "no tengo palabras" ante que respondiera días
+después de un evento que se le estaba consultando activamente.
+
+**Nota explícita de Mariano (18 agosto 2026) sobre para qué sirve tener esto registrado**: no es
+para cargarlo en ninguna tarea de ClickUp ni convertirlo en una acción — es para que el sistema
+entienda el contexto real: tanto el Pastor Fabio como la Pastora Mirna quedaron **nada conformes**
+con el desempeño de Mariano y su equipo alrededor de este evento (reporte bajo, silencio, demora
+en responder). Es contexto relacional/pastoral de fondo, no un pendiente operativo.
 - **Para qué sirve este registro**: Mariano quiere usar este evento como **línea base** — la próxima
   vez que se haga un evento similar, comparar contra este para medir si de verdad se mejoró (mismo
   criterio que ya se usa con el baseline comercial de julio en `direcciones/comercial/CLAUDE.md`).

@@ -33,10 +33,61 @@ Distinción clave a mantener siempre:
 
 ## Proyectos/intereses concretos registrados hoy
 
-### Importaciones y exportaciones (interés explorado, sin experiencia previa)
-Le interesa el sector de importaciones y exportaciones como posible área a explorar, aunque aclaró
-explícitamente que no tiene experiencia previa en ese rubro. No hay todavía ningún paso concreto
-dado en esta dirección — es un interés declarado, no un proyecto en marcha.
+### Intermediación B2B en minería — proveedores europeos ↔ mineras argentinas (importado de Claude chat, 18 agosto 2026)
+Reemplaza y desarrolla el interés genérico en importación/exportación que estaba anotado antes —
+ya no es un interés vago, es una decisión de enfoque concreta, trabajada en profundidad en una
+charla previa con Claude (chat) que Mariano importó a este sistema para seguir acá.
+
+**El insight de fondo**: lo que Mariano construyó en GOTIR no es "un negocio de inmigración con
+marketing" — es un **sistema replicable de generación y conversión de leads** (landing pages,
+embudos, automatizaciones, bots, GoHighLevel) aplicable a cualquier vertical con un intermediario
+cobrando comisión sobre un ticket alto. El problema de GOTIR es que el margen es bajo (ej.
+proveedor cobra 400€, margen de 300€, de ahí salen impuestos) — quiere aplicar el mismo sistema a
+sectores de márgenes mucho más altos.
+
+**Opciones evaluadas y descartadas**: terrenos en Costa Rica (ver sección de arriba — esa sigue
+viva en paralelo, no se descartó), venta de casas, venta de barcos, importación/exportación
+general. **Descartó explícitamente** vender el sistema como servicio de automatización a terceros
+(paga poco, 300-1.500€/mes) a favor de ser él mismo el intermediario cobrando comisión directa
+sobre ventas de alto ticket.
+
+**Por qué minerales**: recibió dos palabras proféticas relevantes — una de importación/exportación
+(imágenes de barcos, puertos, contenedores; vive cerca del puerto de Valencia) y otra
+específicamente sobre minerales. Mismo patrón que otras decisiones grandes de Mariano (ver el
+"paso de fe" de la familia Maddia en `direcciones/comercial/CLAUDE.md`, o el peso que le da a
+profecías en `areas/ministerio/CLAUDE.md`) — la confirmación espiritual es parte real de cómo
+decide, no un dato decorativo.
+
+**Investigación ya hecha (con Claude chat) — conclusión**:
+- **Comprar/vender concentrados de litio o cobre directamente**: descartado, poco realista para
+  alguien nuevo — mercado concentrado en pocas empresas grandes, contratos de largo plazo, exige
+  despachante de aduana y financiamiento serio.
+- **Ser intermediario B2B de proveedores de la operación minera**: viable — una mina necesita entre
+  **550 y 800 empresas proveedoras** (perforación, ingeniería, estructuras metálicas, insumos
+  químicos, tratamiento de aguas, seguridad, mantenimiento, tecnología). Argentina está en pleno
+  boom minero (litio y cobre), con el acuerdo Mercosur-UE reforzando el interés europeo — ahí ve la
+  rendija real: conectar fabricantes/proveedores europeos con mineras argentinas que necesitan
+  importar esos insumos.
+
+**Decisión tomada**: enfocarse en ser el intermediario que conecta proveedores europeos (equipos,
+tecnología, servicios especializados) con empresas mineras argentinas de litio y cobre que
+necesitan importar esos insumos.
+
+**Próximos pasos definidos (todavía sin ejecutar)**:
+1. Entender la demanda real: identificar 3-4 proyectos mineros grandes en construcción en Argentina
+   ahora mismo (ej. Josemaría, Filo del Sol, proyectos de litio en Jujuy/Catamarca) y qué
+   insumos/servicios están importando de afuera — cámaras como CAEM podrían tener esa info.
+2. Mapear proveedores europeos: una vez identificadas 2-3 categorías concretas (ej. equipos de
+   perforación, tratamiento de aguas, insumos químicos), buscar fabricantes/distribuidores europeos
+   medianos sin presencia fuerte todavía en Argentina.
+3. Aplicar el sistema GOTIR: landing page explicando la propuesta de conectar proveedores europeos
+   con proyectos mineros argentinos, y outreach directo por LinkedIn tanto a compras/procurement de
+   las mineras como a comercial exterior de los fabricantes europeos.
+
+**Lo que Mariano quiere seguir trabajando acá**: investigar proyectos mineros concretos y sus
+necesidades de importación, mapear proveedores europeos candidatos, y eventualmente armar la
+infraestructura (landing page, embudo, outreach) reusando el know-how de GOTIR — mismo patrón que
+el proyecto de Costa Rica (SEO/GEO orgánico primero, sin gastar en ads hasta tener validación).
 
 ### Venta B2B de encimeras de superficie sólida acrílica (solid surface)
 - Está involucrado en ventas para un fabricante de encimeras de superficie sólida acrílica, dirigido
@@ -174,8 +225,8 @@ dado en esta dirección — es un interés declarado, no un proyecto en marcha.
   requisito de registro/disclosure — no confirmado, no asumir una respuesta.
 
 No hay más proyectos empresariales fuera de GOTIR registrados en memoria además de estos cuatro
-(encimeras acrílicas, interés en importación/exportación, el tema de educación en marketing
-digital sin resolver, y los referidos inmobiliarios de Costa Rica).
+(encimeras acrílicas, intermediación B2B en minería Argentina-Europa, el tema de educación en
+marketing digital sin resolver, y los referidos inmobiliarios de Costa Rica).
 
 ## Estado actual de estructura operativa (14 agosto 2026)
 No hay estructura en ClickUp ni en ninguna otra herramienta para esta área todavía. Es intencional

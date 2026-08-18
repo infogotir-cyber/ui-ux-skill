@@ -426,9 +426,96 @@ Los campos personalizados de contacto/oportunidad no se pudieron traer en esta p
 MCP de GHL hoy no tiene una tool dedicada a listar campos personalizados (ver limitaciones conocidas
 en `CLAUDE.md` raíz). Si hace falta ese detalle, hay que agregar esa tool al servidor.
 
+**Actualización 18 agosto 2026**: esto ya no es cierto del todo — se confirmó en vivo que
+`GET /locations/{locationId}/customFields` sí funciona con el token actual (no hacía falta una tool
+nueva del servidor MCP, alcanzó con `curl` directo). Ver 5.5 abajo para lo que se encontró.
+
 No se debe inventar automatizaciones de GHL que no estén confirmadas por Mariano o vistas en vivo —
 lo de arriba es pipelines/calendarios/formularios reales, pero no dice nada de qué automatizaciones
-(si las hay) mueven contactos entre etapas.
+(si las hay) mueven contactos entre etapas. **Actualización 18 agosto 2026**: esto también dejó de
+ser cierto para el caso concreto de la sección 5.5 — se confirmó en vivo, vía
+`GET /workflows/?locationId=...`, que sí existen automatizaciones reales en GHL (separadas del
+workflow de n8n/JARVIS descrito en la sección 4, que es un sistema completamente distinto). Seguir
+sin inventar nada que no esté confirmado así, pero ya no asumir que "no hay automatizaciones de GHL"
+en general — lo que no hay es visibilidad automática de todo el listado, hay que ir confirmando
+workflow por workflow a medida que aparecen en la conversación.
+
+### 5.5 Automatización de derivación de partners/influencers (descubierto y armado 18 agosto 2026)
+
+Mecanismo real que ya funcionaba para Jesús Mosquera y Nasla Espinosa, no documentado hasta ahora.
+Encontrado en vivo vía API cuando Mariano pidió sumar a una colaboradora nueva (Pri Rocha) — no es
+parte del workflow de n8n/JARVIS de la sección 4, es 100% nativo de GHL (Automation → Workflows),
+por eso no aparecía ahí.
+
+**Limitación real y permanente de la API de GHL confirmada acá** (para no reintentar en el futuro):
+`GET /workflows/` solo devuelve id/nombre/status de cada workflow — **no expone el detalle interno**
+(condiciones, ramas, acciones) ni por ese endpoint ni por `GET /workflows/{id}` (404, no existe).
+Tampoco hay forma de editar un workflow por API. Todo lo de adentro de un workflow (agregar una
+rama, cambiar un mensaje) es exclusivamente manual, en el builder de GHL — este sistema puede leer
+la lista de workflows y los custom fields, pero no puede tocar la lógica de automatización él mismo.
+
+**El campo que decide todo**: custom field de contacto **"Canal referencia (Dr)"**
+(id `buvxaVIkvbHPOmzSz01C`, `fieldKey=contact.canal_referencia_dr`, tipo `SINGLE_OPTIONS`/dropdown).
+Opciones actuales (18 agosto 2026, después de agregar a Pri Rocha):
+Jesús Mosquera, Nasla Espinosa (con "s" — ojo, no "Espinoza"), Wilmen Mendoza, **Pri Rocha**, Un
+Centro de estudios me pasó el contacto, Un amigo o familiar, Instagram, TikTok, Facebook, Sitio Web,
+Otro. (Existe un segundo campo parecido, "Canal referencia (Dr) (copy) (copy)"
+`NOoOqoYPg9wzUgFT1YzE`, con solo las opciones genéricas de canal — no es el que usan los
+influencers, no confundirlos.)
+
+**El workflow que manda el aviso**: **"Notificacion influencers"**
+(`16b4bde7-31c5-4c6c-adcd-45503adc6f30`, publicado). Estructura (confirmada visualmente por
+Mariano, no por API): un nodo **Condition** con una rama por influencer (`"Canal referencia (Dr)"
+Es "<nombre>"`), cada rama conectada a un nodo **Internal Notification** configurado como:
+`Tipo de notificación = SMS`, `Para tipo de usuario = Custom Number`, número de teléfono directo del
+influencer en `A número personalizado` (no son usuarios de GHL, son números externos), con un
+mensaje que usa variables (`Contact.Full Name`, `Opportunity.Stage Name`) para avisar en vivo. Una
+rama final `None` cubre "ninguna condición se cumplió".
+
+**Pri Rocha agregada 18 agosto 2026** — colaboradora nueva, consultora de inmigración portuguesa,
+tiene una empresa similar a GOTIR enfocada en asesoría para vivir en Portugal y para gente que
+quiere venir a España con visado de estudios. No puede firmar ni presentar trámites como abogada en
+España, por eso deriva esos casos a GOTIR en vez de llevarlos ella. Colabora en dos frentes:
+- **Estancias por estudios** → sus clientes completan el "Formulario 2 - Estancias Estudios"
+  (`6mANHohxrOLt15EvQeA0`).
+- **Nómada digital presentado desde España** → sus clientes completan el formulario **"Trámites
+  derivados a María García Serrano"** (`2HHoJ2flDrSkb3jAGwPg`) — Mariano lo estaba editando en vivo
+  (18 ago) para agregarle el campo "Canal referencia (Dr)" (no existía en ese formulario todavía).
+
+Teléfono de Pri Rocha: **+351 969 515 147** (código de país de Portugal), ya cargado como
+`A número personalizado` en la rama nueva de "Notificacion influencers".
+
+Pasos ejecutados 18 agosto 2026 (mitad por API de este sistema, mitad manual por Mariano en el
+builder de GHL, porque la API no permite lo segundo):
+1. Agregada la opción "Pri Rocha" al dropdown "Canal referencia (Dr)" — hecho por este sistema vía
+   `PUT /locations/{locationId}/customFields/{id}` con body `{"options": [...]}` (**ojo**: el GET
+   devuelve el array como `picklistOptions`, pero el PUT lo espera como `options` — nombres
+   distintos entre lectura y escritura del mismo campo, confirmado por prueba y error, un 422
+   "property picklistOptions should not exist" delató el nombre correcto).
+2. Mariano agregó el campo "Canal referencia (Dr)" al formulario de María García Serrano a mano
+   (builder de GHL, no hay endpoint de API para editar formularios — límite ya conocido).
+3. Mariano agregó la rama nueva "Pri Rocha" al Condition de "Notificacion influencers", con su
+   Internal Notification (SMS, Custom Number, +351 969 515 147), a mano en el builder — mismo
+   límite de API.
+
+**Bug encontrado y corregido el mismo día**: al probar el formulario de María García Serrano, llegó
+una notificación interna que decía *"Nuevo cliente en pipeline de proveedores — Test Testing,
+interesado en una asesoría con **Carolina Chapo**"* — texto equivocado. Causa: el formulario
+"Trámites derivados a María García Serrano" se armó duplicando el de Carolina Chapo (existe un
+workflow análogo, **"Carolina Chapo - tramites"**, `61519076-1516-4760-8ce9-62cf8ce54262`, que hace
+lo mismo para los leads de Carolina Chapo, dentro del pipeline "Proveedores") — el nodo Internal
+Notification de **"María García Serrano - tramites"** (`25d94447-e6c5-4852-a13e-0b83b6417017`)
+había quedado con el nombre "Carolina Chapo" escrito fijo en el texto del mensaje en vez de
+actualizarse al duplicar. Mariano lo corrigió a mano, cambiando el texto a "María García Serrano".
+**Lección para la próxima vez que se duplique un formulario/workflow de un partner para armar el de
+otro**: revisar todo texto estático (no solo el trigger) por nombres hardcodeados que hayan quedado
+del original — no alcanza con que el trigger dispare bien, el contenido del mensaje también hay que
+revisarlo entero.
+
+**Pendiente de confirmar**: no se verificó si el workflow "María García Serrano - tramites" tiene
+más de un nodo Internal Notification (podría haber otro con el mismo problema sin corregir) ni si
+hay otros textos estáticos en el resto del workflow con el mismo error — revisarlo completo la
+próxima vez que se abra.
 
 ---
 

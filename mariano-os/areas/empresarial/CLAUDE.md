@@ -116,8 +116,22 @@ dado en esta dirección — es un interés declarado, no un proyecto en marcha.
   hoy no hay presupuesto ni urgencia) pero sí el peso de la oportunidad: alcanza con **una sola
   venta cerrada** para que la inversión de 200-300€/mes en landing + publicidad se pague muchas
   veces — es un argumento fuerte para reinvertir apenas se cierre la primera venta orgánica.
-- **Sigue pendiente**: lista de precios de Matambú (Mariano no la subió todavía, solo la de Serena
-  Blue y el PDF completo de Nawi).
+- **Material de Matambú recibido 17 agosto 2026** (Google Drive, carpeta compartida por Mariano,
+  archivo "16 abril español Gold Tropical (3).pdf" — brochure de **Gold Tropical Business**, la
+  misma desarrolladora que respalda Nawi):
+  - Nombre comercial completo: **Matambú American Crest**. Ubicado en Sámara, Nicoya — también
+    dentro de la Blue Zone, cerca de playas Carrillo, Barrigona, Buenavista y Camaronal.
+  - Datos de mercado que da el propio material: rendimiento proyectado a largo plazo del 6-7%,
+    potencial de alquiler a corto plazo del 10-12%, escaso desarrollo a gran escala en la zona.
+  - Producto: casas de 2 niveles, 3 habitaciones, piscina privada, oficina, estacionamiento para 2
+    autos (ejemplo dado: "Casa 17"), arquitectura contemporánea con espacios abiertos.
+  - Contacto oficial del proyecto: +(506) 8985-8452, goldtropical.com.
+  - **Sin precio publicado en este material** — el documento es de contenido/posicionamiento, no
+    lista de precios. Sigue pendiente conseguir el precio real de Matambú (Mariano dijo que es el
+    proyecto más avanzado en obra, con ~30 de 45 lotes/casas restantes).
+  - Nota técnica: la sesión de Google Drive se desconectó a mitad de la revisión — si aparece más
+    material en esa carpeta compartida que no se llegó a revisar, hay que reabrir la conexión y
+    volver a buscar ahí antes de asumir que esto es todo lo que hay.
 
 No hay más proyectos empresariales fuera de GOTIR registrados en memoria además de estos cuatro
 (encimeras acrílicas, interés en importación/exportación, el tema de educación en marketing

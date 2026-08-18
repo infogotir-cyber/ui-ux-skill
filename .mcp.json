@@ -9,6 +9,16 @@
         "NO_PROXY": "${NO_PROXY:-}",
         "SSL_CERT_FILE": "${SSL_CERT_FILE:-}"
       }
+    },
+    "clickup-personal": {
+      "command": "uv",
+      "args": ["run", "--script", "mariano-os/mcp-servers/clickup/server.py"],
+      "env": {
+        "HTTPS_PROXY": "${HTTPS_PROXY:-}",
+        "HTTP_PROXY": "${HTTP_PROXY:-}",
+        "NO_PROXY": "${NO_PROXY:-}",
+        "SSL_CERT_FILE": "${SSL_CERT_FILE:-}"
+      }
     }
   }
 }

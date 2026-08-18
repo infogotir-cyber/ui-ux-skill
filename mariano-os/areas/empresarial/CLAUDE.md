@@ -140,6 +140,20 @@ dado en esta dirección — es un interés declarado, no un proyecto en marcha.
   precios, son solo imágenes. Útiles como material visual crudo para una futura landing page, no
   aportan datos nuevos de negocio.
 
+- **Problema de acceso a Google Drive detectado 17 agosto 2026**: Mariano compartió 3 carpetas de
+  Drive (Matambú, Corozalito, y una tercera dentro de Corozalito) — la conexión de Drive de esta
+  sesión solo pudo ver una fracción de cada una (1 PDF en la de Matambú, 1 subcarpeta de imágenes en
+  la de Corozalito, y CERO en la tercera). Probado con múltiples métodos de búsqueda (listado
+  directo, recorrido recursivo de subcarpetas, búsqueda de texto completo por "precio" cruzada con
+  los nombres de los proyectos en todo el Drive) — es un problema real de permisos, no de que faltó
+  buscar bien. Hipótesis: los archivos compartidos después del link inicial no propagan el permiso
+  automáticamente. **Solución que está usando Mariano en su lugar**: bajar los archivos él mismo y
+  subirlos directo por chat (funciona perfecto, así llegaron los PDFs de Nawi y Serena Blue, y un
+  zip con renders de Serena Blue). Archivos guardados en
+  `areas/empresarial/recursos/costa-rica/` (`Nawi_Forest.pdf`, `Serena_Blue_Lista_Precios.pdf`,
+  carpeta `serena-blue-renders/` con 10 imágenes de un modelo de casa — planta alta con 3
+  habitaciones y fachada exterior, sin datos nuevos de precio). Un video
+  (`Costa Rica Serena Blue Residences.mp4`) llegó corrupto, pendiente que Mariano lo reenvíe.
 - **Decisión de estrategia tomada por Mariano (17 agosto 2026)**: en vez de esperar a tener
   presupuesto para publicidad paga, construir ahora mismo (con Claude, sin costo de desarrollo) una
   web/landing propia con buen **SEO y GEO** (optimización para que la encuentren tanto buscadores

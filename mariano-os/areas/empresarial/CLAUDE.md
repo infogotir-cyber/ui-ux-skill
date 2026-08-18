@@ -131,7 +131,14 @@ dado en esta dirección — es un interés declarado, no un proyecto en marcha.
     proyecto más avanzado en obra, con ~30 de 45 lotes/casas restantes).
   - Nota técnica: la sesión de Google Drive se desconectó a mitad de la revisión — si aparece más
     material en esa carpeta compartida que no se llegó a revisar, hay que reabrir la conexión y
-    volver a buscar ahí antes de asumir que esto es todo lo que hay.
+    volver a buscar ahí antes de asumir que esto es todo lo que hay. (Reconectado el mismo día,
+    confirmado que esa carpeta puntual no tenía nada más sin ver.)
+- **Material de "Corozalito" recibido 17 agosto 2026** (segunda carpeta de Google Drive que mandó
+  Mariano): el proyecto general se llama **Corozalito** y ahí adentro está **Serena Blue** (ver
+  lista de precios ya cargada arriba). La carpeta tiene una subcarpeta "AMENIDADES" con 13 renders
+  en alta resolución (piscinas, zonas comunes) del mismo `ventas2@goldtropical.com` — sin texto ni
+  precios, son solo imágenes. Útiles como material visual crudo para una futura landing page, no
+  aportan datos nuevos de negocio.
 
 No hay más proyectos empresariales fuera de GOTIR registrados en memoria además de estos cuatro
 (encimeras acrílicas, interés en importación/exportación, el tema de educación en marketing

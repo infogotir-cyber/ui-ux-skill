@@ -139,9 +139,20 @@ todavía sin resolver.
     tarea de Mariano mismo. Con cada líder FM4 hay que confirmar que sus estudiantes que se gradúan
     van a asistir de verdad, y que van a pagar la cuota que les corresponde (depende de que el ítem
     10 ya tenga el monto definido).
-12. **Cartelito con nombre por silla, para cada estudiante graduando** — agregado 18 ago. Mariano
-    quiere un cartelito con el nombre de cada graduando para pegar en su silla el día del evento.
-    **Sin responsable definido todavía** — no asumido.
+12. **Cartelito con nombre por silla, para cada estudiante graduando** — RESUELTO 18 ago 2026, lo
+    diseñó este sistema. Mariano mandó el PDF de referencia de la invitación de New Life (paleta
+    azul-violeta y tipografía) y la lista de 10 graduandos, sin logo de la iglesia. Se armó un PDF
+    imprimible de 10 cartelitos (~9x6.5cm c/u, 2 páginas con líneas de corte), reproduciendo el
+    degradado y la tipografía de la referencia (Montserrat Bold para el nombre, Great Vibes para el
+    acento "Graduación"), sin ningún logo. Mariano lo aprobó tal cual. **Detalle técnico**: se
+    generó con `weasyprint` (instalado vía pip en la sesión) + fuentes de Google Fonts descargadas
+    localmente (Montserrat, Great Vibes) — no había fuentes elegantes preinstaladas en el entorno.
+    Falta: que Mariano imprima, corte y pegue cada cartelito en la silla correspondiente.
+    Estudiantes: Sandra Elizabeth López Iza, Ivan Patricio Paredes, Angela Ainara Chávez López,
+    Jacobo Marulanda Gómez, María Paulina Soto Rave, Noemí Fernández Urcuango, Lisandro David Tapia
+    Salazar, Julio César Navia Camargo, Jessica Ivonne Mora Lovato, Luisa Jacqueline Lovato Macias.
+    **Confirmado por Mariano (18 ago 2026): es la misma persona** — Julio César Navia, del equipo
+    de logística de Ruge (ver folder Ruge más abajo), también se gradúa de New Life este ciclo.
 13. **Invitación en Canva — una versión para estudiantes, otra para familiares** — agregado 18 ago.
     Dos piezas de diseño: invitación para cada estudiante graduando, e invitación distinta para los
     familiares de los estudiantes. **Sin responsable definido todavía** — no asumido. Este sistema no

@@ -78,7 +78,7 @@ Tarea madre creada en "Tareas Operativas Recurrentes": **"Graduación New Life �
 ClickUp** (se habían quedado solo documentadas acá por el rate limit viejo del conector oficial —
 con el servidor MCP propio, 18 ago 2026, se crearon todas): `869ekhmgx`, `869ekhmh2`, `869ekhmhn`,
 `869ekhmjn`, `869ekhmke`, `869ekhmkx`, `869ekhmmr`, `869ekhmnk`, `869ekhmp4`, `869ekhmq1` (en ese
-orden, 1 a 10).
+orden, 1 a 10). Sumadas 3 más el mismo día (11 a 13): `869ekhpfh`, `869ekhpg2`, `869ekhpgn`.
 
 **Cambio importante de responsables (18 agosto 2026)** — ver contexto sensible completo más abajo:
 la pastora tomó de vuelta las tareas de bandas y chocolate del equipo de Mariano, y se las
@@ -97,7 +97,10 @@ todavía sin resolver.
 4. **Decoración — globos, sillas y Ferrero Rocher (Ingrid Guaño + Lurbin)** — SIGUE PENDIENTE (18
    ago), sin cambios de responsable. Ingrid coordina con **Lurbin** (decoradora, apoyo externo) pero
    todavía no compró nada — es el único costo que sigue faltando para el presupuesto (ítem 10).
-   Vencimiento sugerido 28 ago, ya urgente.
+   **Plan concreto pedido por Mariano (18 ago, tarde)**: máximo el **jueves 20 ago**, Lurbin ya tiene
+   que haber comprado los globos y demás materiales — pedirle antes un **listado completo de todo lo
+   que va a necesitar**, para asegurarse de que lo compre y lo lleve todo. Además, fijar con
+   Ingrid/Lurbin **día y hora para armar toda la decoración** y dejarlo listo antes del 1 sept.
 5. **Togas — descartadas para esta graduación, evaluar para la próxima** (sin vencimiento, es una
    nota). Se había indicado toga (sobretodo negro) por estudiante, pero sale 25€ c/u — muy caro y ya
    es muy tarde para avisarles a los estudiantes que deben pagarlo. Descartada para el 1 sept 2026;
@@ -132,6 +135,19 @@ todavía sin resolver.
     pago anticipado de un monto X — el objetivo explícito es que la graduación no le genere gastos a
     la iglesia. Sin esto resuelto pronto, se corre el riesgo de no llegar a tiempo a cobrar antes del
     1 sept.
+11. **Confirmar con líderes: asistencia y pago de cada estudiante graduando** — agregado 18 ago,
+    tarea de Mariano mismo. Con cada líder FM4 hay que confirmar que sus estudiantes que se gradúan
+    van a asistir de verdad, y que van a pagar la cuota que les corresponde (depende de que el ítem
+    10 ya tenga el monto definido).
+12. **Cartelito con nombre por silla, para cada estudiante graduando** — agregado 18 ago. Mariano
+    quiere un cartelito con el nombre de cada graduando para pegar en su silla el día del evento.
+    **Sin responsable definido todavía** — no asumido.
+13. **Invitación en Canva — una versión para estudiantes, otra para familiares** — agregado 18 ago.
+    Dos piezas de diseño: invitación para cada estudiante graduando, e invitación distinta para los
+    familiares de los estudiantes. **Sin responsable definido todavía** — no asumido. Este sistema no
+    tiene conexión directa a Canva; si Mariano pide ayuda con esto, lo que se puede ofrecer es
+    redactar el copy/contenido o armar un mockup de diseño para que alguien lo replique en Canva, no
+    operar Canva directamente.
 
 ##### Contexto sensible — la pastora se enojó por la demora (18 agosto 2026)
 Mismo criterio que el contexto sensible de la Tarde Profética más abajo: **no va a ClickUp**, queda

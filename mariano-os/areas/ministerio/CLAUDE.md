@@ -374,9 +374,17 @@ propio de ClickUp — ya no depende del rate limit del conector oficial:
   Arteaga, David Valera y Sabrina Navarro** — pese a que estos tres todavía no son formalmente
   discípulos activos (se activan recién con el Lanzamiento del 5 sept, ver sección 3/4). También
   asistieron algunas ovejas de sus discípulos e invitados de primera vez.
-- **Pendiente abierto**: Mariano ya pidió el listado completo de esas ovejas/invitados a sus
-  discípulos — todavía no lo tiene. Apenas lo consiga, lo va a confirmar para completar el registro
-  de asistencia real.
+- **Listado de asistencia real recibido (18 agosto 2026)**, cargado como comentario en la tarea
+  `869ej5fvj` (comment_id `90120253914268`):
+  - FM4.1: Dris, Alejandro, Fito Arteaga, Nidia, Adrián, Ingri, Mauricio.
+  - FM4.2: Miguel (pagó en la puerta), Diego, Rebeca.
+  - FM4.3: Margorie (pagó en la puerta), Rocío, Jacobo, Paulina, Lisandro.
+  - **Pregunta abierta sin resolver, no asumida por inferencia**: este listado no incluye a Mateo
+    Arteaga, David Valera ni Sabrina Navarro, pese a que la retrospectiva de más arriba dice que
+    los tres asistieron. En cambio aparece "Fito Arteaga" en FM4.1, nombre no visto antes. Falta
+    confirmar con Mariano si Fito Arteaga = Mateo Arteaga (apodo) y si David Valera / Sabrina
+    Navarro asistieron de verdad o no — no dar el registro de asistencia por cerrado hasta
+    resolver esto.
 - **Para qué sirve este registro**: Mariano quiere usar este evento como **línea base** — la próxima
   vez que se haga un evento similar, comparar contra este para medir si de verdad se mejoró (mismo
   criterio que ya se usa con el baseline comercial de julio en `direcciones/comercial/CLAUDE.md`).

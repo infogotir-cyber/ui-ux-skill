@@ -281,16 +281,30 @@ Cómo comportarse:
   correspondiente a cada persona, para que las fechas límite y el estado vivan ahí también, no solo
   en el excel.
 
-### Rate limit de ClickUp (confirmado dos veces, 17 ago 2026, 21:59 y 22:30 UTC)
-Al intentar traer la lista de Inventario completa (`clickup_filter_tasks`, list_id
-`901220315543`) para verificar el reparto contra ClickUp, la API devolvió "Rate limit exceeded,
-espera 859 minutos"; reintentado 30 min después con `clickup_get_workspace_members`, seguía
-bloqueado ("794 minutos") — confirma que es un límite real que se va descontando, no un error
-puntual. Libera aprox. 18 ago ~12:00-13:00 UTC / 14:00-15:00 hora Madrid. Ya hay un `send_later`
-programado para ese horario (con margen) que retoma esta sesión y sincroniza automáticamente. Si
-por algún motivo no se retomó solo, Mariano puede simplemente pedir "actualiza ClickUp con el
-reparto de Ruge" y hay que ir directo a asignar cada tarea de la lista de Inventario según
-`ruge_reparto_lookup.md`.
+### Rate limit de ClickUp (confirmado varias veces, 17-18 ago 2026)
+17 ago: al traer la lista de Inventario, la API devolvió "Rate limit exceeded" dos veces seguidas
+(859 y luego 794 minutos restantes) — confirma que es un límite real que se va descontando, no un
+error puntual. Se liberó como estaba previsto y el 18 ago a la mañana se pudo sincronizar.
+
+18 ago 2026 (13:51 UTC): al cargar el campo "Encargado" en las 20 tareas de la lista Inventario,
+el rate limit volvió a activarse **después de 14 actualizaciones exitosas** — "espera 1343
+minutos" (~22h, libera ~19 ago 12:00-13:00 UTC). **Lección**: ClickUp corta más rápido en
+escrituras seguidas (`update_task`) que en lecturas — no asumir que 14-20 llamadas seguidas van a
+pasar solo porque las lecturas anteriores funcionaron. Ante esto, lo más eficiente es simplemente
+programar el reintento (vía `send_later`) con los valores exactos ya calculados, en vez de
+reintentar en loop o esperar activamente.
+
+**Sincronización real de ClickUp — estado al 18 ago 2026, 13:51 UTC**: la lista de Inventario
+(`901220315543`) tiene **solo 20 tareas a nivel de bloque** (no 202 a nivel de ítem — coincide con
+"Resumen por bloque", no con "Detalle completo por ítem"). No hay usuarios de Marco Guanuchi, Julio
+Cesar Navia ni David Luzuriaga en el workspace de ClickUp (`clickup_get_workspace_members` solo
+devuelve a Mariano) — **no se los puede asignar como "assignee" nativo de ClickUp**. Tampoco hay
+tool para crear custom fields nuevos vía API. Solución acordada con Mariano: él creó a mano un
+custom field de texto llamado **"Encargado"** (id `57a175ab-0b87-4ddf-b3ce-345d7da132c8`) en la
+lista Inventario, y ahí se carga el nombre (o el reparto, si el bloque está dividido entre
+varios). 14 de 20 tareas ya tienen el campo cargado; las 6 restantes (`869eh5gav`, `869eh5g91`,
+`869eh5d47`, `869eh5d2k`, `869eh5d1n`, `869eh5d13`) quedaron pendientes por el rate limit — hay un
+`send_later` programado para el 19 ago 14:00 UTC con los valores exactos para terminarlas solo.
 
 ### Lista "Eventos puntuales" — ID `901220372534` (dentro del folder Liderazgo)
 Se creó el 14 de agosto de 2026 para eventos de un solo día con invitado especial. Diseño: una

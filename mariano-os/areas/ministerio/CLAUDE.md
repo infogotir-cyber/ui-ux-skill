@@ -281,30 +281,47 @@ Cómo comportarse:
   correspondiente a cada persona, para que las fechas límite y el estado vivan ahí también, no solo
   en el excel.
 
-### Rate limit de ClickUp (confirmado varias veces, 17-18 ago 2026)
+### Rate limit de ClickUp (confirmado varias veces, 17-18 ago 2026) — RESUELTO 18 ago 2026
 17 ago: al traer la lista de Inventario, la API devolvió "Rate limit exceeded" dos veces seguidas
 (859 y luego 794 minutos restantes) — confirma que es un límite real que se va descontando, no un
 error puntual. Se liberó como estaba previsto y el 18 ago a la mañana se pudo sincronizar.
 
 18 ago 2026 (13:51 UTC): al cargar el campo "Encargado" en las 20 tareas de la lista Inventario,
 el rate limit volvió a activarse **después de 14 actualizaciones exitosas** — "espera 1343
-minutos" (~22h, libera ~19 ago 12:00-13:00 UTC). **Lección**: ClickUp corta más rápido en
-escrituras seguidas (`update_task`) que en lecturas — no asumir que 14-20 llamadas seguidas van a
-pasar solo porque las lecturas anteriores funcionaron. Ante esto, lo más eficiente es simplemente
-programar el reintento (vía `send_later`) con los valores exactos ya calculados, en vez de
-reintentar en loop o esperar activamente.
+minutos" (~22h). Investigado a fondo ese mismo día: el límite que se estaba pisando **no es el
+límite general de la API de ClickUp** (100 req/min en Business), sino un límite propio y mucho más
+chico del conector MCP oficial (`mcp.clickup.com`, vía OAuth) — 300 llamadas/**24hs** (ventana
+móvil, no resetea rápido) sin el add-on de pago "Everything AI" ($28/usuario/mes, workspace-wide).
 
-**Sincronización real de ClickUp — estado al 18 ago 2026, 13:51 UTC**: la lista de Inventario
+**Solución permanente implementada**: se construyó un servidor MCP propio,
+`mariano-os/mcp-servers/clickup/server.py` (mismo patrón que el de GHL — Python de un solo
+archivo, PEP 723, `uv run --script`), que llama **directo a `api.clickup.com`** con el Personal
+API Token de Mariano (`CLICKUP_API_TOKEN` en `.env`, gitignored) en vez de pasar por el MCP
+alojado por ClickUp. Al no pasar por `mcp.clickup.com`, queda sujeto al límite general de la API
+(100 req/min), no al de 300/día — alcanza sobrado para el uso diario. Tiene pacing propio (~0.7s
+entre requests) para no volver a rafaguear. Registrado en `.mcp.json` como `clickup-personal`,
+junto al conector oficial `ClickUp` (OAuth) que sigue disponible para lo que no requiera volumen.
+**Paso manual que hizo falta y puede volver a hacer falta si el token se revoca**: el dominio
+`api.clickup.com` estaba bloqueado por la política de red del entorno de Claude Code (igual que
+pasó con GHL en su momento) — Mariano lo habilitó a mano en los ajustes del entorno.
+
+**Sincronización real de ClickUp — estado final al 18 ago 2026**: la lista de Inventario
 (`901220315543`) tiene **solo 20 tareas a nivel de bloque** (no 202 a nivel de ítem — coincide con
-"Resumen por bloque", no con "Detalle completo por ítem"). No hay usuarios de Marco Guanuchi, Julio
-Cesar Navia ni David Luzuriaga en el workspace de ClickUp (`clickup_get_workspace_members` solo
-devuelve a Mariano) — **no se los puede asignar como "assignee" nativo de ClickUp**. Tampoco hay
-tool para crear custom fields nuevos vía API. Solución acordada con Mariano: él creó a mano un
-custom field de texto llamado **"Encargado"** (id `57a175ab-0b87-4ddf-b3ce-345d7da132c8`) en la
-lista Inventario, y ahí se carga el nombre (o el reparto, si el bloque está dividido entre
-varios). 14 de 20 tareas ya tienen el campo cargado; las 6 restantes (`869eh5gav`, `869eh5g91`,
-`869eh5d47`, `869eh5d2k`, `869eh5d1n`, `869eh5d13`) quedaron pendientes por el rate limit — hay un
-`send_later` programado para el 19 ago 14:00 UTC con los valores exactos para terminarlas solo.
+"Resumen por bloque", no con "Detalle completo por ítem"; el detalle por ítem vive a propósito en
+`ruge_reparto_lookup.md`, no en ClickUp). No hay usuarios de Marco Guanuchi, Julio Cesar Navia ni
+David Luzuriaga en el workspace de ClickUp (`clickup_get_workspace_members` solo devuelve a
+Mariano) — **no se los puede asignar como "assignee" nativo de ClickUp**. Solución acordada con
+Mariano: él creó a mano un custom field de texto llamado **"Encargado"** (id
+`57a175ab-0b87-4ddf-b3ce-345d7da132c8`) en la lista Inventario, y ahí se carga el nombre (o el
+reparto, si el bloque está dividido entre varios). Estado final, con el servidor propio ya
+funcionando:
+- 18 tareas activas, las 18 con "Encargado" cargado (0 sin asignar).
+- Se borraron 2 tareas genéricas por indicación de Mariano: "Comprar, recibir y almacenar en lugar
+  seguro lo comprado" (`869eh5d47`) y "Buscar proveedores y comparar precios de faltantes"
+  (`869eh5d1n`) — la segunda porque depende de cada tarea puntual, cada encargado la resuelve
+  dentro de la suya, no amerita una tarea aparte.
+- "Proponer compra a administración de la iglesia" (`869eh5d2k`) → Encargado: Mariano Barcelona.
+- "Checklist de inventario por categoría con encargado" (`869eh5d13`) → Encargado: Marco Guanuchi.
 
 ### Lista "Eventos puntuales" — ID `901220372534` (dentro del folder Liderazgo)
 Se creó el 14 de agosto de 2026 para eventos de un solo día con invitado especial. Diseño: una
@@ -339,9 +356,9 @@ límite de pago.
 - Dos invitados en proceso de evangelización, todavía sin entrada confirmada, NO cuentan en la
   meta: Jesús Blanco y "Alejandro" (apellido pendiente). Mariano los sigue invitando activamente.
 
-#### Retrospectiva del evento (registrada 17 agosto 2026, evento ya pasó)
-Pendiente de cargar en ClickUp (agregar como actualización a la tarea `869ej5fvj` — **bloqueado por
-el mismo rate limit de ClickUp que sigue activo**, cargar apenas se libere):
+#### Retrospectiva del evento (registrada 17 agosto 2026, evento ya pasó) — CARGADA 18 ago 2026
+Cargada como comentario en la tarea `869ej5fvj` (comment_id `90120253912854`), vía el servidor MCP
+propio de ClickUp — ya no depende del rate limit del conector oficial:
 
 - **Problema detectado — pagos desorganizados hasta último momento**: Mariano no supo, hasta el
   mismo día del evento, si todos sus discípulos habían pagado sus entradas. Caso concreto: Lisandro

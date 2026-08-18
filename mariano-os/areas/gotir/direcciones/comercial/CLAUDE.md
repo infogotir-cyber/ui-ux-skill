@@ -172,6 +172,10 @@ Si responde con dudas, ahí sí se pasa a resolver la objeción puntual (Fase 4)
 2. Aplicar etiqueta de temperatura (Caliente / Templado / Frío)
 3. Crear tarea en GHL con la próxima acción + fecha exacta acordada en la Fase 5
 4. Si se detectó un bloqueo nuevo o un diferenciador que funcionó bien, anotarlo — sirve para afinar el guion con el tiempo
+5. **Agregado 18 agosto 2026**: marcar el estado real de la cita en GHL (`showed` si se realizó,
+   `noshow` si no se presentó) — ver mecanismo completo y por qué es un paso nuevo en la sección
+   "Tracking de no-show" más abajo. Sin este paso, el panel de estadísticas de Mariano no refleja
+   la realidad.
 
 **Regla de oro de toda la llamada**: no es "explicar bien el trámite" — es hacer que la persona sienta que la escuchaste antes de venderle algo. El pitch genérico se puede replicar en cualquier gestoría; la conversación personalizada, no.
 
@@ -198,6 +202,38 @@ Análisis manual de los leads nuevos de julio 2026, usado como línea base para 
 3. **Seguimiento post-llamada (40% deja de responder)**: de los que sí tuvieron la conversación, una porción significativa se enfría después sin resolución.
 
 **Para qué sirve este dato**: es el punto de comparación. Cuando se implementen mejoras (plantilla de Fathom, próxima acción con fecha, guion de llamada, detección de nivel de conciencia), se vuelve a medir la misma cohorte de un mes y se compara contra esta base — para ver si de verdad se está moviendo la aguja, en vez de asumir que algo "funciona" sin datos.
+
+### 3.1.1 Tracking de no-show — mecanismo real encontrado y corregido (18 agosto 2026)
+
+Mariano quiere poder sacar estadísticas de no-show por país/tipo de lead (para dejar de perder
+tiempo con perfiles que no suelen conectarse), y notó que el panel que armó dice "no show" pero no
+reflejaba nada. Investigado en vivo:
+
+- **El campo real es `appointmentStatus` de cada cita** en GHL (`confirmed` / `showed` / `noshow` /
+  `cancelled`), parte del objeto de la cita del calendario (`GET/PUT
+  /calendars/events/appointments/{id}`) — no es una etiqueta de contacto ni nada que se cargue a
+  mano en otro lado. El panel de Mariano casi seguro lee de este campo.
+- **Causa raíz de por qué el panel salía vacío**: nadie estaba actualizando este campo después de
+  cada llamada — se confirmó en vivo el 18 ago que las 3 citas del día (incluida la que sí se
+  realizó) seguían en `confirmed`, el valor por default al agendar, nunca se habían tocado. Por
+  eso el baseline de julio (sección 3.1, 41,2% no-show) tuvo que reconstruirse **a mano**, revisando
+  34 llamadas una por una — el dato real existía, pero no en el campo que el panel consulta.
+- **Corregido**: se agregó el paso 5 al checklist de "Después de colgar" (arriba) — marcar
+  `showed`/`noshow` en cada cita es ahora parte del proceso estándar, no opcional.
+- **Conteo arranca desde el 18 de agosto de 2026** (decisión explícita de Mariano) — no se
+  reconstruyó el historial previo a esa fecha para las estadísticas por país/fuente, porque salvo
+  reconstrucción manual como la de julio, el campo no tiene datos confiables de antes. Casos reales
+  del 18 ago ya corregidos como ejemplo del mecanismo: Javier Maddia (`showed`), Yeraldin Coba
+  (`noshow` — dejó una nota en el propio formulario de reserva avisando que el horario asignado por
+  el widget probablemente no le iba a funcionar por diferencia horaria y pidiendo coordinar por
+  WhatsApp antes — nadie lo vio, vale la pena revisar si el widget de reserva está exponiendo bien
+  esas notas a quien gestiona el calendario), Nazareth Rengel (`noshow`, sin nota, sin explicación
+  aparente, referida por Jesús Mosquera).
+- **Cómo sacar las estadísticas cuando haga falta**: cruzar `ghl_list_calendar_events` (calendario
+  `Sl5Of5SLsAgTrwxhwoAE`, "Asesoría GOTIR") filtrando por `appointmentStatus=noshow` en el rango de
+  fechas pedido, contra el campo `Pais` y la fuente (`Fuente`) de cada contacto — no hace falta una
+  tool nueva, se arma con las que ya existen. Todavía no hay suficiente volumen desde el 18 ago para
+  sacar conclusiones — retomar cuando Mariano pida el corte.
 
 ### 3.2 La llamada con Hector (analizada el 13 de agosto 2026)
 

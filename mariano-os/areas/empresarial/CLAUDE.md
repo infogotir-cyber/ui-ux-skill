@@ -55,9 +55,45 @@ dado en esta dirección — es un interés declarado, no un proyecto en marcha.
   desarrollo personal", donde aparece la misma ambigüedad), o (c) contenido que ya usa dentro de
   GOTIR. Se deja tal cual sin resolver la ambigüedad — no asumas cuál es.
 
-No hay más proyectos empresariales fuera de GOTIR registrados en memoria además de estos tres
-(encimeras acrílicas, interés en importación/exportación, y el tema de educación en marketing
-digital sin resolver).
+### Referidos de inversión inmobiliaria en Costa Rica (registrado 17 agosto 2026)
+- **La idea**: conseguir inversionistas de EE.UU. y Europa para proyectos inmobiliarios (terrenos y
+  propiedades) de una desarrolladora en Costa Rica — propiedades de alto valor.
+- **Cómo llegó**: Mariano conoce personalmente a **Edgar Sequeira**, dueño de la desarrolladora,
+  que lleva adelante grandes proyectos en CR — se escriben seguido. Edgar va a Impact Global en
+  Costa Rica (mismo entorno ministerial de Mariano — ver `areas/ministerio/CLAUDE.md`) y lo
+  contactó con sus gerentes de proyecto:
+  - **Kris Chacón** — a cargo de **Nawi**, uno de los proyectos más grandes. También va a la
+    iglesia de Mariano.
+  - **Gilberto Campos** — a cargo de los otros 2 proyectos.
+- **Modelo de negocio**: Mariano consigue y contacta leads de posibles inversionistas; el cierre de
+  la venta lo hace el equipo de Gilberto (o el equipo del proyecto correspondiente) con ese lead —
+  Mariano cobra una **comisión del 6%** solo si se concreta la venta. Es decir, su trabajo es
+  generar leads calificados, no cerrar él mismo.
+- **Material recibido**: Edgar/su equipo ya le mandaron material para entender mejor los proyectos
+  (no cargado todavía en este sistema).
+- **Decisión que está evaluando**: si vale la pena montar algo con imagen de marca propia (nombre,
+  landing page, publicidad paga) para captar leads de forma más profesional/escalable, en vez de
+  depender solo de su red de contactos personal — el argumento a favor es que, siendo propiedades
+  muy costosas, el 6% de comisión es un monto grande, así que justificaría invertir en la
+  infraestructura de captación.
+- **Pendiente de precisar antes de poder evaluar la viabilidad con criterio** (preguntado a
+  Mariano el 17 agosto 2026, sin responder todavía):
+  1. Rango de precio de las propiedades/proyectos (para poder estimar el valor real de una venta y
+     de la comisión del 6%).
+  2. Tamaño real de su red actual de posibles inversionistas de EE.UU./Europa — ¿arranca de cero
+     con leads fríos, o ya tiene contactos concretos en mente?
+  3. Si el acuerdo con Edgar/Gilberto es exclusivo para Mariano o si hay otros captando leads para
+     los mismos proyectos.
+  4. Urgencia/plazos reales de los proyectos de Edgar (¿necesitan vender ya, o es un negocio sin
+     apuro?).
+  5. Presupuesto que Mariano tendría en mente para landing page + publicidad, considerando la
+     situación financiera ajustada de GOTIR ahora mismo (ver `areas/gotir/direcciones/finanzas/CLAUDE.md`)
+     — este proyecto competiría por su tiempo y posiblemente por caja con las prioridades ya
+     documentadas ahí.
+
+No hay más proyectos empresariales fuera de GOTIR registrados en memoria además de estos cuatro
+(encimeras acrílicas, interés en importación/exportación, el tema de educación en marketing
+digital sin resolver, y los referidos inmobiliarios de Costa Rica).
 
 ## Estado actual de estructura operativa (14 agosto 2026)
 No hay estructura en ClickUp ni en ninguna otra herramienta para esta área todavía. Es intencional

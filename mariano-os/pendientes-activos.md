@@ -66,11 +66,15 @@
 
 ### Ministerio (Ruge y otros)
 
-3. **Relevar pendientes activos de Ruge**
-   - Estado: **en curso** — Mariano arrancó el 19 ago (misma tarde) un chequeo físico en vivo del
-     inventario de Ruge (cantidades reales vs. lo esperado, contra `ruge_reparto_lookup.md` y la
-     lista "Inventario" en ClickUp `901220315543`), cargando tareas de discrepancia a medida que
-     aparecen. Deja de ser un pendiente genérico sin dueño — es trabajo activo, no bloqueado.
+3. **Inventario físico de Ruge — 81/202 conteos reales cargados, quedan 2 puntos abiertos**
+   - Estado: **en curso**. La mayoría de las ambigüedades del primer cruce (mantel, arena, pala,
+     chuches, batería de la Cruz, banderas de España) ya se resolvieron el 19/20 ago — detalle en
+     `areas/ministerio/CLAUDE.md`, sección "Chequeo físico de inventario en la nave".
+   - Quedan 2 sin resolver, Mariano dijo que los corrobora él mismo: (a) paños pequeños, linterna
+     de cabeza, martillo y el detalle de los 3 maletines rotos — sin ítem claro en el sistema; (b)
+     el reto de PLATOS DE CARTON DE 6 UNIDADES, 70 según el inventario vs 150 mencionado en la
+     reunión.
+   - También sigue sin confirmar si las banderas de tribu están completas.
 
 ---
 

@@ -388,32 +388,50 @@ Logística, Eventos, Seguridad, Guías). Se cruzó contra los 202 ítems del exc
 **81 conteos reales** en la columna "Conteo real (hoy)" del archivo de la sección anterior — cada
 uno emparejado por nombre exacto de ítem, sin inventar cantidades donde el texto era ambiguo.
 
-**Quedan sin cargar, por ambigüedad real en el texto de la reunión (no se adivinó)** — pendiente
-que Mariano confirme a cuál ítem corresponde cada uno antes de cargarlo:
-- "Falta pala para carbón" — ¿PALA GRANDE o PALAS PEQUEÑAS PARA TRIBUS?
-- "7 chuches de fruta" — ¿CARAMELOS SURTIDOS o CARAMELOS CON PROPÓLEO, o un ítem nuevo sin
-  registrar?
-- "1 paquete paños pequeños", "1 linterna para cabeza", "1 martillo", "3 maletines rotos" — no
-  tienen ítem correspondiente en el excel actual (¿son ítems nuevos a agregar, o ya están con otro
-  nombre?).
-- "Mantel negro de la iglesia (Jefferson)" — no es el mismo ítem que "MANTEL VERDE PARA MESA DE
-  CAMISETAS" (Marco), parece un ítem distinto sin registrar.
-- "Arena para borde de piscina hay en stock (controlar)" — sin número, Mariano lo dejó como
-  pendiente de verificar él mismo.
-- "Bandera de tribu ver si están todas (pendiente de ver)" — ídem, sin número confirmado.
-- "Goma elástica negra para araña" — no está claro si es el mismo ítem que "CUERDAS ELÁSTICAS
-  PISCINA NEGRAS 20M" u otro distinto.
-- "38 sacos de arena" — se cargó tentativamente en ARENA PARA MEZCLA DE LODO 25KG (no en la de
-  borde de piscina, que quedó sin número) — a confirmar si es la asignación correcta.
-- Batería de la Cruz: "hay que recargarla" — se cargó como texto "sin cargar" en vez de un número,
-  porque físicamente está (1) pero no lista para usar.
-- El botiquín (KIT PRIMEROS AUXILIOS) se marcó "OK" en general, pero la reunión detectó que faltan
-  específicamente: termómetro, tensiómetro (lo presta Carlos Prado), medidor de glucosa (lo presta
-  Marcos Guanuchi) y tiras del medidor — no tienen fila propia en el excel por persona, quedan acá
-  como nota para gestionar aparte.
-- Discrepancias de dato detectadas entre la reunión y el sistema (no corregidas por su cuenta,
-  solo registradas): el "Reto 50 hombres" de PLATOS DE CARTON DE 6 UNIDADES dice 70 en el
-  inventario pero la reunión mencionó 150 — a confirmar cuál es el correcto.
+**Aclaración conceptual de Mariano Jurado (encargado general de Ruge), transmitida por Mariano el
+19/20 ago — importa para leer bien la columna "Otra comisión con la que revisar" del excel**: los
+ítems asignados a Marco/Julio/David (equipo de logística) **no significan que logística tenga que
+ejecutar personalmente los 214 ítems**. Regla real:
+- Si el bloque dice solo una comisión (ej. "COCINA"), esa comisión lo hace al 100%.
+- Si dice dos comisiones juntas (ej. "LOGÍSTICA Y EVENTOS", "LOGÍSTICA Y GUIAS"), la **segunda
+  nombrada gestiona/ejecuta**, y **logística corrobora que se haya hecho** (check-in: confirmar que
+  ya está en inventario o ya se subió al camión) — no lo compra ni lo consigue ella misma.
+- Mismo patrón para producción, la voz, etc.: si el ítem dice "producción", lo hace producción;
+  logística solo verifica.
+
+Esto no cambia el excel en sí (la columna "Otra comisión" ya tenía este dato) — cambia cómo
+interpretarlo: la "Falta p/ reto 50" de un ítem de otra comisión es una alerta para preguntarle a
+esa comisión, no una tarea de compra para Marco/Julio/David.
+
+**Confirmado por Mariano: el excel por persona con stock + reto 50 + conteo real "ya es el final
+final definitivo".**
+
+**Resueltas (19/20 ago) las ambigüedades pendientes de la sección anterior:**
+- **Mantel** — corrección importante: **no** hay que comprar uno verde. Hay que **pedirle a la
+  iglesia el mantel negro**, vía administración (Juliana) — tarea real de **Eventos**, Marco solo
+  corrobora. Esto **revierte** la decisión registrada el 17 ago ("MANTEL NEGRO... pasó a ser MANTEL
+  VERDE... hay que comprarlo de color verde") — se deja la nota vieja tal cual más abajo, sin
+  borrar, con esta corrección al lado. Confirmado también que "Mantel negro de la iglesia
+  (Jefferson)" del PDF es el mismo ítem, no uno nuevo. Cargado en el excel como pendiente de pedir
+  (no como stock propio).
+- **Arena** — resuelto, 38 sacos, cargado en ARENA PARA MEZCLA DE LODO 25KG. La de borde de
+  piscina queda sin número separado — no se aclaró si son el mismo stock o dos distintos.
+- **Banderas** — de España confirmadas, 2, ok. De tribu **siguen sin confirmar** — hay que
+  corroborar cuáles faltan, no se cargó como completo.
+- **Maletines** — no son un ítem aparte: son los estuches donde van las garrafas de butano.
+  Van junto con BUTANOS (David, ya cargado con 12) — 3 de esos maletines están rotos, nota aparte,
+  no resta del conteo de butano en sí.
+- **Chuches** — confirmado: son los caramelos que se compran para las bolsas de provisiones, hay
+  que comprar más. Coincide con CARAMELOS SURTIDOS ya cargado en 0.
+- **Pala** — confirmado que es la misma que PALA GRANDE (Eventos). Reto real: **2 palas grandes**,
+  hay 1 (ya cargado) — falta 1.
+- **Batería de la Cruz** — confirmado, es la misma BATERIA MARCA BOSH ya cargada como "sin cargar".
+
+**Siguen genuinamente pendientes, Mariano los va a corroborar él mismo:**
+- "1 paquete paños pequeños", "1 linterna para cabeza", "1 martillo", "3 maletines rotos [detalle
+  de cuáles]" — dijo explícitamente "eso no lo sé, ponlo como que falta para corroborarlo".
+- Reto de PLATOS DE CARTON DE 6 UNIDADES: el inventario dice 70, la reunión mencionó 150 — "eso no
+  lo sé, anótamelo como pendiente y lo corroboro".
 
 ### Rate limit de ClickUp (confirmado varias veces, 17-18 ago 2026) — RESUELTO 18 ago 2026
 17 ago: al traer la lista de Inventario, la API devolvió "Rate limit exceeded" dos veces seguidas

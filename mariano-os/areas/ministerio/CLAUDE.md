@@ -331,6 +331,56 @@ Cómo comportarse:
   correspondiente a cada persona, para que las fechas límite y el estado vivan ahí también, no solo
   en el excel.
 
+### Chequeo físico de inventario en la nave — 19 agosto 2026, excel final con stock
+
+Mariano fue a la nave a corroborar en vivo el inventario real de Ruge (cuánto hay de cada cosa vs.
+lo que dice el sistema) y subió una versión "final y mejor organizada" del excel por persona
+(`Tareas_asignadas_por_persona__Log_stica_1.xlsx`) para tomar como referencia de ahora en más —
+**reemplaza a `Ruge_reparto_por_persona_17ago2026.xlsx`** como el documento de trabajo, aunque el
+viejo se deja en `recursos/` como histórico, sin borrar.
+
+**Archivo final construido y entregado a Mariano**:
+`areas/ministerio/recursos/Ruge_tareas_por_persona_19ago2026_FINAL_con_stock.xlsx` — mismas 4 hojas
+(Marco Guanuchi, Julio Cesar Navia, David Luzuriaga, Mariano Barcelona), con 4 columnas nuevas
+agregadas a las 3 hojas de ítems (no a la de Mariano, que son tareas de coordinación sin cantidad):
+- **Stock inventario**: número real de `INVENTARIO_2026_RUGE_original.xlsx` (columna STOCK ACTUAL),
+  cruzado ítem por ítem contra el nombre de cada fila. **202/202 ítems emparejados** (35 Marco + 17
+  Julio + 150 David — coincide con el reparto ya conocido, el archivo nuevo solo lo reorganiza
+  mejor, no cambia qué le toca a quién).
+- **Reto 50 hombres**: la meta de cantidad del inventario (columna RETO 50 HOMBRES), mismo cruce.
+- **Conteo real (hoy)**: en blanco a propósito — es la columna que se completa a mano (impreso) o
+  dictándomelo en el chat mientras se camina la nave.
+- **Falta p/ reto 50**: fórmula real (`=IFERROR(MAX(0,Reto50-IF(Real<>"",Real,Stock)),"revisar
+  unidad")`) — usa el conteo real si ya se cargó, si no cae al stock del sistema. Se recalcula solo
+  apenas se escribe un número en "Conteo real".
+- **3 ítems fuera del inventario formal** (ya documentados como "sueltos de la retrospectiva", sin
+  stock/reto porque nunca estuvieron en el excel de inventario): protocolo de numeración de radios,
+  cortafierro para la cruz, elementos para las prédicas (copa de cristal) — marcados
+  "(fuera de inventario)" en vez de forzar un número.
+- **Algunos ítems tienen el stock/reto en texto** (ej. "PAQUETES 7", "SOBRES 20", "3 SACOS") porque
+  así está cargado en el inventario original — se dejaron tal cual (es información real y más útil
+  que un número pelado), y la fórmula de faltante muestra "revisar unidad" en esos casos en vez de
+  romperse con un error.
+- Mismo tamaño de columnas que Mariano ya había definido en el archivo subido — las 4 columnas
+  nuevas usan columnas que él mismo había dejado pre-anchadas (14.0 y 8.71 puntos) al lado de "Fecha
+  límite", más 2 columnas nuevas angostas para Reto 50 y Falta. Encabezados con el mismo estilo
+  (Arial 10 negrita, fondo azul) que el resto de la hoja. `print_area` seteado por hoja para que
+  imprima limpio, sin páginas en blanco de más.
+
+**Nombres que no coincidían exactamente entre el excel por persona y el inventario** (mismo ítem,
+redactado distinto — resuelto por cruce manual, no asumido a ciegas): abreviaturas ("5L" vs
+"CAPACIDAD 5 LITROS"), un typo real en el inventario ("CAMARELOS CON PROPOLEO" en vez de
+"CARAMELOS..."), y el cambio de color ya documentado (MANTEL VERDE en el reparto = MANTEL NEGRO en
+el inventario original, es el mismo ítem, cambia el color a comprar). Sin ambigüedad real en
+ninguno de los 202 — donde había dos candidatos parecidos (ej. las dos cajas organizadoras 1ª/2ª
+requisa) se distinguió por el número de orden.
+
+**Detalle técnico del entorno, para no repetir la sorpresa**: este entorno de Claude Code no tenía
+instalado `libreoffice-calc` (solo `libreoffice-core`), así que cualquier recálculo de fórmulas de
+Excel fallaba/colgaba sin explicar por qué. Se instaló con `apt-get install -y libreoffice-calc` —
+si vuelve a faltar en una sesión nueva (el contenedor es efímero), hay que reinstalarlo antes de
+tocar cualquier excel con fórmulas.
+
 ### Rate limit de ClickUp (confirmado varias veces, 17-18 ago 2026) — RESUELTO 18 ago 2026
 17 ago: al traer la lista de Inventario, la API devolvió "Rate limit exceeded" dos veces seguidas
 (859 y luego 794 minutos restantes) — confirma que es un límite real que se va descontando, no un

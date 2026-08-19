@@ -882,12 +882,21 @@ con la cabeza en tantos frentes a la vez. Motivación textual suya: quiere que e
 director general de todas las áreas, pero también como una especie de secretario" que todos los días
 le diga qué sigue pendiente — no solo cuando él se acuerda de preguntar.
 
-### 9.1 Mecanismo: Routine diaria
+### 9.1 Mecanismo: dos Routines, mañana y noche
 
-Se configuró una Routine (trigger programado, `trig_...`, creada 19 agosto 2026) que dispara todos
-los días a las **20:00 hora de España** (18:00 UTC en horario de verano — revisar el offset cuando
-España pase a horario de invierno, a fines de octubre 2026) hacia esta misma conversación. Al
-dispararse, el sistema:
+Se configuraron **dos** Routines (triggers programados) hacia esta misma conversación —
+complementarias, no duplicadas:
+
+**Chequeo de la mañana** (`trig_01Us5mDwAASHmmzEqxsihfig`, agregada 19 ago 2026, a pedido explícito
+de Mariano) — dispara a las **08:00 hora de España** (06:00 UTC en horario de verano). Mirada hacia
+adelante, corta: qué citas tiene agendadas hoy, qué pendientes de `pendientes-activos.md` vencen hoy
+o mañana (esos primero), y si hay algo de Ruge con fecha cercana. No repite el detalle completo del
+chequeo de la noche anterior — es el arranque del día, no un resumen.
+
+**Chequeo de la noche** (`trig_01VqNHfVMi8jzMLpvfcXVHvn`, creada 19 ago 2026) — dispara a las
+**20:00 hora de España** (18:00 UTC en horario de verano — revisar el offset en ambas Routines
+cuando España pase a horario de invierno, a fines de octubre 2026). Mirada hacia atrás, sobre lo que
+pasó en el día:
 
 1. Consulta `ghl_list_calendar_events` del calendario "Asesoría GOTIR" (`Sl5Of5SLsAgTrwxhwoAE`) para
    las citas del día.
@@ -899,8 +908,8 @@ dispararse, el sistema:
 4. Si la ventana de aprendizaje de 20 llamadas (sección 9.2) sigue abierta, pide el resumen/
    transcripción de las llamadas del día que todavía no se haya recibido.
 
-Es un chequeo corto y directo, no un cuestionario largo — el objetivo es que Mariano no tenga que
-acordarse de nada, no sumarle otra carga.
+Las dos son chequeos cortos y directos, no un cuestionario largo — el objetivo es que Mariano no
+tenga que acordarse de nada, no sumarle otra carga.
 
 ### 9.2 Ventana de aprendizaje — primeras 20 llamadas con transcripción
 

@@ -430,8 +430,53 @@ final definitivo".**
 **Siguen genuinamente pendientes, Mariano los va a corroborar él mismo:**
 - "1 paquete paños pequeños", "1 linterna para cabeza", "1 martillo", "3 maletines rotos [detalle
   de cuáles]" — dijo explícitamente "eso no lo sé, ponlo como que falta para corroborarlo".
-- Reto de PLATOS DE CARTON DE 6 UNIDADES: el inventario dice 70, la reunión mencionó 150 — "eso no
-  lo sé, anótamelo como pendiente y lo corroboro".
+- Banderas de tribu — sigue sin confirmar si están todas.
+
+### Documento definitivo — corrección de Mariano (19 ago 2026, noche)
+
+Mariano tomó el excel de la sección anterior, lo corrigió a mano y lo volvió a subir como **el
+documento final**: `areas/ministerio/recursos/Ruge_tareas_por_persona_DEFINITIVO_19ago2026.xlsx`
+— **este archivo reemplaza a `Ruge_tareas_por_persona_19ago2026_FINAL_con_stock.xlsx`** como
+fuente de verdad (el anterior se deja en `recursos/` como histórico, sin borrar). Estructura
+unificada: quitó la columna "¿Encargado general o tarea específica?" y dejó las mismas columnas en
+las 3 hojas de ítems (Bloque, Ítem, Detalle, Otra comisión, Estado, Fecha límite, Inventario, Reto
+50 hombres, `(19/08)`, Falta p/ reto 50).
+
+Cambios reales hechos por Mariano (diff verificado ítem por ítem, no solo confianza):
+- **Limpió los "OK"/texto** que se habían dejado como placeholder (batería, kit primeros auxilios,
+  parrilla, cucharas, etc.) y los convirtió en números reales (mayormente `1`), y los stock/reto en
+  texto ("100 UNIDADES", "3 SACOS") en números limpios.
+- **BUTANOS corregido de 12 a 2** — la cifra de 12 (6 usados + 6 nuevos) que se había cargado desde
+  el PDF no era la correcta para este ítem específico.
+- **Mantel: renombrado directamente en el excel** de "MANTEL VERDE PARA MESA DE CAMISETAS" a
+  "MANTEL NEGRO PARA MESA DE CAMISETAS" — coincide con la corrección de la sección anterior (pedir
+  a la iglesia, no comprar verde).
+- **Cajas organizadoras**: renombradas con la capacidad real — "CAJAS ORGANIZADORAS 1ª REQUISA 90
+  L" y "CAJAS ORGANIZADORAS 2ª REQUISA 55 L" (antes sin el dato de litros).
+- **Fechas "máxima urgencia" movidas del 19 al 20 de agosto** (el 19 ya había pasado): camión caja
+  abierta, alquiler autobús 55 plazas, radios VHF, teléfono satelital, furgoneta grande, camión
+  caja cerrada, troncos — los 7 ítems del bloque "Confirmar alquiler".
+- **RADIOS DE COMUNICACIÓN DE IGLESIA** pasó de fecha 26 ago a urgente, 20 ago — queda dentro del
+  bloque "Confirmar préstamos" (8 ítems), que en general sigue con fecha 26 ago para el resto.
+- **Reto de PLATOS DE CARTON DE 6 UNIDADES confirmado en 70** (no 150) — resuelve la discrepancia
+  que había quedado pendiente.
+
+**ClickUp actualizado (19 ago 2026, lista Inventario `901220315543`)**, a pedido explícito de
+Mariano — acción directa, sin pedir confirmación (regla de creación/escritura de `mariano-os/
+CLAUDE.md`):
+- Tarea "Logística — Confirmar alquiler (7 ítems)" (`869ehmaur`): fecha límite movida del 19 al 20
+  de agosto, con comentario detallando los 7 ítems que cubre.
+- Tarea "Logística — Verificar TERMOS en bodega (discrepancia detectada)" (`869ejx25z`): marcada
+  **completado** — confirmado 8 termos, 1 roto, coincide con la sospecha de la retrospectiva.
+- Tarea "Logística — Confirmar préstamos (8 ítems)" (`869ehmayj`): sin cambiar la fecha general del
+  bloque (los otros 7 ítems siguen el 26 ago), pero se agregó un comentario marcando que RADIOS DE
+  COMUNICACIÓN DE IGLESIA es urgente aparte, 20 ago.
+- Tarea "Cocina — Pendientes varios (atizador, verificar cucharas)" (`869eh5gh0`): comentario
+  marcando que "verificar cucharas" ya se resolvió (100/100 confirmado), pero el atizador para
+  mover el carbón sigue sin confirmar — no se cerró la tarea completa porque queda ese ítem suelto.
+- El resto de las 18 tareas de ClickUp son de bloque (no de ítem), así que no se tocaron una por
+  una — el detalle ítem por ítem sigue viviendo en el excel definitivo, no en ClickUp (mismo
+  criterio ya documentado: ClickUp tiene 18 tareas a nivel de bloque, no 202 a nivel de ítem).
 
 ### Rate limit de ClickUp (confirmado varias veces, 17-18 ago 2026) — RESUELTO 18 ago 2026
 17 ago: al traer la lista de Inventario, la API devolvió "Rate limit exceeded" dos veces seguidas

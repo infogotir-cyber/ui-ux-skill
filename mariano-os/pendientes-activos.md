@@ -66,15 +66,14 @@
 
 ### Ministerio (Ruge y otros)
 
-3. **Inventario físico de Ruge — 81/202 conteos reales cargados, quedan 2 puntos abiertos**
-   - Estado: **en curso**. La mayoría de las ambigüedades del primer cruce (mantel, arena, pala,
-     chuches, batería de la Cruz, banderas de España) ya se resolvieron el 19/20 ago — detalle en
-     `areas/ministerio/CLAUDE.md`, sección "Chequeo físico de inventario en la nave".
+3. **Inventario físico de Ruge — documento definitivo ya cargado, quedan 2 puntos abiertos**
+   - Estado: **en curso**. Mariano corrigió y subió el excel final
+     (`Ruge_tareas_por_persona_DEFINITIVO_19ago2026.xlsx`) y se sincronizó lo relevante a ClickUp
+     — detalle completo en `areas/ministerio/CLAUDE.md`, sección "Documento definitivo — corrección
+     de Mariano". El reto de los platos de cartón quedó resuelto en 70 (confirmado por él mismo).
    - Quedan 2 sin resolver, Mariano dijo que los corrobora él mismo: (a) paños pequeños, linterna
      de cabeza, martillo y el detalle de los 3 maletines rotos — sin ítem claro en el sistema; (b)
-     el reto de PLATOS DE CARTON DE 6 UNIDADES, 70 según el inventario vs 150 mencionado en la
-     reunión.
-   - También sigue sin confirmar si las banderas de tribu están completas.
+     si las banderas de tribu están completas.
 
 ---
 

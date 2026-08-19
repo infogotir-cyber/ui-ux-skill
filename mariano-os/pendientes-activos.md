@@ -29,7 +29,7 @@
    - Mencionado por Mariano: antes del 19 ago 2026 (fecha exacta no registrada — él mismo señaló el
      19 ago que lo había pedido y nunca se retomó).
    - Estado: **abierto**, sin dueño ni plan todavía.
-   - Recordado: 1 vez (19 ago 2026).
+   - Recordado: 2 veces (19 ago 2026, chequeo diario 20:00).
    - Falta definir: ¿GHL ya centraliza Instagram/WhatsApp — también permite TikTok, o hace falta
      otra herramienta? Confirmar con Mariano el volumen real de mensajes de TikTok antes de decidir
      la solución.
@@ -44,16 +44,15 @@
    - Estado: **abierto** — falta que Mariano diga qué específicamente está fallando hoy en ese
      mini-funnel (¿no llega el contenido?, ¿llega pero no queda claro?, ¿falta algún dato concreto
      como precio o requisito?) antes de poder proponer una corrección puntual.
-   - Recordado: 1 vez (19 ago 2026).
+   - Recordado: 2 veces (19 ago 2026, chequeo diario 20:00).
 
 ### Ministerio (Ruge y otros)
 
 3. **Relevar pendientes activos de Ruge**
-   - Mariano pidió (19 ago 2026) el mismo trato de recordatorio constante para Ruge que para GOTIR,
-     pero todavía no se cargó acá ninguna tarea concreta.
-   - Estado: **abierto** — pendiente que Mariano las mencione, o que se revise
-     `areas/ministerio/CLAUDE.md` para levantar lo que ya esté documentado ahí y traerlo a este
-     registro.
+   - Estado: **en curso** — Mariano arrancó el 19 ago (misma tarde) un chequeo físico en vivo del
+     inventario de Ruge (cantidades reales vs. lo esperado, contra `ruge_reparto_lookup.md` y la
+     lista "Inventario" en ClickUp `901220315543`), cargando tareas de discrepancia a medida que
+     aparecen. Deja de ser un pendiente genérico sin dueño — es trabajo activo, no bloqueado.
 
 ---
 

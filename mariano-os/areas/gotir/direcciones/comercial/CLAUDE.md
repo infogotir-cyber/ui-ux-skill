@@ -176,6 +176,13 @@ Si responde con dudas, ahí sí se pasa a resolver la objeción puntual (Fase 4)
    `noshow` si no se presentó) — ver mecanismo completo y por qué es un paso nuevo en la sección
    "Tracking de no-show" más abajo. Sin este paso, el panel de estadísticas de Mariano no refleja
    la realidad.
+6. **Agregado 19 agosto 2026, a pedido explícito de Mariano tras el curso de Mapa Antifugas**: si la
+   llamada no terminó en venta, completar un post-mortem corto en la misma nota del contacto — dónde
+   se frenó, qué dijo el cliente, qué se cree que pasó realmente, qué señal hubo, qué se haría
+   diferente la próxima vez (ver sección 8.1, "aprendizaje de ventas perdidas"). Deja de ser un
+   análisis ocasional tipo caso Hector — es parte obligatoria del checklist para **toda** venta
+   perdida, no solo la que se estudia en detalle. Ver sección 9 para el mecanismo que ayuda a que
+   este paso (y el resto de este checklist) no dependa solo de que Mariano se acuerde.
 
 **Regla de oro de toda la llamada**: no es "explicar bien el trámite" — es hacer que la persona sienta que la escuchaste antes de venderle algo. El pitch genérico se puede replicar en cualquier gestoría; la conversación personalizada, no.
 
@@ -860,7 +867,62 @@ Mariano a un campo/automatización que no dependa de que se acuerde":
    histórica completa de +2.000 — eso sigue sin ser prioridad, sección 1.3) — volumen chico, tibio, no
    frío. Dueño: Mariano. Esfuerzo: medio. Cuándo: después del paso 1.
 
-**Pendiente explícito**: confirmar con Mariano si quiere que el post-mortem de venta perdida
-(aprendizaje, hoy caso por caso) se convierta también en un paso obligatorio del checklist "después
-de colgar" (sección 2) — sería el sexto paso natural, pero no se agrega sin que él lo pida, siguiendo
-el mismo criterio de todo este documento: no inventar proceso que Mariano no haya confirmado.
+**Confirmado 19 agosto 2026**: Mariano pidió agregar el post-mortem de venta perdida como paso
+obligatorio — ya está como paso 6 del checklist "después de colgar" (sección 2).
+
+---
+
+## 9. Chequeo diario proactivo y sistema de pendientes (19 agosto 2026)
+
+Mariano pidió explícitamente pasar de un sistema reactivo (el sistema responde lo que se le
+pregunta) a uno proactivo: que el sistema le recuerde las llamadas del día, las tareas que quedaron
+sin resolver, y todo lo que él mencionó como necesario y después no se volvió a tocar — porque está
+solo sosteniendo todas las áreas de GOTIR (y del resto de su vida) y es normal que se le pasen cosas
+con la cabeza en tantos frentes a la vez. Motivación textual suya: quiere que el sistema actúe "como
+director general de todas las áreas, pero también como una especie de secretario" que todos los días
+le diga qué sigue pendiente — no solo cuando él se acuerda de preguntar.
+
+### 9.1 Mecanismo: Routine diaria
+
+Se configuró una Routine (trigger programado, `trig_...`, creada 19 agosto 2026) que dispara todos
+los días a las **20:00 hora de España** (18:00 UTC en horario de verano — revisar el offset cuando
+España pase a horario de invierno, a fines de octubre 2026) hacia esta misma conversación. Al
+dispararse, el sistema:
+
+1. Consulta `ghl_list_calendar_events` del calendario "Asesoría GOTIR" (`Sl5Of5SLsAgTrwxhwoAE`) para
+   las citas del día.
+2. Para cada una, le pregunta a Mariano cómo fue, si ya cargó el resumen de Fathom, si aplicó la
+   etiqueta de temperatura, si creó la tarea de próxima acción con fecha, y si marcó `showed`/
+   `noshow` — y si no cerró, si hizo el post-mortem (sección 2, pasos 1-6).
+3. Lee `pendientes-activos.md` (raíz de `mariano-os/`) y vuelve a mencionar cualquier ítem que siga
+   `abierto` o `en curso` — **las veces que haga falta**, no una sola vez y listo.
+4. Si la ventana de aprendizaje de 20 llamadas (sección 9.2) sigue abierta, pide el resumen/
+   transcripción de las llamadas del día que todavía no se haya recibido.
+
+Es un chequeo corto y directo, no un cuestionario largo — el objetivo es que Mariano no tenga que
+acordarse de nada, no sumarle otra carga.
+
+### 9.2 Ventana de aprendizaje — primeras 20 llamadas con transcripción
+
+A pedido de Mariano, durante al menos 20 llamadas va a compartir el resumen/transcripción (Fathom)
+de cada una para que el sistema registre patrones: preguntas frecuentes de los clientes, errores
+recurrentes de Mariano en la llamada, y ajustes sugeridos al guion (sección 2). El registro vive en
+`patrones-llamadas.md`, mismo directorio — se actualiza cada vez que llega una transcripción nueva.
+
+**Contador: 0/20 llamadas registradas al 19 agosto 2026.**
+
+### 9.3 `pendientes-activos.md` — qué es y cómo se usa
+
+Vive en la raíz de `mariano-os/` (no solo GOTIR), porque cubre cualquier compromiso que Mariano
+mencione como necesario en cualquier área — incluido ministerio/Ruge, a pedido explícito suyo el 19
+de agosto. Cada ítem registra: fecha en que se mencionó, área, descripción, estado, y cuántas veces
+ya se le recordó. Regla simple: si un ítem sigue abierto, se vuelve a mencionar en el chequeo diario
+— nunca se asume que un solo recordatorio alcanza. Un ítem sale de la lista solo cuando Mariano
+confirma que está hecho, no por inferencia.
+
+**Ya cargados ahí (19 agosto 2026), señalados por Mariano como pedidos previos que se perdieron sin
+seguimiento:**
+- Mini-chat/bandeja unificada para responder mensajes de TikTok.
+- Proceso de precalificación antes de la llamada (que el lead llegue sabiendo requisitos y precios) —
+  a confirmar si es lo mismo que el "mini-funnel pre-llamada" ya mencionado en la sección 6.2, o algo
+  distinto.

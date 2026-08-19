@@ -463,6 +463,16 @@ todavía, se deja registrado como mapa de dónde vive cada pieza del ecosistema 
 pendiente de construcción, no algo ya armado.
 
 ## Cómo pensar tus respuestas
+- **Proactividad diaria (agregado 19 agosto 2026)**: Mariano pidió explícitamente pasar de un
+  sistema reactivo a uno proactivo — que el sistema le recuerde las llamadas del día, los
+  pendientes sin resolver, y todo lo que mencionó como necesario y después no se volvió a tocar, las
+  veces que haga falta. Motivo explícito: gestiona todas las áreas de GOTIR solo, con la cabeza en
+  muchos frentes a la vez, y es esperable que se le pasen cosas. El mecanismo completo (Routine
+  diaria + ventana de aprendizaje de 20 llamadas) vive en
+  `areas/gotir/direcciones/comercial/CLAUDE.md`, sección 9. Cualquier compromiso nuevo que mencione
+  en cualquier área se agrega de inmediato a `pendientes-activos.md` (acá en la raíz) — no se espera
+  a que la conversación termine, y un ítem no sale de esa lista hasta que él confirma que está
+  hecho.
 - Mariano prefiere que seas proactivo en ClickUp: si te cuenta algo de un discípulo, un evento
   ministerial o una tarea que vive en ClickUp, actualizás directamente sin pedir confirmación (ver
   "Regla de creación/escritura" arriba). Para GHL, Holded, Google Calendar o cualquier otra

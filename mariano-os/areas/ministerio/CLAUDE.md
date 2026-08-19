@@ -381,6 +381,40 @@ Excel fallaba/colgaba sin explicar por qué. Se instaló con `apt-get install -y
 si vuelve a faltar en una sesión nueva (el contenedor es efímero), hay que reinstalarlo antes de
 tocar cualquier excel con fórmulas.
 
+### Conteo real cargado — reunión de inventario del 18/19 agosto (`Inventario_confirmado_en_stock.pdf`)
+
+Mariano subió el PDF con las notas de la reunión física de inventario (por comisión: Cocina,
+Logística, Eventos, Seguridad, Guías). Se cruzó contra los 202 ítems del excel final y se cargaron
+**81 conteos reales** en la columna "Conteo real (hoy)" del archivo de la sección anterior — cada
+uno emparejado por nombre exacto de ítem, sin inventar cantidades donde el texto era ambiguo.
+
+**Quedan sin cargar, por ambigüedad real en el texto de la reunión (no se adivinó)** — pendiente
+que Mariano confirme a cuál ítem corresponde cada uno antes de cargarlo:
+- "Falta pala para carbón" — ¿PALA GRANDE o PALAS PEQUEÑAS PARA TRIBUS?
+- "7 chuches de fruta" — ¿CARAMELOS SURTIDOS o CARAMELOS CON PROPÓLEO, o un ítem nuevo sin
+  registrar?
+- "1 paquete paños pequeños", "1 linterna para cabeza", "1 martillo", "3 maletines rotos" — no
+  tienen ítem correspondiente en el excel actual (¿son ítems nuevos a agregar, o ya están con otro
+  nombre?).
+- "Mantel negro de la iglesia (Jefferson)" — no es el mismo ítem que "MANTEL VERDE PARA MESA DE
+  CAMISETAS" (Marco), parece un ítem distinto sin registrar.
+- "Arena para borde de piscina hay en stock (controlar)" — sin número, Mariano lo dejó como
+  pendiente de verificar él mismo.
+- "Bandera de tribu ver si están todas (pendiente de ver)" — ídem, sin número confirmado.
+- "Goma elástica negra para araña" — no está claro si es el mismo ítem que "CUERDAS ELÁSTICAS
+  PISCINA NEGRAS 20M" u otro distinto.
+- "38 sacos de arena" — se cargó tentativamente en ARENA PARA MEZCLA DE LODO 25KG (no en la de
+  borde de piscina, que quedó sin número) — a confirmar si es la asignación correcta.
+- Batería de la Cruz: "hay que recargarla" — se cargó como texto "sin cargar" en vez de un número,
+  porque físicamente está (1) pero no lista para usar.
+- El botiquín (KIT PRIMEROS AUXILIOS) se marcó "OK" en general, pero la reunión detectó que faltan
+  específicamente: termómetro, tensiómetro (lo presta Carlos Prado), medidor de glucosa (lo presta
+  Marcos Guanuchi) y tiras del medidor — no tienen fila propia en el excel por persona, quedan acá
+  como nota para gestionar aparte.
+- Discrepancias de dato detectadas entre la reunión y el sistema (no corregidas por su cuenta,
+  solo registradas): el "Reto 50 hombres" de PLATOS DE CARTON DE 6 UNIDADES dice 70 en el
+  inventario pero la reunión mencionó 150 — a confirmar cuál es el correcto.
+
 ### Rate limit de ClickUp (confirmado varias veces, 17-18 ago 2026) — RESUELTO 18 ago 2026
 17 ago: al traer la lista de Inventario, la API devolvió "Rate limit exceeded" dos veces seguidas
 (859 y luego 794 minutos restantes) — confirma que es un límite real que se va descontando, no un

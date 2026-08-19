@@ -757,3 +757,110 @@ Lista honesta de lo que este documento *no* puede responder todavía porque no h
 - Si existe o no una solución definida para el problema de estacionalidad (sección 1.6) — identificado, no resuelto.
 - Qué rama de GHL priorizar para automatizar primero en n8n (sección 4.5) — hay una lectura razonable pero no es una decisión confirmada.
 - Cualquier cambio de precio o servicio que se hable en conversaciones futuras: por instrucción del proyecto, un cambio mencionado en una conversación no se trata como permanente hasta que se actualice el documento de contexto de precios/servicios correspondiente.
+
+---
+
+## 8. Sistema Comercial Antifugas — plan GOTIR (19 agosto 2026)
+
+Mariano compartió por WhatsApp el curso completo (dictado, transcripción de voz) del framework "Mapa
+Antifugas" de Facundo Prado. Texto fuente, limpio y reorganizado, en `mapa-antifugas-curso.md`, mismo
+directorio — no se duplica el contenido acá, solo la aplicación concreta a GOTIR.
+
+### 8.1 Autoauditoría con evidencia real (no estimada)
+
+Antes de tener el curso completo ya se había hecho un primer mapa contra la evidencia ya documentada
+en este archivo (baseline julio 2026, llamada Hector, caso Yeraldin) — resultado: **3 verde, 4
+ámbar, 4 rojo** de 11 puntos, publicado como artifact para Mariano el mismo 19 agosto. El framework
+que se usó ya coincidía en estructura con el curso completo, así que la evaluación no cambia de
+fondo — se afina acá con el vocabulario exacto del curso:
+
+- **Zona 1, antes del presupuesto — resultado general: ámbar.** Indagación y generación de deseo en
+  verde (Fase 2 y 3 de la estructura de llamada, sección 2, son de lo más fuerte del proceso).
+  Apertura en ámbar — existe el guion de nivel de conciencia (sección 1.5), pero no está confirmado
+  que se aplique siempre a todo lead entrante. **Recuperación temprana en rojo** — no existe ningún
+  proceso para retomar consultas que quedan sin respuesta en los primeros mensajes; el módulo de
+  WhatsApp del workflow de n8n sigue siendo un placeholder (sección 4.4).
+- **Zona 2, durante la decisión — resultado general: rojo.** Estructura persuasiva en verde (la regla
+  de "fragmentar, no descargar todo junto" de la Fase 3 es la misma idea que el curso describe para
+  evitar presupuestos genéricos). Presupuesto persuasivo y prevención de objeciones/cierre en ámbar —
+  el guion existe (Fases 3-5), pero la única llamada real analizada en detalle (Hector) tuvo
+  exactamente las dos fallas que este bloque mide: nunca hubo invitación explícita a decidir, y no
+  hubo un presupuesto escrito para mostrarle a la pareja. **Continuidad post presupuesto en rojo, con
+  dato duro**: 40% de las llamadas realizadas en julio 2026 dejó de responder después (sección 3.1).
+- **Zona 3, después del presupuesto — resultado general: rojo, la más débil de las tres.**
+  **Seguimiento con intención en rojo** — es, literalmente, el mismo punto que este documento ya
+  nombraba antes de conocer el framework como "el principal punto de fuga de oportunidades detectado
+  hasta ahora" (sección 1.4) y el error #1 de la llamada con Hector (sección 3.2). **Recuperación de
+  abandonados en rojo, por decisión explícita** — la prioridad actual es cerrar leads activos por
+  sobre hacer nurturing de la base histórica de +2.000 contactos (sección 1.3); correcto dado el
+  cuello de botella actual, pero sigue siendo una fuga real con volumen grande dormido. Aprendizaje de
+  ventas perdidas en ámbar — hay cultura real de esto (Hector como caso de estudio, el bug de no-show
+  corregido en vivo el 18 ago, sección 3.1.1), pero es caso por caso, no un paso obligatorio después
+  de cada venta perdida.
+
+**Zona que más está costando ventas hoy: zona 3, después del presupuesto.** Coincide con lo que el
+propio curso predice como "la fuga más visible", y con lo que este documento ya venía señalando antes
+de conocer el framework completo.
+
+**Las 2 fugas prioritarias** (mismo criterio del curso: no corregir 20 cosas a la vez):
+1. Cerrar llamadas sin próxima acción + fecha + responsable — aparece tres veces en la evidencia:
+   como regla ya escrita (sección 1.4), como error nombrado en la llamada con Hector (sección 3.2), y
+   como motor del 40% de seguimiento perdido (sección 3.1).
+2. Contexto del lead que se pierde entre agendar y la llamada — caso real: Yeraldin Coba dejó una
+   nota en el formulario de reserva avisando que el horario asignado no le iba a funcionar por
+   diferencia horaria y pidiendo coordinar por WhatsApp; nadie la vio; quedó `noshow` (sección 3.1.1).
+
+### 8.2 Las 3 capas aplicadas a GOTIR — el diagnóstico que más importa
+
+Esta es la parte del curso que más cambia la lectura de todo lo de arriba. El mapa antifugas mide
+**capa 1 (proceso)** — y en esa capa GOTIR no está mal: la estructura de llamada (sección 2) es de lo
+más maduro del negocio, con guiones específicos para descubrimiento, objeciones y cierre.
+
+El curso separa dos capas más, y ahí está el punto real:
+
+- **Capa 2 (ejecución — ¿el equipo lo ejecuta de forma consistente?) prácticamente no aplica hoy**:
+  Mariano es setter + closer + seguimiento, solo (sección 1.3) — no hay equipo con interpretaciones
+  distintas del proceso, hay una sola persona. Esto no es una fuga en sí, pero **significa que toda
+  la responsabilidad de la capa 2 recae también en la capa 3.**
+- **Capa 3 (liderazgo/dependencia) es, hoy, la causa raíz real de casi todas las fugas en rojo de
+  arriba.** No hay ningún mecanismo que sostenga el proceso sin que Mariano lo recuerde en el
+  momento: la "regla de oro" de próxima acción con fecha vive en un documento, no en un campo
+  obligatorio de GHL; la nota de Yeraldin quedó invisible porque nadie revisó el formulario antes de
+  la cita, no porque faltara un guion; el tracking de no-show estuvo roto semanas porque nadie
+  actualizaba un campo, no porque el proceso no lo contemplara (sección 3.1.1). El propio n8n lo
+  confirma en la práctica: el módulo de GHL sigue siendo un placeholder (sección 4.4) — hoy **nada
+  automatiza lo que Mariano ya sabe que tiene que hacer**, todo depende de que se acuerde, cada vez.
+
+**Conclusión de fondo**: las fugas de GOTIR no son un problema de proceso mal diseñado (capa 1 está
+bien) ni de un equipo que ejecuta distinto (capa 2 no aplica, es una sola persona) — son un problema
+de **capa 3 sin ningún respaldo sistémico**. La solución no es "escribir mejor el proceso" (ya está
+bien escrito) ni "entrenar mejor al vendedor" (es Mariano, ya lo sabe) — es **convertir las reglas
+que ya existen en obligaciones que el sistema hace cumplir solo**, para que sobrevivan sin que
+Mariano tenga que sostenerlas activamente en cada caso.
+
+### 8.3 Plan de mejora priorizado (actualizado con la lectura de capas)
+
+Mismo plan de 5 pasos ya compartido con Mariano (artifact del 19 ago), reordenado con la capa 3 como
+criterio explícito de diseño — cada acción de abajo es, en el fondo, "mover una regla de la cabeza de
+Mariano a un campo/automatización que no dependa de que se acuerde":
+
+1. **Campo obligatorio de próxima acción en GHL** — no una regla en un documento, un campo que hay
+   que llenar para poder cerrar la tarea de la llamada. Dueño: Mariano. Esfuerzo: bajo. Cuándo: ya.
+2. **Chequeo de la nota de reserva antes de cada llamada agendada** — confirmar si el widget de GHL
+   expone la nota del cliente de forma visible; si no, agregar 5 minutos de revisión antes de cada
+   cita. Dueño: Mariano. Esfuerzo: bajo. Cuándo: esta semana.
+3. **Automatizar Fathom → GHL** — el paso donde vive la fuga #1, hoy 100% manual (secciones 1.4 y
+   4.5). El router de n8n ya tiene las intenciones de GHL mapeadas sin conectar (sección 4.4) — es la
+   rama más barata de construir primero. Esto es, literalmente, mover la capa 3 de la memoria de
+   Mariano a una automatización. Dueño: IT/n8n. Esfuerzo: medio. Cuándo: próximas semanas.
+4. **Pieza de presupuesto escrito y persuasivo** — resuelve la objeción "lo tengo que hablar en casa"
+   con algo concreto en la mano, no un resumen improvisado. Dueño: Mariano + Marketing. Esfuerzo:
+   medio. Cuándo: este mes.
+5. **Recorrido mínimo de recuperación para presupuestos de los últimos 30 días** (no la base
+   histórica completa de +2.000 — eso sigue sin ser prioridad, sección 1.3) — volumen chico, tibio, no
+   frío. Dueño: Mariano. Esfuerzo: medio. Cuándo: después del paso 1.
+
+**Pendiente explícito**: confirmar con Mariano si quiere que el post-mortem de venta perdida
+(aprendizaje, hoy caso por caso) se convierta también en un paso obligatorio del checklist "después
+de colgar" (sección 2) — sería el sexto paso natural, pero no se agrega sin que él lo pida, siguiendo
+el mismo criterio de todo este documento: no inventar proceso que Mariano no haya confirmado.

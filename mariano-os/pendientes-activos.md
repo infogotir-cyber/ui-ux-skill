@@ -34,18 +34,17 @@
      otra herramienta? Confirmar con Mariano el volumen real de mensajes de TikTok antes de decidir
      la solución.
 
-2. **Proceso de precalificación antes de la llamada**
+2. **Corregir/mejorar el mini-funnel pre-llamada que ya existe**
    - Área: GOTIR comercial.
-   - Qué es: que la persona, al agendar, vaya completando requisitos/precios antes de la llamada,
-     para que llegue más calificada y sabiendo lo básico de antemano.
-   - Mencionado por Mariano: antes del 19 ago 2026 (ídem — señalado el 19 ago como pedido sin
-     seguimiento).
-   - Estado: **abierto**.
+   - Qué es: **confirmado por Mariano (19 ago 2026)** — no es un proceso nuevo, es corregir el
+     mini-funnel pre-llamada que ya existe (mencionado en `direcciones/comercial/CLAUDE.md` sección
+     6.2, cubre SABE/QUIERE/PUEDE/CUÁNDO) para que la persona llegue a la llamada sabiendo
+     requisitos y precios con más claridad de la que hoy logra.
+   - Mencionado por Mariano: antes del 19 ago 2026, sin seguimiento; retomado y aclarado el 19 ago.
+   - Estado: **abierto** — falta que Mariano diga qué específicamente está fallando hoy en ese
+     mini-funnel (¿no llega el contenido?, ¿llega pero no queda claro?, ¿falta algún dato concreto
+     como precio o requisito?) antes de poder proponer una corrección puntual.
    - Recordado: 1 vez (19 ago 2026).
-   - Posible solape: el "mini-funnel pre-llamada" ya mencionado en
-     `direcciones/comercial/CLAUDE.md` sección 6.2 cubre SABE/QUIERE/PUEDE/CUÁNDO — **a confirmar
-     con Mariano** si es lo mismo, una versión más simple de lo que pide, o algo que todavía no
-     existe de verdad.
 
 ### Ministerio (Ruge y otros)
 

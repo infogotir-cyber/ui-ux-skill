@@ -60,19 +60,23 @@
 
 ### GOTIR — prioritarios (marcados así por Mariano, 20 ago 2026 madrugada)
 
-0. **Secuencia post-agendamiento (agendó → llamada) sin automatizar — hallazgo nuevo**
+0. **Secuencia post-agendamiento (agendó → llamada) — corregida tras revisión pedida por Mariano**
    - Área: GOTIR comercial.
-   - Qué se encontró: el calendario "Asesoría GOTIR" no tiene notificaciones nativas configuradas
-     (`"notifications": []` verificado en vivo). El video pre-llamada y las preguntas de
-     precalificación **no están automatizados en absoluto** — son 100% manuales, y en 2 de las 3
-     conversaciones reales revisadas (Karen, Gladys) el video se pidió minutos antes de la llamada
-     o al momento de conectarse, anulando su propósito. Análisis completo, con textos listos y
-     cruzado con el Mapa Antifugas y "Vendes o Vendes" (Cardone), en
-     `direcciones/comercial/secuencia-post-agendamiento.md`.
-   - Estado: **bloqueado (esperando a Mariano)** — igual que el mini-funnel de abajo, requiere
-     armar pasos nuevos a mano en el workflow de GHL ("Llamada agendada" o "Nueva reunión
-     agendada", confirmar cuál), no se puede hacer por API.
-   - Recordado: 1 vez (20 ago 2026, madrugada).
+   - **Corrección importante (20 ago 2026, madrugada)**: el primer análisis decía que el video
+     pre-llamada no estaba automatizado — eso era **incorrecto**, basado en exports de WhatsApp
+     truncados que no llegaban hasta el día real de agendamiento. Mariano pidió específicamente
+     revisar el caso real de Florencia Cuaranta (+34600806842) contra la API de GHL, y ahí se
+     confirmó: **sí existe** un mensaje automático de WhatsApp con video real adjunto (`.mp4`,
+     entrega confirmada) + email, disparado al instante de agendar — verificado también en Demelis
+     y Karen, mismos resultados. Lo que sigue faltando (esto sí es real): nada de lo automático pide
+     una respuesta activa, y las 3 preguntas de precalificación (modalidad/timing/presupuesto)
+     siguen siendo 100% manuales. Detalle completo en
+     `direcciones/comercial/secuencia-post-agendamiento.md`, sección 1.
+   - Estado: **bloqueado (esperando a Mariano)** — falta un ajuste chico (agregar "respondé listo"
+     al mensaje que ya existe) + 2 pasos nuevos (precalificación 24-48hs antes, confirmación de
+     asistencia el día de la cita), a mano en el builder de GHL. También revisar el pie "Nuhka AI
+     Consulting" que aparece en los emails automáticos — probablemente no es intencional.
+   - Recordado: 2 veces (20 ago 2026, madrugada — 2 mensajes seguidos).
 
 1. **Mini-funnel pre-llamada (Fragmentos) — texto listo, falta cargarlo en GHL**
    - Ver ítem completo más abajo en esta misma sección — se re-marca acá como prioritario a pedido

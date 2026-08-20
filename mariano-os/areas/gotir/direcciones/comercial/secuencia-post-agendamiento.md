@@ -14,87 +14,130 @@
 
 ## 1. Qué existe hoy realmente (verificado en vivo, no supuesto)
 
-Se investigaron dos fuentes: la configuración real del calendario "Asesoría GOTIR"
-(`Sl5Of5SLsAgTrwxhwoAE`) vía API, y las conversaciones reales de Demelis, Karen y Gladys (las 3 del
-grupo de 10 analizadas para el mini-funnel que ya habían agendado por formulario antes de escribir).
+> **Corrección (20 agosto 2026, misma madrugada)**: la primera versión de esta sección concluía que
+> no había ningún video automatizado — **esa conclusión era incorrecta**. Se basó en los exports de
+> WhatsApp que Mariano había compartido para el análisis del mini-funnel de apertura
+> (`patrones-apertura-conversacion.md`), que resultaron estar **truncados** — empezaban varios días
+> *después* del momento real de agendamiento, así que nunca llegaron a incluir el mensaje
+> automático que se manda justo al agendar. Mariano pidió específicamente revisar la conversación
+> real de un caso reciente (Florencia Cuaranta) para confirmarlo, y ahí apareció. Se volvió a
+> chequear Demelis y Karen (2 de los 3 casos usados en la versión anterior de este documento)
+> directo contra la API de conversaciones de GHL (no contra el export), y el mismo mensaje
+> automático aparece en los tres, con fecha real de envío coincidente con el momento de agendar.
+> Queda todo lo de abajo como la versión corregida.
 
-- **El calendario en sí no tiene notificaciones nativas configuradas** — `GET /calendars/{id}`
-  devuelve `"notifications": []`, vacío. La confirmación/recordatorio que sí llega ("Hola [Nombre],
-  Te recordamos que tenés tu llamada agendada con el equipo de GOTIR. [fecha] [hora]") viene de un
-  workflow aparte (candidatos por nombre, sin poder confirmar el contenido interno por la
-  limitación de API ya conocida — sección 5.5 de `CLAUDE.md`: `GET /workflows/{id}` da 404): **"Llamada
-  agendada"** o **"Nueva reunión agendada"**, ambos publicados. Es un mensaje de solo confirmación —
-  no incluye video, no incluye requisitos, no pregunta nada.
-- **El video y el pedido de verlo antes de la llamada NO están automatizados — son 100% manuales,
-  escritos por Mariano en el momento**, con timing muy inconsistente según la evidencia real:
-  - **Gladys** (10 ago): agendó para "el día de hoy", la automática de confirmación llegó a las
-    18:50, y Mariano pidió ver el video **a las 18:53**, tres minutos después — prácticamente en
-    el momento, sin margen real para que lo vea con calma antes de la llamada.
-  - **Karen** (25 jun): la automática de confirmación llegó para una cita de las 8:00, pero el
-    pedido del video ("antes de unirte a la llamada") lo mandó Mariano **a las 15:11-15:12**, justo
-    cuando ella escribió "Ya te llamo" — es decir, el video se pidió **al momento de entrar a la
-    llamada**, no antes. Esto anula por completo el propósito del video (que llegue con contexto
-    previo) — en la práctica se lo mandó para verlo *durante* el tiempo que se demoraba en conectar,
-    no como preparación.
-  - **Demelis** (7 ago): acá sí hubo más margen — agendó a las 14:02, la automática llegó a las
-    16:00, y Mariano preguntó por el video recién a las 16:05 ("¿has podido ver el vídeo que había
-    antes de agendar?"), dando a entender que el video se pide *antes de agendar*, no después —
-    contradice lo que Mariano cree hoy (que llega automático post-agendamiento).
+Se verificó contra la API de conversaciones de GHL (`GET /conversations/{id}/messages`, que expone
+`source: workflow` para los mensajes disparados por automatizaciones, a diferencia de `source: api`
+para lo que Mariano escribe a mano desde su teléfono) para tres casos reales: **Florencia Cuaranta**
+(agendó 19 ago, el caso que Mariano pidió revisar), **Demelis Celis** (agendó 3 ago) y **Karen
+Quijije** (agendó 24 jun).
 
-**Conclusión empírica, la más importante de este análisis**: no hay ninguna automatización que
-mande el video ni las preguntas de precalificación en la ventana entre agendar y la llamada. Todo
-depende de que Mariano esté disponible, se acuerde, y lo escriba a mano — y cuando lo hace, en 2 de
-3 casos revisados fue tan cerca de la hora de la llamada que perdió su función de preparar con
-anticipación. Es el mismo patrón de "capa 3 sin respaldo sistémico" ya diagnosticado en la sección
-8.2 de `CLAUDE.md` — pero acá aplicado a un tramo del embudo que hasta hoy no se había mirado.
+**Sí existe una secuencia automática real al agendar, y funciona bien.** En los tres casos, en el
+mismo segundo en que se crea la cita (evento `TYPE_ACTIVITY_APPOINTMENT`), se disparan 4 mensajes
+con `source: workflow`:
+
+1. **WhatsApp** (`{WA#1}`, `status: delivered` confirmado): *"Hola [Nombre] 😊 Gracias por agendar
+   tu llamada con el equipo de GOTIR. Antes de nuestra llamada te dejamos un video corto de Mariano
+   donde te cuenta quiénes somos y cómo trabajamos. En la llamada vamos a ver tu situación, fechas,
+   opciones según tu caso y responder todas tus dudas. 📌 Busca estar en un lugar tranquilo y con
+   buena conexión. Si no puedes asistir, avisános y la reprogramamos sin problema. ¡Nos vemos
+   pronto! 🙌 Equipo GOTIR"* — con un **archivo de video real adjunto** (`.mp4` alojado en GHL, no
+   un link a la landing), es decir, se reproduce directo en el chat de WhatsApp sin que el lead
+   tenga que salir a un navegador.
+2. **Email** con el mismo contenido, algo más largo, con bullets de qué se cubre en la llamada.
+3. **SMS/WhatsApp de confirmación de fecha/hora** (`"Tu asesoría gratuita ha sido agendada
+   correctamente el [fecha] [hora]"`).
+4. **Email de confirmación de fecha/hora**, formato similar.
+
+Además, hay **recordatorios adicionales cerca de la llamada** ("Te recordamos que tenés tu llamada
+agendada con el equipo de GOTIR...") que también aparecen de forma consistente el día antes y el
+día de la cita en los tres casos — con `source: api`/`app` en vez de `workflow`, así que
+probablemente vienen del sistema nativo de recordatorios de citas de GHL a nivel de cuenta (no del
+campo `notifications` del calendario específico, que sigue devolviendo vacío — el recordatorio debe
+estar configurado en otro lado, a nivel de Configuración del negocio, no por calendario).
+
+**Detalle menor a revisar, no crítico**: los emails automáticos (los 4 revisados) terminan con el
+pie *"Nuhka AI Consulting"* debajo del logo de GOTIR — no parece intencional, probablemente quedó
+del proveedor/plantilla que armó estos templates. Vale la pena que lo revises y lo cambies por la
+marca de GOTIR si no es a propósito.
+
+## 1.1 Lo que sigue sin estar resuelto (esto sí se mantiene de la versión anterior)
+
+Con el video ya cubierto, el problema real no es "no llega contenido" — es que **nada de lo que
+llega automático pide una respuesta activa ni precalifica**:
+
+- Los 4 mensajes automáticos y los recordatorios son **unidireccionales** — informan, no piden
+  confirmación. Nadie sabe si el lead realmente vio el video o si va a poder asistir hasta que
+  Mariano se lo pregunta a mano en el chat (lo cual, según los mismos exports, a veces pasa recién
+  al momento de la llamada — ver el caso de Karen más abajo, sección 2).
+- **Las 3 preguntas de precalificación (modalidad, timing, presupuesto) siguen sin estar en ningún
+  automatismo** — en los tres casos revisados, esas preguntas las hace Mariano a mano, en tiempo
+  real, dentro de la conversación — a veces antes de la llamada (Demelis), a veces literalmente
+  mientras la persona ya está por conectarse (Karen, sección 2 abajo).
+- El video que llega automático es genérico ("quiénes somos y cómo trabajamos"), no el mismo video
+  con los requisitos (`landing.gotir.es/estancias`) que Mariano manda a mano después en la
+  conversación — son dos piezas de contenido distintas, y la segunda (la que realmente educa sobre
+  requisitos/precios) sigue siendo 100% manual.
 
 ## 2. Por qué esto importa (cruzando con el Mapa Antifugas y Vendes o Vendes)
 
+Con el contenido ya resuelto (sección 1), la fuga real que queda es de **compromiso y filtro**, no
+de información:
+
 - **Mapa Antifugas, zona 1 (antes del presupuesto)**: la apertura ya estaba en ámbar por falta de
-  guion fijo (sección 8.1 de `CLAUDE.md`). Esto agrega una fuga hermana en el mismo tramo del
-  embudo: el contenido educativo que debería llegar antes de la llamada no llega de forma
-  consistente ni con anticipación real.
-- **El 41,2% de no-show del baseline de julio (sección 3.1)** es exactamente el síntoma esperable de
-  esto: si nadie confirma activamente que la persona va a estar en la llamada, y si el único
-  contacto entre agendar y la hora es un mensaje pasivo de "te recordamos", no hay ningún mecanismo
-  que aumente el compromiso real de presentarse.
+  guion fijo (sección 8.1 de `CLAUDE.md`). El contenido pre-llamada ya llega automático y bien
+  producido (sección 1) — eso no es la fuga. La fuga hermana en este mismo tramo es que nada de lo
+  automático pide una respuesta ni filtra, así que sigue dependiendo 100% de que Mariano lo haga a
+  mano, y con timing inconsistente (ver caso Karen abajo).
+- **El 41,2% de no-show del baseline de julio (sección 3.1)** sigue siendo coherente con esto: los
+  4 mensajes automáticos y los recordatorios informan, pero **ninguno pide una confirmación activa**
+  de que la persona va a estar — no hay ningún mecanismo que aumente el compromiso real de
+  presentarse más allá de recibir un aviso.
 - **Vendes o Vendes (Grant Cardone)** — dos ideas centrales del libro aplican directo acá:
   1. **"Los compradores son mentirosos" / no confiar en la palabra pasiva, buscar compromiso
      activo**: un recordatorio que solo informa la hora no compromete a nadie. Cardone insiste en
      que hay que pedir una confirmación activa — que la persona *responda* algo, no que reciba un
-     mensaje y listo. Hoy el flujo de GOTIR es 100% pasivo de este lado.
+     mensaje y listo. Hoy el flujo automático de GOTIR entrega contenido bien producido, pero es
+     100% pasivo — nunca pide una respuesta.
   2. **Calificar antes de invertir tiempo escaso**: Mariano tiene capacidad real de 2-3 llamadas
      comerciales por día (sección 1.3 de `CLAUDE.md`) — el recurso más escaso del negocio. Cardone
      es explícito en que no calificar antes de la reunión es el error más caro que puede cometer un
      vendedor con tiempo limitado: se termina invirtiendo el mismo tiempo en un lead sin
      presupuesto/timing/interés real que en uno listo para cerrar. Hoy, entre agendar y la llamada,
-     no hay ningún filtro — la precalificación (cuando pasa) ocurre *dentro* de la llamada ya
-     gastada, no antes.
+     no hay ningún filtro automático — la precalificación (cuando pasa) la hace Mariano a mano,
+     dentro del tiempo que le queda antes de la llamada, no siempre con margen (caso Karen: el
+     video de requisitos se lo pidió justo cuando ella ya estaba por conectarse a la videollamada,
+     "Ya te llamo" → "Te pido que antes de unirte... veas el video" en el mismo minuto).
 
 ## 3. Secuencia corregida propuesta
 
 Pensada en 3 momentos, cada uno con un propósito distinto — no es "mandar más mensajes", es que
 cada mensaje haga un trabajo específico que hoy no se está haciendo:
 
-### Momento 1 — Inmediatamente al agendar (automatizable, dispara el workflow existente)
+### Momento 1 — Inmediatamente al agendar (ya existe, solo falta un agregado)
 
-Mantener el mensaje de confirmación que ya existe, pero **agregarle en el mismo envío** (o
-inmediatamente después, mismo workflow) el video y el pedido explícito de una respuesta activa —
-no una sugerencia pasiva:
+**No hace falta crear nada nuevo acá** — el mensaje de WhatsApp con el video ya se dispara solo y
+funciona bien (sección 1). Un solo cambio: agregarle al final el pedido explícito de una respuesta
+activa, en vez de dejarlo como aviso pasivo:
 
-> Hola {{contact.first_name}}, quedó confirmada tu asesoría gratuita con GOTIR para el
-> {{appointment.date}} a las {{appointment.time}}.
+> Hola {{contact.first_name}} 😊 Gracias por agendar tu llamada con el equipo de GOTIR. Antes de
+> nuestra llamada te dejamos un video corto de Mariano donde te cuenta quiénes somos y cómo
+> trabajamos. En la llamada vamos a ver tu situación, fechas, opciones según tu caso y responder
+> todas tus dudas.
 >
-> Antes de la llamada, mirá este video de 6 minutos — ahí te cuento el proceso completo y los
-> requisitos, así llegamos a la llamada directo a resolver tu caso puntual, sin perder tiempo en lo
-> general:
-> https://landing.gotir.es/estancias
+> 📌 Busca estar en un lugar tranquilo y con buena conexión. Si no puedes asistir, avisános y la
+> reprogramamos sin problema.
 >
-> Cuando lo termines, respondé "listo" acá mismo — así sé que llegaste preparado/a.
+> **Cuando termines de ver el video, respondé "listo" acá mismo** — así sabemos que llegás
+> preparado/a a la llamada.
+>
+> ¡Nos vemos pronto! 🙌 Equipo GOTIR
 
 El "respondé 'listo'" no es cosmético — es el mecanismo de compromiso activo que falta hoy (punto
 1 de Cardone arriba). Da además una señal medible: si a las 24hs no respondió "listo", ya se sabe
-que no vio el video sin tener que preguntarlo en el Momento 2.
+que no vio el video sin tener que preguntarlo en el Momento 2. Esto se edita directo en el paso de
+WhatsApp que ya existe en el workflow ("Llamada agendada" o "Nueva reunión agendada", confirmar
+cuál al abrirlo) — no hace falta un paso nuevo.
 
 ### Momento 2 — Precalificación explícita (24-48hs antes, o al día siguiente de agendar si la cita es más lejana)
 

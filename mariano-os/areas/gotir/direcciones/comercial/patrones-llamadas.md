@@ -6,7 +6,7 @@
 > llamada (`CLAUDE.md`, sección 2). Se actualiza cada vez que llega una transcripción nueva, sin
 > esperar a que Mariano lo pida.
 >
-> **Contador: 1/20 llamadas registradas.**
+> **Contador: 2/20 llamadas registradas.**
 
 ## Cómo se carga
 
@@ -23,19 +23,49 @@ confirman.
   la resolvió bien: mencionó el volumen real de expedientes presentados, ofreció reseñas de Google
   Maps, mencionó la referencia (Milena) y su propia vida pública (iglesia, redes). Guardarlo como
   respuesta modelo si se repite.
+- **"¿El formulario/contrato de alquiler a nombre de otra persona me puede generar un problema con
+  extranjería?"** (Maryi) — preocupación real de alguien planeando entrar como turista y hacer el
+  trámite después: teme que datos "privados" (alquiler a nombre de la madre) se crucen con el
+  sistema migratorio. Mariano la resolvió bien explicando que son sistemas completamente separados,
+  con una analogía memorable ("si no viste 50.000 personas entrando nadando, no van a ver quién
+  alquiló un piso"). Nueva, vigilar si se repite con otros clientes que preguntan por temas legales
+  de fondo similares (custodia, permisos de menores).
+- **Caso con menor de edad sin papeles del país de origen y padre ausente/sin buena relación**
+  (Maryi, para su hija Antonella) — situación legal compleja (patria potestad, permiso de salida,
+  reagrupación en vez de trámite propio). Mariano manejó bien la incertidumbre: dio la estrategia
+  general (reagrupación familiar), pero derivó lo específico de la legislación colombiana a un
+  escribano público local en vez de improvisar — mismo principio ya documentado ("no inventar
+  respuestas legales que no domina"), ahora con un segundo caso real dentro de la ventana.
 
 ## Errores recurrentes detectados
 
-- **Fase 1 (apertura/encuadre) saltada — 1/1 llamadas del registro (a confirmar si se repite)**: en
-  la llamada con Sara Sofía no hubo el encuadre inicial que pide la sección 2 ("cómo va a ser esta
-  llamada... ¿cuánto tiempo tenés hoy?") — se entró directo a preguntas de descubrimiento. No afectó
-  el resultado acá (la llamada igual fue muy fluida), pero es la misma fase que la sección 2 del
-  guion marca como la que fija expectativas y ritmo — vigilar si se repite en próximas llamadas.
-- **Duración de la llamada (65 min) muy por encima de lo que sugiere la estructura de 5 fases
-  (~25-30 min sumando los rangos de cada fase)** — gran parte del extra fue charla genuina de
+- **Fase 1 (apertura/encuadre) inconsistente — 1/2 llamadas sin ella**: con Sara Sofía no hubo
+  encuadre inicial ("cómo va a ser esta llamada... ¿cuánto tiempo tenés hoy?"), se entró directo a
+  descubrimiento. Con Maryi sí lo hubo, y bien hecho ("como sé que tenemos 24 minutos, vamos a tener
+  que ir al grano... ¿pudiste ver el video? ¿pudiste ver los requisitos?") — de hecho mejor que el
+  guion, porque además referenció el contenido pre-llamada. No es un patrón parejo todavía, dos
+  llamadas van 1 y 1 — seguir vigilando.
+- **Próxima acción sin hora exacta — 2/2 llamadas del registro (patrón confirmado)**: Sara Sofía
+  dijo "hoy mismo" y Maryi dijo "a principio de la semana que viene" — ambas quedaron sin un día y
+  hora concretos pedidos en la propia llamada (este sistema tuvo que fijar una hora al crear la
+  tarea de seguimiento en GHL, 20:00 y lunes 10:00 respectivamente, pero lo ideal es que Mariano lo
+  cierre en la llamada misma). Coincide con el error #1 ya documentado en la llamada con Hector
+  (sección 3.2) — con este segundo caso dentro de la ventana de 20, se confirma como el patrón más
+  repetido de todos los analizados hasta ahora.
+- **Reservar tiempo insuficiente para la llamada, chocando con un compromiso personal (Maryi)**:
+  Mariano avisó desde el minuto 0 que tenía ~24 minutos porque después debía salir a la iglesia, y
+  a los 22 minutos tuvo que anunciar que se le acababa el tiempo de verdad ("si no salgo me
+  asesinan"), comprimiendo el cierre y la explicación de precios de los últimos ~15 minutos. La
+  llamada igual funcionó bien (buena conexión, próxima acción clara), pero el tramo de mayor valor
+  (Fase 5, cierre) es justo el que se apuró — vale la pena que Mariano deje más margen entre una
+  llamada comercial y un compromiso personal fijo, en vez de agendarlos pegados.
+- **Duración de la llamada de Sara Sofía (65 min) muy por encima de lo que sugiere la estructura de
+  5 fases (~25-30 min sumando los rangos de cada fase)** — gran parte del extra fue charla genuina de
   cierre de confianza (fe, comunidad GOTIR, planes de verse en persona), que probablemente ayudó a
   cerrar, pero vale la pena que Mariano tenga presente el techo de 2-3 llamadas/día (sección 1.3):
-  una llamada de 65 min es más de dos "llamadas normales" de presupuesto de tiempo.
+  una llamada de 65 min es más de dos "llamadas normales" de presupuesto de tiempo. La llamada con
+  Maryi, en cambio, quedó corta (39 min) por el motivo opuesto (arriba) — el rango real osciló entre
+  los dos extremos el mismo día, sin un punto medio consistente todavía.
 
 ## Ajustes sugeridos al guion (sección 2 de `CLAUDE.md`)
 
@@ -44,16 +74,23 @@ confirman.
   pago sin que hubiera objeción de precio — funciona, pero deja menos margen de negociación para la
   próxima vez que sí haga falta cerrar una duda de presupuesto. Sugerencia: presentar primero el
   precio completo (825€/50-50) y reservar el descuento como palanca de cierre si aparece fricción.
-- **Fase 5 — reforzar el checkpoint de seguimiento con hora exacta, no solo "hoy"**: Sara Sofía
-  dijo que confirmaba "hoy mismo" y Mariano lo aceptó tal cual, sin fijar una hora concreta de
-  vuelta si no llegaba el pago (mismo patrón, más leve, que el error #1 ya documentado de la
-  llamada con Hector — sección 3.2). Mejora real respecto a Hector (acá sí hay "hoy" como fecha,
-  antes no había nada), pero completar con hora específica lo haría accionable de una — este
-  sistema le fijó una hora (20:00) al crear la tarea de seguimiento, pero lo ideal es que quede
-  dicho en la propia llamada.
+- **Fase 5 — reforzar el checkpoint de seguimiento con hora exacta, no solo "hoy" o "la semana que
+  viene"**: ver "Errores recurrentes" arriba — ya confirmado 2/2 en la ventana. Sugerencia concreta
+  de guion: agregar a la Fase 5 una pregunta literal de hora, tipo "¿a qué hora del [día] te parece
+  que te escriba si no llegó el pago?" — convertirlo en pregunta obligatoria, no en algo implícito.
+- **Fase 3 — el bloque de las 3 escuelas ya es, de hecho, un guion memorizado y estandarizado**:
+  Sara Sofía y Maryi (mismo día) recibieron exactamente las mismas 3 opciones, con los mismos
+  precios y condiciones palabra por palabra (Escuela 1: multi-ciudad, 12m, 5.650€; Escuela 2 —la
+  recomendada—: Madrid, viernes/sábado, 7m, 2.900€; Escuela 3: Madrid, 1x/semana, 12m, 2.858€). Esto
+  es una fortaleza, no un error — confirma que esta parte de la Fase 3 ya está consolidada y
+  funciona bien tal cual está. Sugerencia de bajo esfuerzo: si este bloque ya es siempre igual,
+  convertirlo en una plantilla escrita (un "Fragmento" tipo los del mini-funnel) ahorraría los ~8-10
+  minutos que toma explicarlo de memoria en cada llamada, sin perder nada — más tiempo para Fase 2
+  y Fase 4, que sí varían por cliente.
 
 ## Registro de llamadas
 
 | # | Fecha | Cliente | Resumen | Patrón nuevo / repetido |
 |---|-------|---------|---------|--------------------------|
 | 1 | 20 ago 2026 | Sara Sofía Gutierrez Villa | 65 min, colombiana, consultora independiente, ya había cotizado con otras agencias sin decidirse. Diagnóstico completo → estancia por estudios, 3 escuelas presentadas, cerró enviando cotización + contrato + link de pago (50%: 427,50€) en vivo. Muy buena conexión personal, sin objeciones reales. 🔥 Caliente, dijo que confirma hoy. | Nuevo: primera llamada del registro — ver "Errores recurrentes" y "Ajustes sugeridos" arriba. Repetido/mejorado respecto a Hector: cierre con próxima acción (aunque sin hora exacta) vs. Hector que no tuvo ninguna. |
+| 2 | 20 ago 2026 | Maryi Castañeda | 39 min, colombiana, familia de 3 (ella + padre 57a + hija de 2a sin papeles colombianos, padre de la niña ausente). Diagnóstico: estancia por estudios para ella y su padre + reagrupación familiar para la hija. Mismas 3 escuelas que Sara Sofía, mismos precios. Llamada comprimida al final por un compromiso personal de Mariano (iglesia) — sin pago en vivo, próxima acción "a principio de la semana que viene" sin hora. Oportunidad actualizada a 2.475€ (825€×3). 🔥 Caliente, muy agradecida, referida por "Laura". | Nuevo: caso legal complejo (menor sin papeles, padre ausente) manejado con transparencia ("no invento, consultá un escribano"). Repetido: próxima acción sin hora exacta (2/2, ya confirmado como patrón — ver arriba); mismo bloque de 3 escuelas palabra por palabra que Sara Sofía (fortaleza confirmada del guion). |

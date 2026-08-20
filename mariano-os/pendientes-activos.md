@@ -38,7 +38,7 @@
      resolver — mismo problema de fondo, no una casualidad aislada.
    - Estado: **abierto, requiere acción directa de Mariano en GHL** (no se puede resolver por API)
      — reconectar el proveedor de WhatsApp (genérico con QR, o pasar al oficial de Meta Business).
-   - Recordado: 1 vez (19/20 ago 2026).
+   - Recordado: 2 veces (19/20 ago 2026; 20 ago, chequeo diario 20:00).
 
 ### GOTIR — urgente
 
@@ -49,14 +49,15 @@
    - **Contradice directamente** la política de centralización de pagos que Mariano fijó el 14 ago
      (todo en euros, sin cripto, sin dólares — ver `areas/gotir/CLAUDE.md`, "Política de
      centralización de pagos").
-   - Estado: **abierto, urgente por la fecha límite**. Sin confirmar si fue una excepción deliberada
-     o un olvido de la política. Recordado: 1 vez (19 ago 2026).
+   - Estado: **abierto, urgente por la fecha límite — vence MAÑANA, viernes 21 ago**. Sin confirmar
+     si fue una excepción deliberada o un olvido de la política.
+   - Recordado: 2 veces (19 ago 2026; 20 ago, chequeo diario 20:00).
 
 1. **Nazareth Rengel — no-show del 18 ago sin reconexión todavía**
    - Referida por Jesús Mosquera. La nota en GHL dice "pendiente contactar para reagendar" pero no
      hay evidencia de que se le haya escrito, a diferencia de Yeraldin (mismo día, misma situación,
-     ya recontactada). Ya pasó más de un día.
-   - Estado: **abierto**. Recordado: 1 vez (19 ago 2026).
+     ya recontactada). Ya pasaron 2 días.
+   - Estado: **abierto**. Recordado: 2 veces (19 ago 2026; 20 ago, chequeo diario 20:00).
 
 ### GOTIR — decisión pendiente, la más importante de todas
 
@@ -71,7 +72,7 @@
      bot closer" — sin documentar, sin confirmar si están activos.
    - Estado: **abierto, esperando que Mariano elija**. Ninguna de las 3 empieza a construirse hasta
      que decida.
-   - Recordado: 1 vez (20 ago 2026).
+   - Recordado: 2 veces (20 ago 2026; 20 ago, chequeo diario 20:00).
 
 ### GOTIR — prioritarios (marcados así por Mariano, 20 ago 2026 madrugada)
 
@@ -91,7 +92,7 @@
      al mensaje que ya existe) + 2 pasos nuevos (precalificación 24-48hs antes, confirmación de
      asistencia el día de la cita), a mano en el builder de GHL. También revisar el pie "Nuhka AI
      Consulting" que aparece en los emails automáticos — probablemente no es intencional.
-   - Recordado: 2 veces (20 ago 2026, madrugada — 2 mensajes seguidos).
+   - Recordado: 3 veces (20 ago 2026, madrugada — 2 mensajes seguidos; 20 ago, chequeo diario 20:00).
 
 1. **Mini-funnel pre-llamada (Fragmentos) — texto listo, falta cargarlo en GHL**
    - Ver ítem completo más abajo en esta misma sección — se re-marca acá como prioritario a pedido
@@ -106,7 +107,7 @@
    - Mencionado por Mariano: antes del 19 ago 2026 (fecha exacta no registrada — él mismo señaló el
      19 ago que lo había pedido y nunca se retomó).
    - Estado: **abierto**, sin dueño ni plan todavía.
-   - Recordado: 2 veces (19 ago 2026, chequeo diario 20:00).
+   - Recordado: 3 veces (19 ago 2026, chequeo diario 20:00; 20 ago, chequeo diario 20:00).
    - Falta definir: ¿GHL ya centraliza Instagram/WhatsApp — también permite TikTok, o hace falta
      otra herramienta? Confirmar con Mariano el volumen real de mensajes de TikTok antes de decidir
      la solución.
@@ -125,7 +126,8 @@
      texto final de los 9 Fragmentos, listo para copiar y pegar, está en la sección "Textos finales"
      del mismo documento. Falta que Mariano los cargue a mano en GHL (Conversaciones → Fragmentos) —
      no hay nada más que este sistema pueda avanzar hasta que eso pase.
-   - Recordado: 3 veces (19 ago 2026, chequeo diario 20:00; 20 ago 2026).
+   - Recordado: 4 veces (19 ago 2026, chequeo diario 20:00; 20 ago 2026; 20 ago, chequeo diario
+     20:00).
 
 ### Ministerio (Ruge y otros)
 
@@ -137,6 +139,7 @@
    - Quedan 2 sin resolver, Mariano dijo que los corrobora él mismo: (a) paños pequeños, linterna
      de cabeza, martillo y el detalle de los 3 maletines rotos — sin ítem claro en el sistema; (b)
      si las banderas de tribu están completas.
+   - Recordado: 1 vez (20 ago, chequeo diario 20:00).
 
 ---
 

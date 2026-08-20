@@ -381,6 +381,8 @@ queda anotado tal cual, **sin asumir para quién es cada uno**:
   comerciales** (`asesoria.gotir@gmail.com`, el mismo usuario con el que atendió la llamada con
   Frank Sojo el 17 ago — la nota completa de esa llamada vive en GHL, en el contacto de Frank, no
   duplicada acá) — resuelve el "[link]" de agendar llamada mencionado en la sección 1.5/2.
+  **Alias confirmado (19/20 ago 2026): de cara al público/en la web aparece como "Asesoría Punto
+  Migratoria" — es el mismo calendario, no uno distinto.**
 - **Mariano Barcelona** (`DaiTSbSX6zMA7wIclOgw`) — personal, 30 min.
 - Calendarios personales de: Sabrina Navarro, Pamela Jordan, Micol Navarro, Jonathan Barrionuevo,
   Rocío Jury (30-60 min c/u).

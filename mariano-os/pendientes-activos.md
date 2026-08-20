@@ -58,6 +58,28 @@
      ya recontactada). Ya pasó más de un día.
    - Estado: **abierto**. Recordado: 1 vez (19 ago 2026).
 
+### GOTIR — prioritarios (marcados así por Mariano, 20 ago 2026 madrugada)
+
+0. **Secuencia post-agendamiento (agendó → llamada) sin automatizar — hallazgo nuevo**
+   - Área: GOTIR comercial.
+   - Qué se encontró: el calendario "Asesoría GOTIR" no tiene notificaciones nativas configuradas
+     (`"notifications": []` verificado en vivo). El video pre-llamada y las preguntas de
+     precalificación **no están automatizados en absoluto** — son 100% manuales, y en 2 de las 3
+     conversaciones reales revisadas (Karen, Gladys) el video se pidió minutos antes de la llamada
+     o al momento de conectarse, anulando su propósito. Análisis completo, con textos listos y
+     cruzado con el Mapa Antifugas y "Vendes o Vendes" (Cardone), en
+     `direcciones/comercial/secuencia-post-agendamiento.md`.
+   - Estado: **bloqueado (esperando a Mariano)** — igual que el mini-funnel de abajo, requiere
+     armar pasos nuevos a mano en el workflow de GHL ("Llamada agendada" o "Nueva reunión
+     agendada", confirmar cuál), no se puede hacer por API.
+   - Recordado: 1 vez (20 ago 2026, madrugada).
+
+1. **Mini-funnel pre-llamada (Fragmentos) — texto listo, falta cargarlo en GHL**
+   - Ver ítem completo más abajo en esta misma sección — se re-marca acá como prioritario a pedido
+     explícito de Mariano (20 ago 2026 madrugada), junto con el ítem 0 de arriba. Los dos tocan el
+     mismo tramo del embudo (antes de la llamada) y conviene resolverlos juntos cuando Mariano
+     tenga tiempo de entrar al builder de GHL.
+
 ### GOTIR
 
 1. **Mini-chat / bandeja unificada para responder mensajes de TikTok**

@@ -77,12 +77,14 @@
      6.2, cubre SABE/QUIERE/PUEDE/CUÁNDO) para que la persona llegue a la llamada sabiendo
      requisitos y precios con más claridad de la que hoy logra.
    - Mencionado por Mariano: antes del 19 ago 2026, sin seguimiento; retomado y aclarado el 19 ago.
-   - Estado: **en curso (20 ago 2026)** — Mariano va a mandar conversaciones reales de inicio de
-     lead (referidos/redes sociales) para analizar el patrón real y armar una secuencia de
-     respuestas rápidas (o bot) que filtre antes de la llamada: fecha de viaje, conocimiento de
-     requisitos, presupuesto, y timing menor a 6 meses. Registro en
-     `direcciones/comercial/patrones-apertura-conversacion.md`, todavía sin conversaciones cargadas.
-   - Recordado: 2 veces (19 ago 2026, chequeo diario 20:00).
+   - Estado: **bloqueado (esperando a Mariano) — texto ya terminado (20 ago 2026)**. Se analizaron
+     10 conversaciones reales, se armó la secuencia de 9 mensajes y se confirmó que GHL no permite
+     crear Fragmentos por API (probado contra el endpoint real, no solo asumido — ver
+     `direcciones/comercial/patrones-apertura-conversacion.md`, sección "Fragmentos de GHL"). El
+     texto final de los 9 Fragmentos, listo para copiar y pegar, está en la sección "Textos finales"
+     del mismo documento. Falta que Mariano los cargue a mano en GHL (Conversaciones → Fragmentos) —
+     no hay nada más que este sistema pueda avanzar hasta que eso pase.
+   - Recordado: 3 veces (19 ago 2026, chequeo diario 20:00; 20 ago 2026).
 
 ### Ministerio (Ruge y otros)
 

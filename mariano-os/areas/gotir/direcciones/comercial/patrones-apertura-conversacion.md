@@ -143,7 +143,97 @@ como bot), en este orden fijo:
 
 7. **Agendar** — igual que hoy.
 
-**Pendiente de decidir con Mariano**: si esto se arma como respuestas rápidas manuales (GHL tiene
-esa función) o como bot automatizado — y si el filtro de modalidad/timing/presupuesto se usa
+**Decidido por Mariano (20 agosto 2026): respuestas rápidas manuales primero, bot más adelante.**
+Sigue abierta la segunda parte de la pregunta — si el filtro de modalidad/timing/presupuesto se usa
 también para poner una etiqueta de temperatura automática en el contacto (ej. "menos de 6 meses +
-presupuesto factible" = 🔥 caliente).
+presupuesto factible" = 🔥 caliente) — no se resuelve acá, retomar cuando Mariano tenga uso real de
+las respuestas rápidas y se pueda evaluar con casos concretos.
+
+## Fragmentos de GHL — confirmado que no se pueden crear por API (20 agosto 2026)
+
+Antes de pedirle a Mariano que cargue esto a mano, se probó si el servidor MCP propio o la API
+pública de GHL permiten crear/editar Fragmentos (quick replies) por código, para ahorrarle el paso
+manual. **Confirmado que no**, con evidencia concluyente (no solo intentos fallidos):
+
+- `GET /snippets/`, `GET /locations/{id}/snippets`, `GET /conversations/snippets/list` → los tres
+  devuelven 404 "Cannot GET..." con los headers correctos (`Authorization`, `Version: 2021-07-28`).
+- Se descartó que fuera un problema de autenticación o de headers: una llamada de control a
+  `GET /locations/{id}/customFields` con exactamente las mismas credenciales devolvió `200` con
+  datos reales en el mismo momento — la conexión y el token funcionan bien, el endpoint de
+  snippets simplemente no existe en la API pública.
+- `GET /custom-menus/` da `401 not authorized for this scope` en vez de 404 — se investigó por si
+  era el nombre interno real de Fragmentos con un scope faltante, pero por el nombre y el patrón ya
+  visto en este proyecto (formularios y workflows tampoco son editables por API — ver
+  `CLAUDE.md` raíz y sección 5.5 de este documento), lo más probable es que sea una feature de GHL
+  distinta (menús personalizados de navegación), no snippets. No vale la pena seguir insistiendo acá.
+
+**Conclusión**: igual que pasó antes con formularios y con la lógica interna de workflows, los
+Fragmentos de GHL son un "feature de builder" que la API pública deliberadamente no expone — hay
+que cargarlos a mano en GHL, en Conversaciones → Fragmentos. Abajo está el texto ya terminado,
+listo para copiar y pegar tal cual.
+
+## Textos finales — listos para cargar como Fragmentos en GHL (20 agosto 2026)
+
+Cómo usarlos: en GHL, Conversaciones → Fragmentos (o el ícono de rayo "/" en el compositor de un
+chat) → crear nuevo Fragmento por cada uno de los de abajo. `{{contact.first_name}}` es el merge
+field estándar de GHL para el nombre del contacto — se resuelve solo al insertarlo en un chat real;
+si al pegarlo no se auto-completa, reemplazarlo a mano por el nombre.
+
+Van en este orden — no hace falta activarlos todos a la vez, pero están pensados para usarse en
+secuencia dentro de la misma conversación.
+
+**1. `mini-funnel-1-saludo`**
+> Hola {{contact.first_name}}, un gusto saludarte. Mi nombre es Mariano, director de GOTIR
+> asesoría migratoria.
+
+**2. `mini-funnel-2-modalidad`**
+> Para orientarte bien: ¿ya conocés la opción de venir con estancia por estudios, o querés que te
+> cuente primero de qué se trata?
+
+**3. `mini-funnel-3-timing`**
+> ¿Tenés fecha o ventana tentativa de viaje? Contame aunque sea aproximado, así te oriento mejor
+> según cuánto tiempo tenés para prepararte.
+
+**4. `mini-funnel-4-requisitos-curso`**
+> Los requisitos principales de una visa o estancia por estudios son:
+>
+> ✅ Inscribirse en un curso válido para solicitar el visado (no todos los cursos son aceptados por
+> Extranjería, solo algunos y deben ser con aval universitario y de grado superior). Dependiendo de
+> la formación elegida, el coste suele oscilar entre 2.800 € y 10.000 €. (Nosotros te vamos a
+> proponer opciones válidas)
+
+**5. `mini-funnel-5-requisitos-fondos`**
+> ✅ Acreditar medios económicos suficientes para mantenerse durante la estancia en España.
+> Actualmente, se suele exigir demostrar aproximadamente 600 € por cada mes de duración del curso.
+> La mayoría de los cursos dura 12 meses, es decir que se necesitarían demostrar 7.200€.
+>
+> ✅ Contar con un seguro médico con cobertura en España. Suele oscilar entre 600 y 800€ anuales, se
+> paga una vez al comenzar.
+
+**6. `mini-funnel-6-pausa`**
+> ¿Esto te queda claro hasta acá, o tenés alguna duda?
+
+**7. `mini-funnel-7-requisitos-total`**
+> Y luego debés contemplar algunas inversiones más, como honorarios, apostillas, certificaciones,
+> etc.
+>
+> Es decir que para comenzar debés contar con alrededor de 3.000€ (está incluida la matrícula del
+> curso) y luego podés pagar el resto en cuotas.
+
+**8. `mini-funnel-8-presupuesto`**
+> ¿Te parecen alcanzables estos montos en el corto plazo?
+
+**9. `mini-funnel-9-video-formulario`**
+> Te paso este link — hay un video corto mío (6 min) donde cuento lo más importante, y al final hay
+> un botón para agendar la asesoría gratuita: https://landing.gotir.es/estancias
+
+El paso de agendar (10 en el flujo original) no necesita Fragmento propio — hoy ya es una
+confirmación corta y reactiva ("Así es", "Perfecto") que depende de la respuesta puntual del lead,
+no un texto fijo.
+
+**Nota de uso para Mariano**: los mensajes 4, 5 y 7 son el mismo bloque de requisitos que ya usaba
+entero de un tirón (sección "El bloque de requisitos" arriba) — ahora separado en 3 fragmentos con
+la pausa 6 en el medio a propósito, para no descargar todo junto (la fuga ya identificada tanto acá
+como en el Mapa Antifugas, sección 8 de `CLAUDE.md`). Si en una conversación puntual tiene sentido
+saltear la pausa (el lead ya viene muy avanzado, tipo Sara Sofía o Maryi), usar criterio — la
+secuencia es una base, no una camisa de fuerza.

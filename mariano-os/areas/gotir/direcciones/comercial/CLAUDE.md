@@ -1051,3 +1051,92 @@ que el guion funciona bien ejecutado. Las fugas reales están en dos lugares dis
 **Regla para las próximas veces que se actualice este análisis**: no repetir el mapa completo de
 cero — anclar cada actualización a evidencia real nueva (una llamada, un caso, un dato duro), igual
 que se hizo acá, y dejar constancia de qué cambió y qué se mantiene igual.
+
+---
+
+## 12. Estándar de expertise en ventas — instrucción permanente (20 agosto 2026)
+
+Mariano pidió explícitamente que esto deje de ser algo puntual (una corrección sobre un mensaje de
+Sara Sofía) y pase a ser un estándar permanente: **todo mensaje de seguimiento, toda propuesta de
+mini-funnel, todo guion de llamada o cualquier otro output de venta que este sistema proponga tiene
+que estar fundamentado en técnica de venta real de referentes reconocidos** — no en intuición
+genérica. Verificado y actualizado el 20 de agosto de 2026 contra fuentes reales (no solo
+conocimiento de entrenamiento) — ver fuentes al final de esta sección.
+
+### 12.1 Por qué se agregó esto (caso real que lo disparó)
+
+Mariano pidió un mensaje de seguimiento para Sara Sofía (no respondía hacía 1h+). La primera
+versión propuesta acá decía *"quería saber cómo vas pensando... quería asegurarme de que esté todo
+bien de tu lado"* — sonaba razonable, pero tenía dos fallas clásicas y caras: era un genérico
+**"checking in"** (sin motivo real para escribir hoy) y sonaba **necesitado** (proyectaba que
+Mariano esperaba por ella, no que tenía el control). Mariano lo notó y pidió que de ahora en más se
+verifique explícitamente contra técnica de venta real antes de proponer cualquier mensaje — no
+alcanza con que "suene bien".
+
+### 12.2 Referentes a tener en cuenta (marco de trabajo, no cita textual)
+
+No inventar citas literales de estos autores — usarlos como marco de criterio, y decir
+explícitamente cuando algo es una aplicación de un principio general, no una frase exacta del
+libro:
+
+- **Grant Cardone, *Sell or Be Sold / Vendes o Vendes*** — el referente que Mariano nombra
+  explícitamente. Ideas centrales aplicables acá: los compradores no son transparentes por default
+  (no tomar el silencio como la última palabra, pero tampoco como excusa para insistir sin
+  criterio); **lenguaje asuntivo** una vez que ya hubo intención real mostrada (hablar de *cómo* se
+  avanza, no de *si* se avanza); **nunca proyectar necesidad** — el vendedor con más opciones
+  cierra más, así que el mensaje debe sonar a que Mariano tiene el control, no a que está
+  esperando una respuesta; persistencia real en el seguimiento (la mayoría de las ventas se pierden
+  por abandonar el contacto demasiado pronto, no por un "no" real del cliente).
+- **Robert Cialdini, *Influence*** — escasez y urgencia **siempre reales, nunca inventadas** (esto
+  ya es un principio propio de Mariano, documentado en la sección 3.2 — Cialdini lo respalda con
+  evidencia: la urgencia fabricada se detecta y quema confianza); prueba social y compromiso/
+  consistencia (recordarle a alguien lo que ya dijo que quería, en vez de lo que no cumplió).
+- **Chris Voss, *Never Split the Difference*** — preguntas calibradas en vez de cerradas
+  agresivas; dar una **salida fácil** ("si preferís más tiempo, decime y no hay drama") reduce la
+  presión percibida y, contraintuitivamente, mejora la tasa de respuesta real — no es debilidad, es
+  técnica.
+- Aplicar con criterio, no como checklist rígido — el objetivo es que el mensaje sea efectivo y
+  genuino, no que mencione los tres autores en cada línea.
+
+### 12.3 Consenso actualizado 2026 (verificado por búsqueda web el 20 ago 2026, no solo memoria)
+
+Contra fuentes de venta B2B/B2C actuales (Apollo, Artisan, dialmycalls, ex.plo.re — ver enlaces
+abajo), el consenso moderno confirma y matiza lo de arriba:
+
+- **Un solo CTA cerrado y de fricción mínima** (pregunta binaria o de una palabra) supera casi el
+  doble en tasa de respuesta a un mensaje con 3+ opciones abiertas — no dar de más para elegir.
+  Ejemplo de CTA cerrado: "¿Opción 2 o 3? Respondé con el número."
+  Ejemplo de CTA cerrado: "¿Te viene bien el jueves a las 10?"
+- **Estructura recomendada del primer follow-up**: gancho de contexto (algo real de lo ya hablado)
+  + motivo concreto para escribir hoy (no "cómo estás") + un detalle específico + un solo CTA
+  cerrado + una salida fácil. Menos de ~125 palabras.
+- **El cierre moderno es consultivo, no de alta presión** — el comprador de 2026 detecta
+  manipulación y se aleja apenas la huele. El cierre tiene que sentirse como el paso natural de un
+  proceso bien llevado (coherente con la "regla de oro" ya documentada en la sección 2: "hacer que
+  la persona sienta que la escuchaste antes de venderle algo"), no como un truco al final.
+- **Nunca mencionar que el cliente incumplió un plazo que él mismo puso** ("dijiste que en 2hs
+  ibas a responder") — resta autoridad y suena a reclamo, no a seguimiento comercial.
+
+### 12.4 Checklist a aplicar en todo mensaje de seguimiento, guion o funnel de ahora en más
+
+1. ¿Tiene un motivo concreto para escribir *hoy*, o es un "checking in" genérico? (si es lo
+   segundo, reescribir).
+2. ¿El lenguaje asume que avanza (si ya mostró intención real), o pregunta tentativamente "¿querés
+   seguir?"?
+3. ¿El CTA es uno solo, cerrado, y de fricción mínima — o le estoy dando 3+ opciones abiertas?
+4. ¿La urgencia que uso es real (cupos, fechas, plazos genuinos) o la estoy inventando?
+5. ¿Incluye una salida fácil que baje la presión percibida?
+6. ¿Menciono algún incumplimiento del cliente? Si sí, sacarlo.
+7. ¿Es corto? (segundo mensaje en adelante, más corto todavía que el primero).
+
+Este checklist aplica a: mensajes de seguimiento post-llamada, mensajes de recuperación de
+no-shows/fríos, el mini-funnel pre-llamada (`patrones-apertura-conversacion.md`), la secuencia
+post-agendamiento (`secuencia-post-agendamiento.md`), y cualquier ajuste futuro al guion de llamada
+(sección 2 de este documento).
+
+**Fuentes verificadas 20 agosto 2026** (búsqueda web, no solo memoria de entrenamiento):
+- [8 Sales Closing Techniques That Actually Work (2026) — Wave Connect](https://wavecnct.com/blogs/sales-closing-techniques)
+- [What Are the Best Closing Techniques in Sales? 2026 — Apollo](https://www.apollo.io/insights/closing-techniques-in-sales)
+- [7 effective follow-up techniques to close more sales — Artisan AI](https://www.artisan.co/blog/follow-up-techniques-in-sales)
+- [10 Follow-Up Text Message Templates That Keep Leads Engaged — DialMyCalls](https://www.dialmycalls.com/blog/follow-up-text-message-templates)
+- [Follow-Up Best Practices for Sales Pros: 15 Rules — ex.plo.re](https://ex.plo.re/crm/follow-up-best-practices/)

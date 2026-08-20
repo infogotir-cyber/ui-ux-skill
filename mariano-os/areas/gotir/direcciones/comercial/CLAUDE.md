@@ -1003,3 +1003,51 @@ genérico con QR o el oficial de Meta Business. Registrado como pendiente urgent
 - Sí funciona (y fue lo que permitió avanzar el diagnóstico): `GET /workflows/?locationId=...` por
   curl directo (mismo patrón ya usado en sección 5.5) para listar nombre/estado de los workflows
   existentes — así se encontró "Pago realizado- contrato" entre 17 workflows reales de la cuenta.
+
+---
+
+## 11. Mapa Antifugas — actualización viva (20 agosto 2026)
+
+Mariano pidió explícitamente que este análisis se mantenga como práctica estándar, no como un
+ejercicio de una sola vez — cada vez que haya evidencia real nueva (una llamada, un caso como el de
+Regina), hay que releer el semáforo de la sección 8 a la luz de esa evidencia, no repetirlo sin
+cambios. Esta sección es la versión más reciente; la sección 8 queda como el análisis original del
+19 ago, sin reescribirla.
+
+**Conclusión de fondo con la evidencia acumulada hasta hoy**: no hay una fuga de habilidad
+comercial. La llamada con Javier Maddia (sección "Autoauditoría", zona 1) sigue siendo la prueba de
+que el guion funciona bien ejecutado. Las fugas reales están en dos lugares distintos:
+
+1. **Capa 3 (dependencia de que Mariano se acuerde), sin cambios respecto al 19 ago**: funcionó con
+   Yeraldin (se revisó el chat real, se encontró el motivo real, se recontactó) pero no con
+   Nazareth, mismo día, mismo tipo de caso — el mecanismo existe pero no es sistemático todavía.
+   Mismo patrón con Javier: la continuidad post-presupuesto fue excelente (resumen y promo el mismo
+   día), pero no hay evidencia de una tarea con fecha concreta de seguimiento — depende de que
+   Mariano se acuerde del viernes 21 ago sin nada que se lo recuerde por fuera de este sistema.
+2. **Una capa nueva que el curso no contempla — "capa 0", el canal en sí**: el caso Regina (sección
+   10) mostró que la infraestructura de WhatsApp está caída (sin proveedor conectado tras la
+   migración del reseller) y que GHL no avisa cuando esto pasa — un paso de automatización puede
+   figurar "Ejecutado" sin haber entregado nada. Ningún ajuste de proceso o de guion importa si el
+   mensaje no sale físicamente. Explica retroactivamente el caso de Sebastián Gimenez también.
+
+**Semáforo actualizado (reemplaza el de la sección 8.1 mientras no haya evidencia más nueva)**:
+- Zona 1 (antes del presupuesto): **ámbar**. Indagación y generación de deseo siguen en verde.
+  Recuperación temprana sube de rojo a **ámbar** — funcionó una vez (Yeraldin), no la otra
+  (Nazareth, sigue sin recontactar al cierre de este análisis).
+- Zona 2 (durante la decisión): **rojo en conjunto, con una mejora real**. Continuidad post
+  presupuesto sube de rojo a **ámbar** — Javier es el primer caso real donde funcionó bien. El
+  problema de esa llamada no fue de seguimiento, fue la promo en USDT que contradice la política de
+  pagos (pendiente urgente, vence 21 ago — ver `pendientes-activos.md`).
+- Zona 3 (después del presupuesto): sigue siendo la más débil, sin cambios — seguimiento con
+  intención en rojo, recuperación de abandonados en rojo (por decisión, no por descuido), aprendizaje
+  en ámbar (post-mortem ya obligatorio desde el 19 ago).
+
+**Las 2 fugas prioritarias, actualizadas**:
+1. **Infraestructura de WhatsApp caída** — pasa a ser la fuga #1 por encima de cualquier otra,
+   porque mientras no se resuelva, ningún ajuste de proceso llega a ejecutarse de verdad.
+2. **Seguimiento con intención sin sistema** — Nazareth sin recontactar, deadline de Javier (21 ago)
+   sin una tarea con fecha que lo sostenga.
+
+**Regla para las próximas veces que se actualice este análisis**: no repetir el mapa completo de
+cero — anclar cada actualización a evidencia real nueva (una llamada, un caso, un dato duro), igual
+que se hizo acá, y dejar constancia de qué cambió y qué se mantiene igual.

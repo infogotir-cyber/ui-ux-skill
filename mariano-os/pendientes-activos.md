@@ -77,9 +77,11 @@
      6.2, cubre SABE/QUIERE/PUEDE/CUÁNDO) para que la persona llegue a la llamada sabiendo
      requisitos y precios con más claridad de la que hoy logra.
    - Mencionado por Mariano: antes del 19 ago 2026, sin seguimiento; retomado y aclarado el 19 ago.
-   - Estado: **abierto** — falta que Mariano diga qué específicamente está fallando hoy en ese
-     mini-funnel (¿no llega el contenido?, ¿llega pero no queda claro?, ¿falta algún dato concreto
-     como precio o requisito?) antes de poder proponer una corrección puntual.
+   - Estado: **en curso (20 ago 2026)** — Mariano va a mandar conversaciones reales de inicio de
+     lead (referidos/redes sociales) para analizar el patrón real y armar una secuencia de
+     respuestas rápidas (o bot) que filtre antes de la llamada: fecha de viaje, conocimiento de
+     requisitos, presupuesto, y timing menor a 6 meses. Registro en
+     `direcciones/comercial/patrones-apertura-conversacion.md`, todavía sin conversaciones cargadas.
    - Recordado: 2 veces (19 ago 2026, chequeo diario 20:00).
 
 ### Ministerio (Ruge y otros)

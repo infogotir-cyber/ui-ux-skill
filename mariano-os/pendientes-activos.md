@@ -22,6 +22,24 @@
 
 ## Abiertos
 
+### GOTIR — urgente, bloqueante
+
+**WhatsApp sin proveedor conectado tras la migración de reseller de GHL — bloquea TODO envío automático por WhatsApp**
+   - Detectado 19/20 ago 2026, investigando el caso de Regina Lucia Epifanio (ver más abajo).
+     Mariano confirmó la causa real: el proveedor que les daba GHL como reseller ("God High
+     Level") dejó de darles servicio y los migró directo a una cuenta de Go High Level — y en esa
+     migración **no quedó conectado ningún proveedor de WhatsApp** (ni el genérico anterior ni el
+     oficial de Meta Business).
+   - Impacto: cualquier automatización de GHL que mande WhatsApp (`{WA#1}`, notificaciones a
+     colaboradores, seguimientos) **no entrega nada**, aunque el registro de ejecución la marque
+     como "Ejecutado" — no tira error visible, simplemente no sale. El canal de email no está
+     afectado (sí funciona).
+   - Esto explica retroactivamente el caso de Sebastián Gimenez (17 ago) que había quedado sin
+     resolver — mismo problema de fondo, no una casualidad aislada.
+   - Estado: **abierto, requiere acción directa de Mariano en GHL** (no se puede resolver por API)
+     — reconectar el proveedor de WhatsApp (genérico con QR, o pasar al oficial de Meta Business).
+   - Recordado: 1 vez (19/20 ago 2026).
+
 ### GOTIR — urgente
 
 0. **Promo en USDT/Binance ofrecida a Javier Maddia, vence viernes 21 ago**

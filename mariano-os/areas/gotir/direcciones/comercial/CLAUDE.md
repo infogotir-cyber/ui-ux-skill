@@ -935,3 +935,69 @@ seguimiento:**
 - Proceso de precalificación antes de la llamada (que el lead llegue sabiendo requisitos y precios) —
   a confirmar si es lo mismo que el "mini-funnel pre-llamada" ya mencionado en la sección 6.2, o algo
   distinto.
+
+---
+
+## 10. Caso Regina Lucia Epifanio (19/20 agosto 2026) — duplicado de oportunidad y WhatsApp caído
+
+### 10.1 El duplicado de contacto/oportunidad
+
+Mariano había pedido hace unos días mover a Regina a "ganada" tras confirmar que Gisela le pasa el
+50% de un pago recibido directo (visado de estudios desde origen, 668€). Al revisar, existían **dos
+contactos distintos** con el mismo nombre:
+- `vXvPgYTIctXeNlM6juoh` — **Regina Lucia Epifanio**, el contacto real (email, teléfono argentino,
+  conversación real con Mariano desde su WhatsApp personal +34603289674).
+- `OvKjvt9MQvLiS2R6ofDG` — **"REGINA EPIFANIO"** (sin "Lucia"), un contacto que en realidad quedó
+  de una **prueba de la conexión MCP-GHL el 14 de agosto** (ver `CLAUDE.md` raíz, "se creó una
+  oportunidad real (Regina Epifanio) después del fix") — no es un lead real duplicado, es un
+  resabio de testing.
+
+Ambos terminaron con una oportunidad de "Visado" (668€) cada uno, lo que generó la confusión de
+Mariano marcando primero la equivocada como ganada. **Resuelto 19/20 ago**: Mariano borró la
+oportunidad de "Estancia" (825€, otro trámite, sin relación) y la oportunidad del contacto de
+prueba (`bmu3mMXm0aVco9buvdAv`, la que había quedado abandonada). Queda **una sola oportunidad real**:
+"Regina Lucia Epifanio - Visado" (`Q4OXfkauBNkLO5ibprGz`), status `won`, etapa Pagado.
+
+**Lección para no repetir**: cuando aparezca un contacto con nombre casi idéntico a uno real y sin
+teléfono/email/conversación real cargada, sospechar que es un resabio de prueba de este sistema
+(sección técnica de `CLAUDE.md` raíz) antes de asumir que es un duplicado de lead genuino.
+
+### 10.2 Automatización de contrato — sí se dispara, pero WhatsApp no entrega nada
+
+El workflow nativo de GHL **"Pago realizado- contrato"** (`4e156779-b873-46dc-888b-896c3abcbb5f`,
+publicado) sí se disparó correctamente al mover la oportunidad a ganada/Pagado — confirmado en el
+"Registro de ejecución" de GHL (Create/Update Opportunity → Send Documents & Contracts → tags →
+Finished, todo "Ejecutado"). Y en la conversación real del contacto aparecen efectivamente un email
+con el link al contrato (`sendlink.co`, llegó a `reginaepi01@gmail.com`) y un mensaje `{WA#1}`
+(código correcto que le dice a la centralita de GOTIR que mande por WhatsApp, no un error de
+plantilla — **no tocar ni "arreglar" ese código, funciona bien**).
+
+**Pero nada llegó por WhatsApp.** Causa real, confirmada por Mariano: **la empresa que les daba
+GHL como reseller dejó de darles servicio y los migró directo a una cuenta de Go High Level propia
+— y en esa migración no quedó conectado ningún proveedor de WhatsApp** (ni el genérico anterior con
+QR, ni el oficial de Meta Business). El workflow y el `{WA#1}` funcionan perfecto; simplemente no
+hay ningún canal de WhatsApp activo ahora mismo para que la centralita entregue nada. GHL marca el
+paso como "Ejecutado" igual, sin ningún error visible — el mismo patrón ya visto con Sebastián
+Gimenez el 17 de agosto (ver sección 6.3), que en retrospectiva es casi seguro el mismo problema de
+fondo, no un caso aislado.
+
+**Impacto real: todo lo que dependa de WhatsApp está caído** — mensajes de contrato, seguimientos,
+notificaciones a colaboradores (Notificacion influencers, etc.) — hasta que Mariano reconecte un
+proveedor. El canal de email no está afectado. Esto no se puede resolver por API (ni la de GHL ni
+la de n8n dan acceso para tocar workflows o conectar canales de mensajería) — **requiere que
+Mariano entre a GHL → Conversaciones/Configuración y reconecte el proveedor de WhatsApp**, un canal
+genérico con QR o el oficial de Meta Business. Registrado como pendiente urgente y bloqueante en
+`pendientes-activos.md`.
+
+### 10.3 Límites de API confirmados en este caso (para no reintentar)
+
+- `GET /workflows/{id}` y cualquier variante de detalle/ejecuciones de un workflow → 404, la API
+  pública de GHL no expone la lógica interna de un workflow ni su historial (coincide con el límite
+  ya documentado en `CLAUDE.md` raíz, sección de herramientas conectadas).
+- Los tools de n8n disponibles en esta sesión (`execute_workflow`, `get_workflow_details`,
+  `search_workflows`) **no incluyen crear ni editar workflows** — solo ejecutar y listar los que ya
+  existen. No hay credencial de API de n8n cargada en este entorno (`.env` no tiene ninguna
+  variable `N8N_*`) para intentarlo por HTTP directo tampoco.
+- Sí funciona (y fue lo que permitió avanzar el diagnóstico): `GET /workflows/?locationId=...` por
+  curl directo (mismo patrón ya usado en sección 5.5) para listar nombre/estado de los workflows
+  existentes — así se encontró "Pago realizado- contrato" entre 17 workflows reales de la cuenta.

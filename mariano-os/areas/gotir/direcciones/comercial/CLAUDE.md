@@ -651,9 +651,40 @@ Formulario enviado, "Form is any of 'Lead influencers'" → Create Or Update Opp
 Internal Notification → FINAL. Parece ser el equivalente de "Notificacion influencers" pero para
 cuando el lead llega directo por un formulario específico de influencers en vez de por cambio de
 etapa del pipeline — **no confirmado con Mariano**, no asumir la relación exacta entre los dos
-workflows. El nodo SMS de acá es candidato a revisar (podría ser un mensaje directo al lead, a
-diferencia de los Internal Notification de arriba que van al influencer/Mariano) — pendiente abrir
-el nodo para confirmar destinatario y si usa `{WA#N}`.
+workflows.
+
+### 5.9 Revisión final de los nodos de WhatsApp/SMS — bug real encontrado (21 agosto 2026)
+
+Cierre de la revisión pedida por Mariano tras la reconexión del proveedor de WhatsApp (sección
+6.3/3.1.1). Mariano abrió los 5 nodos relevantes y mandó captura del panel de edición de cada uno
+(no se pudo hacer por navegador automatizado — ver 6.3). Resultado, comparando si el mensaje
+empieza con `{WA#1}` (el código que le dice a GHL que mande por la centralita de WhatsApp, ver
+sección 6.3 y el caso Regina en la sección 10):
+
+| Workflow → nodo | ¿Tiene `{WA#1}`? |
+|---|---|
+| Captaciones Leads Bienvenida -VISADOS → "WhatsApp Bienvenida" (plantilla "Mensaje bienvenida visados") | **No** |
+| Captaciones Leads Bienvenida -ESTANCIAS → "WhatsApp Bienvenida" | Sí |
+| Nueva reunión agendada → "SMS" (plantilla "Reunion agendada") | Sí |
+| Lead capture landing → "SMS" (sin plantilla, texto suelto) | **No** |
+| New Lead referido → "SMS" | Sí |
+
+**Bug real encontrado**: VISADOS y ESTANCIAS son dos workflows gemelos (mismo texto de bienvenida,
+mismo nombre de nodo "WhatsApp Bienvenida", misma estructura completa) — pero a VISADOS le falta el
+código `{WA#1}` que sí tiene ESTANCIAS. Mismo patrón que el bug ya documentado en la sección 5.5
+("Carolina Chapo" hardcodeado en el mensaje de María) — todo indica que uno se armó duplicando al
+otro y a alguien se le pasó agregar el código en la copia. "Lead capture landing" tampoco lo tiene,
+pero no tiene un gemelo conocido para comparar.
+
+**Qué falta hacer (no se puede por API, es edición de contenido de nodo — límite ya conocido, ver
+sección 5.5)**: agregar `{WA#1} ` al principio del mensaje en esos dos nodos — VISADOS →
+"WhatsApp Bienvenida", y "Lead capture landing" → "SMS" — a mano en el builder de GHL.
+
+**Estado del pedido original de Mariano** ("revisar que todas las automatizaciones usen los
+números de WhatsApp correctos"): revisión completa de los 5 workflows que envían mensaje directo al
+cliente/lead — encontrado y reportado 1 bug real concreto. El resto de los workflows revisados
+(Notificacion influencers, María García Serrano / Carolina Chapo - tramites) no mandan WhatsApp
+directo a clientes, no aplica esta verificación.
 
 ---
 

@@ -85,6 +85,23 @@ la pastora tomó de vuelta las tareas de bandas y chocolate del equipo de Marian
 reasignó directo a Juliana y Carlos Prado. La decoración (ítem 4) sigue siendo de Ingrid+Lurbin,
 todavía sin resolver.
 
+**Actualización 21 agosto 2026 (Mariano reporta esto con mucho estrés y tristeza — tratar con el
+mismo cuidado que el resto del contexto sensible de esta sección)**: confirmó que Juliana
+(administración) queda a cargo de **todo** lo que antes se había repartido — chocolates, el
+sticker que va pegado en el chocolate, imprimir los certificados, y comprar las bandas de
+"felicidades" — no solo bandas y chocolate como decía la nota del 18 ago. **Posible discrepancia
+sin resolver**: el ítem 3 de abajo dice que el sticker lo vela Carlos Prado, no Juliana — puede ser
+que el "ellas" que usó Mariano hoy incluya a Carlos Prado dentro del equipo de Juliana, o puede ser
+un cambio real — no asumido, confirmar con Mariano si hace falta precisión.
+
+Lo que **sigue siendo del equipo de Mariano**: la decoración/estructura del evento (ítem 4, ver
+actualización completa ahí abajo) — y, como pilar de New Life, una lista de coordinaciones que
+tiene que cerrar él mismo: hablar con el encargado de producción para que arme un cronograma y
+tenga gente sirviendo ese día (ítem 6, Carlos Prado); pedirle a Impact Worship que estén
+preparados con canciones para el día (ítem 8, David Valera); pedir servidores para el día,
+coordinado con **Margot** (ítem 7); y **hablar con Jenny Rodríguez para pedir que haya decanos ese
+día** — este último es nuevo, agregado como ítem 14 abajo.
+
 1. **Certificados — verificar impresión (Juliana)**, urgente, vencimiento sugerido 25 ago. El PDF ya
    fue enviado a Mariano; **Juliana** (única persona del área administrativa de la iglesia) dijo que
    los iba a imprimir — falta confirmar si ya lo hizo.
@@ -94,13 +111,35 @@ todavía sin resolver.
 3. **Chocolate decorado "completado" — RESUELTO por Juliana + Carlos Prado (18 ago), ya NO es tarea
    de Adrián Caro/equipo de Mariano**. Juliana compra los chocolates en Mercadona; Carlos Prado
    (producción) vela por que se haga el sticker de decoración de cada uno.
-4. **Decoración — globos, sillas y Ferrero Rocher (Ingrid Guaño + Lurbin)** — SIGUE PENDIENTE (18
-   ago), sin cambios de responsable. Ingrid coordina con **Lurbin** (decoradora, apoyo externo) pero
+4. **Decoración — globos, sillas y Ferrero Rocher (Ingrid Guaño + Lurbin)** — EN CURSO, cambio de
+   dinámica de equipo (21 ago 2026). Ingrid coordina con **Lurbin** (decoradora, apoyo externo) pero
    todavía no compró nada — es el único costo que sigue faltando para el presupuesto (ítem 10).
    **Plan concreto pedido por Mariano (18 ago, tarde)**: máximo el **jueves 20 ago**, Lurbin ya tiene
    que haber comprado los globos y demás materiales — pedirle antes un **listado completo de todo lo
    que va a necesitar**, para asegurarse de que lo compre y lo lleve todo. Además, fijar con
    Ingrid/Lurbin **día y hora para armar toda la decoración** y dejarlo listo antes del 1 sept.
+
+   **Actualización 21 ago 2026**: el equipo de New Life para este tramo (decoración/estructura) es
+   **Adrián Caro e Ingrid Guaño**, pero según Mariano no están trabajando bien — no hacen las cosas
+   cuando se las pide y no son proactivos, y él considera que parte de las demoras que ya generaron
+   el conflicto con la pastora Mirna (ver contexto sensible abajo) viene de ahí. **Mariano decidió
+   dejar de pasar por Ingrid y coordinar directo con Lurbin** — antes la cadena era Mariano → Ingrid
+   → Lurbin, ahora es Mariano → Lurbin directo. Ya avanzado con Lurbin directamente:
+   - **Presupuesto de globos: 25€**, que Lurbin va a comprar. Si hay un resto por pagar más allá de
+     eso, **Mariano y Lurbin lo cubren entre los dos** ("sembrar el resto", en sus palabras) para
+     poder tener una decoración con excelencia — **esto puede afectar el ítem 10** (el presupuesto
+     general que se arma para cobrarles a los estudiantes): no está confirmado si este aporte extra
+     de Mariano/Lurbin se suma al costo que se reparte entre los graduandos o si queda aparte, fuera
+     de ese presupuesto — no asumir, confirmar con Mariano cuando arme el ítem 10.
+   - Lurbin está evaluando además **bolígrafos decorados de regalo para cada graduado**, y si forrar
+     las sillas para que se vean mejor — todavía en evaluación, no confirmado.
+   - **Un día antes de la graduación** (31 ago) hay que ir a dejar toda la decoración armada y lista
+     en la iglesia.
+
+   **Sigue abierto (21 ago 2026, más tarde el mismo día)**: Lurbin todavía no terminó de comprar ni
+   le reportó a Mariano cuánto gastó en total — hasta que eso pase, no se sabe si hace falta que
+   Mariano ponga dinero extra más allá de los 25€ de los globos.
+
 5. **Togas — descartadas para esta graduación, evaluar para la próxima** (sin vencimiento, es una
    nota). Se había indicado toga (sobretodo negro) por estudiante, pero sale 25€ c/u — muy caro y ya
    es muy tarde para avisarles a los estudiantes que deben pagarlo. Descartada para el 1 sept 2026;
@@ -115,13 +154,16 @@ todavía sin resolver.
    Valera coordinar Impact Worship para que haya banda en vivo durante la graduación. Falta
    seguimiento. ⚠️ Mismo nombre y apellido que el David Valera de FM4.5 (discípulo que se activa el 5
    sept, ver sección 3/4) — no confirmado si es la misma persona, no asumirlo sin que Mariano lo
-   confirme.
+   confirme. **Actualización 21 ago 2026**: Mariano planea mandarle el recordatorio de que prepare
+   canciones **unos días antes de la graduación** (1 sept), no ahora — todavía no lo hizo.
 9. **Cronograma de Costa Rica (Pablo Carranza) → reenviar a Carlos Prado → avisar al pastor** —
    agregado 17 ago, tarea de Mariano mismo. Cadena de coordinación pendiente: (a) Mariano tiene que
    estar pendiente de que **Pablo Carranza** (equipo de Costa Rica) le envíe el cronograma de la
    graduación; (b) apenas lo tenga, reenviárselo a **Carlos Prado** para que coordine todos los temas
    de producción con el cronograma real; (c) una vez confirmado, hablar con **el pastor** para que
-   prepare alguna enseñanza para el evento.
+   prepare alguna enseñanza para el evento. **Actualización 21 ago 2026**: se aclara el sentido de
+   (c) — no es solo "avisar al pastor", es **pedirle directo al equipo de Costa Rica cuál va a ser
+   la prédica** que el pastor va a dar ese día, para tenerla confirmada de antemano.
 10. **🔴 Armar presupuesto general y cobro anticipado a estudiantes** — la más urgente de todas:
     **los estudiantes todavía no saben que tienen que pagar para la graduación, ni cuánto**. Tarea de
     Mariano mismo. **Actualización 18 ago**: con bandas y chocolate resueltos directo por Juliana
@@ -139,6 +181,25 @@ todavía sin resolver.
     tarea de Mariano mismo. Con cada líder FM4 hay que confirmar que sus estudiantes que se gradúan
     van a asistir de verdad, y que van a pagar la cuota que les corresponde (depende de que el ítem
     10 ya tenga el monto definido).
+
+    **Actualización 21 ago 2026 — el monto ya está definido y comunicado: 15€ por estudiante**
+    (esto avanza al ítem 10, que al 18 ago decía que ni el monto estaba definido). Mariano le pidió
+    a **Paola Huanucci** (encargada de confirmar la asistencia de sus propios alumnos) que
+    confirmara quién va y quién no. Primero dijo que todos estaban confirmados; después avisó que
+    **4 de los 10 graduandos (ver lista completa en el ítem 12) no pueden pagar los 15€ y por eso no
+    irían**: **Iván Patricio Paredes**, **Jessica Ivonne Mora Lovato** y **Luisa Jacqueline Lovato
+    Macias** (madre de Jessica — Mariano aclaró el parentesco, van juntas), y **Lisandro David Tapia
+    Salazar** (avisado por su madre, Karina, que tampoco dijo que llegan a los 15€ ni a la ropa
+    negra que se pide). **El pastor Fabio ya está gestionando esto pastoralmente** — mandó un
+    mensaje al grupo de discípulos preguntando quién quiere "sembrar" para cubrir la entrada.
+
+    **Actualización 21 ago 2026, más tarde el mismo día — los 4 casos se dividieron en dos
+    caminos**: **Iván Paredes queda resuelto, pero no va a la graduación** — Mariano decidió
+    decirle que está bien, que no hay problema si no viene, sin insistir en conseguirle la entrada.
+    Para **Lisandro, Luisa y Jessica** la situación sigue abierta — Mariano todavía tiene que
+    definir/confirmar **quién termina pagando la entrada de estos 3** (no está cerrado si sale de
+    la siembra del grupo de discípulos, de Mariano, o de otro lado) — tarea propia que se agregó a
+    su lista de pendientes de la graduación, no algo que se pueda dar por resuelto todavía.
 12. **Cartelito con nombre por silla, para cada estudiante graduando** — RESUELTO 18 ago 2026, lo
     diseñó este sistema. Mariano mandó el PDF de referencia de la invitación de New Life (paleta
     azul-violeta y tipografía) y la lista de 10 graduandos, sin logo de la iglesia. Se armó un PDF
@@ -159,6 +220,10 @@ todavía sin resolver.
     tiene conexión directa a Canva; si Mariano pide ayuda con esto, lo que se puede ofrecer es
     redactar el copy/contenido o armar un mockup de diseño para que alguien lo replique en Canva, no
     operar Canva directamente.
+14. **Hablar con Jenny Rodríguez para pedir que haya decanos el día de la graduación** — agregado 21
+    ago 2026, tarea de Mariano mismo como pilar de New Life. Sin más detalle todavía (qué rol
+    cumplen los decanos ese día, cuántos hacen falta) — se agrega según lo dio Mariano, sin inventar
+    el resto.
 
 ##### Contexto sensible — la pastora se enojó por la demora (18 agosto 2026)
 Mismo criterio que el contexto sensible de la Tarde Profética más abajo: **no va a ClickUp**, queda
@@ -175,6 +240,19 @@ esposo, cabeza de producción de la iglesia — que vele por el sticker del choc
 ejecución/reporte a tiempo de Mariano y su equipo alrededor de un evento (después del Pastor Fabio
 y la Pastora Mirna por la Tarde Profética, ver más abajo) — patrón que vale la pena que Mariano
 tenga presente, no un hecho aislado.
+
+##### Contexto sensible — Mariano deja de pasar por Ingrid, tensión de equipo (21 agosto 2026)
+Mismo criterio: no va a ClickUp, queda en el sistema privado. Mariano contó esto con mucho estrés y
+tristeza acumulada, en la misma conversación que el resto de las actualizaciones de graduación de
+hoy — vale la pena tenerlo presente como contexto emocional, no solo como dato operativo.
+
+Su lectura es que **Adrián Caro e Ingrid Guaño** (el equipo de New Life a cargo de
+decoración/estructura) no están respondiendo bien — no hacen las cosas cuando se las pide y no son
+proactivos — y que esto es, en su percepción, parte de la causa de fondo de las demoras que ya le
+generaron el conflicto con la pastora Mirna (contexto sensible de arriba). Su respuesta concreta:
+dejar de pasar por Ingrid para coordinar la decoración y hacerlo él mismo, directo con **Lurbin**
+(la decoradora externa). No mencionó tomar ninguna acción sobre Adrián más allá de esto — no
+asumir que hay una conversación pendiente con él si Mariano no la menciona explícitamente.
 
 ### Folder: Vida Personal & Espiritual (ID `901212988023`)
 Ojo: pese al nombre, este folder vive dentro del espacio de ministerio en ClickUp por razones

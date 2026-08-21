@@ -61,22 +61,28 @@
 
 ### GOTIR — decisión pendiente, la más importante de todas
 
-**Elegir una de las 4 propuestas de sistema comercial completo**
+**Elegida: Propuesta 4 (Motor + Copiloto) del sistema comercial — falta empezar a construir**
    - Mariano pidió juntar todo el análisis del día (Mapa Antifugas, mini-funnel, secuencia
      post-agendamiento, bandeja de mensajes sin responder) en propuestas de sistema comercial
-     completas para elegir una: **Propuesta 1 (Copiloto)**, **Propuesta 2 (Filtro Automático, con
-     bot)**, **Propuesta 3 (Reglas que se cumplen solas)**, y **Propuesta 4 (Motor + Copiloto —
-     agregada 20 ago 2026 más tarde, a pedido explícito de Mariano, combina lo mejor de la 1 y la 3
-     con el estándar de venta de sección 12 tejido adentro; se construye en 3 fases, cada una útil
-     sola)**. Detalle completo, comparación y recomendación en
+     completas: **Propuesta 1 (Copiloto)**, **Propuesta 2 (Filtro Automático, con bot)**,
+     **Propuesta 3 (Reglas que se cumplen solas)**, y **Propuesta 4 (Motor + Copiloto, agregada 20
+     ago 2026 más tarde a pedido explícito, combina lo mejor de la 1 y la 3 con el estándar de
+     venta de sección 12 tejido adentro)**. Detalle completo en
      `direcciones/comercial/propuestas-sistema-comercial.md`.
-   - Hallazgo a confirmar antes de avanzar con la Propuesta 2 si la elige: ya existen workflows
-     publicados en GHL llamados "Bot setter", "Bot closer", "Bot para clientes" y "Proximo follow up
-     bot closer" — sin documentar, sin confirmar si están activos.
-   - Estado: **abierto, esperando que Mariano elija**. Ninguna de las 4 empieza a construirse hasta
-     que decida.
-   - Recordado: 3 veces (20 ago 2026; 20 ago, chequeo diario 20:00; 20 ago, tras agregar la
-     Propuesta 4).
+   - **Mariano confirmó la Propuesta 4 el 20 ago 2026** (misma tarde) — quedó una duda resuelta en
+     el momento: confirmó que el copiloto (Capa 2) no es solo para retomar en frío, sino que arma
+     un borrador cada vez que hay un mensaje sin responder, en cualquier punto de la conversación,
+     turno por turno hasta que cierra — ya aclarado en el documento.
+   - Se construye en 3 fases, cada una útil sola: **Fase A** (campo obligatorio de próxima
+     acción con hora exacta + etiqueta automática de "esperando respuesta" en GHL — la más rápida,
+     no necesita nada nuevo, solo configuración en GHL), **Fase B** (conectar Fathom → GHL vía la
+     rama de n8n ya diseñada), **Fase C** (el chequeo diario se convierte en el copiloto real).
+   - Hallazgo aparte, no bloqueante para la Propuesta 4: ya existen workflows publicados en GHL
+     llamados "Bot setter", "Bot closer", "Bot para clientes" y "Proximo follow up bot closer" —
+     eran relevantes solo si se elegía la Propuesta 2, que no fue la elegida.
+   - Estado: **decidido, esperando que Mariano confirme si arranca por la Fase A o quiere ver el
+     detalle de configuración primero**.
+   - Recordado: 1 vez (20 ago 2026, tras la elección).
 
 ### GOTIR — prioritarios (marcados así por Mariano, 20 ago 2026 madrugada)
 

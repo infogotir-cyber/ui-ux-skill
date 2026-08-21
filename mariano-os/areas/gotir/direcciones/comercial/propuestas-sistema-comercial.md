@@ -151,13 +151,28 @@ Mariano al mismo tiempo — las dos cosas que, separadas, cada propuesta dejaba 
     vencidas), ordenada por urgencia real, no por orden de llegada.
   - Por cada contacto, cruza la nota real + el historial de conversación (`ghl_read_conversation`)
     y arma un borrador de mensaje.
-  - Mariano aprueba, edita o rechaza — nunca se manda nada sin que lo vea primero, mismo criterio
-    que ya rige para GHL en todo el sistema.
+  - **No es un mecanismo de una sola vez para retomar en frío — se dispara cada vez que hay un
+    mensaje entrante sin responder**, sin importar en qué punto de la conversación esté: la
+    etiqueta "Esperando respuesta desde: [fecha]" de la Capa 1 se vuelve a aplicar cada vez que el
+    lead escribe, no solo la primera. El chequeo lee el chat actualizado completo y arma el
+    borrador de la *siguiente* respuesta puntual (no repite el mensaje de apertura) — así sea el
+    primer contacto en frío, una objeción de precio a mitad de negociación, o un "avisame cuando
+    hagas la transferencia" al final. Sigue turno por turno hasta que la oportunidad cierra
+    (pasa a Pagado), el lead dice explícitamente que no, o entra en la ventana de "se enfrió" — a
+    partir de ahí ya no es un mensaje más, es el caso que se revisa en el post-mortem (sección 2,
+    paso 6).
+  - Mariano aprueba, edita o rechaza cada borrador — nunca se manda nada sin que lo vea primero,
+    mismo criterio que ya rige para GHL en todo el sistema.
 - **Capa 3 — El Filtro de venta (sección 12 de `CLAUDE.md`, obligatorio, no opcional)**: ningún
   borrador de la Capa 2 llega a los ojos de Mariano sin pasar antes el checklist de 7 puntos
   completo — motivo real para escribir hoy, lenguaje asuntivo si corresponde, CTA único y cerrado,
   urgencia real, salida fácil, sin mencionar incumplimientos, corto. No es una capa aparte que se
-  agrega después — está tejida dentro del mecanismo de la Capa 2, en cada borrador, siempre.
+  agrega después — está tejida dentro del mecanismo de la Capa 2, **en cada turno de la
+  conversación, no solo al primer mensaje**. El checklist es el mismo siempre, pero qué principio
+  pesa más cambia según el momento: un mensaje de reactivación en frío se apoya más en "motivo real
+  para escribir hoy"; una respuesta a mitad de negociación de precio se apoya más en "sin mencionar
+  incumplimientos" y "salida fácil"; un mensaje de cierre ("avisame cuando hagas la transferencia")
+  se apoya más en el lenguaje asuntivo.
 - **Bonus concreto que ya salió de analizar las dos primeras llamadas de la ventana de
   aprendizaje** (`patrones-llamadas.md`): el bloque de las 3 escuelas en Fase 3 ya se confirmó como
   guion estandarizado, palabra por palabra, en 2/2 llamadas reales el mismo día — cargarlo como

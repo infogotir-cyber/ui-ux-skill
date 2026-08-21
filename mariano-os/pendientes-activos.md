@@ -74,14 +74,31 @@
      un borrador cada vez que hay un mensaje sin responder, en cualquier punto de la conversación,
      turno por turno hasta que cierra — ya aclarado en el documento.
    - Se construye en 3 fases, cada una útil sola: **Fase A** (campo obligatorio de próxima
-     acción con hora exacta + etiqueta automática de "esperando respuesta" en GHL — la más rápida,
-     no necesita nada nuevo, solo configuración en GHL), **Fase B** (conectar Fathom → GHL vía la
-     rama de n8n ya diseñada), **Fase C** (el chequeo diario se convierte en el copiloto real).
+     acción con hora exacta + etiqueta automática de "esperando respuesta" en GHL), **Fase B**
+     (conectar Fathom → GHL vía la rama de n8n ya diseñada), **Fase C** (el chequeo diario se
+     convierte en el copiloto real).
+   - **Fase A en curso (20/21 ago 2026)** — Mariano pidió arrancarla y ejecutarla solo. 2 de 3
+     piezas resueltas por API sin pedirle nada: custom field "Próxima acción - Fecha y hora exacta"
+     en la oportunidad (id `kjYi4hnJFKwwZi63jydV`) y custom field "Esperando respuesta desde" en el
+     contacto (id `qLXajIzazssOvAsseqT4`), más el checklist post-llamada y el chequeo nocturno ya
+     ajustados para usarlos. **Falta 1 pieza — bloqueada por un límite real de la API de GHL, no
+     por falta de autorización**: el workflow que detecte automáticamente un mensaje sin responder
+     y llene el campo — GHL no tiene ningún endpoint para crear ni editar la lógica de un workflow
+     (límite ya confirmado antes, sección 5.5 de `direcciones/comercial/CLAUDE.md`). Spec funcional
+     lista en `direcciones/comercial/CLAUDE.md`, sección 13, para cuando Mariano tenga ~10 minutos
+     en el builder de GHL — es el único paso manual que queda de toda la Fase A.
    - Hallazgo aparte, no bloqueante para la Propuesta 4: ya existen workflows publicados en GHL
      llamados "Bot setter", "Bot closer", "Bot para clientes" y "Proximo follow up bot closer" —
      eran relevantes solo si se elegía la Propuesta 2, que no fue la elegida.
-   - Estado: **decidido, esperando que Mariano confirme si arranca por la Fase A o quiere ver el
-     detalle de configuración primero**.
+   - **Pendiente separado, todavía sin ejecutar a propósito**: Mariano preguntó si se puede aplicar
+     esto en retroactivo a todos los clientes que escribieron y no se les respondió en los últimos
+     meses. Es técnicamente posible, pero no se ejecutó — motivo completo en
+     `direcciones/comercial/CLAUDE.md` sección 13.5 (choca con la decisión ya tomada de priorizar
+     leads activos sobre nurturing histórico de +2.000 contactos, generaría demasiados borradores
+     de golpe para que Mariano revise, y en rigor es una capacidad de la Fase C, que todavía no
+     existe). Recomendación dada: acotarlo a los últimos 30 días cuando llegue el momento, no a
+     "todos, meses".
+   - Estado: **Fase A en curso (2/3 hecho), Fase B y C sin empezar**.
    - Recordado: 1 vez (20 ago 2026, tras la elección).
 
 ### GOTIR — prioritarios (marcados así por Mariano, 20 ago 2026 madrugada)

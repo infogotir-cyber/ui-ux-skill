@@ -196,6 +196,13 @@ Mariano al mismo tiempo — las dos cosas que, separadas, cada propuesta dejaba 
   1. **Fase A (la más rápida, arranca la red de seguridad ya)**: campo obligatorio de próxima
      acción con hora exacta + etiqueta automática de "esperando respuesta" en GHL. Solo esto ya
      empieza a atacar la capa 3, aunque el copiloto todavía no exista.
+     **Estado (20/21 ago 2026): en curso, 2 de 3 piezas resueltas por API sin intervención de
+     Mariano** — los dos custom fields creados (próxima acción con hora exacta en la oportunidad, y
+     "esperando respuesta desde" en el contacto), más el ajuste del checklist post-llamada y del
+     chequeo nocturno para que auditen el campo nuevo. Falta 1 pieza que la API de GHL no permite
+     hacer sola (el workflow que detecte automáticamente un mensaje sin responder y llene ese
+     campo) — spec funcional lista en `direcciones/comercial/CLAUDE.md`, sección 13, para cuando
+     Mariano tenga ~10 minutos en el builder.
   2. **Fase B**: conectar Fathom → GHL vía la rama de n8n ya diseñada y sin usar.
   3. **Fase C**: convertir el chequeo diario en el copiloto real — que lea la lista de la Capa 1 y
      arme los borradores, siempre con el filtro de venta aplicado.

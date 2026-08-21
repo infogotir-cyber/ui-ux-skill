@@ -170,7 +170,11 @@ Si responde con dudas, ahí sí se pasa a resolver la objeción puntual (Fase 4)
 
 1. Copiar el resumen de Fathom → pegar en nota del contacto
 2. Aplicar etiqueta de temperatura (Caliente / Templado / Frío)
-3. Crear tarea en GHL con la próxima acción + fecha exacta acordada en la Fase 5
+3. Crear tarea en GHL con la próxima acción + fecha exacta acordada en la Fase 5. **Agregado 20/21
+   agosto 2026**: además cargar la misma fecha y hora en el campo de la oportunidad "Próxima acción
+   - Fecha y hora exacta" (ver sección 13) — la tarea es para el recordatorio operativo, el campo es
+   para que quede visible directo en la tarjeta de la oportunidad y para que el chequeo de la noche
+   (sección 9.1) lo pueda auditar sin tener que abrir cada tarea.
 4. Si se detectó un bloqueo nuevo o un diferenciador que funcionó bien, anotarlo — sirve para afinar el guion con el tiempo
 5. **Agregado 18 agosto 2026**: marcar el estado real de la cita en GHL (`showed` si se realizó,
    `noshow` si no se presentó) — ver mecanismo completo y por qué es un paso nuevo en la sección
@@ -904,7 +908,13 @@ pasó en el día:
    las citas del día.
 2. Para cada una, le pregunta a Mariano cómo fue, si ya cargó el resumen de Fathom, si aplicó la
    etiqueta de temperatura, si creó la tarea de próxima acción con fecha, y si marcó `showed`/
-   `noshow` — y si no cerró, si hizo el post-mortem (sección 2, pasos 1-6).
+   `noshow` — y si no cerró, si hizo el post-mortem (sección 2, pasos 1-6). **Agregado 20/21 agosto
+   2026**: también consulta el campo de la oportunidad "Próxima acción - Fecha y hora exacta"
+   (sección 13) para cada llamada del día — si está vacío o solo tiene fecha sin hora, lo señala
+   como pendiente sin esperar a que Mariano lo note solo. Esto es lo que hoy hace cumplir el "campo
+   obligatorio" de la Fase A de la Propuesta 4 (sección 13) — GHL no tiene forma de bloquear por API
+   que se cierre una llamada sin llenarlo, así que el chequeo cumple esa función mientras no exista
+   un mecanismo nativo.
 3. Lee `pendientes-activos.md` (raíz de `mariano-os/`) y vuelve a mencionar cualquier ítem que siga
    `abierto` o `en curso` — **las veces que haga falta**, no una sola vez y listo.
 4. Si la ventana de aprendizaje de 20 llamadas (sección 9.2) sigue abierta, pide el resumen/
@@ -1140,3 +1150,94 @@ post-agendamiento (`secuencia-post-agendamiento.md`), y cualquier ajuste futuro 
 - [7 effective follow-up techniques to close more sales — Artisan AI](https://www.artisan.co/blog/follow-up-techniques-in-sales)
 - [10 Follow-Up Text Message Templates That Keep Leads Engaged — DialMyCalls](https://www.dialmycalls.com/blog/follow-up-text-message-templates)
 - [Follow-Up Best Practices for Sales Pros: 15 Rules — ex.plo.re](https://ex.plo.re/crm/follow-up-best-practices/)
+
+---
+
+## 13. Propuesta 4 (Motor + Copiloto) — Fase A ejecutada (20/21 agosto 2026)
+
+Mariano eligió la Propuesta 4 (`direcciones/comercial/propuestas-sistema-comercial.md`) y pidió
+explícitamente empezar por la Fase A y ejecutarla solo, sin pedirle confirmación paso a paso. Esto
+es lo que se hizo y lo que quedó, en detalle honesto:
+
+### 13.1 Hecho por API, sin intervención de Mariano
+
+Dos custom fields nuevos creados en vivo contra la API de GHL (`POST
+/locations/{locationId}/customFields`, mismo endpoint ya usado antes solo para editar campos
+existentes — funcionar para creación no estaba confirmado hasta ahora, quedó probado):
+
+- **"Próxima acción - Fecha y hora exacta"** — `model=opportunity`, `dataType=TEXT`, id
+  `kjYi4hnJFKwwZi63jydV`, `fieldKey=opportunity.prxima_accin__fecha_y_hora_exacta` (GHL le sacó los
+  acentos al generar el fieldKey automáticamente, es normal, no afecta el nombre visible). Tipo
+  TEXT a propósito, no DATE — así admite el string completo "día/mes hora" en un solo campo visible
+  en la tarjeta de la oportunidad, sin depender de que el selector de fecha de GHL soporte hora.
+  Resuelve directamente el patrón confirmado 2/2 en `patrones-llamadas.md` (próxima acción sin hora
+  exacta).
+- **"Esperando respuesta desde"** — `model=contact`, `dataType=DATE`, id `qLXajIzazssOvAsseqT4`,
+  `fieldKey=contact.esperando_respuesta_desde`. Vive en el contacto (no en la oportunidad) porque el
+  estado "está esperando que le responda" es de la conversación, no de un trámite puntual. Queda
+  vacío hasta que el mecanismo de 13.2 lo llene.
+
+### 13.2 Lo que NO se pudo hacer por API — límite real, no un tema de confirmación
+
+La "etiqueta automática" de la Propuesta 4 (que detecte solo un mensaje entrante sin responder y
+llene el campo de arriba) requiere un **Workflow de GHL con trigger de mensaje entrante** —
+Automation → Workflows. Ya está documentado como límite duro en la sección 5.5: `GET /workflows/`
+no expone la lógica interna, y **no existe ningún endpoint para crear ni editar workflows**. No es
+que falte confirmación de Mariano — es que la API pública de GHL, hoy, no ofrece ningún camino para
+que este sistema arme esa lógica él solo, con o sin autorización.
+
+**Spec funcional para cuando Mariano tenga ~10 minutos en el builder** (no son instrucciones de UI
+paso a paso, porque la interfaz puede cambiar — es lo que el workflow tiene que lograr):
+1. Un workflow que dispare con el trigger nativo de "mensaje entrante / Customer Replied", y como
+   acción setee el custom field de contacto "Esperando respuesta desde" = fecha/hora del trigger.
+2. Un segundo workflow (o una segunda rama) que dispare cuando sale un mensaje de Mariano hacia ese
+   contacto (manual o vía `ghl_send_message`) y vacíe ese mismo campo — así el campo solo tiene
+   valor mientras de verdad hay algo sin responder.
+3. Opcional pero recomendado: que el primer workflow también aplique una etiqueta simple
+   "Esperando respuesta" al contacto (no hace falta que la etiqueta tenga la fecha adentro del
+   texto, para eso ya está el custom field) — sirve para poder filtrar contactos en GHL a simple
+   vista, no solo por campo.
+Mientras este mecanismo no exista, el campo "Esperando respuesta desde" queda creado pero inerte —
+no se completa solo todavía.
+
+### 13.3 Qué se ajustó en el proceso existente para no depender de la Fase A completa
+
+Dos cambios que **sí pudo hacer este sistema solo**, sin builder de GHL, para que la Fase A ya
+empiece a sumar aunque el mecanismo de 13.2 no esté armado:
+- El paso 3 de "Después de colgar" (sección 2) ahora incluye cargar el campo de la oportunidad,
+  además de la tarea de GHL.
+- El chequeo de la noche (sección 9.1) ahora también audita ese campo por cada llamada del día — es
+  la forma de que "campo obligatorio" sea real en la práctica (nadie deja de llenarlo sin que se
+  note) mientras GHL no ofrezca una manera de bloquearlo a nivel de plataforma.
+
+### 13.4 Frecuencia del chequeo de mensajes pendientes (pregunta de Mariano, 20 ago 2026)
+
+Hoy, el único mecanismo que revisa mensajes/pendientes es el par de Routines de la sección 9.1 —
+**dos veces por día** (08:00 y 20:00 hora de España). Hasta que la Fase C (el copiloto que arma
+borradores) exista, esa es la cadencia real. Una vez que la Fase C esté construida, tiene sentido
+subir la frecuencia (ej. cada 2-3 horas en horario laboral) porque ahí sí habría valor en enterarse
+antes — pero no antes, porque hoy el chequeo no arma nada automáticamente, solo pregunta.
+
+### 13.5 Sobre hacer esto retroactivo a mensajes de meses anteriores (pregunta de Mariano, 20 ago 2026)
+
+Es técnicamente posible (barrer todos los contactos con `ghl_search_contacts` + leer cada
+conversación con `ghl_read_conversation`), pero **no se ejecutó sin antes dejarlo anotado acá**, por
+tres motivos concretos, no por seguir pidiendo permiso porque sí:
+1. **Ya existe una decisión explícita de Mariano en sentido contrario** (sección 1.3): priorizar
+   cerrar leads activos por sobre hacer nurturing de la base histórica de +2.000 contactos — un
+   barrido retroactivo completo de "todos los clientes... en los últimos meses" es exactamente ese
+   nurturing, a una escala mucho mayor que el "recorrido mínimo de 30 días" que la sección 8.3 (punto
+   5) ya había acotado a propósito.
+2. El diseño central de la propia Propuesta 4 es que Mariano ve y aprueba cada mensaje antes de que
+   salga — un barrido de "todos, meses" generaría potencialmente cientos de borradores para revisar
+   de una sola vez, un volumen que compite directo con el objetivo de protegerle el tiempo
+   (sección 0), lo opuesto a lo que la Propuesta 4 busca.
+3. Es, en rigor, una capacidad de la **Fase C** (el copiloto que arma los borradores), que todavía
+   no está construida — antes de barrer meses de historial hace falta que el mecanismo que arma cada
+   respuesta ya esté probado con volumen chico y reciente.
+
+**Recomendación, no ejecutada todavía**: cuando llegue el momento, acotar el primer barrido
+retroactivo a algo mucho más chico que "todos, meses" — por ejemplo, presupuestos/llamadas de los
+últimos 30 días (mismo criterio que sección 8.3), y ahí sí revisar los resultados juntos antes de
+decidir si vale la pena ir más atrás. Queda anotado como paso futuro en `pendientes-activos.md`, no
+descartado.

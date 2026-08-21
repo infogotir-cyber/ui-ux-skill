@@ -1000,6 +1000,34 @@ paso como "Ejecutado" igual, sin ningún error visible — el mismo patrón ya v
 Gimenez el 17 de agosto (ver sección 6.3), que en retrospectiva es casi seguro el mismo problema de
 fondo, no un caso aislado.
 
+**RESUELTO (21 agosto 2026)**: Mariano identificó al reseller anterior como **"Trindia"** (nombre
+oído por dictado, ortografía sin confirmar) y reconectó el canal de WhatsApp con un proveedor
+nuevo, **GoGHL.ai** (`app.goghl.ai`) — mismo tipo de integración no oficial que la anterior, no la
+WhatsApp Business Platform de Meta. Los 4 números de GOTIR ya están dados de alta ahí y muestran
+"Conectado" en el panel:
+- **WhatsApp #1** — `+34604363469`, marcado **Predeterminado** — es la centralita real de GOTIR,
+  coincide con lo ya documentado (`CLAUDE.md` raíz, tag `wa: +34604363469`) — es el número al que
+  apunta `{WA#1}` en los workflows.
+- **WhatsApp #2** — `+34603289674`, "Mariano Barcelona - GOTIR" — coincide con la línea laboral
+  personal de Mariano ya documentada, y con el `fromNumber` hardcodeado en la tool
+  `ghl_send_message` del servidor MCP — sigue siendo válido.
+- **WhatsApp #3** — `+34634194829`, etiquetado **"Pamela Jordan - GOTIR"**.
+- **WhatsApp #4** — `+5493512594563` (número argentino), etiquetado **"Belén Campana GOTIR"**.
+
+**Pendiente de confirmar con Mariano, no asumido**: Pamela Jordan y Belén Campana ya no trabajan ni
+van a trabajar con GOTIR (ver sección 5.2) — sus usuarios de GHL ya fueron borrados el 17 agosto,
+pero estos dos números de WhatsApp con sus nombres siguen conectados y activos en GoGHL.ai. No se
+sabe si son líneas que GOTIR sigue usando bajo otro criterio (ej. reasignadas a otra persona) o si
+quedaron así por la migración y convendría desconectarlas/renombrarlas — preguntarle a Mariano.
+
+**Límite real de esta revisión**: la API de GHL no expone el detalle interno de los workflows (ver
+sección 5.5 más abajo — límite ya confirmado antes), así que no se puede auditar por API si cada
+automatización usa el número de WhatsApp correcto. Lo que sí se pudo confirmar: los números que
+SÍ están hardcodeados en código propio de este sistema (`{WA#1}` en los workflows de GHL y el
+`fromNumber` de `ghl_send_message`) coinciden con números reales y conectados. El resto de la
+revisión (¿hay algún workflow en el builder de GHL que todavía apunte a un canal de WhatsApp viejo
+o roto?) tiene que hacerse a mano en el builder — no hay forma de confirmarlo por API.
+
 **Impacto real: todo lo que dependa de WhatsApp está caído** — mensajes de contrato, seguimientos,
 notificaciones a colaboradores (Notificacion influencers, etc.) — hasta que Mariano reconecte un
 proveedor. El canal de email no está afectado. Esto no se puede resolver por API (ni la de GHL ni

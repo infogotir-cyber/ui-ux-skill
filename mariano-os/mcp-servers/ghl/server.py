@@ -823,6 +823,15 @@ async def ghl_send_message(
     GHL (Conversaciones) que el mensaje se ve entregado, no asumir exito
     solo por la respuesta 201 de esta tool.
 
+    ACTUALIZACION (21 agosto 2026): el reseller anterior de GHL dejo de dar servicio y la
+    migracion se quedo sin proveedor de WhatsApp conectado (ver
+    direcciones/comercial/CLAUDE.md seccion 6/10) — Mariano ya lo reconecto con un proveedor
+    nuevo, GoGHL.ai (`app.goghl.ai`), con los 4 numeros reales de GOTIR dados de alta y
+    "Conectado" (incluido +34603289674, el que usa esta tool). El problema de fondo debería
+    estar resuelto, pero esta tool todavia no se volvio a probar de punta a punta con un envio
+    real desde que se reconecto — seguir chequeando el panel de Conversaciones despues de cada
+    envio hasta confirmarlo con un caso real.
+
     Args:
         contact_id: id del contacto destinatario (lo devuelve ghl_search_contacts).
         message: Texto del mensaje a enviar.

@@ -22,23 +22,30 @@
 
 ## Abiertos
 
-### GOTIR — urgente, bloqueante
+### GOTIR — seguimiento
 
-**WhatsApp sin proveedor conectado tras la migración de reseller de GHL — bloquea TODO envío automático por WhatsApp**
-   - Detectado 19/20 ago 2026, investigando el caso de Regina Lucia Epifanio (ver más abajo).
-     Mariano confirmó la causa real: el proveedor que les daba GHL como reseller ("God High
-     Level") dejó de darles servicio y los migró directo a una cuenta de Go High Level — y en esa
-     migración **no quedó conectado ningún proveedor de WhatsApp** (ni el genérico anterior ni el
-     oficial de Meta Business).
-   - Impacto: cualquier automatización de GHL que mande WhatsApp (`{WA#1}`, notificaciones a
-     colaboradores, seguimientos) **no entrega nada**, aunque el registro de ejecución la marque
-     como "Ejecutado" — no tira error visible, simplemente no sale. El canal de email no está
-     afectado (sí funciona).
-   - Esto explica retroactivamente el caso de Sebastián Gimenez (17 ago) que había quedado sin
-     resolver — mismo problema de fondo, no una casualidad aislada.
-   - Estado: **abierto, requiere acción directa de Mariano en GHL** (no se puede resolver por API)
-     — reconectar el proveedor de WhatsApp (genérico con QR, o pasar al oficial de Meta Business).
-   - Recordado: 2 veces (19/20 ago 2026; 20 ago, chequeo diario 20:00).
+**WhatsApp sin proveedor conectado tras la migración de reseller de GHL — RESUELTO (21 ago 2026), queda un seguimiento**
+   - Detectado 19/20 ago 2026, investigando el caso de Regina Lucia Epifanio (ver
+     `direcciones/comercial/CLAUDE.md` sección 10). Causa real: el reseller anterior de GHL
+     (identificado por Mariano como "Trindia", ortografía sin confirmar — antes se había registrado
+     acá como "God High Level", probablemente la misma transcripción oída distinto) dejó de darles
+     servicio y los migró a una cuenta de Go High Level propia, sin proveedor de WhatsApp conectado.
+   - **Resuelto por Mariano (21 ago 2026)**: reconectó el canal con un proveedor nuevo, **GoGHL.ai**
+     (`app.goghl.ai`), y dio de alta los 4 números reales de GOTIR — los 4 muestran "Conectado".
+     Detalle completo (números, a quién pertenece cada uno) en
+     `direcciones/comercial/CLAUDE.md` sección 6.3.
+   - **Seguimiento pendiente, a pedido explícito de Mariano**: revisar que todas las automatizaciones
+     usen los números de WhatsApp correctos. Ya se confirmó lo que se puede confirmar por API — los
+     números hardcodeados en este sistema (`{WA#1}` en los workflows de GHL, `fromNumber` de
+     `ghl_send_message`) son válidos y están conectados. **Lo que queda sin poder auditar por API**
+     (límite real de la API de GHL, no da acceso a la lógica interna de los workflows): revisar a
+     mano en el builder de GHL si algún workflow apunta todavía a un canal de WhatsApp roto.
+   - **Pendiente aparte detectado en la revisión**: dos de los 4 números conectados están
+     etiquetados con nombres de ex colaboradoras (Pamela Jordan, Belén Campana) que ya no trabajan
+     en GOTIR — a confirmar con Mariano si conviene desconectarlos/renombrarlos.
+   - Estado: **el bloqueo de fondo está resuelto — canal de WhatsApp funcionando de nuevo**. Queda
+     abierta la revisión manual en el builder + la decisión sobre los números de Pamela/Belén.
+   - Recordado: 3 veces (19/20 ago 2026; 20 ago, chequeo diario 20:00; 21 ago 2026, resolución).
 
 ### GOTIR — urgente
 

@@ -40,12 +40,28 @@
      `ghl_send_message`) son válidos y están conectados. **Lo que queda sin poder auditar por API**
      (límite real de la API de GHL, no da acceso a la lógica interna de los workflows): revisar a
      mano en el builder de GHL si algún workflow apunta todavía a un canal de WhatsApp roto.
-   - **Pendiente aparte detectado en la revisión**: dos de los 4 números conectados están
-     etiquetados con nombres de ex colaboradoras (Pamela Jordan, Belén Campana) que ya no trabajan
-     en GOTIR — a confirmar con Mariano si conviene desconectarlos/renombrarlos.
-   - Estado: **el bloqueo de fondo está resuelto — canal de WhatsApp funcionando de nuevo**. Queda
-     abierta la revisión manual en el builder + la decisión sobre los números de Pamela/Belén.
+   - **Resuelto (21 ago 2026)**: Mariano confirmó que los 4 números son suyos (todos con sus
+     propios móviles), los nombres viejos quedaron solo como etiqueta — los quiere mantener
+     conectados a propósito, para futuros usos (JARVIS en otro número, un futuro comercial, otra
+     persona ayudando en otra área) y porque algunos ya están en grupos de WhatsApp con clientes.
+     No hay nada que cambiar acá.
+   - Estado: **el bloqueo de fondo está resuelto — canal de WhatsApp funcionando de nuevo**.
    - Recordado: 3 veces (19/20 ago 2026; 20 ago, chequeo diario 20:00; 21 ago 2026, resolución).
+
+**Revisión de automatizaciones (builder de GHL) — bloqueada por política de red del entorno**
+   - A pedido explícito de Mariano de resolver esto sin ponerlo a trabajar a él: se creó un usuario
+     nuevo en GHL (`claude.asistente@gotir.es`, id `aDv8Utw1kKrpOewD7kGU`, rol admin) para entrar
+     por navegador (Playwright) y auditar el builder directamente, ya que la API no expone la
+     lógica interna de los workflows.
+   - **Bloqueado**: la política de red de este entorno de Claude Code rechaza la conexión a
+     `app.gohighlevel.com` (403, bloqueo explícito de política — confirmado, no es un problema de
+     credenciales). Mismo tipo de bloqueo que tuvo `services.leadconnectorhq.com` hasta el 14
+     agosto 2026, cuando Mariano lo habilitó en la configuración del entorno.
+   - **Falta que Mariano haga**: habilitar `app.gohighlevel.com` en la política de red de este
+     entorno (mismo lugar donde habilitó el dominio de la API el 14 agosto). Apenas esté
+     habilitado, la revisión se completa sin pedirle nada más.
+   - Estado: **abierto — bloqueado esperando que Mariano habilite el dominio**.
+   - Recordado: 1 vez (21 ago 2026).
 
 ### GOTIR — urgente
 

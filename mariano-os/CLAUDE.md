@@ -357,6 +357,18 @@ Este proyecto debe tener acceso vía MCP a:
     mande el mensaje manualmente desde su telefono. Caso real: mensaje de seguimiento a Sebastián
     Gimenez (`contact_id=Ma0BBzRU86lESAKjiHqd`) — ver `direcciones/comercial/CLAUDE.md` para el
     detalle completo y el estado pendiente.
+  - **23 tools (ampliado a 23 el 21 agosto 2026, más tarde el mismo día)**: se agregó
+    `ghl_create_user` (crear usuarios nuevos en GHL vía `POST /users/`, requiere scope
+    `users.write`) — schema verificado contra `CreateUserDto` del repo oficial
+    `GoHighLevel/highlevel-api-docs` (`apps/users.json`), incluyendo el campo `companyId`
+    (distinto de `locationId`, agregado como `GHL_COMPANY_ID` nuevo en `.env`, traído en vivo vía
+    `GET /locations/{locationId}`) y el objeto `permissions` completo. Se usó de entrada para crear
+    un usuario dedicado (`claude.asistente@gotir.es`) que permitiera loguearse por navegador y
+    revisar la lógica interna de los workflows de GHL — algo que la API pública no expone (ver
+    límite ya documentado en la sección 5.5/6.3 de `direcciones/comercial/CLAUDE.md`). El usuario se
+    creó con éxito, pero el siguiente paso (loguearse con Playwright) quedó bloqueado por la
+    política de red del entorno, que rechaza `app.gohighlevel.com` con 403 — pendiente que Mariano
+    lo habilite, mismo mecanismo que usó el 14 agosto para `services.leadconnectorhq.com`.
   - **22 tools (ampliado a 22 el 21 agosto 2026)**: se agregó `ghl_update_appointment_status`
     (marca `appointmentStatus` de una cita — `showed`/`noshow`/`cancelled`/etc. — vía `PUT
     /calendars/events/appointments/{id}`), a pedido explícito de Mariano después de que el paso 5

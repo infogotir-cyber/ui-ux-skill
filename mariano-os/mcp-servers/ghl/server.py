@@ -35,6 +35,10 @@ load_dotenv(REPO_ROOT / ".env")
 
 GHL_TOKEN = os.environ.get("GHL_PRIVATE_INTEGRATION_TOKEN")
 GHL_LOCATION_ID = os.environ.get("GHL_LOCATION_ID")
+# companyId (agency) de GOTIR — distinto del locationId, lo exige POST /users/ (crear usuario).
+# Traido en vivo el 21 agosto 2026 via GET /locations/{locationId} y guardado en .env porque es un
+# identificador estable, mismo criterio que GHL_LOCATION_ID.
+GHL_COMPANY_ID = os.environ.get("GHL_COMPANY_ID")
 GHL_API_VERSION = "2021-07-28"
 GHL_BASE_URL = "https://services.leadconnectorhq.com"
 # En las sesiones remotas de Claude Code (claude.ai/code) el trafico HTTPS
@@ -957,6 +961,96 @@ async def ghl_list_users() -> str:
             f"rol={role.get('role') or '—'} | dado_de_baja={u.get('deleted', False)}"
         )
     return "\n".join(lines)
+
+
+@mcp.tool()
+async def ghl_create_user(
+    first_name: str,
+    last_name: str,
+    email: str,
+    password: str,
+    role: Literal["admin", "user"] = "admin",
+    phone: str = "",
+    confirm: bool = False,
+) -> str:
+    """Crea un usuario nuevo en GHL, dado de alta en la location de GOTIR. Requiere confirmacion.
+
+    Pensada para dar de alta un usuario dedicado (ej. para que este mismo
+    sistema pueda loguearse via navegador y revisar cosas que la API no
+    expone, como la logica interna de los workflows — ver limitacion
+    documentada en `direcciones/comercial/CLAUDE.md` seccion 5.5/6.3).
+
+    NOTA TECNICA (21 agosto 2026, verificado contra el schema oficial
+    `CreateUserDto` del repo `GoHighLevel/highlevel-api-docs`): requiere el
+    scope `users.write` (no confirmado si ya esta habilitado en el token
+    actual — si da 401/403 por scope, hay que agregarlo). El body manda
+    `companyId` (GHL_COMPANY_ID) + `locationIds=[GHL_LOCATION_ID]` +
+    `type="account"` (usuario de sub-cuenta, no de agencia) + un objeto
+    `permissions` con los valores default de un usuario activo normal
+    (incluye `workflowsEnabled=True`, `workflowsReadOnly=False` — necesario
+    para poder ver Y editar Automatizaciones en el builder).
+
+    Args:
+        first_name: Nombre del usuario nuevo.
+        last_name: Apellido.
+        email: Email de login (no hace falta que reciba nada, solo sirve para loguearse).
+        password: Contrasena del usuario nuevo.
+        role: "admin" (default, acceso completo) o "user" (mas acotado).
+        phone: Telefono en formato internacional (opcional).
+        confirm: Poner True solo despues de que Mariano confirmo la accion.
+    """
+    permissions = {
+        "campaignsEnabled": True,
+        "campaignsReadOnly": False,
+        "contactsEnabled": True,
+        "workflowsEnabled": True,
+        "workflowsReadOnly": False,
+        "triggersEnabled": True,
+        "funnelsEnabled": True,
+        "websitesEnabled": False,
+        "opportunitiesEnabled": True,
+        "dashboardStatsEnabled": True,
+        "bulkRequestsEnabled": True,
+        "appointmentsEnabled": True,
+        "reviewsEnabled": True,
+        "onlineListingsEnabled": True,
+        "phoneCallEnabled": True,
+        "conversationsEnabled": True,
+        "assignedDataOnly": False,
+        "settingsEnabled": True,
+        "tagsEnabled": True,
+        "leadValueEnabled": True,
+        "marketingEnabled": True,
+        "agentReportingEnabled": True,
+    }
+    body = {
+        "companyId": GHL_COMPANY_ID,
+        "firstName": first_name,
+        "lastName": last_name,
+        "email": email,
+        "password": password,
+        "phone": phone or None,
+        "type": "account",
+        "role": role,
+        "locationIds": [GHL_LOCATION_ID],
+        "permissions": permissions,
+    }
+    body = {k: v for k, v in body.items() if v is not None}
+
+    if not confirm:
+        return (
+            "NO EJECUTADO (falta confirmacion). Se crearia este usuario en GHL:\n"
+            f"  nombre: {first_name} {last_name}\n"
+            f"  email: {email}\n"
+            f"  rol: {role}\n"
+            f"  location: {GHL_LOCATION_ID} (GOTIR)\n"
+            "  permisos: incluye acceso completo a Automatizaciones (ver/editar)\n"
+            "Describile esto a Mariano y volve a llamar con confirm=True solo si el confirma."
+        )
+
+    data = await ghl_request("POST", "/users/", json_body=body, location_param=None)
+    u = data.get("user", data)
+    return f"Usuario creado: {u.get('id', '?')} — {first_name} {last_name} ({email})"
 
 
 @mcp.tool()

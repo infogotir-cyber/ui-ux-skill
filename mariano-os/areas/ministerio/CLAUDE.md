@@ -104,7 +104,9 @@ día** — este último es nuevo, agregado como ítem 14 abajo.
 
 1. **Certificados — verificar impresión (Juliana)**, urgente, vencimiento sugerido 25 ago. El PDF ya
    fue enviado a Mariano; **Juliana** (única persona del área administrativa de la iglesia) dijo que
-   los iba a imprimir — falta confirmar si ya lo hizo.
+   los iba a imprimir — falta confirmar si ya lo hizo. **Actualización 21 ago 2026**: Juliana
+   imprime los certificados **recién cuando cada estudiante ya haya pagado la graduación** — este
+   ítem queda condicionado al ítem 11 (pago de los 15€ por estudiante), no es independiente.
 2. **Bandas — RESUELTO por Juliana (18 ago), ya NO es tarea de Adrián Caro/equipo de Mariano**. Se
    había pedido a Adrián buscar links de proveedores de bandas personalizadas y genéricas, pero
    llegó tarde. La pastora le pidió directo a Juliana ir a comprar bandas genéricas a un "chino".

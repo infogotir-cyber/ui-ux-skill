@@ -804,6 +804,28 @@ formalmente los grupos FM4.3, FM4.4 y FM4.5:
 - Logística del evento de Lanzamiento en sí (dónde, cómo, quién más participa) todavía no está
   coordinada — es un pendiente abierto, no asumas detalles que Mariano no dio.
 
+### Grupo de Madrid — pareja ministerial de Mariano, candidatas en riesgo (agregado 21 ago 2026)
+Información nueva que no encaja todavía en la estructura FM4.1–4.5 de arriba — esos son los grupos
+que Mariano **discipula** (es el líder de cada pareja); esto es distinto: Mariano tiene además su
+**propia pareja ministerial**, **Jenny**, con la que lidera directamente un grupo en **Madrid**
+(geografía nueva — todo lo demás de este documento es Valencia). ⚠️ No confirmado si esta Jenny es
+la misma persona que **Jenny Rodríguez** (sección "Graduación New Life", ítem 14, edecanes) — no
+asumir, son contextos distintos (Madrid/liderazgo vs. New Life/graduación) y acá Mariano no dio
+apellido.
+
+Sus dos "ovejas" en ese grupo son **Marianne** y **Yorlenny** — candidatas a activarse como líderes
+en el **Lanzamiento del 5 sept 2026** (mismo evento de arriba, no uno distinto). **Riesgo real
+detectado hoy (21 ago)**: las dos manifestaron que querían renunciar — el costo de viajar a
+Valencia para el evento les parece mucho dinero. Mariano tiene **una llamada hoy mismo con
+Yorlenny, Marianne y Jenny** para "visionarlas" (pastoralmente, no es una gestión operativa) y que
+decidan venir y liderar. Este sistema no participa de esa conversación ni de la decisión pastoral —
+solo registra el resultado cuando Mariano lo cuente.
+
+**Pendiente estructural, no resuelto**: no está claro si Marianne/Yorlenny se suman como candidatas
+nuevas al Lanzamiento (además de Jacobo/Paulina/Lisandro/David/Sabrina ya listados arriba) o si el
+grupo de Madrid es un tramo separado del pipeline que no pasa por Valencia — no asumir, preguntar
+si hace falta precisión la próxima vez que se toque este tema.
+
 ## 5. Discípulos actuales por grupo (lista rápida de referencia)
 - FM4.1 — Adrián Caro e Ingrid Guaño
 - FM4.2 — Diego Villavicencio y Rebeca Lema

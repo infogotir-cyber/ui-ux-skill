@@ -200,6 +200,14 @@
    - Estado: **abierto**, varios sub-ítems en paralelo.
    - Recordado: 2 veces (21 ago 2026, dos actualizaciones el mismo día).
 
+5. **Grupo de Madrid — Marianne y Yorlenny en riesgo de no ir al Lanzamiento (5 sept 2026)**
+   - Detalle completo en `areas/ministerio/CLAUDE.md`, sección "Grupo de Madrid". Mariano tiene
+     llamada **hoy (21 ago 2026)** con Yorlenny, Marianne y Jenny (su pareja ministerial en Madrid)
+     para visionarlas — las dos manifestaron querer renunciar por el costo de viajar a Valencia.
+   - Estado: **abierto, esperando el resultado de la llamada de hoy** — decisión pastoral, este
+     sistema no participa, solo espera que Mariano cuente cómo quedó.
+   - Recordado: 1 vez (21 ago 2026).
+
 ---
 
 ## Hechos (quedan un tiempo como registro antes de limpiarse)

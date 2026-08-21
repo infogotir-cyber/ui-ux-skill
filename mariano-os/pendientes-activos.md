@@ -158,15 +158,27 @@
 
 ### Ministerio (Ruge y otros)
 
-3. **Inventario físico de Ruge — documento definitivo ya cargado, quedan 2 puntos abiertos**
-   - Estado: **en curso**. Mariano corrigió y subió el excel final
-     (`Ruge_tareas_por_persona_DEFINITIVO_19ago2026.xlsx`) y se sincronizó lo relevante a ClickUp
-     — detalle completo en `areas/ministerio/CLAUDE.md`, sección "Documento definitivo — corrección
-     de Mariano". El reto de los platos de cartón quedó resuelto en 70 (confirmado por él mismo).
-   - Quedan 2 sin resolver, Mariano dijo que los corrobora él mismo: (a) paños pequeños, linterna
-     de cabeza, martillo y el detalle de los 3 maletines rotos — sin ítem claro en el sistema; (b)
-     si las banderas de tribu están completas.
-   - Recordado: 1 vez (20 ago, chequeo diario 20:00).
+3. **Inventario de Ruge — cambio de fuente de verdad (21 ago 2026): ahora se trabaja sobre el excel
+   de Marco Jurado, no sobre los derivados "por persona"**
+   - Estado: **en curso**. Mariano avisó que Marco Jurado (dueño real del inventario) quiere que se
+     use su propio excel por ítem/comisión de ahora en más
+     (`areas/ministerio/recursos/INVENTARIO_2026_RUGE_actualizado_21ago2026.xlsx`) — los archivos
+     "por persona" (incluido `Ruge_tareas_por_persona_DEFINITIVO_19ago2026.xlsx`, que hasta ayer
+     era la fuente de verdad) quedan deprecados como documento de trabajo activo. Detalle completo
+     en `areas/ministerio/CLAUDE.md`, sección "Cambio de fuente de verdad — Marco Jurado retoma el
+     inventario maestro".
+   - **Regla nueva**: no se le agregan columnas al excel de Marco Jurado — fecha límite y encargado
+     puntual (cuando no está claro en "Régimen de tenencia") se siguen trackeando en
+     `ruge_reparto_lookup.md`/acá, cruzando por nombre de ítem. Falta reconciliar ese lookup (202
+     ítems) contra el excel nuevo (~230 ítems) — se va a ir haciendo tarea por tarea con Mariano,
+     no de una sola vez.
+   - De los 2 puntos que quedaban abiertos: **"banderas de tribu" aparece 5/5 en el excel nuevo**
+     (`PROPIEDAD`, `ALMACEN RUGE`) — parece resuelto, pendiente que Mariano lo confirme
+     explícitamente (no se marca `hecho` por inferencia). El detalle de los "3 maletines rotos"
+     apareció asociado a "COCINAS PORTATILES DE GAS" (ya `GESTIONADO`/`OK` como ítem, el maletín
+     roto en sí sigue sin resolver). Paños pequeños, linterna de cabeza y martillo siguen sin
+     rastro en ningún excel — Mariano dijo que los corrobora él mismo.
+   - Recordado: 2 veces (20 ago, chequeo diario 20:00; 21 ago, cambio de fuente).
 
 ---
 

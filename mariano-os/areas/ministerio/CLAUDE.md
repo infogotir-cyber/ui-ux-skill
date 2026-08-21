@@ -478,6 +478,57 @@ CLAUDE.md`):
   una — el detalle ítem por ítem sigue viviendo en el excel definitivo, no en ClickUp (mismo
   criterio ya documentado: ClickUp tiene 18 tareas a nivel de bloque, no 202 a nivel de ítem).
 
+### Cambio de fuente de verdad — Marco Jurado retoma el inventario maestro (21 agosto 2026)
+
+Mariano avisó que **Marco Jurado** (dueño real del inventario de Ruge — el archivo original
+`INVENTARIO_2026_RUGE_original.xlsx` de la sección "Reparto final..." arriba ya era suyo) decidió
+que no se siga trabajando sobre los derivados "por persona" que se armaron entre el 17 y el 19 de
+agosto — quiere que se trabaje directo sobre un excel propio, organizado por ítem/comisión, que él
+mismo actualizó y volvió a subir.
+
+**Archivo nuevo, fuente de verdad única de ahora en más**:
+`areas/ministerio/recursos/INVENTARIO_2026_RUGE_actualizado_21ago2026.xlsx` — hoja única "Hoja1",
+247 filas, organizado por comisión (Cocina, Eventos, Guías, La Voz, Logística, Producción,
+Seguridad, Tiempos) con bloques de ítems bajo cada una. Columnas: Artículo, Stock actual/Cantidad,
+Reto 50 hombres, Régimen de tenencia (a veces ya incluye notas informales de quién presta/gestiona,
+ej. "PRESTADO (MARCO GUANUCHI)"), Comisión de revisión, Estado, Gestión y finanzas, **Estado
+actual** y **Checking** (dos columnas nuevas respecto al original de 17 ago, con notas reales de
+avance — ej. "3 CAJAS DE MALETIN ROTAS" en cocinas portátiles de gas, "12 TALLA L Y 12 TALLA M" en
+camisetas). Es, en esencia, una versión evolucionada del inventario original, no un documento
+nuevo desde cero — confirmado comparando estructura y nombres de ítem contra
+`INVENTARIO_2026_RUGE_original.xlsx`.
+
+**Quedan deprecados como documento de trabajo activo** (se dejan en `recursos/` como histórico,
+sin borrar, pero no se editan ni se usan como fuente de ahora en más): `Ruge_reparto_por_persona_
+17ago2026.xlsx`, `Ruge_reparto_tareas_17ago2026_actualizado.xlsx`,
+`Ruge_tareas_por_persona_19ago2026_FINAL_con_stock.xlsx`,
+`Ruge_tareas_por_persona_DEFINITIVO_19ago2026.xlsx`.
+
+**Regla nueva y explícita de Mariano sobre cómo trackear lo que el excel de Marco Jurado no
+cubre**: si algo no tiene columna en su excel (el caso que dio como ejemplo: fecha límite), **no se
+le agrega una columna nueva al archivo de Marco Jurado** — se seguimiento en nuestros propios
+documentos (`ruge_reparto_lookup.md` y `pendientes-activos.md`), cruzando por nombre de ítem. Mismo
+criterio para "quién es el encargado puntual" cuando eso no queda claro en la columna "Régimen de
+tenencia".
+
+`ruge_reparto_lookup.md` sigue existiendo y sigue siendo el lugar para esa info (fecha límite,
+encargado) — pero ojo: se generó a partir de la versión "definitiva" de 202 ítems (19 ago), y el
+excel nuevo de Marco Jurado tiene ~230 ítems reales (247 filas menos headers) — **no está
+garantizado que los dos coincidan ítem por ítem todavía**. No se hizo una reconciliación completa
+de una sola vez — se va cruzando a medida que se recorra tarea por tarea con Mariano, que es
+justamente el paso siguiente que pidió.
+
+**Dos hallazgos ya cruzados al leer el excel nuevo, relevantes para `pendientes-activos.md`** (sin
+marcarlos `hecho` todavía — esa regla es de Mariano, no por inferencia, así que quedan para que él
+los confirme):
+- **"Banderas de tribu"**: el excel nuevo las tiene en 5/5 (`PROPIEDAD`, `ALMACEN RUGE`) — parece
+  resuelto, pendiente que Mariano lo confirme.
+- **"3 maletines rotos"**: aparece como nota en la columna Checking del ítem "COCINAS PORTATILES DE
+  GAS" ("3 CAJAS DE MALETIN ROTAS") — el ítem en sí ya está `GESTIONADO`/`OK`, pero el detalle del
+  maletín roto queda anotado sin resolver todavía.
+- Sin rastro en el excel nuevo de "paños pequeños", "linterna de cabeza" ni "martillo" — siguen
+  sin corroborar, tal como estaban.
+
 ### Rate limit de ClickUp (confirmado varias veces, 17-18 ago 2026) — RESUELTO 18 ago 2026
 17 ago: al traer la lista de Inventario, la API devolvió "Rate limit exceeded" dos veces seguidas
 (859 y luego 794 minutos restantes) — confirma que es un límite real que se va descontando, no un

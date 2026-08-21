@@ -166,11 +166,21 @@ entran, de qué calidad) con el dato de comercial (qué pasa con esos leads desp
 **Conexión en tiempo real a la cuenta de ads — pedida, todavía sin construir**: Mariano quiere que
 el sistema se conecte a su cuenta de administrador de anuncios para ver en tiempo real cuánto se
 invierte, si tiene sentido, y qué mejorar — mismo principio de "conexión en tiempo real, no datos
-viejos" que ya rige el resto de `mariano-os` (ver `CLAUDE.md` raíz). **No se asume la plataforma**:
-Mariano dijo "cuenta de administrador de anuncios" sin especificar si es Meta Ads Manager, Google
-Ads, o ambas — hace falta que lo confirme antes de poder construir la conexión (mismo patrón que se
-siguió para GHL: servidor MCP propio, credenciales en `.env`, tools de lectura primero y cualquier
-escritura con `confirm=True` obligatorio).
+viejos" que ya rige el resto de `mariano-os` (ver `CLAUDE.md` raíz). **Plataforma confirmada (21 agosto 2026): Meta Ads Manager** (Facebook/Instagram Ads) — Mariano lo
+confirmó directo. Falta construir la conexión (mismo patrón que se siguió para GHL: servidor MCP
+propio contra la API de Marketing de Meta, credenciales en `.env`, tools de lectura primero y
+cualquier escritura con `confirm=True` obligatorio — aunque de entrada el pedido de Mariano es solo
+de lectura/análisis, no de crear o pausar campañas). Lo que falta que Mariano consiga antes de
+poder construirlo:
+- **Un access token de la API de Marketing de Meta** con permiso `ads_read` (mínimo) sobre la
+  cuenta de anuncios — se genera desde Meta Business Manager (Configuración del negocio → Usuarios
+  del sistema → crear un usuario del sistema → generar token con el activo "cuenta de anuncios"
+  asignado, o vía una app de desarrollador con el producto "Marketing API" agregado). Conviene un
+  token de usuario del sistema (no caduca en 60 días como el de usuario normal).
+- **El ID de la cuenta de anuncios** (formato `act_XXXXXXXXXXXXX`), visible en Meta Ads Manager,
+  arriba a la izquierda o en la URL.
+No se pudo avanzar más sin que Mariano consiga estos dos datos — quedó pedido, ver
+`pendientes-activos.md`.
 
 **Pregunta abierta que Mariano hizo, sin resolver**: si conviene pedirle a Agustín Zaya (Exxo) que
 comparta el contexto/documentación que ellos mismos usan para IA sobre el trabajo de marketing que

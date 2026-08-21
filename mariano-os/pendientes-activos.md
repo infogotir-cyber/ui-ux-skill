@@ -163,13 +163,15 @@
    - Estado: **abierto**, sin fecha.
    - Recordado: 1 vez (21 ago 2026).
 
-4. **Conectar el sistema a la cuenta de administrador de anuncios de Mariano**
+4. **Conectar el sistema a la cuenta de administrador de anuncios de Mariano (Meta Ads Manager)**
    - Detalle completo en `direcciones/marketing/CLAUDE.md`, sección 7. Pedido explícito de Mariano
      para tener visibilidad en tiempo real de la inversión y el desempeño de las campañas de Exxo.
-   - **Falta antes de poder construirlo**: confirmar qué plataforma exactamente (Meta Ads Manager,
-     Google Ads, u otra/ambas) y conseguir credenciales de acceso — mismo patrón que se usó para
-     construir el servidor MCP de GHL.
-   - Estado: **abierto — bloqueado esperando que Mariano confirme la plataforma**.
+   - **Plataforma confirmada (21 ago 2026): Meta Ads Manager.**
+   - **Falta antes de poder construirlo**: (a) un access token de la API de Marketing de Meta con
+     permiso `ads_read` (idealmente de un usuario del sistema, no caduca a los 60 días), y (b) el ID
+     de la cuenta de anuncios (`act_XXXXXXXXXXXXX`) — ver instrucciones de dónde conseguir cada uno
+     en `direcciones/marketing/CLAUDE.md` sección 7.
+   - Estado: **abierto — bloqueado esperando que Mariano consiga el token y el ID de cuenta**.
    - Recordado: 1 vez (21 ago 2026).
 
 5. **Decidir si pedirle a Agustín Zaya (Exxo) el contexto/documentación de marketing que ellos usan**

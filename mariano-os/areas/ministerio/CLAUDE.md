@@ -887,7 +887,70 @@ Este pipeline es la lente con la que hay que leer todo lo demás: Jacobo, Paulin
 Sabrina están hoy en el tramo "New Life → Lanzamiento" del pipeline, todavía no llegaron a
 "Liderazgo" pleno — de ahí que el 5 de septiembre sea la bisagra que los mueve al siguiente estado.
 
-## 8. Cómo comportarte en esta área
+## 8. Sistema de seguimiento y aprobación de estrategias FM4 (agregado 21 ago 2026)
+
+Mariano lo pidió explícitamente como líder de todos los grupos de jóvenes (FM4): necesita ver qué
+estrategia de crecimiento tiene cada grupo (4.1, 4.2, 4.3 — mencionó estos tres, no está claro si
+también aplica a 4.4/4.5 una vez activos, no asumir) para llevar más gente al Encuentro, a New
+Life, al Lanzamiento.
+
+**El motivo de fondo, dicho por él mismo**: lleva "un poco más de seis meses" al frente del trabajo
+con el grupo de jóvenes y no está viendo el crecimiento real que debería haber — no ha habido
+líderes nuevos, nadie que ya se estuviera preparando de antemano. Este sistema de seguimiento es su
+respuesta a ese diagnóstico, no un proceso burocrático porque sí — vale la pena tenerlo presente
+como contexto si en el futuro hay que evaluar si está funcionando.
+
+### 8.1 Pipeline de aprobación de estrategias
+Cada grupo tiene que presentarle una estrategia formal de crecimiento (no algo informal/suelto —
+Mariano usó las palabras "de manera formal", la transcripción original decía también algo como "no
+organizadas"/"inorganizadas" que no quedó claro, no asumir el matiz exacto). El camino que sigue
+cada propuesta:
+
+1. El líder de cada grupo (FM4.1/4.2/4.3, etc.) presenta su estrategia a Mariano.
+2. Mariano ora sobre la propuesta, buscando confirmación de Dios — este paso es puramente
+   pastoral/espiritual, este sistema no participa ni opina.
+3. Con esa confirmación, Mariano manda la propuesta a los pastores.
+4. Si los pastores la aprueban, Mariano se la aprueba de vuelta al líder que la propuso.
+5. Mariano hace seguimiento de que el líder efectivamente ejecute lo que dijo que iba a hacer — no
+   alcanza con aprobar, hay que verificar que se cumpla.
+
+### 8.2 Reportes que Mariano les exige a sus discípulos (control del trabajo)
+- Las propuestas de estrategias/actividades evangelísticas (ver 8.1).
+- **Reporte semanal de asistencia**: cuánta gente fue cada viernes al grupo de cada líder.
+- En general, cualquier otro control del trabajo que estén haciendo — Mariano no dio una lista
+  cerrada, se agrega acá lo explícito y se amplía si da más detalle.
+
+### 8.3 Seguimiento pastoral individual — cadencia de ~3 semanas
+Aparte del control de trabajo (8.2), Mariano necesita reunirse con **cada uno** de sus discípulos
+por separado (o a veces de a dos, ver regla abajo) para ver cómo están de verdad: sus hábitos
+espirituales, si necesitan oración, cómo se sienten — no es una reunión de gestión, es pastoral.
+Ejemplo textual que dio: reunirse con **Diego** (Villavicencio, FM4.2) para ver cómo anda.
+
+**Regla de integridad que ya tiene establecida**: cuando la reunión 1:1 es con una mujer, Mariano
+evita quedar a solas con ella — la reúne junto con otra mujer del grupo, de a dos. Con hombres no
+mencionó esta restricción.
+
+**Cadencia pedida (esto es lo operativo que el sistema sí puede ayudar a sostener)**: que no pasen
+**más de 3 semanas** sin que Mariano se reúna individualmente con cada uno de sus discípulos —
+quiere ir agendando llamadas para sostener ese ritmo, en vez de que dependa de que se acuerde solo.
+
+**Estado de esto en el sistema (21 ago 2026)**: todavía no hay un registro real de cuándo fue la
+última reunión 1:1 de Mariano con cada discípulo — no se inventa esa fecha. A medida que Mariano
+cuente que se reunió con alguien (o pida que se agende una llamada, como ya se hizo hoy con
+Yorlenny/Marianne/Jenny — ver sección del grupo de Madrid — aunque esa es una llamada con ovejas,
+no exactamente el 1:1 con un discípulo directo), este sistema debería: (a) registrar la fecha real
+de la reunión, y (b) avisar proactivamente cuando se estén por cumplir 3 semanas desde la última
+con alguien, para que Mariano pueda agendar la siguiente a tiempo. Falta decidir dónde vive ese
+registro (tabla en este documento, o una lista nueva en ClickUp) — no se creó todavía, para no
+inventar estructura antes de tener las primeras fechas reales.
+
+**Discípulos a los que aplicaría esta cadencia** (de la sección 5 de arriba, los ya activos o
+próximos a activarse): Adrián Caro, Ingrid Guaño (FM4.1), Diego Villavicencio, Rebeca Lema (FM4.2),
+Rocío Jury, Jacobo Marulanda (FM4.3) — y probablemente también Lisandro Tapia, Paulina Soto, David
+Valera, Sabrina Navarro (FM4.4/4.5) una vez formalmente activados el 5 sept, aunque Mariano no lo
+confirmó explícitamente para este grupo.
+
+## 9. Cómo comportarte en esta área
 - Cuando Mariano te cuente algo de un discípulo, grupo, New Life o Ruge, actualizá ClickUp
   directamente sin esperar a que te lo pida — es una instrucción explícita y permanente suya.
 - Cuando la información que da es parcial o contradictoria (pasa seguido con las entradas y con

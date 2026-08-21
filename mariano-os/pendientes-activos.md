@@ -215,6 +215,20 @@
    - Estado: **abierto**, sin urgencia declarada.
    - Recordado: 1 vez (21 ago 2026).
 
+7. **Sistema de seguimiento 1:1 con discípulos FM4 — falta el registro real de fechas**
+   - Detalle completo en `areas/ministerio/CLAUDE.md`, sección 8.3. Mariano pidió que no pasen más
+     de 3 semanas sin que se reúna individualmente con cada uno de sus discípulos (Adrián, Ingrid,
+     Diego, Rebeca, Rocío, Jacobo, y probablemente Lisandro/Paulina/David/Sabrina una vez activos) —
+     quiere ir agendando llamadas para sostener ese ritmo.
+   - **Falta antes de poder avisar proactivamente**: no hay todavía un registro real de cuándo fue
+     la última reunión 1:1 con cada uno — no se puede inventar esa fecha. A medida que Mariano
+     cuente que se reunió con alguien, hay que registrar la fecha (todavía sin decidir dónde: tabla
+     acá mismo o lista nueva en ClickUp) para poder empezar a avisar cuando se acerquen las 3
+     semanas.
+   - Estado: **abierto — sistema pedido, implementación de tracking pendiente de las primeras
+     fechas reales**.
+   - Recordado: 1 vez (21 ago 2026).
+
 ---
 
 ## Hechos (quedan un tiempo como registro antes de limpiarse)

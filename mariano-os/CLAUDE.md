@@ -102,7 +102,8 @@ la herramienta:
 
 - **ClickUp** — se puede crear/modificar **directamente, sin pedir confirmación previa**. Esto
   confirma y generaliza (más allá de ministerio) la instrucción que ya existía en
-  `areas/ministerio/CLAUDE.md` sección 8. Aplica a cualquier área que use ClickUp, no solo
+  `areas/ministerio/CLAUDE.md` sección 9 ("Cómo comportarte en esta área" — renumerada el 21 ago
+  2026 al agregarse la sección 8 nueva). Aplica a cualquier área que use ClickUp, no solo
   ministerio.
 - **GHL, Holded, y cualquier otra herramienta** — toda acción de creación o escritura requiere
   **confirmación explícita previa**, siempre: describirle a Mariano exactamente qué acción se va a

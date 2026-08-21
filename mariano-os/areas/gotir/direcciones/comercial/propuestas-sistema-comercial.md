@@ -5,6 +5,12 @@
 > con seguimiento basado en notas) en 3 propuestas completas de sistema comercial, de punta a punta,
 > para elegir una. Versión visual publicada como artifact — este documento es la versión persistida
 > en el sistema, mismo contenido.
+>
+> **Actualización (20 ago 2026, más tarde el mismo día)**: se agregó el estándar permanente de
+> técnica de venta (sección 12 de `CLAUDE.md`, disparado por el caso de seguimiento a Sara Sofía) —
+> todo mensaje que cualquiera de las tres propuestas genere (borrador para aprobar, guion de bot, o
+> lo que sea) pasa por ese checklist antes de salir. Se anota abajo, dentro de cada propuesta, cómo
+> aplica específicamente.
 
 ## El diagnóstico del que parten las tres (no cambia entre propuestas)
 
@@ -36,6 +42,12 @@ nunca se le pase nadie.
 - **Qué sigue siendo de Mariano**: escribir/aprobar cada respuesta real, la llamada entera.
 - **Se construye con**: lo que ya existe — los 2 Routines diarios, Fragmentos, 2 pasos nuevos en el
   workflow de GHL. Sin herramientas nuevas.
+- **Cómo aplica el estándar de venta (sección 12 de `CLAUDE.md`)**: acá es donde más rinde — cada
+  borrador que se arma para que Mariano apruebe pasa primero por el checklist de 7 puntos (motivo
+  real para escribir hoy, lenguaje asuntivo si corresponde, CTA único y cerrado, urgencia real,
+  salida fácil, sin mencionar incumplimientos, corto). Es la misma corrección que se le hizo al
+  mensaje de Sara Sofía — con esta propuesta, esa corrección pasa a aplicarse siempre, antes de que
+  Mariano vea el borrador, no solo cuando él la pide.
 - **Límite real**: si el volumen de leads crece fuerte, Mariano sigue siendo quien escribe cada
   respuesta — la lista se prioriza mejor, pero no se achica sola.
 - **Riesgo**: bajo.
@@ -62,6 +74,13 @@ llega ya calificado — la parte que solo él puede hacer bien (confianza, cierr
   (el bot deriva, no improvisa); la llamada entera.
 - **Se construye con**: GHL Workflow AI nativo (o revisar los bots existentes) + reglas de
   escalamiento a humano.
+- **Cómo aplica el estándar de venta (sección 12 de `CLAUDE.md`)**: acá es donde más pesa el riesgo
+  — el bot no tiene calidez humana que compense un guion débil, así que cada mensaje fijo (apertura,
+  calificación, recordatorios) tiene que pasar el checklist **antes de publicarse**, no caso por
+  caso como en la Propuesta 1. Si el guion del bot cae en "checking in" genérico o pide 3+ opciones
+  abiertas en vez de un CTA cerrado, el problema se multiplica por cada lead que lo recibe, no se
+  corrige uno por uno. Esto sube el esfuerzo de diseño inicial, pero es no-negociable si se elige
+  esta ruta.
 - **Límite real**: un bot mal calibrado puede sonar genérico justo donde el diferencial de GOTIR es
   sonar genuino — necesita pruebas reales antes de soltarlo con leads de verdad.
 - **Riesgo**: medio-alto.
@@ -85,6 +104,10 @@ una lista viva dentro de GHL, para que no dependa de la memoria de Mariano.
   que nada quede invisible; decidir a quién priorizar.
 - **Se construye con**: workflows + campos obligatorios en GHL, más conectar la rama de n8n ya
   diseñada y sin usar.
+- **Cómo aplica el estándar de venta (sección 12 de `CLAUDE.md`)**: no aplica directo — esta
+  propuesta no genera texto de venta, solo garantiza que Mariano vea a tiempo a quién tiene que
+  escribirle. El checklist sigue siendo responsabilidad de Mariano al redactar cada mensaje (o de
+  este sistema, si Mariano pide ayuda puntual con uno) — esta ruta no lo automatiza.
 - **Límite real**: no reduce el tiempo que toma escribir cada respuesta — garantiza que nada se
   pierde, pero las horas del día siguen siendo las mismas.
 - **Riesgo**: bajo.
@@ -99,13 +122,17 @@ una lista viva dentro de GHL, para que no dependa de la memoria de Mariano.
 | Escala más allá de 2-3 llamadas/día | Parcial | Sí | Parcial |
 | Tiempo de construcción | Corto | Medio-largo (probar el bot) | Medio |
 | Ataca la capa 3 (raíz del problema) | Indirecto | Indirecto | Directo |
+| Aplica el estándar de venta (Cardone/Cialdini/Voss, sección 12) | Sí, en cada mensaje, antes de que Mariano lo vea | Crítico, se diseña una vez en el guion del bot | No aplica — no genera texto de venta |
 
 ## Recomendación (si Mariano pide una opinión)
 
 Empezar por la **Propuesta 3** — no por ser la más ambiciosa, sino porque es la única que ataca
 directamente la causa raíz que el propio Mapa Antifugas señaló (capa 3), y porque las otras dos la
 necesitan de todos modos: un bot sin campos obligatorios detrás sigue perdiendo casos en silencio, y
-un copiloto sin una lista confiable de "quién espera" es solo un chequeo diario más largo.
+un copiloto sin una lista confiable de "quién espera" es solo un chequeo diario más largo. Con el
+estándar de venta ya incorporado (sección 12), la Propuesta 1 gana un poco de terreno frente a esto
+si a Mariano le importa más la calidad de cada mensaje individual que la garantía de que nada se
+pierda — son objetivos distintos, no hay una respuesta única.
 
 La Propuesta 1 es la que más rápido se siente en el día a día — si Mariano prefiere resultado
 inmediato sobre robustez de fondo, es la de menor riesgo y más rápida de armar en la semana.

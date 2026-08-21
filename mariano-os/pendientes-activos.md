@@ -191,8 +191,14 @@
      de comprar la decoración y le reporte el gasto total (para saber si Mariano tiene que poner
      dinero extra más allá de los 25€ ya definidos para los globos); asegurarse de que el resto de
      los graduandos efectivamente paguen los 15€.
+   - **Agregado 21 ago 2026, más tarde**: (a) el regalito que Lurbin quiere "sembrar" para los
+     graduados está esperando confirmación de los pastores, sin resolver; (b) reparto del
+     seguimiento de pago — Mariano hace seguimiento a los líderes **Paola (Huanucci) y Diego**
+     (nuevo, sin más contexto todavía) para sus propios estudiantes, y él mismo directamente para
+     que **Paulina, Jacobo y Lisandro** paguen (Lisandro es el mismo caso de arriba sin poder
+     pagar — no confirmado si esto significa que Mariano lo va a cubrir él).
    - Estado: **abierto**, varios sub-ítems en paralelo.
-   - Recordado: 1 vez (21 ago 2026).
+   - Recordado: 2 veces (21 ago 2026, dos actualizaciones el mismo día).
 
 ---
 

@@ -132,7 +132,10 @@ día** — este último es nuevo, agregado como ítem 14 abajo.
      de Mariano/Lurbin se suma al costo que se reparte entre los graduandos o si queda aparte, fuera
      de ese presupuesto — no asumir, confirmar con Mariano cuando arme el ítem 10.
    - Lurbin está evaluando además **bolígrafos decorados de regalo para cada graduado**, y si forrar
-     las sillas para que se vean mejor — todavía en evaluación, no confirmado.
+     las sillas para que se vean mejor — todavía en evaluación, no confirmado. **Actualización 21
+     ago 2026, más tarde**: el regalito específicamente está **esperando confirmación de los
+     pastores** — Lurbin quiere "sembrarlo" (aportarlo ella), pero falta que los pastores lo
+     aprueben antes de seguir. Sin resolver.
    - **Un día antes de la graduación** (31 ago) hay que ir a dejar toda la decoración armada y lista
      en la iglesia.
 
@@ -200,6 +203,18 @@ día** — este último es nuevo, agregado como ítem 14 abajo.
     definir/confirmar **quién termina pagando la entrada de estos 3** (no está cerrado si sale de
     la siembra del grupo de discípulos, de Mariano, o de otro lado) — tarea propia que se agregó a
     su lista de pendientes de la graduación, no algo que se pueda dar por resuelto todavía.
+
+    **Actualización 21 ago 2026, más tarde todavía — se define el reparto del seguimiento de
+    pago**: Mariano se divide el trabajo así — hace **seguimiento a los líderes Paola (Huanucci) y
+    Diego** para que confirmen que sus propios estudiantes que se gradúan efectivamente paguen los
+    15€; y él mismo, directamente (sin pasar por un líder), se encarga de que **Paulina (María
+    Paulina Soto Rave), Jacobo (Jacobo Marulanda Gómez) y Lisandro (Lisandro David Tapia Salazar)**
+    paguen su graduación. Nota: Lisandro es el mismo que sigue en la lista de arriba sin poder
+    pagar — no está claro todavía si Mariano tomando el seguimiento directo implica que va a cubrir
+    su entrada él mismo o si es solo que va a insistir en conseguir el pago por otra vía — no
+    asumir, confirmar si hace falta precisión. **Diego** es un líder FM4 nuevo en este documento —
+    no estaba nombrado antes, no se sabe todavía a qué grupo lidera; se agrega tal cual lo dio
+    Mariano, sin inventar más contexto.
 12. **Cartelito con nombre por silla, para cada estudiante graduando** — RESUELTO 18 ago 2026, lo
     diseñó este sistema. Mariano mandó el PDF de referencia de la invitación de New Life (paleta
     azul-violeta y tipografía) y la lista de 10 graduandos, sin logo de la iglesia. Se armó un PDF

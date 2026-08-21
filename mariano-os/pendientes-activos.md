@@ -182,7 +182,7 @@
      (más caro pero deducible, y no le parece correcto operar en ARS para un negocio español), pero
      sin fecha todavía — acaba de cargar 70.000 ARS para no cortar la campaña mientras tanto.
    - Estado: **abierto**, sin fecha.
-   - Recordado: 1 vez (21 ago 2026).
+   - Recordado: 2 veces (21 ago 2026, dos veces el mismo día).
 
 4. **Conectar el sistema a la cuenta de administrador de anuncios de Mariano (Meta Ads Manager)**
    - Detalle completo en `direcciones/marketing/CLAUDE.md`, sección 7. Pedido explícito de Mariano
@@ -193,14 +193,14 @@
      de la cuenta de anuncios (`act_XXXXXXXXXXXXX`) — ver instrucciones de dónde conseguir cada uno
      en `direcciones/marketing/CLAUDE.md` sección 7.
    - Estado: **abierto — bloqueado esperando que Mariano consiga el token y el ID de cuenta**.
-   - Recordado: 1 vez (21 ago 2026).
+   - Recordado: 2 veces (21 ago 2026, dos veces el mismo día).
 
 5. **Decidir si pedirle a Agustín Zaya (Exxo) el contexto/documentación de marketing que ellos usan**
    - Detalle en `direcciones/marketing/CLAUDE.md`, sección 7. Mariano lo planteó como duda, no como
      decisión tomada — para que este sistema entienda mejor el historial completo de lo que Exxo
      viene haciendo en marketing.
    - Estado: **abierto**, sin decidir.
-   - Recordado: 1 vez (21 ago 2026).
+   - Recordado: 2 veces (21 ago 2026, dos veces el mismo día).
 
 ### Ministerio (Ruge y otros)
 

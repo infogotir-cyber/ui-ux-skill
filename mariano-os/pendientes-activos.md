@@ -180,6 +180,20 @@
      rastro en ningún excel — Mariano dijo que los corrobora él mismo.
    - Recordado: 2 veces (20 ago, chequeo diario 20:00; 21 ago, cambio de fuente).
 
+4. **Graduación New Life (1 sept 2026) — lista de coordinaciones propias de Mariano, como pilar**
+   - Detalle completo en `areas/ministerio/CLAUDE.md`, sección "Graduación New Life", ítems 4/6-11/14.
+   - Pendientes suyos, sin hacer todavía: escribirle a **Jenny Rodríguez** preguntando si va a haber
+     edecanes; recordarle a **Impact Worship/David Valera** que prepare canciones (previsto para
+     unos días antes del 1 sept, no ahora); seguimiento con **Carlos Prado** (rol de producción/
+     servicio) y con **Margot** (rol de servidores); pedirle a **Costa Rica** cuál va a ser la
+     prédica del pastor ese día; definir **quién paga la entrada (15€) de Lisandro, Luisa y
+     Jessica** (Iván Paredes ya quedó resuelto — no va, sin drama); confirmar que **Lurbin** termine
+     de comprar la decoración y le reporte el gasto total (para saber si Mariano tiene que poner
+     dinero extra más allá de los 25€ ya definidos para los globos); asegurarse de que el resto de
+     los graduandos efectivamente paguen los 15€.
+   - Estado: **abierto**, varios sub-ítems en paralelo.
+   - Recordado: 1 vez (21 ago 2026).
+
 ---
 
 ## Hechos (quedan un tiempo como registro antes de limpiarse)

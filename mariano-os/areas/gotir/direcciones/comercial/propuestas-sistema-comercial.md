@@ -1,4 +1,4 @@
-# Tres propuestas de sistema comercial — GOTIR (20 agosto 2026)
+# Propuestas de sistema comercial — GOTIR (20 agosto 2026)
 
 > Pedido por Mariano: juntar todo el análisis del día (Mapa Antifugas actualizado, mini-funnel de
 > apertura, secuencia post-agendamiento, y el pedido nuevo de una bandeja de mensajes sin responder
@@ -11,6 +11,12 @@
 > todo mensaje que cualquiera de las tres propuestas genere (borrador para aprobar, guion de bot, o
 > lo que sea) pasa por ese checklist antes de salir. Se anota abajo, dentro de cada propuesta, cómo
 > aplica específicamente.
+>
+> **Segunda actualización (20 ago 2026, misma tarde)**: Mariano pidió una cuarta propuesta que
+> combine lo mejor de la 1 (Copiloto) y la 3 (Reglas que se cumplen solas), con criterio de experto
+> en ventas/marketing y con todo lo que este sistema ya sabe de GOTIR. Es la **Propuesta 4 — Motor +
+> Copiloto**, abajo, después de la 3. No reemplaza a las otras tres — se agrega como una cuarta
+> opción real, probablemente la más completa de las cuatro.
 
 ## El diagnóstico del que parten las tres (no cambia entre propuestas)
 
@@ -112,37 +118,120 @@ una lista viva dentro de GHL, para que no dependa de la memoria de Mariano.
   pierde, pero las horas del día siguen siendo las mismas.
 - **Riesgo**: bajo.
 
+## Propuesta 4 — Motor + Copiloto (lo mejor de la 1 y la 3)
+
+**Filosofía**: la Propuesta 1 protege la calidad de cada mensaje pero no garantiza que nada se
+pierda; la Propuesta 3 garantiza que nada se pierda pero no toca la calidad de lo que se escribe.
+Son dos mitades del mismo problema, no dos caminos que compitan — esta propuesta las junta en tres
+capas que se apoyan una en la otra: una **red** que hace cumplir sola las reglas de oro ya
+escritas (de la 3), un **copiloto** que lee esa red y arma cada mensaje real (de la 1), y el
+**estándar de venta** (sección 12) como filtro obligatorio antes de que cualquier texto llegue a
+los ojos de Mariano. Ataca la causa raíz (capa 3 del Mapa Antifugas) y protege la voz genuina de
+Mariano al mismo tiempo — las dos cosas que, separadas, cada propuesta dejaba sin resolver.
+
+- **Capa 1 — La Red (automática, sin que Mariano tenga que acordarse de nada)**:
+  - Fathom → GHL automatizado (resumen a la nota, etiqueta de temperatura, tarea de próxima
+    acción) usando la rama de n8n ya diseñada y sin conectar (sección 4.4/4.5 de `CLAUDE.md`).
+  - Campo obligatorio de "próxima acción — fecha y hora exacta" en GHL: no se puede cerrar el
+    registro de una llamada sin cargarlo. Esto no es solo una buena práctica genérica — resuelve
+    directamente el patrón que `patrones-llamadas.md` ya confirmó **2/2** en las dos únicas
+    llamadas analizadas hasta ahora (Sara Sofía "hoy mismo", Maryi "la semana que viene", ninguna
+    con hora concreta pedida en la llamada misma). Convierte un hallazgo de esta semana en una
+    regla que se cumple sola, en vez de depender de que Mariano se acuerde de preguntarlo en la
+    Fase 5.
+  - Etiqueta automática "Esperando respuesta desde: [fecha]" en cualquier contacto con mensaje
+    entrante sin responder tras N horas — arma la lista viva dentro de GHL (mismo mecanismo que ya
+    usa la cuenta para "Canal referencia (Dr)" y el workflow "Notificacion influencers", sección
+    5.5 — no es tecnología nueva para esta cuenta de GHL, es el mismo patrón aplicado a otro campo).
+  - Marcado automático de `showed`/`noshow` por evento de calendario (ya identificado como
+    mecanismo real en la sección 3.1.1).
+- **Capa 2 — El Copiloto (el chequeo diario que ya existe, mañana/noche, sección 9)**:
+  - En vez de que Mariano tenga que salir a buscar quién espera, el chequeo lee directamente la
+    lista viva que arma la Capa 1 (etiquetas "esperando respuesta" + tareas de próxima acción
+    vencidas), ordenada por urgencia real, no por orden de llegada.
+  - Por cada contacto, cruza la nota real + el historial de conversación (`ghl_read_conversation`)
+    y arma un borrador de mensaje.
+  - Mariano aprueba, edita o rechaza — nunca se manda nada sin que lo vea primero, mismo criterio
+    que ya rige para GHL en todo el sistema.
+- **Capa 3 — El Filtro de venta (sección 12 de `CLAUDE.md`, obligatorio, no opcional)**: ningún
+  borrador de la Capa 2 llega a los ojos de Mariano sin pasar antes el checklist de 7 puntos
+  completo — motivo real para escribir hoy, lenguaje asuntivo si corresponde, CTA único y cerrado,
+  urgencia real, salida fácil, sin mencionar incumplimientos, corto. No es una capa aparte que se
+  agrega después — está tejida dentro del mecanismo de la Capa 2, en cada borrador, siempre.
+- **Bonus concreto que ya salió de analizar las dos primeras llamadas de la ventana de
+  aprendizaje** (`patrones-llamadas.md`): el bloque de las 3 escuelas en Fase 3 ya se confirmó como
+  guion estandarizado, palabra por palabra, en 2/2 llamadas reales el mismo día — cargarlo como
+  Fragmento de GHL (mismo mecanismo que ya usan los 9 Fragmentos del mini-funnel de apertura)
+  ahorra ~8-10 minutos por llamada sin perder nada, y libera tiempo justo para las fases que sí
+  varían por cliente (Fase 2, Fase 4). No es parte central de esta propuesta, pero es del mismo
+  espíritu — mover a un sistema lo que ya está probado que funciona igual cada vez.
+- **Cómo resuelve la bandeja sin responder**: igual que la Propuesta 3 (etiqueta automática, lista
+  viva, nadie queda invisible), pero además el borrador de respuesta ya está armado y filtrado
+  cuando Mariano abre el chequeo — no hace falta que él arme el mensaje desde cero, solo que lo
+  revise.
+- **Qué se automatiza**: todo lo de la Propuesta 3 (Fathom → GHL, campo obligatorio, etiqueta de
+  "esperando respuesta", showed/no-show) + todo lo de la Propuesta 1 (los 2 mensajes que faltan en
+  la secuencia post-agendamiento, los 9 Fragmentos de apertura, la detección y priorización de
+  mensajes sin responder) + el filtro de venta aplicado siempre, no caso por caso.
+- **Qué sigue siendo de Mariano**: escribir/aprobar cada respuesta real (nunca se manda nada sin su
+  visto bueno), la llamada entera, decidir a quién priorizar cuando dos casos empatan en urgencia.
+- **Se construye con**: lo mismo que ya usan la Propuesta 1 y la 3 por separado — no hace falta
+  ninguna herramienta nueva. Se construye **por fases**, no de una vez, justamente para que cada
+  fase entregue valor real por sí sola sin depender de que las otras estén terminadas:
+  1. **Fase A (la más rápida, arranca la red de seguridad ya)**: campo obligatorio de próxima
+     acción con hora exacta + etiqueta automática de "esperando respuesta" en GHL. Solo esto ya
+     empieza a atacar la capa 3, aunque el copiloto todavía no exista.
+  2. **Fase B**: conectar Fathom → GHL vía la rama de n8n ya diseñada y sin usar.
+  3. **Fase C**: convertir el chequeo diario en el copiloto real — que lea la lista de la Capa 1 y
+     arme los borradores, siempre con el filtro de venta aplicado.
+  Cada fase es útil sola — no hay que esperar a las tres para empezar a notar la diferencia.
+- **Límite real**: sigue siendo Mariano quien habla con cada lead y aprueba cada mensaje — si el
+  volumen crece mucho más allá de 2-3 llamadas/día, esta propuesta no lo resuelve (para eso está la
+  Propuesta 2, el bot). Tampoco es la más rápida de armar de las cuatro — al combinar dos
+  mecanismos, el build completo (las 3 fases) toma más que la Propuesta 1 sola, aunque cada fase
+  por separado es rápida.
+- **Riesgo**: bajo — nada se manda sin aprobación explícita en ningún punto de las tres capas,
+  mismo principio no negociable que rige todo el sistema.
+
 ## Comparación lado a lado
 
-| — | Copiloto | Filtro Automático | Reglas que se cumplen solas |
-|---|---|---|---|
-| Quién habla con el lead | Siempre Mariano | Bot al inicio, Mariano al cerrar | Siempre Mariano |
-| Riesgo de sonar genérico | Bajo | Medio | Bajo |
-| Resuelve el no-show | Sí, confirmación activa | Sí, y precalifica solo | Sí, vía campo obligatorio |
-| Escala más allá de 2-3 llamadas/día | Parcial | Sí | Parcial |
-| Tiempo de construcción | Corto | Medio-largo (probar el bot) | Medio |
-| Ataca la capa 3 (raíz del problema) | Indirecto | Indirecto | Directo |
-| Aplica el estándar de venta (Cardone/Cialdini/Voss, sección 12) | Sí, en cada mensaje, antes de que Mariano lo vea | Crítico, se diseña una vez en el guion del bot | No aplica — no genera texto de venta |
+| — | Copiloto | Filtro Automático | Reglas que se cumplen solas | Motor + Copiloto |
+|---|---|---|---|---|
+| Quién habla con el lead | Siempre Mariano | Bot al inicio, Mariano al cerrar | Siempre Mariano | Siempre Mariano |
+| Riesgo de sonar genérico | Bajo | Medio | Bajo | Bajo |
+| Resuelve el no-show | Sí, confirmación activa | Sí, y precalifica solo | Sí, vía campo obligatorio | Sí, campo obligatorio + confirmación activa |
+| Escala más allá de 2-3 llamadas/día | Parcial | Sí | Parcial | Parcial (mismo límite que Copiloto) |
+| Tiempo de construcción | Corto | Medio-largo (probar el bot) | Medio | Medio, pero por fases — cada fase ya sirve sola |
+| Ataca la capa 3 (raíz del problema) | Indirecto | Indirecto | Directo | Directo |
+| Aplica el estándar de venta (Cardone/Cialdini/Voss, sección 12) | Sí, en cada mensaje, antes de que Mariano lo vea | Crítico, se diseña una vez en el guion del bot | No aplica — no genera texto de venta | Sí, en cada mensaje, antes de que Mariano lo vea |
 
 ## Recomendación (si Mariano pide una opinión)
 
-Empezar por la **Propuesta 3** — no por ser la más ambiciosa, sino porque es la única que ataca
-directamente la causa raíz que el propio Mapa Antifugas señaló (capa 3), y porque las otras dos la
-necesitan de todos modos: un bot sin campos obligatorios detrás sigue perdiendo casos en silencio, y
-un copiloto sin una lista confiable de "quién espera" es solo un chequeo diario más largo. Con el
-estándar de venta ya incorporado (sección 12), la Propuesta 1 gana un poco de terreno frente a esto
-si a Mariano le importa más la calidad de cada mensaje individual que la garantía de que nada se
-pierda — son objetivos distintos, no hay una respuesta única.
+**Actualizada tras agregar la Propuesta 4**: si Mariano tiene margen para construir por fases (no
+todo de una semana), **la Propuesta 4 es la recomendación real** — no porque sea la más vistosa,
+sino porque es la única de las cuatro que resuelve las dos cosas que hasta ahora había que elegir
+por separado: que nada se pierda (causa raíz, capa 3) y que cada mensaje que sale mantenga el nivel
+que ya se le exige desde el caso de Sara Sofía (sección 12). Y como se construye en fases, la
+primera (campo obligatorio + etiqueta automática) ya da resultado en días, sin esperar a que el
+copiloto completo esté armado.
 
-La Propuesta 1 es la que más rápido se siente en el día a día — si Mariano prefiere resultado
-inmediato sobre robustez de fondo, es la de menor riesgo y más rápida de armar en la semana.
+Si Mariano prefiere no comprometerse a las tres fases todavía y quiere algo más chico para empezar
+ya: **Propuesta 3** sigue siendo la apuesta más segura y rápida para atacar la causa raíz sola — es,
+de hecho, la Fase A + B de la Propuesta 4, así que elegirla no es un camino perdido, es empezar la
+Propuesta 4 sin comprometerse todavía a la Fase C (el copiloto).
 
-La Propuesta 2 es la de mayor techo, pero solo tiene sentido si el volumen de leads lo está
+La **Propuesta 1** sigue siendo la que más rápido se siente en el día a día si lo que más le importa
+a Mariano es la calidad de cada mensaje individual, sin tocar todavía la infraestructura de GHL — la
+diferencia con la 4 es que la 1 sola no resuelve el problema de fondo de "qué pasa si me olvido de
+revisar".
+
+La **Propuesta 2** es la de mayor techo, pero solo tiene sentido si el volumen de leads lo está
 desbordando genuinamente hoy — y antes de construir nada ahí, hay que abrir los workflows "Bot" que
 ya existen en la cuenta.
 
 ## Pendiente
 
-Mariano tiene que elegir una (o pedir una combinación) antes de que este sistema empiece a construir
-nada — ninguna de las tres se ejecuta sola, y cualquier cambio en GHL sigue necesitando confirmación
-explícita antes de tocar nada, como en todo el resto del sistema.
+Mariano tiene que elegir una (o confirmar que la 4 es la elegida, con o sin construir las tres fases
+de una) antes de que este sistema empiece a construir nada — ninguna de las cuatro se ejecuta sola,
+y cualquier cambio en GHL sigue necesitando confirmación explícita antes de tocar nada, como en todo
+el resto del sistema.

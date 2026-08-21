@@ -92,11 +92,10 @@ la tarde.
 
 **Contactos nuevos ya identificados, sin asignar todavía a un grupo FM4 específico** (Mariano los
 va a repartir entre FM4.1, 4.2 o 4.3 más adelante):
-- **Emiliano Ortiz** — 34 años, cordobés (Argentina), vive con Sabrina. Fue ayer (20 ago) a Noches
-  de Vida, primera vez. ⚠️ No confirmado si "Sabrina" acá es **Sabrina Navarro** (la pareja de
-  Mariano, ya documentada en `direcciones/comercial/CLAUDE.md` sección 5.2 de GOTIR) — si es la
-  misma persona, es información personal sensible sobre la vida de Mariano, tratar con discreción;
-  no asumir sin que Mariano lo confirme.
+- **Emiliano Ortiz** — 34 años, cordobés (Argentina). Fue ayer (20 ago) a Noches de Vida, primera
+  vez. **Confirmado por Mariano (21 ago 2026)**: es compañero de piso de **Sabrina Navarro** (ya
+  documentada en `direcciones/comercial/CLAUDE.md` sección 5.2 de GOTIR), viven en habitaciones
+  separadas — no es una situación de pareja. Información personal, tratar con discreción.
 - **Litzy** — 20 años, conocida personal de Mariano. En algún momento había querido contratar los
   servicios de GOTIR pero finalmente no lo hizo — Mariano la invitó igual a la iglesia, y fue ayer a
   Noches de Vida por primera vez. Cruce curioso con el área GOTIR, no requiere ninguna acción ahí,

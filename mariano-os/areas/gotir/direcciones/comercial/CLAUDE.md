@@ -394,9 +394,11 @@ queda anotado tal cual, **sin asumir para quién es cada uno**:
   **Identidades resueltas (17 agosto 2026)**, cruzando contra `GET /users/` de GHL (se habilitó el
   scope `users.readonly` ese mismo día) y confirmadas directamente por Mariano:
   - **Sabrina Navarro** (`sabriinavarro.sn@gmail.com`) — cuenta activa, **se deja tal cual a
-    propósito**: es pareja de Mariano y trabajó en GOTIR antes; él tiene la expectativa de que
-    vuelva a estar en su vida y a colaborar en GOTIR más adelante, por eso prefiere no borrar el
-    perfil por ahora. Tratar como información personal, con discreción.
+    propósito**: trabajó en GOTIR antes. **Corrección (21 ago 2026)**: no son pareja actualmente
+    ("de momento", en palabras de Mariano) — sí lo fueron, y él tiene la expectativa/esperanza de
+    que vuelvan a estarlo en el futuro. Sigue teniendo la expectativa de que colabore en GOTIR más
+    adelante, por eso prefiere no borrar el perfil por ahora. Tratar como información personal, con
+    mucha discreción.
   - **Pamela Jordan** — era **closer** (cerraba ventas), igual que Jonathan Barrionuevo — **ya no
     trabaja ni va a trabajar con GOTIR**. Mariano pidió borrar su perfil de GHL — **hecho el 17
     agosto 2026** (`DELETE /users/`, confirmado por la API, con efecto en unos minutos).

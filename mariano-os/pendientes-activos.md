@@ -48,20 +48,18 @@
    - Estado: **el bloqueo de fondo está resuelto — canal de WhatsApp funcionando de nuevo**.
    - Recordado: 3 veces (19/20 ago 2026; 20 ago, chequeo diario 20:00; 21 ago 2026, resolución).
 
-**Revisión de automatizaciones (builder de GHL) — RESUELTA (21 ago 2026), queda 1 arreglo manual pendiente**
+~~**Revisión de automatizaciones (builder de GHL) — RESUELTA por completo (21 ago 2026)**~~
    - El login automatizado por navegador no fue viable (protección anti-bot de GHL/Cloudflare —
      detalle completo en `direcciones/comercial/CLAUDE.md` sección 6.3, decisión deliberada de no
-     intentar evadirla). Mariano mandó capturas de pantalla de los 5 nodos relevantes en su lugar.
-   - **Resultado de la revisión** (detalle en `direcciones/comercial/CLAUDE.md` sección 5.9): de 5
-     workflows que mandan WhatsApp/SMS directo a clientes/leads, **2 tienen un bug real** — falta el
-     código `{WA#1}` en el mensaje:
-     - **Captaciones Leads Bienvenida -VISADOS** → nodo "WhatsApp Bienvenida" (su gemelo, el de
-       ESTANCIAS, sí lo tiene — mismo patrón que el bug ya conocido de "Carolina Chapo" hardcodeado).
-     - **Lead capture landing** → nodo "SMS".
-   - **Falta que Mariano haga** (no se puede por API, es contenido de un nodo — límite ya conocido):
-     agregar `{WA#1} ` al principio del mensaje en esos dos nodos, a mano en el builder de GHL.
-   - Estado: **revisión cerrada — queda pendiente el arreglo manual de los 2 nodos**.
-   - Recordado: 1 vez (21 ago 2026).
+     intentar evadirla). Mariano mandó capturas de pantalla de los nodos relevantes en su lugar.
+   - Se encontraron 2 nodos sin el código `{WA#1}` (VISADOS → "WhatsApp Bienvenida" y "Lead capture
+     landing" → "SMS") — detalle en `direcciones/comercial/CLAUDE.md` sección 5.9. Los dos son en
+     realidad **Fragmentos de GHL** (Conversaciones → Fragmentos: "Mensaje bienvenida visados" y el
+     de "Lead capture landing"), no texto suelto dentro del nodo — dato nuevo para el futuro: los
+     nodos "WhatsApp Bienvenida"/"SMS" que usan una plantilla real editan el Fragmento por separado,
+     no el cuadro de texto del workflow (que queda de solo lectura).
+   - **Confirmado por Mariano (21 ago 2026): los dos Fragmentos ya están corregidos.**
+   - Estado: **hecho**.
 
 ### GOTIR — urgente
 

@@ -676,15 +676,22 @@ código `{WA#1}` que sí tiene ESTANCIAS. Mismo patrón que el bug ya documentad
 otro y a alguien se le pasó agregar el código en la copia. "Lead capture landing" tampoco lo tiene,
 pero no tiene un gemelo conocido para comparar.
 
-**Qué falta hacer (no se puede por API, es edición de contenido de nodo — límite ya conocido, ver
-sección 5.5)**: agregar `{WA#1} ` al principio del mensaje en esos dos nodos — VISADOS →
-"WhatsApp Bienvenida", y "Lead capture landing" → "SMS" — a mano en el builder de GHL.
+**Dato técnico nuevo, útil para la próxima vez**: los nodos "WhatsApp Bienvenida"/"SMS" que
+mostraban el mensaje en gris (de solo lectura, sin poder escribir) tenían una **plantilla/Fragmento
+de GHL** enganchada — el texto real vive en **Conversaciones → Fragmentos**, no en el nodo del
+workflow. Se identifica clickeando el desplegable "PLANTILLAS" del nodo: si dice el nombre de un
+Fragmento (ej. "Mensaje bienvenida visados (HTML snippet)") en vez de estar vacío, hay que ir a
+editar el Fragmento por separado. Los nodos sin plantilla (ej. el "SMS" de "Lead capture landing"
+tenía texto suelto, sin plantilla asignada) sí se editan directo en el nodo. **Corregido por
+Mariano (21 agosto 2026)**: agregó `{WA#1} ` al principio de los dos Fragmentos afectados
+("Mensaje bienvenida visados" y el fragmento del SMS de "Lead capture landing"), confirmado con
+captura del editor de Fragmentos.
 
 **Estado del pedido original de Mariano** ("revisar que todas las automatizaciones usen los
-números de WhatsApp correctos"): revisión completa de los 5 workflows que envían mensaje directo al
-cliente/lead — encontrado y reportado 1 bug real concreto. El resto de los workflows revisados
-(Notificacion influencers, María García Serrano / Carolina Chapo - tramites) no mandan WhatsApp
-directo a clientes, no aplica esta verificación.
+números de WhatsApp correctos"): **cerrado**. Revisión completa de los 5 workflows que envían
+mensaje directo al cliente/lead, encontrado 1 bug real (2 nodos sin `{WA#1}`) y ya corregido. El
+resto de los workflows revisados (Notificacion influencers, María García Serrano / Carolina Chapo -
+tramites) no mandan WhatsApp directo a clientes, no aplicaba esta verificación.
 
 ---
 

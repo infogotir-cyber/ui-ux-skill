@@ -59,7 +59,13 @@ pendiente de confirmar.
 - Lista "Tareas Operativas Recurrentes" — ID `901220315608`.
 - Equipo de apoyo operativo de Mariano en New Life: Adrián Caro e Ingrid Guaño.
 - Cada ciclo de New Life arranca con **Encuentro**: un retiro de un día, ~2 veces al año (uno hacia
-  marzo).
+  marzo). **Próximo Encuentro: 26 de septiembre de 2026** (agregado 21 ago 2026) — dura desde la
+  mañana hasta la noche. Es la puerta de entrada para toda la gente nueva: alguien que viene
+  asistiendo a un grupo de amistad, o un conocido nuevo evangelizado, se lleva al Encuentro; recién
+  después de vivirlo puede arrancar el proceso de New Life (4 meses) → Lanzamiento → activación
+  como líder. Mariano lo enmarca como el sentido de fondo de todo el trabajo (cita textual del
+  mandato bíblico de hacer discípulos): evangelizar → Encuentro → New Life → Lanzamiento → líderes
+  activados.
 - New Life dura ~4 meses, 2 ciclos al año, 4 módulos: módulo 2 = activación en servicio
   (Servidores, Producción, Kids, con posibles excepciones como situación de unión libre); módulo 3
   = entrevistas de liderazgo (define intención de liderar de cada alumno); módulo 4 = cierre
@@ -71,6 +77,32 @@ pendiente de confirmar.
   Producción, Impact Worship, el pastor, decoración, un detalle por estudiante, togas y bandas
   "New Life" — descripción general del proceso recurrente; ver el detalle real del ciclo actual
   abajo).
+
+#### Campaña de evangelización rumbo al Encuentro del 26 sept 2026 (agregado 21 ago 2026)
+Con el Encuentro fijado para el 26 sept, **todo el grupo de jóvenes (FM4)** tiene la tarea de salir
+a buscar gente nueva — actos de evangelización en la calle, actividades, aprovechar que todos
+quieren invitar a sus amigos — con estrategia, para llegar al 26 sept con la mayor cantidad de
+gente posible. Mariano ya le indicó a todos sus discípulos directos que inviten para este domingo a
+toda la gente que recuerden que alguna vez fue al grupo o mostró interés, a sus amigos, con un
+flyer bien armado.
+
+**Este domingo (23 ago 2026)**: primera acción evangelística concreta de varias planeadas antes del
+26 sept — un evento informal en la playa, después de "Experiencia de fe" (servicio dominical) por
+la tarde.
+
+**Contactos nuevos ya identificados, sin asignar todavía a un grupo FM4 específico** (Mariano los
+va a repartir entre FM4.1, 4.2 o 4.3 más adelante):
+- **Emiliano Ortiz** — 34 años, cordobés (Argentina), vive con Sabrina. Fue ayer (20 ago) a Noches
+  de Vida, primera vez. ⚠️ No confirmado si "Sabrina" acá es **Sabrina Navarro** (la pareja de
+  Mariano, ya documentada en `direcciones/comercial/CLAUDE.md` sección 5.2 de GOTIR) — si es la
+  misma persona, es información personal sensible sobre la vida de Mariano, tratar con discreción;
+  no asumir sin que Mariano lo confirme.
+- **Litzy** — 20 años, conocida personal de Mariano. En algún momento había querido contratar los
+  servicios de GOTIR pero finalmente no lo hizo — Mariano la invitó igual a la iglesia, y fue ayer a
+  Noches de Vida por primera vez. Cruce curioso con el área GOTIR, no requiere ninguna acción ahí,
+  solo se deja anotado el contexto.
+- **Miguel** — ya es parte de FM4.2 (a diferencia de Emiliano y Litzy, que todavía no tienen grupo);
+  quieren que vaya este domingo a la playa.
 
 #### Graduación New Life — 1 sept 2026 (registrado 17 agosto 2026, actualizado 18 ago 2026)
 Tarea madre creada en "Tareas Operativas Recurrentes": **"Graduación New Life — 1 sept 2026"** — ID

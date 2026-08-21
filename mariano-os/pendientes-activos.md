@@ -208,6 +208,13 @@
      sistema no participa, solo espera que Mariano cuente cómo quedó.
    - Recordado: 1 vez (21 ago 2026).
 
+6. **Asignar a Emiliano Ortiz y Litzy a un grupo FM4 (4.1, 4.2 o 4.3)**
+   - Detalle completo en `areas/ministerio/CLAUDE.md`, sección "Campaña de evangelización rumbo al
+     Encuentro". Los dos fueron por primera vez a Noches de Vida el 20 ago 2026; Mariano dijo que
+     los va a repartir más adelante, sin fecha concreta todavía.
+   - Estado: **abierto**, sin urgencia declarada.
+   - Recordado: 1 vez (21 ago 2026).
+
 ---
 
 ## Hechos (quedan un tiempo como registro antes de limpiarse)

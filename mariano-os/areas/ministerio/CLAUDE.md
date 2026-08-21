@@ -934,15 +934,24 @@ mencionó esta restricción.
 **más de 3 semanas** sin que Mariano se reúna individualmente con cada uno de sus discípulos —
 quiere ir agendando llamadas para sostener ese ritmo, en vez de que dependa de que se acuerde solo.
 
-**Estado de esto en el sistema (21 ago 2026)**: todavía no hay un registro real de cuándo fue la
-última reunión 1:1 de Mariano con cada discípulo — no se inventa esa fecha. A medida que Mariano
-cuente que se reunió con alguien (o pida que se agende una llamada, como ya se hizo hoy con
-Yorlenny/Marianne/Jenny — ver sección del grupo de Madrid — aunque esa es una llamada con ovejas,
-no exactamente el 1:1 con un discípulo directo), este sistema debería: (a) registrar la fecha real
-de la reunión, y (b) avisar proactivamente cuando se estén por cumplir 3 semanas desde la última
-con alguien, para que Mariano pueda agendar la siguiente a tiempo. Falta decidir dónde vive ese
-registro (tabla en este documento, o una lista nueva en ClickUp) — no se creó todavía, para no
-inventar estructura antes de tener las primeras fechas reales.
+**Registro real de últimas reuniones 1:1 (empezado 21 ago 2026)** — las fechas se anotan tal como
+Mariano las da (si dice "la semana pasada" sin precisar el día exacto, se deja así, no se inventa
+una fecha puntual):
+
+| Discípulo | Última reunión 1:1 | Próxima esperada |
+|---|---|---|
+| Diego Villavicencio (FM4.2) | Semana pasada (informado 21 ago 2026) | ~3 semanas desde esa reunión |
+| Rocío Jury (FM4.3) | Semana pasada (informado 21 ago 2026) | ~3 semanas desde esa reunión |
+| Ingrid Guaño (FM4.1) | Semana pasada (informado 21 ago 2026) | ~3 semanas desde esa reunión |
+| Adrián Caro, Rebeca Lema, Jacobo Marulanda | Sin registro todavía | — |
+| Lisandro Tapia, Paulina Soto, David Valera, Sabrina Navarro | Sin registro todavía (aplica una vez activados, 5 sept) | — |
+
+Como "la semana pasada" es una fecha imprecisa (no se sabe el día exacto dentro de esa semana), la
+ventana de aviso de las 3 semanas también va a ser aproximada — avisar quiere decir recordarle a
+Mariano que se acerca el momento de agendar, no calcular una fecha exacta al día.
+
+A medida que Mariano cuente que se reunió con alguien más (o con estos mismos de nuevo), actualizar
+esta tabla con la fecha nueva.
 
 **Discípulos a los que aplicaría esta cadencia** (de la sección 5 de arriba, los ya activos o
 próximos a activarse): Adrián Caro, Ingrid Guaño (FM4.1), Diego Villavicencio, Rebeca Lema (FM4.2),

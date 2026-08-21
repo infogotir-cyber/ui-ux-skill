@@ -215,19 +215,20 @@
    - Estado: **abierto**, sin urgencia declarada.
    - Recordado: 1 vez (21 ago 2026).
 
-7. **Sistema de seguimiento 1:1 con discípulos FM4 — falta el registro real de fechas**
-   - Detalle completo en `areas/ministerio/CLAUDE.md`, sección 8.3. Mariano pidió que no pasen más
-     de 3 semanas sin que se reúna individualmente con cada uno de sus discípulos (Adrián, Ingrid,
-     Diego, Rebeca, Rocío, Jacobo, y probablemente Lisandro/Paulina/David/Sabrina una vez activos) —
-     quiere ir agendando llamadas para sostener ese ritmo.
-   - **Falta antes de poder avisar proactivamente**: no hay todavía un registro real de cuándo fue
-     la última reunión 1:1 con cada uno — no se puede inventar esa fecha. A medida que Mariano
-     cuente que se reunió con alguien, hay que registrar la fecha (todavía sin decidir dónde: tabla
-     acá mismo o lista nueva en ClickUp) para poder empezar a avisar cuando se acerquen las 3
-     semanas.
-   - Estado: **abierto — sistema pedido, implementación de tracking pendiente de las primeras
-     fechas reales**.
-   - Recordado: 1 vez (21 ago 2026).
+7. **Sistema de seguimiento 1:1 con discípulos FM4 — registro de fechas en marcha**
+   - Detalle completo y tabla de registro en `areas/ministerio/CLAUDE.md`, sección 8.3. Mariano
+     pidió que no pasen más de 3 semanas sin que se reúna individualmente con cada uno de sus
+     discípulos (Adrián, Ingrid, Diego, Rebeca, Rocío, Jacobo, y probablemente
+     Lisandro/Paulina/David/Sabrina una vez activos) — quiere ir agendando llamadas para sostener
+     ese ritmo.
+   - **Primeros datos reales (21 ago 2026)**: Mariano confirmó que se reunió "la semana pasada" con
+     **Diego Villavicencio, Rocío Jury e Ingrid Guaño**. Fecha imprecisa (no se dio el día exacto),
+     queda registrada así, sin inventar precisión. Faltan Adrián Caro, Rebeca Lema y Jacobo
+     Marulanda — todavía sin ninguna reunión registrada.
+   - **Falta antes de poder avisar proactivamente con precisión**: como la fecha es "la semana
+     pasada" y no un día puntual, el aviso de las ~3 semanas va a ser aproximado, no exacto al día.
+   - Estado: **abierto — tracking en marcha, con 3 de ~10 discípulos ya con una fecha registrada**.
+   - Recordado: 2 veces (21 ago 2026).
 
 ---
 

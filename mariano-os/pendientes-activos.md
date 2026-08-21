@@ -48,19 +48,24 @@
    - Estado: **el bloqueo de fondo está resuelto — canal de WhatsApp funcionando de nuevo**.
    - Recordado: 3 veces (19/20 ago 2026; 20 ago, chequeo diario 20:00; 21 ago 2026, resolución).
 
-**Revisión de automatizaciones (builder de GHL) — bloqueada por política de red del entorno**
-   - A pedido explícito de Mariano de resolver esto sin ponerlo a trabajar a él: se creó un usuario
-     nuevo en GHL (`claude.asistente@gotir.es`, id `aDv8Utw1kKrpOewD7kGU`, rol admin) para entrar
-     por navegador (Playwright) y auditar el builder directamente, ya que la API no expone la
-     lógica interna de los workflows.
-   - **Bloqueado**: la política de red de este entorno de Claude Code rechaza la conexión a
-     `app.gohighlevel.com` (403, bloqueo explícito de política — confirmado, no es un problema de
-     credenciales). Mismo tipo de bloqueo que tuvo `services.leadconnectorhq.com` hasta el 14
-     agosto 2026, cuando Mariano lo habilitó en la configuración del entorno.
-   - **Falta que Mariano haga**: habilitar `app.gohighlevel.com` en la política de red de este
-     entorno (mismo lugar donde habilitó el dominio de la API el 14 agosto). Apenas esté
-     habilitado, la revisión se completa sin pedirle nada más.
-   - Estado: **abierto — bloqueado esperando que Mariano habilite el dominio**.
+**Revisión de automatizaciones (builder de GHL) — el login automatizado no es viable, se necesitan capturas de Mariano**
+   - Se creó un usuario nuevo en GHL (`claude.asistente@gotir.es`, id `aDv8Utw1kKrpOewD7kGU`, rol
+     admin) e intentó entrar por navegador (Playwright) para auditar el builder directamente, ya
+     que la API no expone la lógica interna de los workflows. Mariano fue habilitando varios
+     dominios de red en el camino (`app.gohighlevel.com`,
+     `production.app-manifest.leadconnectorhq.com`, `static.leadconnectorhq.com`,
+     `appcdn.leadconnectorhq.com`) hasta que la app cargó por completo.
+   - **Bloqueo de fondo, no resuelto y no se va a intentar sortear**: la SPA de GHL se queda
+     indefinidamente en "Initializing..." — el navegador automatizado expone
+     `navigator.webdriver=true`, la señal estándar de automatización, y es razonable que la
+     protección anti-bot de GHL/Cloudflare la use para frenar el arranque. Enmascarar esa señal
+     sería evadir deliberadamente una protección de seguridad de un tercero — no se va a hacer.
+     Detalle completo en `direcciones/comercial/CLAUDE.md` sección 6.3.
+   - **Alternativa, más liviana que "auditar"**: que Mariano (o el usuario nuevo, desde su propio
+     navegador) mande capturas de pantalla de los workflows relevantes — empezando por el que manda
+     `{WA#1}` en la secuencia post-agendamiento. Este sistema hace el análisis completo a partir de
+     las capturas, sin que Mariano tenga que interpretar nada él mismo.
+   - Estado: **abierto — esperando que Mariano mande las capturas cuando pueda**.
    - Recordado: 1 vez (21 ago 2026).
 
 ### GOTIR — urgente

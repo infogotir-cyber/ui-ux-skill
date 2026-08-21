@@ -1034,13 +1034,36 @@ creó un usuario nuevo en GHL (`ghl_create_user`, tool agregada este mismo día 
 raíz) para poder entrar por navegador (Playwright) y revisar el builder directamente en vez de
 pedirle a Mariano que lo audite él. Usuario creado con éxito: **Claude Asistente**
 (`claude.asistente@gotir.es`, id `aDv8Utw1kKrpOewD7kGU`, rol admin, acceso completo a
-Automatizaciones). **Bloqueado en el siguiente paso**: la política de red de este entorno de Claude
-Code rechaza la conexión a `app.gohighlevel.com` (403, bloqueo explícito de política, confirmado
-contra `$HTTPS_PROXY/__agentproxy/status` — no es un error de credenciales ni de configuración,
-mismo tipo de bloqueo que tuvo `services.leadconnectorhq.com` hasta que Mariano lo habilitó el 14
-agosto 2026). **Pendiente**: que Mariano habilite `app.gohighlevel.com` en la política de red del
-entorno — apenas esté habilitado, se puede completar la revisión visual del builder sin pedirle
-nada más.
+Automatizaciones).
+
+**Camino recorrido y por qué no se pudo completar (21 agosto 2026)**:
+1. Bloqueo de red inicial: `app.gohighlevel.com` rechazado (403) por la política de red del
+   entorno — Mariano lo habilitó.
+2. Bloqueo de TLS: el proxy de este entorno no soporta el intercambio de claves post-cuántico que
+   usa Chromium moderno por defecto en TLS 1.3 — se resolvió forzando el navegador a TLS 1.2.
+3. Bloqueos de red en cascada, cada uno el siguiente recurso esencial que la SPA de GHL necesita
+   para arrancar: `production.app-manifest.leadconnectorhq.com` (el manifiesto de arranque),
+   luego `static.leadconnectorhq.com` y `appcdn.leadconnectorhq.com` (el bundle de la app y sus
+   estilos) — Mariano fue habilitando cada uno.
+4. **Bloqueo de fondo, no resuelto**: con todo lo anterior ya cargando en 200 OK, la aplicación
+   se queda indefinidamente en "Initializing..." sin completar el arranque, sin ningún error de
+   red ni de JavaScript visible. Diagnóstico: `navigator.webdriver` devuelve `true` en el
+   navegador controlado por Playwright — es la señal estándar que exponen los navegadores
+   automatizados, y es razonable que la protección anti-bot de GHL/Cloudflare la esté usando para
+   frenar el arranque de la SPA. **Se decidió no intentar enmascarar esa señal** — eso cruzaría la
+   línea de evadir deliberadamente una protección de seguridad de un tercero (GHL/Cloudflare), algo
+   que Mariano no tiene autoridad para autorizar aunque sea dueño de la cuenta (es una protección
+   de GHL contra automatización, no una restricción propia de GOTIR).
+
+**Conclusión**: el login automatizado por navegador no es un camino viable para este caso — no por
+falta de permisos o configuración, sino porque el objetivo (entrar con un navegador controlado por
+software) es exactamente lo que la protección anti-bot de la plataforma está diseñada para frenar.
+**Alternativa recomendada, mucho más liviana que "auditar"**: Mariano entra él mismo (o el usuario
+`claude.asistente@gotir.es` desde su propio navegador) a los workflows relevantes y manda capturas
+de pantalla — con eso este sistema puede hacer el análisis completo sin que él tenga que interpretar
+nada, solo mostrar la pantalla. Los workflows más importantes para empezar: la automatización de
+la secuencia post-agendamiento (la que manda `{WA#1}`) y cualquier otro que envíe WhatsApp a
+clientes.
 
 **Impacto real: todo lo que dependa de WhatsApp está caído** — mensajes de contrato, seguimientos,
 notificaciones a colaboradores (Notificacion influencers, etc.) — hasta que Mariano reconecte un

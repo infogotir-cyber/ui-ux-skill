@@ -61,18 +61,22 @@
 
 ### GOTIR — decisión pendiente, la más importante de todas
 
-**Elegir una de las 3 propuestas de sistema comercial completo**
+**Elegir una de las 4 propuestas de sistema comercial completo**
    - Mariano pidió juntar todo el análisis del día (Mapa Antifugas, mini-funnel, secuencia
-     post-agendamiento, bandeja de mensajes sin responder) en 3 propuestas de sistema comercial
+     post-agendamiento, bandeja de mensajes sin responder) en propuestas de sistema comercial
      completas para elegir una: **Propuesta 1 (Copiloto)**, **Propuesta 2 (Filtro Automático, con
-     bot)**, **Propuesta 3 (Reglas que se cumplen solas)**. Detalle completo, comparación y
-     recomendación en `direcciones/comercial/propuestas-sistema-comercial.md`.
+     bot)**, **Propuesta 3 (Reglas que se cumplen solas)**, y **Propuesta 4 (Motor + Copiloto —
+     agregada 20 ago 2026 más tarde, a pedido explícito de Mariano, combina lo mejor de la 1 y la 3
+     con el estándar de venta de sección 12 tejido adentro; se construye en 3 fases, cada una útil
+     sola)**. Detalle completo, comparación y recomendación en
+     `direcciones/comercial/propuestas-sistema-comercial.md`.
    - Hallazgo a confirmar antes de avanzar con la Propuesta 2 si la elige: ya existen workflows
      publicados en GHL llamados "Bot setter", "Bot closer", "Bot para clientes" y "Proximo follow up
      bot closer" — sin documentar, sin confirmar si están activos.
-   - Estado: **abierto, esperando que Mariano elija**. Ninguna de las 3 empieza a construirse hasta
+   - Estado: **abierto, esperando que Mariano elija**. Ninguna de las 4 empieza a construirse hasta
      que decida.
-   - Recordado: 2 veces (20 ago 2026; 20 ago, chequeo diario 20:00).
+   - Recordado: 3 veces (20 ago 2026; 20 ago, chequeo diario 20:00; 20 ago, tras agregar la
+     Propuesta 4).
 
 ### GOTIR — prioritarios (marcados así por Mariano, 20 ago 2026 madrugada)
 

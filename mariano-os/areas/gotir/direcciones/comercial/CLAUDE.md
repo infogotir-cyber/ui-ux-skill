@@ -521,8 +521,11 @@ influencers, no confundirlos.)
 
 **El workflow que manda el aviso**: **"Notificacion influencers"**
 (`16b4bde7-31c5-4c6c-adcd-45503adc6f30`, publicado). Estructura (confirmada visualmente por
-Mariano, no por API): un nodo **Condition** con una rama por influencer (`"Canal referencia (Dr)"
-Es "<nombre>"`), cada rama conectada a un nodo **Internal Notification** configurado como:
+Mariano, no por API — captura de pantalla real del builder, 21 agosto 2026): trigger "Cambio de
+fase de la secuencia" (cambio de etapa del pipeline) cuando "la secuencia is 'Pre-venta'" — coincide
+con lo ya documentado más abajo (scopeado a Pre-venta). Un nodo **Condition** con una rama por
+influencer (`"Canal referencia (Dr)" Es "<nombre>"`), cada rama conectada a un nodo **Internal
+Notification** configurado como:
 `Tipo de notificación = SMS`, `Para tipo de usuario = Custom Number`, número de teléfono directo del
 influencer en `A número personalizado` (no son usuarios de GHL, son números externos), con un
 mensaje que usa variables (`Contact.Full Name`, `Opportunity.Stage Name`) para avisar en vivo. Una
@@ -553,6 +556,12 @@ builder de GHL, porque la API no permite lo segundo):
 3. Mariano agregó la rama nueva "Pri Rocha" al Condition de "Notificacion influencers", con su
    Internal Notification (SMS, Custom Number, +351 969 515 147), a mano en el builder — mismo
    límite de API.
+
+**Rama nueva detectada, no documentada hasta ahora (21 agosto 2026)**: el Condition de este
+workflow tiene además una rama **"Tiktok"** (`"Canal referencia (Dr)" Es "Tiktok"`) con su propio
+Internal Notification — existía la opción "TikTok" en el dropdown desde antes (sección de arriba),
+pero no estaba confirmado que tuviera rama propia en el Condition con notificación real. Falta el
+número/destinatario configurado ahí — no visible en la captura de canvas, habría que abrir el nodo.
 
 **Bug encontrado y corregido el mismo día**: al probar el formulario de María García Serrano, llegó
 una notificación interna que decía *"Nuevo cliente en pipeline de proveedores — Test Testing,
@@ -619,6 +628,32 @@ con el mismo teléfono/email pero distinto nombre, GHL matcheó al mismo contact
 reingreso a menos que se habilite explícitamente), mientras que sí entró a
 "Notificar Pri Rocha Nomada Digital" por ser su primera vez ahí. **No es un bug** — con clientes
 reales (teléfono/email genuinamente nuevos) el workflow de María se dispara normal para cada uno.
+
+### 5.7 Confirmación visual de "María García Serrano - tramites" y "Carolina Chapo - tramites" (21 agosto 2026)
+
+Capturas reales del builder confirmaron la estructura de las dos, en paralelo (coherente con que
+una se armó duplicando la otra — ver el bug del texto hardcodeado más arriba):
+- **María García Serrano - tramites**: Formulario enviado ("Trámites derivados...") → Create
+  Opportunity → Update contact field → Internal Notification → Internal Notification → Wait →
+  Internal Notification → FINAL.
+- **Carolina Chapo - tramites**: dos triggers en paralelo — Etiqueta De Contacto (incluye "chapo")
+  y Formulario enviado ("Trámites derivado...") → misma secuencia exacta: Create Opportunity →
+  Update contact field → Internal Notification → Internal Notification → Wait → Internal
+  Notification → FINAL.
+- Ninguna de las dos manda WhatsApp directo al cliente en esta secuencia — son puramente
+  notificaciones internas (a Mariano/al abogado) más creación de oportunidad, no contacto saliente
+  a clientes. No aplica la revisión de números de WhatsApp acá.
+
+### 5.8 "New Lead referido" — workflow no documentado hasta ahora (descubierto 21 agosto 2026)
+
+Encontrado en la misma revisión visual, no mencionado antes por Mariano ni visto por API. Trigger:
+Formulario enviado, "Form is any of 'Lead influencers'" → Create Or Update Opportunity → **SMS** →
+Internal Notification → FINAL. Parece ser el equivalente de "Notificacion influencers" pero para
+cuando el lead llega directo por un formulario específico de influencers en vez de por cambio de
+etapa del pipeline — **no confirmado con Mariano**, no asumir la relación exacta entre los dos
+workflows. El nodo SMS de acá es candidato a revisar (podría ser un mensaje directo al lead, a
+diferencia de los Internal Notification de arriba que van al influencer/Mariano) — pendiente abrir
+el nodo para confirmar destinatario y si usa `{WA#N}`.
 
 ---
 

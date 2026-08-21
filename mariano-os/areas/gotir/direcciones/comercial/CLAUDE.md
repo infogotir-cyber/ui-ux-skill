@@ -231,6 +231,11 @@ reflejaba nada. Investigado en vivo:
   34 llamadas una por una — el dato real existía, pero no en el campo que el panel consulta.
 - **Corregido**: se agregó el paso 5 al checklist de "Después de colgar" (arriba) — marcar
   `showed`/`noshow` en cada cita es ahora parte del proceso estándar, no opcional.
+- **Herramienta agregada (21 agosto 2026)**: hasta la llamada con Florencia Cuaranta, este paso se
+  hacía a mano en la UI de GHL porque el servidor MCP no tenía una tool para tocar
+  `appointmentStatus`. Se agregó `ghl_update_appointment_status` (`mariano-os/mcp-servers/ghl/server.py`,
+  ver detalle técnico en `CLAUDE.md` raíz) — ya se puede marcar `showed`/`noshow` directo desde acá,
+  sin entrar a GHL.
 - **Conteo arranca desde el 18 de agosto de 2026** (decisión explícita de Mariano) — no se
   reconstruyó el historial previo a esa fecha para las estadísticas por país/fuente, porque salvo
   reconstrucción manual como la de julio, el campo no tiene datos confiables de antes. Casos reales

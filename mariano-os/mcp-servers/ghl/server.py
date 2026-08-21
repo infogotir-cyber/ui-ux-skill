@@ -699,6 +699,45 @@ async def ghl_create_appointment(
     return f"Cita creada: {a.get('id')}"
 
 
+@mcp.tool()
+async def ghl_update_appointment_status(
+    appointment_id: str,
+    status: Literal["confirmed", "showed", "noshow", "cancelled", "invalid"],
+    confirm: bool = False,
+) -> str:
+    """Marca el estado real de una cita (showed/noshow/etc.) en GHL. Requiere confirmacion.
+
+    Pensada para el paso 5 del checklist "Despues de colgar"
+    (direcciones/comercial/CLAUDE.md): marcar `showed` si la llamada se
+    realizo o `noshow` si el contacto no se presento, en el campo real que
+    lee el panel de estadisticas de Mariano (`appointmentStatus` del evento
+    de calendario, PUT /calendars/events/appointments/{id} — ver seccion
+    3.1.1 de ese documento, que hasta ahora este paso se hacia solo a mano en
+    la UI de GHL porque el servidor no tenia esta tool).
+
+    NOTA TECNICA: usa el scope `calendars/events.write`, ya habilitado en el
+    token (mismo scope que usa la lectura de `ghl_list_calendar_events`).
+
+    Args:
+        appointment_id: id de la cita (lo devuelve ghl_list_calendar_events).
+        status: nuevo estado — "confirmed", "showed", "noshow", "cancelled" o "invalid".
+        confirm: Poner True solo despues de que Mariano confirmo la accion.
+    """
+    if not confirm:
+        return (
+            f"NO EJECUTADO (falta confirmacion). Se marcaria la cita {appointment_id} como "
+            f"'{status}'.\nDescribile esto a Mariano y volve a llamar con confirm=True solo "
+            "si el confirma."
+        )
+
+    await ghl_request(
+        "PUT",
+        f"/calendars/events/appointments/{appointment_id}",
+        json_body={"appointmentStatus": status},
+    )
+    return f"Cita {appointment_id} marcada como '{status}'."
+
+
 # ---------------------------------------------------------------------------
 # Formularios
 # ---------------------------------------------------------------------------

@@ -357,6 +357,14 @@ Este proyecto debe tener acceso vía MCP a:
     mande el mensaje manualmente desde su telefono. Caso real: mensaje de seguimiento a Sebastián
     Gimenez (`contact_id=Ma0BBzRU86lESAKjiHqd`) — ver `direcciones/comercial/CLAUDE.md` para el
     detalle completo y el estado pendiente.
+  - **22 tools (ampliado a 22 el 21 agosto 2026)**: se agregó `ghl_update_appointment_status`
+    (marca `appointmentStatus` de una cita — `showed`/`noshow`/`cancelled`/etc. — vía `PUT
+    /calendars/events/appointments/{id}`), a pedido explícito de Mariano después de que el paso 5
+    del checklist "Después de colgar" quedó pendiente de hacer a mano tras la llamada con Florencia
+    Cuaranta (no había tool para eso hasta ahora). Usa el scope `calendars/events.write`, ya
+    habilitado en el token — mismo scope que ya usaba la lectura de `ghl_list_calendar_events`, sin
+    permisos nuevos que pedir. Mismo patrón `confirm=False/True` que el resto de las tools de
+    escritura.
   - **21 tools (ampliado a 21 el 17 agosto 2026, más tarde el mismo día)**: se agregó
     `ghl_read_conversation` (lee el historial real de mensajes de una conversación vía `GET
     /conversations/:id/messages`, sin `confirm` porque es de solo lectura). Mariano dio una

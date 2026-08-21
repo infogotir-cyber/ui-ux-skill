@@ -156,6 +156,29 @@
    - Recordado: 4 veces (19 ago 2026, chequeo diario 20:00; 20 ago 2026; 20 ago, chequeo diario
      20:00).
 
+3. **Migrar la cuenta de ads a facturación en euros (hoy en pesos, vía Mercado Pago Argentina)**
+   - Detalle completo en `direcciones/marketing/CLAUDE.md`, sección 6. Mariano ya decidió hacerlo
+     (más caro pero deducible, y no le parece correcto operar en ARS para un negocio español), pero
+     sin fecha todavía — acaba de cargar 70.000 ARS para no cortar la campaña mientras tanto.
+   - Estado: **abierto**, sin fecha.
+   - Recordado: 1 vez (21 ago 2026).
+
+4. **Conectar el sistema a la cuenta de administrador de anuncios de Mariano**
+   - Detalle completo en `direcciones/marketing/CLAUDE.md`, sección 7. Pedido explícito de Mariano
+     para tener visibilidad en tiempo real de la inversión y el desempeño de las campañas de Exxo.
+   - **Falta antes de poder construirlo**: confirmar qué plataforma exactamente (Meta Ads Manager,
+     Google Ads, u otra/ambas) y conseguir credenciales de acceso — mismo patrón que se usó para
+     construir el servidor MCP de GHL.
+   - Estado: **abierto — bloqueado esperando que Mariano confirme la plataforma**.
+   - Recordado: 1 vez (21 ago 2026).
+
+5. **Decidir si pedirle a Agustín Zaya (Exxo) el contexto/documentación de marketing que ellos usan**
+   - Detalle en `direcciones/marketing/CLAUDE.md`, sección 7. Mariano lo planteó como duda, no como
+     decisión tomada — para que este sistema entienda mejor el historial completo de lo que Exxo
+     viene haciendo en marketing.
+   - Estado: **abierto**, sin decidir.
+   - Recordado: 1 vez (21 ago 2026).
+
 ### Ministerio (Ruge y otros)
 
 3. **Inventario de Ruge — cambio de fuente de verdad (21 ago 2026): ahora se trabaja sobre el excel

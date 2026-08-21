@@ -126,7 +126,58 @@ venta de agosto apuntan todos a este único servicio.
   separado de esta landing page existente — no confirmado todavía si la reemplaza, la complementa, o
   es un proyecto distinto; no asumir la relación entre ambas sin que Mariano lo aclare.
 
-## 6. Cómo comportarte en esta área
+## 6. Estado real de los anuncios pagados y cuenta de ads (agregado 21 agosto 2026)
+
+Contexto que dio Mariano directamente, no visto todavía por ninguna conexión en vivo (no hay
+integración construida con la cuenta de ads — ver sección 7):
+
+- Exxo lleva toda la estrategia de marketing de GOTIR, incluida la pauta paga. Mariano no precisó
+  si hoy corre 1 o más de un anuncio — a confirmar cuando se conecte la cuenta.
+- **Historial reciente**: hace ~2-3 meses arrancaron con anuncios de **nómada digital**, con
+  inversión fuerte — no funcionó porque el estudio de **Carolina Chapo** (el que recibe esos leads
+  derivados, ver `direcciones/comercial/CLAUDE.md` sección 5.3) no estaba contactando a la gente a
+  tiempo. Se frenaron esos anuncios y se pasó a anuncios de **estancia por estudios** — esto
+  confirma y le da origen real al foco de agosto "menos frentes, más resultado" ya documentado en
+  la sección 2.
+- **Cuenta de ads conectada a Mercado Pago Argentina**: la cuenta de anuncios de Mariano está
+  vinculada a su cuenta de Mercado Pago en Argentina (pesos, ARS). Se quedó sin saldo hace pocos
+  días y acaba de cargar **70.000 ARS** para que la campaña de estancia por estudios siga corriendo
+  sin cortarse.
+- **Pendiente que Mariano ya decidió hacer, sin fecha todavía**: migrar la facturación de la cuenta
+  de ads a **euros** — es más caro para él, pero se puede deducir como gasto de la empresa, y no le
+  parece correcto seguir operando con pesos argentinos en una cuenta para un negocio español.
+  Coherente con la lógica de fondo de la "Política de centralización de pagos" de
+  `areas/gotir/CLAUDE.md` (aunque esa política habla de pagos a proveedores como Exxo, no de la
+  cuenta de ads en sí — mismo criterio, caso relacionado pero distinto, no confundir uno con otro).
+  Ver también `pendientes-activos.md`.
+
+## 7. Rol del sistema en marketing + comercial, y conexión pendiente a la cuenta de ads (agregado 21 agosto 2026)
+
+Mariano pidió explícitamente (21 agosto 2026) que este sistema actúe como **experto en marketing y
+ventas**, apoyándose en el criterio de referentes reconocidos del área (mencionó a Grant Cardone
+como ejemplo), para ir analizando cómo van las campañas de Exxo, qué se podría mejorar, y —
+específicamente— ayudar a que **marketing entregue mejores leads, mejor precalificados, para que
+comercial pueda cerrar más** — pidió que las direcciones de comercial y marketing se trabajen
+juntas con ese objetivo en mente, no por separado. Esto es una directiva de criterio permanente
+para cómo razonar en esta dirección (y en `direcciones/comercial/CLAUDE.md`) de acá en adelante, no
+una tarea puntual — al analizar campañas o embudo, conectar siempre el dato de marketing (qué leads
+entran, de qué calidad) con el dato de comercial (qué pasa con esos leads después, dónde se caen).
+
+**Conexión en tiempo real a la cuenta de ads — pedida, todavía sin construir**: Mariano quiere que
+el sistema se conecte a su cuenta de administrador de anuncios para ver en tiempo real cuánto se
+invierte, si tiene sentido, y qué mejorar — mismo principio de "conexión en tiempo real, no datos
+viejos" que ya rige el resto de `mariano-os` (ver `CLAUDE.md` raíz). **No se asume la plataforma**:
+Mariano dijo "cuenta de administrador de anuncios" sin especificar si es Meta Ads Manager, Google
+Ads, o ambas — hace falta que lo confirme antes de poder construir la conexión (mismo patrón que se
+siguió para GHL: servidor MCP propio, credenciales en `.env`, tools de lectura primero y cualquier
+escritura con `confirm=True` obligatorio).
+
+**Pregunta abierta que Mariano hizo, sin resolver**: si conviene pedirle a Agustín Zaya (Exxo) que
+comparta el contexto/documentación que ellos mismos usan para IA sobre el trabajo de marketing que
+vienen haciendo, para que este sistema entienda mejor el historial completo. No decidido — a
+confirmar con Mariano si quiere pedirlo.
+
+## 8. Cómo comportarte en esta área
 
 - Esta dirección recién se está construyendo — no inventar campañas, cifras ni fechas que no vengan
   de un plan real de Exxo o de lo que Mariano cuente directamente.

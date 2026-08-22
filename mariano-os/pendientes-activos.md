@@ -63,22 +63,24 @@
 
 ### GOTIR — urgente
 
-0. **Promo en USDT/Binance ofrecida a Javier Maddia, vence viernes 21 ago**
+0. **Promo en USDT/Binance ofrecida a Javier Maddia — la fecha límite (viernes 21 ago) YA PASÓ, sin confirmar qué pasó**
    - Detectado 19 ago revisando la llamada del 18 ago (73 min, familia de 3, ~2.475€ potenciales).
      Mariano ya envió por correo una promoción agresiva por pagar en USDT vía Binance, con fecha
-     límite este viernes — el cliente además prefiere pagar así.
+     límite el viernes 21 — el cliente además prefiere pagar así.
    - **Contradice directamente** la política de centralización de pagos que Mariano fijó el 14 ago
      (todo en euros, sin cripto, sin dólares — ver `areas/gotir/CLAUDE.md`, "Política de
      centralización de pagos").
-   - Estado: **abierto, urgente por la fecha límite — vence MAÑANA, viernes 21 ago**. Sin confirmar
-     si fue una excepción deliberada o un olvido de la política.
-   - Recordado: 2 veces (19 ago 2026; 20 ago, chequeo diario 20:00).
+   - Estado: **abierto — VENCIDA (era ayer, viernes 21 ago), sin confirmar si Javier pagó, si se
+     extendió el plazo, o si se cayó la venta**. Sigue sin confirmar si la promo fue una excepción
+     deliberada o un olvido de la política.
+   - Recordado: 3 veces (19 ago 2026; 20 ago, chequeo diario 20:00; 22 ago, chequeo de la mañana).
 
 1. **Nazareth Rengel — no-show del 18 ago sin reconexión todavía**
    - Referida por Jesús Mosquera. La nota en GHL dice "pendiente contactar para reagendar" pero no
      hay evidencia de que se le haya escrito, a diferencia de Yeraldin (mismo día, misma situación,
      ya recontactada). Ya pasaron 2 días.
-   - Estado: **abierto**. Recordado: 2 veces (19 ago 2026; 20 ago, chequeo diario 20:00).
+   - Estado: **abierto**, ya van 4 días sin reconexión.
+   - Recordado: 3 veces (19 ago 2026; 20 ago, chequeo diario 20:00; 22 ago, chequeo de la mañana).
 
 ### GOTIR — decisión pendiente, la más importante de todas
 

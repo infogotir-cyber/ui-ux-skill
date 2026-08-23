@@ -73,16 +73,16 @@
    - Estado: **abierto — VENCIDA (era ayer, viernes 21 ago), sin confirmar si Javier pagó, si se
      extendió el plazo, o si se cayó la venta**. Sigue sin confirmar si la promo fue una excepción
      deliberada o un olvido de la política.
-   - Recordado: 4 veces (19 ago 2026; 20 ago, chequeo diario 20:00; 22 ago, chequeo de la mañana;
-     22 ago, chequeo diario 20:00).
+   - Recordado: 5 veces (19 ago 2026; 20 ago, chequeo diario 20:00; 22 ago, chequeo de la mañana;
+     22 ago, chequeo diario 20:00; 23 ago, chequeo diario 20:00).
 
 1. **Nazareth Rengel — no-show del 18 ago sin reconexión todavía**
    - Referida por Jesús Mosquera. La nota en GHL dice "pendiente contactar para reagendar" pero no
      hay evidencia de que se le haya escrito, a diferencia de Yeraldin (mismo día, misma situación,
      ya recontactada). Ya pasaron 2 días.
-   - Estado: **abierto**, ya van 4 días sin reconexión.
-   - Recordado: 4 veces (19 ago 2026; 20 ago, chequeo diario 20:00; 22 ago, chequeo de la mañana;
-     22 ago, chequeo diario 20:00).
+   - Estado: **abierto**, ya van 5 días sin reconexión.
+   - Recordado: 5 veces (19 ago 2026; 20 ago, chequeo diario 20:00; 22 ago, chequeo de la mañana;
+     22 ago, chequeo diario 20:00; 23 ago, chequeo diario 20:00).
 
 ### GOTIR — decisión pendiente, la más importante de todas
 
@@ -124,7 +124,8 @@
      existe). Recomendación dada: acotarlo a los últimos 30 días cuando llegue el momento, no a
      "todos, meses".
    - Estado: **Fase A en curso (2/3 hecho), Fase B y C sin empezar**.
-   - Recordado: 2 veces (20 ago 2026, tras la elección; 22 ago, chequeo diario 20:00).
+   - Recordado: 3 veces (20 ago 2026, tras la elección; 22 ago, chequeo diario 20:00; 23 ago,
+     chequeo diario 20:00).
 
 ### GOTIR — prioritarios (marcados así por Mariano, 20 ago 2026 madrugada)
 
@@ -159,8 +160,8 @@
    - Mencionado por Mariano: antes del 19 ago 2026 (fecha exacta no registrada — él mismo señaló el
      19 ago que lo había pedido y nunca se retomó).
    - Estado: **abierto**, sin dueño ni plan todavía.
-   - Recordado: 4 veces (19 ago 2026, chequeo diario 20:00; 20 ago, chequeo diario 20:00; 22 ago,
-     chequeo diario 20:00).
+   - Recordado: 5 veces (19 ago 2026, chequeo diario 20:00; 20 ago, chequeo diario 20:00; 22 ago,
+     chequeo diario 20:00; 23 ago, chequeo diario 20:00).
    - Falta definir: ¿GHL ya centraliza Instagram/WhatsApp — también permite TikTok, o hace falta
      otra herramienta? Confirmar con Mariano el volumen real de mensajes de TikTok antes de decidir
      la solución.
@@ -187,7 +188,8 @@
      (más caro pero deducible, y no le parece correcto operar en ARS para un negocio español), pero
      sin fecha todavía — acaba de cargar 70.000 ARS para no cortar la campaña mientras tanto.
    - Estado: **abierto**, sin fecha.
-   - Recordado: 3 veces (21 ago 2026, dos veces el mismo día; 22 ago, chequeo diario 20:00).
+   - Recordado: 4 veces (21 ago 2026, dos veces el mismo día; 22 ago, chequeo diario 20:00; 23 ago,
+     chequeo diario 20:00).
 
 4. **Conectar el sistema a la cuenta de administrador de anuncios de Mariano (Meta Ads Manager)**
    - Detalle completo en `direcciones/marketing/CLAUDE.md`, sección 7. Pedido explícito de Mariano
@@ -198,14 +200,16 @@
      de la cuenta de anuncios (`act_XXXXXXXXXXXXX`) — ver instrucciones de dónde conseguir cada uno
      en `direcciones/marketing/CLAUDE.md` sección 7.
    - Estado: **abierto — bloqueado esperando que Mariano consiga el token y el ID de cuenta**.
-   - Recordado: 3 veces (21 ago 2026, dos veces el mismo día; 22 ago, chequeo diario 20:00).
+   - Recordado: 4 veces (21 ago 2026, dos veces el mismo día; 22 ago, chequeo diario 20:00; 23 ago,
+     chequeo diario 20:00).
 
 5. **Decidir si pedirle a Agustín Zaya (Exxo) el contexto/documentación de marketing que ellos usan**
    - Detalle en `direcciones/marketing/CLAUDE.md`, sección 7. Mariano lo planteó como duda, no como
      decisión tomada — para que este sistema entienda mejor el historial completo de lo que Exxo
      viene haciendo en marketing.
    - Estado: **abierto**, sin decidir.
-   - Recordado: 3 veces (21 ago 2026, dos veces el mismo día; 22 ago, chequeo diario 20:00).
+   - Recordado: 4 veces (21 ago 2026, dos veces el mismo día; 22 ago, chequeo diario 20:00; 23 ago,
+     chequeo diario 20:00).
 
 ### Ministerio (Ruge y otros)
 
@@ -229,8 +233,8 @@
      apareció asociado a "COCINAS PORTATILES DE GAS" (ya `GESTIONADO`/`OK` como ítem, el maletín
      roto en sí sigue sin resolver). Paños pequeños, linterna de cabeza y martillo siguen sin
      rastro en ningún excel — Mariano dijo que los corrobora él mismo.
-   - Recordado: 3 veces (20 ago, chequeo diario 20:00; 21 ago, cambio de fuente; 22 ago, chequeo
-     diario 20:00).
+   - Recordado: 4 veces (20 ago, chequeo diario 20:00; 21 ago, cambio de fuente; 22 ago, chequeo
+     diario 20:00; 23 ago, chequeo diario 20:00).
 
 4. **Graduación New Life (1 sept 2026) — lista de coordinaciones propias de Mariano, como pilar**
    - Detalle completo en `areas/ministerio/CLAUDE.md`, sección "Graduación New Life", ítems 4/6-11/14.
@@ -250,24 +254,24 @@
      que **Paulina, Jacobo y Lisandro** paguen (Lisandro es el mismo caso de arriba sin poder
      pagar — no confirmado si esto significa que Mariano lo va a cubrir él).
    - Estado: **abierto**, varios sub-ítems en paralelo.
-   - Recordado: 3 veces (21 ago 2026, dos actualizaciones el mismo día; 22 ago, chequeo diario
-     20:00).
+   - Recordado: 4 veces (21 ago 2026, dos actualizaciones el mismo día; 22 ago, chequeo diario
+     20:00; 23 ago, chequeo diario 20:00).
 
 5. **Grupo de Madrid — Marianne y Yorlenny en riesgo de no ir al Lanzamiento (5 sept 2026)**
    - Detalle completo en `areas/ministerio/CLAUDE.md`, sección "Grupo de Madrid". Mariano tiene
      llamada **hoy (21 ago 2026)** con Yorlenny, Marianne y Jenny (su pareja ministerial en Madrid)
      para visionarlas — las dos manifestaron querer renunciar por el costo de viajar a Valencia.
    - Estado: **abierto, esperando el resultado de la llamada del 21 ago** — decisión pastoral, este
-     sistema no participa, solo espera que Mariano cuente cómo quedó. Ya pasó un día sin novedad
+     sistema no participa, solo espera que Mariano cuente cómo quedó. Ya pasaron 2 días sin novedad
      registrada.
-   - Recordado: 2 veces (21 ago 2026; 22 ago, chequeo diario 20:00).
+   - Recordado: 3 veces (21 ago 2026; 22 ago, chequeo diario 20:00; 23 ago, chequeo diario 20:00).
 
 6. **Asignar a Emiliano Ortiz y Litzy a un grupo FM4 (4.1, 4.2 o 4.3)**
    - Detalle completo en `areas/ministerio/CLAUDE.md`, sección "Campaña de evangelización rumbo al
      Encuentro". Los dos fueron por primera vez a Noches de Vida el 20 ago 2026; Mariano dijo que
      los va a repartir más adelante, sin fecha concreta todavía.
    - Estado: **abierto**, sin urgencia declarada.
-   - Recordado: 2 veces (21 ago 2026; 22 ago, chequeo diario 20:00).
+   - Recordado: 3 veces (21 ago 2026; 22 ago, chequeo diario 20:00; 23 ago, chequeo diario 20:00).
 
 7. **Sistema de seguimiento 1:1 con discípulos FM4 — registro de fechas en marcha**
    - Detalle completo y tabla de registro en `areas/ministerio/CLAUDE.md`, sección 8.3. Mariano
@@ -282,7 +286,8 @@
    - **Falta antes de poder avisar proactivamente con precisión**: como la fecha es "la semana
      pasada" y no un día puntual, el aviso de las ~3 semanas va a ser aproximado, no exacto al día.
    - Estado: **abierto — tracking en marcha, con 3 de ~10 discípulos ya con una fecha registrada**.
-   - Recordado: 3 veces (21 ago 2026, dos veces; 22 ago, chequeo diario 20:00).
+   - Recordado: 4 veces (21 ago 2026, dos veces; 22 ago, chequeo diario 20:00; 23 ago, chequeo
+     diario 20:00).
 
 ---
 

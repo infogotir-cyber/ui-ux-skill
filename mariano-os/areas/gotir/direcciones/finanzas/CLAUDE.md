@@ -50,11 +50,9 @@ le van a cobrar (o ya se le cobraron, sin precisar cuáles ya pasaron) el resume
 crédito** y la cuota de **autónomos (Seguridad Social)**, sin montos dados todavía — quedan
 anotados como cargos recurrentes esperados, no una deuda con un tercero.
 
-**⚠️ Discrepancia sin resolver — monto del pago a Sabrina/su casero**: el punto 2 de arriba (350 EUR,
-resto del sueldo de julio, a pagar al dueño del piso donde alquila Sabrina) fue mencionado hoy por
-Mariano como **305 EUR**. No se sabe si es una corrección del monto real, si ya se pagó una parte y
-esto es el saldo, o si es un error de dictado — **no se sobreescribe el dato viejo**, queda
-anotado el nuevo monto al lado hasta que Mariano confirme cuál es el correcto.
+**Discrepancia del 24 ago — resuelta el mismo día**: Mariano confirmó que el monto correcto es
+**350 EUR** (el que ya estaba registrado en el punto 2 de arriba) — los "305" mencionados antes
+fueron un error de dictado, no un monto nuevo ni un saldo parcial.
 
 **Deudas nuevas mencionadas hoy, no registradas hasta ahora** (todas personales de Mariano, no de
 GOTIR como empresa — se dejan acá porque comparten la misma urgencia de caja):

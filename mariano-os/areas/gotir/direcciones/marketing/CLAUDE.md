@@ -260,6 +260,32 @@ a TikTok/Threads/Facebook/YouTube — ver `pendientes-activos.md`).
    sección 7, que sigue bloqueada esperando el token/ID de cuenta. Mientras esa conexión no exista,
    este reporting periódico de Exxo es el sustituto real.
 
+### Proceso nuevo pedido por Mariano — minuta obligatoria después de cada llamada con Exxo
+
+Motivo textual (24 ago 2026): *"hacemos llamadas pero después muy pocas cosas cambian"* — quedaron
+en hablar mañana del PDF y el resto de los pendientes, y Mariano pidió explícitamente que de ahora
+en más, **después de cada llamada con Exxo, le manden una minuta con los próximos pasos que cada
+parte se comprometió a hacer** — mismo problema de fondo que ya se resolvió del lado comercial con
+la "regla de oro" de próxima acción + fecha + responsable (`comercial/CLAUDE.md` sección 2) — acá
+aplica igual, pero hacia un proveedor externo, no un cliente. Plantear esto como proceso nuevo en la
+reunión del 25, no como una queja puntual.
+
+### Agenda consolidada — reunión 25 ago 2026 con Agustín
+
+1. Pago pendiente (USD 237 de los 517 de agosto).
+2. Cómo salió el reenfoque de agosto ("menos frentes, más resultado") y preparación de septiembre.
+3. PDF de venta — nueva versión corta/visual (ya rechazada la v1); si llega a tiempo, resolver ahí
+   mismo los 3 números de pricing y la postura sobre "+500 familias".
+4. **Blog y LinkedIn** — no se publicó nada, pedir estado real y compromiso concreto.
+5. **Informe de publicidad/Ads** — nunca lo mandaron; establecer cadencia fija de ahora en más, y
+   preguntar el motivo real del bloqueo del reel.
+6. **Estado real de la web** — ¿quedó completamente lista o falta algo? Aclarar además a qué
+   "bloqueante de configuración con GHL" se referían (Mariano no tenía conocimiento de ese bloqueo).
+7. **Proceso nuevo: minuta + próximos pasos después de cada llamada**, con compromisos concretos de
+   cada parte — plantearlo como cambio de proceso, no reclamo puntual.
+8. Opcional, si Mariano decide plantearlo: pedirle a Agustín el contexto/documentación que Exxo usa
+   para IA sobre el trabajo de marketing (pregunta abierta, sección 7, todavía sin decidir).
+
 ## 9. Cómo comportarte en esta área
 
 - Esta dirección recién se está construyendo — no inventar campañas, cifras ni fechas que no vengan

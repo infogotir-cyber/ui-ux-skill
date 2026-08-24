@@ -27,8 +27,10 @@ ordenadas por prioridad (confirmada por Mariano el 17 agosto 2026):
    a Sabrina, se le paga a Micol para cubrir la cuota de la deuda de Sabrina con ella. Estructura de
    pago dirigido, igual que con lo del departamento abajo. **Esta es la deuda que Mariano marcó como
    la más urgente de resolver de todas** — con el pago parcial ya hecho, el saldo restante (80.000
-   ARS) es mucho más chico que el resto de las deudas de la lista, lo cual cambia el orden real de
-   urgencia frente a Federico/Sabrina (punto 2) — ver nota de prioridad más abajo.
+   ARS) es mucho más chico que el resto de las deudas de la lista. **Prioridad confirmada por
+   Mariano el 24 agosto 2026: Federico/Sabrina (punto 2, 350€) pasa a ser la prioridad #1 en cuanto
+   entre el primer cobro cercano (Sara Sofía 825€ o Maryi Castañeda 2.475€), por la presión activa
+   de Federico ese mismo día — desplaza a Micol de la posición #1 que tenía desde el 17 de agosto.**
 2. **Sabrina Navarro** — **350 EUR**, resto del sueldo de julio 2026 (la parte que no va a Micol).
    Instrucción específica de Mariano: este pago **no se le hace a ella directamente** — hay que
    pagarlo **al dueño del departamento donde ella alquila** (pago dirigido, no un depósito a su

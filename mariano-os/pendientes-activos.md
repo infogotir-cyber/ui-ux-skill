@@ -38,9 +38,11 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
 6. Reto Ruge (cuota de Mariano como servidor) — 250€.
 7. Pasaje a Madrid (viaja el 29 ago) — monto sin dar.
 - **Actualizado 24 ago 2026**: Mariano ya pagó una parte de la deuda a Micol Navarro — de los
-  406.000 ARS originales quedan solo **80.000 ARS pendientes**. Pendiente confirmar con Mariano si
-  esto cambia el orden de prioridad frente a Federico/Sabrina (350€, presión activa hoy).
-- Estado: **abierto — urgente, sin plan de pago todavía**.
+  406.000 ARS originales quedan solo **80.000 ARS pendientes**.
+- **Prioridad confirmada por Mariano (24 ago 2026)**: Federico/Sabrina (350€) es ahora la
+  prioridad #1 a pagar, en cuanto entre el primer cobro cercano — Sara Sofía (825€) o Maryi
+  Castañeda (2.475€), ambas todavía sin pagar a esta fecha. Desplaza a Micol de la posición #1.
+- Estado: **abierto — urgente, prioridad de pago definida, esperando que entre el primer cobro**.
 - Recordado: 1 vez (24 ago 2026).
 
 ### GOTIR — seguimiento

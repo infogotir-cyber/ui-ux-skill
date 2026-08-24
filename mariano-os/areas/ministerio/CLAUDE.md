@@ -435,6 +435,23 @@ explícitamente poder preguntar en cualquier momento "¿quién se encarga de tal
 ejemplo del adaptador de grifo) y recibir la respuesta correcta al instante — para eso está
 `ruge_reparto_lookup.md`, hay que usarlo como primera fuente antes de decir "no sé" o de adivinar.
 
+### Reuniones de hoy (24 ago 2026) y visionado de servidores para el reto
+
+Mariano tiene **dos reuniones esta noche**: **21:00** con el equipo de logística (Marco Guanuchi,
+Julio César Navia, David Luzuriaga — ver reparto arriba) y **22:00** con todo el equipo de
+servidores. Para la de logística, el estado real de lo pendiente (cruzado contra el excel nuevo de
+Marco Jurado el 24 ago) está en el chequeo de Ruge de hoy en la conversación — resumen: el bloque
+grande que vence el 26 ago (Cocina + varios de Logística) tiene ~78 ítems todavía en
+`PENDIENTE GESTIONAR`/`GESTIONANDO` de un total de ~110, con 33 sin poder cruzar por diferencias de
+nombre entre `ruge_reparto_lookup.md` y el excel de Marco — es el tema central a llevar a la
+reunión de las 21:00.
+
+**Pendiente nuevo, a construir junto con Mariano**: quiere armar un **listado de los hombres que
+está "visionando"** (discerniendo/considerando) para servir en el reto — todavía no dio nombres, así
+que no se puede armar la lista sin que él los aporte. Preguntarle directamente quiénes son los
+candidatos que tiene en mente antes de la reunión de servidores (22:00) si quiere tenerlo listo para
+esa conversación.
+
 ### Política de recordatorios de Ruge (pedida por Mariano 17 ago 2026)
 Mariano no quiere tener que revisar el excel él mismo para saber qué se vence — pidió que el
 sistema le avise proactivamente a medida que se acercan las fechas límite, con un mensaje ya

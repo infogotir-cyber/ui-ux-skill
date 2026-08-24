@@ -42,6 +42,38 @@ ordenadas por prioridad (confirmada por Mariano el 17 agosto 2026):
 El orden 2-4 es solo el orden en que Mariano las mencionó, no una prioridad confirmada — únicamente
 la de Micol (punto 1) está explícitamente marcada como la más urgente.
 
+### Actualización 24 agosto 2026 — situación de caja crítica, deudas nuevas y una discrepancia sin resolver
+
+Mariano arrancó la semana con la caja en cero real: **menos de 700€ en total, y hoy literalmente sin
+nada líquido** — pagó la comida del día con tarjeta de crédito. Avisó que **esta semana** además se
+le van a cobrar (o ya se le cobraron, sin precisar cuáles ya pasaron) el resumen de la **tarjeta de
+crédito** y la cuota de **autónomos (Seguridad Social)**, sin montos dados todavía — quedan
+anotados como cargos recurrentes esperados, no una deuda con un tercero.
+
+**⚠️ Discrepancia sin resolver — monto del pago a Sabrina/su casero**: el punto 2 de arriba (350 EUR,
+resto del sueldo de julio, a pagar al dueño del piso donde alquila Sabrina) fue mencionado hoy por
+Mariano como **305 EUR**. No se sabe si es una corrección del monto real, si ya se pagó una parte y
+esto es el saldo, o si es un error de dictado — **no se sobreescribe el dato viejo**, queda
+anotado el nuevo monto al lado hasta que Mariano confirme cuál es el correcto.
+
+**Deudas nuevas mencionadas hoy, no registradas hasta ahora** (todas personales de Mariano, no de
+GOTIR como empresa — se dejan acá porque comparten la misma urgencia de caja):
+- **Su propia casera** (dueña del piso donde vive Mariano, no el de Sabrina) — "un poco" de alquiler
+  pendiente, sin monto exacto dado.
+- **250 EUR — Reto Ruge**, la cuota que le corresponde a Mariano como servidor (él mismo va a servir
+  en el reto) — separado de todo el presupuesto de logística/inventario del evento.
+- **Pasaje a Madrid**, para viajar el **29 de agosto** — despedida y último grupo de amistad ahí, ver
+  `areas/ministerio/CLAUDE.md`, sección "Grupo de Madrid". Monto sin dar.
+
+**Reconfirmadas hoy, sin cambios** (ya estaban en la lista de arriba): saldo pendiente a Exxo (punto
+3) y los 140.000 ARS a Matías Macho (punto 4).
+
+**Pedido explícito de Mariano (24 ago)**: quiere un orden de prioridad para pagar esta semana,
+empezando por lo que esté más cerca de cobrarse — es decir, cruzar estas deudas contra los ingresos
+esperados de `direcciones/comercial/CLAUDE.md` (Maryi Castañeda, Florencia/Manuel, y cualquier otro
+pago en curso) antes de fijar un orden. No se arma ese cruce automáticamente todavía — depende de
+que se confirme qué va a cobrarse primero.
+
 ### Necesidad de caja operativa (no es una deuda, es un requerimiento activo)
 - Mariano necesita tener **dinero en pesos argentinos disponible en su cuenta de MercadoPago** para
   pagar las **Ads de la campaña activa de estancias por estudios** (la campaña de agosto que armó

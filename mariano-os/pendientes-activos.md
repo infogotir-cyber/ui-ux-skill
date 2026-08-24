@@ -22,6 +22,24 @@
 
 ## Abiertos
 
+### Personal — crisis de caja urgente (24 ago 2026, la más urgente de todas ahora mismo)
+
+Mariano avisó que arrancó la semana con **menos de 700€ en total y hoy sin nada líquido** (pagó la
+comida del día con tarjeta de crédito). Esta semana además se le cobran (o ya se cobraron, sin
+precisar) la **tarjeta de crédito** y la cuota de **autónomos**. Detalle completo de deudas y
+discrepancias en `areas/gotir/direcciones/finanzas/CLAUDE.md`, sección "Actualización 24 agosto
+2026". Pagos pendientes a resolver esta semana, por orden en que los mencionó (no confirmado como
+prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que se cobre primero):
+1. Micol Navarro — 406.000 ARS (ya marcada como la más urgente de todas, 17 ago).
+2. Sabrina/su casero — 350€ o 305€ (monto sin confirmar, ver discrepancia en finanzas).
+3. Exxo — saldo pendiente USD 237.
+4. Matías Macho — 140.000 ARS.
+5. Su propia casera — monto sin dar.
+6. Reto Ruge (cuota de Mariano como servidor) — 250€.
+7. Pasaje a Madrid (viaja el 29 ago) — monto sin dar.
+- Estado: **abierto — urgente, sin plan de pago todavía**.
+- Recordado: 1 vez (24 ago 2026).
+
 ### GOTIR — seguimiento
 
 **WhatsApp sin proveedor conectado tras la migración de reseller de GHL — RESUELTO (21 ago 2026), queda un seguimiento**
@@ -264,7 +282,20 @@
    - Estado: **abierto, esperando el resultado de la llamada del 21 ago** — decisión pastoral, este
      sistema no participa, solo espera que Mariano cuente cómo quedó. Ya pasaron 2 días sin novedad
      registrada.
-   - Recordado: 3 veces (21 ago 2026; 22 ago, chequeo diario 20:00; 23 ago, chequeo diario 20:00).
+   - **Agregado 24 ago 2026**: Mariano va a viajar a Madrid el **29 de agosto** para despedirse y
+     hacer el último grupo de amistad ahí — falta comprar el pasaje (ver también el ítem de caja
+     urgente arriba). Sin monto ni fecha de compra confirmada.
+   - Recordado: 4 veces (21 ago 2026; 22 ago, chequeo diario 20:00; 23 ago, chequeo diario 20:00;
+     24 ago 2026).
+
+8. **Reto Ruge — dos reuniones hoy (24 ago) y listado de servidores a visionar sin armar**
+   - Área: ministerio (Ruge). Hoy Mariano tiene reunión a las **21:00** con el equipo de logística y
+     a las **22:00** con el equipo de servidores. Detalle completo del estado de logística (cruzado
+     contra el excel de Marco Jurado) en `areas/ministerio/CLAUDE.md`, sección "Reuniones de hoy".
+   - Pidió armar un **listado de los hombres que está visionando** para servir en el reto — todavía
+     no dio nombres, falta que los aporte antes de poder armar la lista.
+   - Estado: **abierto — reuniones hoy a la noche**.
+   - Recordado: 1 vez (24 ago 2026).
 
 6. **Asignar a Emiliano Ortiz y Litzy a un grupo FM4 (4.1, 4.2 o 4.3)**
    - Detalle completo en `areas/ministerio/CLAUDE.md`, sección "Campaña de evangelización rumbo al

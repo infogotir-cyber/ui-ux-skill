@@ -460,6 +460,27 @@ más contexto todavía sobre para qué se usa cada subida — no asumir, pregunt
 precisión. Consultarle a Mariano apenas termine la llamada de logística qué fechas quedaron
 confirmadas, para dejarlas registradas acá.
 
+### Hombres visionados/invitados para Ruge — meta 50 hombres (agregado 24 ago 2026, antes de la reunión)
+
+Amplía el pendiente de arriba: no es solo la lista de Mariano — **cada miembro del equipo**
+(arrancando por Marco Guanuchi, Julio César Navia y David Luzuriaga, y cualquier otro que se sume
+en la reunión de servidores de las 22:00) tiene que reportar a **quiénes está visionando/invitando**
+para el reto, con el objetivo explícito de llegar a los **50 hombres** que es el cupo del reto (la
+misma meta ya usada como columna "RETO 50 HOMBRES" en el inventario de Marco Jurado).
+
+**Mecanismo de seguimiento pedido por Mariano**: revisar el avance **dos veces por semana** —
+todavía falta que confirme qué dos días prefiere. Hasta tener nombres reales, esta tabla queda
+vacía — no inventar candidatos.
+
+| Persona | Hombres que está visionando/invitando | Última actualización |
+|---|---|---|
+| Mariano Barcelona | — (pendiente, ver punto de arriba) | — |
+| Marco Guanuchi | — | — |
+| Julio César Navia | — | — |
+| David Luzuriaga | — | — |
+
+**Total confirmado hasta ahora: 0 de 50.**
+
 ### Política de recordatorios de Ruge (pedida por Mariano 17 ago 2026)
 Mariano no quiere tener que revisar el excel él mismo para saber qué se vence — pidió que el
 sistema le avise proactivamente a medida que se acercan las fechas límite, con un mensaje ya

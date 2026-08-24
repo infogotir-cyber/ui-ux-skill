@@ -356,6 +356,52 @@ async def ghl_add_contact_note(
 
 
 @mcp.tool()
+async def ghl_add_contact_tags(
+    contact_id: str,
+    tags: list[str],
+    confirm: bool = False,
+) -> str:
+    """Agrega uno o mas tags a un contacto en GHL. Requiere confirmacion.
+
+    Pensada para poder marcar contactos con etiquetas de prioridad (ej.
+    "seguimiento-urgente") de forma que Mariano los pueda filtrar visualmente
+    desde su propio GHL/WhatsApp, sin depender de que este sistema le arme la
+    lista cada vez. Mismo patron confirm=False/True que el resto de las tools
+    de escritura.
+
+    NOTA TECNICA (24 agosto 2026): usa POST /contacts/:contactId/tags, con
+    los tags nuevos en el body — GHL los suma a los que ya tenia el contacto,
+    no los reemplaza. Se asumio en un primer momento (por el listado de
+    scopes documentado en mariano-os/CLAUDE.md) que iba a hacer falta el
+    scope "locations/tags.write" — eso resulto ser para gestionar la lista de
+    tags de la location, no para aplicarlos a un contacto puntual. Aplicar
+    tags a un contacto cae bajo "contacts.write", que ya esta habilitado
+    desde el principio — no hizo falta ningun scope nuevo (mismo patron que
+    ya paso con las notas y las tareas el 17 de agosto).
+
+    Args:
+        contact_id: id del contacto al que se le agregan los tags.
+        tags: lista de tags a agregar (ej. ["seguimiento-urgente"]).
+        confirm: Poner True solo despues de que Mariano confirmo la accion.
+    """
+    if not tags:
+        return "No se paso ningun tag."
+
+    if not confirm:
+        return (
+            f"NO EJECUTADO (falta confirmacion). Se agregarian estos tags al "
+            f"contacto {contact_id}: {_fmt_list(tags)}\n"
+            "Describile esto a Mariano y volve a llamar con confirm=True solo si el confirma."
+        )
+
+    data = await ghl_request(
+        "POST", f"/contacts/{contact_id}/tags", json_body={"tags": tags}
+    )
+    result_tags = data.get("tags", tags)
+    return f"Tags agregados al contacto {contact_id}: {_fmt_list(result_tags)}."
+
+
+@mcp.tool()
 async def ghl_create_task(
     contact_id: str,
     title: str,

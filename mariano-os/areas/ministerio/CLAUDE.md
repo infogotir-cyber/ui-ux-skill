@@ -452,6 +452,14 @@ que no se puede armar la lista sin que él los aporte. Preguntarle directamente 
 candidatos que tiene en mente antes de la reunión de servidores (22:00) si quiere tenerlo listo para
 esa conversación.
 
+**Pregunta a resolver como salida concreta de la reunión de las 21:00 (agregado 24 ago, antes de la
+llamada)**: Mariano necesita que quede claro, para **septiembre**, (1) qué viernes a la noche puede
+subir el equipo a la montaña, y (2) qué sábados durante el día pueden subir — probablemente para
+coordinar visitas de reconocimiento del terreno o ensayos logísticos antes del reto (1-4 oct). Sin
+más contexto todavía sobre para qué se usa cada subida — no asumir, preguntar si hace falta
+precisión. Consultarle a Mariano apenas termine la llamada de logística qué fechas quedaron
+confirmadas, para dejarlas registradas acá.
+
 ### Política de recordatorios de Ruge (pedida por Mariano 17 ago 2026)
 Mariano no quiere tener que revisar el excel él mismo para saber qué se vence — pidió que el
 sistema le avise proactivamente a medida que se acercan las fechas límite, con un mensaje ya

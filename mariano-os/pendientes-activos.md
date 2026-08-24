@@ -94,9 +94,11 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
      poder pagar. La oportunidad en GHL (`id=gYhBhziKOBoqeSrFDeqs`, 825€) sigue en "Información y
      contrato enviado", sin moverse desde el 18 ago.
    - **Pendiente real que queda**: (a) decisión de Mariano sobre si la promo USDT sigue en pie pese
-     a que venció la fecha, dado que la demora es por algo fuera del control del cliente; (b) se le
-     propuso a Mariano un mensaje de seguimiento cálido (sin mencionar el vencimiento) preguntando
-     si reservarle el cupo de la Opción 2 mientras espera el pago — a confirmar antes de enviarlo.
+     a que venció la fecha, dado que la demora es por algo fuera del control del cliente; (b) mensaje
+     de seguimiento cálido (sin mencionar el vencimiento) avisándole que el cupo de la Opción 2 se
+     llena rápido y **se reserva recién cuando se paga la inscripción** (corregido 24 ago — Mariano
+     aclaró que GOTIR no puede reservarlo sin ese pago, la primera versión del mensaje lo daba a
+     entender mal) — a confirmar antes de enviarlo.
    - Estado: **abierto — esperando que Javier cobre su jubilación, no una venta caída**.
    - Recordado: 6 veces (19 ago 2026; 20 ago, chequeo diario 20:00; 22 ago, chequeo de la mañana;
      22 ago, chequeo diario 20:00; 23 ago, chequeo diario 20:00; 24 ago 2026, aclarado).

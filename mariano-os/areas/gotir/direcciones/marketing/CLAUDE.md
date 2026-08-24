@@ -187,7 +187,53 @@ comparta el contexto/documentación que ellos mismos usan para IA sobre el traba
 vienen haciendo, para que este sistema entienda mejor el historial completo. No decidido — a
 confirmar con Mariano si quiere pedirlo.
 
-## 8. Cómo comportarte en esta área
+## 8. Actualización de Exxo — mensaje real del 24 agosto 2026 (previa a la reunión del 25 con Agustín)
+
+Mariano pegó el mensaje textual de Agustín con avances. Resumen real, sin inventar nada más allá de
+lo que dice el mensaje:
+
+1. **Video de Mariano**: Exxo le pidió que lo cargue en un Drive (`.../folders/1Ychob-b1yCSqfz8LR3dI0QGZOx27Dhj2`)
+   — no está claro en este documento a qué video se refiere exactamente (algo que Mariano les mandó
+   antes); **acción pendiente de Mariano**: subirlo a ese Drive.
+2. **Videos del calendario de contenido** entregados en un Drive aparte
+   (`.../folders/1bEt1GBV6iW460GEBCwwBz8qywIJaRM94`) — contenido real ya producido, descargable en
+   calidad original.
+3. **PDF de venta "Estancia por estudios" v1** entregado (`.../file/1A8yOBOxNIGJUZEJTHiGTy1xybyRsAJmQ`).
+   Dos cosas pendientes de Mariano antes de poder aprobarlo:
+   - **Precios de la página de inversión, sin completar a propósito** — Exxo necesita 3 datos: (a)
+     precio para el titular solo, (b) precio para titular + 1 integrante del grupo familiar, (c)
+     precio por cada integrante adicional. **Esto no coincide con la estructura de precios ya
+     documentada en `direcciones/comercial/CLAUDE.md` sección 1.2** (825€/persona flat, sin
+     descuento por grupo familiar — el caso real de Maryi Castañeda se cobró 825€×3 = 2.475€, sin
+     bundle). No inventar estos 3 números — es una decisión de pricing nueva que solo Mariano puede
+     tomar, y si decide mantener el esquema actual (825€ por persona sin diferenciar), hay que
+     decírselo así a Exxo en vez de dejarlo sin resolver.
+   - **⚠️ Discrepancia importante en las métricas institucionales del PDF**: el documento cierra
+     con "+500 familias atendidas" y "4,9 en Google sobre 55 reseñas". El "+500 familias" es **más
+     alto todavía** que la cifra de marketing ya cuestionada en `areas/gotir/CLAUDE.md`
+     ("Discrepancias detectadas — marketing vs. realidad": la web dice 150 familias, Mariano
+     estima que en realidad son ~20 *negocios* atendidos con sistemas que él mismo construyó, no
+     500 familias de GOTIR). El bio de TikTok (@gotiroficial.es) también dice "+500 familias" — o
+     sea que esta cifra ya se está usando en más de un lugar sin que quede claro si es real. **No
+     confirmar ni corregir por cuenta propia** — Mariano tiene que decidir si esa cifra es
+     defendible o si hay que pedirle a Exxo que la baje antes de publicar el PDF.
+   - Exxo también pidió: si hay un logro institucional (alianza, reconocimiento, algo del estudio
+     jurídico) para sumar al cierre del PDF, que se lo pasen.
+   - Una vez aprobado el PDF, arman en paralelo el template de mail.
+4. **Landing**: Exxo la ve bien, el rediseño no es urgente porque el bloqueante real es la
+   configuración pendiente con GoHighLevel — queda anotado como pendiente futuro, no algo a resolver
+   ya.
+5. **Ads — bug real encontrado y corregido**: había una configuración en la campaña de estancia por
+   estudios que bloqueaba el alcance específicamente del anuncio en video (las imágenes sí entregaban
+   normal) — ya corregido y aprobado por la plataforma, el reel debería empezar a entregar de ahora
+   en más. Exxo va a seguir reportando cómo evoluciona.
+
+**Para la reunión del 25 ago con Agustín**: llevar resueltos (o al menos con una postura clara) los
+3 números de pricing y la decisión sobre "+500 familias", además de las preguntas ya pendientes de
+la sección 5.9/6 de `comercial/CLAUDE.md` (blog/LinkedIn sin publicar, verificación de cross-posting
+a TikTok/Threads/Facebook/YouTube — ver `pendientes-activos.md`).
+
+## 9. Cómo comportarte en esta área
 
 - Esta dirección recién se está construyendo — no inventar campañas, cifras ni fechas que no vengan
   de un plan real de Exxo o de lo que Mariano cuente directamente.

@@ -85,16 +85,17 @@ que se confirme qué va a cobrarse primero.
 
 ## 1.1 Próximos ingresos (registrado 17 agosto 2026)
 
-- **Regina Epifanio** — paga el **50% del servicio de visado de estudios desde origen**, en pesos
-  argentinos. Según la conversión que dio Mariano: **334€ ≈ 305.000 ARS**. De ese monto, **la mitad
-  es para Gisella y la otra mitad para GOTIR** (ver el reparto 50/50 confirmado en
+- **Regina Epifanio** — **CONFIRMADO PAGADO el 50% (334€ ≈ 305.000 ARS) — 24 agosto 2026**. De ese
+  monto, **la mitad es para Gisella y la otra mitad para GOTIR** (ver el reparto 50/50 confirmado en
   `direcciones/comercial/CLAUDE.md`, sección 1.2) — es decir, aproximadamente **152.500 ARS netos
-  para GOTIR** de este cobro (cálculo directo sobre lo que dio Mariano, no un dato que él haya dado
-  literalmente en pesos). Contacto verificado en GHL (`id=OvKjvt9MQvLiS2R6ofDG`). **Actualizado 17
-  agosto 2026**: se cargó la nota completa de contexto (timing, ciudad origen/destino, motivo,
-  laboral, formación) y se creó la oportunidad **"Regina Epifanio - Visado estudios origen"**
-  (`id=bmu3mMXm0aVco9buvdAv`) en el pipeline Pre-venta, directo en la etapa **"Pronto pago"**, valor
-  668€ (el total del servicio).
+  para GOTIR** de este primer pago. Verificado contra la conversación real en GHL: comprobante
+  compartido el 19 ago, contrato firmado el mismo día. **Falta el 50% restante (otros 334€), a
+  cobrar cuando esté por presentar la carpeta** — no antes, es el mismo esquema de pago de siempre
+  (50% al iniciar, 50% antes de presentar expediente). Contacto real en GHL bajo el nombre "Regina
+  Lucia Epifanio" (`id=vXvPgYTIctXeNlM6juoh` — el contacto duplicado viejo terminó siendo el que
+  quedó activo tras la fusión manual que hizo Mariano, no el nuevo `OvKjvt9MQvLiS2R6ofDG`).
+  **Pendiente sin resolver (24 ago)**: Regina avisó que no le funciona la plataforma de GHL para ver
+  los requisitos — Mariano lo va a revisar él mismo, no es algo que este sistema pueda diagnosticar.
   - **Contacto/oportunidad duplicados detectados y resueltos parcialmente (17 agosto 2026)**: existía
     otro contacto de la misma persona — "Regina Lucia" (`contact_id=vXvPgYTIctXeNlM6juoh`, con
     teléfono `+541149148059`) con su propia oportunidad vieja ("Regina Lucia Epifanio",

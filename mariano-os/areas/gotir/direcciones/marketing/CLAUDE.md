@@ -233,6 +233,33 @@ lo que dice el mensaje:
 la sección 5.9/6 de `comercial/CLAUDE.md` (blog/LinkedIn sin publicar, verificación de cross-posting
 a TikTok/Threads/Facebook/YouTube — ver `pendientes-activos.md`).
 
+### Respuesta real de Mariano al mensaje de Exxo (24 ago 2026, mismo día)
+
+1. **Video ya subido** — el video en cuestión es una llamada real de Mariano a **Macarena Navarro**
+   contándole que su trámite se aprobó; lo usa como pieza de confianza/prueba social (cliente real,
+   resultado real). Vale la pena tenerlo presente como el tipo de contenido que Mariano valora para
+   marketing (testimonio real de resultado, no genérico).
+2. Videos del calendario de contenido — aprobados, sin objeciones.
+3. **PDF de venta rechazado en el formato actual** — feedback textual de Mariano: *"No se entendió
+   lo que necesito, es algo breve, una síntesis que visualmente ya quede claro todo... este PDF
+   tiene varias hojas y la gente no quiere leer, y mucho menos con tanto texto"*. Ya les había
+   mandado ejemplos del formato que quiere (breve, visual). **Los 3 números de pricing y la
+   decisión sobre "+500 familias" quedan en pausa** hasta que Exxo entregue una versión corta/visual
+   — van a volver a ser relevantes cuando llegue esa versión nueva, no se descartan.
+4. **Pregunta abierta real para Agustín**: Exxo mencionó "el bloqueante de la configuración con
+   GoHighLevel" como motivo para no priorizar el rediseño de la landing — **Mariano no tenía ningún
+   conocimiento de que existiera ese bloqueo**. No hay ningún bloqueo de GHL documentado en este
+   sistema que coincida con esa descripción (el único tema de GHL resuelto recientemente fue la
+   reconexión de WhatsApp, ya cerrado). **Llevar esta pregunta directa a la reunión del 25**: ¿a
+   qué configuración de GHL se refieren exactamente?
+5. **Ads — seguimiento pedido por Mariano**: preguntó por qué se había bloqueado el alcance del
+   reel en primer lugar (Exxo todavía no respondió el motivo), y pidió que **de ahora en más manden
+   un informe periódico de cómo van las Ads** para poder ir tomando decisiones (corregir, cambiar,
+   duplicar campañas) con cierta cadencia — no una vez y listo. Esto es un pedido de reporting
+   recurrente a Exxo, distinto (pero relacionado) de la conexión directa a Meta Ads Manager de la
+   sección 7, que sigue bloqueada esperando el token/ID de cuenta. Mientras esa conexión no exista,
+   este reporting periódico de Exxo es el sustituto real.
+
 ## 9. Cómo comportarte en esta área
 
 - Esta dirección recién se está construyendo — no inventar campañas, cifras ni fechas que no vengan

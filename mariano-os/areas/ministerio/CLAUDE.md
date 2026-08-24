@@ -492,9 +492,10 @@ como tarea de resumen en ClickUp (`869epbcbf`). Puntos más importantes:
   tiene que re-conseguir otros, resistentes al agua, con la misma empresa. Sin presupuesto todavía.
 - **Bus 55 plazas**: presupuesto ya recibido por correo, con descuento (~1.197€, cifra dicha con
   duda por Marco), válido 15 días desde hoy.
-- **Provisiones**: deciden armar 65 bolsas nuevas (no 61) para no arriesgar caducidad — **hay una
-  discrepancia sin resolver** entre esa meta de 65 y el "90" que sigue apareciendo como objetivo
-  general en el inventario, no se aclaró en la llamada cuál es la cifra real a usar.
+- **Provisiones — discrepancia resuelta (24 ago, con las notas propias de Mariano tomadas en
+  vivo)**: la meta correcta es **65 bolsas nuevas**, no 90 — el 90 era del inventario viejo, ya
+  superado. Confirmado: hay 29 bolsas armadas, 34 bolsas vacías (comprar paquete de 100), 26
+  etiquetas (comprar 39 más, o sea un paquete de 100).
 - **Vehículo de carga**: Mariano prefiere una pick-up 4x4 (soporta 1.000kg, más manejable en
   montaña) por sobre un camión largo — David sigue buscando, presupuesto de un lugar en Valencia
   llega el 25 ago a primera hora.
@@ -505,6 +506,27 @@ como tarea de resumen en ClickUp (`869epbcbf`). Puntos más importantes:
   de cocina y Marco Jurado llamó para aclarar el límite.
 - **Sin tratar en esta parte de la llamada**: la pregunta de qué viernes/sábados de septiembre puede
   subir el equipo a la montaña (tarea `869epaj64`) — pendiente retomar.
+
+**Correcciones y detalle adicional (24 ago, de las notas propias de Mariano tomadas en vivo durante
+la llamada, cruzadas contra la transcripción)**:
+- **Pala metálica para el carbón**: se compra desde la **cuenta de Amazon específica de Ruge** (no
+  la personal de Julio) — pedir factura al comprar, para Administración.
+- **Cañas para antorchas / agua para senderistas**: hay una **contradicción sin resolver** entre lo
+  dicho en la llamada y la nota de asignación real de tareas de Mariano — la llamada decía que Marco
+  Guanuchi tiene el contacto de Jonathan (cañas) y que Julio vería a Adrián Rivera (agua) si David no
+  llegaba antes, pero la nota de tareas de Mariano asigna ambos contactos directamente a **David**.
+  No se resuelve por inferencia, queda anotado tal cual para que Mariano confirme quién hace cada
+  cosa realmente.
+- **Bolsas de basura negras**: son dos ítems separados, **100L** (para tapar rótulos grandes) y
+  **50L** (para rótulos chicos) — Julio le pregunta a Marco dónde las compró la vez pasada para
+  repetir la compra.
+- **Alargador eléctrico**: hay dos alargadores distintos, no uno — el del letrero iluminado de Ruge
+  (Julio se lo pide directo a Marcos Chiriguaya) y uno general (Julio se lo pide a Juliana/
+  Administración).
+- Corrección de nombre: es **Obramat**, no "Obramar", donde Julio busca la cinta reflectante.
+
+Excel de presupuesto actualizado con estas correcciones y 3 filas nuevas
+(`Presupuesto_Logistica_Ruge_24ago2026.xlsx`, 19 ítems en total ahora).
 
 ### Política de recordatorios de Ruge (pedida por Mariano 17 ago 2026)
 Mariano no quiere tener que revisar el excel él mismo para saber qué se vence — pidió que el

@@ -37,6 +37,9 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
 5. Su propia casera — monto sin dar.
 6. Reto Ruge (cuota de Mariano como servidor) — 250€.
 7. Pasaje a Madrid (viaja el 29 ago) — monto sin dar.
+- **Actualizado 24 ago 2026**: Mariano ya pagó una parte de la deuda a Micol Navarro — de los
+  406.000 ARS originales quedan solo **80.000 ARS pendientes**. Pendiente confirmar con Mariano si
+  esto cambia el orden de prioridad frente a Federico/Sabrina (350€, presión activa hoy).
 - Estado: **abierto — urgente, sin plan de pago todavía**.
 - Recordado: 1 vez (24 ago 2026).
 

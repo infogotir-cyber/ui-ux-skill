@@ -20,12 +20,15 @@ pendientes al 17 de agosto, tal como las dio, **sin convertir monedas ni sumarla
 (son monedas distintas — EUR, USD, ARS — no comparables directamente sin un tipo de cambio real),
 ordenadas por prioridad (confirmada por Mariano el 17 agosto 2026):
 
-1. 🔴 **PRIORIDAD — Micol Navarro** — **406.000 ARS**. Es una cuota de una deuda que **Sabrina**
+1. 🔴 **PRIORIDAD — Micol Navarro** — **406.000 ARS originales, ya pagó una parte — quedan 80.000
+   ARS pendientes (actualizado 24 agosto 2026)**. Es una cuota de una deuda que **Sabrina**
    está pagando (a Micol, que es su hermana), y esa cuota **cuenta como parte del sueldo de julio
    que Mariano le debe a Sabrina** — es decir, en vez de pagarle esa porción del sueldo directamente
    a Sabrina, se le paga a Micol para cubrir la cuota de la deuda de Sabrina con ella. Estructura de
    pago dirigido, igual que con lo del departamento abajo. **Esta es la deuda que Mariano marcó como
-   la más urgente de resolver de todas.**
+   la más urgente de resolver de todas** — con el pago parcial ya hecho, el saldo restante (80.000
+   ARS) es mucho más chico que el resto de las deudas de la lista, lo cual cambia el orden real de
+   urgencia frente a Federico/Sabrina (punto 2) — ver nota de prioridad más abajo.
 2. **Sabrina Navarro** — **350 EUR**, resto del sueldo de julio 2026 (la parte que no va a Micol).
    Instrucción específica de Mariano: este pago **no se le hace a ella directamente** — hay que
    pagarlo **al dueño del departamento donde ella alquila** (pago dirigido, no un depósito a su

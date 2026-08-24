@@ -1437,6 +1437,25 @@ ya dejó anotado que subir la frecuencia recién tiene sentido cuando exista un 
 barrido manual ya lo es, aunque más caro en tiempo de cómputo que el diseño final con etiqueta
 automática).
 
+**Ampliado el mismo día, más tarde**: Mariano pidió explícitamente que se revisen "todas las
+conversaciones sin responder" de su WhatsApp — motivo dado: le genera estrés real no saber cuántos
+mensajes quedaron colgados. Se amplió el alcance de la Routine diaria (`trig_01EdpytrLqvD2Q8Jsrc1KDLf`,
+"GOTIR — Fase C Propuesta 4", corre a las 08:00 UTC / 10:00 España) de las 3 etapas calientes de
+Pre-venta a: **todas las etapas de Pre-venta salvo "Pagado"** + **las etapas activas del pipeline
+Seguimiento** (clientes ya pagando, no solo leads — un mensaje sin responder de alguien que ya pagó
+puede ser tan o más urgente que uno de venta). También se le agregó una heurística explícita para
+acercarse a "sin responder" (último mensaje entrante sin respuesta saliente después, verificado con
+`ghl_read_conversation` caso por caso) — GHL no expone un filtro directo de esto por API, así que
+Mariano puede complementar con el filtro "no leído" del panel de Conversaciones de GHL (eso sí lo
+tiene él al instante desde el teléfono) y pasarle los nombres a este sistema para priorizarlos por
+sobre la inferencia automática.
+
+Aplicado también tags reales de prioridad — nueva tool `ghl_add_contact_tags` (agregada al servidor
+MCP el 24 ago 2026, misma noche) — usada por primera vez para marcar `prioridad-cierre` en los 7
+contactos con más posibilidades de cerrar de la ronda de esa tarde (Sara Sofía, Maryi Castañeda,
+Marylaura Guerrero, Javier Maddia, Héctor Ojeda, Luisana Junguittu, Felipe Nogues). Funcionó con el
+scope `contacts.write` ya habilitado, sin pedir nada nuevo — mismo patrón que notas/tareas.
+
 **Recomendación, no ejecutada todavía**: cuando llegue el momento, acotar el primer barrido
 retroactivo a algo mucho más chico que "todos, meses" — por ejemplo, presupuestos/llamadas de los
 últimos 30 días (mismo criterio que sección 8.3), y ahí sí revisar los resultados juntos antes de

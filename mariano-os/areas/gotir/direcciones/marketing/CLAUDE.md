@@ -285,6 +285,12 @@ reunión del 25, no como una queja puntual.
    cada parte — plantearlo como cambio de proceso, no reclamo puntual.
 8. Opcional, si Mariano decide plantearlo: pedirle a Agustín el contexto/documentación que Exxo usa
    para IA sobre el trabajo de marketing (pregunta abierta, sección 7, todavía sin decidir).
+9. **¿La landing `https://landing.gotir.es/estancias` tiene píxel instalado?** — Mariano le preguntó
+   esto a Exxo y no le respondieron. Importa mucho: es el link que manda ~3 veces por día desde hace
+   meses, mayormente a clientes que terminan pagando — si no hay píxel, se está perdiendo meses de
+   señal real de conversión (remarketing, optimización de campañas, lookalike audiences) de tráfico
+   ya calificado. Si nunca lo instalaron, pedir que lo hagan ya — es de las correcciones más baratas
+   y con más impacto de toda la lista.
 
 ## 9. Cómo comportarte en esta área
 

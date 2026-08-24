@@ -469,17 +469,71 @@ para el reto, con el objetivo explícito de llegar a los **50 hombres** que es e
 misma meta ya usada como columna "RETO 50 HOMBRES" en el inventario de Marco Jurado).
 
 **Mecanismo de seguimiento pedido por Mariano**: revisar el avance **dos veces por semana** —
-todavía falta que confirme qué dos días prefiere. Hasta tener nombres reales, esta tabla queda
-vacía — no inventar candidatos.
+todavía falta que confirme qué dos días prefiere.
 
-| Persona | Hombres que está visionando/invitando | Última actualización |
+**Corrección de alcance (24 ago, más tarde)**: esto no se limita al equipo de logística (Marco/
+Julio/David) — es un listado de toda la red de "visionadores" de la iglesia. Mariano mandó el
+primer resumen real ("Resumen de visionarios y visionados para Reto RUGE 2"), reproducido acá tal
+cual, organizado por visionador:
+
+| Visionador | Candidatos | Estado |
 |---|---|---|
-| Mariano Barcelona | — (pendiente, ver punto de arriba) | — |
-| Marco Guanuchi | — | — |
-| Julio César Navia | — | — |
-| David Luzuriaga | — | — |
+| **Carlos Prado** | John, Andrés | ✅ Ambos pagan el 01/09 |
+| | Jacobo | No tenía el dinero completo, iba a hablar con Marcos — Carlos queda pendiente de verlo |
+| | (padre de Jacobo) | Visionando |
+| **Jefferson** | César (viene de Londres) | ✅ Solo falta inscribirse y abonar, lo hará pronto |
+| | Julio | ✅ Queda por pagar en las próximas 2 semanas |
+| | Padre de Jefferson | Confirmando esta semana |
+| | Víctor | ✅ Quiere inscribirse esta semana |
+| | Beto | No pudo llegar a la reunión |
+| | Jesús | Con pocas ganas, sigue intentando |
+| | Hermano de Jesús | Complicado, no quiere, sigue intentando |
+| | Ismael (vía Néstor) | Trabajando en eso |
+| | Cristian | No se conectó ni responde |
+| | Jefferson (él mismo) | Aún no abonó su propio reto, lo hará en septiembre |
+| **Adrián Rivera** | (padre + oveja) | ❌ Los 2 ya dijeron que no |
+| | Su hermano | Indeciso — ayudando económicamente podría ir |
+| | Carlos Estrada | Quiere ir, no tiene recursos |
+| | Jonathan Villareal | Pagaría el 05/09 |
+| | (esposas de los dos anteriores) | Habló con ellas, cree que van a poder ir |
+| | Su cuñado | No ha podido reunirse, en principio no quiere |
+| **Marcos Ch.** | César | Paga a fin de mes |
+| | (otro, sin nombre) | Ya inscrito |
+| **Mariano Barcelona** | Jeremías, Nicolás, Lucas, Emiliano | Todos por confirmar (temas de trabajo) |
+| **Marco Guanuchi** | Su hijo | Rebelde, lo sigue intentando |
+| | (otra persona, sin nombre) | Visionando |
+| **David Luzuriaga** | (1 persona, sin nombre) | Complicado por trabajo, tiene el dinero y quiere |
+| **Julio** | Jonathan | ✅ |
+| | (1 persona, sin nombre, en Francia) | Puede y quiere venir |
+| | Su hermano | Sin querer aún |
+| **Mateo A.** | Su padre | No quiere |
+| | Johny, Lander, Luis Miguel | Contactos sin confirmar todavía |
+| **Richard** | Santiago | ✅ Confirmado, paga a fin de agosto |
+| | Franco | ✅ Sí, paga en septiembre |
+| | Elias | ✅ Tiene que cuadrar días y confirmaría |
+| | Su padre | Interesado, lo sigue visionando |
+| | (otro amigo) | Visionando |
+| **Diego Landi** | Nelson | ✅ Paga el 01/09 (su esposa) |
+| | (otra persona) | Dejó de responder |
+| **Cristian Alzate** | Yampiere | ✅ Le van a ayudar económicamente, paga esta semana o la próxima |
+| | Cristian (él mismo) | Paga esta semana |
+| | Harold | Temor por fracturas previas, lo sigue visionando |
+| | Dani | Rebelde, lo está visionando |
+| **Andrés Uquillas** | David Aguilar | ✅ Su esposa le paga el reto (01-06) |
+| | Antoni | Quiere, problema de recursos |
+| | David (sin apellido) | Tiene un viaje a Colombia esas fechas |
+| | Daniel | Dejó de responder al saber el precio |
+| | Osvaldo | Vive en Madrid, justo de dinero, confirma en septiembre |
+| | Moisés | ✅ Paga del 01 al 06 de septiembre |
+| | Francisco (del gym) | Interesado, queda en confirmar |
+| | Fran Camacho | ✅ Ya se inscribió |
+| | Cristóbal Garcés (del gym) | Confirma a principios de mes |
+| **David Valera** | José Manuel | ✅ Confirma el pago la primera semana de septiembre |
+| **Diego V.** | Miguel | Tema económico, en septiembre le sale un trabajo y podría ir |
 
-**Total confirmado hasta ahora: 0 de 50.**
+**Total confirmado/pagando (✅) hasta ahora: 15 de 50.** El resto son candidatos reales en distintas
+etapas (visionando, indecisos, sin recursos, o ya dijeron que no) — no se cuentan como confirmados
+hasta que paguen o se inscriban.
 
 ### Reunión de Logística real — 24 ago 2026, resumen (transcripción completa procesada)
 

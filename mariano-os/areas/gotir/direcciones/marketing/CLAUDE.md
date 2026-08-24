@@ -342,14 +342,18 @@ evidencia firme de que no hay píxel en ninguna de las dos páginas revisadas, y
 real de cifras (150 vs 500 familias, y 5 vs ~2 años) publicada en el propio sitio de GOTIR.
 
 **Temario completo mandado a Agustín el 24 ago 2026, de antemano, para que el equipo prepare
-respuestas antes de la llamada** — 13 puntos: pago pendiente, píxel ausente (con evidencia), falta
+respuestas antes de la llamada** — se armó un PDF con identidad de GOTIR (portada navy/azul,
+numerado, con etiquetas "URGENTE"/"PROCESO") con 12 puntos: píxel ausente (con evidencia), falta
 de informe de Ads (julio Y agosto, nunca se mandó ninguno), blog/LinkedIn sin publicar, PDF de venta
 en formato incorrecto (pidió una hoja, mandaron varias), cifras institucionales inconsistentes entre
 las propias páginas de GOTIR, aclarar el "bloqueo de GHL" que Mariano desconocía, estado real de la
 web, duda sobre si el formulario final guarda datos antes de abrir WhatsApp, video de la landing sin
 poder verificar, cross-posting a las 4 redes, proceso nuevo de minuta post-llamada, detalle menor de
 copy inconsistente en botones, y la pregunta opcional sobre documentación de Exxo para IA. Mismo
-contenido que las secciones 8-10 de este documento, consolidado en un solo mensaje para enviar.
+contenido que las secciones 8-10 de este documento, consolidado en un solo documento para enviar.
+**El pago pendiente (USD 237) se sacó a propósito de este documento** — Mariano lo marcó como algo
+interno de GOTIR, no para compartir con Exxo en este temario; sigue siendo un pendiente real, solo
+que se gestiona por otro canal, no en este envío.
 
 ## 9. Cómo comportarte en esta área
 

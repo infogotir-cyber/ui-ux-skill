@@ -1381,6 +1381,62 @@ tres motivos concretos, no por seguir pidiendo permiso porque sí:
    no está construida — antes de barrer meses de historial hace falta que el mecanismo que arma cada
    respuesta ya esté probado con volumen chico y reciente.
 
+### 13.6 Corrección real sobre la Fase B (24 agosto 2026) + spec para el builder de n8n
+
+Al retomar la Propuesta 4 se inspeccionó por primera vez el contenido real del nodo "Placeholder —
+GHL" dentro del workflow "JARVIS - Go High Level" (`HYsCGgQAorF5t5Yq` en n8n) para ver qué tan
+avanzada estaba la "rama ya diseñada" que menciona la Fase B en
+`propuestas-sistema-comercial.md`. **Corrección importante**: no hay lógica diseñada — el nodo es
+un `Code` que devuelve siempre el mismo string estático `"Este módulo está en construcción..."`, sin
+ninguna conexión real a Fathom ni a GHL. La Fase B no es "conectar algo que ya existe", es
+construirla desde cero.
+
+**Confirmado también**: las tools de n8n disponibles en este entorno (`search_workflows`,
+`get_workflow_details`, `execute_workflow`) no incluyen ninguna para crear o editar workflows — se
+buscó explícitamente y no existe. Igual que la Fase A, esto requiere que Mariano lo arme él mismo en
+el editor de n8n (`n8n.gotir.es`).
+
+**Spec funcional para cuando Mariano tenga tiempo en el editor de n8n** (mismo criterio que la
+sección 13.2 — qué tiene que lograr, no instrucciones de UI paso a paso):
+1. Fathom manda su resumen post-llamada por webhook (Fathom soporta webhooks de "meeting ended" con
+   el resumen ya generado) — un nuevo trigger en n8n, separado del webhook de JARVIS.
+2. Ese nodo llama a la API de GHL para: pegar el resumen en la nota del contacto
+   (`POST /contacts/:contactId/notes`), aplicar la etiqueta de temperatura, y crear la tarea de
+   próxima acción con fecha exacta (`POST /contacts/:contactId/tasks`) — los mismos 3 pasos que hoy
+   hace Mariano a mano (sección 1.4) y que este sistema ya puede hacer por API en Claude Code
+   (`ghl_add_contact_note`, `ghl_create_task`) — acá es la misma lógica, pero corriendo sola dentro
+   de n8n en vez de que Mariano tenga que pedírselo a este sistema cada vez.
+3. El punto más difícil, a resolver en el editor: cómo mapea Fathom la llamada con el `contactId`
+   correcto de GHL — probablemente por el email/teléfono del invitado a la reunión, cruzado contra
+   `ghl_search_contacts`. Si Fathom no manda un dato cruzable de forma confiable, esta fase se
+   traba ahí, no en la parte de GHL.
+
+Como esto y la Fase A (sección 13.2) requieren el mismo tipo de trabajo (builder, no API), tiene
+sentido que Mariano los resuelva juntos la próxima vez que tenga ~20-30 minutos frente a la
+computadora, en vez de dos sesiones separadas.
+
+### 13.7 Fase C en versión reducida — arrancada hoy (24 agosto 2026), sin esperar a la A y B completas
+
+Mariano pidió seguir avanzando con la Propuesta 4 hoy mismo. Como la Fase C completa depende de que
+la Fase A termine de automatizar la etiqueta "esperando respuesta" (sección 13.2, todavía sin
+hacer), no hay una lista viva automática para leer — pero el barrido manual de esta misma sesión
+(sección 6.3: Héctor Ojeda, Luisana Junguittu, Felipe Nogues, Samuel Salgan, Maximiliano Hernández,
+Sebastian Monar, Stephany Cardozo) fue, en la práctica, la Fase C funcionando en su forma más
+manual: buscar oportunidades estancadas por etapa (`ghl_search_opportunities`), leer la conversación
+real de cada una (`ghl_read_conversation`), armar un borrador aplicando el checklist de venta
+(sección 12.4), y esperar la aprobación de Mariano antes de que él lo mande.
+
+**Esto ya es replicable como rutina, sin necesitar el builder de GHL ni de n8n**: barrer
+periódicamente las etapas "Llamada realizada", "Información y contrato enviado" y "Pronto pago" del
+pipeline Pre-venta buscando oportunidades sin actividad reciente (comparando `ult. cambio etapa`
+contra la fecha de hoy), en vez de depender del campo automático. Es más manual que el diseño final
+de la Fase C (que iba a leer una lista ya filtrada por GHL) pero entrega el mismo valor real hoy: un
+borrador de calidad para el 100% del pipeline vivo, no solo para lo que Mariano se acuerda de
+revisar. Candidato a Routine periódica — a definir con Mariano la cadencia (ver sección 13.4, que
+ya dejó anotado que subir la frecuencia recién tiene sentido cuando exista un mecanismo real, y este
+barrido manual ya lo es, aunque más caro en tiempo de cómputo que el diseño final con etiqueta
+automática).
+
 **Recomendación, no ejecutada todavía**: cuando llegue el momento, acotar el primer barrido
 retroactivo a algo mucho más chico que "todos, meses" — por ejemplo, presupuestos/llamadas de los
 últimos 30 días (mismo criterio que sección 8.3), y ahí sí revisar los resultados juntos antes de

@@ -291,6 +291,55 @@ reunión del 25, no como una queja puntual.
    señal real de conversión (remarketing, optimización de campañas, lookalike audiences) de tráfico
    ya calificado. Si nunca lo instalaron, pedir que lo hagan ya — es de las correcciones más baratas
    y con más impacto de toda la lista.
+   **RESPONDIDA con evidencia dura (24 ago 2026)** — ver sección 10 abajo: confirmado que NO tiene
+   ningún píxel. Ya no es una pregunta abierta, es un hallazgo para exigir que se corrija.
+
+## 10. Auditoría técnica de UI/UX + tracking (24 ago 2026) — dos páginas reales analizadas
+
+A pedido de Mariano, análisis profundo (contenido + monitoreo real de red + capturas visuales
+scrolleadas de verdad, no solo la primera pantalla) de dos páginas reales de GOTIR, para llevar a
+la reunión del 25 con Agustín. Metodología: Playwright headless real contra la URL en vivo,
+capturando cada request de red (no solo el HTML inicial) para confirmar o descartar píxeles con
+evidencia, no suposición.
+
+### `https://www.gotir.es/servicios/estancia-estudios`
+- **Cero píxeles de tracking** (Meta, Google Analytics/Tag Manager, TikTok, LinkedIn) — confirmado
+  por HTML y por monitoreo de las peticiones de red reales al cargar la página.
+- Contenido y estructura bien resueltos: video de Mariano explicando el trámite, 6 pasos del
+  proceso, FAQ de 12 preguntas reales, testimonios con nombre y "+500 familias / 4,9 en Google, 55
+  reseñas" (misma cifra que el PDF nuevo de Exxo — ver sección 8).
+- Formulario final (Nombre, Email, País, Interés, Situación) con un solo CTA "Enviar consulta por
+  WhatsApp" — **sin confirmar si los datos quedan guardados en algún lado antes de abrir WhatsApp**,
+  o si se pierden cuando la persona no llega a mandar el mensaje. Pregunta para Agustín.
+
+### `https://landing.gotir.es/estancias` (la que Mariano manda ~3 veces por día)
+- **Confirmado con evidencia dura: NO tiene ningún píxel instalado.** Los únicos 7 dominios que
+  contacta la página al cargar son fuentes de Google, `gotir.es`, `landing.gotir.es`, el CDN de
+  GoHighLevel (`images.leadconnectorhq.com`, `stcdn.leadconnectorhq.com`) y el beacon propio de
+  Cloudflare (no sirve para remarketing). Cero Meta, cero Google Ads/Analytics, cero TikTok.
+- **Dato técnico útil**: esta landing está construida directo en el builder de funnels de
+  GoHighLevel — agregar el píxel ahí es configuración estándar de GHL (Tracking Code del funnel),
+  no un desarrollo nuevo.
+- **⚠️ Inconsistencia real y confirmada entre las propias páginas de GOTIR**: esta landing dice
+  **"150+ familias ya confiaron en nosotros"**, **"98% de éxito en solicitudes"** y **"5+ años
+  ayudando..."** — mientras que `www.gotir.es/servicios/estancia-estudios` y el PDF nuevo de Exxo
+  dicen **"+500 familias"**. No es solo una cifra de Exxo sin verificar — es una contradicción ya
+  publicada entre dos páginas propias de GOTIR, con dos números de familias distintos (150 vs 500).
+  Esto además confirma en vivo la discrepancia de "5+ años" ya registrada en `areas/gotir/CLAUDE.md`
+  (Mariano estimó que en realidad son ~2 años). Corregir esto es más urgente que decidir cuál cifra
+  usar en el PDF nuevo — hay que unificar lo que ya está publicado antes de sumar una tercera cifra.
+- El video principal de la landing no pudo verificarse visualmente (limitación del entorno de
+  Claude Code, dominios de video todavía sin habilitar — no se confirma que esté roto para
+  visitantes reales, solo que no se pudo revisar del todo).
+- Detalle menor: el botón CTA dice "Agendar mi llamada" en algunos lugares y "Agendo mi llamada"
+  en otro — inconsistencia de redacción, no bloqueante.
+- Sin embargo el formulario de esta landing es distinto al de la otra página: acá no hay campos de
+  contacto, todo el flujo es directo a "Agendar mi llamada" (probablemente a un calendario) — no se
+  confirma si eso reemplaza o complementa al formulario con WhatsApp de la otra página.
+
+**Para la reunión del 25**: el punto 9 de la agenda deja de ser una pregunta abierta — ya hay
+evidencia firme de que no hay píxel en ninguna de las dos páginas revisadas, y una inconsistencia
+real de cifras (150 vs 500 familias, y 5 vs ~2 años) publicada en el propio sitio de GOTIR.
 
 ## 9. Cómo comportarte en esta área
 

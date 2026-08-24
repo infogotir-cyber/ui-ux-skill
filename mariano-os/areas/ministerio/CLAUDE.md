@@ -492,10 +492,12 @@ como tarea de resumen en ClickUp (`869epbcbf`). Puntos más importantes:
   tiene que re-conseguir otros, resistentes al agua, con la misma empresa. Sin presupuesto todavía.
 - **Bus 55 plazas**: presupuesto ya recibido por correo, con descuento (~1.197€, cifra dicha con
   duda por Marco), válido 15 días desde hoy.
-- **Provisiones — discrepancia resuelta (24 ago, con las notas propias de Mariano tomadas en
-  vivo)**: la meta correcta es **65 bolsas nuevas**, no 90 — el 90 era del inventario viejo, ya
-  superado. Confirmado: hay 29 bolsas armadas, 34 bolsas vacías (comprar paquete de 100), 26
-  etiquetas (comprar 39 más, o sea un paquete de 100).
+- **Provisiones — corrección importante (24 ago)**: en la llamada decidieron bajar la meta a **65
+  bolsas nuevas**. **Pero esto NO está reflejado en el inventario oficial de Marco Jurado**
+  (`INVENTARIO_2026_RUGE_actualizado_21ago2026.xlsx`, cruzado recién) — ahí sigue diciendo **reto=90,
+  stock=30**, la cifra vieja. No es un error de este sistema, es que la decisión de hoy todavía no
+  se comunicó/cargó en el documento oficial. **Alguien tiene que avisarle a Marco Jurado del cambio
+  a 65** para que los dos documentos coincidan.
 - **Vehículo de carga**: Mariano prefiere una pick-up 4x4 (soporta 1.000kg, más manejable en
   montaña) por sobre un camión largo — David sigue buscando, presupuesto de un lugar en Valencia
   llega el 25 ago a primera hora.
@@ -527,6 +529,23 @@ la llamada, cruzadas contra la transcripción)**:
 
 Excel de presupuesto actualizado con estas correcciones y 3 filas nuevas
 (`Presupuesto_Logistica_Ruge_24ago2026.xlsx`, 19 ítems en total ahora).
+
+**Cruce real contra el inventario oficial de Marco Jurado (24 ago, a pedido explícito de
+Mariano)** — hasta este punto solo se había cruzado contra la transcripción y las notas propias de
+Mariano, NO contra el documento oficial. Resultado del cruce real:
+- **Pala metálica para el carbón**: la gestión real es de **Logística**, no de Administración
+  (corregido en el excel).
+- **Alargador eléctrico general**: **ya está prestado por la Iglesia Impact Valencia** — no hay que
+  comprarlo ni pedírselo a Juliana, solo probar que funcione (corregido, era un error en el
+  registro anterior).
+- **Teléfono satelital** y **rótulo luminoso "España"**: no aparecen en el inventario oficial de
+  Marco Jurado — se hablaron en la llamada pero no están cargados ahí. Falta confirmar con él si
+  simplemente no los agregó todavía.
+- **Antorchas de LED solares** (ítem separado de las cañas): faltan 6 de 30 — detectado recién al
+  cruzar, no se había mencionado en la llamada de hoy.
+- El resto de los ítems (bus, radios VHF, camión/furgoneta, cañas, platos, troncos, agua,
+  pegatinas, figuras de premios) coinciden entre la llamada y el inventario oficial, sin
+  contradicciones nuevas.
 
 ### Política de recordatorios de Ruge (pedida por Mariano 17 ago 2026)
 Mariano no quiere tener que revisar el excel él mismo para saber qué se vence — pidió que el

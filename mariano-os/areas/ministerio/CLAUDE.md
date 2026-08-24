@@ -481,6 +481,31 @@ vacía — no inventar candidatos.
 
 **Total confirmado hasta ahora: 0 de 50.**
 
+### Reunión de Logística real — 24 ago 2026, resumen (transcripción completa procesada)
+
+Llamada con Marco Guanuchi, Julio César Navia y David Luzuriaga, dirigida por Mariano. Detalle
+completo de compras/presupuestos volcado al excel
+`areas/ministerio/recursos/Presupuesto_Logistica_Ruge_24ago2026.xlsx` (16 ítems reales cargados) y
+como tarea de resumen en ClickUp (`869epbcbf`). Puntos más importantes:
+
+- **Radios VHF de largo alcance**: los alquilados el reto anterior no sirvieron en montaña — Marco
+  tiene que re-conseguir otros, resistentes al agua, con la misma empresa. Sin presupuesto todavía.
+- **Bus 55 plazas**: presupuesto ya recibido por correo, con descuento (~1.197€, cifra dicha con
+  duda por Marco), válido 15 días desde hoy.
+- **Provisiones**: deciden armar 65 bolsas nuevas (no 61) para no arriesgar caducidad — **hay una
+  discrepancia sin resolver** entre esa meta de 65 y el "90" que sigue apareciendo como objetivo
+  general en el inventario, no se aclaró en la llamada cuál es la cifra real a usar.
+- **Vehículo de carga**: Mariano prefiere una pick-up 4x4 (soporta 1.000kg, más manejable en
+  montaña) por sobre un camión largo — David sigue buscando, presupuesto de un lugar en Valencia
+  llega el 25 ago a primera hora.
+- **Cañas para antorchas**: ya resuelto, ~23-24€, se retira el domingo.
+- **Aclarado explícitamente en la llamada**: todo lo que dice "COCINA" en el reparto de tareas NO es
+  responsabilidad de Logística — Logística solo hace check-in, la ejecución es de Adrián Rivera
+  (equipo de Cocina). Hubo una confusión esta semana porque alguien de Logística preguntó por cosas
+  de cocina y Marco Jurado llamó para aclarar el límite.
+- **Sin tratar en esta parte de la llamada**: la pregunta de qué viernes/sábados de septiembre puede
+  subir el equipo a la montaña (tarea `869epaj64`) — pendiente retomar.
+
 ### Política de recordatorios de Ruge (pedida por Mariano 17 ago 2026)
 Mariano no quiere tener que revisar el excel él mismo para saber qué se vence — pidió que el
 sistema le avise proactivamente a medida que se acercan las fechas límite, con un mensaje ya

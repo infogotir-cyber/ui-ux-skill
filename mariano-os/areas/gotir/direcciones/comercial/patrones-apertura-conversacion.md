@@ -213,12 +213,18 @@ secuencia dentro de la misma conversación.
 **6. `mini-funnel-6-pausa`**
 > ¿Esto te queda claro hasta acá, o tenés alguna duda?
 
-**7. `mini-funnel-7-requisitos-total`**
-> Y luego debés contemplar algunas inversiones más, como honorarios, apostillas, certificaciones,
-> etc.
+**7. `mini-funnel-7-requisitos-total`** *(desglosado 25 ago 2026)*
+> Y luego hay que contemplar estos costos para arrancar:
 >
-> Es decir que para comenzar debés contar con alrededor de 3.000€ (está incluida la matrícula del
-> curso) y luego podés pagar el resto en cuotas.
+> ✅ Matrícula del curso: aproximadamente 890€ (varía según el curso, te confirmamos el monto exacto
+> según el que elijas).
+>
+> ✅ Nuestros honorarios por la asesoría y gestión completa del trámite: 825€.
+>
+> ✅ Seguro médico: entre 500€ y 800€ anuales (se paga una sola vez al comenzar).
+>
+> Es decir que para arrancar necesitás contar con aproximadamente 2.200€-2.500€, y el resto lo vas
+> pagando en cuotas.
 
 **8. `mini-funnel-8-presupuesto`**
 > ¿Te parecen alcanzables estos montos en el corto plazo?
@@ -244,3 +250,12 @@ la pausa 6 en el medio a propósito, para no descargar todo junto (la fuga ya id
 como en el Mapa Antifugas, sección 8 de `CLAUDE.md`). Si en una conversación puntual tiene sentido
 saltear la pausa (el lead ya viene muy avanzado, tipo Sara Sofía o Maryi), usar criterio — la
 secuencia es una base, no una camisa de fuerza.
+
+**Por qué el Fragmento 7 nombra los honorarios de GOTIR explícitamente (825€), decisión de Mariano
+25 ago 2026**: antes decía solo "~3.000€ total, incluida la matrícula", sin desglosar. Mariano
+quiere que el lead ya sepa el monto de los honorarios de GOTIR *antes* de llegar a la llamada —
+así, si agenda y llega a la llamada, ya sabe cuánto vale el servicio, ya decidió que puede pagarlo
+y que quiere pagarlo. Es el mismo criterio de "puede/quiere/sabe" que motiva todo este mini-funnel,
+aplicado específicamente al precio del servicio (no solo al costo total del trámite) — filtra antes
+de la llamada a quien no puede o no quiere pagar 825€ de honorarios, en vez de que Mariano lo
+descubra recién en la llamada.

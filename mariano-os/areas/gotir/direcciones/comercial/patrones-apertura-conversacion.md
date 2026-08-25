@@ -194,13 +194,15 @@ secuencia dentro de la misma conversación.
 > ¿Tenés fecha o ventana tentativa de viaje? Contame aunque sea aproximado, así te oriento mejor
 > según cuánto tiempo tenés para prepararte.
 
-**4. `mini-funnel-4-requisitos-curso`**
+**4. `mini-funnel-4-requisitos-curso`** *(prueba social agregada 25 ago 2026)*
 > Los requisitos principales de una visa o estancia por estudios son:
 >
 > ✅ Inscribirse en un curso válido para solicitar el visado (no todos los cursos son aceptados por
 > Extranjería, solo algunos y deben ser con aval universitario y de grado superior). Dependiendo de
-> la formación elegida, el coste suele oscilar entre 2.800 € y 10.000 €. (Nosotros te vamos a
-> proponer opciones válidas)
+> la formación elegida, el coste suele oscilar entre 2.800 € y 10.000 €.
+>
+> Nosotros te vamos a proponer solo opciones que ya usaron cientos de clientes nuestros, con
+> resoluciones aprobadas — para que no tengas que arriesgarte con algo sin probar.
 
 **5. `mini-funnel-5-requisitos-fondos`**
 > ✅ Acreditar medios económicos suficientes para mantenerse durante la estancia en España.
@@ -250,6 +252,14 @@ la pausa 6 en el medio a propósito, para no descargar todo junto (la fuga ya id
 como en el Mapa Antifugas, sección 8 de `CLAUDE.md`). Si en una conversación puntual tiene sentido
 saltear la pausa (el lead ya viene muy avanzado, tipo Sara Sofía o Maryi), usar criterio — la
 secuencia es una base, no una camisa de fuerza.
+
+**Por qué el Fragmento 4 suma prueba social (Cialdini), agregado 25 ago 2026**: Mariano preguntó si
+el mini-funnel completo aplica el criterio de venta (Cardone/Cialdini/Voss, sección 12.4) — al
+revisarlo de nuevo, la mayoría de los 9 Fragmentos son preguntas de descubrimiento o información
+factual donde el checklist no aplica directo (no hay CTA que cerrar, no hay urgencia que mostrar),
+pero faltaba prueba social real. Mariano mismo la usa verbalmente en llamadas reales (ej. con
+Milagros: "tenemos cientos de clientes ya estudiando ahí, con comprobantes de las resoluciones
+aprobadas") — no es un dato inventado para el Fragmento, es lo que él ya dice siempre.
 
 **Por qué el Fragmento 7 nombra los honorarios de GOTIR explícitamente (825€), decisión de Mariano
 25 ago 2026**: antes decía solo "~3.000€ total, incluida la matrícula", sin desglosar. Mariano

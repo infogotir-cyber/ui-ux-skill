@@ -224,8 +224,15 @@ secuencia dentro de la misma conversación.
 > ¿Te parecen alcanzables estos montos en el corto plazo?
 
 **9. `mini-funnel-9-video-formulario`**
-> Te paso este link — hay un video corto mío (6 min) donde cuento lo más importante, y al final hay
-> un botón para agendar la asesoría gratuita: https://landing.gotir.es/estancias
+> Mirá este video corto mío (6 min) — ahí te cuento lo más importante del proceso, y al final
+> agendás directo tu asesoría gratuita conmigo: https://landing.gotir.es/estancias
+>
+> Avisame cuando la tengas agendada 🙌
+
+*(25 ago 2026 — ajustado con lenguaje asuntivo, sección 12.4 de `CLAUDE.md`: en vez de describir
+pasivamente que "hay un botón para agendar", se asume que van a agendar y se le pide directamente
+que avise cuando lo haga — mismo principio que ya se usa en los cierres de venta reales de esta
+sesión.)*
 
 El paso de agendar (10 en el flujo original) no necesita Fragmento propio — hoy ya es una
 confirmación corta y reactiva ("Así es", "Perfecto") que depende de la respuesta puntual del lead,

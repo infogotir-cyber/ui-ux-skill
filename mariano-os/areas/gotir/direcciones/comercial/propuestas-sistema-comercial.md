@@ -64,13 +64,32 @@ nunca se le pase nadie.
 presupuesto) y agenda solo, sin depender de que Mariano esté disponible en el momento. El lead le
 llega ya calificado — la parte que solo él puede hacer bien (confianza, cierre).
 
-- **Hallazgo importante a confirmar antes de construir nada**: en la cuenta de GHL ya existen
-  workflows publicados llamados **"Bot setter"** (`79ded9c9-20ed-40e7-b403-fec2add1895e`), **"Bot
-  closer"** (`95b6fd4f-8363-4306-b574-9669b37c8172`), **"Bot para clientes"**
-  (`eafe5f36-86e1-4949-9ece-54c78edf78cf`) y **"Proximo follow up bot closer"**
-  (`dcaa56ee-e8a6-4355-8a8a-44dbe9b05ffa`) — no están documentados en este sistema y no se sabe si
-  están activos, en pausa, o un intento anterior sin terminar. Antes de diseñar esta ruta desde
-  cero, revisarlos juntos — podría ser que ya exista media construcción.
+- **Hallazgo importante, ya revisado (25 agosto 2026)**: en la cuenta de GHL existen 4 workflows
+  publicados llamados **"Bot setter"** (`79ded9c9-20ed-40e7-b403-fec2add1895e`, v31), **"Bot
+  closer"** (`95b6fd4f-8363-4306-b574-9669b37c8172`, v4), **"Bot para clientes"**
+  (`eafe5f36-86e1-4949-9ece-54c78edf78cf`, v5) y **"Proximo follow up bot closer"**
+  (`dcaa56ee-e8a6-4355-8a8a-44dbe9b05ffa`, v5). Se abrió **"Bot setter"** en el builder (el de más
+  versiones, 31 — sugería que había trabajo real hecho ahí) para ver su lógica real: es solo 2
+  pasos — trigger "El cliente ha respondido" filtrado por `Has Tag includes "mariano"` → acción
+  Webhook (POST) a `https://n8n.gotir.es/webhook/fce352e8-8edf-447c-9b54-c2c2b...` con el mensaje,
+  nombre, teléfono, canal, etiquetas y email del contacto. O sea que "Bot setter" no contesta nada
+  él solo — es un router que reenvía el mensaje a una automatización de n8n para que esa sea la que
+  responda. **Ese webhook está muerto**: se buscó en `n8n.gotir.es` (revisado por Mariano
+  directamente) y no existe ningún workflow con ese path — ni con las herramientas de n8n
+  disponibles en este entorno (que hoy solo ven el workflow "JARVIS - Go High Level", con un
+  webhook de path distinto, `72842a61...`) ni en la cuenta real de n8n de Mariano. Conclusión:
+  "Bot setter" es un intento anterior abandonado a mitad de camino, no algo reutilizable — no vale
+  la pena seguir esa punta. **"Bot closer"**, **"Bot para clientes"** y **"Proximo follow up bot
+  closer"** quedan sin revisar todavía (no se llegó a abrirlos), así que no están descartados de la
+  misma forma, pero tampoco hay nada que indique que resuelven esto — revisarlos solo si conviene
+  antes de construir de cero.
+- **Decisión (25 agosto 2026)**: en vez de rescatar nada de GHL, **el bot se construye nuevo, desde
+  cero, directo en n8n** (mismo criterio que la Fase B de la Propuesta 4 — sección 13.6 de
+  `CLAUDE.md` — construir ahí en vez de intentar reparar una rama vieja a medio hacer). Mariano
+  decidió además, antes de este hallazgo, ir por un puente corto: probar el mini-funnel manual
+  (los 9 Fragmentos de `patrones-apertura-conversacion.md`, ya listos para pegar en GHL) con los
+  próximos 3-5 leads reales, y recién con eso validado en vivo pasar a automatizarlo como bot en
+  n8n. Construcción real del bot: pendiente, se retoma en una próxima sesión.
 - **Cómo resuelve la bandeja sin responder**: el bot responde en segundos, siempre — nadie queda en
   silencio literal, incluso si Mariano está en una llamada o durmiendo. Solo le llega la
   conversación cuando el bot ya calificó, o cuando el lead pide explícitamente un humano.

@@ -146,7 +146,11 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
      en el builder de GHL — es el único paso manual que queda de toda la Fase A.
    - Hallazgo aparte, no bloqueante para la Propuesta 4: ya existen workflows publicados en GHL
      llamados "Bot setter", "Bot closer", "Bot para clientes" y "Proximo follow up bot closer" —
-     eran relevantes solo si se elegía la Propuesta 2, que no fue la elegida.
+     eran relevantes solo si se elegía la Propuesta 2, que no fue la elegida. **Revisado a fondo el
+     25 ago 2026** (a raíz del pedido de automatizar el mini-funnel pre-llamada, ítem 2 más abajo):
+     "Bot setter" resultó ser solo un router (trigger "el cliente respondió" → webhook a n8n), y ese
+     webhook está muerto — no existe ningún workflow en n8n con ese path. Detalle completo en
+     `direcciones/comercial/propuestas-sistema-comercial.md`, sección Propuesta 2.
    - **Pendiente separado, todavía sin ejecutar a propósito**: Mariano preguntó si se puede aplicar
      esto en retroactivo a todos los clientes que escribieron y no se les respondió en los últimos
      meses. Es técnicamente posible, pero no se ejecutó — motivo completo en
@@ -205,15 +209,21 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
      6.2, cubre SABE/QUIERE/PUEDE/CUÁNDO) para que la persona llegue a la llamada sabiendo
      requisitos y precios con más claridad de la que hoy logra.
    - Mencionado por Mariano: antes del 19 ago 2026, sin seguimiento; retomado y aclarado el 19 ago.
-   - Estado: **bloqueado (esperando a Mariano) — texto ya terminado (20 ago 2026)**. Se analizaron
-     10 conversaciones reales, se armó la secuencia de 9 mensajes y se confirmó que GHL no permite
-     crear Fragmentos por API (probado contra el endpoint real, no solo asumido — ver
-     `direcciones/comercial/patrones-apertura-conversacion.md`, sección "Fragmentos de GHL"). El
-     texto final de los 9 Fragmentos, listo para copiar y pegar, está en la sección "Textos finales"
-     del mismo documento. Falta que Mariano los cargue a mano en GHL (Conversaciones → Fragmentos) —
-     no hay nada más que este sistema pueda avanzar hasta que eso pase.
-   - Recordado: 4 veces (19 ago 2026, chequeo diario 20:00; 20 ago 2026; 20 ago, chequeo diario
-     20:00).
+   - **Actualizado 25 ago 2026**: Fragmento 9 (el CTA de agendar) ajustado con lenguaje asuntivo
+     (checklist de venta, sección 12.4). Mariano pidió que esto corra automático apenas llega un
+     mensaje nuevo, no que él tenga que mandar cada Fragmento a mano — se evaluó manual vs. bot
+     (recomendación dada: bot, porque son preguntas de filtro predecibles y de bajo riesgo, pero
+     probarlo primero en vivo antes de automatizar del todo). **Decisión de Mariano**: probar los 9
+     Fragmentos manual con los próximos 3-5 leads reales primero, y recién ahí automatizar. Se
+     revisó si algún workflow "Bot" ya existente en GHL servía de base — no, ver ítem de la
+     Propuesta 4 más arriba. **Decisión (25 ago 2026): el bot para este mini-funnel se construye
+     nuevo, desde cero, en n8n** — construcción todavía sin empezar, se retoma en una próxima
+     sesión.
+   - Estado: **bloqueado (esperando a Mariano) — texto terminado y cargado en el sistema, falta que
+     Mariano pegue los 9 Fragmentos en GHL y los pruebe manual con leads reales antes de que se
+     construya la versión bot en n8n**.
+   - Recordado: 5 veces (19 ago 2026, chequeo diario 20:00; 20 ago 2026; 20 ago, chequeo diario
+     20:00; 25 ago 2026).
 
 3. **Migrar la cuenta de ads a facturación en euros (hoy en pesos, vía Mercado Pago Argentina)**
    - Detalle completo en `direcciones/marketing/CLAUDE.md`, sección 6. Mariano ya decidió hacerlo

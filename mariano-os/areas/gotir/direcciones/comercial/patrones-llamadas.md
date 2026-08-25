@@ -6,7 +6,7 @@
 > llamada (`CLAUDE.md`, sección 2). Se actualiza cada vez que llega una transcripción nueva, sin
 > esperar a que Mariano lo pida.
 >
-> **Contador: 3/20 llamadas registradas.**
+> **Contador: 4/20 llamadas registradas.**
 
 ## Cómo se carga
 
@@ -45,14 +45,15 @@ confirman.
   que ir al grano... ¿pudiste ver el video? ¿pudiste ver los requisitos?") — de hecho mejor que el
   guion, porque además referenció el contenido pre-llamada. No es un patrón parejo todavía, dos
   llamadas van 1 y 1 — seguir vigilando.
-- **Próxima acción sin hora exacta — 3/3 llamadas del registro (patrón cada vez más sólido)**: Sara
-  Sofía dijo "hoy mismo", Maryi dijo "a principio de la semana que viene", y Florencia/Manuel
-  quedaron directamente en "cuando arranquemos la temporada en Andorra, en noviembre" — el caso más
-  vago de los tres, ni siquiera un día concreto, solo un mes. En los tres casos este sistema tuvo
-  que fijar una fecha/hora al crear la tarea de seguimiento en GHL en vez de que quedara cerrada en
-  la llamada. Coincide con el error #1 ya documentado en la llamada con Hector (sección 3.2) — con
-  este tercer caso dentro de la ventana de 20, es el patrón más repetido y más consistente de todos
-  los analizados hasta ahora.
+- **Próxima acción sin hora exacta — 4/4 llamadas del registro (patrón ya consolidado)**: Sara
+  Sofía dijo "hoy mismo", Maryi dijo "a principio de la semana que viene", Florencia/Manuel
+  quedaron directamente en "cuando arranquemos la temporada en Andorra, en noviembre" (el caso más
+  vago de los tres, ni siquiera un día concreto, solo un mes), y Milagros dijo "en el día de hoy"
+  sin especificar horario. En los cuatro casos este sistema tuvo que fijar una fecha/hora al crear
+  la tarea de seguimiento en GHL en vez de que quedara cerrada en la llamada. Coincide con el error
+  #1 ya documentado en la llamada con Hector (sección 3.2) — con 4/4 dentro de la ventana de 20, es
+  el patrón más repetido y más consistente de todos los analizados hasta ahora, y refuerza
+  directamente la sugerencia de guion de abajo (preguntar la hora explícitamente en la Fase 5).
 - **Reservar tiempo insuficiente para la llamada, chocando con un compromiso personal (Maryi)**:
   Mariano avisó desde el minuto 0 que tenía ~24 minutos porque después debía salir a la iglesia, y
   a los 22 minutos tuvo que anunciar que se le acababa el tiempo de verdad ("si no salgo me
@@ -96,3 +97,4 @@ confirman.
 | 1 | 20 ago 2026 | Sara Sofía Gutierrez Villa | 65 min, colombiana, consultora independiente, ya había cotizado con otras agencias sin decidirse. Diagnóstico completo → estancia por estudios, 3 escuelas presentadas, cerró enviando cotización + contrato + link de pago (50%: 427,50€) en vivo. Muy buena conexión personal, sin objeciones reales. 🔥 Caliente, dijo que confirma hoy. | Nuevo: primera llamada del registro — ver "Errores recurrentes" y "Ajustes sugeridos" arriba. Repetido/mejorado respecto a Hector: cierre con próxima acción (aunque sin hora exacta) vs. Hector que no tuvo ninguna. |
 | 2 | 20 ago 2026 | Maryi Castañeda | 39 min, colombiana, familia de 3 (ella + padre 57a + hija de 2a sin papeles colombianos, padre de la niña ausente). Diagnóstico: estancia por estudios para ella y su padre + reagrupación familiar para la hija. Mismas 3 escuelas que Sara Sofía, mismos precios. Llamada comprimida al final por un compromiso personal de Mariano (iglesia) — sin pago en vivo, próxima acción "a principio de la semana que viene" sin hora. Oportunidad actualizada a 2.475€ (825€×3). 🔥 Caliente, muy agradecida, referida por "Laura". | Nuevo: caso legal complejo (menor sin papeles, padre ausente) manejado con transparencia ("no invento, consultá un escribano"). Repetido: próxima acción sin hora exacta (2/2, ya confirmado como patrón — ver arriba); mismo bloque de 3 escuelas palabra por palabra que Sara Sofía (fortaleza confirmada del guion). |
 | 3 | 21 ago 2026 | Florencia Cuaranta y Manuel (pareja de hecho) | 49 min, argentinos, actualmente en Montenegro con permiso de trabajo, se van a Andorra a hacer temporada (15 nov 2026, ~4 meses) para juntar los ~7.200€ c/u que necesitan. Diagnóstico: estancia por estudios para los dos. 3 opciones de curso presentadas (Alvali 12m/5.650€, Madrid 7m/2.900€ —la recomendada—, Madrid 12m/2.858€). Decisión de avanzar ya tomada por la pareja, pero 100% condicionada a juntar el dinero — sin pago en vivo (obviamente). Próxima acción quedó en "cuando arranquemos Andorra en noviembre", sin día ni hora. 🌡️ Templado (decisión tomada, timing largo). | Repetido: próxima acción sin hora exacta, ahora 3/3 y el caso más vago de los tres (ni el día, solo el mes — ver "Errores recurrentes" arriba). Repetido: mismo bloque de 3 escuelas, mismos precios, palabra por palabra que Sara Sofía/Maryi (tercera confirmación de esa fortaleza del guion). Nuevo: primer caso de objeción "no tengo el dinero ahora" resuelta bien según el guion (Fase 4) — Mariano segmentó el timing real (temporada de trabajo primero) en vez de descartar o empujar al cliente. |
+| 4 | 25 ago 2026 | Milagros Stefany Durán Guillén (con Santa, su madre, como acompañante/representante) | 69 min, peruana (Lima), 30 años, sola, madre ya vive en Barcelona. Diagnóstico: estancia por estudios (no visado, mejor para peruanos). 3 escuelas presentadas (Alvali Barcelona 12m/5.350€, Madrid 7m/2.900€ —descartada por horario viernes+sábado, Milagros no puede cursar sábados por su fe—, Madrid 12m/2.858€ con promo agosto 890+299+10 cuotas de 166,90€ —la elegida por precio). Explicó bien la diferencia visado vs. estancia y el cambio de reglamento de mayo 2025 (curso debe empezar dentro de 60 días de presentar). Cerró pidiendo confirmación "en el día de hoy". 🔥 Caliente. | Nuevo: primer caso donde una restricción de calendario del cliente (no puede cursar sábados, motivo religioso) descarta activamente una de las 3 escuelas — filtro real aplicado en vivo, no solo mencionado. Nuevo: objeción de desconfianza sobre la demostración de fondos ("¿es cierto que prestan la plata y la sacan al otro día?") — Mariano la resolvió proactivamente, aclarando que el dinero puede retirarse el mismo día después de sacar el comprobante, sin necesidad de "trucos". Repetido: próxima acción sin hora exacta, ahora 4/4 (dijo "hoy" sin especificar horario — ver "Errores recurrentes"). Repetido: mismo bloque de 3 escuelas, mismos precios (cuarta confirmación de esa fortaleza del guion). |

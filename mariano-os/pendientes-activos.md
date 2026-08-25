@@ -277,6 +277,12 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
      rastro en ningún excel — Mariano dijo que los corrobora él mismo.
    - Recordado: 4 veces (20 ago, chequeo diario 20:00; 21 ago, cambio de fuente; 22 ago, chequeo
      diario 20:00; 23 ago, chequeo diario 20:00).
+   - **Actualizado 25 ago 2026 (mañana)**: Mariano ya les mandó a Marco y Julio la minuta de la
+     reunión del 24 ago con todos los pendientes y la fecha límite (jueves 27 ago) — cubre lo mismo
+     que este sistema iba a recordarles por separado del bloque "26 ago" (cámara/dron, Costa Rica,
+     préstamos, estructura de rótulos, pegatina de provisiones). Mariano les hace seguimiento él
+     mismo por la tarde o mañana — no volver a mandarle recordatorios de este bloque hasta que él
+     cuente cómo les fue.
 
 4. **Graduación New Life (1 sept 2026) — lista de coordinaciones propias de Mariano, como pilar**
    - Detalle completo en `areas/ministerio/CLAUDE.md`, sección "Graduación New Life", ítems 4/6-11/14.

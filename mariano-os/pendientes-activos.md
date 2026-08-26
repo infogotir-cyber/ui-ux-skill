@@ -273,12 +273,12 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
    - Estado: **abierto**, a confirmar si esto es suficiente o si Mariano insiste en el informe.
 
 8. **Avisarle a Agustín que NO migre el WhatsApp de la centralita al número personal de Mariano**
-   - Se había acordado en la reunión del 25 ago (ver `direcciones/marketing/CLAUDE.md` sección
-     11.4), pero Mariano lo canceló acá el 26 ago al ver la implicancia real (riesgo sobre los
+   - **Resuelto 26 ago 2026** — comunicado a Agustín, incluido en el mismo mensaje que el resto del
+     paquete de la reunión (ver `direcciones/marketing/CLAUDE.md` sección 11.4). Se había acordado
+     en la reunión del 25 ago, pero Mariano lo canceló al ver la implicancia real (riesgo sobre los
      workflows con `{WA#1}`, contradice el pedido anterior de separar su número personal del
-     comercial). **Falta que Mariano se lo comunique a Agustín** — solo quedó frenado en este
-     sistema, Agustín todavía puede estar por avanzar con eso.
-   - Estado: **abierto — urgente, avisar a Agustín antes de que lo ejecute**.
+     comercial). Ya no queda solo frenado en este sistema — Agustín ya lo sabe.
+   - Estado: **resuelto**.
 
 10. **3 tareas de Mariano pendientes de la reunión del 25 ago con Agustín (Exxo)**
     - Detalle completo en `direcciones/marketing/CLAUDE.md` sección 11.2.1. Las 3 ya están hechas
@@ -286,22 +286,23 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
       Agustín; (b) ~~subir fotografías~~ — hecho, fotos ya subidas a la carpeta compartida;
       (c) ~~exportar prospectos~~ — hecho, 544 contactos filtrados por etiqueta (`cliente`,
       `cualificado estancia`, `cualificado visado`, en OR) exportados desde GHL.
-    - Estado: **resuelto** — las 3 hechas. Falta solo pasarle el CSV de prospectos a Agustín, junto
-      con el resto del paquete (cursos + honorarios) que sigue pendiente de envío.
+    - Estado: **resuelto** — las 3 hechas, y el CSV de prospectos ya se le mandó a Agustín junto
+      con el resto del paquete (26 ago 2026).
 
 11. **Dar el texto estandarizado de las 3 opciones de curso para la página nueva del PDF de venta**
-    - **Resuelto 26 ago 2026** — Mariano dio el detalle completo y corregido (ciudades reales de la
-      Opción 1, financiación, formaciones, formato de cursada). Texto final armado y listo, ver
-      `direcciones/marketing/CLAUDE.md` sección 11.2. Falta que Mariano se lo mande a Agustín.
-    - Estado: **en curso** — texto listo, falta el envío.
+    - **Resuelto y enviado 26 ago 2026** — texto final (ciudades reales de la Opción 1,
+      financiación, formaciones, formato de cursada) ya mandado a Agustín. Detalle en
+      `direcciones/marketing/CLAUDE.md` sección 11.2.
+    - Estado: **resuelto**.
 
 12. **Definir los 3 números de pricing (titular solo / +1 familiar / c/u adicional)**
-    - **Resuelto 26 ago 2026, de otra forma a la pedida originalmente**: Mariano decidió no
-      diferenciar precio por cantidad de familiares — en cambio armó una sección "Honorarios GOTIR"
-      con precio normal fijo (825€) + un campo de promoción editable caso por caso, ver
-      `direcciones/marketing/CLAUDE.md` sección 11.2. Quedan 2 datos sin confirmar dentro de esa
-      sección (qué es "Mercurio", y si la leyenda de promo duplicada bajo "Precio normal" era
-      intencional) — no bloquean el envío a Agustín, se pueden confirmar después.
+    - **Resuelto y enviado 26 ago 2026, de otra forma a la pedida originalmente**: Mariano decidió
+      no diferenciar precio por cantidad de familiares — en cambio armó una sección "Honorarios
+      GOTIR" con precio normal fijo (825€) + un campo de promoción editable caso por caso, ya
+      mandada a Agustín, ver `direcciones/marketing/CLAUDE.md` sección 11.2. Quedan 2 datos sin
+      confirmar dentro de esa sección (qué es "Mercurio", y si la leyenda de promo duplicada bajo
+      "Precio normal" era intencional) — no bloquearon el envío, se pueden confirmar después.
+    - Estado: **resuelto** (con las 2 dudas menores todavía abiertas, no bloqueantes).
     - Estado: **en curso** — texto listo, falta el envío (mismo paquete que el ítem 11).
 
 9. **Permisos de API en GHL otorgados a Agustín (Exxo) — confirmado por Mariano (26 ago), sin objeciones**

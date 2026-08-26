@@ -288,10 +288,10 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
     - Estado: **abierto**, ninguna de las 3 hecha todavía.
 
 11. **Dar el texto estandarizado de las 3 opciones de curso para la página nueva del PDF de venta**
-    - Ver `direcciones/marketing/CLAUDE.md` sección 11.2. Tarea de Mariano, destraba la página 3
-      nueva del PDF junto con la definición de los 3 números de pricing (ítem relacionado, sigue
-      abierto también).
-    - Estado: **abierto**.
+    - **Resuelto 26 ago 2026** — Mariano dio el detalle completo y corregido (ciudades reales de la
+      Opción 1, financiación, formaciones, formato de cursada). Texto final armado y listo, ver
+      `direcciones/marketing/CLAUDE.md` sección 11.2. Falta que Mariano se lo mande a Agustín.
+    - Estado: **en curso** — texto listo, falta el envío.
 
 9. **Permisos de API en GHL otorgados a Agustín (Exxo) — confirmado por Mariano (26 ago), sin objeciones**
    - Ver `direcciones/marketing/CLAUDE.md` sección 11.4. No requiere ninguna acción de este sistema,

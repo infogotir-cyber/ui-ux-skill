@@ -83,7 +83,14 @@ confirman.
 - **Fase 3 — el bloque de las 3 escuelas ya es, de hecho, un guion memorizado y estandarizado**:
   Sara Sofía y Maryi (mismo día) recibieron exactamente las mismas 3 opciones, con los mismos
   precios y condiciones palabra por palabra (Escuela 1: multi-ciudad, 12m, 5.650€; Escuela 2 —la
-  recomendada—: Madrid, viernes/sábado, 7m, 2.900€; Escuela 3: Madrid, 1x/semana, 12m, 2.858€). Esto
+  recomendada—: Madrid, viernes/sábado, 7m, 2.900€; Escuela 3: Madrid, 1x/semana, 12m, 2.858€).
+  **Nombre correcto de la Escuela 1, aclarado 26 ago 2026: es ALBALI (en el registro de abajo
+  aparece transcrito "Alvali" — no se corrige el histórico, queda anotado acá para no repetir el
+  error de ahora en más).** Detalle completo y enriquecido de la Escuela 1 (ciudades reales —
+  Alicante, Madrid, Barcelona, Valencia, Murcia, Zaragoza, Santander, Vigo, Tenerife y Pontevedra—,
+  formaciones en Electricidad/Sanitario/Hostelería, financiación en 12 cuotas de 528,83€ a nombre
+  de alguien con situación regular en España) en `direcciones/marketing/CLAUDE.md` sección 11.2 —
+  de cara al cliente/PDF nunca se nombra la institución, se dice "Opción 1". Esto
   es una fortaleza, no un error — confirma que esta parte de la Fase 3 ya está consolidada y
   funciona bien tal cual está. Sugerencia de bajo esfuerzo: si este bloque ya es siempre igual,
   convertirlo en una plantilla escrita (un "Fragmento" tipo los del mini-funnel) ahorraría los ~8-10

@@ -273,23 +273,20 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
      interrumpa — ver `direcciones/marketing/CLAUDE.md` sección 11.1, punto 5.
    - Estado: **abierto**, a confirmar si esto es suficiente o si Mariano insiste en el informe.
 
-8. **Migración del WhatsApp de la centralita al número personal de Mariano (vía Meta Business Suite)**
-   - Acordada en la reunión del 25 ago con Agustín — ver `direcciones/marketing/CLAUDE.md` sección
-     11.4 para el detalle completo. Dos cosas a confirmar antes de que avance: (a) si esto
-     reemplaza o convive con el pedido anterior de separar el número personal de Mariano del
-     comercial de GOTIR (`CLAUDE.md` raíz, sección JARVIS); (b) implica migrar a la WhatsApp
-     Business Platform oficial de Meta, distinta del proveedor no oficial actual — cuando se
-     concrete, hay que revisar todos los workflows con el código `{WA#1}` para confirmar que sigan
-     funcionando con el número y canal nuevos.
-   - Estado: **abierto**, decisión tomada pero sin ejecutar todavía.
+8. **Avisarle a Agustín que NO migre el WhatsApp de la centralita al número personal de Mariano**
+   - Se había acordado en la reunión del 25 ago (ver `direcciones/marketing/CLAUDE.md` sección
+     11.4), pero Mariano lo canceló acá el 26 ago al ver la implicancia real (riesgo sobre los
+     workflows con `{WA#1}`, contradice el pedido anterior de separar su número personal del
+     comercial). **Falta que Mariano se lo comunique a Agustín** — solo quedó frenado en este
+     sistema, Agustín todavía puede estar por avanzar con eso.
+   - Estado: **abierto — urgente, avisar a Agustín antes de que lo ejecute**.
 
-9. **Confirmar permisos de API en GHL otorgados a Agustín (Exxo)**
-   - Mariano le dio acceso técnico completo por API a GHL a Agustín en la reunión del 25 ago, para
-     reconstruir la landing y conectar tracking — ver `direcciones/marketing/CLAUDE.md` sección
-     11.4. No requiere ninguna acción de este sistema, solo queda registrado: de ahora en más hay
-     dos actores con acceso de escritura a la misma cuenta de GHL.
-   - Estado: **informativo**, sin acción pendiente salvo tenerlo presente si aparece algo raro en
-     GHL que este sistema no hizo.
+9. **Permisos de API en GHL otorgados a Agustín (Exxo) — confirmado por Mariano (26 ago), sin objeciones**
+   - Ver `direcciones/marketing/CLAUDE.md` sección 11.4. No requiere ninguna acción de este sistema,
+     solo queda registrado: de ahora en más hay dos actores con acceso de escritura a la misma
+     cuenta de GHL.
+   - Estado: **cerrado** — informativo, tenerlo presente si aparece algo raro en GHL que este
+     sistema no hizo.
 
 ### Ministerio (Ruge y otros)
 

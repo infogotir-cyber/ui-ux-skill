@@ -499,8 +499,18 @@ de arquitectura, no un detalle menor**, por dos motivos:
   nuevo contra el número y canal nuevos antes de confiar en que sigan funcionando igual.
 
 **No se ejecutó nada de esto todavía por parte de este sistema** — son decisiones tomadas en la
-reunión, a ejecutar por Agustín/Mariano del lado de GHL y Meta. Cuando se concrete la migración del
-número, avisar para revisar si algún workflow con `{WA#1}` quedó roto.
+reunión, a ejecutar por Agustín/Mariano del lado de GHL y Meta.
+
+**Decisión final de Mariano (26 ago 2026)**: el acceso de API para Agustín queda confirmado y sin
+objeciones. **La migración del número de WhatsApp de la centralita a su número personal queda
+cancelada** — Mariano dijo textualmente que no se había dado cuenta de todo lo que implicaba
+(riesgo sobre los workflows con `{WA#1}`, y que contradice el pedido anterior de separar su número
+personal del comercial) cuando lo acordó en la reunión. **Pendiente real que le queda a Mariano**:
+avisarle a Agustín que no siga con ese cambio — todavía no se lo comunicó, solo lo frenó acá con
+este sistema. La incomodidad real que motivó el pedido (gestionar mensajes desde un Android
+dedicado) sigue sin resolver — si Mariano quiere retomarla, conviene explorarla como un problema
+aparte (ej. una app de WhatsApp Business en su propio teléfono, sin fusionar los números) en vez de
+la solución que se había acordado en la reunión.
 
 ## 9. Cómo comportarte en esta área
 

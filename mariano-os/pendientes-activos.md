@@ -249,14 +249,13 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
    - Recordado: 5 veces (21 ago 2026, dos veces el mismo día; 22 ago, chequeo diario 20:00; 23 ago,
      chequeo diario 20:00; 25 ago, chequeo diario 18:00).
 
-5. **Decidir si pedirle a Agustín Zaya (Exxo) el contexto/documentación de marketing que ellos usan**
-   - Detalle en `direcciones/marketing/CLAUDE.md`, sección 7. Mariano lo planteó como duda, no como
-     decisión tomada — para que este sistema entienda mejor el historial completo de lo que Exxo
-     viene haciendo en marketing.
-   - **Resuelto parcialmente en la reunión del 25 ago**: no se pidió tal cual, pero Agustín va a
-     transferir el repositorio completo de marketing a la cuenta de GOTIR — ver
-     `direcciones/marketing/CLAUDE.md` sección 11.3. Falta que se concrete la transferencia.
-   - Estado: **en curso**.
+5. **Repositorio de marketing de Exxo — conseguirlo y dárselo a este sistema para tener contexto real**
+   - Detalle en `direcciones/marketing/CLAUDE.md`, sección 11.1 punto 8. Agustín se comprometió en
+     la reunión del 25 ago a transferir el repo completo de marketing (GitHub) a la cuenta de
+     GOTIR. **El objetivo explícito de Mariano es pasárselo a este sistema** para tener contexto
+     completo del trabajo de marketing, no solo tener la custodia — falta: (1) que Agustín lo
+     transfiera, (2) que Mariano avise cuando lo tenga, (3) cargarlo/conectarlo acá.
+   - Estado: **en curso**, esperando a Agustín.
 
 6. **Confirmar monto real de fondos demostrables — cambio de criterio a "100% IPRE mensual"**
    - Surgió en la reunión del 25 ago con Agustín (`direcciones/marketing/CLAUDE.md` sección 11.2):
@@ -280,6 +279,19 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
      comercial). **Falta que Mariano se lo comunique a Agustín** — solo quedó frenado en este
      sistema, Agustín todavía puede estar por avanzar con eso.
    - Estado: **abierto — urgente, avisar a Agustín antes de que lo ejecute**.
+
+10. **3 tareas de Mariano pendientes de la reunión del 25 ago con Agustín (Exxo)**
+    - Detalle completo en `direcciones/marketing/CLAUDE.md` sección 11.2.1: (a) mandarle a Agustín
+      una captura del flujo de automatización actual de GHL y explicarle cómo funciona; (b) subir
+      las fotos profesionales (versión impresión y web) a la carpeta que va a compartir Agustín;
+      (c) exportar los prospectos del CRM (~2.000 generales + ~500 calificados) para remarketing.
+    - Estado: **abierto**, ninguna de las 3 hecha todavía.
+
+11. **Dar el texto estandarizado de las 3 opciones de curso para la página nueva del PDF de venta**
+    - Ver `direcciones/marketing/CLAUDE.md` sección 11.2. Tarea de Mariano, destraba la página 3
+      nueva del PDF junto con la definición de los 3 números de pricing (ítem relacionado, sigue
+      abierto también).
+    - Estado: **abierto**.
 
 9. **Permisos de API en GHL otorgados a Agustín (Exxo) — confirmado por Mariano (26 ago), sin objeciones**
    - Ver `direcciones/marketing/CLAUDE.md` sección 11.4. No requiere ninguna acción de este sistema,

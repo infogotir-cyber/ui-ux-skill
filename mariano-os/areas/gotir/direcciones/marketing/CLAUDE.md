@@ -393,9 +393,15 @@ agenda no se tocaron** — no asumir que "hubo reunión" significa "se resolvió
    que Mariano pegó acá es, de hecho, la prueba de que el mecanismo ya existe (nota automática de
    Google Meet) — falta confirmar si ya quedó configurado para que llegue solo, sin que Mariano
    tenga que copiarla a mano como hizo hoy.
-8. **Documentación de Exxo para IA** — no se pidió tal cual, pero se resolvió algo relacionado:
-   Agustín va a transferir el **repositorio completo de marketing** a la cuenta de GOTIR, y
-   coordinar una reunión de seguridad esta semana para revisarlo (ver 11.4).
+8. **Documentación de Exxo para IA** — no se pidió tal cual, pero se resolvió algo que cumple el
+   mismo objetivo: Agustín va a transferir el **repositorio completo de marketing** (GitHub) a la
+   cuenta de GOTIR. **El propósito explícito de Mariano con esto es dárselo a este sistema**, para
+   que tenga contexto real y completo de todo lo que Exxo viene haciendo en marketing — no es solo
+   una transferencia de custodia. Cadena completa: (1) Agustín transfiere el repo a la cuenta de
+   GOTIR, (2) Mariano avisa cuando lo tenga, (3) se agrega como fuente/repo de este proyecto (o se
+   copia el contenido relevante acá) para que quede consultable en tiempo real, igual que el resto
+   de las conexiones. Coordinar además una reunión de seguridad esta semana antes de dar por
+   cerrado el traspaso (ver 11.4).
 9. **Píxel en la landing** — **confirmado por el propio Agustín, coincide con lo que ya se había
    detectado por auditoría técnica (sección 10)**: `landing.gotir.es/estancias` no tiene píxel.
    Creó un píxel general nuevo de Meta para el sitio actual (dejando inactivo el viejo píxel de
@@ -432,7 +438,22 @@ Reemplaza el rechazo de la v1 (sección 8, "muchas hojas, mucho texto"). Cambios
   comisión de matriculación y derivar más rápido al abogado.
 
 Tareas de esto: Agustín arma la propuesta con estos cambios; GOTIR (Mariano) tiene que dar el texto
-estandarizado de las 3 opciones de curso para que quede cargado en la página nueva.
+estandarizado de las 3 opciones de curso para que quede cargado en la página nueva (más los datos
+de fondos/pricing que faltan del punto 3 de 11.1).
+
+### 11.2.1 Tareas propias de Mariano ("GOTIR Oficial") pendientes de esta reunión — no listadas antes
+
+Estas 3 quedaron afuera del primer resumen que se le dio a Mariano el 26 ago — es contenido real de
+la lista de "Próximos pasos" de la transcripción, no nuevo, solo que faltaba consolidarlo acá:
+
+1. **Mostrar automatización a Agustín**: compartirle una captura de pantalla del flujo de
+   automatización actual en GoHighLevel y explicarle cómo funciona hoy — para que él pueda
+   conectarlo bien con la landing nueva y el tracking de conversiones (relacionado con el acceso de
+   API que ya le dieron, sección 11.4).
+2. **Subir fotografías profesionales**: cargar las sesiones de fotos ya hechas (versión impresión y
+   versión web) en la carpeta que Agustín va a compartir, para que se usen en correos y plantillas.
+3. **Exportar prospectos del CRM y de Meta** (ya estaba en 11.3 más abajo, se repite acá para que
+   quede junto con las otras dos tareas de Mariano de esta misma reunión).
 
 ### 11.3 Otras decisiones y tareas nuevas
 

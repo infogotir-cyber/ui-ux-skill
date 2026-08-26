@@ -357,6 +357,16 @@ Este proyecto debe tener acceso vía MCP a:
     mande el mensaje manualmente desde su telefono. Caso real: mensaje de seguimiento a Sebastián
     Gimenez (`contact_id=Ma0BBzRU86lESAKjiHqd`) — ver `direcciones/comercial/CLAUDE.md` para el
     detalle completo y el estado pendiente.
+  - **Nuevo hallazgo (26 agosto 2026)**: el mismo fallo de entrega se repitió con dos contactos más
+    (Frank Sojo `contact_id=YQqpc6s8BhH7NzH4K16v`, Pablo Guerra `contact_id=DOkAnOEt0VE21LZD5lD8`),
+    ambos con `201` de la API pero "Try again" real en el panel — Mariano identificó que estos dos
+    contactos usan un canal llamado **"Message Hub"**, distinto del WhatsApp directo conectado
+    (GoGHL.ai) que sí venía funcionando para otros casos esta sesión (ej. Sara Sofía, Javier Maddia,
+    Héctor Ojeda, Luisana Junguittu — todos con mensajes reales entregados vía
+    `TYPE_CUSTOM_PROVIDER_SMS`). **No confirmado todavía si "Message Hub" es una integración de GHL
+    aparte, o qué la distingue exactamente de las otras** — falta que Mariano lo aclare. Mientras
+    tanto: `ghl_send_message` no es confiable para contactos en ese canal, mandar manualmente desde
+    el teléfono como fallback, igual que con Sebastián.
   - **23 tools (ampliado a 23 el 21 agosto 2026, más tarde el mismo día)**: se agregó
     `ghl_create_user` (crear usuarios nuevos en GHL vía `POST /users/`, requiere scope
     `users.write`) — schema verificado contra `CreateUserDto` del repo oficial

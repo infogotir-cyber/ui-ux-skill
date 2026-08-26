@@ -379,6 +379,35 @@ Este proyecto debe tener acceso vía MCP a:
     `ghl_send_message` no es confiable hoy en general (no solo para casos puntuales) — mandar
     manualmente desde el teléfono como fallback, igual que con Sebastián, hasta que se confirme la
     causa real y se pueda volver a confiar en la tool.
+  - **Diagnóstico completo, mismo día (26 agosto 2026, noche)**: se investigó a fondo, descartando
+    causas una por una. **Descartado**: automatizaciones mal configuradas — se confirmó por API
+    (`GET /workflows/?locationId=...`) que las 4 relevantes (Captaciones Leads Bienvenida -ESTANCIAS/
+    -VISADOS, Lead capture landing, Nueva reunión agendada) están `published`, sin cambios.
+    **Descartado**: el aviso "WhatsApp no está conectado. Conectar WhatsApp" del compositor de GHL —
+    Mariano confirmó que ese aviso aparece siempre, incluso cuando el envío funciona bien, no es
+    diagnóstico. **Descartado**: GoGHL.ai desconectado — el panel mostraba los 4 números en verde
+    "Conectado" y la ubicación GOTIR como "Activo", con una prueba por vencer en 1 día — Mariano pagó
+    el plan activo ($29/mes, 1 ubicación) en el momento, **y el fallo siguió igual después de pagar**
+    (probado reenviando a Nazareth Rengel, seguía "Try again"). **Encontrado real, con evidencia de
+    datos**: Mariano señaló revisar si el nodo de mensaje de las automatizaciones estaba configurado
+    como "Message Hub"/SMS en vez de WhatsApp — se confirmó comparando el `tipo` de mensaje en
+    conversaciones reales: los mensajes automáticos de hoy (bienvenida a Valentina Hernandez,
+    confirmación de cita a Lucas Raddi) salieron como `TYPE_SMS` genérico, mientras que los mensajes
+    manuales que sí llegaron esta sesión (Javier Maddia, Héctor Ojeda, etc.) salieron como
+    `TYPE_CUSTOM_PROVIDER_SMS`. Se abrió el nodo "WhatsApp Bienvenida" del workflow "Captaciones Leads
+    Bienvenida -ESTANCIAS" en el builder y el panel confirma: es una acción nativa **"SMS — Envía un
+    mensaje de texto al contacto"**, no un canal de WhatsApp — el nombre del nodo es solo una etiqueta
+    puesta por Mariano. **Esto es, en teoría, el diseño esperado del mecanismo `{WA#1}`**: GHL manda
+    la acción como SMS, y GoGHL.ai debería interceptar ese envío (por su conexión con esta location
+    específica) y rerutearlo a WhatsApp en vez de mandarlo como SMS real — no hay un tipo de acción
+    "WhatsApp" nativo separado para elegir en el nodo. **Conclusión**: como el fallo persiste incluso
+    después de pagar el plan y con automatizaciones/nodos confirmados correctos, el eslabón roto está
+    en la intercepción/webhook entre GoGHL.ai y esta location de GHL en particular — no visible ni
+    arreglable desde ningún panel que revisamos (Números de WhatsApp, Ubicaciones, Ajustes de
+    notificaciones). **Estado**: escalado directo a soporte de GoGHL.ai (26 agosto 2026, noche,
+    Mariano les escribió con el diagnóstico completo). Mientras esperan respuesta: seguir mandando
+    mensajes reales a clientes manualmente desde el teléfono, no confiar en `ghl_send_message` ni en
+    las automatizaciones de WhatsApp hasta que soporte confirme que la conexión está restablecida.
   - **23 tools (ampliado a 23 el 21 agosto 2026, más tarde el mismo día)**: se agregó
     `ghl_create_user` (crear usuarios nuevos en GHL vía `POST /users/`, requiere scope
     `users.write`) — schema verificado contra `CreateUserDto` del repo oficial

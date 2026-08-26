@@ -357,16 +357,28 @@ Este proyecto debe tener acceso vía MCP a:
     mande el mensaje manualmente desde su telefono. Caso real: mensaje de seguimiento a Sebastián
     Gimenez (`contact_id=Ma0BBzRU86lESAKjiHqd`) — ver `direcciones/comercial/CLAUDE.md` para el
     detalle completo y el estado pendiente.
-  - **Nuevo hallazgo (26 agosto 2026)**: el mismo fallo de entrega se repitió con dos contactos más
-    (Frank Sojo `contact_id=YQqpc6s8BhH7NzH4K16v`, Pablo Guerra `contact_id=DOkAnOEt0VE21LZD5lD8`),
-    ambos con `201` de la API pero "Try again" real en el panel — Mariano identificó que estos dos
-    contactos usan un canal llamado **"Message Hub"**, distinto del WhatsApp directo conectado
-    (GoGHL.ai) que sí venía funcionando para otros casos esta sesión (ej. Sara Sofía, Javier Maddia,
-    Héctor Ojeda, Luisana Junguittu — todos con mensajes reales entregados vía
-    `TYPE_CUSTOM_PROVIDER_SMS`). **No confirmado todavía si "Message Hub" es una integración de GHL
-    aparte, o qué la distingue exactamente de las otras** — falta que Mariano lo aclare. Mientras
-    tanto: `ghl_send_message` no es confiable para contactos en ese canal, mandar manualmente desde
-    el teléfono como fallback, igual que con Sebastián.
+  - **Hallazgo 26 agosto 2026, ampliado el mismo día**: el mismo fallo de entrega se repitió con dos
+    contactos (Frank Sojo `contact_id=YQqpc6s8BhH7NzH4K16v`, Pablo Guerra
+    `contact_id=DOkAnOEt0VE21LZD5lD8`), ambos con `201` de la API pero "Try again" real en el panel —
+    Mariano identificó que estos dos contactos usan un canal llamado **"Message Hub"**, distinto del
+    WhatsApp directo conectado (GoGHL.ai) que sí venía funcionando para otros casos esta sesión (ej.
+    Sara Sofía, Javier Maddia, Héctor Ojeda, Luisana Junguittu — todos con mensajes reales entregados
+    vía `TYPE_CUSTOM_PROVIDER_SMS`).
+  - **Escalada el mismo día (26 agosto 2026, más tarde)**: se intentó mandar 5 mensajes más
+    (Nazareth Rengel `eYUOzjBONuIwfC5gaWIc`, Yeraldin Coba `cLWUwCDTKIwSI2k4CFMB`, Florgelys Chacon
+    `UO5OUI8am2nNp5pyKbEi`, Jade Marino `RGmhU39llaWZiat7lzQr`, Demelis Celis
+    `UGFkCQwjaPE6DIB5Dmfb`) — **los 5 fallaron con el mismo patrón** ("Try again" en el panel, pese a
+    `201` y a quedar guardados en la conversación como `TYPE_WHATSAPP` saliente). Total del día:
+    **7 de 7 intentos por API fallaron**, ya no son 2 contactos aislados. Esto apunta a que el
+    problema no es "estos contactos puntuales están en Message Hub" sino que `ghl_send_message` hoy
+    está mandando por un canal/proveedor que no coincide con el que GHL tiene activo por default —
+    posible causa: GoGHL.ai tiene 4 números dados de alta (ver `direcciones/comercial/CLAUDE.md`
+    sección 10.2) y la tool no tiene forma de elegir cuál usar ni de leer cuál está siendo usado.
+    **No confirmado todavía qué es exactamente "Message Hub"** ni por qué escaló de 2 a 7/7 — falta
+    que Mariano lo aclare o lo revise en el panel de Configuración → Canales de GHL. Mientras tanto:
+    `ghl_send_message` no es confiable hoy en general (no solo para casos puntuales) — mandar
+    manualmente desde el teléfono como fallback, igual que con Sebastián, hasta que se confirme la
+    causa real y se pueda volver a confiar en la tool.
   - **23 tools (ampliado a 23 el 21 agosto 2026, más tarde el mismo día)**: se agregó
     `ghl_create_user` (crear usuarios nuevos en GHL vía `POST /users/`, requiere scope
     `users.write`) — schema verificado contra `CreateUserDto` del repo oficial

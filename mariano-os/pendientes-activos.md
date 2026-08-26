@@ -281,13 +281,13 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
    - Estado: **abierto — urgente, avisar a Agustín antes de que lo ejecute**.
 
 10. **3 tareas de Mariano pendientes de la reunión del 25 ago con Agustín (Exxo)**
-    - Detalle completo en `direcciones/marketing/CLAUDE.md` sección 11.2.1: (a) mandarle a Agustín
-      una captura del flujo de automatización actual de GHL y explicarle cómo funciona; (b) subir
-      las fotos profesionales (versión impresión y web) a la carpeta que va a compartir Agustín;
-      (c) ~~exportar los prospectos del CRM para remarketing~~ **hecho 26 ago 2026** — exportó 544
-      contactos filtrados por etiqueta (`cliente`, `cualificado estancia`, `cualificado visado`, en
-      OR) desde el panel de GHL. Falta pasarle el CSV a Agustín.
-    - Estado: **en curso** — quedan (a) y (b) abiertas, (c) exportada pero falta enviarla.
+    - Detalle completo en `direcciones/marketing/CLAUDE.md` sección 11.2.1. Las 3 ya están hechas
+      (26 ago 2026): (a) ~~mostrar automatización~~ — hecho, capturas + explicación ya enviadas a
+      Agustín; (b) ~~subir fotografías~~ — hecho, fotos ya subidas a la carpeta compartida;
+      (c) ~~exportar prospectos~~ — hecho, 544 contactos filtrados por etiqueta (`cliente`,
+      `cualificado estancia`, `cualificado visado`, en OR) exportados desde GHL.
+    - Estado: **resuelto** — las 3 hechas. Falta solo pasarle el CSV de prospectos a Agustín, junto
+      con el resto del paquete (cursos + honorarios) que sigue pendiente de envío.
 
 11. **Dar el texto estandarizado de las 3 opciones de curso para la página nueva del PDF de venta**
     - **Resuelto 26 ago 2026** — Mariano dio el detalle completo y corregido (ciudades reales de la

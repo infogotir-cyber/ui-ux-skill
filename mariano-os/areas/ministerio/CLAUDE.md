@@ -138,12 +138,18 @@ día** — este último es nuevo, agregado como ítem 14 abajo.
    los iba a imprimir — falta confirmar si ya lo hizo. **Actualización 21 ago 2026**: Juliana
    imprime los certificados **recién cuando cada estudiante ya haya pagado la graduación** — este
    ítem queda condicionado al ítem 11 (pago de los 15€ por estudiante), no es independiente.
+   **Actualización 26 ago 2026**: Mariano volvió a hablar con Juliana — imprime el **viernes 28
+   ago**.
 2. **Bandas — RESUELTO por Juliana (18 ago), ya NO es tarea de Adrián Caro/equipo de Mariano**. Se
    había pedido a Adrián buscar links de proveedores de bandas personalizadas y genéricas, pero
    llegó tarde. La pastora le pidió directo a Juliana ir a comprar bandas genéricas a un "chino".
+   **Reabierto 26 ago 2026**: Mariano no tiene confirmación de en qué quedó esto — hay que
+   retomarlo con Juliana, no asumir que ya está comprado solo porque se le asignó el 18 ago.
 3. **Chocolate decorado "completado" — RESUELTO por Juliana + Carlos Prado (18 ago), ya NO es tarea
    de Adrián Caro/equipo de Mariano**. Juliana compra los chocolates en Mercadona; Carlos Prado
-   (producción) vela por que se haga el sticker de decoración de cada uno.
+   (producción) vela por que se haga el sticker de decoración de cada uno. **Reabierto 26 ago
+   2026**: Juliana se había olvidado de este ítem (chocolate + sticker) — Mariano se lo recordó y
+   le está haciendo seguimiento activo.
 4. **Decoración — globos, sillas y Ferrero Rocher (Ingrid Guaño + Lurbin)** — EN CURSO, cambio de
    dinámica de equipo (21 ago 2026). Ingrid coordina con **Lurbin** (decoradora, apoyo externo) pero
    todavía no compró nada — es el único costo que sigue faltando para el presupuesto (ítem 10).
@@ -151,6 +157,13 @@ día** — este último es nuevo, agregado como ítem 14 abajo.
    que haber comprado los globos y demás materiales — pedirle antes un **listado completo de todo lo
    que va a necesitar**, para asegurarse de que lo compre y lo lleve todo. Además, fijar con
    Ingrid/Lurbin **día y hora para armar toda la decoración** y dejarlo listo antes del 1 sept.
+
+   **Actualización 26 ago 2026 — ya resuelto casi todo este ítem**: Lurbin compró los globos, **40€
+   en total** — 25€ los paga la iglesia (el presupuesto ya acordado), los **15€ restantes los cubren
+   Lurbin y Mariano entre los dos** (mismo criterio de "sembrar" ya usado). **Montaje de la
+   decoración: martes 1 sept, 16:30**, con Ingrid presente — Mariano le pidió a Juliana que tenga
+   listo el **inflador de globos de la iglesia** para prestarlo ese día, y él mismo va a estar
+   temprano para coordinar todo.
 
    **Actualización 21 ago 2026**: el equipo de New Life para este tramo (decoración/estructura) es
    **Adrián Caro e Ingrid Guaño**, pero según Mariano no están trabajando bien — no hacen las cosas
@@ -199,7 +212,12 @@ día** — este último es nuevo, agregado como ítem 14 abajo.
    de producción con el cronograma real; (c) una vez confirmado, hablar con **el pastor** para que
    prepare alguna enseñanza para el evento. **Actualización 21 ago 2026**: se aclara el sentido de
    (c) — no es solo "avisar al pastor", es **pedirle directo al equipo de Costa Rica cuál va a ser
-   la prédica** que el pastor va a dar ese día, para tenerla confirmada de antemano.
+   la prédica** que el pastor va a dar ese día, para tenerla confirmada de antemano. **Actualización
+   26 ago 2026 — (a) ya llegó**: el cronograma de Costa Rica llegó, junto con un protocolo nuevo
+   (lista de cosas a tener en cuenta el día del evento) que no venía en el envío original. Mariano
+   todavía no lo revisó a fondo — tiene que corregir y agregar varios puntos que el protocolo no
+   contempla antes de darlo por bueno. Falta que comparta el documento acá para cargarlo, y recién
+   ahí seguir con (b) reenviarlo a Carlos Prado y (c) confirmar la prédica con el pastor.
 10. **🔴 Armar presupuesto general y cobro anticipado a estudiantes** — la más urgente de todas:
     **los estudiantes todavía no saben que tienen que pagar para la graduación, ni cuánto**. Tarea de
     Mariano mismo. **Actualización 18 ago**: con bandas y chocolate resueltos directo por Juliana

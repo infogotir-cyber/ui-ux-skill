@@ -355,6 +355,153 @@ contenido que las secciones 8-10 de este documento, consolidado en un solo docum
 interno de GOTIR, no para compartir con Exxo en este temario; sigue siendo un pendiente real, solo
 que se gestiona por otro canal, no en este envío.
 
+## 11. Reunión 25 ago 2026 con Agustín — resultados reales
+
+Transcripción real (Google Meet, notas automáticas) de la llamada. Cruzado contra la agenda de 9
+puntos que se había preparado (sección 8, "Agenda consolidada"). Resultado honesto: se resolvieron
+varias cosas nuevas e importantes que no estaban en la agenda original, pero **varios puntos de la
+agenda no se tocaron** — no asumir que "hubo reunión" significa "se resolvió todo lo pendiente".
+
+### 11.1 Cruce contra la agenda original — qué se resolvió y qué sigue abierto
+
+1. **Pago pendiente (USD 237 de agosto)** — **NO se tocó en esta llamada**. Sigue abierto,
+   sin fecha. Ver `pendientes-activos.md`.
+2. **Cómo salió el reenfoque de agosto / prep. de septiembre** — no se revisó como balance
+   explícito, pero el reordenamiento del flujo de venta (11.3) y el nuevo PDF (11.2) son, en los
+   hechos, la continuación de ese reenfoque.
+3. **PDF de venta v2** — **avanzado, no cerrado**. Se acordó estructura y contenido nuevo (ver
+   11.2), pero **los 3 números de pricing (titular solo / +1 familiar / c/u adicional) y la
+   postura sobre "+500 familias" NO se resolvieron en esta llamada** — siguen pendientes de que
+   Mariano decida, tal como estaban antes de la reunión.
+4. **Blog y LinkedIn** — **resuelto de raíz**: el problema no era de proceso, era que Lucas (el
+   responsable anterior en Exxo) no los estaba publicando. Agustín se hace cargo personalmente de
+   ahora en más — pidió que le pasen los contenidos pendientes para subirlos él mismo.
+5. **Informe de Ads** — **no se resolvió como se había pedido**. Mariano pidió un informe
+   periódico; Agustín explicó que un reporte de rendimiento no es viable por las fases de
+   aprendizaje de los anuncios, y en su lugar ofreció un **script para la computadora de Mariano
+   que genere alertas automáticas** cuando una campaña se bloquee o interrumpa. Es una solución
+   distinta a la pedida — sirve para el problema real que la motivó (campañas caídas sin que nadie
+   se entere), pero no da visibilidad de rendimiento. **Confirmar con Mariano si esto le sirve** o
+   si insiste en pedir el informe de todos modos.
+6. **Estado de la web + "bloqueo de GHL"** — **aclarado y resuelto con un plan concreto**: Agustín
+   va a reconstruir la landing page **directamente dentro de GoHighLevel**, en paralelo, para
+   reemplazar el diseño actual basado en WordPress, sin cortar la operación mientras tanto. Para
+   esto pidió (y Mariano le dio) **permisos de API en GHL** — ver 11.4, punto importante de
+   seguridad.
+7. **Minuta post-llamada** — **resuelto**: Agustín va a configurar Google Workspace para que las
+   notas de cada reunión se manden automáticamente a todos los invitados. Esta misma transcripción
+   que Mariano pegó acá es, de hecho, la prueba de que el mecanismo ya existe (nota automática de
+   Google Meet) — falta confirmar si ya quedó configurado para que llegue solo, sin que Mariano
+   tenga que copiarla a mano como hizo hoy.
+8. **Documentación de Exxo para IA** — no se pidió tal cual, pero se resolvió algo relacionado:
+   Agustín va a transferir el **repositorio completo de marketing** a la cuenta de GOTIR, y
+   coordinar una reunión de seguridad esta semana para revisarlo (ver 11.4).
+9. **Píxel en la landing** — **confirmado por el propio Agustín, coincide con lo que ya se había
+   detectado por auditoría técnica (sección 10)**: `landing.gotir.es/estancias` no tiene píxel.
+   Creó un píxel general nuevo de Meta para el sitio actual (dejando inactivo el viejo píxel de
+   webinar) y recomienda migrar/integrar esa landing al sitio principal — probablemente se resuelve
+   solo cuando la landing se reconstruya en GHL (punto 6).
+
+### 11.2 Nuevo PDF de venta "Estancia por estudios" — estructura acordada
+
+Reemplaza el rechazo de la v1 (sección 8, "muchas hojas, mucho texto"). Cambios acordados:
+- Contemplar tanto a quienes **ya están en España** como a quienes **arrancan desde su país de
+  origen**, aclarando que ambos caminos son válidos.
+- Aclarar el requisito de **presentar la solicitud dentro de los primeros 30 días desde la
+  llegada** (dato que hoy no estaba en la documentación de cara al cliente).
+- Ajustar el requisito de pasaporte: **escanear las hojas**, no fotocopiarlas físicamente.
+- **Nueva página 3, dedicada a los cursos**: opciones de ciudad, costos (mencionado en la reunión
+  como "superiores a 5.000€", que no coincide exactamente con las 3 escuelas ya documentadas en
+  `direcciones/comercial/CLAUDE.md` sección 2/Fase 3 — Alvali 5.650€/12m es la única de las 3 por
+  encima de 5.000€, las otras dos son 2.858€-2.900€; **no asumir que se van a mostrar solo las
+  opciones caras**, confirmar con Mariano qué cursos van en esta página nueva) y duración (12
+  meses), acceso a la plataforma y seguimiento — la información que, según Mariano, más valoran los
+  clientes y quien les financia el trámite.
+- **Requisito de fondos simplificado**: en vez de la cifra fija ya documentada (~7.200€, sección
+  1.2 de `comercial/CLAUDE.md`), se acordó usar un **mínimo del 100% del IPRE mensual por
+  titular**, manejando grupos familiares caso por caso. **⚠️ Esto es un cambio real de criterio de
+  cara al cliente, no solo de redacción — no está claro si el monto final termina siendo
+  equivalente a los 7.200€ ya usados en llamadas reales (ver `patrones-llamadas.md`), más alto, o
+  más bajo. No usar la cifra de IPRE en ninguna llamada ni mensaje hasta que Mariano confirme el
+  monto exacto en euros que reemplaza (o no) al de 7.200€.**
+- **Sección de honorarios rediseñada** para generar urgencia comercial: precio total por persona,
+  precio de oferta con **fecha de vencimiento**, y método de pago (link o datos bancarios)
+  integrado en el mismo PDF.
+- **Flujo de pasos invertido**: reserva de cupo en el centro de estudios pasa a ser el **paso 2**,
+  y la revisión de documentos pasa al **paso 3** — el objetivo explícito de Mariano es asegurar la
+  comisión de matriculación y derivar más rápido al abogado.
+
+Tareas de esto: Agustín arma la propuesta con estos cambios; GOTIR (Mariano) tiene que dar el texto
+estandarizado de las 3 opciones de curso para que quede cargado en la página nueva.
+
+### 11.3 Otras decisiones y tareas nuevas
+
+- **Exportación de base de datos para remarketing**: Agustín pidió exportar los leads del CRM
+  (~2.000 contactos generales + ~500 calificados) y de Meta, para armar públicos de remarketing.
+  **Tarea de Mariano**: hacer la exportación. Agustín opera hoy con permisos de **solo lectura** en
+  el CRM para esto (distinto del acceso de API completo del punto 11.4).
+- **Dominio de correo (`clientes@gotir.es`) reconectado**: estaba caído en Hostinger por
+  vencimiento de una opción gratuita — ya lo arregló Agustín.
+- **Plantillas de email en HTML**: Agustín está armando plantillas con diseño unificado y firma
+  profesional, en una página propia. **Detalle de seguridad a tener en cuenta**: mencionó que esa
+  página está protegida con la contraseña `1234` — es una contraseña trivial; si ahí va a vivir
+  cualquier dato sensible de GOTIR, vale la pena que Mariano le pida cambiarla por algo real.
+- **Migración de email marketing a dominio propio**: las campañas salían desde
+  `info.gotir@gmail.com` (Gmail), lo cual generaba filtrado de spam — se acordó migrar el envío a
+  un dominio corporativo.
+- **Mensajes de visado generalizados**: los correos estaban muy adaptados a Argentina (ej. "4 a 6
+  semanas" de aprobación), generando expectativas erróneas en otros países de LATAM — se acordó
+  generalizar para toda la región.
+- **Nuevos formularios en GHL**: Agustín va a crear formularios separados para visado, nómada,
+  residencia por cuenta ajena, cuenta propia y renovación — hoy solo existen los 3 formularios ya
+  documentados en `direcciones/comercial/CLAUDE.md` sección 5.3 (Visados Estudios, Estancias
+  Estudios, Otros trámites). Cuando estén, Agustín tiene que avisar para vincularlos.
+- **Nuevas landing pages por flujo**: en paralelo, del lado de GOTIR ("GOTIR Oficial" en la
+  transcripción — no queda claro si se refiere a Mariano personalmente o a este sistema, confirmar)
+  hay que desarrollar landing pages y formularios separados para cada automatización nueva.
+- **Botones de CTA inconsistentes**: Agustín se comprometió a estandarizar el texto de los botones
+  de "agendar llamada" en todas las landing pages — coincide con el detalle menor ya detectado en
+  la auditoría técnica (sección 10, "Agendar mi llamada" vs. "Agendo mi llamada").
+- **Redes sociales**: la publicación se había concentrado casi toda en Instagram; YouTube Shorts,
+  Facebook y Threads con actividad muy baja o nula. Agustín se comprometió a auditar los videos ya
+  subidos y cruzarlos contra lo que falta publicar a mano.
+
+### 11.4 ⚠️ Dos decisiones con implicancia técnica real — revisar antes de asumir que están cerradas
+
+**1. Permisos de API en GHL otorgados a Agustín.** Mariano le dio acceso técnico completo por API
+a GHL a Agustín, para que pueda reconstruir la landing y conectar el seguimiento de conversiones.
+Esto es una decisión real de Mariano, no algo a cuestionar — pero vale la pena que quede claro acá
+que **a partir de ahora hay dos actores con acceso de escritura por API a la misma cuenta de GHL**:
+este sistema (con la regla de `confirm=True` antes de escribir) y Agustín (sin que este sistema
+tenga visibilidad de lo que él cambie). Si en el futuro aparece algo raro en GHL que este sistema
+no hizo y Mariano tampoco recuerda haber pedido, **Agustín/Exxo es ahora una causa real a
+considerar**, no solo un error de este sistema o de Mariano.
+
+**2. Migración del WhatsApp de la centralita al número personal de Mariano, vía Meta Business
+Suite.** Se acordó reemplazar el número de WhatsApp de la centralita de GOTIR (hoy
+`+34604363469`, el que usan las automatizaciones con el código `{WA#1}` — ver
+`direcciones/comercial/CLAUDE.md` secciones 5.9 y 10.2) por el **número personal de Mariano**, para
+resolver la incomodidad real de gestionar mensajes desde un Android dedicado. **Esto es un cambio
+de arquitectura, no un detalle menor**, por dos motivos:
+- **Contradice (o al menos tensiona) un pendiente ya documentado en sentido contrario**: en
+  `CLAUDE.md` raíz, sección JARVIS, Mariano había dicho que quería **separar** su número personal
+  del número comercial de GOTIR, no fusionarlos — "para no mezclar su asistente personal con la
+  operación comercial". Confirmar con Mariano si esto reemplaza esa intención anterior, o si son
+  dos cosas distintas (un número para JARVIS/personal, y por separado la centralita comercial
+  pasando también al número de Mariano).
+- **Vía Meta Business Suite implica migrar a la WhatsApp Business Platform oficial de Meta** — algo
+  completamente distinto del proveedor no oficial que usa hoy GOTIR (GoGHL.ai, reconectado el 21
+  agosto, ver `direcciones/comercial/CLAUDE.md` sección 10.2). Si esto se concreta, **resolvería de
+  raíz** la limitación de fondo que se viene arrastrando toda la sesión (falta de WhatsApp Business
+  oficial, mencionada explícitamente por Mariano al principio de este mismo día de trabajo) — pero
+  también significa que **todos los workflows ya auditados y corregidos con el código `{WA#1}`**
+  (Notificacion influencers, contratos, secuencia post-agendamiento, etc.) habría que revisarlos de
+  nuevo contra el número y canal nuevos antes de confiar en que sigan funcionando igual.
+
+**No se ejecutó nada de esto todavía por parte de este sistema** — son decisiones tomadas en la
+reunión, a ejecutar por Agustín/Mariano del lado de GHL y Meta. Cuando se concrete la migración del
+número, avisar para revisar si algún workflow con `{WA#1}` quedó roto.
+
 ## 9. Cómo comportarte en esta área
 
 - Esta dirección recién se está construyendo — no inventar campañas, cifras ni fechas que no vengan

@@ -253,10 +253,43 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
    - Detalle en `direcciones/marketing/CLAUDE.md`, sección 7. Mariano lo planteó como duda, no como
      decisión tomada — para que este sistema entienda mejor el historial completo de lo que Exxo
      viene haciendo en marketing.
-   - Estado: **abierto**, sin decidir. Mariano tuvo la reunión con Agustín el 25 ago — a confirmar
-     si surgió algo nuevo de ahí.
-   - Recordado: 5 veces (21 ago 2026, dos veces el mismo día; 22 ago, chequeo diario 20:00; 23 ago,
-     chequeo diario 20:00; 25 ago, chequeo diario 18:00).
+   - **Resuelto parcialmente en la reunión del 25 ago**: no se pidió tal cual, pero Agustín va a
+     transferir el repositorio completo de marketing a la cuenta de GOTIR — ver
+     `direcciones/marketing/CLAUDE.md` sección 11.3. Falta que se concrete la transferencia.
+   - Estado: **en curso**.
+
+6. **Confirmar monto real de fondos demostrables — cambio de criterio a "100% IPRE mensual"**
+   - Surgió en la reunión del 25 ago con Agustín (`direcciones/marketing/CLAUDE.md` sección 11.2):
+     se acordó reemplazar la cifra fija de fondos demostrables ya documentada en
+     `direcciones/comercial/CLAUDE.md` (~7.200€) por un mínimo del 100% del IPRE mensual por
+     titular. No está confirmado si el monto en euros que resulta de esto es igual, mayor o menor
+     al que se viene usando en llamadas reales. **No usar la cifra de IPRE con clientes hasta que
+     Mariano confirme el monto exacto.**
+   - Estado: **abierto, bloqueante para el nuevo PDF de venta**.
+
+7. **Confirmar si Mariano acepta el script de alertas de Ads en vez del informe periódico pedido**
+   - Agustín ofreció, en lugar de un informe de rendimiento periódico (lo que Mariano había
+     pedido), un script para la computadora de Mariano que avise cuando una campaña se bloquee o
+     interrumpa — ver `direcciones/marketing/CLAUDE.md` sección 11.1, punto 5.
+   - Estado: **abierto**, a confirmar si esto es suficiente o si Mariano insiste en el informe.
+
+8. **Migración del WhatsApp de la centralita al número personal de Mariano (vía Meta Business Suite)**
+   - Acordada en la reunión del 25 ago con Agustín — ver `direcciones/marketing/CLAUDE.md` sección
+     11.4 para el detalle completo. Dos cosas a confirmar antes de que avance: (a) si esto
+     reemplaza o convive con el pedido anterior de separar el número personal de Mariano del
+     comercial de GOTIR (`CLAUDE.md` raíz, sección JARVIS); (b) implica migrar a la WhatsApp
+     Business Platform oficial de Meta, distinta del proveedor no oficial actual — cuando se
+     concrete, hay que revisar todos los workflows con el código `{WA#1}` para confirmar que sigan
+     funcionando con el número y canal nuevos.
+   - Estado: **abierto**, decisión tomada pero sin ejecutar todavía.
+
+9. **Confirmar permisos de API en GHL otorgados a Agustín (Exxo)**
+   - Mariano le dio acceso técnico completo por API a GHL a Agustín en la reunión del 25 ago, para
+     reconstruir la landing y conectar tracking — ver `direcciones/marketing/CLAUDE.md` sección
+     11.4. No requiere ninguna acción de este sistema, solo queda registrado: de ahora en más hay
+     dos actores con acceso de escritura a la misma cuenta de GHL.
+   - Estado: **informativo**, sin acción pendiente salvo tenerlo presente si aparece algo raro en
+     GHL que este sistema no hizo.
 
 ### Ministerio (Ruge y otros)
 

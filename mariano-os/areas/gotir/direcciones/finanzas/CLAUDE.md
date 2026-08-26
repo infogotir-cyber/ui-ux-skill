@@ -94,8 +94,15 @@ que se confirme qué va a cobrarse primero.
   (50% al iniciar, 50% antes de presentar expediente). Contacto real en GHL bajo el nombre "Regina
   Lucia Epifanio" (`id=vXvPgYTIctXeNlM6juoh` — el contacto duplicado viejo terminó siendo el que
   quedó activo tras la fusión manual que hizo Mariano, no el nuevo `OvKjvt9MQvLiS2R6ofDG`).
-  **Pendiente sin resolver (24 ago)**: Regina avisó que no le funciona la plataforma de GHL para ver
-  los requisitos — Mariano lo va a revisar él mismo, no es algo que este sistema pueda diagnosticar.
+  **Diagnosticado 26 ago 2026** (Regina había avisado el 24 ago que no le funcionaba la plataforma):
+  el problema no era de acceso/login — se confirmó en vivo que Regina sí puede entrar al portal
+  ClientClub (`uttdf7grgmbznkerppnm.app.clientclub.net`, la app de "Portal del cliente" dentro de
+  GHL, sección Sitios). El problema real es que su cuenta tiene **0 cursos asignados** — entra bien
+  pero no ve el curso de visado de estudios porque nunca la agregaron como alumna a ese curso
+  puntual. Fix: Mariano tiene que ir a la pestaña "Cursos" del portal y agregarla manualmente al
+  curso correspondiente — no es algo resoluble por API (el portal ClientClub es una app aparte, sin
+  scope ni endpoint en el token de GHL de este sistema). **Pendiente de confirmar que Mariano ya la
+  agregó y que a ella ya le aparece el curso.**
   - **Contacto/oportunidad duplicados detectados y resueltos parcialmente (17 agosto 2026)**: existía
     otro contacto de la misma persona — "Regina Lucia" (`contact_id=vXvPgYTIctXeNlM6juoh`, con
     teléfono `+541149148059`) con su propia oportunidad vieja ("Regina Lucia Epifanio",

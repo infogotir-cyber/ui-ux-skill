@@ -416,21 +416,28 @@ Reemplaza el rechazo de la v1 (sección 8, "muchas hojas, mucho texto"). Cambios
 - Aclarar el requisito de **presentar la solicitud dentro de los primeros 30 días desde la
   llegada** (dato que hoy no estaba en la documentación de cara al cliente).
 - Ajustar el requisito de pasaporte: **escanear las hojas**, no fotocopiarlas físicamente.
-- **Nueva página 3, dedicada a los cursos** — **texto final confirmado por Mariano (26 ago 2026)**,
-  listo para mandarle a Agustín. Se corrige acá el nombre de la institución de la Opción 1: es
-  **ALBALI**, no "Alvali" como había quedado mal transcrito antes — pero **de cara al cliente/PDF
-  nunca se nombra la institución**, se dice siempre "Opción 1", "Opción 2", "Opción 3":
+- **Nueva página 3, dedicada a los cursos** — **texto final confirmado por Mariano (26 ago 2026,
+  completado en varias vueltas)**, listo para mandarle a Agustín. Se corrige acá el nombre de la
+  institución de la Opción 1: es **ALBALI**, no "Alvali" como había quedado mal transcrito antes —
+  pero **de cara al cliente/PDF nunca se nombra la institución**, se dice siempre "Opción 1",
+  "Opción 2", "Opción 3":
   > **Opción 1**: disponible en Alicante, Madrid, Barcelona, Valencia, Murcia, Zaragoza, Santander,
   > Vigo, Tenerife y Pontevedra (multi-ciudad real, no solo Barcelona como se había anotado antes).
   > Formaciones en Electricidad, Sanitario u Hostelería. 12 meses, cursada 2 veces por semana
-  > presencial y el resto de los días online. Precio de referencia 5.650€, financiable hasta en 12
-  > cuotas de 528,83€ — la financiación debe quedar a nombre de alguien que ya tenga situación
-  > regular en España (dato nuevo, no estaba documentado).
+  > presencial y el resto de los días online. **5.650€ de contado (5.350€ viniendo de parte de
+  > GOTIR)**, o financiado hasta en 12 cuotas de 528,83€ — la financiación debe quedar a nombre de
+  > alguien que ya tenga situación regular en España.
   >
-  > **Opción 2** (la recomendada): Madrid, 7 meses, cursada viernes y sábado, 2.900€.
+  > **Opción 2** (la recomendada): Madrid, 7 meses, cursada viernes y sábado. Formaciones en
+  > Gestión Empresarial, Comercio Exterior u Hostelería. 2.900€ de contado, o 750€ de inscripción +
+  > el resto en 7 cuotas casi sin intereses.
   >
-  > **Opción 3**: Madrid, 12 meses, cursada 1 vez por semana, 2.858€ — con promo disponible según
-  > el mes (matrícula + cuotas, ver detalle real de agosto en `patrones-llamadas.md` fila 4).
+  > **Opción 3**: Madrid, 12 meses, cursada 1 vez por semana presencial más clases online el resto
+  > de la semana. Dos formaciones disponibles: **Gestión de Empresas o Marketing** — 2.740€ de
+  > contado, o 2.858€ financiado (890€ inscripción + 299€ de tasas administrativas a los 60 días +
+  > 10 cuotas de 166,90€); **Inteligencia Artificial** — 3.299€ de contado, o 3.418€ financiado.
+
+  **Estado: texto completo y listo — falta que Mariano se lo mande a Agustín.**
 - **Requisito de fondos simplificado**: en vez de la cifra fija ya documentada (~7.200€, sección
   1.2 de `comercial/CLAUDE.md`), se acordó usar un **mínimo del 100% del IPRE mensual por
   titular**, manejando grupos familiares caso por caso. **⚠️ Esto es un cambio real de criterio de

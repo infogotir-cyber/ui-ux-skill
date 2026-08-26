@@ -428,9 +428,9 @@ Reemplaza el rechazo de la v1 (sección 8, "muchas hojas, mucho texto"). Cambios
   > GOTIR)**, o financiado hasta en 12 cuotas de 528,83€ — la financiación debe quedar a nombre de
   > alguien que ya tenga situación regular en España.
   >
-  > **Opción 2** (la recomendada): Madrid, 7 meses, cursada viernes y sábado. Formaciones en
-  > Gestión Empresarial, Comercio Exterior u Hostelería. 2.900€ de contado, o 750€ de inscripción +
-  > el resto en 7 cuotas casi sin intereses.
+  > **Opción 2** (la recomendada): disponible en Madrid y Sevilla, mismas condiciones en las dos.
+  > 7 meses, cursada viernes y sábado. Formaciones en Gestión Empresarial, Comercio Exterior u
+  > Hostelería. 2.900€ de contado, o 750€ de inscripción + el resto en 7 cuotas casi sin intereses.
   >
   > **Opción 3**: Madrid, 12 meses, cursada 1 vez por semana presencial más clases online el resto
   > de la semana. Dos formaciones disponibles: **Gestión de Empresas o Marketing** — 2.740€ de

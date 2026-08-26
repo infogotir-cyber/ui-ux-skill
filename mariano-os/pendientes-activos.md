@@ -284,8 +284,10 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
     - Detalle completo en `direcciones/marketing/CLAUDE.md` sección 11.2.1: (a) mandarle a Agustín
       una captura del flujo de automatización actual de GHL y explicarle cómo funciona; (b) subir
       las fotos profesionales (versión impresión y web) a la carpeta que va a compartir Agustín;
-      (c) exportar los prospectos del CRM (~2.000 generales + ~500 calificados) para remarketing.
-    - Estado: **abierto**, ninguna de las 3 hecha todavía.
+      (c) ~~exportar los prospectos del CRM para remarketing~~ **hecho 26 ago 2026** — exportó 544
+      contactos filtrados por etiqueta (`cliente`, `cualificado estancia`, `cualificado visado`, en
+      OR) desde el panel de GHL. Falta pasarle el CSV a Agustín.
+    - Estado: **en curso** — quedan (a) y (b) abiertas, (c) exportada pero falta enviarla.
 
 11. **Dar el texto estandarizado de las 3 opciones de curso para la página nueva del PDF de venta**
     - **Resuelto 26 ago 2026** — Mariano dio el detalle completo y corregido (ciudades reales de la

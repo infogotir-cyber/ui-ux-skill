@@ -94,15 +94,20 @@ que se confirme qué va a cobrarse primero.
   (50% al iniciar, 50% antes de presentar expediente). Contacto real en GHL bajo el nombre "Regina
   Lucia Epifanio" (`id=vXvPgYTIctXeNlM6juoh` — el contacto duplicado viejo terminó siendo el que
   quedó activo tras la fusión manual que hizo Mariano, no el nuevo `OvKjvt9MQvLiS2R6ofDG`).
-  **Diagnosticado 26 ago 2026** (Regina había avisado el 24 ago que no le funcionaba la plataforma):
-  el problema no era de acceso/login — se confirmó en vivo que Regina sí puede entrar al portal
-  ClientClub (`uttdf7grgmbznkerppnm.app.clientclub.net`, la app de "Portal del cliente" dentro de
-  GHL, sección Sitios). El problema real es que su cuenta tiene **0 cursos asignados** — entra bien
-  pero no ve el curso de visado de estudios porque nunca la agregaron como alumna a ese curso
-  puntual. Fix: Mariano tiene que ir a la pestaña "Cursos" del portal y agregarla manualmente al
-  curso correspondiente — no es algo resoluble por API (el portal ClientClub es una app aparte, sin
-  scope ni endpoint en el token de GHL de este sistema). **Pendiente de confirmar que Mariano ya la
-  agregó y que a ella ya le aparece el curso.**
+  **Resuelto 26 ago 2026** (Regina había avisado el 24 ago que no le funcionaba la plataforma): el
+  problema no era de acceso/login — se confirmó en vivo que Regina sí podía entrar al portal
+  ClientClub (`uttdf7grgmbznkerppnm.app.clientclub.net`, app "Portal del cliente"/Suscripciones
+  dentro de GHL). El problema real era que su cuenta tenía **0 cursos asignados** — entraba bien
+  pero no veía el curso de visado de estudios porque nunca la habían agregado como alumna a ese
+  curso puntual. **Camino que NO funcionó**: ni la vista "Cursos → Progreso del producto" (solo
+  lectura, sin botón de agregar) ni la oferta gratuita del curso (generar y mandar el link de la
+  oferta no habilita el curso en una cuenta ya existente, solo sirve para altas nuevas vía
+  checkout). **Camino que sí funcionó**: Mariano entró directo a la **ficha de contacto de Regina
+  en GHL** y desde ahí le otorgó el acceso al curso — hay una sección en el contacto mismo para
+  asignar productos/cursos del portal, más directo que buscarlo desde el lado del curso. Anotado
+  para la próxima vez que aparezca un caso similar: **empezar por la ficha del contacto, no por
+  Suscripciones → Cursos.** No es algo resoluble por API (el portal ClientClub es una app aparte,
+  sin scope ni endpoint en el token de GHL de este sistema).
   - **Contacto/oportunidad duplicados detectados y resueltos parcialmente (17 agosto 2026)**: existía
     otro contacto de la misma persona — "Regina Lucia" (`contact_id=vXvPgYTIctXeNlM6juoh`, con
     teléfono `+541149148059`) con su propia oportunidad vieja ("Regina Lucia Epifanio",

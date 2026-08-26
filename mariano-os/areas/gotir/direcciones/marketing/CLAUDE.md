@@ -438,6 +438,33 @@ Reemplaza el rechazo de la v1 (sección 8, "muchas hojas, mucho texto"). Cambios
   > 10 cuotas de 166,90€); **Inteligencia Artificial** — 3.299€ de contado, o 3.418€ financiado.
 
   **Estado: texto completo y listo — falta que Mariano se lo mande a Agustín.**
+- **Sección "Honorarios GOTIR" — estructura confirmada por Mariano (26 ago 2026)**. Esto reemplaza
+  el pedido original de la reunión (3 números de pricing por titular/+1/adicional, sección 11.1
+  punto 3) — Mariano decidió no diferenciar por cantidad de familiares (coherente con el precedente
+  real de Maryi Castañeda, 825€×3 sin bundle) y en cambio dejar un precio normal fijo más un campo
+  de promoción editable caso por caso:
+  > **Honorarios GOTIR**
+  >
+  > **Precio normal**: 825€. 50% al comenzar, 50% antes de presentar la carpeta. +30€ adicionales
+  > por pagos con tarjeta.
+  >
+  > **Precio de promoción**: [campo editable por Mariano según el cliente] — Promoción válida hasta
+  > [fecha].
+  >
+  > **Incluye**:
+  > ✓ Asesor dedicado por WhatsApp
+  > ✓ Acompañamiento completo hasta la resolución del expediente
+  > ✓ Envío de requisitos
+  > ✓ Cumplimentación documental
+  > ✓ Presentación por Mercurio con abogados externos especializados
+  > ✓ Instructivos y contactos útiles
+  > ✓ Acceso a la Comunidad GOTIR con más de 150 viajeros
+
+  **Dos preguntas sin responder todavía, no asumir**: (1) qué es "Mercurio" — no está documentado
+  en ningún lado de este sistema, se mantiene tal cual lo dio Mariano hasta que lo aclare; (2) en la
+  captura original que mandó, la leyenda "(Promoción válida hasta)" aparecía duplicada también bajo
+  "Precio normal" — no confirmado si es a propósito o un error de la plantilla, se dejó solo en el
+  cuadro de "Precio de promoción" en este texto final.
 - **Requisito de fondos simplificado**: en vez de la cifra fija ya documentada (~7.200€, sección
   1.2 de `comercial/CLAUDE.md`), se acordó usar un **mínimo del 100% del IPRE mensual por
   titular**, manejando grupos familiares caso por caso. **⚠️ Esto es un cambio real de criterio de

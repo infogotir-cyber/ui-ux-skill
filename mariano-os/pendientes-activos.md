@@ -293,6 +293,15 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
       `direcciones/marketing/CLAUDE.md` sección 11.2. Falta que Mariano se lo mande a Agustín.
     - Estado: **en curso** — texto listo, falta el envío.
 
+12. **Definir los 3 números de pricing (titular solo / +1 familiar / c/u adicional)**
+    - **Resuelto 26 ago 2026, de otra forma a la pedida originalmente**: Mariano decidió no
+      diferenciar precio por cantidad de familiares — en cambio armó una sección "Honorarios GOTIR"
+      con precio normal fijo (825€) + un campo de promoción editable caso por caso, ver
+      `direcciones/marketing/CLAUDE.md` sección 11.2. Quedan 2 datos sin confirmar dentro de esa
+      sección (qué es "Mercurio", y si la leyenda de promo duplicada bajo "Precio normal" era
+      intencional) — no bloquean el envío a Agustín, se pueden confirmar después.
+    - Estado: **en curso** — texto listo, falta el envío (mismo paquete que el ítem 11).
+
 9. **Permisos de API en GHL otorgados a Agustín (Exxo) — confirmado por Mariano (26 ago), sin objeciones**
    - Ver `direcciones/marketing/CLAUDE.md` sección 11.4. No requiere ninguna acción de este sistema,
      solo queda registrado: de ahora en más hay dos actores con acceso de escritura a la misma

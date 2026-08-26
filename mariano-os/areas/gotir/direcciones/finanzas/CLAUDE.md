@@ -43,6 +43,12 @@ ordenadas por prioridad (confirmada por Mariano el 17 agosto 2026):
 4. **Matías Macho** (cliente) — **140.000 ARS**. Mariano lo mencionó como "un cliente" al que le
    debe este monto — **no se especificó el motivo** (¿reembolso, comisión, pago de más?). No asumir,
    solo dejar registrado que es una deuda de GOTIR hacia un cliente, no al revés.
+5. 🔴 **IRPF + IVA — ~8.000€ (dato nuevo, 26 agosto 2026)**. Mariano lo mencionó en el contexto de la
+   crisis de caja al pedir un análisis general de la situación. Es deuda tributaria (Hacienda), no
+   de proveedor — distinta en naturaleza al resto de la lista, porque en España normalmente se puede
+   fraccionar (aplazamiento de deudas tributarias), lo cual puede bajar la presión de "necesito los
+   8.000€ ya". No confirmado todavía: desglose IRPF vs. IVA, plazo de pago, si ya hay recargo por
+   mora, ni si Mariano ya lo habló con un gestor/asesor fiscal.
 
 El orden 2-4 es solo el orden en que Mariano las mencionó, no una prioridad confirmada — únicamente
 la de Micol (punto 1) está explícitamente marcada como la más urgente.

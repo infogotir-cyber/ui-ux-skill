@@ -52,7 +52,8 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
   Se lanzó un barrido activo de cobro esta tarde — ver ítems de Héctor Ojeda, Luisana Junguittu,
   Maryi Castañeda, María Taly Navarro y Felipe Nogues más abajo.
 - Estado: **abierto — urgente, prioridad de pago definida, esperando que entre el primer cobro**.
-- Recordado: 3 veces (24 ago 2026; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00).
+- Recordado: 4 veces (24 ago 2026; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago,
+  chequeo diario 18:00).
 
 ### GOTIR — seguimiento
 
@@ -116,18 +117,18 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
    - Estado: **abierto — esperando que Javier cobre su jubilación, no una venta caída**. El 24 ago
      ya se le mandó el mensaje cálido sin mencionar el vencimiento (recordándole que el cupo se
      reserva al pagar la inscripción) — sigue sin responder al 26 ago.
-   - Recordado: 8 veces (19 ago 2026; 20 ago, chequeo diario 20:00; 22 ago, chequeo de la mañana;
+   - Recordado: 9 veces (19 ago 2026; 20 ago, chequeo diario 20:00; 22 ago, chequeo de la mañana;
      22 ago, chequeo diario 20:00; 23 ago, chequeo diario 20:00; 24 ago 2026, aclarado; 25 ago,
-     chequeo diario 18:00; 26 ago, chequeo diario 18:00).
+     chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago, chequeo diario 18:00).
 
 1. **Nazareth Rengel — no-show del 18 ago, RECONTACTADA (26 ago 2026)**
    - Referida por Jesús Mosquera. Llevaba 8 días sin reconexión — se le mandó mensaje hoy (26 ago)
      ofreciendo reagendar, dentro del barrido de cobro/reactivación de la tarde. Sin respuesta
      todavía a esta hora.
    - Estado: **en curso — recontactada, esperando respuesta**.
-   - Recordado: 7 veces (19 ago 2026; 20 ago, chequeo diario 20:00; 22 ago, chequeo de la mañana;
+   - Recordado: 8 veces (19 ago 2026; 20 ago, chequeo diario 20:00; 22 ago, chequeo de la mañana;
      22 ago, chequeo diario 20:00; 23 ago, chequeo diario 20:00; 25 ago, chequeo diario 18:00; 26 ago,
-     chequeo diario 18:00 — recontactada esta tarde).
+     chequeo diario 18:00 — recontactada esta tarde; 27 ago, chequeo diario 18:00).
 
 ### GOTIR — decisión pendiente, la más importante de todas
 
@@ -176,8 +177,9 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
      Fase B y C sin empezar**. La Fase C manual (barrido de conversaciones) se usó de nuevo hoy
      (26 ago) para el barrido de cobro urgente — sigue funcionando bien como práctica, aunque más
      cara en tiempo que el diseño final automatizado.
-   - Recordado: 5 veces (20 ago 2026, tras la elección; 22 ago, chequeo diario 20:00; 23 ago,
-     chequeo diario 20:00; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00).
+   - Recordado: 6 veces (20 ago 2026, tras la elección; 22 ago, chequeo diario 20:00; 23 ago,
+     chequeo diario 20:00; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago,
+     chequeo diario 18:00).
 
 ### GOTIR — barrido de cobro urgente (26 ago 2026, por la crisis de caja)
 
@@ -195,7 +197,7 @@ salida en vez de presionar — se sugirió una tarea de seguimiento sin presión
 en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
 `direcciones/comercial/CLAUDE.md` sección 6.3, Caso 2).
 - Estado: **en curso — esperando respuesta de los 5 contactados hoy**.
-- Recordado: 1 vez (26 ago, chequeo diario 18:00).
+- Recordado: 2 veces (26 ago, chequeo diario 18:00; 27 ago, chequeo diario 18:00).
 
 ### GOTIR — prioritarios (marcados así por Mariano, 20 ago 2026 madrugada)
 
@@ -215,8 +217,9 @@ en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
      al mensaje que ya existe) + 2 pasos nuevos (precalificación 24-48hs antes, confirmación de
      asistencia el día de la cita), a mano en el builder de GHL. También revisar el pie "Nuhka AI
      Consulting" que aparece en los emails automáticos — probablemente no es intencional.
-   - Recordado: 5 veces (20 ago 2026, madrugada — 2 mensajes seguidos; 20 ago, chequeo diario 20:00;
-     25 ago, en curso ahora mismo con Mariano en el builder; 26 ago, chequeo diario 18:00).
+   - Recordado: 6 veces (20 ago 2026, madrugada — 2 mensajes seguidos; 20 ago, chequeo diario 20:00;
+     25 ago, en curso ahora mismo con Mariano en el builder; 26 ago, chequeo diario 18:00; 27 ago,
+     chequeo diario 18:00).
 
 1. **Mini-funnel pre-llamada (Fragmentos) — texto listo, falta cargarlo en GHL**
    - Ver ítem completo más abajo en esta misma sección — se re-marca acá como prioritario a pedido
@@ -231,8 +234,9 @@ en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
    - Mencionado por Mariano: antes del 19 ago 2026 (fecha exacta no registrada — él mismo señaló el
      19 ago que lo había pedido y nunca se retomó).
    - Estado: **abierto**, sin dueño ni plan todavía.
-   - Recordado: 6 veces (19 ago 2026, chequeo diario 20:00; 20 ago, chequeo diario 20:00; 22 ago,
-     chequeo diario 20:00; 23 ago, chequeo diario 20:00; 25 ago, chequeo diario 18:00).
+   - Recordado: 8 veces (19 ago 2026, chequeo diario 20:00; 20 ago, chequeo diario 20:00; 22 ago,
+     chequeo diario 20:00; 23 ago, chequeo diario 20:00; 25 ago, chequeo diario 18:00; 26 ago,
+     chequeo diario 18:00; 27 ago, chequeo diario 18:00).
    - Falta definir: ¿GHL ya centraliza Instagram/WhatsApp — también permite TikTok, o hace falta
      otra herramienta? Confirmar con Mariano el volumen real de mensajes de TikTok antes de decidir
      la solución.
@@ -257,17 +261,19 @@ en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
    - Estado: **bloqueado (esperando a Mariano) — texto terminado y cargado en el sistema, falta que
      Mariano pegue los 9 Fragmentos en GHL y los pruebe manual con leads reales antes de que se
      construya la versión bot en n8n**.
-   - Recordado: 7 veces (19 ago 2026, chequeo diario 20:00; 20 ago 2026; 20 ago, chequeo diario
+   - Recordado: 8 veces (19 ago 2026, chequeo diario 20:00; 20 ago 2026; 20 ago, chequeo diario
      20:00; 25 ago 2026; 25 ago, en curso ahora mismo — 9 Fragmentos ya cargados en GHL por
-     Mariano, falta probarlos con leads reales; 26 ago, chequeo diario 18:00).
+     Mariano, falta probarlos con leads reales; 26 ago, chequeo diario 18:00; 27 ago, chequeo
+     diario 18:00).
 
 3. **Migrar la cuenta de ads a facturación en euros (hoy en pesos, vía Mercado Pago Argentina)**
    - Detalle completo en `direcciones/marketing/CLAUDE.md`, sección 6. Mariano ya decidió hacerlo
      (más caro pero deducible, y no le parece correcto operar en ARS para un negocio español), pero
      sin fecha todavía — acaba de cargar 70.000 ARS para no cortar la campaña mientras tanto.
    - Estado: **abierto**, sin fecha.
-   - Recordado: 6 veces (21 ago 2026, dos veces el mismo día; 22 ago, chequeo diario 20:00; 23 ago,
-     chequeo diario 20:00; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00).
+   - Recordado: 7 veces (21 ago 2026, dos veces el mismo día; 22 ago, chequeo diario 20:00; 23 ago,
+     chequeo diario 20:00; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago,
+     chequeo diario 18:00).
 
 4. **Conectar el sistema a la cuenta de administrador de anuncios de Mariano (Meta Ads Manager)**
    - Detalle completo en `direcciones/marketing/CLAUDE.md`, sección 7. Pedido explícito de Mariano
@@ -278,8 +284,9 @@ en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
      de la cuenta de anuncios (`act_XXXXXXXXXXXXX`) — ver instrucciones de dónde conseguir cada uno
      en `direcciones/marketing/CLAUDE.md` sección 7.
    - Estado: **abierto — bloqueado esperando que Mariano consiga el token y el ID de cuenta**.
-   - Recordado: 6 veces (21 ago 2026, dos veces el mismo día; 22 ago, chequeo diario 20:00; 23 ago,
-     chequeo diario 20:00; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00).
+   - Recordado: 7 veces (21 ago 2026, dos veces el mismo día; 22 ago, chequeo diario 20:00; 23 ago,
+     chequeo diario 20:00; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago,
+     chequeo diario 18:00).
 
 5. **Repositorio de marketing de Exxo — conseguirlo y dárselo a este sistema para tener contexto real**
    - Detalle en `direcciones/marketing/CLAUDE.md`, sección 11.1 punto 8. Agustín se comprometió en
@@ -394,9 +401,9 @@ en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
      que **Paulina, Jacobo y Lisandro** paguen (Lisandro es el mismo caso de arriba sin poder
      pagar — no confirmado si esto significa que Mariano lo va a cubrir él).
    - Estado: **abierto**, varios sub-ítems en paralelo.
-   - Recordado: 6 veces (21 ago 2026, dos actualizaciones el mismo día; 22 ago, chequeo diario
+   - Recordado: 7 veces (21 ago 2026, dos actualizaciones el mismo día; 22 ago, chequeo diario
      20:00; 23 ago, chequeo diario 20:00; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario
-     18:00).
+     18:00; 27 ago, chequeo diario 18:00).
 
 5. **Grupo de Madrid ("FM6") — riesgo RESUELTO (27 ago 2026), queda solo el pasaje**
    - **Resuelto**: Marianne y Yorlenny sí van al Lanzamiento (5 sept 2026) — se activan como líderes
@@ -424,15 +431,16 @@ en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
    - Pidió armar un **listado de los hombres que está visionando** para servir en el reto — todavía
      no dio nombres, falta que los aporte antes de poder armar la lista.
    - Estado: **abierto — reuniones hoy a la noche**.
-   - Recordado: 3 veces (24 ago 2026; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00).
+   - Recordado: 4 veces (24 ago 2026; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00;
+     27 ago, chequeo quincenal de visionadores).
 
 6. **Asignar a Emiliano Ortiz y Litzy a un grupo FM4 (4.1, 4.2 o 4.3)**
    - Detalle completo en `areas/ministerio/CLAUDE.md`, sección "Campaña de evangelización rumbo al
      Encuentro". Los dos fueron por primera vez a Noches de Vida el 20 ago 2026; Mariano dijo que
      los va a repartir más adelante, sin fecha concreta todavía.
    - Estado: **abierto**, sin urgencia declarada.
-   - Recordado: 5 veces (21 ago 2026; 22 ago, chequeo diario 20:00; 23 ago, chequeo diario 20:00;
-     25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00).
+   - Recordado: 6 veces (21 ago 2026; 22 ago, chequeo diario 20:00; 23 ago, chequeo diario 20:00;
+     25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago, chequeo diario 18:00).
 
 7. **Sistema de seguimiento 1:1 con discípulos FM4 — registro de fechas en marcha**
    - Detalle completo y tabla de registro en `areas/ministerio/CLAUDE.md`, sección 8.3. Mariano
@@ -447,8 +455,10 @@ en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
    - **Falta antes de poder avisar proactivamente con precisión**: como la fecha es "la semana
      pasada" y no un día puntual, el aviso de las ~3 semanas va a ser aproximado, no exacto al día.
    - Estado: **abierto — tracking en marcha, con 3 de ~10 discípulos ya con una fecha registrada**.
-   - Recordado: 6 veces (21 ago 2026, dos veces; 22 ago, chequeo diario 20:00; 23 ago, chequeo
-     diario 20:00; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00).
+   - Recordado: 7 veces (21 ago 2026, dos veces; 22 ago, chequeo diario 20:00; 23 ago, chequeo
+     diario 20:00; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago, chequeo
+     diario 18:00 — todavía sin decidir si las tareas de Diego/Rocío/Ingrid en ClickUp se marcan
+     completadas o quedan como recurrentes).
 
 ---
 

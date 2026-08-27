@@ -1019,27 +1019,37 @@ formalmente los grupos FM4.3, FM4.4 y FM4.5:
 - Logística del evento de Lanzamiento en sí (dónde, cómo, quién más participa) todavía no está
   coordinada — es un pendiente abierto, no asumas detalles que Mariano no dio.
 
-### Grupo de Madrid — pareja ministerial de Mariano, candidatas en riesgo (agregado 21 ago 2026)
-Información nueva que no encaja todavía en la estructura FM4.1–4.5 de arriba — esos son los grupos
-que Mariano **discipula** (es el líder de cada pareja); esto es distinto: Mariano tiene además su
-**propia pareja ministerial**, **Jenny**, con la que lidera directamente un grupo en **Madrid**
-(geografía nueva — todo lo demás de este documento es Valencia). ⚠️ No confirmado si esta Jenny es
-la misma persona que **Jenny Rodríguez** (sección "Graduación New Life", ítem 14, edecanes) — no
-asumir, son contextos distintos (Madrid/liderazgo vs. New Life/graduación) y acá Mariano no dio
-apellido.
+### Grupo de Madrid — es "FM6", con transición de liderazgo confirmada (actualizado 27 ago 2026)
+Grupo propio de Mariano, geográficamente distinto de Valencia — **numeración correcta confirmada
+27 ago 2026: es "FM6"**, un grupo separado y paralelo a FM4 (no una sub-pareja dentro de FM4, ni
+"FM4.6" como se había registrado antes por error de interpretación). Mariano lo lidera junto a su
+**propia pareja ministerial, Jenny**, hasta **fin de septiembre 2026** — después de eso deja de
+viajar a Madrid por este motivo. ⚠️ Sigue sin confirmar si esta Jenny es la misma persona que
+**Jenny Rodríguez** (sección "Graduación New Life", ítem 14, edecanes) — no asumir, contextos
+distintos y acá Mariano no dio apellido.
 
-Sus dos "ovejas" en ese grupo son **Marianne** y **Yorlenny** — candidatas a activarse como líderes
-en el **Lanzamiento del 5 sept 2026** (mismo evento de arriba, no uno distinto). **Riesgo real
-detectado hoy (21 ago)**: las dos manifestaron que querían renunciar — el costo de viajar a
-Valencia para el evento les parece mucho dinero. Mariano tiene **una llamada hoy mismo con
-Yorlenny, Marianne y Jenny** para "visionarlas" (pastoralmente, no es una gestión operativa) y que
-decidan venir y liderar. Este sistema no participa de esa conversación ni de la decisión pastoral —
-solo registra el resultado cuando Mariano lo cuente.
+**Resuelto (27 ago 2026): el riesgo de que Marianne y Yorlenny no fueran al Lanzamiento del 5 sept
+ya no es un riesgo** — confirmado que sí van, y ahí se activan como líderes (abren su propio grupo
+nuevo). El detalle completo de la transición, tal como lo confirmó Mariano:
 
-**Pendiente estructural, no resuelto**: no está claro si Marianne/Yorlenny se suman como candidatas
-nuevas al Lanzamiento (además de Jacobo/Paulina/Lisandro/David/Sabrina ya listados arriba) o si el
-grupo de Madrid es un tramo separado del pipeline que no pasa por Valencia — no asumir, preguntar
-si hace falta precisión la próxima vez que se toque este tema.
+1. **Marianne y Yorlenny** van al Lanzamiento (5 sept 2026), se activan como líderes y abren su
+   propio grupo nuevo — y al mismo tiempo pasan a ser discípulas de **Carlos y Juliana**, que hasta
+   ahora lideraban **FM5** y pasan a liderar **FM3** (con Marianne y Yorlenny como sus discípulas
+   ahí). Es decir: Marianne/Yorlenny lideran su propio grupo nuevo Y siguen siendo discipuladas
+   ellas mismas, ahora por Carlos/Juliana en FM3 — no salen de la estructura de discipulado, cambian
+   de discipuladoras (de Mariano/Jenny a Carlos/Juliana) al mismo tiempo que se activan como líderes.
+2. **Jenny sigue viajando a Madrid después de fin de septiembre, pero ya no como líder de FM6** —
+   lo hace con su esposo (se casan el **19 de septiembre 2026**). El nuevo grupo de Madrid (después
+   de que Mariano se baja) lo lideran **Jenny y Adrián Caro** — no el esposo de Jenny. Empiezan
+   **desde cero**, buscando gente nueva en Madrid (no heredan al grupo actual de Mariano/Jenny).
+   ⚠️ **Adrián Caro es, hoy, uno de los discípulos propios de Mariano** (FM4.1, junto con Ingrid
+   Guaño — ver sección 5 más abajo) — esto significa que Adrián también está en transición: pasa de
+   discípulo de Mariano a líder de un grupo nuevo en Madrid junto a Jenny. No se confirmó todavía
+   qué pasa con Ingrid Guaño (su pareja actual en FM4.1) ni con el propio FM4.1 cuando Adrián se
+   active como líder — no asumir, preguntar si hace falta precisión.
+
+**Pendiente real que queda**: comprar el pasaje de Mariano para el viaje a Madrid del 29 de agosto
+(despedida y último grupo de amistad ahí antes de la transición) — ver `pendientes-activos.md`.
 
 ## 5. Discípulos actuales por grupo (lista rápida de referencia)
 - FM4.1 — Adrián Caro e Ingrid Guaño

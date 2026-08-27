@@ -398,18 +398,21 @@ en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
      20:00; 23 ago, chequeo diario 20:00; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario
      18:00).
 
-5. **Grupo de Madrid — Marianne y Yorlenny en riesgo de no ir al Lanzamiento (5 sept 2026)**
-   - Detalle completo en `areas/ministerio/CLAUDE.md`, sección "Grupo de Madrid". Mariano tiene
-     llamada **hoy (21 ago 2026)** con Yorlenny, Marianne y Jenny (su pareja ministerial en Madrid)
-     para visionarlas — las dos manifestaron querer renunciar por el costo de viajar a Valencia.
-   - Estado: **abierto, esperando el resultado de la llamada del 21 ago** — decisión pastoral, este
-     sistema no participa, solo espera que Mariano cuente cómo quedó. Ya pasaron 2 días sin novedad
-     registrada.
-   - **Agregado 24 ago 2026**: Mariano va a viajar a Madrid el **29 de agosto** para despedirse y
-     hacer el último grupo de amistad ahí — falta comprar el pasaje (ver también el ítem de caja
-     urgente arriba). Sin monto ni fecha de compra confirmada.
-   - Recordado: 6 veces (21 ago 2026; 22 ago, chequeo diario 20:00; 23 ago, chequeo diario 20:00;
-     24 ago 2026; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00).
+5. **Grupo de Madrid ("FM6") — riesgo RESUELTO (27 ago 2026), queda solo el pasaje**
+   - **Resuelto**: Marianne y Yorlenny sí van al Lanzamiento (5 sept 2026) — se activan como líderes
+     ahí, abren su propio grupo nuevo, y pasan a ser discípulas de Carlos y Juliana (que pasan de
+     liderar FM5 a liderar FM3). Transición completa de liderazgo confirmada y documentada en
+     `areas/ministerio/CLAUDE.md`, sección "Grupo de Madrid" — incluye que Jenny sigue viajando a
+     Madrid después de fin de septiembre pero ya no como líder de FM6 (lo lidera con su esposo, se
+     casan el 19 sept), y que el grupo nuevo de Madrid lo arrancan **Jenny y Adrián Caro** desde
+     cero — Adrián es hoy discípulo propio de Mariano (FM4.1), así que también está en transición.
+   - **Único pendiente real que queda de este bloque**: comprar el pasaje de Mariano para el viaje a
+     Madrid del **29 de agosto** (despedida + último grupo de amistad ahí antes de la transición) —
+     ver también el ítem de caja urgente arriba, sigue sin monto ni fecha de compra confirmada.
+   - Estado: **en curso — pasaje sin comprar**.
+   - Recordado: 7 veces (21 ago 2026; 22 ago, chequeo diario 20:00; 23 ago, chequeo diario 20:00;
+     24 ago 2026; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago, aclarado con
+     el detalle completo de la transición).
 
 8. **Reto Ruge — dos reuniones hoy (24 ago) y listado de servidores a visionar sin armar**
    - Área: ministerio (Ruge). Hoy Mariano tiene reunión a las **21:00** con el equipo de logística y

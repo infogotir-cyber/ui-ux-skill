@@ -1048,8 +1048,11 @@ nuevo). El detalle completo de la transición, tal como lo confirmó Mariano:
    qué pasa con Ingrid Guaño (su pareja actual en FM4.1) ni con el propio FM4.1 cuando Adrián se
    active como líder — no asumir, preguntar si hace falta precisión.
 
-**Pendiente real que queda**: comprar el pasaje de Mariano para el viaje a Madrid del 29 de agosto
-(despedida y último grupo de amistad ahí antes de la transición) — ver `pendientes-activos.md`.
+**Pendiente real que queda**: comprar el pasaje de Mariano para el viaje a Madrid (despedida y
+último grupo de amistad ahí antes de la transición) — ver `pendientes-activos.md`. **Actualizado
+27 ago 2026**: no viaja el 29 de agosto como se había registrado antes (motivo: económico, no puede
+costearlo ahora) — nueva fecha tentativa es el **viernes 18 de septiembre**, el día antes de la
+boda de Jenny (19 sept).
 
 ## 5. Discípulos actuales por grupo (lista rápida de referencia)
 - FM4.1 — Adrián Caro e Ingrid Guaño

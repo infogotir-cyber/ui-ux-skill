@@ -406,13 +406,16 @@ en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
      Madrid después de fin de septiembre pero ya no como líder de FM6 (lo lidera con su esposo, se
      casan el 19 sept), y que el grupo nuevo de Madrid lo arrancan **Jenny y Adrián Caro** desde
      cero — Adrián es hoy discípulo propio de Mariano (FM4.1), así que también está en transición.
-   - **Único pendiente real que queda de este bloque**: comprar el pasaje de Mariano para el viaje a
-     Madrid del **29 de agosto** (despedida + último grupo de amistad ahí antes de la transición) —
-     ver también el ítem de caja urgente arriba, sigue sin monto ni fecha de compra confirmada.
-   - Estado: **en curso — pasaje sin comprar**.
-   - Recordado: 7 veces (21 ago 2026; 22 ago, chequeo diario 20:00; 23 ago, chequeo diario 20:00;
+   - **Actualizado 27 ago 2026**: Mariano **NO viaja el 29 de agosto** — por temas económicos, no
+     puede ir. Nueva fecha tentativa: **viernes 18 de septiembre** (el día antes de la boda de
+     Jenny, 19 sept — coincide con el mismo viaje de despedida). Ya actualizado en ClickUp
+     (lista "FM6 — Grupo de Madrid").
+   - **Único pendiente real que queda de este bloque**: comprar el pasaje de Mariano para ese viaje,
+     sin monto ni fecha de compra confirmada — ver también el ítem de caja urgente arriba.
+   - Estado: **en curso — pasaje sin comprar, fecha de viaje movida al 18 sept**.
+   - Recordado: 8 veces (21 ago 2026; 22 ago, chequeo diario 20:00; 23 ago, chequeo diario 20:00;
      24 ago 2026; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago, aclarado con
-     el detalle completo de la transición).
+     el detalle completo de la transición; 27 ago, viaje movido del 29 ago al 18 sept).
 
 8. **Reto Ruge — dos reuniones hoy (24 ago) y listado de servidores a visionar sin armar**
    - Área: ministerio (Ruge). Hoy Mariano tiene reunión a las **21:00** con el equipo de logística y

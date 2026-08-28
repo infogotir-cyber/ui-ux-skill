@@ -6,7 +6,7 @@
 > llamada (`CLAUDE.md`, sección 2). Se actualiza cada vez que llega una transcripción nueva, sin
 > esperar a que Mariano lo pida.
 >
-> **Contador: 6/20 llamadas registradas.**
+> **Contador: 7/20 llamadas registradas.**
 
 ## Cómo se carga
 
@@ -36,6 +36,25 @@ confirman.
   general (reagrupación familiar), pero derivó lo específico de la legislación colombiana a un
   escribano público local en vez de improvisar — mismo principio ya documentado ("no inventar
   respuestas legales que no domina"), ahora con un segundo caso real dentro de la ventana.
+  **3er caso, variante nueva (Ángel Villalba)**: acá el menor (Tiago, 10 años, hijo biológico de
+  Ángel de una relación anterior) sí vive con la familia por un convenio parental homologado por
+  juzgado, pero no está claro si ese documento alcanza para autorizar viaje/pasaporte o si hace
+  falta ampliarlo — mismo manejo correcto: Mariano no improvisó una respuesta ("tendría que verlo
+  bien al convenio para decirte"), y el cliente se lleva la acción de consultarlo con su propia
+  abogada. Confirma el patrón como algo más amplio que "reagrupación de menores sin papeles" —
+  cualquier variante de custodia/tenencia no estándar (madre ausente, convenio parental, tutela
+  compartida) dispara el mismo protocolo correcto: dar la estrategia general, derivar el detalle
+  legal específico a un profesional, nunca inventar.
+- **Objeción "ya pagamos por una consulta con otra agencia y no nos sirvió de nada"** (Ángel
+  Villalba) — el cliente llegó habiendo pagado 75€ por una llamada con otro equipo que se cortó a
+  la media hora sin resolver nada nuevo más allá de lo que ya sabían por internet. Mariano la
+  resolvió bien sin atacar a la competencia: contó su propia experiencia migratoria (pagó 70€ por
+  llamada a una gestoría que solo repetía información genérica, y terminó teniendo que resolver
+  todo solo) para justificar por qué GOTIR no cobra la primera llamada — refuerza con una historia
+  real, no con un argumento abstracto, el mismo principio de rapport genuino ya documentado
+  (sección 3.2). Nuevo patrón de objeción — vale la pena anticiparlo en el guion de apertura como
+  un diferenciador a mencionar temprano cuando el cliente menciona haber "ya preguntado en otro
+  lado" y haber pagado sin resultado.
 - **"Busqué en una IA y me dice que el máster no es válido/seguro para la estancia por estudios si
   no tengo título universitario"** (Milagros, segunda llamada) — objeción nueva de tipo: el cliente
   llega con una conclusión ya formada (y parcialmente errónea) sacada de una app de IA genérica, sin
@@ -56,21 +75,27 @@ confirman.
   que ir al grano... ¿pudiste ver el video? ¿pudiste ver los requisitos?") — de hecho mejor que el
   guion, porque además referenció el contenido pre-llamada. No es un patrón parejo todavía, dos
   llamadas van 1 y 1 — seguir vigilando.
-- **Próxima acción sin hora exacta — 6/6 llamadas del registro (patrón ya consolidado, el más
-  repetido de todos, con una mejora real esta vez)**: Sara Sofía dijo "hoy mismo", Maryi dijo "a
-  principio de la semana que viene", Florencia/Manuel quedaron directamente en "cuando arranquemos
-  la temporada en Andorra, en noviembre" (el caso más vago de los tres, ni siquiera un día concreto,
-  solo un mes), Milagros dijo "en el día de hoy" sin especificar horario, Melisa Tamburo quedó en
-  escribir "cuando llegue el momento" / "unos 6 meses antes" de su viaje, y en la segunda llamada de
-  Milagros (con su madre Santa) quedaron en que la madre decide y confirma "el lunes" — sin hora,
-  pero **con día exacto**, algo que ninguna de las llamadas anteriores tenía. Sigue siendo 6/6 sin
-  hora fijada en la llamada misma (este sistema tiene que completarla al crear la tarea), pero vale
-  la pena notar la mejora parcial: por primera vez en la ventana, "el lunes" es un compromiso
-  verificable al instante (si no escriben el lunes, es una señal clara), a diferencia de "cuando
-  arranque Andorra" o "en unos meses". Coincide con el error #1 ya documentado en la llamada con
-  Hector (sección 3.2) — sigue siendo el patrón más repetido de todos, y refuerza directamente la
-  sugerencia de guion de abajo (preguntar la hora explícitamente en la Fase 5, ya que el día sí se
-  está logrando cada vez más).
+- **Próxima acción sin hora exacta — 7/7 llamadas del registro (patrón ya consolidado, el más
+  repetido de todos — con una mejora parcial en la 6ta llamada, pero un retroceso en la 7ma)**: Sara
+  Sofía dijo "hoy mismo", Maryi dijo "a principio de la semana que viene", Florencia/Manuel quedaron
+  directamente en "cuando arranquemos la temporada en Andorra, en noviembre" (el caso más vago de
+  los tres, ni siquiera un día concreto, solo un mes), Milagros dijo "en el día de hoy" sin
+  especificar horario, Melisa Tamburo quedó en escribir "cuando llegue el momento" / "unos 6 meses
+  antes" de su viaje, en la segunda llamada de Milagros (con su madre Santa) quedaron en que la
+  madre decide y confirma "el lunes" — sin hora, pero **con día exacto**, la mejor marca de la
+  ventana hasta ahora — y en la llamada con Ángel Villalba (7ma) volvió a empeorar: quedó en
+  "dame una semana" para reorganizarse y "te vuelvo a escribir" sin día ni hora, ni siquiera una
+  fecha aproximada de cuándo habría una decisión tomada — Mariano sí preguntó explícitamente "¿para
+  cuándo crees que ya tendrían una decisión tomada?" (aplicando el guion correctamente), pero el
+  cliente no dio nada más concreto que "en estas semanas" y Mariano no insistió en acotarlo más
+  (ej. "te escribo yo entonces el [día] para ver cómo vas"). Sigue siendo 7/7 sin hora fijada en la
+  llamada misma (este sistema tiene que completarla al crear la tarea), y el caso de Ángel muestra
+  que aun preguntando bien, si el cliente responde vago, hace falta un segundo intento de acotar
+  ("¿esta semana o la próxima? ¿te escribo yo el viernes para ver cómo vas?") en vez de aceptar la
+  vaguedad. Coincide con el error #1 ya documentado en la llamada con Hector (sección 3.2) — sigue
+  siendo el patrón más repetido de todos, y refuerza directamente la sugerencia de guion de abajo
+  (preguntar la hora explícitamente en la Fase 5, y no soltar la pregunta hasta conseguir un día
+  concreto, no solo repetirla una vez).
 - **Apertura defensiva ante una comparación desfavorable con la competencia (Melisa Tamburo)**:
   Melisa abrió la llamada comparando a GOTIR desfavorablemente con un competidor que le ofrecía un
   esquema de préstamo para simular fondos (ilegal). La primera respuesta de Mariano (~minuto 2)
@@ -122,6 +147,21 @@ confirman.
   convertirlo en una plantilla escrita (un "Fragmento" tipo los del mini-funnel) ahorraría los ~8-10
   minutos que toma explicarlo de memoria en cada llamada, sin perder nada — más tiempo para Fase 2
   y Fase 4, que sí varían por cliente.
+- **Fase 3 — script reutilizable para familias de 4 con presupuesto ajustado (caso Ángel
+  Villalba)**: cuando una familia completa no llega a los ~30-40.000€ que hacen falta para viajar
+  todos juntos sin papeles, Mariano armó en vivo una estrategia de migración escalonada que vale la
+  pena estandarizar como opción de guion: (1) el adulto con mejor relación costo/beneficio viaja
+  solo primero vía estancia por estudios (mucho más barato, ~5.000-7.200€ demostrables); (2) una vez
+  aprobada la TIE, ese adulto ya puede alquilar vivienda para la familia (remarcó un punto de fricción
+  real: caseros españoles evitan alquilar a extranjeros recién llegados sin papeles por miedo a
+  "okupas", incluso pagando un año por adelantado); (3) desde España, ese adulto reagrupa a uno de
+  los hijos, y el cónyuge (que se queda haciendo su propia estancia por estudios después, o vía
+  reagrupación) reagrupa al otro — repartiendo la reagrupación entre los dos padres en vez de que
+  uno solo reagrupe a toda la familia de una vez. Coincide con el criterio ya documentado de
+  segmentar el timing real ante "no tengo el dinero ahora" (Fase 4) — este es el mismo principio
+  aplicado a nivel de estrategia familiar completa, no solo de un pago. Nuevo — vale la pena
+  agregarlo como ejemplo de guion en la Fase 3 para cualquier familia numerosa con presupuesto
+  ajustado.
 
 ## Registro de llamadas
 
@@ -133,3 +173,4 @@ confirman.
 | 4 | 25 ago 2026 | Milagros Stefany Durán Guillén (con Santa, su madre, como acompañante/representante) | 69 min, peruana (Lima), 30 años, sola, madre ya vive en Barcelona. Diagnóstico: estancia por estudios (no visado, mejor para peruanos). 3 escuelas presentadas (Alvali Barcelona 12m/5.350€, Madrid 7m/2.900€ —descartada por horario viernes+sábado, Milagros no puede cursar sábados por su fe—, Madrid 12m/2.858€ con promo agosto 890+299+10 cuotas de 166,90€ —la elegida por precio). Explicó bien la diferencia visado vs. estancia y el cambio de reglamento de mayo 2025 (curso debe empezar dentro de 60 días de presentar). Cerró pidiendo confirmación "en el día de hoy". 🔥 Caliente. | Nuevo: primer caso donde una restricción de calendario del cliente (no puede cursar sábados, motivo religioso) descarta activamente una de las 3 escuelas — filtro real aplicado en vivo, no solo mencionado. Nuevo: objeción de desconfianza sobre la demostración de fondos ("¿es cierto que prestan la plata y la sacan al otro día?") — Mariano la resolvió proactivamente, aclarando que el dinero puede retirarse el mismo día después de sacar el comprobante, sin necesidad de "trucos". Repetido: próxima acción sin hora exacta, ahora 4/4 (dijo "hoy" sin especificar horario — ver "Errores recurrentes"). Repetido: mismo bloque de 3 escuelas, mismos precios (cuarta confirmación de esa fortaleza del guion). |
 | 5 | 27 ago 2026 | Melisa Tamburo (aún no cargada como contacto en GHL al momento de la llamada) | 53 min, llamada no planificada — Mariano había evitado ofrecerle reunión porque ella viaja recién ~junio 2027 (fuera de la política de <6 meses, sección 1.3), pero ella pidió la llamada igual tras un mensaje de seguimiento. Diagnóstico: visado de estudios desde origen vs. estancia por estudios en España — comparó ambos caminos en profundidad (ventanas de tiempo, riesgo de demostrar fondos con préstamo reciente). Rechazó con firmeza un esquema de préstamo-para-simular-fondos que le ofrecía la competencia. Fuerte valor agregado fuera de la venta (empadronamiento, cuenta bancaria no residente, comentario personal sobre mejores sueldos vía Suiza/Andorra) — terminó interesada en traer a su hermano como próximo prospecto. Sin pago en vivo (timing largo). 🌡️ Templado, buen vínculo pero decisión lejana. | Nuevo: llamada ad hoc que terminó costando más tiempo (53 min) que la reunión que Mariano quería evitar ofrecer — tensión directa con la política de <6 meses (sección 1.3). Nuevo: apertura defensiva ante comparación con competencia, con recuperación fuerte después (ver "Errores recurrentes" arriba). Repetido: mismo patrón de integridad que Hector (rechazo claro de un esquema ilegal, sección 3.2). Repetido: próxima acción sin hora exacta, ahora 5/5 (quedó en "6 meses antes" del viaje, sin fecha ni tarea concreta — patrón ya consolidado como el más costoso de la ventana). |
 | 6 | 28 ago 2026 | Milagros Stefany Durán Guillén (segunda llamada, con Santa, su madre) | 46 min, retomando el caso de la fila 4 (25 ago) tras una ráfaga de preguntas por WhatsApp que Mariano decidió resolver por llamada en vez de por texto. Objeción nueva resuelta con un buen reencuadre: una IA le dijo a Milagros que el "máster" no era válido sin título universitario — Mariano explicó la diferencia de terminología LatAm/España y reencuadró la opción (Escuela 3, 2.858€) como "curso superior universitario" con doble aval. Mencionó abiertamente que Alvali le paga a él una comisión mayor pero no la recomienda igual — momento fuerte de transparencia/integridad, mismo espíritu que el caso Hector (sección 3.2). Contexto de negocio real que salió en la charla: Raúl (¿competencia o colega?) revende cursos de Alvali — anotado como dato curioso, sin acción asociada. ⚠️ Discrepancia de precio detectada, sin resolver: en la llamada se habló de "780€ en un solo pago" para estancia por estudios, pero `comercial/CLAUDE.md` sección 1.2 documenta 750€ en pago único — a confirmar con Mariano cuál es el correcto. Cerró con Santa (la madre) decidiendo entre Madrid/Alvali y pagando el 50% "el lunes" (1 sept). 🔥 Caliente. | Repetido, con mejora parcial: próxima acción sin hora exacta, ahora 6/6 — pero por primera vez en la ventana quedó fijado un día exacto ("el lunes") en vez de quedar completamente abierto, aunque siguió sin hora. Nuevo: objeción "una IA me dijo que no es válido" — cliente llega con conclusión ya formada por una IA genérica sin contexto del caso real (ver "Preguntas frecuentes" arriba, probable que se repita). Repetido: mismo patrón de integridad que Hector y Melisa Tamburo (transparencia sobre incentivos propios/de la competencia en vez de maximizar la comisión, filas 3 y 5). |
+| 7 | 28 ago 2026 | Ángel Villalba y Yasmín (su esposa) | 63 min, matrimonio de Buenos Aires (28/30 años) con dos hijos (Bautista, 2, de ambos; Tiago, 10, hijo biológico de Ángel de una relación anterior, vive con ellos por convenio parental homologado por juzgado). Llegaron por testimonio de Jesús Mosquera. Vendieron su local comercial (cobrando en cuotas) y quieren migrar los 4, pero el presupuesto no alcanza — Mariano diagnosticó bien la logística financiera real (ingresos de Uber/Didi decrecientes vs. sueldo estable de Yasmín en el Senado) y recomendó una estrategia escalonada: Ángel viaja solo primero vía estancia por estudios (Escuela 3, 2.858€, recomendada por baja exigencia de asistencia dado que vivirían cerca de Valencia), consigue TIE y vivienda, y luego reagrupa a los hijos repartido entre los dos padres. Desaconsejó activamente Elche (saturado, mal conectado) y recomendó Rafelbuñol (donde vive Mariano). Sin cerrar pago hoy — quedó en "una semana" para reorganizarse (vender el auto, resolver el cobro del local, consultar con su abogada sobre la autorización de viaje de Tiago) antes de agendar una llamada formal para pagar el 50% de los honorarios (412,50€ de 825€) + inscripción del curso (890€). 🔥 Caliente, pero sin fecha ni hora concretas. | Nuevo: 3er caso de complejidad legal de custodia/tenencia de un menor en la ventana (variante distinta a Maryi — acá hay convenio parental homologado, pero sin confirmar si alcanza para autorizar viaje), mismo manejo correcto (deriva a la abogada del cliente, no inventa respuesta). Nuevo: objeción "ya pagamos por una consulta con otra agencia y no sirvió de nada" — resuelta con storytelling genuino de la propia experiencia migratoria de Mariano. Nuevo: guion reutilizable de migración familiar escalonada para presupuestos ajustados (ver "Ajustes sugeridos al guion"). Repetido con retroceso: próxima acción sin hora exacta, ahora 7/7 — peor que la llamada anterior (ni siquiera día concreto esta vez, solo "una semana"). |

@@ -6,7 +6,7 @@
 > llamada (`CLAUDE.md`, sección 2). Se actualiza cada vez que llega una transcripción nueva, sin
 > esperar a que Mariano lo pida.
 >
-> **Contador: 5/20 llamadas registradas.**
+> **Contador: 6/20 llamadas registradas.**
 
 ## Cómo se carga
 
@@ -36,6 +36,17 @@ confirman.
   general (reagrupación familiar), pero derivó lo específico de la legislación colombiana a un
   escribano público local en vez de improvisar — mismo principio ya documentado ("no inventar
   respuestas legales que no domina"), ahora con un segundo caso real dentro de la ventana.
+- **"Busqué en una IA y me dice que el máster no es válido/seguro para la estancia por estudios si
+  no tengo título universitario"** (Milagros, segunda llamada) — objeción nueva de tipo: el cliente
+  llega con una conclusión ya formada (y parcialmente errónea) sacada de una app de IA genérica, sin
+  contexto del caso real. Mariano la resolvió muy bien explicando la raíz del malentendido: en
+  Latinoamérica "máster" implica posgrado universitario, pero en España el mismo nombre se usa para
+  cualquier curso (incluida formación de certificado de profesionalidad) — la IA no tenía el
+  contexto de qué tipo de estudio estaba evaluando. Reencuadró la opción concreta (Escuela 3,
+  2.858€) como "curso superior universitario" con doble aval (business school + universidad), no un
+  máster de posgrado. Nuevo patrón — probable que se repita a medida que más clientes usan IA para
+  investigar antes de la llamada; vale la pena vigilar y quizás anticiparlo en el mini-funnel
+  pre-llamada.
 
 ## Errores recurrentes detectados
 
@@ -45,17 +56,21 @@ confirman.
   que ir al grano... ¿pudiste ver el video? ¿pudiste ver los requisitos?") — de hecho mejor que el
   guion, porque además referenció el contenido pre-llamada. No es un patrón parejo todavía, dos
   llamadas van 1 y 1 — seguir vigilando.
-- **Próxima acción sin hora exacta — 5/5 llamadas del registro (patrón ya consolidado, el más
-  repetido de todos)**: Sara Sofía dijo "hoy mismo", Maryi dijo "a principio de la semana que
-  viene", Florencia/Manuel quedaron directamente en "cuando arranquemos la temporada en Andorra, en
-  noviembre" (el caso más vago de los tres, ni siquiera un día concreto, solo un mes), Milagros dijo
-  "en el día de hoy" sin especificar horario, y Melisa Tamburo quedó en escribir "cuando llegue el
-  momento" / "unos 6 meses antes" de su viaje (~junio 2027), sin fecha ni tarea concreta fijada por
-  Mariano. En los cinco casos este sistema tuvo que fijar una fecha/hora al crear la tarea de
-  seguimiento en GHL en vez de que quedara cerrada en la llamada. Coincide con el error #1 ya
-  documentado en la llamada con Hector (sección 3.2) — con 5/5 dentro de la ventana de 20, es el
-  patrón más repetido y más consistente de todos los analizados hasta ahora, y refuerza
-  directamente la sugerencia de guion de abajo (preguntar la hora explícitamente en la Fase 5).
+- **Próxima acción sin hora exacta — 6/6 llamadas del registro (patrón ya consolidado, el más
+  repetido de todos, con una mejora real esta vez)**: Sara Sofía dijo "hoy mismo", Maryi dijo "a
+  principio de la semana que viene", Florencia/Manuel quedaron directamente en "cuando arranquemos
+  la temporada en Andorra, en noviembre" (el caso más vago de los tres, ni siquiera un día concreto,
+  solo un mes), Milagros dijo "en el día de hoy" sin especificar horario, Melisa Tamburo quedó en
+  escribir "cuando llegue el momento" / "unos 6 meses antes" de su viaje, y en la segunda llamada de
+  Milagros (con su madre Santa) quedaron en que la madre decide y confirma "el lunes" — sin hora,
+  pero **con día exacto**, algo que ninguna de las llamadas anteriores tenía. Sigue siendo 6/6 sin
+  hora fijada en la llamada misma (este sistema tiene que completarla al crear la tarea), pero vale
+  la pena notar la mejora parcial: por primera vez en la ventana, "el lunes" es un compromiso
+  verificable al instante (si no escriben el lunes, es una señal clara), a diferencia de "cuando
+  arranque Andorra" o "en unos meses". Coincide con el error #1 ya documentado en la llamada con
+  Hector (sección 3.2) — sigue siendo el patrón más repetido de todos, y refuerza directamente la
+  sugerencia de guion de abajo (preguntar la hora explícitamente en la Fase 5, ya que el día sí se
+  está logrando cada vez más).
 - **Apertura defensiva ante una comparación desfavorable con la competencia (Melisa Tamburo)**:
   Melisa abrió la llamada comparando a GOTIR desfavorablemente con un competidor que le ofrecía un
   esquema de préstamo para simular fondos (ilegal). La primera respuesta de Mariano (~minuto 2)
@@ -117,3 +132,4 @@ confirman.
 | 3 | 21 ago 2026 | Florencia Cuaranta y Manuel (pareja de hecho) | 49 min, argentinos, actualmente en Montenegro con permiso de trabajo, se van a Andorra a hacer temporada (15 nov 2026, ~4 meses) para juntar los ~7.200€ c/u que necesitan. Diagnóstico: estancia por estudios para los dos. 3 opciones de curso presentadas (Alvali 12m/5.650€, Madrid 7m/2.900€ —la recomendada—, Madrid 12m/2.858€). Decisión de avanzar ya tomada por la pareja, pero 100% condicionada a juntar el dinero — sin pago en vivo (obviamente). Próxima acción quedó en "cuando arranquemos Andorra en noviembre", sin día ni hora. 🌡️ Templado (decisión tomada, timing largo). | Repetido: próxima acción sin hora exacta, ahora 3/3 y el caso más vago de los tres (ni el día, solo el mes — ver "Errores recurrentes" arriba). Repetido: mismo bloque de 3 escuelas, mismos precios, palabra por palabra que Sara Sofía/Maryi (tercera confirmación de esa fortaleza del guion). Nuevo: primer caso de objeción "no tengo el dinero ahora" resuelta bien según el guion (Fase 4) — Mariano segmentó el timing real (temporada de trabajo primero) en vez de descartar o empujar al cliente. |
 | 4 | 25 ago 2026 | Milagros Stefany Durán Guillén (con Santa, su madre, como acompañante/representante) | 69 min, peruana (Lima), 30 años, sola, madre ya vive en Barcelona. Diagnóstico: estancia por estudios (no visado, mejor para peruanos). 3 escuelas presentadas (Alvali Barcelona 12m/5.350€, Madrid 7m/2.900€ —descartada por horario viernes+sábado, Milagros no puede cursar sábados por su fe—, Madrid 12m/2.858€ con promo agosto 890+299+10 cuotas de 166,90€ —la elegida por precio). Explicó bien la diferencia visado vs. estancia y el cambio de reglamento de mayo 2025 (curso debe empezar dentro de 60 días de presentar). Cerró pidiendo confirmación "en el día de hoy". 🔥 Caliente. | Nuevo: primer caso donde una restricción de calendario del cliente (no puede cursar sábados, motivo religioso) descarta activamente una de las 3 escuelas — filtro real aplicado en vivo, no solo mencionado. Nuevo: objeción de desconfianza sobre la demostración de fondos ("¿es cierto que prestan la plata y la sacan al otro día?") — Mariano la resolvió proactivamente, aclarando que el dinero puede retirarse el mismo día después de sacar el comprobante, sin necesidad de "trucos". Repetido: próxima acción sin hora exacta, ahora 4/4 (dijo "hoy" sin especificar horario — ver "Errores recurrentes"). Repetido: mismo bloque de 3 escuelas, mismos precios (cuarta confirmación de esa fortaleza del guion). |
 | 5 | 27 ago 2026 | Melisa Tamburo (aún no cargada como contacto en GHL al momento de la llamada) | 53 min, llamada no planificada — Mariano había evitado ofrecerle reunión porque ella viaja recién ~junio 2027 (fuera de la política de <6 meses, sección 1.3), pero ella pidió la llamada igual tras un mensaje de seguimiento. Diagnóstico: visado de estudios desde origen vs. estancia por estudios en España — comparó ambos caminos en profundidad (ventanas de tiempo, riesgo de demostrar fondos con préstamo reciente). Rechazó con firmeza un esquema de préstamo-para-simular-fondos que le ofrecía la competencia. Fuerte valor agregado fuera de la venta (empadronamiento, cuenta bancaria no residente, comentario personal sobre mejores sueldos vía Suiza/Andorra) — terminó interesada en traer a su hermano como próximo prospecto. Sin pago en vivo (timing largo). 🌡️ Templado, buen vínculo pero decisión lejana. | Nuevo: llamada ad hoc que terminó costando más tiempo (53 min) que la reunión que Mariano quería evitar ofrecer — tensión directa con la política de <6 meses (sección 1.3). Nuevo: apertura defensiva ante comparación con competencia, con recuperación fuerte después (ver "Errores recurrentes" arriba). Repetido: mismo patrón de integridad que Hector (rechazo claro de un esquema ilegal, sección 3.2). Repetido: próxima acción sin hora exacta, ahora 5/5 (quedó en "6 meses antes" del viaje, sin fecha ni tarea concreta — patrón ya consolidado como el más costoso de la ventana). |
+| 6 | 28 ago 2026 | Milagros Stefany Durán Guillén (segunda llamada, con Santa, su madre) | 46 min, retomando el caso de la fila 4 (25 ago) tras una ráfaga de preguntas por WhatsApp que Mariano decidió resolver por llamada en vez de por texto. Objeción nueva resuelta con un buen reencuadre: una IA le dijo a Milagros que el "máster" no era válido sin título universitario — Mariano explicó la diferencia de terminología LatAm/España y reencuadró la opción (Escuela 3, 2.858€) como "curso superior universitario" con doble aval. Mencionó abiertamente que Alvali le paga a él una comisión mayor pero no la recomienda igual — momento fuerte de transparencia/integridad, mismo espíritu que el caso Hector (sección 3.2). Contexto de negocio real que salió en la charla: Raúl (¿competencia o colega?) revende cursos de Alvali — anotado como dato curioso, sin acción asociada. ⚠️ Discrepancia de precio detectada, sin resolver: en la llamada se habló de "780€ en un solo pago" para estancia por estudios, pero `comercial/CLAUDE.md` sección 1.2 documenta 750€ en pago único — a confirmar con Mariano cuál es el correcto. Cerró con Santa (la madre) decidiendo entre Madrid/Alvali y pagando el 50% "el lunes" (1 sept). 🔥 Caliente. | Repetido, con mejora parcial: próxima acción sin hora exacta, ahora 6/6 — pero por primera vez en la ventana quedó fijado un día exacto ("el lunes") en vez de quedar completamente abierto, aunque siguió sin hora. Nuevo: objeción "una IA me dijo que no es válido" — cliente llega con conclusión ya formada por una IA genérica sin contexto del caso real (ver "Preguntas frecuentes" arriba, probable que se repita). Repetido: mismo patrón de integridad que Hector y Melisa Tamburo (transparencia sobre incentivos propios/de la competencia en vez de maximizar la comisión, filas 3 y 5). |

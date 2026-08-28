@@ -408,6 +408,19 @@ Este proyecto debe tener acceso vía MCP a:
     Mariano les escribió con el diagnóstico completo). Mientras esperan respuesta: seguir mandando
     mensajes reales a clientes manualmente desde el teléfono, no confiar en `ghl_send_message` ni en
     las automatizaciones de WhatsApp hasta que soporte confirme que la conexión está restablecida.
+  - **Sigue sin resolverse, avance real 28 agosto 2026 (noche del 27 al 28, sesión larga con
+    Sabrina)**: el problema NO se resolvió con soporte de GoGHL.ai todavía — Mariano y Sabrina se
+    quedaron hasta tarde revisando en vivo y encontraron un dato nuevo, más preciso que el
+    diagnóstico del 26 ago: **el proveedor (GoGHL.ai) está conectado en modo "WhatsApp QR"**, pero
+    **las automatizaciones siguen configuradas como acción nativa "SMS"** (mismo hallazgo del 26
+    ago, arriba, ahora con el detalle nuevo del modo de conexión del proveedor). Hipótesis
+    reforzada: el mecanismo `{WA#1}` fue pensado para que GoGHL intercepte el envío SMS y lo
+    reenrute a WhatsApp, pero en modo "QR" (bridge tipo WhatsApp Web, no una integración API
+    oficial) es posible que esa intercepción no funcione igual que en el modo con el que se probó
+    originalmente. **No confirmado todavía cuál es el fix concreto** (¿cambiar el modo de conexión
+    del proveedor?, ¿reconfigurar los nodos para que no dependan de interceptar un SMS nativo?) —
+    falta que Mariano decida el próximo paso. Marcado como **urgente** en `pendientes-activos.md` —
+    bloquea todo el seguimiento comercial automático en medio de la crisis de caja activa.
   - **23 tools (ampliado a 23 el 21 agosto 2026, más tarde el mismo día)**: se agregó
     `ghl_create_user` (crear usuarios nuevos en GHL vía `POST /users/`, requiere scope
     `users.write`) — schema verificado contra `CreateUserDto` del repo oficial

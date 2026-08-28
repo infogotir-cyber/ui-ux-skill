@@ -96,6 +96,24 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
 
 ### GOTIR — urgente
 
+00. **WhatsApp/SMS de las automatizaciones sigue sin salir — REABIERTO como urgente (28 ago 2026)**
+   - Detectado 19/20 ago, diagnosticado a fondo 26 ago (ver `CLAUDE.md` raíz, sección de
+     herramientas conectadas/GHL) y escalado a soporte de GoGHL.ai esa noche — soporte todavía no
+     lo resolvió.
+   - **Avance real 28 ago 2026**: Mariano y Sabrina se quedaron hasta tarde anoche revisando en
+     vivo. Encontraron el dato más preciso hasta ahora: **el proveedor (GoGHL.ai) está conectado en
+     modo "WhatsApp QR"**, pero **las automatizaciones siguen configuradas como acción nativa
+     "SMS"** — mismo síntoma ya visto, pero ahora con el detalle nuevo de en qué modo está el
+     proveedor. Todavía no está confirmado cuál es el fix concreto (cambiar el modo de conexión,
+     reconfigurar los nodos, o algo que solo soporte de GoGHL.ai puede resolver).
+   - **Por qué es urgente ahora**: bloquea todo el seguimiento comercial automático (bienvenida a
+     leads nuevos, confirmaciones de cita, notificaciones a influencers) justo en medio de la
+     crisis de caja activa (ver ítem de arriba) — cada mensaje que no sale es una oportunidad de
+     cobro que se enfría sin que nadie se entere.
+   - Estado: **abierto — urgente, esperando que Mariano defina el próximo paso** (¿reintentar con
+     soporte de GoGHL.ai con este dato nuevo? ¿cambiar el modo de conexión del proveedor?).
+   - Recordado: 1 vez (28 ago 2026, reabierto).
+
 0. **Promo en USDT/Binance ofrecida a Javier Maddia — venció el viernes 21 ago, pero no se cayó la venta**
    - Detectado 19 ago revisando la llamada del 18 ago (73 min, familia de 3, ~2.475€ potenciales).
      Mariano ya envió por correo una promoción agresiva por pagar en USDT vía Binance, con fecha

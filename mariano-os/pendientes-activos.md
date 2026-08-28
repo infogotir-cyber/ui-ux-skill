@@ -51,9 +51,38 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
   (WhatsApp fallando hoy en el 100% de los envíos por API, seguimiento post-cotización sin sistema).
   Se lanzó un barrido activo de cobro esta tarde — ver ítems de Héctor Ojeda, Luisana Junguittu,
   Maryi Castañeda, María Taly Navarro y Felipe Nogues más abajo.
+- **Actualizado 28 ago 2026, tarde/noche — Mariano expresó agotamiento y angustia real**: esta
+  semana solo entraron 40€ (comisión de un seguro pagado por Alfonsa, proveedora). Federico/Sabrina
+  (350€, prioridad #1) sigue sin pagarse. Mariano dijo textualmente que lleva "más de un año y medio
+  en números negativos", que hace tiempo no puede cubrir ni lo mínimo, y que hoy no tiene ni para
+  comprar comida — es la temporada alta y no ve resultados pese al esfuerzo sostenido. Ver también
+  el nuevo ítem "GOTIR — decisión estratégica: ¿bajar precios y jugar a volumen?" más abajo, que
+  salió de esta misma conversación como posible salida de fondo, no solo un parche de caja.
 - Estado: **abierto — urgente, prioridad de pago definida, esperando que entre el primer cobro**.
-- Recordado: 5 veces (24 ago 2026; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago,
-  chequeo diario 18:00; 28 ago, chequeo diario 18:00).
+- Recordado: 6 veces (24 ago 2026; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago,
+  chequeo diario 18:00; 28 ago, chequeo diario 18:00; 28 ago, más tarde — agotamiento expresado).
+
+### GOTIR — decisión estratégica: ¿bajar precios y jugar a volumen? (28 ago 2026)
+
+Mariano planteó, en el mismo mensaje donde expresó agotamiento por la crisis de caja, una posible
+salida de fondo (no un parche): sospecha que el precio de honorarios (825€ estancia/670€ visado)
+los deja fuera de precio frente a competidores como Wilmen, que cobra menos y compite por volumen.
+Idea que está evaluando: bajar el precio de entrada y vender por capas — un producto barato de
+información (cómo hacer tu estancia/visado), después un producto de opciones de curso, después el
+servicio de presentación derivado a María — todo con el objetivo explícito de que el proceso le
+consuma a él **prácticamente nada de tiempo** (condición que puso él mismo: solo tiene sentido el
+volumen alto si el margen bajo no le come el tiempo).
+
+**Tensión real que hay que tener presente, no resuelta por este sistema**: el propio armado que
+imagina (venta por capas semi-automática, con derivación automática a María cuando el cliente paga
+por el servicio de presentación) requiere exactamente la automatización Fathom→GHL/n8n que ya está
+identificada como no construida (`direcciones/comercial/CLAUDE.md` sección 13.6, Fase B) — construir
+eso lleva semanas de trabajo de builder, no algo que se resuelve ya. Bajar precios ahora, sin esa
+automatización, significaría menos margen por venta mientras todo el trabajo lo sigue haciendo él
+100% manual — el riesgo es que empeore el problema de caja a corto plazo antes de mejorarlo.
+
+- Estado: **abierto — decisión estratégica pendiente, Mariano pidió una lectura de esto**.
+- Recordado: 1 vez (28 ago 2026, recién planteado).
 
 ### GOTIR — seguimiento
 

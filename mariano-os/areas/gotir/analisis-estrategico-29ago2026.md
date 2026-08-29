@@ -250,19 +250,21 @@ hasta ahora. Resumen fiel del contenido real del PDF:
 - Datos de marca usados en el documento: **+500 familias**, 4,9★ en Google (55 reseñas), +15
   países, 24-48h de primera respuesta.
 
-**⚠️ Discrepancia real a resolver, no ignorar**: el PDF dice "+500 familias" — más alto todavía que
-el "150 familias" ya marcado como discrepancia en `lecciones-aprendidas.md` (Lección 12) y en
-`comercial/CLAUDE.md` (Mariano mismo estima ~20 negocios reales). Esto ya no es solo marketing
-interno — es un documento formal ya enviado a un socio real. Vale la pena que Mariano confirme la
-cifra correcta antes de seguir usando o reenviando este documento.
+**✅ Decisión de Mariano (29 ago 2026) — cifra estandarizada**: "+500 familias" pasa a ser la cifra
+oficial de GOTIR en todos los materiales de ahora en más (este PDF, landing, cualquier otro). No es
+una verificación de la cifra real (sigue sin resolverse la discrepancia de fondo con los ~20
+negocios que Mariano mismo estima — ver Lección 12) — es una decisión de estandarización de cara
+al mercado, tomada explícitamente por él. Queda registrado como decisión, no como hecho verificado.
 
-**⚠️ Tensión real a resolver, no ignorar**: la Vía B de este documento (comisión a éxito) es
-**el mismo modelo que ya falló una vez** con abogados externos de nacionalidad/arraigo (ver Opción
-20 más arriba — "esfuerzo propio sin control del resultado, abogados saturados que hacían poco
-seguimiento"). Es distinto de lo que Mariano propuso hoy mismo (vender leads a precio fijo, no a
-éxito). Falta que decida si actualiza la Vía B del documento con el modelo de precio fijo, o si
-mantiene la comisión a éxito a propósito porque confía en que estos socios nuevos (Instituto Maude
-y su red de 400 estudios) van a ejecutar mejor que los abogados anteriores.
+**✅ Decisión de Mariano (29 ago 2026) — Vía B pasa a modelo por fases, no comisión a éxito fija**:
+confirma que quiere sacar la comisión a éxito como modelo permanente, pero la mantiene como
+**fase 1 de arranque** con cada socio nuevo — mientras el estudio jurídico todavía no confía en la
+calidad de los leads de GOTIR, se los da a éxito (sin riesgo para ellos, más fácil de aceptar). Una
+vez que el socio ve que los leads son buenos, se pasa a **fase 2: venta de leads a precio fijo**,
+más barato para ellos que seguir pagando comisión, y con ingreso garantizado para GOTIR sin
+depender de que el estudio ejecute bien. Condición explícita: los leads tienen que ser
+**de calidad real y verificada** — la transición a precio fijo depende de sostener eso, no es
+automática por tiempo.
 
 ### La fusión que Mariano propone (29 ago 2026) — combinar el Modo 2 con la propuesta comercial completa
 
@@ -276,6 +278,65 @@ palabras: *"que ellos... podamos atender a sus clientes, pasarlos por nuestros e
 seguimiento, cierre, les ofrecemos el curso y se los damos... una mezcla."* Esto amplía el punto 3
 de la Opción 22 (ser el "Sebastián" de otros estudios) más allá de solo la ejecución operativa
 post-venta — incluye también la venta en sí, no solo el papeleo.
+
+## Opción 23 (síntesis del sistema, 29 ago 2026) — "Motor dual": lo que solo vos podés hacer bien, más lo que se escala sin vos
+
+Mariano pidió explícitamente, después de todo lo hablado hoy (19 opciones, lecciones aprendidas,
+autoengaños, checklist de contratación, el documento real de alianzas), una recomendación
+concreta: cuál es la mejor combinación posible con todo lo que se sabe. Esto es esa síntesis — una
+lectura del sistema, no una decisión tomada. Parte de un criterio que Mariano fijó él mismo hoy:
+la opción elegida tiene que poder escalar sin que su tiempo sea el techo, no puede tirar lo que ya
+funciona de GOTIR, y tiene que dejarle margen real para Golden Rica y el ministerio.
+
+**La idea central**: GOTIR deja de ser "un solo embudo que Mariano cierra personalmente" y pasa a
+ser **dos motores separados, alimentados por la misma entrada de leads**, cada uno haciendo lo que
+mejor sabe hacer:
+
+**Motor 1 — Retail B2C, estancia/visado, protegido a propósito (tu tiempo, tu margen más alto)**
+El embudo curso→llamada (solo con quien ya pagó)→acompañamiento a menor precio, que armaron hoy
+mismo. Corre sobre el perfil de cliente que ya identificaste como el tuyo (Lección 18: gente que
+empieza de cero, presupuesto ajustado — no el segmento de alto poder adquisitivo tipo Dana). Tus
+3-4 horas diarias, deliberadamente acotadas, con cada hora dejando 300-500€+ por cliente porque son
+personas que ya pusieron dinero antes de hablar con vos. Esto es lo que sostiene la caja de corto
+plazo y protege lo que ya sabés hacer mejor que nadie: cerrar una venta bien hecha, cara a cara.
+
+**Motor 2 — Red B2B, todo lo demás, escalable sin tu tiempo**
+Construido sobre algo que ya existe, no una idea de cero: el documento de alianzas ya armado y
+probado con un estudio, más la puerta real de Instituto Maude/Javier (400 estudios jurídicos).
+Adentro de este motor conviven tres productos, no uno solo:
+1. **Modificación de estancia a residencia** (Opción 21) — vendida primero a tu propia base
+   histórica de +2.000 contactos (la fuente más barata y con mejor conversión que existe, porque ya
+   confían en vos), y también recibida como leads de otras agencias/agentes que solo hicieron el
+   primer paso (Wilmen, agentes de origen, la red de Maude).
+2. **Venta de leads por fases** para el resto de trámites (nacionalidad, arraigo, emprendedor, PAC,
+   etc.) — a éxito al principio con cada socio nuevo, precio fijo una vez que confían en la calidad
+   (tu propia decisión de hoy).
+3. **Servicio operativo para estudios saturados** ("ser el Sebastián de otros" — Opción 22, punto
+   3, ahora ampliado con tu idea de sumar también el embudo de ventas completo, no solo el
+   papeleo) — para los estudios que no solo quieren leads, quieren que alguien les resuelva el
+   problema comercial entero.
+
+**Por qué esta combinación y no otra**: es la única que separa limpio "lo que necesita tu tiempo
+personal" de "lo que necesita tu sistema" — exactamente la vuelta de tuerca que pediste. El Motor 1
+no compite por tu tiempo con Golden Rica porque está deliberadamente acotado a 3-4 horas. El Motor
+2 no depende de tu agenda — depende de que el sistema (mini-funnel, GHL, la relación con Maude)
+funcione, que es precisamente donde tenés ventaja real y donde ya identificaste que tu fuerte no es
+el seguimiento manual (Lección 17), sino vender y diagnosticar bien (Lección 15).
+
+**Lo que hace falta resolver antes de que esto funcione de verdad, en orden real de bloqueo**:
+1. **El canal de WhatsApp tiene que ser confiable** (pendiente urgente ya documentado en
+   `pendientes-activos.md`) — sin esto, ni el Motor 1 ni el Motor 2 entregan nada, sin importar
+   cuán bueno sea el diseño.
+2. **El mini-funnel automático** (los 9 Fragmentos, Fase B de la Propuesta 4) tiene que terminar de
+   construirse — es lo que califica leads sin consumir tu tiempo, la pieza que hace que el Motor 2
+   sea realmente escalable y no otra cosa que vos tengas que operar a mano.
+3. **GDPR/Conversia**, antes de vender leads a terceros a escala (ya pendiente, ver arriba).
+4. Confirmar el margen real del acompañamiento a 500€ (la cuenta que quedó pendiente de la sección
+   del embudo B2C).
+
+**Aplicación a futuro**: esto es una recomendación, no una decisión — Mariano tiene que confirmar
+si esta es la dirección, ajustarla, o elegir otra combinación distinta de las 22 opciones de
+arriba.
 
 ## Pendiente de decisión
 

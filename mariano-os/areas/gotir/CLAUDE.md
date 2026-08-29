@@ -150,14 +150,17 @@ de API, webhooks) afecta tanto a la operación comercial de GOTIR como al canal 
 — tenelo presente antes de tocar nada ahí.
 
 ## Discrepancias detectadas — marketing vs. realidad (registrado 14 agosto 2026)
-Sin resolver, no corregir por tu cuenta — son datos de cara al cliente que solo Mariano puede
-decidir si actualizar:
 - El marketing de GOTIR dice "5+ años" de experiencia construyendo sistemas de CRM/automatización;
-  Mariano estima que en realidad son ~2 años.
-- GOTIR usa "150 familias atendidas" de cara al cliente; por otro lado, Mariano estima que
-  alrededor de 20 negocios (no familias — son cosas distintas) han usado sistemas que él mismo
-  construyó. No está claro si hay una confusión de métricas entre ambas cifras o si son
-  simplemente dos datos distintos que conviven — ver `areas/personal/CLAUDE.md` sección 0.
+  Mariano estima que en realidad son ~2 años. **Sigue sin resolver** — no corregir por tu cuenta.
+- **"Familias atendidas" — estandarizado por decisión de Mariano (29 agosto 2026)**: la cifra
+  oficial de cara al mercado pasa a ser **"+500 familias"** en todos los materiales de ahora en
+  más (reemplaza el "150 familias" anterior) — usada ya en el PDF de alianzas B2B
+  (`analisis-estrategico-29ago2026.md`). Es una decisión de estandarización tomada explícitamente
+  por Mariano, no una verificación de la cifra real — la discrepancia de fondo con su propia
+  estimación (~20 negocios que usaron sistemas que él construyó, una métrica distinta de
+  "familias") sigue sin resolverse, ver `areas/personal/CLAUDE.md` sección 0 y
+  `lecciones-aprendidas.md` Lección 12. De ahora en más, usar "+500 familias" como la cifra vigente
+  sin volver a marcarla como pendiente — la decisión ya está tomada.
 
 ## Contexto operativo adicional (fuera del área comercial ya documentada aparte) — añadido 14 agosto 2026
 Este material viene de una conversación distinta a la que generó `direcciones/comercial/CLAUDE.md`.

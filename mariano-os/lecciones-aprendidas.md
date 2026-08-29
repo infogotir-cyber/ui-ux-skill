@@ -102,7 +102,9 @@ patrón se aplica específicamente a la formación — no alcanza con anotarse c
 hay margen real (de tiempo y de cabeza) reservado para aprovecharlo.
 
 **Proverbio**: anotarte a algo no es formarte — formarte pasa cuando le das el tiempo real, no
-cuando pagás la inscripción. — Llevar información organizada de todo, en tiempo real, no depender de la memoria ni la buena voluntad (29 ago 2026)
+cuando pagás la inscripción.
+
+## Lección 1 — Llevar información organizada de todo, en tiempo real, no depender de la memoria ni la buena voluntad (29 ago 2026)
 
 **Lo que pasó**: durante años, Mariano lideró GOTIR sin una estructura real para almacenar y
 analizar información — ni operativa (lo mismo que hoy resuelve el CRM/GHL: cargar el resumen de

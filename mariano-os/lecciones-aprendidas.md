@@ -44,6 +44,8 @@ una lección nueva.
     romper. *(Lección 13)*
 17. Lo que solo vive en tu cabeza compite por espacio con todo lo demás que también vive ahí — y
     siempre pierde alguna vez. *(Lección 14)*
+18. No toda delegación es un error — delegar la parte correcta, a la persona correcta, con el
+    alcance claro, es de lo más rentable que se puede hacer. *(Lección 15)*
 
 ## Lección 1 — Llevar información organizada de todo, en tiempo real, no depender de la memoria ni la buena voluntad (29 ago 2026)
 
@@ -332,3 +334,39 @@ hechos, exactamente lo que este tracker que empezamos hoy mismo busca resolver).
 
 **Proverbio**: lo que solo vive en tu cabeza compite por espacio con todo lo demás que también vive
 ahí — y siempre pierde alguna vez.
+
+---
+
+## Lección 15 — Buscar constantemente el 20% que genera el 80%; delegar la parte correcta fue uno de los mayores aciertos (29 ago 2026)
+
+**Primera parte — el principio general**: constantemente hay que estar velando por la
+productividad, viendo dónde uno es más efectivo, y qué de lo que se hace genera el 20% de esfuerzo
+que produce el 80% de los resultados. No es un análisis que se hace una vez — tiene que ser
+constante.
+
+**Segunda parte — el acierto concreto (la primera lección positiva del listado, no un error)**:
+Mariano identifica esto como uno de sus mayores aciertos, no un fracaso. Se dio cuenta de que uno
+de los mayores problemas era el seguimiento — respondiendo mensajes de personas, tomaba mucho
+tiempo — y que era mucho más efectivo quedarse con la primera parte del trámite (la venta del
+curso, el seguro, el certificado médico) y delegarle a un abogado la presentación y el seguimiento
+posterior. Delegarle a María y Sebastián, por 250€, el resto del trámite de estancia por estudios
+— y el mismo criterio con visados — fue, en su lectura, uno de sus mayores aciertos. (Coincide
+exactamente con la estructura real ya documentada en `comercial/CLAUDE.md` sección 1.1/1.2: GOTIR
+hace la "primera parte", Sebastián/María la "segunda parte" por 250€.)
+
+**La tensión que vale la pena dejar explícita con la Lección 2**: ahí el error era incorporar gente
+sin base real para saber si era el momento, y delegar sin persona correcta, momento correcto ni
+claridad de expectativas. Acá, en cambio, delegar funcionó — porque cumplía exactamente las tres
+condiciones que la Lección 2 identificó como las que suelen fallar: la persona correcta
+(especialistas externos, no un rol interno improvisado), el momento correcto (justo la parte del
+proceso que más tiempo le comía sin ser lo que él vende mejor), y claridad real de expectativas (un
+alcance acotado y un precio fijo por caso, 250€, no un salario fijo sin límite de tareas). Delegar
+no es el problema — delegar mal es el problema. Esta lección es la prueba positiva de la misma
+regla.
+
+**Aplicación a futuro**: todavía sin cerrar — no se completa por inferencia. El principio del 20/80
+queda planteado en general; falta que Mariano diga si quiere aplicarlo a algo concreto ahora
+(¿qué parte de GOTIR o de Golden Rica cree hoy que es su propio 20%?).
+
+**Proverbio**: no toda delegación es un error — delegar la parte correcta, a la persona correcta,
+con el alcance claro, es de lo más rentable que se puede hacer.

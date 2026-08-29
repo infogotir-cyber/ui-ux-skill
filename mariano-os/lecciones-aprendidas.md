@@ -180,3 +180,22 @@ análisis ya nombrada en la Lección 4, ahora explicando además en qué se fue 
 para analizar.
 
 **Aplicación a futuro**: todavía sin cerrar — no se completa por inferencia.
+
+## Lección 8 — Dejar de buscar eficiencia cuando algo "funciona" puede estar tapando el problema real, no resolviéndolo (29 ago 2026)
+
+**Lo que pasó**: dejó de buscar la eficiencia — cuando algo "funcionaba", dejaba de buscar cómo
+mejorarlo. Pone un ejemplo concreto y autocrítico: tenía a Belén (Campana) trabajando por 4
+personas, ganando como media persona — eso hacía que pareciera que el negocio funcionaba, pero en
+realidad lo hizo muy dependiente de ella y le dio la falsa idea de que estaban bien. Mientras tanto,
+no paraba de aplazar el pago de impuestos — hoy son **8.000€ de impuestos atrasados**, con plan de
+pago al gobierno (mismo monto ya registrado en `pendientes-activos.md`, "Personal — crisis de caja
+urgente", ítem del 26 ago 2026: IRPF + IVA, ~8.000€ — esta lección es la explicación de fondo de
+cómo se llegó a acumular esa deuda, no un dato nuevo aparte).
+
+**Conecta directamente con la Lección 2**: es la otra cara del mismo error de fondo — ahí el error
+era incorporar gente sin base real para saber si era el momento; acá el error es que, una vez
+incorporada, una persona hiper-rendidora y mal paga (trabajar por 4, ganar como media) generó una
+falsa sensación de eficiencia que ocultó problemas reales (impuestos atrasándose) en vez de
+resolverlos — la "eficiencia aparente" fue, en los hechos, una fuga tapada, no una fuga resuelta.
+
+**Aplicación a futuro**: todavía sin cerrar — no se completa por inferencia.

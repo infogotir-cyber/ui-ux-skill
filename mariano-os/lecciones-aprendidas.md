@@ -105,3 +105,25 @@ estaba bien hecho.
 **Aplicación a futuro**: todavía sin cerrar — no se completa por inferencia. Falta que Mariano diga
 si esto se traduce en algo concreto (ej. no delegar lo fiscal sin entender al menos lo esencial
 él mismo, o un chequeo periódico propio además del gestor).
+
+## Lección 4 — Liderar/vender con necesidad de plata negocia los propios valores; el desorden general no deja tiempo para ver las fugas (29 ago 2026)
+
+**Primera parte — liderar/vender con necesidad**: liderar y vender desde la necesidad de plata
+lleva, muchas veces, a plantearse negociar los propios valores o cosas que ya se había dicho que no
+se volverían a hacer — sin dar un ejemplo puntual nuevo esta vez, pero coherente con lo ya
+documentado en `comercial/CLAUDE.md` sección 3.2 (la decisión puntual de aceptar cripto en un
+momento de necesidad urgente de liquidez, después revertida como política).
+
+**Segunda parte — el desorden general de vivir a las corridas**: el desorden en general en su vida,
+estar siempre corriendo, no le dio el tiempo de organizarse ni de darse cuenta de todas las fugas
+que tenía en cada área. Cada área tenía muchos errores, pero vivía siempre apagando incendios — no
+se hacía (ni se daba) el tiempo de sentarse a analizar cómo mejorar para ser más efectivo.
+
+**Conecta con las lecciones anteriores**: la primera parte es una variante nueva del patrón de
+decidir bajo presión en vez de con criterio (Lecciones 1-3, ahí era falta de información; acá es
+falta de margen económico). La segunda parte es la explicación de fondo de por qué las Lecciones 1,
+2 y 3 pudieron sostenerse tanto tiempo sin corregirse: no alcanza con saber que hace falta
+organización — hace falta el tiempo real, reservado a propósito, para poder verla y actuar. Sin ese
+tiempo, el desorden se vuelve invisible porque nunca hay una pausa para mirarlo de conjunto.
+
+**Aplicación a futuro**: todavía sin cerrar — no se completa por inferencia.

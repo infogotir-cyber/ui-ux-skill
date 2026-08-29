@@ -67,7 +67,16 @@ hacía falta para saber si el momento era el correcto.
 podía", "creía que no podía solo" — en vez de por información real) aplicado a una decisión de
 mucho más peso y con consecuencias sobre terceros, no solo sobre él.
 
-**Aplicación a futuro**: todavía sin cerrar — no se completa por inferencia. Falta que Mariano diga
-si esto se traduce en un criterio concreto para decisiones de incorporación futura (ej. no
-incorporar gente sin un colchón de caja verificado, o un umbral de facturación sostenido antes de
-sumar un rol nuevo).
+**Principio general en el que desemboca esta lección (mismo día, continuación)**: delegar es una
+tentación real — da la sensación de estar creciendo cuando se suma tiempo y gente a cargo — pero
+delegar a la persona equivocada, en el momento equivocado, o sin ser claro en qué se quiere, cómo
+se quiere y cuándo, no ahorra trabajo: termina generando más trabajo y más consecuencias que hacerlo
+uno mismo. No descarta delegar como principio, pero lo condiciona a tres cosas concretas que
+identifica como las que suelen fallar: la persona correcta, el momento correcto, y claridad real de
+expectativas (qué/cómo/cuándo) antes de delegar.
+
+**Aplicación a futuro**: parcialmente cerrada — el principio de arriba (persona correcta + momento
+correcto + expectativas claras) ya es un criterio general. Todavía no se completa por inferencia el
+paso siguiente más concreto: si esto se traduce en un chequeo explícito antes de la próxima
+incorporación (ej. un colchón de caja verificado, un umbral de facturación sostenido) — falta que
+Mariano lo diga si quiere dejarlo así de específico.

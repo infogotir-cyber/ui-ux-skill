@@ -53,6 +53,9 @@ una lección nueva.
     *(Lección 17)*
 22. No se puede ser, a la vez, demasiado caro para unos y demasiado poco para otros — elegir a
     quién servís es tan importante como decidir qué vender. *(Lección 18)*
+23. Una empresa no está quebrada porque duela sostenerla — está quebrada cuando sostenerla cuesta
+    más que cerrarla. Todo lo demás es señal de que hay que optimizar, no de que hay que rendirse.
+    *(Lección 19)*
 
 ## Autoengaños del emprendedor (sección aparte, empezada 29 ago 2026)
 
@@ -511,3 +514,38 @@ todavía está en la etapa de solo identificar el problema.
 
 **Proverbio**: no se puede ser, a la vez, demasiado caro para unos y demasiado poco para otros —
 elegir a quién servís es tan importante como decidir qué vender.
+
+## Lección 19 — El criterio real de "estar quebrado": cuando seguir abierto es más caro que cerrar (29 ago 2026)
+
+**El contexto real detrás de esta lección**: en medio de la crisis de caja que viene atravesando
+(documentada en `pendientes-activos.md`, "Personal — crisis de caja urgente" — más de un año y
+medio en números negativos, según sus propias palabras del 28 ago), Mariano llegó a preguntarse
+directamente, en oración, si GOTIR ya había quebrado y si debía cerrarla.
+
+**La respuesta que sintió recibir, en sus propias palabras**: una idea muy fuerte que cree que fue
+de Dios — una empresa está quebrada cuando es **más caro seguir abierta que cerrarla**. Es decir,
+cuando seguir trabajando produce más deudas o más números negativos que dejar de trabajar.
+
+**La aplicación concreta que hace a GOTIR, con ese criterio**: GOTIR **no está quebrada** — tiene
+muy pocos gastos fijos, casi todos sus gastos son variables. Con uno o dos clientes ya cubre todos
+los gastos fijos del mes. La conclusión que saca no es "estamos bien", sino algo más específico:
+no hay que cerrar, hay que **optimizar** — mejorar los procesos, elegir mejor el tipo de cliente
+(conecta directo con la Lección 18), elegir mejor los precios, definir una estructura y una forma
+de trabajar, y automatizar todo lo posible para liberarse tiempo para proyectos nuevos (Golden
+Rica y lo que venga).
+
+**Por qué esta lección es distinta de las demás**: las lecciones 1 a 18 son, en su mayoría,
+autocrítica sobre errores pasados. Esta es la primera que resuelve una pregunta abierta y angustiante
+del presente — no "qué hice mal", sino "¿todavía tiene sentido seguir?" — con un criterio concreto
+y verificable (comparar el costo de seguir vs. el costo de cerrar), no con una sensación. Vale la
+pena leerla como la bisagra entre el diagnóstico (lecciones 1-18) y la decisión de seguir adelante
+con GOTIR, ya con las lecciones aprendidas aplicadas.
+
+**Aplicación a futuro**: parcialmente dada — optimizar procesos, elegir mejor cliente y precio,
+definir estructura, y automatizar para liberar tiempo. Todavía sin cerrar el detalle de cada una
+por separado — son, en los hechos, el resumen de hacia dónde apuntan varias lecciones anteriores
+(2, 15, 16, 18) aplicadas juntas como plan, no una lección nueva de cero.
+
+**Proverbio**: una empresa no está quebrada porque duela sostenerla — está quebrada cuando sostenerla
+cuesta más que cerrarla. Todo lo demás es una señal de que hay que optimizar, no de que hay que
+rendirse.

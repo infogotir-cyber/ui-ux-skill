@@ -84,6 +84,18 @@ automatización, significaría menos margen por venta mientras todo el trabajo l
 
 - Estado: **abierto — decisión estratégica pendiente, Mariano pidió una lectura de esto**.
 - Recordado: 2 veces (28 ago 2026, recién planteado; 29 ago, chequeo diario 18:00).
+- **Ampliado 29 ago 2026**: análisis completo de riesgos/amenazas + las 19 opciones + una opción 20
+  nueva (diversificar por tipo de trámite en España — nacionalidad, arraigos, emprendedor — en vez
+  de país) ahora vive en `areas/gotir/analisis-estrategico-29ago2026.md`. Sin decisión tomada.
+
+### GOTIR — GDPR / protección de datos con Conversia (29 ago 2026)
+
+GOTIR tiene contratada a **Conversia** para el cumplimiento de protección de datos, pero Mariano no
+le ha prestado atención todavía y quiere hacerlo — surgió al revisar riesgos legales no vistos
+(guardan pasaportes, antecedentes penales, certificados médicos de clientes). Detalle completo en
+`areas/gotir/analisis-estrategico-29ago2026.md`, sección "Legal/regulatorio".
+- Estado: **abierto — Mariano quiere revisar el estado real con Conversia**.
+- Recordado: 1 vez (29 ago 2026, creación).
 
 ### GOTIR — seguimiento
 

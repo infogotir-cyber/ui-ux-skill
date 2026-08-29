@@ -34,8 +34,15 @@ quien lo ayudó a pesar de errores que, en su lectura, podría haber evitado si 
 organizado mejor. Distingue con claridad entre "Dios me salvó de mis errores" (lo que pasó) y "Dios
 me dio sabiduría para no cometerlos" (lo que él hubiese preferido, y lo que busca de ahora en más).
 
-**Aplicación a futuro**: en curso — Mariano estaba terminando de desarrollar esta idea cuando se
-cortó el mensaje. No se completa por inferencia; falta que retome cómo quiere aplicar esto en
-concreto de ahora en más, más allá de lo que ya es evidente (el propio `mariano-os` es, en los
-hechos, la respuesta a esta lección — sistema de memoria organizada en vez de depender de acordarse
-solo).
+**Aplicación a futuro (completada 29 ago 2026, mismo día)**: tener una estructura — pasos concretos
+para cargar información después de cada llamada, para anotar ingresos y gastos, tiempo reservado
+para analizar esa información antes de decidir — da pereza, no es divertido, pero es
+**hiper-necesario** precisamente para que no se acumulen decisiones tomadas por emoción o por
+percepción. Principio que deja como regla general para el ámbito empresarial, en sus propias
+palabras: uno no puede basarse en las emociones ni esperar que la misericordia alcance — tiene que
+ser ordenado, organizado, metódico, y seguir cada paso para tomar decisiones sabias. Cierra así el
+contraste que había abierto en la primera parte de la lección: sabiduría (proverbios, método,
+información real) en vez de depender de la misericordia para tapar los errores de no tenerla. El
+propio `mariano-os` es, en los hechos, la aplicación concreta de este principio — sistema de
+memoria y proceso organizados en vez de depender de acordarse solo o de sentir cómo viene el
+negocio.

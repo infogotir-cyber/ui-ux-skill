@@ -360,6 +360,95 @@ el seguimiento manual (Lección 17), sino vender y diagnosticar bien (Lección 1
 si esta es la dirección, ajustarla, o elegir otra combinación distinta de las 22 opciones de
 arriba.
 
+## Opción 24 (escenario de contingencia, 29 ago 2026) — "Si el mundo se vuelve a cerrar en 2027"
+
+Pedido textual de Mariano: *"quiero que me armes una opción veinticuatro, con todo lo que ya hemos
+analizado. En el caso de que viniera una pandemia, de nuevo, a principios del dos mil veintisiete,
+¿cómo podríamos movernos, cambiar, renovarnos para poder seguir siendo rentables? Porque
+probablemente no permitan entrar y salir con normalidad."*
+
+**Aclaración de encuadre**: esto no es una opción nueva de negocio como la 20-23 — es una prueba de
+estrés sobre la Opción 23 (Motor dual) y sobre GOTIR tal como existe hoy. La pregunta real es "si
+mañana cierran fronteras, ¿qué parte de lo que ya decidimos sigue funcionando y qué parte se cae?".
+**Nota importante**: no hay en este sistema ningún dato documentado sobre cómo le fue a GOTIR
+durante la pandemia de 2020-2021 (facturación, decisiones que tomó Mariano en ese momento, qué
+funcionó y qué no) — si ese dato existe y es útil, valdría la pena que Mariano lo cuente para
+comparar con este análisis en vez de partir de cero. Todo lo de abajo es lógica estructural sobre
+el negocio actual, no un repaso de lo que ya se vivió.
+
+**El eje que separa lo expuesto de lo protegido no es "estancia vs. visado" — es "gente que ya está
+en España vs. gente que todavía no llegó".** Una restricción de fronteras (como la de 2020) no
+afecta igual a los 4 trámites:
+
+**Lo más expuesto (depende de que alguien entre al país por primera vez):**
+- **Estancia por estudios y visado de estudios desde origen** — el corazón actual del Motor 1: los
+  dos dependen de una persona que hoy está fuera de España y necesita viajar y entrar. Si eso se
+  frena, se frena la primera etapa completa del embudo B2C tal como está armado hoy.
+- **Matriculación presencial en los centros de formación** (Opción 2, las 3 escuelas ya
+  documentadas) — si las clases pasan a ser remotas o se suspenden, la comisión de matriculación
+  que sostiene parte del margen del embudo curso→llamada se resiente, no porque el curso en sí no
+  se pueda dar, sino porque el motivo de fondo para inscribirse (necesitás la matrícula para el
+  visado de estudios) pierde sentido si no podés viajar.
+- **Cualquier trámite nuevo de primera entrada** que dependa de una cita presencial en consulado o
+  frontera — fuera del control de GOTIR, es una restricción del sistema, no del negocio.
+
+**Lo más protegido (no depende de que nadie cruce una frontera):**
+- **Modificaciones y renovaciones** (ya generalizadas al Motor 1 en la Opción 23) — por definición
+  son trámites de gente que **ya está en España**, viviendo acá. Una restricción de entrada/salida
+  no los toca directamente. Si algo, podrían crecer: gente que en 2020 no pudo volver a su país de
+  origen y tuvo que resolver su situación migratoria desde adentro es exactamente el perfil de
+  cliente de modificación/renovación.
+- **Motor 2 completo (red B2B sobre Instituto Maude)** — no depende de que Mariano viaje, ni de que
+  lleguen clientes nuevos desde el exterior. Los 400 estudios de la base de Maude y los +2.000
+  contactos históricos de GOTIR son, en su mayoría, gente que ya hizo su trámite de entrada en algún
+  momento pasado — el negocio con ellos (modificación a residencia, leads, servicio operativo para
+  otros estudios) es 100% remoto y 100% doméstico, ni un solo paso requiere que alguien cruce una
+  frontera.
+- **Los cursos en sí, como contenido** (requisitos, instructivos, plan financiero/de negocio para
+  cuenta propia) — ya son productos de información, entregables sin presencialidad. Lo único
+  presencial hoy es la matriculación en el centro de formación, no el curso de GOTIR.
+- **La llamada de acompañamiento** — ya es remota (teléfono/WhatsApp) en el modelo actual, no
+  cambia nada.
+
+**Qué significa esto en la práctica, si hay que moverse rápido:**
+1. **El centro de gravedad del negocio se corre de "estancia/visado" a "modificación/renovación"**
+   — no como reemplazo permanente, sino como el motor que sostiene la caja mientras la parte de
+   primera entrada está frenada. Esto ya es, literalmente, la Opción 21 (modificación de estancia a
+   residencia) — la diferencia es que en un escenario de pandemia deja de ser "un producto más
+   dentro del Motor 2" y pasa a ser el producto principal, temporalmente.
+2. **Motor 2 se vuelve más importante que Motor 1, no al revés** — en el diseño normal de la Opción
+   23, Motor 1 es la caja de corto plazo y Motor 2 es lo que escala a futuro. En un escenario de
+   fronteras cerradas, esa relación se invierte: Motor 1 (estancia/visado) se reduce a lo mínimo, y
+   Motor 2 (modificación, leads, servicio B2B — todo doméstico) pasa a sostener la operación.
+3. **La base de +2.000 contactos históricos es el activo más valioso en este escenario** — es gente
+   que GOTIR ya conoce, que ya confía, y que en su mayoría ya está físicamente en España. Es la
+   fuente de clientes que menos depende de marketing nuevo o de tráfico de gente recién llegada.
+   Conecta directo con la Lección 1 (llevar información organizada): si esa base no está bien
+   cargada y segmentada por trámite/situación migratoria, GOTIR no puede activarla rápido cuando la
+   necesite.
+4. **Vender leads y ser "el Sebastián de otros estudios" (Motor 2, puntos 2 y 3) se vuelve más
+   atractivo para los socios B2B, no menos** — si a un estudio jurídico también le cae la parte de
+   primera entrada, va a necesitar más que nunca un canal de ingresos que no dependa de gente
+   entrando al país. GOTIR ofreciéndoles modificación/renovación como producto de rescate es una
+   propuesta más fuerte en pandemia que en tiempos normales.
+5. **Lo que hay que tener ya construido, no improvisado, para poder girar rápido**: el mini-funnel
+   automático y el WhatsApp confiable (bloqueos 1 y 2 de la Opción 23) importan todavía más acá,
+   porque en un escenario de crisis no hay tiempo de armar de cero un sistema de captación — hay que
+   poder correr el volumen de modificación/renovación a través de algo que ya funciona, no de
+   Mariano atendiendo uno por uno.
+
+**Lo que este escenario NO cambia**: no es una razón para dejar de construir la Opción 23 tal como
+está — al contrario, la refuerza. Todo lo que hace resiliente a GOTIR ante una pandemia (Motor 2,
+la generalización a modificación/renovación, la base histórica organizada) es exactamente lo mismo
+que ya se decidió construir por otras razones (escalar sin el tiempo de Mariano, no depender de un
+solo trámite). Una pandemia sería el caso extremo que demuestra por qué esa dirección es correcta,
+no una razón para cambiarla.
+
+**Aplicación a futuro**: si Mariano quiere, esto se puede convertir en un plan de contingencia
+formal con gatillos concretos (ej. "si se cierra una frontera relevante, mover el % de foco
+comercial de estancia/visado a modificación/renovación en X días") — hoy queda como el análisis
+estructural, no como un plan operativo todavía.
+
 ## Pendiente de decisión
 
 Todavía no hay ninguna decisión tomada sobre las 19 opciones + la 20 nueva — este documento es

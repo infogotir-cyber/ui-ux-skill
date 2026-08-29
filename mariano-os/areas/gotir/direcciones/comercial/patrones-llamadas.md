@@ -6,7 +6,7 @@
 > llamada (`CLAUDE.md`, sección 2). Se actualiza cada vez que llega una transcripción nueva, sin
 > esperar a que Mariano lo pida.
 >
-> **Contador: 7/20 llamadas registradas.**
+> **Contador: 8/20 llamadas registradas.**
 
 ## Cómo se carga
 
@@ -66,6 +66,15 @@ confirman.
   máster de posgrado. Nuevo patrón — probable que se repita a medida que más clientes usan IA para
   investigar antes de la llamada; vale la pena vigilar y quizás anticiparlo en el mini-funnel
   pre-llamada.
+- **"¿La normativa sanitaria española me va a pedir un curso u homologación para ejercer mi
+  actividad (masajes/recuperación deportiva)?"** (Hector, fisioterapeuta) — pregunta técnica fuera
+  del dominio migratorio puro, sobre regulación profesional/sanitaria. Mariano la manejó según el
+  mismo principio ya documentado en `CLAUDE.md` sección 3.2 ("no lo sé, no es mi área de expertise")
+  — no inventó una respuesta y sugirió averiguarlo (consultar colegas o una IA). Con la
+  transcripción real ahora disponible, confirma que el principio de "no inventar respuestas legales
+  o técnicas que no se dominan" se aplica también a regulación profesional/sanitaria, no solo a
+  extranjería en sentido estricto — vigilar si aparece de nuevo con otras profesiones reguladas
+  (salud, construcción, alimentación).
 
 ## Errores recurrentes detectados
 
@@ -75,27 +84,32 @@ confirman.
   que ir al grano... ¿pudiste ver el video? ¿pudiste ver los requisitos?") — de hecho mejor que el
   guion, porque además referenció el contenido pre-llamada. No es un patrón parejo todavía, dos
   llamadas van 1 y 1 — seguir vigilando.
-- **Próxima acción sin hora exacta — 7/7 llamadas del registro (patrón ya consolidado, el más
-  repetido de todos — con una mejora parcial en la 6ta llamada, pero un retroceso en la 7ma)**: Sara
-  Sofía dijo "hoy mismo", Maryi dijo "a principio de la semana que viene", Florencia/Manuel quedaron
-  directamente en "cuando arranquemos la temporada en Andorra, en noviembre" (el caso más vago de
-  los tres, ni siquiera un día concreto, solo un mes), Milagros dijo "en el día de hoy" sin
-  especificar horario, Melisa Tamburo quedó en escribir "cuando llegue el momento" / "unos 6 meses
-  antes" de su viaje, en la segunda llamada de Milagros (con su madre Santa) quedaron en que la
-  madre decide y confirma "el lunes" — sin hora, pero **con día exacto**, la mejor marca de la
-  ventana hasta ahora — y en la llamada con Ángel Villalba (7ma) volvió a empeorar: quedó en
-  "dame una semana" para reorganizarse y "te vuelvo a escribir" sin día ni hora, ni siquiera una
-  fecha aproximada de cuándo habría una decisión tomada — Mariano sí preguntó explícitamente "¿para
-  cuándo crees que ya tendrían una decisión tomada?" (aplicando el guion correctamente), pero el
-  cliente no dio nada más concreto que "en estas semanas" y Mariano no insistió en acotarlo más
-  (ej. "te escribo yo entonces el [día] para ver cómo vas"). Sigue siendo 7/7 sin hora fijada en la
-  llamada misma (este sistema tiene que completarla al crear la tarea), y el caso de Ángel muestra
-  que aun preguntando bien, si el cliente responde vago, hace falta un segundo intento de acotar
-  ("¿esta semana o la próxima? ¿te escribo yo el viernes para ver cómo vas?") en vez de aceptar la
-  vaguedad. Coincide con el error #1 ya documentado en la llamada con Hector (sección 3.2) — sigue
-  siendo el patrón más repetido de todos, y refuerza directamente la sugerencia de guion de abajo
-  (preguntar la hora explícitamente en la Fase 5, y no soltar la pregunta hasta conseguir un día
-  concreto, no solo repetirla una vez).
+- **Próxima acción sin hora exacta — 8/8 llamadas del registro (patrón ya consolidado, el más
+  repetido de todos — con una mejora parcial en la 6ta llamada, un retroceso en la 7ma, y el peor
+  caso de toda la ventana en la 8va)**: Sara Sofía dijo "hoy mismo", Maryi dijo "a principio de la
+  semana que viene", Florencia/Manuel quedaron directamente en "cuando arranquemos la temporada en
+  Andorra, en noviembre" (el caso más vago de los tres, ni siquiera un día concreto, solo un mes),
+  Milagros dijo "en el día de hoy" sin especificar horario, Melisa Tamburo quedó en escribir "cuando
+  llegue el momento" / "unos 6 meses antes" de su viaje, en la segunda llamada de Milagros (con su
+  madre Santa) quedaron en que la madre decide y confirma "el lunes" — sin hora, pero **con día
+  exacto**, la mejor marca de la ventana hasta ahora — en la llamada con Ángel Villalba (7ma) volvió
+  a empeorar: quedó en "dame una semana" para reorganizarse y "te vuelvo a escribir" sin día ni
+  hora, ni siquiera una fecha aproximada de cuándo habría una decisión tomada — Mariano sí preguntó
+  explícitamente "¿para cuándo crees que ya tendrían una decisión tomada?" (aplicando el guion
+  correctamente), pero el cliente no dio nada más concreto que "en estas semanas" y Mariano no
+  insistió en acotarlo más (ej. "te escribo yo entonces el [día] para ver cómo vas") — y en la
+  llamada con **Hector (8va, la original, re-analizada ahora con la transcripción completa)** el
+  patrón toca fondo: la llamada terminó sin ninguna próxima acción de ningún tipo — ni fecha vaga,
+  ni "te escribo yo", ni un mes aproximado, nada — es el único caso de las 8 llamadas del registro
+  donde no hay absolutamente ningún gesto hacia un siguiente paso, peor incluso que el "dame una
+  semana" de Ángel o el "en unos 6 meses" de Melisa, que al menos dejaban algo, por vago que fuera.
+  Sigue siendo 8/8 sin hora fijada en la llamada misma (este sistema tiene que completarla al crear
+  la tarea), y el caso de Hector es la evidencia más clara de todo el registro de por qué la Fase 5
+  no puede terminar sin al menos intentar una vez la pregunta explícita de cierre — acá ni siquiera
+  se llegó a intentar. Coincide con el error #1 ya documentado en la llamada con Hector (sección
+  3.2, escrito antes de tener la transcripción real) — sigue siendo el patrón más repetido de todos,
+  y refuerza directamente la sugerencia de guion de abajo (preguntar la hora explícitamente en la
+  Fase 5, y no soltar la pregunta hasta conseguir un día concreto, no solo repetirla una vez).
 - **Apertura defensiva ante una comparación desfavorable con la competencia (Melisa Tamburo)**:
   Melisa abrió la llamada comparando a GOTIR desfavorablemente con un competidor que le ofrecía un
   esquema de préstamo para simular fondos (ilegal). La primera respuesta de Mariano (~minuto 2)
@@ -112,6 +126,23 @@ confirman.
   llamada igual funcionó bien (buena conexión, próxima acción clara), pero el tramo de mayor valor
   (Fase 5, cierre) es justo el que se apuró — vale la pena que Mariano deje más margen entre una
   llamada comercial y un compromiso personal fijo, en vez de agendarlos pegados.
+- **Fase 3 — bloques largos sin pausa, la peor infracción de "fragmentar, no descargar todo junto"
+  del registro (Hector)**: en varios tramos de la llamada Mariano explicó de corrido las opciones de
+  Ourense/Vigo/Madrid, requisitos y precios en monólogos largos y densos, sin las pausas de
+  confirmación tipo "¿de estas dos, cuál te resuena más?" que ya están documentadas como regla en la
+  Fase 3 (sección 2 de `CLAUDE.md`). Es el mismo error #2 ya nombrado en `CLAUDE.md` sección 3.2
+  ("entregó mucha información de golpe... sin pausas de confirmación"), pero visto ahora con la
+  transcripción real es más severo de lo que el resumen original transmitía — vale la pena marcarlo
+  como el ejemplo de referencia de esta infracción específica si hace falta uno para entrenar el
+  guion.
+- **Cliente propone un mecanismo cuestionable de demostración de fondos, Mariano lo redirige bien
+  (Hector)**: Hector propuso depositar dinero, retirarlo y volver a depositarlo en otra cuenta para
+  inflar el monto total demostrable — un esquema cercano al ya visto con Melisa Tamburo (préstamo
+  para simular fondos, sección de arriba), pero acá la iniciativa fue del cliente, no de un
+  competidor. Mariano lo redirigió correctamente hacia la vía legítima (préstamo real documentado)
+  en vez de aceptarlo o ignorarlo — mismo patrón de integridad ya confirmado varias veces en el
+  registro (Melisa, Milagros 2da llamada), ahora con una variante nueva: el cliente mismo
+  proponiendo el atajo, no la competencia ofreciéndolo.
 - **Duración de la llamada de Sara Sofía (65 min) muy por encima de lo que sugiere la estructura de
   5 fases (~25-30 min sumando los rangos de cada fase)** — gran parte del extra fue charla genuina de
   cierre de confianza (fe, comunidad GOTIR, planes de verse en persona), que probablemente ayudó a
@@ -174,3 +205,4 @@ confirman.
 | 5 | 27 ago 2026 | Melisa Tamburo (aún no cargada como contacto en GHL al momento de la llamada) | 53 min, llamada no planificada — Mariano había evitado ofrecerle reunión porque ella viaja recién ~junio 2027 (fuera de la política de <6 meses, sección 1.3), pero ella pidió la llamada igual tras un mensaje de seguimiento. Diagnóstico: visado de estudios desde origen vs. estancia por estudios en España — comparó ambos caminos en profundidad (ventanas de tiempo, riesgo de demostrar fondos con préstamo reciente). Rechazó con firmeza un esquema de préstamo-para-simular-fondos que le ofrecía la competencia. Fuerte valor agregado fuera de la venta (empadronamiento, cuenta bancaria no residente, comentario personal sobre mejores sueldos vía Suiza/Andorra) — terminó interesada en traer a su hermano como próximo prospecto. Sin pago en vivo (timing largo). 🌡️ Templado, buen vínculo pero decisión lejana. | Nuevo: llamada ad hoc que terminó costando más tiempo (53 min) que la reunión que Mariano quería evitar ofrecer — tensión directa con la política de <6 meses (sección 1.3). Nuevo: apertura defensiva ante comparación con competencia, con recuperación fuerte después (ver "Errores recurrentes" arriba). Repetido: mismo patrón de integridad que Hector (rechazo claro de un esquema ilegal, sección 3.2). Repetido: próxima acción sin hora exacta, ahora 5/5 (quedó en "6 meses antes" del viaje, sin fecha ni tarea concreta — patrón ya consolidado como el más costoso de la ventana). |
 | 6 | 28 ago 2026 | Milagros Stefany Durán Guillén (segunda llamada, con Santa, su madre) | 46 min, retomando el caso de la fila 4 (25 ago) tras una ráfaga de preguntas por WhatsApp que Mariano decidió resolver por llamada en vez de por texto. Objeción nueva resuelta con un buen reencuadre: una IA le dijo a Milagros que el "máster" no era válido sin título universitario — Mariano explicó la diferencia de terminología LatAm/España y reencuadró la opción (Escuela 3, 2.858€) como "curso superior universitario" con doble aval. Mencionó abiertamente que Alvali le paga a él una comisión mayor pero no la recomienda igual — momento fuerte de transparencia/integridad, mismo espíritu que el caso Hector (sección 3.2). Contexto de negocio real que salió en la charla: Raúl (¿competencia o colega?) revende cursos de Alvali — anotado como dato curioso, sin acción asociada. ⚠️ Discrepancia de precio detectada, sin resolver: en la llamada se habló de "780€ en un solo pago" para estancia por estudios, pero `comercial/CLAUDE.md` sección 1.2 documenta 750€ en pago único — a confirmar con Mariano cuál es el correcto. Cerró con Santa (la madre) decidiendo entre Madrid/Alvali y pagando el 50% "el lunes" (1 sept). 🔥 Caliente. | Repetido, con mejora parcial: próxima acción sin hora exacta, ahora 6/6 — pero por primera vez en la ventana quedó fijado un día exacto ("el lunes") en vez de quedar completamente abierto, aunque siguió sin hora. Nuevo: objeción "una IA me dijo que no es válido" — cliente llega con conclusión ya formada por una IA genérica sin contexto del caso real (ver "Preguntas frecuentes" arriba, probable que se repita). Repetido: mismo patrón de integridad que Hector y Melisa Tamburo (transparencia sobre incentivos propios/de la competencia en vez de maximizar la comisión, filas 3 y 5). |
 | 7 | 28 ago 2026 | Ángel Villalba y Yasmín (su esposa) | 63 min, matrimonio de Buenos Aires (28/30 años) con dos hijos (Bautista, 2, de ambos; Tiago, 10, hijo biológico de Ángel de una relación anterior, vive con ellos por convenio parental homologado por juzgado). Llegaron por testimonio de Jesús Mosquera. Vendieron su local comercial (cobrando en cuotas) y quieren migrar los 4, pero el presupuesto no alcanza — Mariano diagnosticó bien la logística financiera real (ingresos de Uber/Didi decrecientes vs. sueldo estable de Yasmín en el Senado) y recomendó una estrategia escalonada: Ángel viaja solo primero vía estancia por estudios (Escuela 3, 2.858€, recomendada por baja exigencia de asistencia dado que vivirían cerca de Valencia), consigue TIE y vivienda, y luego reagrupa a los hijos repartido entre los dos padres. Desaconsejó activamente Elche (saturado, mal conectado) y recomendó Rafelbuñol (donde vive Mariano). Sin cerrar pago hoy — quedó en "una semana" para reorganizarse (vender el auto, resolver el cobro del local, consultar con su abogada sobre la autorización de viaje de Tiago) antes de agendar una llamada formal para pagar el 50% de los honorarios (412,50€ de 825€) + inscripción del curso (890€). 🔥 Caliente, pero sin fecha ni hora concretas. | Nuevo: 3er caso de complejidad legal de custodia/tenencia de un menor en la ventana (variante distinta a Maryi — acá hay convenio parental homologado, pero sin confirmar si alcanza para autorizar viaje), mismo manejo correcto (deriva a la abogada del cliente, no inventa respuesta). Nuevo: objeción "ya pagamos por una consulta con otra agencia y no sirvió de nada" — resuelta con storytelling genuino de la propia experiencia migratoria de Mariano. Nuevo: guion reutilizable de migración familiar escalonada para presupuestos ajustados (ver "Ajustes sugeridos al guion"). Repetido con retroceso: próxima acción sin hora exacta, ahora 7/7 — peor que la llamada anterior (ni siquiera día concreto esta vez, solo "una semana"). |
+| 8 | 12 ago 2026 | Héctor Ojeda | Llamada original, ahora re-analizada con la transcripción completa de Fathom (antes solo existía el resumen de `CLAUDE.md` sección 3.2, con fecha registrada ahí por error como "13 de agosto" — corregido acá a la fecha real, 12 ago, por indicación explícita de Mariano). Fisioterapeuta venezolano interesado en Ourense — ciudad sin curso válido cerca, se le presentaron alternativas en Vigo/Madrid. Buen rapport (propia historia migratoria de Mariano, paciencia real ante interrupciones familiares del cliente). Objeción de precio manejada bien ("no busco precio, busco valor"), con algo de sobre-repetición del encuadre "es una inversión". Ofreció pago en cripto (política vigente en ese momento, discontinuada desde el 14 ago — no repetir). La llamada terminó sin ninguna próxima acción, fecha ni responsable — el caso más extremo del registro. | Repetido, caso más extremo: próxima acción sin hora exacta, ahora 8/8 y la primera vez en la ventana sin ningún gesto hacia un siguiente paso (ver "Errores recurrentes" arriba). Repetido, severidad mayor a lo ya documentado: bloques largos sin pausa en la Fase 3 (violación de "fragmentar, no descargar todo junto"). Nuevo: cliente propone su propio mecanismo cuestionable de demostración de fondos (depositar/retirar/redepositar), Mariano lo redirige bien hacia la vía legítima — variante del patrón de integridad ya visto con Melisa Tamburo. Nuevo: pregunta sobre normativa sanitaria/homologación para su actividad profesional, manejada con el mismo principio de "no inventar respuestas que no domino" ya documentado, ahora confirmado también fuera del dominio migratorio puro (ver "Preguntas frecuentes" arriba). |

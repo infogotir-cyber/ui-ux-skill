@@ -224,6 +224,59 @@ esa base. Tres caminos posibles a evaluar, no excluyentes entre sí:
    lo que Mariano ya sabe hacer mejor que nadie (el sistema), sin depender de que él cierre ventas
    personalmente.
 
+## Documento real ya existente: propuesta de colaboración B2B (PDF, compartido por Mariano 29 ago 2026)
+
+Mariano ya tiene armada y **ya propuesta a un estudio jurídico** una presentación de partnership:
+"Alianzas estratégicas en extranjería" (GOTIR, 2026, documento confidencial). Esto no es una idea
+nueva — es infraestructura comercial real que ya existe y ya se usó, solo con energía limitada
+hasta ahora. Resumen fiel del contenido real del PDF:
+
+- **Vía A — Estancias por estudios ("Captación y onboarding", con contrato y pago asegurado)**:
+  GOTIR capta, precalifica, cobra y firma contrato con el cliente; hace el onboarding completo
+  (cursos, seguro, certificado médico, plataforma de requisitos); el estudio jurídico arma la
+  estrategia, el expediente, y lo presenta hasta la TIE. GOTIR cobra al cliente y le paga al
+  estudio — "sin riesgo de impago ni cobranzas" para el estudio.
+  - **Modo 2 — Externalización** (ya incluido en el documento, es justo el punto que veníamos
+    charlando): si el estudio **ya tiene el cliente cerrado**, se lo deriva a GOTIR y GOTIR le hace
+    todo el onboarding (cursos, seguro, certificado médico, plataforma) para aliviar la carga del
+    equipo del estudio.
+- **Vía B — Resto de trámites ("Leads cualificados a éxito")**: para Visado de Estudios,
+  Apostillas Express, Nómada Digital, PAC, No Lucrativo, Emprendedor, Work & Holiday,
+  Regularización, Arraigo, Pareja de Hecho, Certificado UE, Canje de Carnet, Visado CAP — GOTIR
+  deriva leads precalificados, el estudio los atiende y cobra directamente al cliente, y **GOTIR
+  cobra una comisión solo si el caso cierra** (comisión a éxito, sin pago por adelantado).
+- Perfil del cliente que se deriva: capacidad de pago verificada, decisión de emigrar confirmada,
+  perfil profesional o con ingresos — "nunca leads fríos".
+- Datos de marca usados en el documento: **+500 familias**, 4,9★ en Google (55 reseñas), +15
+  países, 24-48h de primera respuesta.
+
+**⚠️ Discrepancia real a resolver, no ignorar**: el PDF dice "+500 familias" — más alto todavía que
+el "150 familias" ya marcado como discrepancia en `lecciones-aprendidas.md` (Lección 12) y en
+`comercial/CLAUDE.md` (Mariano mismo estima ~20 negocios reales). Esto ya no es solo marketing
+interno — es un documento formal ya enviado a un socio real. Vale la pena que Mariano confirme la
+cifra correcta antes de seguir usando o reenviando este documento.
+
+**⚠️ Tensión real a resolver, no ignorar**: la Vía B de este documento (comisión a éxito) es
+**el mismo modelo que ya falló una vez** con abogados externos de nacionalidad/arraigo (ver Opción
+20 más arriba — "esfuerzo propio sin control del resultado, abogados saturados que hacían poco
+seguimiento"). Es distinto de lo que Mariano propuso hoy mismo (vender leads a precio fijo, no a
+éxito). Falta que decida si actualiza la Vía B del documento con el modelo de precio fijo, o si
+mantiene la comisión a éxito a propósito porque confía en que estos socios nuevos (Instituto Maude
+y su red de 400 estudios) van a ejecutar mejor que los abogados anteriores.
+
+### La fusión que Mariano propone (29 ago 2026) — combinar el Modo 2 con la propuesta comercial completa
+
+Mariano confirma que la idea de "hacerles la primera parte" (Modo 2, arriba) ya existe y ya se
+propuso a un estudio — la idea es meterle más energía. Pero quiere ir un paso más allá de lo que
+dice hoy el documento: no solo ofrecerles sacarles de encima el onboarding de un cliente **ya
+cerrado por ellos**, sino además **llevarles la parte comercial completa** — que el estudio les
+pase sus leads (no necesariamente ya cerrados) y GOTIR los pase por su propio embudo de ventas,
+seguimiento y cierre, ofreciéndoles el curso, y recién ahí se los entrega ya convertidos. En sus
+palabras: *"que ellos... podamos atender a sus clientes, pasarlos por nuestros embudos de ventas,
+seguimiento, cierre, les ofrecemos el curso y se los damos... una mezcla."* Esto amplía el punto 3
+de la Opción 22 (ser el "Sebastián" de otros estudios) más allá de solo la ejecución operativa
+post-venta — incluye también la venta en sí, no solo el papeleo.
+
 ## Pendiente de decisión
 
 Todavía no hay ninguna decisión tomada sobre las 19 opciones + la 20 nueva — este documento es

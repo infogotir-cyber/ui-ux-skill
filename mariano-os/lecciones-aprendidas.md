@@ -49,6 +49,10 @@ una lección nueva.
 19. Enfocar es necesario, pero casarse con el enfoque es el mismo error vestido de estrategia — hay
     que seguir bajando un nivel más cada vez. *(Lección 16)*
 20. Antes de sumar gente, preguntate si lo que hace falta es mejorar el proceso. *(Lección 16)*
+21. Una creencia sobre uno mismo que nunca se pone a prueba puede durar años enteros siendo falsa.
+    *(Lección 17)*
+22. No se puede ser, a la vez, demasiado caro para unos y demasiado poco para otros — elegir a
+    quién servís es tan importante como decidir qué vender. *(Lección 18)*
 
 ## Autoengaños del emprendedor (sección aparte, empezada 29 ago 2026)
 
@@ -454,3 +458,56 @@ prioritarios.
 **Proverbio**: enfocar es necesario, pero casarse con el enfoque es el mismo error vestido de
 estrategia — hay que seguir bajando un nivel más cada vez. Y antes de sumar gente, preguntate si lo
 que hace falta es mejorar el proceso.
+
+---
+
+## Lección 17 — La falta de análisis/estrategia sostuvo una creencia falsa sobre su propio fuerte durante 4 años (29 ago 2026)
+
+**Lo que pasó**: en general, la falta de análisis — de sentarse a pensar una estrategia — causó
+muchos de los problemas que tuvo. Prefirió seguir con el día a día en vez de sentarse a analizar, y
+eso le impidió darse cuenta de errores que hubieran sido claros si se hubiera sentado a pensarlos.
+Ejemplo concreto y contundente: durante **cuatro años** creyó que crear un montón de grupos de
+WhatsApp y hacer seguimiento ahí era su fuerte — y no lo era.
+
+**Por qué esta lección es distinta de la Lección 4 (aunque suenan parecidas)**: la Lección 4 hablaba
+de no tener tiempo para ver las fugas operativas del negocio (precios, seguimiento de clientes,
+impuestos). Esta es más profunda: no haber analizado ni siquiera **su propia fortaleza real** —
+durante cuatro años enteros sostuvo una creencia sobre sí mismo que nunca puso a prueba, porque
+ponerla a prueba hubiera requerido el mismo tiempo de análisis que nunca se dio.
+
+**Aplicación a futuro**: todavía sin cerrar — no se completa por inferencia. Falta que Mariano diga
+en qué cree hoy que es su fuerte real (más allá de lo ya nombrado en la Lección 15, la venta y el
+diagnóstico, no el seguimiento operativo) y si eso también merece ponerse a prueba con el mismo
+cuidado.
+
+**Proverbio**: una creencia sobre uno mismo que nunca se pone a prueba puede durar años enteros
+siendo falsa.
+
+## Lección 18 — Identificar el tipo de cliente y para qué se es realmente bueno; quedar "a la mitad" no sirve a nadie (29 ago 2026)
+
+**Lo que pasó, en sus propias palabras**: dentro de extranjería hay muchos tipos de clientes
+distintos — empresas que quieren contratar extranjeros, familias con dinero que se quieren mudar,
+estudiantes que quieren hacer un posgrado, y más. No saber en qué tipo de cliente centralizarse fue
+otro problema real, distinto del anterior.
+
+**El diagnóstico concreto que hace del posicionamiento de GOTIR hoy**: hay gente para la que GOTIR
+resulta muy barato, porque busca algo integral de relocation completo; y hay gente para la que
+resulta muy caro, porque solo quería saber si algo puntual era válido o no, sin más acompañamiento.
+GOTIR queda a la mitad — demasiado caro para quien quiere poco, insuficiente para quien quiere una
+solución más completa. Da un ejemplo real: una clienta que paga o pagaría 10.000-15.000€ (en el
+sistema figura como "Shirley", pero su nombre real es **Dana** — corrección de identidad a tener en
+cuenta si aparece de nuevo) quería un servicio mucho más integral que el que GOTIR ofrece hoy, y
+GOTIR no tenía nada así para darle.
+
+**Por qué Mariano pidió que sea una lección aparte**: es un tipo de problema distinto de "no
+analizar" (Lección 17) o "no enfocar" (Lección 16) — acá el foco ya existe (visado/estancia), pero
+el error es no haber segmentado **dentro** de ese foco por tipo de cliente y capacidad de pago real,
+lo que deja a GOTIR posicionado en un punto medio que no termina de convencer a nadie del todo.
+
+**Aplicación a futuro**: todavía sin cerrar — no se completa por inferencia. Falta que Mariano
+defina si quiere elegir un segmento de cliente específico (ej. solo familias con capacidad de pago
+media, o construir una oferta más integral tipo relocation para el segmento de 10-15k€) o si
+todavía está en la etapa de solo identificar el problema.
+
+**Proverbio**: no se puede ser, a la vez, demasiado caro para unos y demasiado poco para otros —
+elegir a quién servís es tan importante como decidir qué vender.

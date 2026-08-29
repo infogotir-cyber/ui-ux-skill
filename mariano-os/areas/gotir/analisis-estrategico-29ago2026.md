@@ -370,11 +370,11 @@ probablemente no permitan entrar y salir con normalidad."*
 **Aclaración de encuadre**: esto no es una opción nueva de negocio como la 20-23 — es una prueba de
 estrés sobre la Opción 23 (Motor dual) y sobre GOTIR tal como existe hoy. La pregunta real es "si
 mañana cierran fronteras, ¿qué parte de lo que ya decidimos sigue funcionando y qué parte se cae?".
-**Nota importante**: no hay en este sistema ningún dato documentado sobre cómo le fue a GOTIR
-durante la pandemia de 2020-2021 (facturación, decisiones que tomó Mariano en ese momento, qué
-funcionó y qué no) — si ese dato existe y es útil, valdría la pena que Mariano lo cuente para
-comparar con este análisis en vez de partir de cero. Todo lo de abajo es lógica estructural sobre
-el negocio actual, no un repaso de lo que ya se vivió.
+**Corrección (29 ago 2026, confirmada por Mariano)**: no hay ningún dato de cómo le fue a GOTIR en
+la pandemia de 2020-2021 por una razón simple — GOTIR **no existía todavía**. Mariano la fundó en
+2022 (dato ya confirmado en `areas/gotir/CLAUDE.md`). Esto no es un hueco de información, es que no
+hay antecedente real que revisar: GOTIR nunca atravesó un cierre de fronteras como empresa. Todo lo
+de abajo es lógica estructural sobre el negocio actual, sin precedente propio del que aprender.
 
 **El eje que separa lo expuesto de lo protegido no es "estancia vs. visado" — es "gente que ya está
 en España vs. gente que todavía no llegó".** Una restricción de fronteras (como la de 2020) no

@@ -143,3 +143,17 @@ hay que cumplir con seriedad, no como algo aparte de lo espiritual). Vale la pen
 1 a 5 como una sola idea desarrollada en partes, más que como cinco lecciones independientes.
 
 **Aplicación a futuro**: todavía sin cerrar — no se completa por inferencia.
+
+## Lección 6 — El éxito empresarial exige hacer lo que no gusta, no "fingir demencia" con lo que se quiere evitar (29 ago 2026)
+
+**Lo que dice, en sus propias palabras**: en las empresas, si uno quiere ser exitoso tiene que estar
+dispuesto a hacer las cosas que no le gustan — no se puede "fingir demencia" y esperar que todo se
+resuelva solo. Es necesario afrontar todo, sobre todo lo que uno quiere evitar o posponer.
+
+**Conecta con las lecciones anteriores**: es la contracara activa de la Lección 1 (la pereza
+post-llamada de tomar notas) y de la Lección 4 (vivir a las corridas, sin tiempo para mirar las
+fugas) — ahí el problema era no tener el sistema/tiempo; acá agrega una capa más personal: incluso
+teniendo el tiempo, hay una tentación real de evitar deliberadamente lo incómodo, y esa evitación
+también es una decisión, no solo una consecuencia del desorden.
+
+**Aplicación a futuro**: todavía sin cerrar — no se completa por inferencia.

@@ -80,3 +80,28 @@ correcto + expectativas claras) ya es un criterio general. Todavía no se comple
 paso siguiente más concreto: si esto se traduce en un chequeo explícito antes de la próxima
 incorporación (ej. un colchón de caja verificado, un umbral de facturación sostenido) — falta que
 Mariano lo diga si quiere dejarlo así de específico.
+
+## Lección 3 — "Al César lo que es del César y a Dios lo que es de Dios": cumplir cada ley y consejo, no delegar el cumplimiento sin seguir sabiendo (29 ago 2026)
+
+**Lo que pasó**: desorden real de cobros, monedas e impuestos durante años. Su propia ignorancia
+respecto a la parte fiscal lo llevó a incumplir leyes — al no conocerlas, cometieron muchos errores.
+Creyó que pagándole a gestores ya quedaba desentendido del tema, pero los gestores se equivocaron, y
+las consecuencias de esos errores las tuvo que asumir él, no ellos.
+
+**Cómo lo procesa espiritualmente (en sus propias palabras)**: lo enmarca con la frase "al César lo
+que es del César y a Dios lo que es de Dios" — lo fiscal/legal no es un tema aparte de lo
+espiritual, es parte de lo que hay que cumplir con seriedad, siguiendo cada proverbio y consejo, no
+solo lo que parece "religioso". Reconoce que Dios tuvo misericordia en medio de todo esto — lo
+salvó de muchísimas otras consecuencias que podría haber tenido — y que, con la cantidad de errores
+reales que cometió, la situación podría haber salido mucho peor de lo que salió. Cierra con "Dios es
+bueno", sin que eso le quite responsabilidad a lo que él mismo pudo haber hecho distinto.
+
+**Conecta con las lecciones 1 y 2**: mismo patrón de fondo (falta de información/conocimiento propio
+como causa raíz), ahora aplicado específicamente al terreno fiscal/legal — y una variante nueva del
+error de delegación de la Lección 2: delegar el cumplimiento (a un gestor) no lo eximió de la
+responsabilidad ni del conocimiento mínimo necesario para poder supervisar si ese cumplimiento
+estaba bien hecho.
+
+**Aplicación a futuro**: todavía sin cerrar — no se completa por inferencia. Falta que Mariano diga
+si esto se traduce en algo concreto (ej. no delegar lo fiscal sin entender al menos lo esencial
+él mismo, o un chequeo periódico propio además del gestor).

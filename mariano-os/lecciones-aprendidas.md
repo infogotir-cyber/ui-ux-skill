@@ -50,7 +50,52 @@ una lección nueva.
     que seguir bajando un nivel más cada vez. *(Lección 16)*
 20. Antes de sumar gente, preguntate si lo que hace falta es mejorar el proceso. *(Lección 16)*
 
-## Lección 1 — Llevar información organizada de todo, en tiempo real, no depender de la memoria ni la buena voluntad (29 ago 2026)
+## Autoengaños del emprendedor (sección aparte, empezada 29 ago 2026)
+
+Sección nueva, pedida explícitamente por Mariano: un catálogo separado de las formas concretas en
+que un emprendedor se miente a sí mismo — sensaciones que se sienten como progreso real pero no lo
+son. No reemplaza a las lecciones numeradas de arriba; varias ya documentadas (2, 15, 16) son la
+base de estos autoengaños, y se referencian cruzadas en vez de duplicarse. Mismo criterio de carga:
+en la voz de Mariano, sin completar la aplicación a futuro por inferencia.
+
+### Autoengaño 1 — Contratar gente y sentir que la empresa está creciendo
+
+**Lo que pasó**: sintió que, porque estaba contratando gente, su empresa estaba creciendo. No era
+así — simplemente estaba intentando sentir que crecía. En los hechos, no estaba creciendo: estaba
+dividiendo su dinero entre más personas, y probablemente creando más problemas, porque no sabía
+cómo delegar. Eso le generó más inconvenientes, no menos. Lo mismo le pasó con contratar una
+agencia de marketing.
+
+**El autoengaño en una frase, dicha por él mismo**: *"delegar en el momento equivocado es un
+autoengaño — un autoengaño de creer que estás creciendo."*
+
+**Ya documentado en las Lecciones 2, 15 y 16**: es el mismo error que la Lección 2 (incorporar
+gente sin base real para saber si era el momento) y el mismo principio general de la Lección 16
+("uno cree que necesita más empleados, pero necesita mejorar los procesos") — acá aparece
+nombrado explícitamente como una categoría de autoengaño, no solo como un error puntual: la
+sensación de crecimiento y el crecimiento real son cosas distintas, y contratar gente activa la
+primera sin garantizar la segunda.
+
+**Proverbio**: contratar no es crecer — es solo la sensación de crecer, hasta que los números dicen
+lo contrario.
+
+### Autoengaño 2 — Anotarse a formación/networking que nunca se termina de aprovechar por estar apagando incendios
+
+**Lo que pasó**: se anota a un curso, a una charla de emprendedores, a aprender un proceso nuevo —
+pero como está todo el tiempo apagando incendios, no le da el tiempo real: no termina de ver el
+curso, no va a la charla, o va pero no sabe qué decir ni cómo hacer networking cuando llega, porque
+la cabeza sigue en los incendios que dejó atrás.
+
+**El autoengaño**: anotarse se siente como estar invirtiendo en desarrollarse — pero si nunca se
+termina de aprovechar, es una inversión solo en apariencia, no una real. El gesto de anotarse
+reemplaza al hecho de aprender.
+
+**Conecta con la Lección 4** (vivir a las corridas no deja tiempo para ver las fugas): acá el mismo
+patrón se aplica específicamente a la formación — no alcanza con anotarse con buena intención si no
+hay margen real (de tiempo y de cabeza) reservado para aprovecharlo.
+
+**Proverbio**: anotarte a algo no es formarte — formarte pasa cuando le das el tiempo real, no
+cuando pagás la inscripción. — Llevar información organizada de todo, en tiempo real, no depender de la memoria ni la buena voluntad (29 ago 2026)
 
 **Lo que pasó**: durante años, Mariano lideró GOTIR sin una estructura real para almacenar y
 analizar información — ni operativa (lo mismo que hoy resuelve el CRM/GHL: cargar el resumen de

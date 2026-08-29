@@ -110,6 +110,54 @@ migratoria previa). Eso sugiere:
 **No es una conclusión cerrada** — es la lectura del sistema con la evidencia que hay hoy, para
 que Mariano la contraste y decida.
 
+## Refinamiento de las opciones 5/11/14 — "curso + llamada incluida" (propuesto por Mariano, 29 ago 2026)
+
+Mariano tomó la lectura de arriba (la IA no reemplaza el criterio aplicado al caso puntual) y la
+convirtió en un producto concreto: notó que los clientes valoran mucho saber **qué cursos valen la
+pena y cuáles no, qué seguros valen y cuáles no** — pero le preocupa que si vende eso como un curso
+suelto, pierda la comisión de matriculación (~250€, ya documentada en `comercial/CLAUDE.md`
+sección 1.2) porque el cliente podría inscribirse por su cuenta con la información en la mano.
+
+**La solución que propone**: vender el producto de información (PDF con requisitos + qué opciones
+valen) **con una llamada incluida** para ayudar a inscribirse en una de las 3 escuelas — así el
+cliente llega ya informado, pero el camino para ejecutar (inscripción) sigue pasando por GOTIR, sin
+perder la comisión. En sus palabras: *"si comprás el curso nuestro para saber qué cursos valen y
+cuáles no, te damos una llamada con requisitos, te enviamos un PDF, y te incluye una llamada para
+que te ayudemos a inscribirte en alguno de los tres cursos."*
+
+**Por qué esto es más sólido que un infoproducto suelto (lectura del sistema)**: resuelve
+exactamente el riesgo de comoditización por IA que se identificó arriba — no vende información
+genérica aislada, vende información **empaquetada con el paso de ejecución que solo GOTIR puede
+dar** (la relación con las escuelas y el conocimiento de cuál conviene a cada caso). Es, en los
+hechos, una fusión de las opciones 5/14 (cobrar por diagnóstico) con la 11 (comisiones de
+matriculación/seguro que ya son casi 100% margen) en un solo producto de entrada. Con un precio
+bajo (en la línea de los 50-100€ ya sugeridos para la opción 14), filtra curiosos, mete caja
+temprana, y preserva la comisión aguas abajo.
+
+## Refinamiento de la opción 20 — vender leads directamente, no ir a éxito (propuesto por Mariano, 29 ago 2026)
+
+Resuelve él mismo, con una idea concreta, la tensión que quedó abierta en la Opción 20 (repetir el
+modelo de comisión-por-éxito con abogados externos, que ya falló una vez): en vez de derivar
+nacionalidad/arraigos/emprendedor a abogados a cambio de un % si cierran, propone **filtrar su base
+histórica de +2.000 contactos** (opción 4) más campañas de ads nuevas, identificar quiénes van a
+necesitar cada trámite, y **vender esos leads directamente** a abogados especializados por un
+precio fijo (dio el ejemplo de ~5€/lead, un lote de 30 leads). En sus palabras: *"me aseguro de que
+recupero el dinero porque vendo lead, no voy a éxito, como hice antes y me salió mal."*
+
+**Por qué esto sí resuelve la tensión (lectura del sistema)**: cambia el modelo de "comisión sobre
+un resultado que no controla" (lo que falló) a "cobro fijo por un insumo que sí controla" (un lead
+cualificado) — coincide exactamente con el patrón de la Lección 15 (delegar funciona cuando el
+alcance es acotado y el precio es fijo, no abierto) y con la Opción 3 de la lista original
+(distribuidor de leads puro), pero aplicado específicamente al segmento de trámites que ya se había
+descartado por el problema de control.
+
+**Una consideración que vale la pena que Mariano tenga en cuenta antes de ejecutar esto, no un
+freno**: vender los datos de contacto de su base histórica a un tercero (el abogado comprador) es
+una actividad de tratamiento de datos personales — coincide directo con el pendiente que él mismo
+abrió hoy sobre **GDPR/Conversia** (ver `pendientes-activos.md`). Antes de vender leads a terceros a
+escala, vale la pena confirmar con Conversia que el consentimiento original de esos +2.000
+contactos permite ese tipo de cesión, o si hace falta un consentimiento nuevo específico para eso.
+
 ## Opción 20 (nueva, agregada 29 ago 2026) — Diversificar por tipo de trámite dentro de España, no por país
 
 Mariano prefiere esto a Portugal: sumar nacionalidad, arraigos, y trámites para gente que quiere

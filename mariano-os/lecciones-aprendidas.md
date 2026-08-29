@@ -127,3 +127,19 @@ organización — hace falta el tiempo real, reservado a propósito, para poder 
 tiempo, el desorden se vuelve invisible porque nunca hay una pausa para mirarlo de conjunto.
 
 **Aplicación a futuro**: todavía sin cerrar — no se completa por inferencia.
+
+## Lección 5 — Ser cristiano no exime de la ley del mundo ni de la necesidad de ser organizado (29 ago 2026)
+
+**Lo que dice, en sus propias palabras**: ser cristiano no lo exime de la ley del mundo — las leyes
+que hay en España, y la necesidad de ser organizado y planificar, siguen siendo aplicables por más
+que Dios sea su rey y su pastor. Si es negligente o necio en la empresa, no lo salva el hecho de ser
+cristiano, servidor o ungido — tiene que seguir los proverbios y ser sabio, no depender de que la
+misericordia tape todos sus errores de desorganización.
+
+**Es la síntesis explícita de las lecciones 1, 3 y 4**: acá lo dice como principio general y
+terminado, no como un caso puntual — cierra el hilo que venía construyendo desde la Lección 1
+(sabiduría vs. depender de la misericordia) y la Lección 3 (lo fiscal/legal como parte de lo que
+hay que cumplir con seriedad, no como algo aparte de lo espiritual). Vale la pena leer las lecciones
+1 a 5 como una sola idea desarrollada en partes, más que como cinco lecciones independientes.
+
+**Aplicación a futuro**: todavía sin cerrar — no se completa por inferencia.

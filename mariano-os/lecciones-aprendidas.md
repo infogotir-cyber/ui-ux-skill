@@ -46,6 +46,9 @@ una lección nueva.
     siempre pierde alguna vez. *(Lección 14)*
 18. No toda delegación es un error — delegar la parte correcta, a la persona correcta, con el
     alcance claro, es de lo más rentable que se puede hacer. *(Lección 15)*
+19. Enfocar es necesario, pero casarse con el enfoque es el mismo error vestido de estrategia — hay
+    que seguir bajando un nivel más cada vez. *(Lección 16)*
+20. Antes de sumar gente, preguntate si lo que hace falta es mejorar el proceso. *(Lección 16)*
 
 ## Lección 1 — Llevar información organizada de todo, en tiempo real, no depender de la memoria ni la buena voluntad (29 ago 2026)
 
@@ -370,3 +373,39 @@ queda planteado en general; falta que Mariano diga si quiere aplicarlo a algo co
 
 **Proverbio**: no toda delegación es un error — delegar la parte correcta, a la persona correcta,
 con el alcance claro, es de lo más rentable que se puede hacer.
+
+---
+
+## Lección 16 — No atacar todos los frentes a la vez; no casarse con un análisis; optimizar procesos antes que sumar gente (29 ago 2026)
+
+**Primera parte — enfocar, pero sin casarse con el enfoque**: da como ejemplo real el pasaje de
+hacer nacionalidad, residencia, visados y estancias (todo a la vez) a concentrarse en visado y
+estancia, por ser lo que mejores resultados daba (coincide con la recalibración de servicios ya
+documentada en `comercial/CLAUDE.md` sección 1.1). Pero es explícito en que no hay que "casarse"
+con ese análisis — hay que seguir analizando todo el tiempo, y bajar un nivel más de profundidad
+cada vez que se pueda: dentro de los visados, qué países dan mejor resultado; dentro de las
+estancias, de qué países conviene que vengan los clientes o cómo conviene armar el servicio; qué
+cursos generan más resultados y menos problemas después. Mismo criterio aplicado también al
+marketing — analizar constantemente si la estrategia está funcionando, no asumirlo.
+
+**Segunda parte — optimizar procesos antes que sumar gente**: la optimización de procesos es
+fundamental. Identifica una trampa común: uno cree que necesita más empleados, cuando en realidad
+lo que necesita es mejorar los procesos — ahí es donde suele haber "baches", los lugares donde se
+pierde información, productividad, y mucho más en general.
+
+**Conecta directamente con lecciones anteriores**: la segunda parte es, en esencia, la Lección 2
+(incorporar gente sin base real para saber si era el momento) llevada de un caso propio a un
+principio general de negocio — la misma trampa que él mismo sufrió, nombrada ahora como algo que
+cualquiera puede caer en ella. La primera parte conecta con la Lección 8 (una eficiencia aparente
+puede tapar un problema real): acá el riesgo es el opuesto — un análisis que fue cierto una vez
+("visado y estancia dan más resultado") se puede volver una verdad vieja si nadie lo vuelve a
+mirar, mismo patrón que la Lección 12 (una cifra que nadie revisa se convierte en costumbre).
+
+**Aplicación a futuro**: todavía sin cerrar — no se completa por inferencia. Falta que Mariano diga
+si esto se traduce en una cadencia concreta de revisión (ej. cada cuánto se vuelve a mirar qué
+segmento de visado/estancia da más resultado) o en qué "baches" de proceso identifica hoy como
+prioritarios.
+
+**Proverbio**: enfocar es necesario, pero casarse con el enfoque es el mismo error vestido de
+estrategia — hay que seguir bajando un nivel más cada vez. Y antes de sumar gente, preguntate si lo
+que hace falta es mejorar el proceso.

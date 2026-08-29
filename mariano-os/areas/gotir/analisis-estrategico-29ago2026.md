@@ -212,10 +212,12 @@ esa base. Tres caminos posibles a evaluar, no excluyentes entre sí:
 1. **Venderles leads de estudiantes que buscan estancia** — mismo modelo de venta de leads ya
    discutido (Opción 20 refinada), pero con comprador real e identificado a escala (400 firmas), no
    una promesa abstracta.
-2. **Venderles el sistema que GOTIR ya construyó** (GHL + funnels + guion de ventas +
-   automatizaciones) — es la Opción 16 original de la lista, que hasta ahora era "buena idea sin
-   canal claro de distribución". Con Javier de puente a 400 estudios, aparece una distribución real
-   en vez de mercado frío — cambia el cálculo de si vale la pena construirlo.
+2. ~~**Venderles el sistema que GOTIR ya construyó**~~ — **descartado explícitamente por Mariano
+   (29 ago 2026)**: no quiere vender/licenciar el sistema en sí (GHL + funnels + guion +
+   automatizaciones), porque una vez que un estudio lo ve, no es tan difícil de copiar. Prefiere
+   que el sistema quede propio y no expuesto — la forma de monetizarlo es el punto 3 de abajo
+   (ofrecer el servicio operado por GOTIR, cobrando por el resultado), nunca vendiendo o mostrando
+   el mecanismo en sí.
 3. **Ofrecerles ejecutar la parte que a ellos los satura** — el mismo modelo que le funcionó a
    Mariano con María/Sebastián (Lección 15: delegar el seguimiento/presentación por precio fijo y
    alcance acotado), pero invertido: GOTIR se convierte en el "Sebastián" de otros estudios
@@ -292,13 +294,30 @@ funciona de GOTIR, y tiene que dejarle margen real para Golden Rica y el ministe
 ser **dos motores separados, alimentados por la misma entrada de leads**, cada uno haciendo lo que
 mejor sabe hacer:
 
-**Motor 1 — Retail B2C, estancia/visado, protegido a propósito (tu tiempo, tu margen más alto)**
-El embudo curso→llamada (solo con quien ya pagó)→acompañamiento a menor precio, que armaron hoy
-mismo. Corre sobre el perfil de cliente que ya identificaste como el tuyo (Lección 18: gente que
-empieza de cero, presupuesto ajustado — no el segmento de alto poder adquisitivo tipo Dana). Tus
-3-4 horas diarias, deliberadamente acotadas, con cada hora dejando 300-500€+ por cliente porque son
-personas que ya pusieron dinero antes de hablar con vos. Esto es lo que sostiene la caja de corto
-plazo y protege lo que ya sabés hacer mejor que nadie: cerrar una venta bien hecha, cara a cara.
+**Motor 1 — Retail B2C, mismo patrón aplicado a los 4 trámites que GOTIR sí ejecuta (tu tiempo,
+tu margen más alto)**
+El embudo curso→llamada (solo con quien ya pagó)→acompañamiento a menor precio, generalizado por
+Mariano el mismo día a **visados, estancias, modificaciones y renovaciones** — no solo estancia. En
+cada uno, el mismo patrón de ingreso en capas: curso (información + materiales) + comisión del
+centro de formación cuando aplica + margen del acompañamiento del abogado (más económico que antes,
+pero igual rentable). Corre sobre el perfil de cliente que ya identificaste como el tuyo (Lección
+18: gente que empieza de cero, presupuesto ajustado — no el segmento de alto poder adquisitivo tipo
+Dana). Tus 3-4 horas diarias, deliberadamente acotadas, con cada hora dejando 300-500€+ por cliente
+porque son personas que ya pusieron dinero antes de hablar con vos. Esto es lo que sostiene la caja
+de corto plazo y protege lo que ya sabés hacer mejor que nadie: cerrar una venta bien hecha, cara a
+cara.
+
+**Detalle nuevo, agregado el mismo día — el curso de modificación (cuenta ajena y cuenta propia)**:
+- **Cuenta ajena** (modificación por trabajo por cuenta de un empleador): el curso se centra en
+  requisitos e instructivos descargables — hay mucha desinformación real, y las empresas
+  contratantes suelen tener dudas puntuales. Incluye una **llamada con el gestor o con la empresa**
+  para resolver esas dudas — mismo mecanismo que el curso de estancia (llamada solo con quien ya
+  pagó).
+- **Cuenta propia** (modificación a autónomo/emprendedor): el curso incluye un **modelo de plan
+  financiero y plan de negocio** — requisito real del trámite, y algo que Mariano cree que se puede
+  vender muy bien como producto de información aparte de la presentación del abogado.
+- En los dos casos, el acompañamiento del abogado se vende **más económico** que el precio actual,
+  pero sigue dejando margen — mismo criterio de capas ya aplicado a estancia.
 
 **Motor 2 — Red B2B, todo lo demás, escalable sin tu tiempo**
 Construido sobre algo que ya existe, no una idea de cero: el documento de alianzas ya armado y
@@ -314,7 +333,10 @@ Adentro de este motor conviven tres productos, no uno solo:
 3. **Servicio operativo para estudios saturados** ("ser el Sebastián de otros" — Opción 22, punto
    3, ahora ampliado con tu idea de sumar también el embudo de ventas completo, no solo el
    papeleo) — para los estudios que no solo quieren leads, quieren que alguien les resuelva el
-   problema comercial entero.
+   problema comercial entero. **Condición explícita de Mariano (29 ago 2026): esto se ofrece
+   siempre como servicio operado por GOTIR, nunca como sistema vendido o mostrado** — ver la
+   corrección de la Opción 22, punto 2, arriba. GOTIR cobra por el resultado (leads entregados,
+   clientes inscritos, embudo cerrado), pero el estudio nunca ve ni opera el mecanismo por dentro.
 
 **Por qué esta combinación y no otra**: es la única que separa limpio "lo que necesita tu tiempo
 personal" de "lo que necesita tu sistema" — exactamente la vuelta de tuerca que pediste. El Motor 1

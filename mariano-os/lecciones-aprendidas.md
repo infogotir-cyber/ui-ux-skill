@@ -56,6 +56,9 @@ una lección nueva.
 23. Una empresa no está quebrada porque duela sostenerla — está quebrada cuando sostenerla cuesta
     más que cerrarla. Todo lo demás es señal de que hay que optimizar, no de que hay que rendirse.
     *(Lección 19)*
+24. Antes de contratar, si no podés responder qué, cómo, para cuándo, cómo se registra y cómo se
+    controla — todavía no estás listo para contratar, estás listo para delegar tu propia
+    indecisión. *(Antes de contratar)*
 
 ## Autoengaños del emprendedor (sección aparte, empezada 29 ago 2026)
 
@@ -103,6 +106,41 @@ hay margen real (de tiempo y de cabeza) reservado para aprovecharlo.
 
 **Proverbio**: anotarte a algo no es formarte — formarte pasa cuando le das el tiempo real, no
 cuando pagás la inscripción.
+
+## Antes de contratar (checklist, sección aparte, empezada 29 ago 2026)
+
+Sección nueva pedida explícitamente por Mariano: antes de contratar a alguien, tiene que poder
+responder un set de preguntas concretas — no darle la libertad a la otra persona de decidir esto
+por su cuenta. Su razonamiento, en sus propias palabras: cuando uno no sabe lo que quiere, terminan
+otros decidiendo por uno, y muchas veces deciden mal, porque no conocen el proyecto ni la visión
+que uno tiene. Y cuando no hay control, el ser humano — de por sí — termina trabajando de menos o
+trabajando mal, no porque sea mala persona, sino porque nadie sabe si lo está haciendo o no.
+Conecta directo con la Lección 2 (delegar sin persona correcta, momento correcto y claridad no
+ahorra trabajo, lo multiplica) y con el Autoengaño 1 — esta es la versión operativa, en forma de
+checklist, de esos dos.
+
+### Checklist — preguntas que hay que poder responder antes de contratar a alguien
+
+1. **Qué quiero que haga esa persona.** No alcanza con una idea general del rol — hay que saber la
+   tarea concreta.
+2. **Cómo quiero que lo haga.** No darle la libertad total de decidir el método — si uno no define
+   el cómo, alguien más termina decidiéndolo, sin conocer el proyecto ni la visión completa.
+3. **Para cuándo quiero que lo haga.** Sin un plazo definido, no hay forma de saber si la persona
+   está en tiempo o atrasada en lo que se le pidió.
+4. **Cómo quiero que deje asentado lo que hizo.** Una estructura o método para que el trabajo hecho
+   quede registrado, no solo en la cabeza de quien lo hizo.
+5. **Cómo voy a controlar si esa persona está haciendo o no está haciendo lo que le pedí.** Sin una
+   estructura/método de control, uno no sabe — y sin que alguien sepa, es esperable (no es una
+   acusación, es una observación sobre la naturaleza humana) que el trabajo termine siendo de menos
+   o mal hecho.
+
+**Aplicación a futuro**: todavía sin cerrar — no se completa por inferencia. Falta que Mariano diga
+si quiere aplicar este checklist retroactivamente a algún rol que ya tiene delegado hoy (ej. María,
+Sebastián, Sabrina si vuelve a colaborar) o solo hacia adelante, antes de la próxima incorporación.
+
+**Proverbio**: antes de contratar, si no podés responder qué, cómo, para cuándo, cómo se registra y
+cómo se controla — todavía no estás listo para contratar, estás listo para delegar tu propia
+indecisión.
 
 ## Lección 1 — Llevar información organizada de todo, en tiempo real, no depender de la memoria ni la buena voluntad (29 ago 2026)
 

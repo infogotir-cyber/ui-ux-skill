@@ -230,6 +230,49 @@ automatización, significaría menos margen por venta mientras todo el trabajo l
      chequeo diario 20:00; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago,
      chequeo diario 18:00; 28 ago, chequeo diario 18:00).
 
+### GOTIR — Tracker de próximos cierres (creado 29 ago 2026, a pedido explícito de Mariano)
+
+Mariano pidió esto tras una corrección fuerte: los barridos comerciales estaban siendo superficiales
+y se le pasaban casos reales cerca de cerrar (Marylaura Guerrero, Maryi Castañeda — antes anotada
+por error como "Margie", **corregido 29 ago 2026: es Maryi Castañeda**, contact_id
+`xdGJBMJg9IavPGR1Oi4a` — sin match con ningún "Margie/Margarita" real, era un error de transcripción
+del nombre), Mariela Pérez y Enrique Donna. Instrucción textual: *"necesito que todo el tiempo
+estemos atentos de los del próximo cierre, y que también haya un barrido para los demás próximos
+cierres... después que haya un barrido con los que ya habíamos quedado en esta semana en hablar,
+luego los que están esperando respuesta de mi parte."* Esto fija un **orden de prioridad
+permanente** para todo barrido de Fase C (ver `direcciones/comercial/CLAUDE.md` sección 13.8) — este
+tracker es la lista viva de los tres grupos, con datos reales de GHL (no inventados), a mantener
+actualizada en cada barrido, no un documento de una sola vez.
+
+**Grupo 1 — Los del próximo cierre (más calientes, más cerca de pagar)**
+
+| Contacto | Oportunidad | Etapa | Último estado real (29 ago 2026) |
+|---|---|---|---|
+| Sara Sofía Gutierrez Villa | 825€, `aYteBUaMG8PLVxbt8uV1` | **Pronto pago** (la más avanzada antes de Pagado) | Sin cambio de etapa desde el 20 ago — la oportunidad más avanzada de todo el pipeline vivo, revisar por qué no se movió a Pagado. |
+| Maryi Castañeda | 2.475€ (familia x3), `OXCJcSWxG99B6np8qlf4` | Información y contrato enviado | Confirmó por chat (26 ago) que el 50% es por los 3; mandó un audio el 26 ago sin transcribir (limitación técnica conocida); Mariano/GOTIR le escribió genérico "Hola Maryi" + "me avisás si tenés dudas" el 28 ago, sin retomar el contenido real del audio. **Pendiente real: escuchar/pedir resumen del audio del 26 ago antes de insistir de nuevo.** |
+| Héctor Ojeda | 825€, `eyM4gRv1FRvbYfC4Pusi` | Información y contrato enviado | Llamado por teléfono el 26 ago (barrido de cobro), sin resultado confirmado. Etapa sin moverse desde el 12 ago (17 días). |
+| Luisana Junguittu | 825€, `y1FkCgvdCj61Eosz5sr9` | Información y contrato enviado | Llamada por teléfono el 26 ago, sin resultado confirmado. Etapa sin moverse desde el 12 ago. |
+| Ángel Villalba | 825€ + inscripción 890€, `4KjEeYnCseQYw4EHgETY` | Llamada realizada | Quedó en "una semana" (28 ago) para reorganizarse antes de agendar el pago — sin fecha exacta (ver `patrones-llamadas.md`, fila 7). Etapa recién actualizada el 28 ago. |
+
+**Grupo 2 — Prometieron seguimiento "esta semana"**
+
+Ninguno con una promesa explícita de "esta semana" activa a día de hoy (29 ago) — el candidato más
+cercano es Ángel Villalba ("una semana" desde el 28 ago), ya listado en el Grupo 1 por ser también
+uno de los más calientes. Este grupo queda vacío a propósito, no por no revisarlo — se completa en
+cada barrido con lo que surja de las llamadas de esa semana.
+
+**Grupo 3 — Esperando respuesta de Mariano (el cliente hizo la última movida)**
+
+| Contacto | Oportunidad | Qué está esperando |
+|---|---|---|
+| Enrique Esmilse Donna | 550€ "Visado" `mfjQpOhOJcX3oLF77mkC` (⚠️ discrepancia: la oportunidad sigue como "Visado" 550€ y en etapa "Llamada agendada" desde mayo — no refleja el caso real, que es estancia por estudios a 750€×2 para él y su hija, ya con nota completa cargada — pendiente actualizar la oportunidad, no solo el tag, cuando Mariano confirme) | Mariano ya tiene la respuesta lista (825€ precio real, 750€×2 para él y su hija, "muy buen precio" a definir para el resto) — dijo "lo mando yo" el 28 ago. Falta que lo mande. |
+| Felipe Joaquín Nogues Martinena | 670€ visado, `vygsGYGMTHbPtw4V0KnA` | Mensaje de seguimiento (inscripción) mandado el 26 ago, sin respuesta. Etapa sin moverse desde el 12 ago. |
+| Mariela Pérez | 550€ visado, `6vVdeSpGBjntbiLyi2a5` | Mensaje de seguimiento mandado el 26 ago, sin respuesta. ⚠️ Etapa "Pronto pago" pero sin moverse desde el **22 de junio** — más de 2 meses estancada pese a estar en una etapa avanzada, revisar si sigue siendo un caso real o se enfrió del todo. |
+| Marylaura Guerrero | 750€, `ySVES9NUeMTbZfuRV9vt` | Dijo explícitamente "preferimos esperar un poco más" (24 ago, imprevisto de su papá) — **a propósito sin presionar**, seguimiento sugerido recién semana del 7-10 sept. No es una fuga, es una decisión ya tomada de respetar su tiempo. |
+
+- Estado: **en curso — tracker recién creado, primera foto real tomada el 29 ago 2026**.
+- Recordado: 1 vez (29 ago 2026, creación).
+
 ### GOTIR — barrido de cobro urgente (26 ago 2026, por la crisis de caja)
 
 **Héctor Ojeda (825€) y Luisana Junguittu (825€)** — llamados por teléfono hoy (no por texto, tras

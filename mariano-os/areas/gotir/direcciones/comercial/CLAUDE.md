@@ -1461,3 +1461,25 @@ retroactivo a algo mucho más chico que "todos, meses" — por ejemplo, presupue
 últimos 30 días (mismo criterio que sección 8.3), y ahí sí revisar los resultados juntos antes de
 decidir si vale la pena ir más atrás. Queda anotado como paso futuro en `pendientes-activos.md`, no
 descartado.
+
+### 13.8 Orden de prioridad obligatorio del barrido — instrucción explícita de Mariano (29 ago 2026)
+
+Corrección fuerte de Mariano tras un primer barrido incompleto (se habían pasado casos reales como
+Marylaura Guerrero, Maryi Castañeda, Mariela Pérez y Enrique Donna): el barrido de la Fase C no
+puede ser una revisión superficial de "lo que se ve fresco" — tiene que recorrer **todo** el
+pipeline vivo (todas las etapas de Pre-venta salvo Pagado + Seguimiento activo, sección 13.7) en
+este orden explícito, sin saltarse ninguno de los tres grupos:
+
+1. **Los del próximo cierre** — contactos más calientes, más cerca de pagar (🔥caliente,
+   prioridad-cierre, etapas avanzadas como Pronto pago / Información y contrato enviado con
+   decisión ya tomada). Van primero siempre.
+2. **Los que quedaron en hablar "esta semana"** — cualquier compromiso de seguimiento con ventana
+   de tiempo corta y explícita, aunque no esté en una etapa avanzada del pipeline.
+3. **Los que están esperando respuesta de Mariano** — el cliente hizo la última movida (preguntó
+   algo, mandó un audio, confirmó algo) y quedó pendiente que Mariano conteste, no al revés.
+
+El tracker vivo de estos tres grupos, con contactos y oportunidades reales, vive en
+`pendientes-activos.md`, sección "GOTIR — Tracker de próximos cierres" — se actualiza en cada
+barrido de la Fase C, no es un documento de una sola vez. Este orden reemplaza cualquier criterio
+anterior más informal ("lo que se ve fresco primero") — de ahora en más es la secuencia obligatoria
+de todo barrido, manual o automatizado.

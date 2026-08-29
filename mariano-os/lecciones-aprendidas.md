@@ -157,3 +157,26 @@ teniendo el tiempo, hay una tentación real de evitar deliberadamente lo incómo
 también es una decisión, no solo una consecuencia del desorden.
 
 **Aplicación a futuro**: todavía sin cerrar — no se completa por inferencia.
+
+## Lección 7 — Confundir "subsistir" con "estabilidad" hizo que dejara de buscar crecer; todo lo que no crece, se muere (29 ago 2026)
+
+**Lo que pasó**: dentro de sus decisiones emocionales, ver que estaba subsistiendo — al menos
+manteniéndose y más o menos llegando a pagar las cosas — le hizo creer que ya tenía estabilidad. A
+partir de esa creencia, dejó de buscar nuevas estrategias e ideas, y se desequilibró buscando más
+tiempo para servir, viajar, meterle más al ministerio.
+
+**La distinción que hace, con cuidado (autocrítica, no una crítica al ministerio en sí)**: es
+explícito en que ese mayor tiempo al ministerio no fue porque Dios se lo pidiera, sino por ganas
+propias — aclara que también le apasiona lo que hace para Dios, no lo dice como si el ministerio
+fuera el problema. El problema real que identifica es otro: mientras se volcaba a eso, descuidó
+analizar cómo seguir creciendo en lo empresarial. Se conformó con trabajar online, tener tiempo
+libre y algo de plata — y cierra con una frase que deja como principio: **todo lo que no crece, se
+muere**.
+
+**Conecta con las lecciones anteriores**: variante nueva del patrón de decidir por percepción
+(Lección 1) — acá la percepción engañosa no fue sobre el negocio en sí, sino sobre su propia
+situación ("estoy bien, esto ya es estable") — y la misma dificultad para reservar tiempo real de
+análisis ya nombrada en la Lección 4, ahora explicando además en qué se fue ese tiempo que no se usó
+para analizar.
+
+**Aplicación a futuro**: todavía sin cerrar — no se completa por inferencia.

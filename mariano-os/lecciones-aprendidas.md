@@ -46,3 +46,28 @@ información real) en vez de depender de la misericordia para tapar los errores 
 propio `mariano-os` es, en los hechos, la aplicación concreta de este principio — sistema de
 memoria y proceso organizados en vez de depender de acordarse solo o de sentir cómo viene el
 negocio.
+
+## Lección 2 — Delegar/incorporar gente sin tener la información real para saber si era el momento (29 ago 2026)
+
+**Lo que pasó**: información correcta y completa también le hubiera permitido darse cuenta de
+cuándo era el momento real de tomar ciertas decisiones. Un error concreto que identifica: creer que
+no podía solo con todo, y a partir de esa creencia incorporar gente a la empresa — nombra a Belén
+(Campana), Pamela (Jordan), Sabrina (Navarro) y otros comerciales — que fueron ahogando su
+capacidad real de caja. Reconoce que muchas veces les pagó tarde, y que eso las perjudicó en sus
+propias finanzas, generándoles estrés y angustia.
+
+**Cómo lo procesa (autocrítica directa, en sus propias palabras)**: siente que no supo representar
+bien al cristianismo como jefe en esas situaciones. Es explícito en la causa raíz: su desorden y la
+falta de información fueron lo que le hicieron creer que ya era tiempo de delegar, cuando en
+realidad no lo era — todavía podía hacer muchas cosas él mismo. No enmarca esto como "incorporar
+gente estuvo mal en sí" sino como una decisión tomada sin la base real (de caja, de capacidad) que
+hacía falta para saber si el momento era el correcto.
+
+**Conecta directamente con la Lección 1**: es el mismo patrón (decidir por percepción — "sentía que
+podía", "creía que no podía solo" — en vez de por información real) aplicado a una decisión de
+mucho más peso y con consecuencias sobre terceros, no solo sobre él.
+
+**Aplicación a futuro**: todavía sin cerrar — no se completa por inferencia. Falta que Mariano diga
+si esto se traduce en un criterio concreto para decisiones de incorporación futura (ej. no
+incorporar gente sin un colchón de caja verificado, o un umbral de facturación sostenido antes de
+sumar un rol nuevo).

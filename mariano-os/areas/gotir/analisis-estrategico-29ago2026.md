@@ -172,6 +172,58 @@ del resultado, con abogados saturados que hacían poco seguimiento. Si esta opci
 tendría que resolverse con el modelo que sí funcionó (Lección 15 — María/Sebastián, alcance acotado
 y precio fijo por caso) y no repetir el modelo de comisión sin control que ya falló una vez.
 
+## Ideas B2B evaluadas y despriorizadas por Mariano mismo (29 ago 2026)
+
+Mariano pidió sumar B2B a la mesa (empresas que traen empleados calificados, cursos para gente que
+se quiere dedicar a esto) y, al analizarlas él mismo, las despriorizó — quedan anotadas, no
+descartadas del todo, por si cambia el contexto:
+
+- **Visado PAC (Profesional Altamente Cualificado)** — para casos como hospitales buscando médicos,
+  camioneros que necesitan CAP, gruistas, etc. Aclarado por Mariano: se podría cobrar más por caso,
+  pero el volumen de clientes potenciales es chico, y hoy no tiene contactos reales en ese mercado.
+  Despriorizado por él mismo con ese razonamiento.
+- **Vender cursos/metodología a otros gestores que se quieren dedicar a esto** (era la opción 6/16
+  de la lista original) — Mariano cuestiona el tamaño real del mercado ("¿cuánta gente se quiere
+  dedicar a esto?"). Despriorizado por la misma razón: círculo chico, no está claro que deje mucho
+  dinero.
+
+## Opción 21 (nueva, 29 ago 2026) — Modificación de estancia a residencia (cuenta ajena/propia), como producto propio
+
+Mariano identifica esto como una oportunidad real, tratable con el mismo formato que estancia
+(requisitos + acompañamiento). Dos fuentes de clientes:
+- **La base histórica de +2.000 contactos de GOTIR** — ya la teníamos como "reactivar la base"
+  (Opción 4), pero genérica. Ahora tiene un producto natural y lógico: quien ya hizo su estancia con
+  GOTIR, este es el paso siguiente lógico de su propio proceso migratorio — mejor conversión
+  esperable que una reactivación genérica, porque ya confían en GOTIR y ya vivieron el proceso una
+  vez.
+- **Clientes de otras agencias/agentes que hicieron solo la primera parte (el visado) pero no
+  ofrecen la segunda** — Mariano menciona específicamente a Wilmen (competidor ya documentado en
+  `comercial/CLAUDE.md`) y agentes en países de origen — comprar/conseguir esas bases de datos como
+  fuente de leads para este servicio.
+
+## Opción 22 (nueva, 29 ago 2026) — Explotar la base de 400 estudios jurídicos de Instituto Maude (vía Javier)
+
+Dato real y concreto, no hipotético: GOTIR tiene convenio con el **Instituto Maude** (una de las
+escuelas ya documentadas — "Opción 2" en el bloque de las 3 escuelas de `comercial/CLAUDE.md`
+sección 6.1/marketing). **Javier**, contacto de Maude, le dijo a Mariano que tiene el contacto de
+**400 estudios jurídicos** en España que hacen estancias de estudios con ellos, y puede compartir
+esa base. Tres caminos posibles a evaluar, no excluyentes entre sí:
+
+1. **Venderles leads de estudiantes que buscan estancia** — mismo modelo de venta de leads ya
+   discutido (Opción 20 refinada), pero con comprador real e identificado a escala (400 firmas), no
+   una promesa abstracta.
+2. **Venderles el sistema que GOTIR ya construyó** (GHL + funnels + guion de ventas +
+   automatizaciones) — es la Opción 16 original de la lista, que hasta ahora era "buena idea sin
+   canal claro de distribución". Con Javier de puente a 400 estudios, aparece una distribución real
+   en vez de mercado frío — cambia el cálculo de si vale la pena construirlo.
+3. **Ofrecerles ejecutar la parte que a ellos los satura** — el mismo modelo que le funcionó a
+   Mariano con María/Sebastián (Lección 15: delegar el seguimiento/presentación por precio fijo y
+   alcance acotado), pero invertido: GOTIR se convierte en el "Sebastián" de otros estudios
+   jurídicos que no saben llevar un sistema de funnels — cobra por caso o por mes, el estudio sigue
+   siendo la cara legal ante el cliente, GOTIR es el motor operativo detrás. Aprovecha exactamente
+   lo que Mariano ya sabe hacer mejor que nadie (el sistema), sin depender de que él cierre ventas
+   personalmente.
+
 ## Pendiente de decisión
 
 Todavía no hay ninguna decisión tomada sobre las 19 opciones + la 20 nueva — este documento es

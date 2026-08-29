@@ -13,6 +13,38 @@
 > No se inventa la "aplicación futura" de una lección si él todavía no la terminó de decir — se deja
 > anotado explícitamente qué falta cerrar.
 
+## Proverbios (síntesis rápida, para tener siempre presente)
+
+Destilado de cada lección en una frase memorizable — sirve para repasar rápido antes de decidir
+algo, sin tener que releer el desarrollo completo de cada una. Se actualiza cada vez que se cierra
+una lección nueva.
+
+1. Lo que no se anota, se olvida; lo que se olvida, no se puede decidir bien. *(Lección 1)*
+2. No incorporás gente para tapar tu ansiedad — incorporás cuando la información te lo confirma.
+   *(Lección 2)*
+3. Delegar sin persona correcta, momento correcto y claridad no ahorra trabajo: lo multiplica.
+   *(Lección 2)*
+4. Lo fiscal no es aparte de lo espiritual — al César lo que es del César. *(Lección 3)*
+5. Pagarle a un gestor no te exime de entender lo mínimo; la responsabilidad no se delega.
+   *(Lección 3)*
+6. Decidir con la caja vacía negocia tus valores; decidir con margen los sostiene. *(Lección 4)*
+7. El desorden no se nota solo — hace falta pararse a mirarlo de conjunto. *(Lección 4)*
+8. Ser cristiano no exime de la ley del mundo ni de la sabiduría práctica. *(Lección 5)*
+9. El éxito exige hacer lo que no gusta — evitar lo incómodo también es una decisión. *(Lección 6)*
+10. Subsistir no es crecer — todo lo que no crece, se muere. *(Lección 7)*
+11. Cuando algo "funciona" gracias al sacrificio no reconocido de alguien, no es eficiencia — es
+    una fuga tapada. *(Lección 8)*
+12. Lo que se posterga sin fecha, no se posterga — se cancela sin decirlo. *(Lección 9)*
+13. Que algo funcione hoy no prueba que esté resuelto — prueba que todavía no falló. *(Lección 10)*
+14. Que el sistema diga "hecho" no significa que pasó — hay que mirar el resultado, no solo la
+    confirmación. *(Lección 11)*
+15. Una cifra que nadie vuelve a mirar deja de ser un dato y se convierte en una costumbre.
+    *(Lección 12)*
+16. Un precio incorrecto no se vuelve verdad por repetirse — se vuelve una promesa que después toca
+    romper. *(Lección 13)*
+17. Lo que solo vive en tu cabeza compite por espacio con todo lo demás que también vive ahí — y
+    siempre pierde alguna vez. *(Lección 14)*
+
 ## Lección 1 — Llevar información organizada de todo, en tiempo real, no depender de la memoria ni la buena voluntad (29 ago 2026)
 
 **Lo que pasó**: durante años, Mariano lideró GOTIR sin una estructura real para almacenar y
@@ -199,3 +231,104 @@ falsa sensación de eficiencia que ocultó problemas reales (impuestos atrasánd
 resolverlos — la "eficiencia aparente" fue, en los hechos, una fuga tapada, no una fuga resuelta.
 
 **Aplicación a futuro**: todavía sin cerrar — no se completa por inferencia.
+
+---
+
+**Lecciones 9 a 14 — identificadas por el sistema, no dictadas por Mariano.** A pedido explícito
+suyo (29 ago 2026: *"con todo lo demás que sabes de GOTIR, ¿hay enseñanzas o errores que podríamos
+incluir?"*), estas seis se construyeron a partir de la historia real ya documentada de GOTIR en
+`comercial/CLAUDE.md` y el resto del sistema — no de algo que Mariano haya contado él mismo en esta
+conversación. Mariano las revisó y confirmó que quería incluirlas, con el mismo tratamiento que las
+propias: fecha, desarrollo, y un proverbio de cierre. Se marcan así, y no como "Lección de Mariano",
+para que quede claro de dónde vino cada una si alguna vez hace falta revisar la fuente.
+
+## Lección 9 — Un "en construcción" que dura meses es, en los hechos, la decisión de no construirlo (29 ago 2026)
+
+**La evidencia**: el módulo de GHL dentro del workflow de n8n "JARVIS - Go High Level" dice
+*"Este módulo está en construcción"* desde antes de mayo de 2026 — sigue exactamente igual hoy. La
+automatización de "esperando respuesta" de la Propuesta 4 (Fase A) está diseñada con una spec
+funcional completa desde el 20/21 de agosto, y sigue sin construirse. En ningún caso faltó saber
+qué había que hacer — lo que faltó fue el rato de sentarse a hacerlo, y ese rato nunca llegó solo.
+
+**El patrón**: "lo hacemos después" funciona como permiso para no volver a mirarlo. No es que el
+proyecto se haya cancelado — nadie decidió activamente no construirlo — pero el resultado práctico
+es idéntico a haberlo cancelado. Es la misma dinámica que la Lección 6 (evitar lo incómodo es una
+decisión, aunque no se sienta como tal) aplicada específicamente a la infraestructura técnica.
+
+**Proverbio**: lo que se posterga sin fecha, no se posterga — se cancela sin decirlo.
+
+## Lección 10 — Un sistema que depende de que una sola persona lo entienda es frágil, no resuelto (29 ago 2026)
+
+**La evidencia**: gran parte de lo técnico de GOTIR lo hacía Sabrina; cuando dejó de trabajar ahí,
+Mariano se quedó sin saber cómo continuarlo ni corregirlo (motivación de fondo de todo este mismo
+proyecto, `mariano-os/CLAUDE.md`). No fue un problema de que Sabrina hiciera mal su trabajo — al
+contrario, lo hacía bien — el problema fue que el conocimiento vivía solo en ella, no en ningún
+lado que sobreviviera a que se fuera.
+
+**El patrón**: algo puede funcionar perfecto y seguir siendo una fuga latente si depende de una sola
+persona irremplazable — la prueba de si un sistema está resuelto no es "¿funciona hoy?" sino "¿sigue
+funcionando si esta persona se va mañana?".
+
+**Proverbio**: que algo funcione hoy no prueba que esté resuelto — prueba que todavía no falló.
+
+## Lección 11 — Un "entregado" no significa que llegó: confirmar la ejecución no es confirmar el resultado (29 ago 2026)
+
+**La evidencia**: durante semanas, `POST /conversations/messages` devolvía `201` (éxito) y los
+workflows de GHL marcaban "Ejecutado", mientras los mensajes reales a Sebastián Gimenez, Frank Sojo,
+Pablo Guerra, Regina Epifanio y otros nunca llegaban — el canal de WhatsApp estaba roto por dentro,
+pero ningún panel lo avisaba. Costó relaciones reales con clientes antes de que alguien lo
+investigara a fondo, porque todo el sistema "decía" que estaba funcionando bien.
+
+**El patrón**: un indicador de proceso (se envió, se ejecutó, se guardó) no es lo mismo que un
+indicador de resultado (llegó, se leyó, funcionó) — confiar en el primero sin verificar el segundo
+es exactamente el mismo error de fondo que la Lección 8 (la eficiencia aparente que tapaba la deuda
+real), aplicado a infraestructura en vez de a personas.
+
+**Proverbio**: que el sistema diga "hecho" no significa que pasó — hay que mirar el resultado, no
+solo la confirmación.
+
+## Lección 12 — Un dato que se repite sin revisar se vuelve mentira por inercia, no por mala intención (29 ago 2026)
+
+**La evidencia**: el marketing de GOTIR dice "5+ años de experiencia" cuando la estimación real de
+Mariano es ~2 años, y "150 familias atendidas" cuando su propia cifra es más cercana a ~20 negocios
+— discrepancias detectadas y documentadas hace semanas, todavía sin corregir, sin que nadie las
+haya vuelto a mirar desde entonces.
+
+**El patrón**: nadie mintió a propósito en ningún momento — el dato fue verdad alguna vez, o casi, y
+después simplemente nadie volvió a confirmarlo mientras el negocio seguía cambiando debajo. Un dato
+sin fecha de revisión tiende, con el tiempo, a alejarse solo de la realidad.
+
+**Proverbio**: una cifra que nadie vuelve a mirar deja de ser un dato y se convierte en una
+costumbre.
+
+## Lección 13 — Un precio mal comunicado a un cliente es una deuda de confianza, no un detalle administrativo (29 ago 2026)
+
+**La evidencia**: pasó dos veces en esta misma ventana de trabajo — a Milagros se le mencionó
+"780€" en una llamada cuando el documento de precios dice 750€, sin resolver todavía cuál es el
+correcto; a Enrique Donna se le comunicó el precio de estancia (825€/750€) cuando su caso real era
+de visado (668€). En los dos casos el error se detectó porque alguien volvió a mirar el chat real,
+no porque el proceso lo hubiera atrapado solo.
+
+**El patrón**: un precio es la parte del negocio donde un error chico se siente más grande — no
+solo hay que corregirlo, hay que corregirlo rápido, porque cada día que pasa es un día en que el
+cliente organiza su decisión (o su presupuesto) sobre un número que no es el real.
+
+**Proverbio**: un precio incorrecto no se vuelve verdad por repetirse — se vuelve una promesa que
+después toca romper.
+
+## Lección 14 — El seguimiento que vive solo en la cabeza de una persona se pierde apenas hay más de tres frentes abiertos (29 ago 2026)
+
+**La evidencia**: en la misma semana de este documento, Marylaura, Maryi, Enrique Donna y Mariela
+Pérez — todos casos reales cerca de cerrar — quedaron sin seguimiento no por desinterés, sino
+porque el "quién está por cerrar" vivía en la memoria de Mariano, y la memoria no escala con la
+cantidad de frentes abiertos. El baseline de julio de 2026 ya lo mostraba con un número duro: 40%
+de las llamadas realizadas ese mes perdió seguimiento después.
+
+**El patrón**: no es un problema de disciplina personal ni de que a Mariano "se le pase" por
+descuido — es matemático: la cantidad de cosas que una sola cabeza puede sostener activas al mismo
+tiempo tiene un techo, y GOTIR lo supera hace rato. La solución no es esforzarse más en recordar —
+es que el seguimiento viva en un lugar que no dependa de la memoria de nadie (que es, en los
+hechos, exactamente lo que este tracker que empezamos hoy mismo busca resolver).
+
+**Proverbio**: lo que solo vive en tu cabeza compite por espacio con todo lo demás que también vive
+ahí — y siempre pierde alguna vez.

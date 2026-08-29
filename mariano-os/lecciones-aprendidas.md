@@ -59,6 +59,9 @@ una lección nueva.
 24. Antes de contratar, si no podés responder qué, cómo, para cuándo, cómo se registra y cómo se
     controla — todavía no estás listo para contratar, estás listo para delegar tu propia
     indecisión. *(Antes de contratar)*
+25. Si no sabés si realmente necesitás a esa persona, si sabés hacer lo que le vas a pedir, y si su
+    aporte se paga solo — no estás por incorporar ayuda, estás por incorporar un problema con
+    sueldo. *(Antes de contratar)*
 
 ## Autoengaños del emprendedor (sección aparte, empezada 29 ago 2026)
 
@@ -134,13 +137,28 @@ checklist, de esos dos.
    acusación, es una observación sobre la naturaleza humana) que el trabajo termine siendo de menos
    o mal hecho.
 
+**Segundo bloque, agregado el mismo día — preguntas más de fondo, antes incluso de llegar a las
+operativas de arriba**: además de saber responder el qué/cómo/cuándo/registro/control, hay tres
+preguntas previas, más difíciles, que también hay que poder responder con honestidad:
+
+6. **¿Realmente necesito a esta persona, o es un deseo de sacarme trabajo de encima?** Distinguir
+   una necesidad real del negocio de las ganas de dejar de hacer algo incómodo.
+7. **¿Yo sé hacer lo que le estoy pidiendo, o quiero que sepa hacer algo que yo no sé — y por eso
+   no voy a poder controlarle?** Si no se domina la tarea que se delega, no hay manera real de
+   evaluar si el trabajo está bien hecho o no.
+8. **¿El aporte que esta persona va a traer alcanza para pagar su propio salario, o me estoy
+   metiendo en un problema nuevo?** No basta con que el rol "tenga sentido" en teoría — tiene que
+   pagarse solo con lo que genera, no restar de lo que ya hay.
+
 **Aplicación a futuro**: todavía sin cerrar — no se completa por inferencia. Falta que Mariano diga
 si quiere aplicar este checklist retroactivamente a algún rol que ya tiene delegado hoy (ej. María,
 Sebastián, Sabrina si vuelve a colaborar) o solo hacia adelante, antes de la próxima incorporación.
 
 **Proverbio**: antes de contratar, si no podés responder qué, cómo, para cuándo, cómo se registra y
 cómo se controla — todavía no estás listo para contratar, estás listo para delegar tu propia
-indecisión.
+indecisión. Y antes de eso: si no sabés si realmente necesitás a esa persona, si sabés hacer lo que
+le vas a pedir, y si su aporte se paga solo — no estás por incorporar ayuda, estás por incorporar
+un problema con sueldo.
 
 ## Lección 1 — Llevar información organizada de todo, en tiempo real, no depender de la memoria ni la buena voluntad (29 ago 2026)
 

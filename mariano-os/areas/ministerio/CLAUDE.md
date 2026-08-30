@@ -859,6 +859,34 @@ varios errores/inferencias apresuradas del sistema, antes de la reunión de log�
 - Archivo regenerado y reenviado a Mariano con estas correcciones — 33 celdas en azul (antes eran
   35, bajó porque se sacaron 2 marcas `GESTIONADO` indebidas).
 
+**Mensajes reales enviados al equipo de logística (30 ago 2026, noche, vía WhatsApp)** — versión
+final que Mariano mandó, distinta (más corta) que el borrador que se le había propuesto. Guardado
+tal cual se envió, no el borrador:
+
+- **A Marco Guanuchi**: (1) lo que trae Costa Rica (bandera España camisa, camisetas Ruge, gorra,
+  parche, etiquetas de mochilas x2) — pidió novedad de envío y si ya se les recordó por correo a
+  administración; (2) radios VHF y teléfono satelital — novedad de Juliana con el contacto;
+  (3) **transporte pastoral — NO era una pregunta, era una confirmación: "confirmado que lo presta
+  @Julio Cesar IGV"** — dato nuevo, transporte pastoral resuelto, lo presta Julio, no hace falta
+  seguimiento; (4) comida para las bolsas de provisiones — le pidió a Marco que confirme el monto
+  para agregarlo al presupuesto (no la lista detallada de compra). **No se incluyeron** en el
+  mensaje final: Caramelos Surtidos, Etiquetas de mochilas para servidores — quedan sin preguntar
+  todavía.
+  **Respuesta de Marco (mismo día, 2 veces)**: "Buenas noches Mariano mañana te paso el presupuesto
+  de las provisiones antes de la reunión" — Mariano confirmó ("Perfecto, gracias Marco! Buenas
+  noches"). Queda pendiente que Marco mande ese presupuesto antes de la reunión del 31 ago 9:00.
+- **A Julio**: (1) camión caja cerrada y furgoneta grande — confirmar con Jefferson si presta los
+  dos; (2) fuegos pirotécnicos con batería en frío — pedirle el precio para sumarlo al presupuesto.
+  **No se incluyó**: cinta reflectante nocturna — quedó sin preguntar.
+- **A David**: (1) cañas para antorchas — confirmar si habló con Jonatan; (2) pastillas para
+  encender fogata — pedirle el presupuesto; (3) platos cena del rey — definir con Richard
+  (regala/siembra/paga). **No se incluyó**: bolsa plástica negra para empacar — quedó sin preguntar.
+
+**Pendiente real que queda, no cubierto por ningún mensaje enviado**: Caramelos Surtidos, Etiquetas
+de mochilas para servidores (Marco), Cinta reflectante nocturna (Julio), Bolsa plástica negra para
+empacar (David) — ninguno de los 4 se le preguntó a nadie todavía, quedan abiertos para un próximo
+mensaje o para la reunión del 31 ago en persona.
+
 **Presupuesto final para Juliana/Administración (30/31 ago 2026)**: Mariano pidió por separado un
 excel limpio, solo con los ítems que ya tienen precio real, para mandarle a Juliana. Se armó, él lo
 simplificó (sacó la columna de vigencia y el ítem de contenido de bolsas — eso se agrega después

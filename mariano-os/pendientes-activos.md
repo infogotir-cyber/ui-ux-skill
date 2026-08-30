@@ -575,6 +575,25 @@ en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
      25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago, chequeo diario 18:00; 28
      ago, chequeo diario 18:00; 29 ago, chequeo diario 18:00; 30 ago, chequeo diario 18:00).
 
+9. **Ruge — mensajes enviados al equipo de logística (30 ago 2026, noche), esperando respuestas**
+   - Mariano mandó los mensajes finales (más cortos que el borrador propuesto) a Marco Guanuchi,
+     Julio César Navia y David Luzuriaga con las dudas reales de logística, filtradas a que la
+     comisión de revisión diga solo "LOGÍSTICA" (nada de Cocina/Producción/comisión doble). Detalle
+     completo de qué se mandó a cada uno en `areas/ministerio/CLAUDE.md`, sección "Mensajes reales
+     enviados al equipo de logística".
+   - **Respuesta de Marco (mismo día, 2 veces)**: "mañana te paso el presupuesto de las provisiones
+     antes de la reunión" — Mariano confirmó. Falta que Marco lo mande antes de la reunión del 31
+     ago 9:00.
+   - **Sin respuesta todavía**: Julio (camión/furgoneta con Jefferson, precio de fuegos
+     pirotécnicos) y David (contacto de Jonatan para las cañas, presupuesto de pastillas fogata,
+     definición con Richard sobre los platos).
+   - **4 ítems que quedaron sin preguntarle a nadie** (se cayeron entre el borrador y el mensaje
+     final): Caramelos Surtidos y Etiquetas de mochilas para servidores (Marco), Cinta reflectante
+     nocturna (Julio), Bolsa plástica negra para empacar (David) — retomar en la reunión del 31 ago
+     o en un próximo mensaje.
+   - Estado: **en curso — esperando presupuesto de Marco, y respuesta de Julio/David**.
+   - Recordado: 1 vez (30 ago 2026, creación).
+
 7. **Sistema de seguimiento 1:1 con discípulos FM4 — registro de fechas en marcha**
    - Detalle completo y tabla de registro en `areas/ministerio/CLAUDE.md`, sección 8.3. Mariano
      pidió que no pasen más de 3 semanas sin que se reúna individualmente con cada uno de sus

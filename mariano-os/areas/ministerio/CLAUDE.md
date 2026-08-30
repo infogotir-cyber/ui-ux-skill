@@ -814,6 +814,21 @@ sin borrar, pero no se editan ni se usan como fuente de ahora en más): `Ruge_re
 `Ruge_tareas_por_persona_19ago2026_FINAL_con_stock.xlsx`,
 `Ruge_tareas_por_persona_DEFINITIVO_19ago2026.xlsx`.
 
+**Actualización 30 agosto 2026**: Mariano compartió un export CSV del excel oficial de Marco Jurado
+tal como está hoy en la nube (columnas Estado actual/Checking parcialmente vacías) y pidió
+completarlo con todo lo que ya se sabe. Se cruzó contra `Presupuesto_Logistica_Ruge_24ago2026.xlsx`
+(que ya tenía actualizaciones del 28 ago no reflejadas en el excel de Marco: precios reales de bus,
+camión, rótulo luminoso, figuras, agua, antorchas LED, y el detalle de compra del contenido de las
+bolsas de provisiones) y se generó
+`areas/ministerio/recursos/INVENTARIO_2026_RUGE_actualizado_30ago2026.xlsx` — mismo archivo, 32
+filas con `Checking` completado (presupuestos reales, contactos pendientes, contradicciones sin
+resolver como la comisión de revisión de la pala metálica) y 3 filas movidas de `GESTIONANDO` a
+`GESTIONADO` (cañas para antorchas, platos cena del rey con logo, alargador eléctrico general —
+los tres con evidencia concreta de estar resueltos, no por inferencia). Entregado a Mariano para que
+lo suba a la nube reemplazando la versión que tenía. **Sigue pendiente, tarea propia de Mariano**:
+enviar el presupuesto (los ítems marcados `LISTO`/con precio real, ~2.832€ sumados) a Juliana/
+Administración para aprobación — no se envió nada por este sistema, solo se dejó armado el excel.
+
 **Regla nueva y explícita de Mariano sobre cómo trackear lo que el excel de Marco Jurado no
 cubre**: si algo no tiene columna en su excel (el caso que dio como ejemplo: fecha límite), **no se
 le agrega una columna nueva al archivo de Marco Jurado** — se seguimiento en nuestros propios

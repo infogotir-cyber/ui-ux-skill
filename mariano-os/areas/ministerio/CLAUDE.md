@@ -859,6 +859,17 @@ varios errores/inferencias apresuradas del sistema, antes de la reunión de log�
 - Archivo regenerado y reenviado a Mariano con estas correcciones — 33 celdas en azul (antes eran
   35, bajó porque se sacaron 2 marcas `GESTIONADO` indebidas).
 
+**Presupuesto final para Juliana/Administración (30/31 ago 2026)**: Mariano pidió por separado un
+excel limpio, solo con los ítems que ya tienen precio real, para mandarle a Juliana. Se armó, él lo
+simplificó (sacó la columna de vigencia y el ítem de contenido de bolsas — eso se agrega después
+cuando Marco Guanuchi confirme cantidades/precios reales) y lo devolvió completo con forma de pago y
+links de Drive de cada presupuesto. **Versión final, guardada como la definitiva**:
+`areas/ministerio/recursos/Presupuesto_Ruge_para_Juliana_30ago2026.xlsx` — 9 ítems, total
+**≈2.402,91€**. También cargado como tarea en ClickUp (`869erqfbk`, lista "Equipo y Reuniones" del
+folder Ruge) con la tabla completa, a pedido explícito de Mariano de llevar todo a ClickUp. Único
+pendiente sin resolver: quién gestiona "Figuras para premios" (Marco o Julio) — Mariano todavía no
+lo confirmó.
+
 **Regla nueva y explícita de Mariano sobre cómo trackear lo que el excel de Marco Jurado no
 cubre**: si algo no tiene columna en su excel (el caso que dio como ejemplo: fecha límite), **no se
 le agrega una columna nueva al archivo de Marco Jurado** — se seguimiento en nuestros propios

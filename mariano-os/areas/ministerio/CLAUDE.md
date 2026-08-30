@@ -829,6 +829,36 @@ lo suba a la nube reemplazando la versión que tenía. **Sigue pendiente, tarea 
 enviar el presupuesto (los ítems marcados `LISTO`/con precio real, ~2.832€ sumados) a Juliana/
 Administración para aprobación — no se envió nada por este sistema, solo se dejó armado el excel.
 
+**Corrección del mismo día (30 ago 2026, más tarde) — Mariano revisó la primera versión y encontró
+varios errores/inferencias apresuradas del sistema, antes de la reunión de logística del 31 ago
+9:00**:
+- **Cañas para antorchas**: la nota "ya coordinado, se retira el domingo" (que venía de
+  `Presupuesto_Logistica_Ruge_24ago2026.xlsx`) **era incorrecta o de origen dudoso — Mariano dice
+  que él no la puso**. Estado real: lo gestiona **David**, y David **todavía no sabe con quién
+  gestionarlo** — revertido de `GESTIONADO` a `GESTIONANDO`.
+- **Platos cena del rey**: según David, **Richard** ya hizo los platos, pero no confirmó si los
+  regala, los "siembra", o espera que se le pague — falta definir la forma de pago/factura con él
+  antes de darlo por cerrado. Revertido a `GESTIONANDO`.
+- **Alargador eléctrico (general, no el del letrero)**: ninguno de los 2 que tiene la iglesia sirve
+  bien (uno no llega por el largo del cable, el otro es muy chico) — probablemente haya que
+  **comprar uno nuevo**, sin presupuesto todavía. Revertido a `GESTIONANDO`.
+- **Pala metálica para el carbón**: Mariano zanjó la contradicción — **"si en el excel de Marco
+  dice Cocina, es Cocina, punto"**. Se corrigió la columna "Gestión y finanzas" de Logística a
+  Cocina (avisar a Adrián Rivera). La asignación a Logística de la llamada del 24 ago estaba mal.
+- **Cinta reflectante nocturna**: Mariano recuerda que la gestiona Eventos, pero el inventario
+  oficial la tiene con comisión de revisión **"LOGÍSTICA" sola** (sin "Y EVENTOS") — por la regla ya
+  confirmada (una sola comisión = esa comisión lo hace 100%), eso significaría que es de Logística,
+  no de Eventos. **Contradicción real sin resolver, a confirmar con Marco Jurado en la reunión del
+  31 ago** — no se resolvió por inferencia.
+- **Bolsas de basura 100L/50L y alargador del letrero iluminado**: confirmado que van a Eventos
+  (comisión de revisión oficial "Logística y Eventos"), pero **el encargado de Eventos hoy es
+  Jefferson, no Mauricio ni Cristian** (ya no están en Eventos) — corregido en el excel y en toda
+  referencia futura de este sistema.
+- **Caramelos Surtidos**: Mariano tampoco lo sabe con certeza — sigue como pendiente real a
+  confirmar con Marco Jurado, no un dato que el sistema pueda resolver solo.
+- Archivo regenerado y reenviado a Mariano con estas correcciones — 33 celdas en azul (antes eran
+  35, bajó porque se sacaron 2 marcas `GESTIONADO` indebidas).
+
 **Regla nueva y explícita de Mariano sobre cómo trackear lo que el excel de Marco Jurado no
 cubre**: si algo no tiene columna en su excel (el caso que dio como ejemplo: fecha límite), **no se
 le agrega una columna nueva al archivo de Marco Jurado** — se seguimiento en nuestros propios

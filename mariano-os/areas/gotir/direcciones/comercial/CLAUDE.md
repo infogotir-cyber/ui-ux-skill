@@ -1552,8 +1552,12 @@ después de la comisión del colaborador).
 ### 14.2 Deuda real pendiente de cobro — lista viva (auditoría 31 ago 2026)
 
 Resultado del barrido completo de las oportunidades "Pagado"/won en Pre-venta. Casos con
-información de pago verificada, sin deuda (José Manuel Uzcategui es la única excepción real):
+información de pago verificada, sin deuda:
 
+- **José Manuel Uzcategui Aparcedo** (comprobante bancario, 17 jun) — pagó **750€ de una sola vez,
+  antes de presentar la carpeta** (con descuento por pago único/junto, no en 2 cuotas de 412,50€
+  como decía la nota vieja del 17 jun, que quedó desactualizada). Valor de la oportunidad corregido
+  de 825€ a 750€. Sin deuda pendiente.
 - **Enzo Viera** (668€ Visado) — pagado 100%.
 - **Richard Contreras Guzman + Fabián Sanchez** (500€ c/u) — pagado 100% entre los dos (1.000€).
 - **María Isabel López Arango** (750€ Estancia, plan de pago único) — pagado 100%.
@@ -1569,7 +1573,6 @@ información de pago verificada, sin deuda (José Manuel Uzcategui es la única 
 
 | Contacto | Servicio | Pagado | Falta | Detalle |
 |---|---|---|---|---|
-| José Manuel Uzcategui Aparcedo | Estancia, 825€ | 427,50€ | ~397,50€ | Falta el 2do 50% antes de presentar la carpeta. Sin fecha confirmada. |
 | Anthonny Diaz (`contact_id=xFzKhfCDP0YlW3DKIJix`) | Estancia (familiar) | 365€ | ~365€ | Parte del pago familiar de Gladys Balzan (1.095€ = 1er 50%). Falta el 2do 50% "más adelante", sin fecha. |
 | Roma Diaz (`contact_id=8cNNRmfJM9GoEfNULhs5`) | Reagrupación (familiar) | 365€ | ~365€ | Ídem Anthonny — mismo pago familiar, mismo 2do 50% pendiente. |
 | Gladys Balzan (`contact_id=Ltip0teKCo01FyY1VX7B`) | Estancia (familiar) | 365€ | ~365€ | Ídem — ella es quien hizo la transferencia de 1.095€ (1er 50% de los 3). |

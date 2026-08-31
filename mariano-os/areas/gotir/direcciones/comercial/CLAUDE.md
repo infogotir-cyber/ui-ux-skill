@@ -1050,6 +1050,13 @@ oportunidad de "Estancia" (825€, otro trámite, sin relación) y la oportunida
 prueba (`bmu3mMXm0aVco9buvdAv`, la que había quedado abandonada). Queda **una sola oportunidad real**:
 "Regina Lucia Epifanio - Visado" (`Q4OXfkauBNkLO5ibprGz`), status `won`, etapa Pagado.
 
+**Corrección 31 agosto 2026**: la frase de arriba ("Gisela le pasa el 50%") se había interpretado
+como el reparto interno de ingresos (334€/334€ Gisela-GOTIR, sección 1.2) — **interpretación
+incorrecta**. Mariano aclaró que en realidad **falta el segundo 50% del pago de Regina** (~334€) —
+el primer 50% es el que Gisela ya pasó, pero el pago del cliente no está completo. Sigue como `won`/
+Pagado en GHL (mismo criterio que otros casos con pago parcial, sección 14.2), pero queda como
+**deuda real pendiente**, no como caso cerrado.
+
 **Lección para no repetir**: cuando aparezca un contacto con nombre casi idéntico a uno real y sin
 teléfono/email/conversación real cargada, sospechar que es un resabio de prueba de este sistema
 (sección técnica de `CLAUDE.md` raíz) antes de asumir que es un duplicado de lead genuino.
@@ -1566,6 +1573,7 @@ información de pago verificada, sin deuda (José Manuel Uzcategui es la única 
 | Anthonny Diaz (`contact_id=xFzKhfCDP0YlW3DKIJix`) | Estancia (familiar) | 365€ | ~365€ | Parte del pago familiar de Gladys Balzan (1.095€ = 1er 50%). Falta el 2do 50% "más adelante", sin fecha. |
 | Roma Diaz (`contact_id=8cNNRmfJM9GoEfNULhs5`) | Reagrupación (familiar) | 365€ | ~365€ | Ídem Anthonny — mismo pago familiar, mismo 2do 50% pendiente. |
 | Gladys Balzan (`contact_id=Ltip0teKCo01FyY1VX7B`) | Estancia (familiar) | 365€ | ~365€ | Ídem — ella es quien hizo la transferencia de 1.095€ (1er 50% de los 3). |
+| Regina Lucia Epifanio (`contact_id=vXvPgYTIctXeNlM6juoh`) | Visado, 668€ (vía Gisela) | 334€ | ~334€ | Falta el 2do 50%. Corrige una interpretación anterior (sección 10.1) que había leído mal la nota de "Gisela pasa el 50%" como reparto interno en vez de pago parcial del cliente. |
 
 El monto del 2do 50% de la familia Díaz/Balzan es una **suposición de reparto parejo** (mismo
 criterio que se usó para el primer 50%) — no confirmado explícitamente por Mariano, a verificar

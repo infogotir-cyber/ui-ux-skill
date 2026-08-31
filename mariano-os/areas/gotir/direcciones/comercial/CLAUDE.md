@@ -1634,3 +1634,80 @@ workflow duplicado) — corregido, y valor actualizado a 150€. No es deuda atr
 esperado a seguir en los próximos días.
 
 Este listado se actualiza cada vez que se audite el pipeline de pagos — no es de una sola vez.
+
+---
+
+## 16. Producto nuevo — Modificación a Residencia de Trabajo (31 ago 2026)
+
+Mariano pidió armar un producto nuevo en 2 pasos para clientes que quieren hacer una **modificación
+a residencia de trabajo** (por cuenta ajena o por cuenta propia), pensado como si fuera "un curso" —
+la **renovación de estancia** se deja para armar aparte más adelante, no se mezcla acá por
+instrucción explícita de Mariano. Motivado por 2 casos reales entrantes el mismo día: Sebastián
+Ayala (cliente viejo, cuenta ajena) y Daniel Ribeiro Carvalho (cuenta ajena, 2 personas).
+
+### Estructura del producto
+
+**Paso 1 — Diagnóstico y Plan de Acción (90€)**
+- Diagnóstico del caso puntual y los requisitos exactos a cumplir.
+- *Cuenta ajena*: GOTIR se comunica directamente con la empresa del cliente si hace falta resolver
+  dudas del contrato/oferta laboral.
+- *Cuenta propia*: modelo de plan de empresa a medida + con qué gestoría coordinar la parte fiscal.
+- Incluye un **PDF con el detalle completo**: requisitos, tasas a pagar, y precios de cada parte
+  del proceso.
+- No incluye revisión de documentación ni presentación (eso es el Paso 2).
+
+**Paso 2 — Gestión Legal Completa (650€ en total)**
+- Los 90€ del Paso 1 se descuentan del total — el segundo pago queda en **560€**. El ancla de
+  precio de cara al cliente es siempre "650€ todo incluido", nunca 740€.
+- Presentación del expediente por los abogados de GOTIR, revisión completa de la documentación, y
+  seguimiento hasta que se resuelve el trámite.
+
+**Principios de venta aplicados (Cardone/Cialdini, a pedido explícito de Mariano)**:
+- Reciprocidad: el PDF del Paso 1 es un entregable tangible antes de pedir el compromiso grande.
+- Autoridad/prueba social: +500 familias (cifra oficial ya estandarizada).
+- Fragmentación (Fase 3, sección 2): 2 pasos claros, no todo junto.
+- Ancla de precio limpia: 650€ total, no 740€ — reduce la sensación de "pagar dos veces".
+- Cierre asuntivo: "¿Avanzamos con el Paso 1?", no "¿te interesaría?".
+
+### Plantilla base (en "tú", español latino neutro)
+
+> ¡Hola [Nombre]! 👋
+>
+> Para tu modificación a residencia de trabajo [por cuenta ajena / por cuenta propia], armamos un
+> proceso en 2 pasos para que tengas total claridad antes de comprometerte con todo el trámite:
+>
+> 📋 *Paso 1 — Diagnóstico y Plan de Acción (90€)*
+> Vemos tu caso puntual: qué requisitos tienes que cumplir, [cuenta ajena: nos comunicamos
+> directamente con tu empresa si hace falta resolver alguna duda del contrato] [cuenta propia: te
+> damos un modelo de plan de empresa a tu medida y con qué gestoría coordinar la parte fiscal].
+> Resolvemos todas tus dudas antes de que decidas avanzar, y te mandamos un **PDF con el detalle
+> completo**: requisitos, tasas que debes pagar, y precios de cada parte del proceso, para que lo
+> tengas todo por escrito. (No incluye revisión de documentación ni presentación — eso es el Paso 2.)
+>
+> ⚖️ *Paso 2 — Gestión Legal Completa (650€ en total — los 90€ del Paso 1 se descuentan, el segundo
+> pago queda en 560€)*
+> Nuestros abogados presentan tu expediente, revisan toda la documentación, y te acompañan con
+> seguimiento hasta que se resuelve.
+>
+> Llevamos +500 familias acompañadas en procesos migratorios en España — sabemos cómo hacerlo bien.
+>
+> *¿Avanzamos con el Paso 1 para arrancar hoy mismo?* Te paso el link de pago y coordinamos la
+> llamada 🙌
+
+### Casos reales del día (31 ago 2026) — pendientes de precio final, no asumido
+
+- **Daniel Ribeiro Carvalho** (contacto guardado como "Fabiana Lima" — nombre real confirmado por
+  el propio formulario de contacto, `contact_id=gH6evZccIMMISWck39Gs`, tel `+34637942016` — ojo, el
+  número real en el formulario termina distinto al `+34637966549` guardado como tel principal del
+  contacto, revisar cuál es el correcto). Cuenta ajena, ya tiene contrato de 30h y la empresa aceptó
+  la modificación. **Es para 2 personas** (titular + acompañante) — **pendiente de confirmar con
+  Mariano** si el Paso 2 se cobra 650€ por persona (1.390€ total con el Paso 1 único) o si se arma
+  un paquete familiar con descuento.
+- **Sebastián Ayala** — cliente viejo de un grupo de WhatsApp cerrado ("Pres Sebastián Ayala
+  Visado"), a quien GOTIR le había prometido explícitamente un **descuento** para su próximo trámite
+  (mensaje del 29/5/2026: "Descuento para cuando tengas que hacer..."). Escribió hoy pidiendo pasar
+  de estancia por estudios a residencia de trabajo (cuenta ajena, a confirmar). **Pendiente de
+  confirmar con Mariano** a qué monto (90€, 650€, o ambos) se le aplica el descuento prometido, y de
+  cuánto es. No se encontró su conversación de hoy en GHL bajo los dos contactos "Sebastián Ayala"
+  existentes (ambos leads viejos y dormidos, sin nada de esto) — posible contacto nuevo sin
+  indexar todavía, o guardado con otro nombre/número — a verificar.

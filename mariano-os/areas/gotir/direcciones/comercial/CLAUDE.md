@@ -1483,3 +1483,56 @@ El tracker vivo de estos tres grupos, con contactos y oportunidades reales, vive
 barrido de la Fase C, no es un documento de una sola vez. Este orden reemplaza cualquier criterio
 anterior más informal ("lo que se ve fresco primero") — de ahora en más es la secuencia obligatoria
 de todo barrido, manual o automatizado.
+
+---
+
+## 14. Valores de oportunidad "placeholder" por privacidad frente a colaboradores externos (31 ago 2026)
+
+Encontrado al auditar pagos pendientes en el pipeline: algunas oportunidades de Pre-venta/Pagado
+tenían un valor monetario **intencionalmente falso** en GHL — no un error de carga. Mariano explicó
+que lo hace así en casos donde un colaborador externo con cuenta de usuario en GHL (ej. **María
+García Serrano**, ver sección 5.3/5.3.1) tiene algún tipo de visibilidad sobre la oportunidad, y no
+quiere que vea cuánto le cobró realmente al cliente — así que carga un número más chico (ej. 250€,
+que coincide con lo que Mariano le paga a ella) en vez del precio real.
+
+**Por qué esto importa dejarlo documentado**: generó una confusión real hoy — al auditar "quién nos
+debe plata", los casos de la familia Díaz/Balzan (Anthonny Diaz, Roma Diaz, 250€ cada uno en GHL)
+parecían deuda pendiente o un monto atípico sin explicación, cuando en realidad eran valores
+decoy. Sin este dato, cualquier auditoría futura del pipeline (por este sistema o por Mariano) va a
+tropezar con el mismo malentendido.
+
+**Caso real que disparó esto (31 ago 2026)** — pago real visto en captura de Holded/pasarela de
+pago: Gladys Balzan pagó **1.095€** (invoice 000072, 10 ago) por la familia completa (Anthonny +
+Gladys, estancia por estudios cada uno; Roma, reagrupación como hija menor). Mariano pidió dividir
+el monto en 3 partes iguales (365€ cada uno) y reflejarlo en GHL:
+- **Anthonny Diaz** (`opportunity_id=wcWfMgaPVapRKMs04nKv`) — corregido de 250€ a **365€**.
+- **Roma Diaz** (`opportunity_id=LWhDwQRUDrv7khxmG5OS`) — corregido de 250€ a **365€**.
+- **Gladys Balzan** — no tenía oportunidad propia en GHL; se creó una nueva
+  (`opportunity_id=dqFvcn53iPnT3JaPBeja`, contact_id=`Ltip0teKCo01FyY1VX7B`) en Pre-venta/Pagado por
+  **365€**.
+
+**No confundir con deuda real pendiente**: estos 3 casos están pagados al 100% (1.095€ ya cobrados
+por Gladys) — el valor viejo de 250€ era el decoy de privacidad, no un pago parcial.
+
+**Regla para el futuro**: si en un barrido o auditoría aparece una oportunidad "Pagado"/won con un
+valor que no coincide con ningún precio estándar de GOTIR (750/825€ estancia, 668€ visado, etc.) y
+el contacto tiene como colaborador a alguien con cuenta de usuario en GHL (María García Serrano,
+Carolina Chapo, Gisela Justribo — ver 5.3.1), **preguntarle a Mariano si es un valor placeholder
+antes de reportarlo como deuda o anomalía** — no asumir ninguna de las dos cosas.
+
+### 14.1 Modelo de reparto "nómada digital" (70% colaborador / 30% GOTIR) — confirmado con caso real
+
+En la misma auditoría, la oportunidad de **Federico Prieto** (`opportunity_id=V3IEbgKtiJY4LwiLDGw7`)
+figuraba en GHL como "Federico Prieto - Estancia" por 825€ — pero el pago real fue **968€** (invoice
+000071, 6 ago) y el servicio real fue **nómada digital**, no estancia por estudios. Mariano confirmó
+que de esos 968€, **70% fue para María (colaboradora que gestiona el trámite) y 30% para GOTIR** —
+esto **no es una excepción nueva**, es el modelo de derivación que ya estaba documentado en la
+sección 1.1 para los servicios "no prioritarios" (nómada digital, no lucrativa, emprendedor,
+arraigos): *"se venden como lead directo, no se gestionan más"*, derivados a un colaborador externo
+a cambio de una comisión. Federico es el primer caso real con números concretos que confirma ese
+modelo en la práctica (70/30, no un monto fijo como el de estancia por estudios).
+
+**Corregido en GHL**: oportunidad renombrada a "Federico Prieto - Nómada digital", valor actualizado
+de 825€ a **968€** (el monto real facturado al cliente — igual que en el resto del pipeline, el
+campo "valor" de la oportunidad refleja el precio total cobrado, no el neto que le queda a GOTIR
+después de la comisión del colaborador).

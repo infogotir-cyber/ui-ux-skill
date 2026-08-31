@@ -887,14 +887,42 @@ de mochilas para servidores (Marco), Cinta reflectante nocturna (Julio), Bolsa p
 empacar (David) — ninguno de los 4 se le preguntó a nadie todavía, quedan abiertos para un próximo
 mensaje o para la reunión del 31 ago en persona.
 
+**Respuestas del grupo de WhatsApp del equipo de logística (31 ago 2026, mañana)** — capturas reales
+del grupo compartidas por Mariano:
+
+- **Julio** pregunta dónde compraron los fuegos pirotécnicos con batería en frío la vez anterior, o
+  dónde puede mirar ese dato. **Ni Mariano ni este sistema lo saben** — no está en
+  `Presupuesto_Logistica_Ruge_24ago2026.xlsx` ni en ningún documento de esta sesión. Queda como
+  pendiente real a averiguar antes de poder responderle a Julio.
+- **David** dice que va a buscar las pastillas para encender fogata en Amazon, pero no sabe cuántas
+  hacen falta porque no está en su listado — **Mariano tampoco lo sabe**. Falta definir la cantidad
+  necesaria antes de que David pueda cotizar/comprar.
+- **David**, sobre las cañas para antorchas: llamó 3 veces a Jonathan (el contacto encargado, mismo
+  "Jonatan" ya documentado arriba) y no contestó — va a reintentar mañana. **Mariano le escribió
+  directo a Jonathan por su cuenta** el 31 ago para acelerar la respuesta.
+- Richard le dijo a David que Marco Jurado habla directo con Mariano (probablemente sobre el tema
+  ya documentado de los platos de la cena del rey — regala/siembra/factura) — sin resolución nueva
+  todavía, sigue como pendiente.
+- **Marco Guanuchi mandó el presupuesto de provisiones que había prometido** (PDF
+  "Presupuesto_Bolsa_Provisiones.pdf", recibido 13:41 del 31 ago) — cumple lo que dijo la noche
+  anterior. **El contenido del PDF no se pudo leer** (llegó en una captura de pantalla parcialmente
+  tapada/ilegible) — falta que Mariano comparta el archivo real o los montos para poder sumarlo al
+  presupuesto de Juliana (sección de abajo).
+
 **Presupuesto final para Juliana/Administración (30/31 ago 2026)**: Mariano pidió por separado un
 excel limpio, solo con los ítems que ya tienen precio real, para mandarle a Juliana. Se armó, él lo
 simplificó (sacó la columna de vigencia y el ítem de contenido de bolsas — eso se agrega después
 cuando Marco Guanuchi confirme cantidades/precios reales) y lo devolvió completo con forma de pago y
-links de Drive de cada presupuesto. **Versión final, guardada como la definitiva**:
-`areas/ministerio/recursos/Presupuesto_Ruge_para_Juliana_30ago2026.xlsx` — 9 ítems, total
-**≈2.402,91€**. También cargado como tarea en ClickUp (`869erqfbk`, lista "Equipo y Reuniones" del
-folder Ruge) con la tabla completa, a pedido explícito de Mariano de llevar todo a ClickUp. Único
+links de Drive de cada presupuesto. **Versión enviada a administración el 30 ago** (9 ítems, total
+≈2.402,91€) quedó superada al día siguiente.
+
+**Versión final real, la que efectivamente se mandó a administración (31 ago 2026)**: Mariano
+agregó un décimo ítem — **"Alimento bolsa Provisiones"** (Family Cash y Mercadona, 367,77€, efectivo,
+gestiona Marco Guanuchi, con link de Drive) — y volvió a mandar el excel corregido. **Guardada como
+la definitiva**: `areas/ministerio/recursos/Presupuesto_Ruge_para_Juliana_31ago2026.xlsx` — 10
+ítems, total **2.346,11€**. El archivo del 30 ago (`..._30ago2026.xlsx`) queda obsoleto, reemplazado
+por este. Pendiente actualizar la tarea de ClickUp (`869erqfbk`, lista "Equipo y Reuniones" del
+folder Ruge) con la tabla completa de 10 ítems y el total nuevo — todavía no se hizo. Único
 pendiente sin resolver: quién gestiona "Figuras para premios" (Marco o Julio) — Mariano todavía no
 lo confirmó.
 

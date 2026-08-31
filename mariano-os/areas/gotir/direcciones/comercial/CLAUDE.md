@@ -1511,8 +1511,13 @@ el monto en 3 partes iguales (365€ cada uno) y reflejarlo en GHL:
   (`opportunity_id=dqFvcn53iPnT3JaPBeja`, contact_id=`Ltip0teKCo01FyY1VX7B`) en Pre-venta/Pagado por
   **365€**.
 
-**No confundir con deuda real pendiente**: estos 3 casos están pagados al 100% (1.095€ ya cobrados
-por Gladys) — el valor viejo de 250€ era el decoy de privacidad, no un pago parcial.
+**Corrección del mismo día**: en un primer momento se registró esto como "pagado al 100%, sin
+deuda" — error propio, no dicho por Mariano. Mariano aclaró después que los 1.095€ de Gladys son
+**el primer 50%** del total familiar, no el pago completo — falta un segundo 50% (~365€ por
+persona, ~1.095€ en total) más adelante, sin fecha definida todavía. Los 3 contactos (Anthonny,
+Roma, Gladys) quedan con nota corregida en GHL y **entran a la lista de deuda pendiente** junto con
+José Manuel Uzcategui (sección 14.2) — no confundir el "valor placeholder" (250€, ya corregido a
+365€) con que el caso esté cerrado.
 
 **Regla para el futuro**: si en un barrido o auditoría aparece una oportunidad "Pagado"/won con un
 valor que no coincide con ningún precio estándar de GOTIR (750/825€ estancia, 668€ visado, etc.) y
@@ -1536,3 +1541,34 @@ modelo en la práctica (70/30, no un monto fijo como el de estancia por estudios
 de 825€ a **968€** (el monto real facturado al cliente — igual que en el resto del pipeline, el
 campo "valor" de la oportunidad refleja el precio total cobrado, no el neto que le queda a GOTIR
 después de la comisión del colaborador).
+
+### 14.2 Deuda real pendiente de cobro — lista viva (auditoría 31 ago 2026)
+
+Resultado del barrido completo de las oportunidades "Pagado"/won en Pre-venta. Casos con
+información de pago verificada, sin deuda (José Manuel Uzcategui es la única excepción real):
+
+- **Enzo Viera** (668€ Visado) — pagado 100%.
+- **Richard Contreras Guzman + Fabián Sanchez** (500€ c/u) — pagado 100% entre los dos (1.000€).
+- **María Isabel López Arango** (750€ Estancia, plan de pago único) — pagado 100%.
+- **Luisa María Caraballo Martínez** (750€ Estancia) — pagado 100%.
+- **Tania Soledad Olmedo** (668€ Visado, vía Gisella) — pagado 100% (334€/334€ Gisella-GOTIR).
+- **Macarena Soledad Navarro Sanchez Gambier** (825€ Estancia) — pagado 100% (2 cuotas de 412,50€,
+  comprobante bancario verificado).
+- **Ale Quiroga / María Alejandra Quiroga Bernal** (825€ Estancia — la etiqueta "cualificado
+  visado" de su contacto está mal, confirmado por Mariano que el caso fue Estancia) — pagado 100%
+  (2 cuotas de 412,50€).
+
+**Deuda real pendiente, a día 31 ago 2026:**
+
+| Contacto | Servicio | Pagado | Falta | Detalle |
+|---|---|---|---|---|
+| José Manuel Uzcategui Aparcedo | Estancia, 825€ | 427,50€ | ~397,50€ | Falta el 2do 50% antes de presentar la carpeta. Sin fecha confirmada. |
+| Anthonny Diaz (`contact_id=xFzKhfCDP0YlW3DKIJix`) | Estancia (familiar) | 365€ | ~365€ | Parte del pago familiar de Gladys Balzan (1.095€ = 1er 50%). Falta el 2do 50% "más adelante", sin fecha. |
+| Roma Diaz (`contact_id=8cNNRmfJM9GoEfNULhs5`) | Reagrupación (familiar) | 365€ | ~365€ | Ídem Anthonny — mismo pago familiar, mismo 2do 50% pendiente. |
+| Gladys Balzan (`contact_id=Ltip0teKCo01FyY1VX7B`) | Estancia (familiar) | 365€ | ~365€ | Ídem — ella es quien hizo la transferencia de 1.095€ (1er 50% de los 3). |
+
+El monto del 2do 50% de la familia Díaz/Balzan es una **suposición de reparto parejo** (mismo
+criterio que se usó para el primer 50%) — no confirmado explícitamente por Mariano, a verificar
+cuando llegue el momento de cobrarlo.
+
+Este listado se actualiza cada vez que se audite el pipeline de pagos — no es de una sola vez.

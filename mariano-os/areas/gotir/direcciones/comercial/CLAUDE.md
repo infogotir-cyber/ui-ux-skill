@@ -1582,6 +1582,49 @@ El monto del 2do 50% de la familia Díaz/Balzan es una **suposición de reparto 
 criterio que se usó para el primer 50%) — no confirmado explícitamente por Mariano, a verificar
 cuando llegue el momento de cobrarlo.
 
+## 15. Plantilla de WhatsApp — leads fuera de ventana de 4 meses (31 ago 2026)
+
+Mariano recibe consultas de gente que quiere una asesoría gratuita para fechas muy lejanas (ej.
+mediados de 2027) — decidió que no vale la pena hacer llamadas gratuitas para esas fechas, así que
+armó esta plantilla para ofrecerles dos alternativas pagas en vez de la llamada gratuita, que solo
+se reserva para quienes tienen intención de emigrar dentro de los próximos 4 meses. La va a cargar
+él mismo como plantilla guardada en WhatsApp, para reenviar a este tipo de contacto.
+
+Aplicado el checklist de venta (sección 12.4): motivo real (alta demanda genuina, no inventada),
+lenguaje asuntivo en el cierre ("avanzamos con la de 60€ o la de 120€", no "¿te interesaría?"),
+elemento de autoridad/prueba social (+500 familias, cifra oficial ya estandarizada — sección
+"Discrepancias detectadas" de `areas/gotir/CLAUDE.md`), un solo paso siguiente concreto (link de
+pago + agenda). En "tú" (español latino neutro), no "vos", a pedido explícito de Mariano.
+
+> ¡Hola! Gracias por escribirnos 🙌
+>
+> En este momento, por la alta demanda que estamos teniendo, solo estamos armando llamadas de
+> asesoría gratuita con personas que tienen planeado emigrar dentro de los próximos 4 meses. Estas
+> llamadas duran unos 30 minutos y son para terminar de ver los últimos detalles y dudas antes de
+> dar el siguiente paso.
+>
+> Como tu fecha está más adelante, te contamos las dos opciones que sí podemos ofrecerte ahora:
+>
+> 📞 *Llamada de asesoría (60€)* — vemos tu caso puntual, los requisitos que aplican para ti, y
+> resolvemos todas tus dudas para que tengas claro cuál es la mejor opción para emigrar (si además
+> quieres reagrupar a tu pareja o algún hijo menor de edad, también te asesoramos sobre eso). Se
+> puede pagar con tarjeta de crédito o débito.
+>
+> 📋 *Llamada de asesoría + opciones de cursos (120€)* — todo lo anterior, más una selección de
+> hasta 10 cursos válidos de 3 escuelas distintas (entre 2.800€ y 6.000€), de grado superior con
+> aval universitario, sin límite de edad, que no piden título previo homologado y que te habilitan
+> a trabajar. Se puede pagar en cuotas.
+>
+> Llevamos +500 familias acompañadas en su proceso para venir a España — sabemos cómo hacerlo bien.
+>
+> *¿Avanzamos con la de 60€ o la de 120€?* Dime cuál y te paso el link de pago para dejar la
+> llamada agendada 🙌
+
+**Nota sobre el precio de la llamada de 60€**: no es el mismo caso ya documentado de Diego Bayeh
+(sección 6.3, ~26 ago, llamada paga de 55€ solo para responder preguntas puntuales) — acá el precio
+subió a 60€ y el alcance es más amplio (diagnóstico completo del caso, no solo Q&A), coherente con
+que sea la oferta estándar para leads fuera de ventana, no una excepción puntual.
+
 **Comisión esperada, no deuda todavía (31 ago 2026)**: **Sara Isabel Posso Echenique** ("Sarai",
 `contact_id=e8HD8o3V2r8WZ7qCVZET`) quedó en pagarle a María García Serrano por su trámite "en estos
 días" — de ese pago, GOTIR cobra **150€ de comisión**. Su oportunidad (`opportunity_id=7l4aZEKuzXBh3bNJgXal`,

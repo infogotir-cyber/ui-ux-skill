@@ -137,6 +137,16 @@ le ha prestado atención todavía y quiere hacerlo — surgió al revisar riesgo
    - **Confirmado por Mariano (21 ago 2026): los dos Fragmentos ya están corregidos.**
    - Estado: **hecho**.
 
+### GOTIR — cobro esperado de Sarai (comisión María García Serrano, 31 ago 2026)
+
+Sara Isabel Posso Echenique ("Sarai", `contact_id=e8HD8o3V2r8WZ7qCVZET`) quedó en pagarle a María
+García Serrano por su trámite "en estos días" — de ese pago, GOTIR cobra **150€ de comisión**.
+Detalle completo en `direcciones/comercial/CLAUDE.md` sección 14.2 (oportunidad corregida de nombre
+y valor, `opportunity_id=7l4aZEKuzXBh3bNJgXal`).
+
+- Estado: **en curso** — no es deuda atrasada todavía, es un cobro esperado a seguir.
+- Recordado: 1 vez (31 ago 2026, creación).
+
 ### GOTIR — urgente
 
 00. **WhatsApp/SMS de las automatizaciones sigue sin salir — REABIERTO como urgente (28 ago 2026)**

@@ -1582,4 +1582,12 @@ El monto del 2do 50% de la familia Díaz/Balzan es una **suposición de reparto 
 criterio que se usó para el primer 50%) — no confirmado explícitamente por Mariano, a verificar
 cuando llegue el momento de cobrarlo.
 
+**Comisión esperada, no deuda todavía (31 ago 2026)**: **Sara Isabel Posso Echenique** ("Sarai",
+`contact_id=e8HD8o3V2r8WZ7qCVZET`) quedó en pagarle a María García Serrano por su trámite "en estos
+días" — de ese pago, GOTIR cobra **150€ de comisión**. Su oportunidad (`opportunity_id=7l4aZEKuzXBh3bNJgXal`,
+pipeline Proveedores, etapa "Lead enviado") tenía el mismo bug de nombre heredado ya documentado en
+la sección 5.5/5.9 (decía "- Carolina Chapo" en vez de "- María García Serrano", por venir de un
+workflow duplicado) — corregido, y valor actualizado a 150€. No es deuda atrasada, es un cobro
+esperado a seguir en los próximos días.
+
 Este listado se actualiza cada vez que se audite el pipeline de pagos — no es de una sola vez.

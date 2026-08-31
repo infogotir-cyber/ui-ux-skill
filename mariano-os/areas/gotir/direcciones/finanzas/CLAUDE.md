@@ -83,6 +83,27 @@ esperados de `direcciones/comercial/CLAUDE.md` (Maryi Castañeda, Florencia/Manu
 pago en curso) antes de fijar un orden. No se arma ese cruce automáticamente todavía — depende de
 que se confirme qué va a cobrarse primero.
 
+### Actualización 31 agosto 2026 — se agrava con deuda nueva de tarjeta de crédito
+
+Llegó la solicitud de pago de la cuota de autónomos/Seguridad Social (**299€**) y Mariano no tenía
+el dinero disponible — si se devuelve el recibo, se suma una penalidad de ~30€. Para evitar la
+devolución, y para no perder el suministro de luz (llevaba varios días de atraso), pidió dos
+adelantos de tarjeta de crédito:
+- **300€** para cubrir la cuota de autónomos.
+- **60€** para la luz.
+
+Con esto, la deuda de tarjeta de crédito sube a **~600€**, sumado a que la cuenta bancaria sigue en
+**-700€** (sin cambios desde el 24 ago). **Agujero real total hoy: ~1.300€.**
+
+**Cobros de clientes identificados como los más realistas para pedir ya** (ver
+`direcciones/comercial/CLAUDE.md` sección 14.2 para el detalle completo de deuda de clientes):
+- **Regina Lucia Epifanio** — ~334€ (2do 50% del visado, sin fecha comprometida) — la más floja de
+  compromiso de fecha, la más razonable para reclamar ya.
+- **Familia Díaz/Balzan** (Anthonny + Roma + Gladys) — ~1.095€ en total (~365€ c/u), aunque ellos
+  mismos dijeron "más adelante" sin fecha — pedirlo ahora es más delicado con la relación.
+
+Entre los dos, ~1.429€ potenciales — cubre el agujero completo si se cobran.
+
 ### Necesidad de caja operativa (no es una deuda, es un requerimiento activo)
 - Mariano necesita tener **dinero en pesos argentinos disponible en su cuenta de MercadoPago** para
   pagar las **Ads de la campaña activa de estancias por estudios** (la campaña de agosto que armó

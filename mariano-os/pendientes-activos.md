@@ -58,10 +58,21 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
   comprar comida — es la temporada alta y no ve resultados pese al esfuerzo sostenido. Ver también
   el nuevo ítem "GOTIR — decisión estratégica: ¿bajar precios y jugar a volumen?" más abajo, que
   salió de esta misma conversación como posible salida de fondo, no solo un parche de caja.
-- Estado: **abierto — urgente, prioridad de pago definida, esperando que entre el primer cobro**.
-- Recordado: 8 veces (24 ago 2026; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago,
+- **Actualizado 31 ago 2026 — se agrava**: llegó la solicitud de pago de la cuota de autónomos/
+  Seguridad Social (299€) y Mariano no tenía el dinero — si se devuelve el recibo, se suma una
+  penalidad de ~30€. Para evitarlo y para no cortarle la luz (llevaba varios días de atraso),
+  pidió dos adelantos de tarjeta de crédito: **300€** (para cubrir la cuota) y **60€** (para la
+  luz). Con esto, la deuda de tarjeta de crédito sube a **~600€**, sumado a que la cuenta bancaria
+  sigue en **-700€**. Total del agujero real hoy: **~1.300€**. En respuesta, se identificaron los
+  cobros pendientes más realistas para pedir ya: Regina Lucia Epifanio (~334€, sin fecha
+  comprometida) y la familia Díaz/Balzan (~1.095€ en total, aunque ellos dijeron "más adelante" sin
+  fecha) — ver `direcciones/comercial/CLAUDE.md` sección 14.2 para el detalle completo de deuda de
+  clientes. Entre los dos cubren el agujero completo si se cobran.
+- Estado: **abierto — urgente, se agravó hoy con deuda nueva de tarjeta de crédito**.
+- Recordado: 9 veces (24 ago 2026; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago,
   chequeo diario 18:00; 28 ago, chequeo diario 18:00; 28 ago, más tarde — agotamiento expresado; 29
-  ago, chequeo diario 18:00; 30 ago, chequeo diario 18:00).
+  ago, chequeo diario 18:00; 30 ago, chequeo diario 18:00; 31 ago — se agrava con adelantos de
+  tarjeta de crédito).
 
 ### GOTIR — decisión estratégica: ¿bajar precios y jugar a volumen? (28 ago 2026)
 

@@ -951,6 +951,53 @@ los confirme):
 - Sin rastro en el excel nuevo de "paños pequeños", "linterna de cabeza" ni "martillo" — siguen
   sin corroborar, tal como estaban.
 
+### Cruce de fechas límite del 1-2 sept contra el inventario real de Marco Jurado (1 sept 2026, rutina automática)
+Rutina "Recordatorios Ruge — fechas límite" detectó ~34 ítems en `ruge_reparto_lookup.md`, todos
+del bloque de **David Luzuriaga**, con fecha límite `2026-09-02` (mañana respecto al momento de la
+rutina). Antes de generar cualquier recordatorio, se cruzó cada ítem contra
+`INVENTARIO_2026_RUGE_actualizado_30ago2026.xlsx` (la versión más nueva, no la del 21 ago) —
+resultado: **21 de los 34 ya están `GESTIONADO`/`OK`** en el inventario real de Marco, aunque
+`ruge_reparto_lookup.md` (que solo trackea fecha límite/encargado, no estado — ver regla de arriba)
+no lo refleja. Esto confirma el riesgo que la rutina pedía evitar: sin este cruce se le habría
+mandado a Mariano un recordatorio falso para 21 ítems ya resueltos.
+
+**Ya `GESTIONADO`/`OK` — NO incluir en recordatorio, solo dejar registrado acá** (adaptador de
+grifo, bidón de agua 1.000L, butano portable para cocinas de senderistas, cables de conexión de
+batería a cruz, cajas de madera para recibir provisiones y agua/ofrenda, cocinas portátiles de gas
+—ojo, el ítem en sí está OK pero queda la nota suelta de "3 cajas de maletín rotas" sin resolver,
+ver arriba—, conector rápido de grifo, conexión para adaptador IBC con grifo para bidón, cruz de
+madera con iluminación LED, kit primeros auxilios, leña para fogata, lona de bienvenidos, lona
+vertical de Ruge, lonas azules más grandes, lonas rojas, lonas verdes de suelo, manguera verde,
+mantas térmicas, palas pequeñas para tribus, rótulo luminoso superior, cuerdas elásticas para
+piscina negras 20m).
+
+**Todavía `GESTIONANDO`/`PENDIENTE GESTIONAR` en el inventario real — estos sí siguen abiertos y
+vencen mañana (2 sept)**: estacas, arena para mezcla de lodo (sacos 25kg), paja en fardo grande,
+pastillas para encender fogata, precinto transparente, tambor y palos, banderas de España, banderas
+de tribu (nota del propio excel: stock 5 = reto 5, "parece completo" pero Mariano todavía no lo
+confirmó explícitamente — no se infiere solo), batería marca Bosch, capazos negros, machete,
+plásticos negros grandes, bolsa plástica negra para empacar, tierra orgánica sacos grandes.
+
+De estos 14 abiertos, **pastillas para encender fogata ya se le preguntó a David** la noche del 30
+ago (ver mensajes reales arriba) y él ya respondió el 31 ago que la está buscando en Amazon pero
+falta definir cantidad (ni Mariano ni el sistema la saben todavía) — no hace falta un recordatorio
+nuevo para ese ítem, solo destrabar la cantidad. **Bolsa plástica negra para empacar** quedó
+explícitamente sin preguntar en el mensaje del 30 ago. Los otros 12 (estacas, arena, paja, precinto,
+tambor y palos, banderas de España, banderas de tribu, batería Bosch, capazos negros, machete,
+plásticos negros grandes, tierra orgánica) no aparecen mencionados en ningún mensaje de WhatsApp de
+esta sesión — no hay evidencia de que se le hayan preguntado a David todavía.
+
+**Discrepancia real para avisarle a Mariano** (no se corrige `ruge_reparto_lookup.md` por norma —
+ver regla de arriba, solo se anota acá y se le avisa a él): el lookup sigue mostrando como
+"pendiente con fecha límite 2 sept" a 21 ítems que el inventario oficial de Marco Jurado ya marca
+resueltos. Mensaje sugerido para Mariano (no enviado, queda listo para copiar si lo pide): "Che,
+cruzando las fechas límite del 2 sept contra el excel de Marco, 21 de los ~34 ítems del lookup ya
+están GESTIONADO/OK ahí — no hace falta recordárselos a David. Quedan 14 realmente abiertos:
+estacas, arena para lodo, paja en fardo, pastillas para fogata (ya la está buscando, falta
+cantidad), precinto transparente, tambor y palos, banderas de España, banderas de tribu (a
+confirmar si ya está completo), batería Bosch, capazos negros, machete, plásticos negros grandes,
+bolsa plástica negra para empacar y tierra orgánica. ¿Le mando un mensaje a David con estos 14?"
+
 ### Rate limit de ClickUp (confirmado varias veces, 17-18 ago 2026) — RESUELTO 18 ago 2026
 17 ago: al traer la lista de Inventario, la API devolvió "Rate limit exceeded" dos veces seguidas
 (859 y luego 794 minutos restantes) — confirma que es un límite real que se va descontando, no un

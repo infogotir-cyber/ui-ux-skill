@@ -916,15 +916,46 @@ cuando Marco Guanuchi confirme cantidades/precios reales) y lo devolvió complet
 links de Drive de cada presupuesto. **Versión enviada a administración el 30 ago** (9 ítems, total
 ≈2.402,91€) quedó superada al día siguiente.
 
-**Versión final real, la que efectivamente se mandó a administración (31 ago 2026)**: Mariano
-agregó un décimo ítem — **"Alimento bolsa Provisiones"** (Family Cash y Mercadona, 367,77€, efectivo,
-gestiona Marco Guanuchi, con link de Drive) — y volvió a mandar el excel corregido. **Guardada como
-la definitiva**: `areas/ministerio/recursos/Presupuesto_Ruge_para_Juliana_31ago2026.xlsx` — 10
-ítems, total **2.346,11€**. El archivo del 30 ago (`..._30ago2026.xlsx`) queda obsoleto, reemplazado
-por este. Pendiente actualizar la tarea de ClickUp (`869erqfbk`, lista "Equipo y Reuniones" del
-folder Ruge) con la tabla completa de 10 ítems y el total nuevo — todavía no se hizo. Único
-pendiente sin resolver: quién gestiona "Figuras para premios" (Marco o Julio) — Mariano todavía no
-lo confirmó.
+**Versión del 31 ago 2026**: Mariano agregó un décimo ítem — **"Alimento bolsa Provisiones"** (Family
+Cash y Mercadona, 367,77€, efectivo, gestiona Marco Guanuchi, con link de Drive) — y volvió a mandar
+el excel corregido: `areas/ministerio/recursos/Presupuesto_Ruge_para_Juliana_31ago2026.xlsx` — 10
+ítems, total 2.346,11€. Tabla completa de esos 10 ítems + total cargada como comentario en la tarea
+de ClickUp (`869erqfbk`, lista "Equipo y Reuniones" del folder Ruge) el mismo 31 ago. Superada al día
+siguiente.
+
+**Versión final real, la que efectivamente se mandó a Juliana (2 sept 2026)** — Mariano subió el
+archivo definitivo que efectivamente envió: `areas/ministerio/recursos/Presupuesto_Ruge_para_Juliana_02sept2026.xlsx`.
+Amplía la del 31 ago: ya no son 10 ítems sino **13 ítems con precio real** (se agregaron alquiler de
+bus, camión caja abierta/pick-up, rótulo luminoso inferior "España", troncos, cinta reflectante
+plateada y pala metálica — algunos ya tenían presupuesto real de conversaciones anteriores, sección
+"Actualización 30 agosto 2026" de arriba, que no habían llegado todavía a la versión enviada a
+Juliana). **Total según el archivo: 2.955,60€** — ojo, la suma manual de las 13 filas da ~3.062,40€,
+una diferencia de ~106,80€ sin explicación en el archivo (posiblemente el depósito de 300€ del
+camión no entra en el total, o el precio de etiquetas/pegatinas es solo aproximado — "~31,90€" — y
+el real usado en la suma es otro) — **discrepancia real, sin resolver, a confirmar con Mariano si
+hace falta el detalle exacto**. Tabla completa + esta nota cargada como comentario en la tarea de
+ClickUp `869erqfbk` el 3 sept 2026. El archivo del 31 ago queda obsoleto, reemplazado por este.
+
+**Los últimos 6 ítems del listado siguen sin precio/proveedor cargado** — confirmado por Mariano
+(3 sept 2026) que su equipo de logística los tiene pendientes, con información adicional que todavía
+no llegó a este documento ni al excel: pastillas para encender fuego, cañas para antorchas, radio
+comunicador, teléfono satelital, fuegos artificiales, alargador cable. Cruzando contra lo ya
+documentado en este archivo: **pastillas para encender fogata** — David la está buscando en Amazon,
+falta definir cantidad (ni Mariano ni el sistema la saben todavía, ver sección "Respuestas del grupo
+de WhatsApp... 31 ago"); **cañas para antorchas** — David llamó 3 veces a Jonathan sin respuesta,
+Mariano le escribió directo para acelerarlo; **radio comunicador y teléfono satelital** — ya
+preguntados a Marco Guanuchi el 30 ago (novedad de envío/contacto), sin respuesta registrada
+todavía; **fuegos artificiales** — Julio preguntó dónde se compraron la vez anterior, ni Mariano ni
+este sistema lo saben, sigue sin resolver; **alargador cable** — ninguno de los 2 que tiene la
+iglesia sirve bien, probablemente haya que comprar uno nuevo, sin presupuesto todavía (ver
+"Corrección del mismo día, 30 ago 2026").
+
+**Estado del envío (3 sept 2026)**: Mariano confirmó que ya envió este presupuesto a Juliana el 2
+sept y está esperando su confirmación para empezar a comprar — **el paso que sigue no depende de
+Mariano, depende de la aprobación de Juliana/Administración**. Marcado como urgente para él (necesita
+arrancar las compras), pero bloqueado esperando respuesta externa, no una acción pendiente suya.
+Único pendiente de fondo sin resolver de versiones anteriores: quién gestiona "Figuras para premios"
+(Marco o Julio) — Mariano todavía no lo confirmó.
 
 **Regla nueva y explícita de Mariano sobre cómo trackear lo que el excel de Marco Jurado no
 cubre**: si algo no tiene columna en su excel (el caso que dio como ejemplo: fecha límite), **no se

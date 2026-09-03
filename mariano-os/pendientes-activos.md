@@ -508,6 +508,18 @@ en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
    - Estado: **cerrado** — informativo, tenerlo presente si aparece algo raro en GHL que este
      sistema no hizo.
 
+### Ministerio — presupuesto logística Ruge esperando aprobación de Juliana (3 sept 2026)
+
+Mariano mandó el presupuesto final (13 ítems con precio real, ~2.955,60€ según el archivo — hay una
+discrepancia de ~106,80€ sin explicar contra la suma manual, ver `areas/ministerio/CLAUDE.md`) a
+Juliana/Administración el 2 sept, y está esperando su confirmación para empezar a comprar. **Urgente
+para Mariano pero no depende de él** — depende de que Juliana apruebe. Además, 6 ítems del listado
+siguen sin precio/proveedor, en manos del equipo de logística: pastillas para encender fuego, cañas
+para antorchas, radio comunicador, teléfono satelital, fuegos artificiales, alargador cable —
+detalle de a quién se le preguntó cada uno en `areas/ministerio/CLAUDE.md`.
+- Estado: **bloqueado (esperando a Juliana)** — para los 6 ítems sin precio: **abierto**.
+- Recordado: 1 vez (3 sept 2026, creación).
+
 ### Ministerio (Ruge y otros)
 
 3. **Inventario de Ruge — cambio de fuente de verdad (21 ago 2026): ahora se trabaja sobre el excel

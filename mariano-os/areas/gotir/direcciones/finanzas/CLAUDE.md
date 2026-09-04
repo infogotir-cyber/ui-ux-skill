@@ -70,8 +70,10 @@ fueron un error de dictado, no un monto nuevo ni un saldo parcial.
 
 **Deudas nuevas mencionadas hoy, no registradas hasta ahora** (todas personales de Mariano, no de
 GOTIR como empresa — se dejan acá porque comparten la misma urgencia de caja):
-- **Su propia casera** (dueña del piso donde vive Mariano, no el de Sabrina) — "un poco" de alquiler
-  pendiente, sin monto exacto dado.
+- ~~**Su propia casera** (dueña del piso donde vive Mariano, no el de Sabrina) — "un poco" de
+  alquiler pendiente~~ — **monto real confirmado 4 sept 2026**: alquiler **701€**, a pagar mañana
+  (5 sept), más ~**30€ de retroactivo de alquiler** (atrasado de algún mes anterior, sin más
+  detalle) y ~**90€ de basura** (tasa municipal), ambos también pendientes.
 - **250 EUR — Reto Ruge**, la cuota que le corresponde a Mariano como servidor (él mismo va a servir
   en el reto) — separado de todo el presupuesto de logística/inventario del evento.
 - **Pasaje a Madrid**, para viajar el **29 de agosto** — despedida y último grupo de amistad ahí, ver
@@ -197,6 +199,22 @@ confirma que ese plan se ejecutó):
 - **Electricidad de su casa — 56,42€ — PAGADA.**
 
 **Deuda nueva que queda registrada, no confirmada en detalle**: **~350€ a Sebastián** (ver arriba).
+
+### Actualización 4 septiembre 2026 (más tarde todavía) — deudas y pagos inminentes adicionales
+
+Mariano dio un panorama más completo de lo que sigue pendiente, sin pago asociado todavía (a
+diferencia de las dos actualizaciones de arriba, esto es lista de deuda, no dinero ya movido):
+
+- **GoHighLevel (GHL)** — **87€, atrasado** (deuda nueva, no registrada hasta ahora — la
+  suscripción de la plataforma que sostiene todo el CRM/comercial de GOTIR).
+- **Tarjeta de crédito — 470€** (dato más reciente y preciso; reemplaza la estimación de "~600€"
+  del 31 ago — no se reconciliá la diferencia, se toma el dato nuevo como el vigente).
+- **Cuenta bancaria — sigue en -700€**, sin cambios.
+- **Alquiler, basura y retroactivo de alquiler** — ver el punto de "su propia casera" más arriba
+  (701€ + ~90€ + ~30€), a pagar mañana (5 sept).
+- **Marco Jurado — 100€** (deuda nueva, no registrada hasta ahora — no se especificó el motivo; es
+  el mismo Marco Jurado del inventario/logística de Ruge, ver `areas/ministerio/CLAUDE.md`, pero
+  no se asume que la deuda sea por eso — a confirmar).
 
 ## 1.1 Próximos ingresos (registrado 17 agosto 2026)
 

@@ -84,8 +84,13 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
   septiembre 2026 (más tarde el mismo día)". Deudas en euros que siguen sin cambios: IRPF+IVA
   (~8.000€), su propia casera, Reto Ruge (250€), pasaje a Madrid, tarjeta de crédito (~600€), cuenta
   bancaria en -700€, y la nueva de Sebastián (~350€).
-- Estado: **abierto — se alivia progresivamente, sigue el agujero de fondo (IRPF/IVA, tarjeta,
-  cuenta en negativo)**.
+- **Actualizado 4 sept 2026 (más tarde todavía) — panorama más completo de lo que sigue pendiente**:
+  GHL atrasado (87€, deuda nueva), tarjeta de crédito ahora en **470€** (dato más reciente,
+  reemplaza el "~600€" anterior), cuenta bancaria sigue en -700€, y a pagar **mañana (5 sept)**:
+  alquiler (701€) + basura (~90€) + retroactivo de alquiler (~30€). También deuda nueva de **100€ a
+  Marco Jurado** (motivo sin confirmar). Ver detalle completo en `direcciones/finanzas/CLAUDE.md`.
+- Estado: **abierto — se alivia progresivamente en algunos frentes, pero sigue el agujero de fondo
+  y hay pagos grandes recién mañana (alquiler+basura+retroactivo, ~821€)**.
 - Recordado: 11 veces (24 ago 2026; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago,
   chequeo diario 18:00; 28 ago, chequeo diario 18:00; 28 ago, más tarde — agotamiento expresado; 29
   ago, chequeo diario 18:00; 30 ago, chequeo diario 18:00; 31 ago — se agrava con adelantos de

@@ -421,6 +421,11 @@ Este proyecto debe tener acceso vía MCP a:
     del proveedor?, ¿reconfigurar los nodos para que no dependan de interceptar un SMS nativo?) —
     falta que Mariano decida el próximo paso. Marcado como **urgente** en `pendientes-activos.md` —
     bloquea todo el seguimiento comercial automático en medio de la crisis de caja activa.
+  - **RESUELTO 4 septiembre 2026**: Mariano confirmó directamente "ya me funciona bien el wsp" —
+    sin detalle de qué lo arregló (¿respondió soporte de GoGHL.ai?, ¿cambió el modo de conexión?,
+    ¿se resolvió del lado del proveedor sin acción de nadie?). No asumir la causa — si hace falta
+    el detalle técnico exacto para prevenir una recaída, preguntarle a Mariano. El historial de
+    diagnóstico completo de arriba (26-28 ago) queda como registro, no se reescribe.
   - **23 tools (ampliado a 23 el 21 agosto 2026, más tarde el mismo día)**: se agregó
     `ghl_create_user` (crear usuarios nuevos en GHL vía `POST /users/`, requiere scope
     `users.write`) — schema verificado contra `CreateUserDto` del repo oficial

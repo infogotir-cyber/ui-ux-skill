@@ -209,7 +209,7 @@ y valor, `opportunity_id=7l4aZEKuzXBh3bNJgXal`).
 
 ### GOTIR — urgente
 
-00. **WhatsApp/SMS de las automatizaciones sigue sin salir — REABIERTO como urgente (28 ago 2026)**
+~~00. **WhatsApp/SMS de las automatizaciones sigue sin salir — RESUELTO (4 sept 2026)**~~
    - Detectado 19/20 ago, diagnosticado a fondo 26 ago (ver `CLAUDE.md` raíz, sección de
      herramientas conectadas/GHL) y escalado a soporte de GoGHL.ai esa noche — soporte todavía no
      lo resolvió.
@@ -223,12 +223,15 @@ y valor, `opportunity_id=7l4aZEKuzXBh3bNJgXal`).
      leads nuevos, confirmaciones de cita, notificaciones a influencers) justo en medio de la
      crisis de caja activa (ver ítem de arriba) — cada mensaje que no sale es una oportunidad de
      cobro que se enfría sin que nadie se entere.
-   - Estado: **abierto — urgente, esperando que Mariano defina el próximo paso** (¿reintentar con
-     soporte de GoGHL.ai con este dato nuevo? ¿cambiar el modo de conexión del proveedor?).
+   - **RESUELTO 4 sept 2026**: Mariano confirmó directamente "ya me funciona bien el wsp" — sin
+     más detalle de qué lo arregló (¿soporte de GoGHL.ai respondió?, ¿cambió el modo de conexión?,
+     ¿se resolvió solo?) — no asumir la causa, si hace falta el detalle preguntarle. Ver
+     `CLAUDE.md` raíz, sección de herramientas conectadas/GHL, para el historial completo del
+     diagnóstico (queda como registro histórico, no desactualizar retroactivamente).
+   - Estado: **resuelto**.
    - Recordado: 7 veces (28 ago 2026, reabierto; 28 ago, chequeo diario 18:00; 29 ago, chequeo
      diario 18:00; 30 ago, chequeo diario 18:00; 2 sept, chequeo diario 18:00; 3 sept, chequeo
-     diario 18:00; 4 sept, chequeo diario 18:00 — sigue en discusión activa con Mariano sobre el
-     próximo paso).
+     diario 18:00; 4 sept, chequeo diario 18:00 — resuelto).
 
 0. **Promo en USDT/Binance ofrecida a Javier Maddia — venció el viernes 21 ago, pero no se cayó la venta**
    - Detectado 19 ago revisando la llamada del 18 ago (73 min, familia de 3, ~2.475€ potenciales).

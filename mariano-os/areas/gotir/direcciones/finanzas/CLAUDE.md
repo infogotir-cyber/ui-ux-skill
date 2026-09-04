@@ -31,13 +31,16 @@ ordenadas por prioridad (confirmada por Mariano el 17 agosto 2026):
    Mariano el 24 agosto 2026: Federico/Sabrina (punto 2, 350€) pasa a ser la prioridad #1 en cuanto
    entre el primer cobro cercano (Sara Sofía 825€ o Maryi Castañeda 2.475€), por la presión activa
    de Federico ese mismo día — desplaza a Micol de la posición #1 que tenía desde el 17 de agosto.**
-2. **Sabrina Navarro** — **350 EUR**, resto del sueldo de julio 2026 (la parte que no va a Micol).
-   Instrucción específica de Mariano: este pago **no se le hace a ella directamente** — hay que
-   pagarlo **al dueño del departamento donde ella alquila** (pago dirigido, no un depósito a su
-   cuenta). ⚠️ Nota de contexto: el `CLAUDE.md` raíz registra que "Sabrina ya no trabaja en GOTIR",
-   pero acá se le debe sueldo de julio — no se resuelve la aparente tensión por mi cuenta, puede ser
-   un pago retroactivo de cuando todavía colaboraba parcialmente; no asumir. Ver también
-   `direcciones/comercial/CLAUDE.md` sección 5.2 para el contexto personal (se trata con discreción).
+2. ~~**Sabrina Navarro** — **350 EUR**~~ — **RESUELTO 4 sept 2026, pagado completo.** Era el resto
+   del sueldo de julio 2026 (la parte que no iba a Micol). Instrucción específica de Mariano: este
+   pago **no se le hacía a ella directamente** — se pagaba **al dueño del departamento donde ella
+   alquila**. Ese dueño **es Federico Miranda** (dato nuevo, 4 sept 2026 — resuelve además la
+   referencia suelta de "Federico/Sabrina" usada en actualizaciones anteriores de este documento,
+   era él). Mariano confirmó explícitamente **"ya no le debo nada"**. ⚠️ Nota de contexto histórica:
+   el `CLAUDE.md` raíz registra que "Sabrina ya no trabaja en GOTIR", pero se le debía sueldo de
+   julio — no se resuelve la aparente tensión por mi cuenta, puede ser un pago retroactivo de cuando
+   todavía colaboraba parcialmente; no asumir. Ver también `direcciones/comercial/CLAUDE.md` sección
+   5.2 para el contexto personal (se trata con discreción).
 3. **Exxo Studio** — **USD 237**, saldo pendiente del plan de agosto (de un total de USD 517, se
    pagaron USD 280 — ver `direcciones/marketing/CLAUDE.md` sección 1 para el detalle completo).
 4. **Matías Macho** (cliente) — **140.000 ARS**. Mariano lo mencionó como "un cliente" al que le
@@ -158,9 +161,42 @@ no reconstruido por este sistema):**
 - **~300.000 ARS a ARCA** (agencia tributaria argentina) — intereses de un error que pasó "hace
   unos años". Sin más detalle todavía — no asumir naturaleza del error ni plazo de pago.
 
-**Deudas de la lista original (17 ago) que quedan sin cambios**: Sabrina/su casero (350€, punto 2 —
-aparte de la porción que iba a Micol, que ya se saldó), IRPF+IVA (~8.000€, punto 5), su propia
-casera, Reto Ruge (250€), pasaje a Madrid, tarjeta de crédito (~600€), cuenta bancaria en -700€.
+**Deudas de la lista original (17 ago) que quedan sin cambios**: IRPF+IVA (~8.000€, punto 5), su
+propia casera, Reto Ruge (250€), pasaje a Madrid, tarjeta de crédito (~600€), cuenta bancaria en
+-700€.
+
+### Actualización 4 septiembre 2026 (más tarde el mismo día) — pago de Lucas Raddi y varios movimientos en euros
+
+**Cobro real**: **Lucas Raddi** pagó **750€ en efectivo** el miércoles (2 sept), por
+**modificación a residencia por cuenta propia** (contacto ya conocido en GHL — se le había
+confirmado una cita antes, ver `CLAUDE.md` raíz). ⚠️ El monto (750€) no coincide con la estructura
+de precios ya documentada para este producto en `direcciones/comercial/CLAUDE.md` sección 16
+(90€ Paso 1 + 650€ Paso 2 = 650€ total con descuento, o 740€ sin descontar) — no asumir el motivo
+de la diferencia (¿precio distinto pactado con él?, ¿incluye algo más?) hasta que Mariano lo
+aclare.
+
+**Con esos 750€, Mariano pagó/distribuyó:**
+- **200€ a Sebastián** (abogado colaborador, "segunda parte" de estancia por estudios — ver
+  `direcciones/comercial/CLAUDE.md` sección 1.2). **Deuda nueva no registrada hasta ahora**: con
+  este pago, **le queda debiendo 350€ más** — implica que la deuda total con Sebastián antes de
+  este pago era de **~550€**, sin más detalle (¿cuántos casos, de cuándo?) — no asumir, a
+  confirmar si hace falta el desglose.
+- **350€ a Federico Miranda** (el casero de Sabrina) — salda la deuda del punto 2 de la lista de
+  arriba. **Resuelta.**
+- **170€ depositados en su propia cuenta**, para cubrir cargos que se estaban por cobrar/ya se
+  cobraron:
+  - **ChatGPT** — se cobró y Mariano **dio de baja la suscripción** (monto exacto no dado).
+  - **Contabo** — 6,53€ (hosting del VPS de GOTIR Finanzas/Panel de KPIs, ver sección 3 abajo).
+  - **Masmovil** — 84,56€ (telefonía/internet).
+  - **El gestor** — 48,40€ (gestoría/contable de GOTIR).
+
+**Pagos ya hechos unos días antes** (con los adelantos de tarjeta de crédito del 31 ago —
+confirma que ese plan se ejecutó):
+- **Cuota de autónomos/Seguridad Social — 299€ — PAGADA.** Cierra el pendiente que había disparado
+  los adelantos de tarjeta de crédito del 31 ago (ver arriba).
+- **Electricidad de su casa — 56,42€ — PAGADA.**
+
+**Deuda nueva que queda registrada, no confirmada en detalle**: **~350€ a Sebastián** (ver arriba).
 
 ## 1.1 Próximos ingresos (registrado 17 agosto 2026)
 

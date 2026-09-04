@@ -73,11 +73,19 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
   Sabrina, distinto de una deuda nueva de 173.000 ARS a Micol por otro concepto que sigue abierta),
   Matías Macho (140.000 ARS) y Exxo Studio (362.000 ARS — mismo día, Exxo queda **pausado** como
   servicio, ver `direcciones/marketing/CLAUDE.md` sección 12). Deudas nuevas que aparecieron:
-  ~300.000 ARS a ARCA (intereses de un error viejo) y los 173.000 ARS a Micol ya mencionados. Ver
-  detalle completo línea por línea en `direcciones/finanzas/CLAUDE.md`, "Actualización 4 septiembre
-  2026". Las deudas en euros (Sabrina/casero 350€, IRPF+IVA ~8.000€, tarjeta ~600€, cuenta -700€)
-  siguen sin cambios.
-- Estado: **abierto — sigue urgente en euros, aliviado parcialmente en pesos argentinos**.
+  ~300.000 ARS a ARCA (intereses de un error viejo) y los 173.000 ARS a Micol ya mencionados.
+- **Actualizado 4 sept 2026 (más tarde) — cobro real de Lucas Raddi (750€ en efectivo) resolvió
+  deudas en euros**: **Sabrina/Federico Miranda (350€) queda saldada por completo** (se confirma
+  que Federico Miranda es el casero de Sabrina). También se pagaron 200€ a Sebastián (queda debiendo
+  ~350€ más — deuda nueva, total con él era ~550€) y 170€ para cargos operativos (ChatGPT
+  dado de baja, Contabo 6,53€, Masmovil 84,56€, gestor 48,40€). Confirmado que ya se habían pagado,
+  días antes, la cuota de autónomos (299€) y la electricidad de su casa (56,42€) — cierra ese
+  pendiente del 31 ago. Ver detalle completo en `direcciones/finanzas/CLAUDE.md`, "Actualización 4
+  septiembre 2026 (más tarde el mismo día)". Deudas en euros que siguen sin cambios: IRPF+IVA
+  (~8.000€), su propia casera, Reto Ruge (250€), pasaje a Madrid, tarjeta de crédito (~600€), cuenta
+  bancaria en -700€, y la nueva de Sebastián (~350€).
+- Estado: **abierto — se alivia progresivamente, sigue el agujero de fondo (IRPF/IVA, tarjeta,
+  cuenta en negativo)**.
 - Recordado: 11 veces (24 ago 2026; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago,
   chequeo diario 18:00; 28 ago, chequeo diario 18:00; 28 ago, más tarde — agotamiento expresado; 29
   ago, chequeo diario 18:00; 30 ago, chequeo diario 18:00; 31 ago — se agrava con adelantos de

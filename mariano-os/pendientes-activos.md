@@ -261,10 +261,18 @@ y valor, `opportunity_id=7l4aZEKuzXBh3bNJgXal`).
      chequeo diario 18:00; 3 sept, chequeo diario 18:00; 4 sept, chequeo diario 18:00).
 
 1. **Nazareth Rengel — no-show del 18 ago, RECONTACTADA (26 ago 2026)**
-   - Referida por Jesús Mosquera. Llevaba 8 días sin reconexión — se le mandó mensaje hoy (26 ago)
-     ofreciendo reagendar, dentro del barrido de cobro/reactivación de la tarde. Sin respuesta
-     todavía a esta hora.
-   - Estado: **en curso — recontactada, esperando respuesta**.
+   - Referida por Jesús Mosquera. Llevaba 8 días sin reconexión — se le mandó mensaje el 26 ago
+     ofreciendo reagendar, dentro del barrido de cobro/reactivación de la tarde.
+   - **Corrección real 4 sept 2026 — el tracker estaba desactualizado**: Nazareth SÍ había
+     respondido el 26 ago (mencionó problema de luz en su casa), preguntó el medio de la llamada,
+     se le dijo Meet, y propuso **"el 29 de agosto"** — nadie confirmó ni agendó esa fecha de
+     nuestro lado, y encima el 29 de agosto era **sábado** (día que no se agenda, lunes a viernes
+     solamente). Fuga real de seguimiento, no falta de respuesta de ella.
+   - **Mensaje real enviado 4 sept 2026** (revisado con Mariano, en "tú", sin mencionar el
+     incumplimiento de ella — fue nuestro): disculpa por la fecha perdida, aclara que es lunes a
+     viernes, pide nuevo día. GHL aceptó el envío (`message_id=0S93hBbZPugXnkaXPxiq`) — pendiente
+     que Mariano confirme entrega real en el panel de Conversaciones.
+   - Estado: **en curso — mensaje nuevo enviado, esperando confirmación de entrega y respuesta**.
    - Recordado: 14 veces (19 ago 2026; 20 ago, chequeo diario 20:00; 22 ago, chequeo de la mañana;
      22 ago, chequeo diario 20:00; 23 ago, chequeo diario 20:00; 25 ago, chequeo diario 18:00; 26 ago,
      chequeo diario 18:00 — recontactada esta tarde; 27 ago, chequeo diario 18:00; 28 ago, chequeo

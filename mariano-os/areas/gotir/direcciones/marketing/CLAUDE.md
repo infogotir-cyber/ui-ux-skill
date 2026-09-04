@@ -596,6 +596,15 @@ pide retomarlo, ahí se reactivan.
 ¿sigue corriendo con lo ya cargado en MercadoPago?), ni si esto afecta el acceso de Agustín a GHL
 ya otorgado (sección 11.4).
 
+**Actualización, mismo día**: Mariano va a pedirle a Agustín que le entreguen **todo lo que estaba
+pendiente, terminado y entregable** — antes de que se ejecute, esto cubre (cruzando contra lo ya
+documentado en este archivo y en `pendientes-activos.md`) al menos: el repositorio de marketing
+(sección 5, punto 8 — Agustín se había comprometido a transferirlo), el nuevo PDF de venta
+"Estancia por estudios" (sección 11.2, estructura ya acordada), y cualquier otro entregable de la
+reunión del 25 ago que haya quedado a mitad de camino. **Todavía no se envió el pedido** — queda
+como intención confirmada de Mariano, no como algo ya reclamado. Cuando lo mande, actualizar esta
+sección con la lista real de lo que responda Agustín.
+
 ## 9. Cómo comportarte en esta área
 
 - Esta dirección recién se está construyendo — no inventar campañas, cifras ni fechas que no vengan

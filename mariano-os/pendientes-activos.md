@@ -96,6 +96,16 @@ herramientas como LTX Studio (pipeline completo guión→storyboard→video) o V
   inmediata dada la crisis de caja — no gastar en planes pagos todavía.
 - Recordado: 1 vez (4 sept 2026, creación).
 
+### GOTIR — pedirle a Exxo/Agustín todo lo pendiente, terminado y entregable (4 sept 2026)
+
+Con el servicio de Exxo pausado (ver ítem de arriba y `direcciones/marketing/CLAUDE.md` sección
+12), Mariano va a pedirle a Agustín que le entregue todo lo que estaba pendiente antes de la pausa
+— al menos el repositorio de marketing y el PDF de venta "Estancia por estudios" ya acordado
+(sección 11.2 del mismo documento), posiblemente más. Todavía no mandó el pedido.
+
+- Estado: **abierto — pedido confirmado por Mariano, todavía sin enviar**.
+- Recordado: 1 vez (4 sept 2026, creación).
+
 ### GOTIR — decisión estratégica: ¿bajar precios y jugar a volumen? (28 ago 2026)
 
 Mariano planteó, en el mismo mensaje donde expresó agotamiento por la crisis de caja, una posible

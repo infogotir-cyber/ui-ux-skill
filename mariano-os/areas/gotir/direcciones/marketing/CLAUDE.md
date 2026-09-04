@@ -575,6 +575,27 @@ dedicado) sigue sin resolver — si Mariano quiere retomarla, conviene explorarl
 aparte (ej. una app de WhatsApp Business en su propio teléfono, sin fusionar los números) en vez de
 la solución que se había acordado en la reunión.
 
+## 12. Servicio de Exxo — PAUSADO (4 septiembre 2026)
+
+Mariano decidió pausar el servicio de Exxo, en el marco de la resolución de deudas del 4 sept 2026
+(ver `direcciones/finanzas/CLAUDE.md`, "Actualización 4 septiembre 2026") — ya se lo comunicó
+directamente a Agustín. Motivo textual: *"no quiero seguir juntando gastos fijos ni deudas"* — es
+una decisión de fondo por la presión de caja sostenida, no un desacuerdo puntual con el trabajo de
+Exxo (la deuda que tenía con ellos, 362.000 ARS, quedó saldada en el mismo movimiento — ver
+finanzas).
+
+**Impacto directo en esta dirección**: la relación comercial y precios (sección 1), el plan de
+agosto (secciones 2-3), y todo lo que dependía de que Agustín siguiera trabajando activamente
+(repositorio de marketing pendiente de transferir, conexión a Meta Ads Manager, script de alertas
+vs. informe, envío del texto de las 3 opciones de curso/pricing — ver `pendientes-activos.md`)
+queda **en pausa**, no cancelado — no se sabe todavía si/cuándo se retoma. No inferir que estos
+pendientes siguen "en curso" con la misma urgencia mientras el servicio esté pausado; si Mariano
+pide retomarlo, ahí se reactivan.
+
+**Sin confirmar todavía, no asumir**: qué pasa con la campaña activa de Ads (¿se apaga también?,
+¿sigue corriendo con lo ya cargado en MercadoPago?), ni si esto afecta el acceso de Agustín a GHL
+ya otorgado (sección 11.4).
+
 ## 9. Cómo comportarte en esta área
 
 - Esta dirección recién se está construyendo — no inventar campañas, cifras ni fechas que no vengan

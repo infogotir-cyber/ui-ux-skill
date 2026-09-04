@@ -109,6 +109,58 @@ Entre los dos, ~1.429€ potenciales — cubre el agujero completo si se cobran.
   pagar las **Ads de la campaña activa de estancias por estudios** (la campaña de agosto que armó
   Exxo — ver `direcciones/marketing/CLAUDE.md` secciones 2 y 3). Sin monto específico dado todavía —
   es una necesidad recurrente mientras la campaña esté activa, no un pago puntual.
+  **Actualización 4 sept 2026**: cargó **60.000 ARS** a esa cuenta de MercadoPago — primer monto
+  concreto real para esta necesidad. Con el servicio de Exxo pausado el mismo día (ver
+  `direcciones/marketing/CLAUDE.md` sección 12), no está confirmado si esta recarga sigue siendo
+  necesaria en lo inmediato — no asumir.
+
+### Actualización 4 septiembre 2026 — pago de Enrique Donna y resolución de varias deudas en ARS
+
+**Cobro real**: Enrique Donna pagó el 50% de su trámite de estancia por estudios — **412,5€,
+cobrados en pesos argentinos, 771.000 ARS** (⚠️ nota de política: esto contradice la decisión de
+centralización de pagos en euros de GOTIR — ver `areas/gotir/CLAUDE.md`, "Política de
+centralización de pagos" — se registra tal cual sucedió, sin corregir por cuenta propia; a
+confirmar con Mariano si fue una excepción puntual o si la política cambió).
+
+**Con ese dinero, Mariano pagó/distribuyó lo siguiente (todo en ARS salvo que se indique lo
+contrario), tal como él lo dio:**
+
+- **80.000 ARS a Micol Navarro** — salda por completo lo que quedaba pendiente del sueldo de julio
+  de Sabrina que se pagaba dirigido a Micol (punto 1 de la lista de deudas de arriba, que venía en
+  80.000 ARS desde el 24 ago). **Esta deuda queda resuelta.**
+  ⚠️ Cierre de una deuda diferente a la de arriba, con el mismo monto casi seguro por coincidencia,
+  no confirmado: ver más abajo, quedan **173.000 ARS** pendientes a Micol por **otro concepto**
+  (posiblemente los pagos por trabajo/ediciones que Micol factura aparte — ver
+  `direcciones/comercial/CLAUDE.md` sección 5.2 — no asumido, a confirmar).
+- **25.000 ARS a Micol Navarro** — reembolso de un adelanto que Mariano le había pedido para Ads de
+  Meta.
+- **140.000 ARS a Matías Macho** — salda por completo la deuda del punto 4 de la lista de arriba.
+  **Esta deuda queda resuelta.**
+- **18.000 ARS al hermano de Mariano, Pablo** — por el regalo de cumpleaños de otro hermano, Marcos.
+  Deuda nueva, no registrada antes, ya resuelta en el mismo movimiento.
+- **60.000 ARS a su propia cuenta de MercadoPago** — ver "Necesidad de caja operativa" arriba.
+- **66.000 ARS a su cuenta de BruBank**, para cubrir:
+  - **21.000 ARS** — email empresarial `clientes@gotir.es` (gasto operativo nuevo, no registrado
+    antes).
+  - **15.000 ARS** — saldo cargado para un cobro pendiente de Meta que había fallado antes por
+    falta de fondos.
+- **362.000 ARS a Exxo Studio** — Mariano confirmó explícitamente **"ya no le debo nada"** a Exxo.
+  Salda la deuda del punto 3 de la lista de arriba (que estaba trackeada en USD 237 — se pagó en
+  ARS, conversión hecha por fuera de este sistema, no verificable). **Esta deuda queda resuelta.**
+  Mismo día, Mariano decidió además **pausar el servicio de Exxo** — ver
+  `direcciones/marketing/CLAUDE.md` sección 12 para el detalle completo y el impacto en otros
+  pendientes.
+
+**Deudas en ARS que quedan pendientes después de todo esto (dato dado directamente por Mariano,
+no reconstruido por este sistema):**
+- **173.000 ARS a Micol Navarro** — por un concepto distinto al ya saldado arriba, sin confirmar
+  cuál (no inventar el motivo).
+- **~300.000 ARS a ARCA** (agencia tributaria argentina) — intereses de un error que pasó "hace
+  unos años". Sin más detalle todavía — no asumir naturaleza del error ni plazo de pago.
+
+**Deudas de la lista original (17 ago) que quedan sin cambios**: Sabrina/su casero (350€, punto 2 —
+aparte de la porción que iba a Micol, que ya se saldó), IRPF+IVA (~8.000€, punto 5), su propia
+casera, Reto Ruge (250€), pasaje a Madrid, tarjeta de crédito (~600€), cuenta bancaria en -700€.
 
 ## 1.1 Próximos ingresos (registrado 17 agosto 2026)
 
@@ -145,13 +197,9 @@ Entre los dos, ~1.429€ potenciales — cubre el agujero completo si se cobran.
     confirma que son la misma persona). **Pendiente real**: Mariano tiene que fusionar los dos
     contactos a mano desde el panel de GHL (opción "combinar contactos") — el servidor MCP no tiene
     forma de hacerlo, GHL no expone esa función por API pública.
-- **Enrique Donna** — supuestamente paga **esta semana** (semana del 17 de agosto), en pesos
-  argentinos, **al menos el 50% de dos visas**. ⚠️ Monto exacto todavía sin confirmar — Mariano dijo
-  explícitamente "aún no sé cuánto". No asumir que es el mismo monto que Regina Epifanio ni que son
-  el mismo tipo de trámite (dijo "visas" en general, no necesariamente visado de estudios desde
-  origen) — falta que Mariano lo precise. **No se encontró como contacto en GHL** buscando "Enrique
-  Donna" — puede ser que el nombre esté escrito distinto en el sistema, o que todavía no esté
-  cargado como contacto.
+- **Enrique Donna** — **CONFIRMADO PAGADO el 50% — 4 septiembre 2026**: 412,5€ (estancia por
+  estudios, no visado como se especulaba antes), cobrados en **771.000 ARS**. Ver el detalle
+  completo de en qué se usó ese dinero en "Actualización 4 septiembre 2026" más abajo.
 
 ## 2. Cómo comportarte en esta área
 

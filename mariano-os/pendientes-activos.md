@@ -68,7 +68,16 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
   comprometida) y la familia Díaz/Balzan (~1.095€ en total, aunque ellos dijeron "más adelante" sin
   fecha) — ver `direcciones/comercial/CLAUDE.md` sección 14.2 para el detalle completo de deuda de
   clientes. Entre los dos cubren el agujero completo si se cobran.
-- Estado: **abierto — urgente, se agravó hoy con deuda nueva de tarjeta de crédito**.
+- **Actualizado 4 sept 2026 — cobro real de Enrique Donna (771.000 ARS) resolvió varias deudas en
+  pesos argentinos**: quedaron saldadas por completo Micol Navarro (los 80.000 ARS del sueldo de
+  Sabrina, distinto de una deuda nueva de 173.000 ARS a Micol por otro concepto que sigue abierta),
+  Matías Macho (140.000 ARS) y Exxo Studio (362.000 ARS — mismo día, Exxo queda **pausado** como
+  servicio, ver `direcciones/marketing/CLAUDE.md` sección 12). Deudas nuevas que aparecieron:
+  ~300.000 ARS a ARCA (intereses de un error viejo) y los 173.000 ARS a Micol ya mencionados. Ver
+  detalle completo línea por línea en `direcciones/finanzas/CLAUDE.md`, "Actualización 4 septiembre
+  2026". Las deudas en euros (Sabrina/casero 350€, IRPF+IVA ~8.000€, tarjeta ~600€, cuenta -700€)
+  siguen sin cambios.
+- Estado: **abierto — sigue urgente en euros, aliviado parcialmente en pesos argentinos**.
 - Recordado: 11 veces (24 ago 2026; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago,
   chequeo diario 18:00; 28 ago, chequeo diario 18:00; 28 ago, más tarde — agotamiento expresado; 29
   ago, chequeo diario 18:00; 30 ago, chequeo diario 18:00; 31 ago — se agrava con adelantos de
@@ -431,6 +440,9 @@ en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
      diario 18:00; 2 sept, chequeo diario 18:00; 3 sept, chequeo diario 18:00).
 
 3. **Migrar la cuenta de ads a facturación en euros (hoy en pesos, vía Mercado Pago Argentina)**
+   ⚠️ **Exxo (quien maneja la campaña de ads) quedó pausado el 4 sept 2026** — ver
+   `direcciones/marketing/CLAUDE.md` sección 12. No asumir que este ítem sigue con la misma
+   urgencia mientras el servicio esté en pausa.
    - Detalle completo en `direcciones/marketing/CLAUDE.md`, sección 6. Mariano ya decidió hacerlo
      (más caro pero deducible, y no le parece correcto operar en ARS para un negocio español), pero
      sin fecha todavía — acaba de cargar 70.000 ARS para no cortar la campaña mientras tanto.
@@ -441,6 +453,7 @@ en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
      chequeo diario 18:00; 2 sept, chequeo diario 18:00; 3 sept, chequeo diario 18:00).
 
 4. **Conectar el sistema a la cuenta de administrador de anuncios de Mariano (Meta Ads Manager)**
+   ⚠️ **Exxo quedó pausado el 4 sept 2026** — ver `direcciones/marketing/CLAUDE.md` sección 12.
    - Detalle completo en `direcciones/marketing/CLAUDE.md`, sección 7. Pedido explícito de Mariano
      para tener visibilidad en tiempo real de la inversión y el desempeño de las campañas de Exxo.
    - **Plataforma confirmada (21 ago 2026): Meta Ads Manager.**
@@ -455,6 +468,7 @@ en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
      chequeo diario 18:00; 2 sept, chequeo diario 18:00; 3 sept, chequeo diario 18:00).
 
 5. **Repositorio de marketing de Exxo — conseguirlo y dárselo a este sistema para tener contexto real**
+   ⚠️ **Exxo quedó pausado el 4 sept 2026** — ver `direcciones/marketing/CLAUDE.md` sección 12.
    - Detalle en `direcciones/marketing/CLAUDE.md`, sección 11.1 punto 8. Agustín se comprometió en
      la reunión del 25 ago a transferir el repo completo de marketing (GitHub) a la cuenta de
      GOTIR. **El objetivo explícito de Mariano es pasárselo a este sistema** para tener contexto
@@ -476,6 +490,7 @@ en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
      diario 18:00; 2 sept, chequeo diario 18:00; 3 sept, chequeo diario 18:00).
 
 7. **Confirmar si Mariano acepta el script de alertas de Ads en vez del informe periódico pedido**
+   ⚠️ **Exxo quedó pausado el 4 sept 2026** — ver `direcciones/marketing/CLAUDE.md` sección 12.
    - Agustín ofreció, en lugar de un informe de rendimiento periódico (lo que Mariano había
      pedido), un script para la computadora de Mariano que avise cuando una campaña se bloquee o
      interrumpa — ver `direcciones/marketing/CLAUDE.md` sección 11.1, punto 5.
@@ -514,6 +529,7 @@ en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
       confirmar dentro de esa sección (qué es "Mercurio", y si la leyenda de promo duplicada bajo
       "Precio normal" era intencional) — no bloquearon el envío, se pueden confirmar después.
     - Estado: **resuelto** (con las 2 dudas menores todavía abiertas, no bloqueantes).
+    ⚠️ **Exxo quedó pausado el 4 sept 2026** — ver `direcciones/marketing/CLAUDE.md` sección 12.
     - Estado: **en curso** — texto listo, falta el envío (mismo paquete que el ítem 11).
     - Recordado: 4 veces (29 ago, chequeo diario 18:00; 30 ago, chequeo diario 18:00; 2 sept,
       chequeo diario 18:00; 3 sept, chequeo diario 18:00).

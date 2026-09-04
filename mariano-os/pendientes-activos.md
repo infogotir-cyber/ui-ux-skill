@@ -74,6 +74,19 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
   ago, chequeo diario 18:00; 30 ago, chequeo diario 18:00; 31 ago — se agrava con adelantos de
   tarjeta de crédito; 2 sept, chequeo diario 18:00; 3 sept, chequeo diario 18:00).
 
+### Personal — proyecto de serie/dibujos animados con enseñanzas cristocéntricas (4 sept 2026)
+
+Idea propia de Mariano: crear una serie narrativa (dibujos animados o con personas reales) para
+enseñar prédicas a través de una secuencia, no exposición directa — quiere que llegue incluso a
+televisión, 100% cristocéntrico. Se investigó el estado real de herramientas de IA para esto (4
+sept 2026) — ver detalle completo en `areas/personal/CLAUDE.md`, sección 7: hoy ya es viable con
+herramientas como LTX Studio (pipeline completo guión→storyboard→video) o Vidu Q3/Seedance 2.5
+(consistencia de personaje). Mariano pidió seguir con esto más adelante.
+
+- Estado: **abierto — quiere retomarlo, todavía sin arrancar nada concreto**. No prioridad
+  inmediata dada la crisis de caja — no gastar en planes pagos todavía.
+- Recordado: 1 vez (4 sept 2026, creación).
+
 ### GOTIR — decisión estratégica: ¿bajar precios y jugar a volumen? (28 ago 2026)
 
 Mariano planteó, en el mismo mensaje donde expresó agotamiento por la crisis de caja, una posible

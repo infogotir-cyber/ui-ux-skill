@@ -96,6 +96,34 @@ las armó él, no las reinterpretes en otras más "estándar" de coaching de vid
 - El patrón general acá es la **ausencia** de tiempo de ocio, no una lista de aficiones activas —
   no fuerces la categoría a verse más poblada de lo que realmente está.
 
+### 7. Proyecto que quiere hacer — serie/dibujos animados con enseñanzas cristocéntricas (4 sept 2026)
+Idea propia de Mariano, con la que lleva tiempo: crear una serie (tipo dibujos animados, o con
+personas reales) para enseñar prédicas/enseñanzas a través de una secuencia narrativa, no
+exposición directa — dice tener "mucha imaginación" y muchas ideas que quiere poder mostrar tal
+como las ve en su mente. Quisiera que llegue incluso a televisión. Es 100% cristocéntrico —
+enseñanza cristiana narrada.
+
+**El bloqueo de siempre**: no tiene equipo (dibujantes, animadores) ni presupuesto para armarlo, y
+venía esperando a que la IA llegara al punto de poder dictarle la idea y que ella genere las
+imágenes/secuencias/video.
+
+**Investigación hecha (4 sept 2026)**: ya existen herramientas reales para esto hoy. La más
+alineada con lo que quiere ("dictar la idea, que arme storyboard y mantenga los mismos personajes
+en toda la secuencia") es **LTX Studio** (pipeline completo: guión → escenas → storyboard →
+personajes consistentes → video, combinando varios motores como Veo/Kling/LTX). Para consistencia
+de personaje específicamente, **Vidu Q3** (hecha a propósito para series animadas) y **Seedance
+2.5** (subís 3-5 fotos de referencia del personaje y las bloquea en todas las escenas). Flujo
+pensado: Mariano dicta la idea/prédica como ya hace siempre → se convierte en guión por escenas →
+se pega en la herramienta → arma storyboard + personajes consistentes → genera el episodio.
+
+**Honestidad del estado real de la tecnología**: hoy se puede lograr algo bueno para redes/iglesia,
+pero calidad 100% nivel TV sin ningún retoque humano todavía no — sigue haciendo falta editar un
+poco cada episodio.
+
+**Estado: quiere retomarlo — todavía no arrancó nada concreto.** Idea para más adelante, no
+prioridad inmediata (dado el contexto de crisis de caja activa) — no gastar en ningún plan pago
+todavía, hay versiones gratuitas de prueba para validar si el resultado convence antes de pagar.
+
 ## Estilo de trabajo y comunicación (registrado 14 agosto 2026, de una conversación previa)
 Esto afecta directamente cómo interactuar con Mariano día a día, en cualquier área del sistema —
 no es exclusivo de lo personal, pero vive acá porque es donde mejor encaja como "quién es él":

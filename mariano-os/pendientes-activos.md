@@ -251,14 +251,21 @@ y valor, `opportunity_id=7l4aZEKuzXBh3bNJgXal`).
      llena rápido y **se reserva recién cuando se paga la inscripción** (corregido 24 ago — Mariano
      aclaró que GOTIR no puede reservarlo sin ese pago, la primera versión del mensaje lo daba a
      entender mal) — a confirmar antes de enviarlo.
-   - Estado: **abierto — esperando que Javier cobre su jubilación, no una venta caída**. El 24 ago
-     ya se le mandó el mensaje cálido sin mencionar el vencimiento (recordándole que el cupo se
-     reserva al pagar la inscripción) — sigue sin responder al 26 ago.
-   - Recordado: 15 veces (19 ago 2026; 20 ago, chequeo diario 20:00; 22 ago, chequeo de la mañana;
+   - **Chequeo real de conversación, 5 sept 2026**: Javier respondió el 31 ago pidiendo
+     explícitamente oración por el pago de la jubilación ("por ahora solo te pido un favor de
+     acompañarnos en oración para que este proceso se liquide lo más pronto"). Mariano ya le mandó
+     un nuevo check-in cálido el **4 sept 2026** ("Hola Javier! Cómo estás?" → "Ahí seguimos en
+     oración, vamos que se puede 🙌🏻" → "Qué tal va eso, alguna novedad?") — sin respuesta de Javier
+     todavía a esta hora (5 sept).
+   - Estado: **abierto — esperando que Javier cobre su jubilación, no una venta caída**. Seguimiento
+     ya está al día (último mensaje nuestro es del 4 sept); no hace falta mandar nada nuevo, solo
+     esperar respuesta.
+   - Recordado: 16 veces (19 ago 2026; 20 ago, chequeo diario 20:00; 22 ago, chequeo de la mañana;
      22 ago, chequeo diario 20:00; 23 ago, chequeo diario 20:00; 24 ago 2026, aclarado; 25 ago,
      chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago, chequeo diario 18:00; 28 ago,
      chequeo diario 18:00; 29 ago, chequeo diario 18:00; 30 ago, chequeo diario 18:00; 2 sept,
-     chequeo diario 18:00; 3 sept, chequeo diario 18:00; 4 sept, chequeo diario 18:00).
+     chequeo diario 18:00; 3 sept, chequeo diario 18:00; 4 sept, chequeo diario 18:00; 5 sept,
+     chequeo real de conversación — seguimiento ya al día).
 
 1. **Nazareth Rengel — no-show del 18 ago, RECONTACTADA (26 ago 2026)**
    - Referida por Jesús Mosquera. Llevaba 8 días sin reconexión — se le mandó mensaje el 26 ago
@@ -352,7 +359,7 @@ actualizada en cada barrido, no un documento de una sola vez.
 |---|---|---|---|
 | Sara Sofía Gutierrez Villa | 825€, `aYteBUaMG8PLVxbt8uV1` | **Pronto pago** (la más avanzada antes de Pagado) | **Actualizado 29 ago 2026**: se le mandó el mensaje con CTA cerrado ya acordado con Mariano — sin respuesta todavía a esta hora. Etapa sin cambio desde el 20 ago. Es reciente (mismo día) — todavía no amerita otro contacto, esperar 24-48h antes de insistir de nuevo. |
 | Maryi Castañeda | 2.475€ (familia x3), `OXCJcSWxG99B6np8qlf4` | Información y contrato enviado | **Actualizado 31 ago 2026**: se le mandó por fin un mensaje con CTA cerrado real (retomar el pago del 50%, 1.237,50€, ofreciendo el link) en vez de otro "cómo estás" — enviado por Mariano, sin respuesta todavía a esta hora. |
-| Javier Maddia | 825€, `en7sthBBlJucNvNzTixG` | Información y contrato enviado | **Nuevo en el tracker, 31 ago 2026**: sigue bloqueado esperando que le liquiden la jubilación en bolívares para poder pagar (dijo "estamos en la dulce espera" el 28 ago). Se le mandó un check-in puntual sobre ese pago concreto (no la escasez de cupos ya usada el 24 ago, para no repetirla sin que haya cambiado nada) — enviado 31 ago, sin respuesta todavía. |
+| Javier Maddia | 825€, `en7sthBBlJucNvNzTixG` | Información y contrato enviado | **Actualizado 5 sept 2026**: sigue bloqueado esperando que le liquiden la jubilación en bolívares. Respondió el 31 ago pidiendo oración por el pago. Mariano mandó nuevo check-in cálido el 4 sept ("Cómo estás?" / "vamos que se puede" / "alguna novedad?") — sin respuesta todavía a esta hora. Seguimiento al día, no hace falta mandar nada nuevo. |
 | Héctor Ojeda | 825€, `eyM4gRv1FRvbYfC4Pusi` | Información y contrato enviado | **Actualizado 29 ago 2026, con el chat real revisado**: tras el llamado del 26 ago, Mariano viene de una secuencia de seguimientos reales y específicos (no genéricos) desde el 18 ago — costos, habilitación sanitaria pendiente de confirmar, propuesta de llamada de 10 min lunes 17h y luego jueves 17h — **"hace rato que no responde" a ninguno**, según confirma Mariano. Va camino a 11+ días de silencio total pese a insistencia bien hecha (motivo concreto + CTA cada vez). Candidato a intentar por otro canal (llamada directa, no texto) antes de seguir escribiendo. |
 | Luisana Junguittu | 825€, `y1FkCgvdCj61Eosz5sr9` | Información y contrato enviado | **Actualizado 29 ago 2026, con el chat real revisado**: el 14 ago dijo que habló con Luis (su pareja) pero "surgieron algunas dudas" — nunca llegó a decir cuáles. Mariano le preguntó explícitamente el 18 ago y le ofreció verlas por llamada de 10 min el 25 ago ("lunes") — **sin respuesta desde entonces**, confirma Mariano hoy ("dejó de responder"). El bloqueo real (cuáles son las dudas de Luis) sigue sin identificar — no se puede armar un mensaje efectivo sin ese dato. Mismo candidato que Héctor a intentar por llamada en vez de texto. |
 | Ángel Villalba | 825€ + inscripción 890€, `4KjEeYnCseQYw4EHgETY` | Llamada realizada | Confirmado por Mariano hoy: quedó en contactarse la semana que viene, consistente con lo ya registrado (`patrones-llamadas.md`, fila 7) — sin fecha exacta, pero sin acción pendiente hasta esa semana. |

@@ -15,8 +15,9 @@ pendiente de confirmar.
 - Objetivo de temporada: completar sus 12 discípulos directos abriendo FM4.6 con una pareja nueva.
   A partir de ahí, los nuevos líderes empiezan a discipular a sus propios discípulos (crecimiento
   multiplicativo, no solo lineal).
-- Es también pilar/coordinador de **New Life** para TODA la iglesia (no solo sus discípulos) — vela
-  por el proceso de los estudiantes de todos los códigos/grupos, no solo los suyos.
+- ~~Es también pilar/coordinador de **New Life** para TODA la iglesia~~ — **ya no lo es, desde el 7
+  sept 2026**. Ver sección "Cambio de pilar de New Life — 7 sept 2026" más abajo para el detalle
+  completo y con el cuidado que merece este tema.
 - Es responsable de logística en la próxima edición de **Ruge** (1-4 octubre 2026).
 
 ## 2. Estructura en ClickUp
@@ -102,6 +103,35 @@ va a repartir entre FM4.1, 4.2 o 4.3 más adelante):
   solo se deja anotado el contexto.
 - **Miguel** — ya es parte de FM4.2 (a diferencia de Emiliano y Litzy, que todavía no tienen grupo);
   quieren que vaya este domingo a la playa.
+
+#### Cambio de pilar de New Life — 7 sept 2026
+
+Mariano contó, de entrada, antes de pasar a los pendientes de GOTIR, que **ya no es pilar/
+coordinador de New Life** — le quitaron el rol. En sus propias palabras, en parte fue "por no haber
+sido excelente". Es un tema sensible (pastoral, sobre su propio desempeño) — tratarlo con el mismo
+cuidado que el resto del contexto sensible de esta sección (ver "Actualización 21 agosto 2026" más
+abajo, sobre el mismo patrón de reasignación de tareas de New Life que ya venía en curso desde
+antes). No especular sobre motivos más allá de lo que él mismo dijo, ni sugerir que fue solo por
+eso — lo dejó abierto ("en parte").
+
+**Reemplazo confirmado**: **Paola Guanuchi** pasa a ser la nueva pilar de New Life.
+
+**Plan de transición**: Mariano y Paola van a hacer una **capacitación mañana (8 sept 2026)** para
+que ella quede al tanto de todo el proceso — Mariano quiere dejar **todo bien documentado** para
+que pueda continuar sin depender de él. Esto es coherente con el rol de este sistema (memoria de
+largo plazo del área) — una vez que se haga la capacitación, hay que:
+1. Documentar acá (sección "Graduación New Life" y cualquier otra parte de este documento que
+   hable del rol de pilar) qué le corresponde a Paola de ahora en más — no asumir que es exactamente
+   lo mismo que hacía Mariano hasta confirmarlo con él después de la capacitación.
+2. Revisar si hace falta crear/reasignar tareas en ClickUp (folder "Liderazgo" y las listas de
+   New Life) de Mariano a Paola — bajo la regla de creación directa en ClickUp, pero solo después
+   de que Mariano confirme el alcance real del traspaso.
+3. Confirmar si Mariano sigue teniendo algún rol residual en New Life (ej. algo puntual del
+   Lanzamiento del 5 sept, que ya pasó) o si el traspaso es completo.
+
+- Estado: **abierto — capacitación programada para el 8 sept 2026, documentación del traspaso
+  pendiente de esa reunión**.
+- Agregado a `pendientes-activos.md`.
 
 #### Graduación New Life — 1 sept 2026 (registrado 17 agosto 2026, actualizado 18 ago 2026)
 Tarea madre creada en "Tareas Operativas Recurrentes": **"Graduación New Life — 1 sept 2026"** — ID

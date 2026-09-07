@@ -97,6 +97,19 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
   tarjeta de crédito; 2 sept, chequeo diario 18:00; 3 sept, chequeo diario 18:00; 4 sept, chequeo
   diario 18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario 18:00).
 
+### Ministerio — traspaso de pilar de New Life a Paola Guanuchi (7 sept 2026)
+
+Mariano ya no es pilar/coordinador de New Life — le quitaron el rol ("en parte por no haber sido
+excelente", en sus palabras). Tema sensible, ver detalle completo y el cuidado con que hay que
+tratarlo en `areas/ministerio/CLAUDE.md`, sección "Cambio de pilar de New Life — 7 sept 2026".
+**Paola Guanuchi** es la nueva pilar. Mariano y ella van a hacer una capacitación **mañana, 8 sept
+2026**, para dejarle todo bien documentado y que pueda continuar sola.
+
+- Estado: **abierto — capacitación programada para el 8 sept 2026**. Después de esa reunión, hay
+  que actualizar `areas/ministerio/CLAUDE.md` con el alcance real del traspaso (qué queda en manos
+  de Paola, si Mariano conserva algo residual) y revisar si hace falta mover tareas en ClickUp.
+- Recordado: 1 vez (7 sept 2026, creación).
+
 ### Personal — proyecto de serie/dibujos animados con enseñanzas cristocéntricas (4 sept 2026)
 
 Idea propia de Mariano: crear una serie narrativa (dibujos animados o con personas reales) para

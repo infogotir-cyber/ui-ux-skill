@@ -627,9 +627,13 @@ para Mariano pero no depende de él** — depende de que Juliana apruebe. Ademá
 siguen sin precio/proveedor, en manos del equipo de logística: pastillas para encender fuego, cañas
 para antorchas, radio comunicador, teléfono satelital, fuegos artificiales, alargador cable —
 detalle de a quién se le preguntó cada uno en `areas/ministerio/CLAUDE.md`.
+- **Actualizado 7 sept 2026**: Mariano confirmó que ya envió prácticamente todos los presupuestos
+  a Administración, y sigue esperando confirmación antes de poder empezar a hacer los encargos,
+  compras y pedidos — sin novedad todavía, sigue igual de bloqueado.
 - Estado: **bloqueado (esperando a Juliana)** — para los 6 ítems sin precio: **abierto**.
-- Recordado: 6 veces (3 sept 2026, creación; 3 sept, chequeo diario 18:00; 4 sept, chequeo diario
-  18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00).
+- Recordado: 7 veces (3 sept 2026, creación; 3 sept, chequeo diario 18:00; 4 sept, chequeo diario
+  18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00;
+  7 sept, confirmado por Mariano — presupuestos enviados, sigue esperando confirmación).
 
 ### Ministerio (Ruge y otros)
 
@@ -755,10 +759,18 @@ detalle de a quién se le preguntó cada uno en `areas/ministerio/CLAUDE.md`.
      final): Caramelos Surtidos y Etiquetas de mochilas para servidores (Marco), Cinta reflectante
      nocturna (Julio), Bolsa plástica negra para empacar (David) — retomar en la reunión del 31 ago
      o en un próximo mensaje.
-   - Estado: **en curso — esperando presupuesto de Marco, y respuesta de Julio/David**.
-   - Recordado: 7 veces (30 ago 2026, creación; 2 sept, chequeo diario 18:00; 3 sept, chequeo
+   - **Actualizado 7 sept 2026 — David Luzuriaga sale del equipo de logística** (problema personal,
+     sin más detalle, tema sensible — ver `areas/ministerio/CLAUDE.md`). Sus ítems pendientes
+     (contacto de Jonatan para las cañas, presupuesto de pastillas fogata, definición con Richard
+     sobre los platos, y la Bolsa plástica negra para empacar que había quedado suelta) quedan sin
+     dueño — hay que reasignarlos a Marco Guanuchi o Julio César Navia, todavía sin confirmar a
+     cuál.
+   - Estado: **en curso — esperando presupuesto de Marco, respuesta de Julio, y reasignar los
+     ítems de David Luzuriaga (ya no está en el equipo)**.
+   - Recordado: 8 veces (30 ago 2026, creación; 2 sept, chequeo diario 18:00; 3 sept, chequeo
      diario 18:00; 4 sept, chequeo diario 18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo
-     diario 18:00; 7 sept, chequeo diario 18:00).
+     diario 18:00; 7 sept, chequeo diario 18:00; 7 sept, David Luzuriaga sale del equipo — ítems
+     sin dueño).
 
 7. **Sistema de seguimiento 1:1 con discípulos FM4 — registro de fechas en marcha**
    - Detalle completo y tabla de registro en `areas/ministerio/CLAUDE.md`, sección 8.3. Mariano

@@ -149,14 +149,11 @@ del 5 sept ya documentada arriba (sección 3/4: Jacobo completa FM4.3, Lisandro+
 FM4.4, Sabrina completa FM4.5 junto a David). Además, **Mateo (Arteaga) y David (Valera), que ya se
 habían lanzado antes, se suman a liderar también**.
 
-⚠️ **Posible tensión con lo ya documentado, no resuelta, no asumida**: la sección 4 de arriba
-("El evento de Lanzamiento") decía explícitamente que **Mateo Arteaga NO se activa hasta que Adrián
-Caro se case y vuelva de su luna de miel** (ver más abajo, ahora confirmado a principios de
-octubre) — entraría recién ahí a FM4.1. Que Mariano diga hoy que Mateo "se suma a liderar también"
-podría ser (a) una activación adelantada distinta de lo planeado, (b) que se está sumando a este
-grupo nuevo en un rol distinto al de FM4.1, o (c) una imprecisión del mensaje dictado. No se
-corrige la sección 4 por inferencia — confirmar con Mariano qué rol exacto tiene Mateo hoy antes de
-tocar la estructura de FM4.1.
+**Resuelto (7 sept 2026, aclarado por Mariano)**: no hay contradicción — Mateo **acompaña** FM4.1
+desde ahora (rol de transición, por eso hoy ya "se suma a liderar"), y pasa a ser el **líder
+oficial recién en octubre**, cuando Adrián Caro se case, vuelva de su luna de miel y deje el
+liderazgo (fecha ya documentada en la sección 4 de arriba). Ambos datos conviven: Mateo
+acompañando ya, activación formal como líder en octubre.
 
 **Adrián Caro — actualizado 7 sept 2026**: Mariano confirmó que Adrián **todavía no se fue** del
 liderazgo de jóvenes (FM4.1) — se va **pronto, a principios de octubre 2026, cuando vuelva de su

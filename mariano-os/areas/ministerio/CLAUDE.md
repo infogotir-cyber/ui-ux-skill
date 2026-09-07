@@ -155,6 +155,13 @@ oficial recién en octubre**, cuando Adrián Caro se case, vuelva de su luna de 
 liderazgo (fecha ya documentada en la sección 4 de arriba). Ambos datos conviven: Mateo
 acompañando ya, activación formal como líder en octubre.
 
+**Onboarding ya hecho por Mariano (7 sept 2026)**: a los nuevos líderes (Sabrina, Lisandro, Jacobo,
+Paulina, Mateo, David) ya les compartió (a) el manual del libro de grupo de amistad, para que sepan
+qué prédicas ir preparando, (b) el link de Canva para que armen los flyers de promoción de sus
+grupos, y (c) el link de inscripción al Encuentro (26 sept 2026, ver sección "Campaña de
+evangelización" más arriba), para que empiecen a anotar gente. **Esta semana (semana del 7 sept) es
+la primera semana en que los seis abren grupo.**
+
 **Adrián Caro — actualizado 7 sept 2026**: Mariano confirmó que Adrián **todavía no se fue** del
 liderazgo de jóvenes (FM4.1) — se va **pronto, a principios de octubre 2026, cuando vuelva de su
 luna de miel** (coincide con el dato ya documentado de que Adrián se casa y Mateo lo reemplaza en

@@ -18,6 +18,9 @@ pendiente de confirmar.
 - ~~Es también pilar/coordinador de **New Life** para TODA la iglesia~~ — **ya no lo es, desde el 7
   sept 2026**. Ver sección "Cambio de pilar de New Life — 7 sept 2026" más abajo para el detalle
   completo y con el cuidado que merece este tema.
+- ~~Sirve como edecán~~ — **tampoco, desde el 7 sept 2026**: van a poner solo matrimonios en esa
+  área. Ver la misma sección de abajo.
+- **Sigue liderando FM4** (sin cambios) y sirve en **Servidores, 2-3 veces al mes**.
 - Es responsable de logística en la próxima edición de **Ruge** (1-4 octubre 2026).
 
 ## 2. Estructura en ClickUp
@@ -132,6 +135,34 @@ largo plazo del área) — una vez que se haga la capacitación, hay que:
 - Estado: **abierto — capacitación programada para el 8 sept 2026, documentación del traspaso
   pendiente de esa reunión**.
 - Agregado a `pendientes-activos.md`.
+
+**Ampliado el mismo día (7 sept 2026) — también sale de Edecanes**: Mariano también deja de servir
+como edecán — van a poner solo matrimonios en esa área de ahora en más (no es un tema de desempeño
+como con New Life, es un cambio de criterio de la posición en sí). **Lo que sigue igual**: continúa
+liderando FM4 sin cambios, y sirve en **Servidores, 2-3 veces al mes**.
+
+#### Nuevo grupo de discípulos lanzados — 7 sept 2026
+
+Mariano contó que hoy creó el grupo con los discípulos que ya se lanzaron: **Sabrina (Navarro),
+Lisandro (Tapia), Jacobo (Marulanda) y Paulina (Soto)** — coincide con la activación del Lanzamiento
+del 5 sept ya documentada arriba (sección 3/4: Jacobo completa FM4.3, Lisandro+Paulina completan
+FM4.4, Sabrina completa FM4.5 junto a David). Además, **Mateo (Arteaga) y David (Valera), que ya se
+habían lanzado antes, se suman a liderar también**.
+
+⚠️ **Posible tensión con lo ya documentado, no resuelta, no asumida**: la sección 4 de arriba
+("El evento de Lanzamiento") decía explícitamente que **Mateo Arteaga NO se activa hasta que Adrián
+Caro se case y vuelva de su luna de miel** (ver más abajo, ahora confirmado a principios de
+octubre) — entraría recién ahí a FM4.1. Que Mariano diga hoy que Mateo "se suma a liderar también"
+podría ser (a) una activación adelantada distinta de lo planeado, (b) que se está sumando a este
+grupo nuevo en un rol distinto al de FM4.1, o (c) una imprecisión del mensaje dictado. No se
+corrige la sección 4 por inferencia — confirmar con Mariano qué rol exacto tiene Mateo hoy antes de
+tocar la estructura de FM4.1.
+
+**Adrián Caro — actualizado 7 sept 2026**: Mariano confirmó que Adrián **todavía no se fue** del
+liderazgo de jóvenes (FM4.1) — se va **pronto, a principios de octubre 2026, cuando vuelva de su
+luna de miel** (coincide con el dato ya documentado de que Adrián se casa y Mateo lo reemplaza en
+FM4.1 en ese momento — ver sección 4 arriba, ahora con la fecha aproximada confirmada en boca de
+Mariano mismo).
 
 #### Graduación New Life — 1 sept 2026 (registrado 17 agosto 2026, actualizado 18 ago 2026)
 Tarea madre creada en "Tareas Operativas Recurrentes": **"Graduación New Life — 1 sept 2026"** — ID

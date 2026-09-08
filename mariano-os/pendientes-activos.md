@@ -105,10 +105,30 @@ tratarlo en `areas/ministerio/CLAUDE.md`, sección "Cambio de pilar de New Life 
 **Paola Guanuchi** es la nueva pilar. Mariano y ella van a hacer una capacitación **mañana, 8 sept
 2026**, para dejarle todo bien documentado y que pueda continuar sola.
 
-- Estado: **abierto — capacitación programada para el 8 sept 2026**. Después de esa reunión, hay
-  que actualizar `areas/ministerio/CLAUDE.md` con el alcance real del traspaso (qué queda en manos
-  de Paola, si Mariano conserva algo residual) y revisar si hace falta mover tareas en ClickUp.
-- Recordado: 2 veces (7 sept 2026, creación; 7 sept, chequeo diario 18:00).
+**Capacitación realizada (8 sept 2026)** — Mariano, Paola y Adrián Caro Gómez. Se leyó la
+transcripción real + el PDF "Procesos New Life Valencia" ya existente y se generó una versión
+**corregida y completada**, enviada a Mariano en PDF, para que se la pase a Paola — ver detalle
+completo (estructura real de 5 módulos, escalamiento de inasistencias, Excel internos/oficiales,
+checklist de 10 acciones) en `areas/ministerio/CLAUDE.md`, sección "Capacitación New Life — 8 sept
+2026".
+
+**Checklist de traspaso pendiente — ninguna acción todavía confirmada como hecha** (acciones son de
+Paola/Mariano, no de este sistema, salvo compartir el documento):
+1. Compartir el documento corregido con Paola.
+2. Paola crea Gmail exclusivo de la iglesia.
+3. Completar Excel interno de Desertados + compilar oficial (sin teléfonos/cédulas).
+4. Pedir a Marco Fernández acceso de edición al Excel oficial.
+5. Dar a Paola acceso a la carpeta de Drive de New Life España.
+6. Preguntar en el grupo de coordinación si los pastores tienen propuestas de tutores.
+7. Confirmar con Administración (Juliana) la sede nueva de Valencia y fecha/horario.
+8. Confirmar con Marco Fernández/Pablo Carranza las boletas del Encuentro (26 sept).
+9. Pedir al encargado administrativo de Ruge que traiga bandas de New Life desde Costa Rica.
+10. Agregar a Paola al grupo de WhatsApp de pilares de New Life de todo Impact Global.
+
+- Estado: **capacitación cerrada, checklist de 10 acciones abierto** — no asumir ninguna hecha hasta
+  que Mariano lo confirme.
+- Recordado: 3 veces (7 sept 2026, creación; 7 sept, chequeo diario 18:00; 8 sept, capacitación
+  realizada y documento corregido/enviado).
 
 ### Personal — proyecto de serie/dibujos animados con enseñanzas cristocéntricas (4 sept 2026)
 

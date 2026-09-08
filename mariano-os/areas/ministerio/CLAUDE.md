@@ -73,7 +73,11 @@ pendiente de confirmar.
 - New Life dura ~4 meses, 2 ciclos al año, 4 módulos: módulo 2 = activación en servicio
   (Servidores, Producción, Kids, con posibles excepciones como situación de unión libre); módulo 3
   = entrevistas de liderazgo (define intención de liderar de cada alumno); módulo 4 = cierre
-  (aprobados, deserciones, candidatos a Lanzamiento).
+  (aprobados, deserciones, candidatos a Lanzamiento). **Corregido 8 sept 2026** (capacitación de
+  traspaso a Paola Guanuchi, ver subsección "Capacitación New Life — 8 sept 2026" más abajo): en
+  realidad son **5 módulos**, ~6 meses/24 semanas — el dato de "4 módulos / ~4 meses" de acá queda
+  desactualizado, se mantiene sin reescribir como registro de lo que se creía antes. Entrevistas de
+  liderazgo son en módulo 3 **y** módulo 4, no solo módulo 3.
 - Excel oficial por ciclo (compartido con Costa Rica), Excel interno de asistencia (tutores), Excel
   de deserciones — todavía viven fuera de ClickUp.
 - Después de New Life viene **Lanzamiento** (2/año, debe enviar la lista definitiva de candidatos)
@@ -132,9 +136,177 @@ largo plazo del área) — una vez que se haga la capacitación, hay que:
 3. Confirmar si Mariano sigue teniendo algún rol residual en New Life (ej. algo puntual del
    Lanzamiento del 5 sept, que ya pasó) o si el traspaso es completo.
 
-- Estado: **abierto — capacitación programada para el 8 sept 2026, documentación del traspaso
-  pendiente de esa reunión**.
+- Estado: **capacitación realizada el 8 sept 2026** (Mariano, Paola y Adrián Caro Gómez, saliente
+  del rol de apoyo) — ver detalle completo del alcance real del traspaso en la subsección
+  "Capacitación New Life — 8 sept 2026" más abajo. El PDF de referencia ("Procesos New Life
+  Valencia") fue corregido y completado con esa información — ver esa misma subsección.
 - Agregado a `pendientes-activos.md`.
+
+#### Capacitación New Life — 8 sept 2026 (llamada real: Mariano, Paola Guanuchi, Adrián Caro Gómez)
+
+Mariano mandó la transcripción completa de la llamada de traspaso más el PDF ya existente
+("Procesos_New_Life__Valencia.pdf", 9 páginas) con instrucción explícita: *"te mando también la
+capacitación que hemos hecho para New life, me gustaría que la leas, corrijas y completes."* Esto
+cierra los 3 pasos que había quedado pendientes en la sección de arriba. **Se generó además una
+versión corregida y completada del documento en PDF, para que Mariano se la entregue a Paola** —
+mismo contenido que queda documentado acá, en formato de proceso operativo.
+
+**Dato nuevo de contexto**: Paola Guanuchi es hermana de **Marco Guanuchi** (ya documentado en Ruge
+— comisión de logística, folder Ruge más abajo).
+
+**Estructura real del ciclo (corrige y completa lo que el PDF tenía incompleto — releído contra la
+transcripción real de la llamada, no solo el resumen inicial)**:
+- **5 módulos** — los primeros 3 son para formarse como discípulo/persona, los últimos 2 son para
+  servir. **El módulo 5 todavía no estaba grabado por Costa Rica al momento de la llamada
+  (8 sept 2026)** — Mariano fue explícito: a los alumnos que arrancan ahora se les puede decir que
+  sí habrá módulo 5, con la salvedad de que si al final no está listo, se les avisa que no. No
+  asumir el módulo 5 como 100% confirmado para cualquier cohorte sin volver a chequear el estado
+  con Costa Rica. Sigue **sin nombre confirmado**.
+- Duración total: **~5 meses** (aprox. **1 mes por módulo**, dicho así por Mariano en la
+  capacitación) — no ~4 meses como decía el resumen general de la sección "Folder: New Life" más
+  arriba (que queda desactualizado en ese punto — ver nota ahí). Tratar el número como aproximado,
+  no exacto: al hablar de la próxima graduación de la cohorte actual, Mariano mencionó un horizonte
+  de ~6 meses — no se resuelve la diferencia por inferencia, ambos datos vienen de él mismo.
+- **Noches de ADN**: hay entre el módulo 1 y el 2, y entre el módulo 2 y el 3 — **no** entre el 3 y
+  el 4 (confirmado explícitamente, "al menos no hubo en esta ocasión pasada").
+- Modalidad: **100% presencial**, clases de **90 minutos**. Contenido por módulo: módulos 1 y 2 se
+  basan en "el libro del apóstol" (con resumen/participación del libro desde el módulo 1); a partir
+  del módulo 2 se suman participaciones tipo bienvenida; a partir del módulo 3 arrancan los temas de
+  autoridad espiritual.
+- Módulo 2: activación en áreas de servicio (Servidores, Producción, Impact Kids, voluntariado).
+  Criterio para activar: que la persona esté en santidad — no se exige perfección, el límite real es
+  no estar practicando un pecado de manera regular/habitual. A quien dude, corresponde "visionarlo"
+  (acompañarlo/motivarlo) para que igual se active.
+- Entrevistas de liderazgo: **módulo 3 y módulo 4** (el PDF y el resumen general solo mencionaban
+  módulo 3 — se agrega el módulo 4 como segunda instancia; a veces no hace falta repetir en el
+  módulo 4 si en el módulo 3 ya quedó claro que la persona sí quiere avanzar). Modelos de entrevista
+  disponibles en la carpeta de Drive de New Life (ver checklist más abajo).
+- Graduación: después del módulo 5 (o del 4, si el 5 no llega a estar listo). Togas, bandas
+  personalizadas ("New Life", idealmente traídas de Costa Rica vía la logística de Ruge) y un
+  detalle/caja de regalo en vez de la galleta personalizada que se usa en otros países (en España
+  sale muy cara).
+
+**Inasistencias y recuperación (el PDF tenía esta sección con placeholders vacíos, ahora
+completa)**:
+- Máximo **2 inasistencias por módulo**. Cada inasistencia se recupera la **semana siguiente, de
+  forma presencial** (no hay recuperación por video ni asincrónica).
+- **3 o más inasistencias en un mismo módulo = se pierde ese módulo.** El conteo **no es
+  acumulativo entre módulos** — cada módulo arranca su propio contador de inasistencias en cero.
+
+**Escalamiento cuando alguien deja de asistir (esto no estaba en el PDF en absoluto, es la pieza
+operativa más importante que faltaba — cadena de 3 pasos, no 2)**:
+1. El **líder/"72"** (discípulo de segundo nivel, tiene a ese alumno en su grupo) debería, de forma
+   proactiva, preguntarle cada cierto tiempo cómo le va.
+2. **Si el 72 no lo hace**, el **tutor** le avisa directamente al 72: "tiene dos faltas, a la
+   próxima se queda afuera, ¿qué está pasando?".
+3. **Si el tutor tampoco actúa**, es la **Pilar** quien le llama la atención al tutor para que lo
+   haga.
+4. **Caso especial — cuando el 72 falla de forma sostenida con varios alumnos de su grupo a la
+   vez** (caso real usado en la llamada: Harold, Jean-Pierre y Ángela, todos del mismo grupo, con
+   el mismo patrón de faltas sin seguimiento): ahí la Pilar le indica al tutor que **escale directo
+   al "12"** (líder de grupo de amistad, primer nivel — en ese caso, Alejandra Palermo) **sin pasar
+   por el 72**, porque ya demostró no estar funcionando.
+- Ejemplo de seguimiento del caso a caso (Sofía y Richard, grupo de Karina): confirmar con el 12 si
+  ya recuperaron la clase; si sí, que **el tutor/líder marque la asistencia en Redil, nunca la
+  Pilar** ("no lo pongas tú, que lo pongan [ellos], porque si no se malacostumbran" — es una
+  cuestión de no hacerles el trabajo administrativo, no de desconfiar del reporte del alumno); si
+  no, exigir que la recuperen presencial en un día concreto, controlando que no intenten resolverla
+  por Zoom.
+- Casos reales usados como ejemplo en la llamada (quedan acá como referencia de cómo se aplica el
+  mecanismo, no como alumnos activos a hacer seguimiento genérico): Harold, Jean-Pierre y Ángela
+  (grupo de Alejandra Palermo), y Sofía y Richard (grupo de Karina).
+
+**Consideraciones de la clase (nuevo, no estaba en el PDF)**:
+- No se permite grabar las clases.
+- No se pausa la clase para que los alumnos tomen apuntes.
+- La clase no puede durar menos de 90 minutos (hay tutores que la aceleran y se saltan partes —
+  hay que controlarlo).
+- Los alumnos tienen que ver el video introductorio **antes** de que arranque la clase — si se dan
+  cuenta recién a último momento que no tienen acceso, no da tiempo a resolverlo (depende de que
+  Costa Rica habilite el acceso, y eso no es inmediato).
+
+**Plataformas — Wisboo y Redil (el PDF los mencionaba como headers vacíos, ahora con contenido)**:
+- **Wisboo**: plataforma de los tutores — ahí gestionan lo relativo a dar la clase. La Pilar tiene
+  que velar tanto porque los tutores activos tengan acceso, como por **quitarles el acceso apenas
+  dejan de ser tutores**.
+- **Redil**: sistema de reporte de asistencia, **separado y adicional** a Wisboo — los tutores
+  tienen que reportar asistencia en Redil **como New Life**, distinto del acceso a Redil que ya
+  tienen para su propio grupo de amistad (dos accesos/reportes distintos para la misma persona si
+  es tutor y además lidera un grupo).
+- De cara al ciclo que arranca con la sede nueva: probablemente haya **un tutor hombre y una mujer
+  por módulo**, aunque todavía no está definido quiénes — ver checklist más abajo (pedirles
+  propuestas a los pastores).
+
+**Lugar y hora — el PDF quedó desactualizado, no corregir todavía con un dato final**: New Life
+Valencia se está moviendo a una **sede nueva, centralizada, fuera de la iglesia** — **todavía sin
+confirmar** (pendiente de que Administración/Juliana lo defina). No poner una dirección nueva en el
+documento corregido hasta tener la confirmación — se deja marcado como pendiente, no como dato
+cerrado.
+
+**Informes — Excel internos y oficiales (aclara y corrige el PDF, que documentaba un formato que ya
+cambió más de una vez)**:
+- **Excel internos** (los arma el equipo de New Life Valencia, no se comparten con Costa Rica):
+  - *"[Enc/Sep] [mes] [año] New Life Total"* (ej. algo como "Enc Mar 26 New Life Total") —
+    asistencia registrada de manera regular, semana a semana.
+  - *"Desertados New Life IGV 2025-2026"* — log de quién desertó y por qué. Este Excel suele quedar
+    incompleto porque los líderes muchas veces solo ponen el nombre — la Pilar tiene que controlar
+    que se complete todo el resto de los campos, porque ese dato se necesita después para el
+    oficial.
+- **Excel oficial** — historial de cambios importante para no perder tiempo con un formato viejo:
+  Costa Rica cambió el formato del Excel oficial **más de una vez** (de un Excel a "hacerlo todo en
+  Redil", y de vuelta a un Excel, pero con formato nuevo). **El formato vigente al 8 sept 2026** es
+  el que Marco Fernández armó, con estructura similar al anterior — 4 pestañas: Estudiantes del
+  ciclo, Registro de Deserciones, Datos por módulo, Lista de Graduación. Por cada alumno se carga:
+  módulo aprobado/desertado, presente/ausente por clase (con el dato ya cargado en el Excel interno
+  de asistencia), y resultado de la entrevista (si "hará apertura" o no — quien queda marcado en
+  rojo/sin apertura no continúa y pasa a la lista de desertados).
+  **Alerta activa, no resuelta**: el propio Marco Fernández avisó el día antes de la capacitación
+  que "hay otro Excel distinto" — es decir, el formato de arriba puede volver a cambiar en
+  cualquier momento. Confirmar con él antes de cada entrega, no asumir que el formato queda fijo.
+  **Importante — regla de privacidad**: **teléfono y cédula NO se comparten** en el Excel oficial
+  que sale de España — se pueden borrar esas columnas antes de compilarlo a partir del interno.
+- **Acceso**: Paola no tiene edición habilitada en el Excel oficial nuevo — hay que pedirle acceso a
+  Marco Fernández (ver checklist más abajo).
+- **Contactos en Costa Rica**: **Pablo Carranza** (a cargo del área) y **Marco Fernández** (apoyo,
+  ~1 semana en el rol al momento de la llamada, es quien maneja el formato oficial del Excel y lo
+  está volviendo a cambiar).
+
+**Lección aprendida de un incidente pasado, para que no se repita (no estaba en el PDF)**: en un
+Encuentro anterior, Costa Rica no mandó a tiempo las "boletas" de inscripción, lo que generó caos
+el día del evento. Por eso, de cara al próximo Encuentro (**26 sept 2026**, ya documentado arriba),
+**Paola tiene que confirmar proactivamente con Marco Fernández/Pablo Carranza que las boletas
+existen y están listas, antes del evento** — no esperar a que Costa Rica avise.
+
+**Checklist de traspaso — acciones concretas dictadas en la llamada, tomadas directo de los action
+items de Fathom (ninguna ejecutada todavía por este sistema, todas requieren que Mariano o Paola
+las hagan directamente)**:
+1. Compartir este documento (el corregido/completo) con Paola, y que ella lo revise.
+2. Paola crea un **Gmail exclusivo de la iglesia** (no su cuenta personal) para todo lo de New Life
+   — recomendación personal de Mariano, es lo que él mismo hizo.
+3. Completar el Excel interno de Desertados, y a partir de ahí compilar el oficial **sin teléfonos
+   ni cédulas**.
+4. Pedirle a **Marco Fernández** acceso de edición al Excel oficial.
+5. Darle a Paola acceso a la **carpeta de Drive oficial de New Life España** (modelos de entrevista
+   y toda la documentación que va a necesitar).
+6. Preguntar en el grupo de WhatsApp de coordinación de New Life si los pastores ya tienen
+   propuestas de tutores para el ciclo que arranca (probablemente un tutor hombre y una mujer por
+   módulo).
+7. Confirmar con Administración (Juliana) la sede nueva de Valencia y, una vez confirmada, la
+   fecha/horario de inicio.
+8. Confirmar con Marco Fernández/Pablo Carranza que las boletas de inscripción del Encuentro del
+   26 sept existen y ya están listas para imprimir — y una vez que lleguen, quedárselas e
+   identificar con ellas quién va a New Life, para armar el grupo de WhatsApp del módulo 1 (tutores
+   + Paola + alumnos) con día/hora/lugar ya definidos.
+9. Pedirle al encargado administrativo de Ruge que traiga las bandas de New Life desde Costa Rica
+   (coordinación con la logística de Ruge — ver folder Ruge más abajo).
+10. Agregar a Paola al grupo de WhatsApp de pilares de New Life de **todo Impact Global** (no solo
+    España).
+
+**Rol de Adrián Caro de acá en más**: participó de la llamada como el apoyo saliente (junto con
+Ingrid Guaño, ya documentada como equipo de apoyo de Mariano más arriba) — su salida de New Life es
+la misma ya registrada, coherente con el traspaso completo a Paola. No se confirmó en la llamada si
+Adrián/Ingrid quedan con algún rol residual puntual — no asumir que sí ni que no, confirmar si
+aparece la duda más adelante.
 
 **Ampliado el mismo día (7 sept 2026) — también sale de Edecanes**: Mariano también deja de servir
 como edecán — van a poner solo matrimonios en esa área de ahora en más (no es un tema de desempeño

@@ -678,6 +678,33 @@ el contenido directamente acá.
   estaba señalada como insegura en agosto (sección 11.3) y sigue siendo la misma contraseña en el
   link que mandaron ahora para la firma de Mariano. Pedir que la cambien antes de dejar de tener
   acceso al hosting, o cambiarla Mariano mismo si ya tiene acceso.
+- **Mensajes de visado generalizados para toda la región** (acordado el 25 ago, sección 11.3 — los
+  correos estaban muy pegados a los tiempos de Argentina) — no mencionado en el cierre, confirmar
+  si se llegó a hacer.
+- **Qué herramienta usan para programar el contenido** (calendario de redes) — el mensaje de cierre
+  habla de calendarios "cerrados" (guiones, edición, diseño, programación) pero nunca dice con qué
+  herramienta programan — si es una cuenta de Exxo (ej. Metricool, Later, Buffer), hay que saber
+  si la programación sigue corriendo sola después de que se vayan, o si hay que reprogramar todo a
+  mano en una cuenta propia.
+
+**Ampliado 9 sept 2026, segunda pasada del análisis** (Mariano preguntó explícitamente qué más
+podía estar faltando):
+- **¿La web que está en producción hoy es la original en WordPress (mayo 2026) o la que Agustín
+  iba a reconstruir directo en GoHighLevel (acordado 25 ago, sección 11.1 punto 6)?** El mensaje de
+  cierre solo dice "se dio de alta la web nueva", ambiguo entre esas dos — importa mucho para saber
+  con qué herramienta se va a poder seguir editando la web sin Exxo (builder de GHL vs. un CMS
+  WordPress con su propio hosting).
+- **Hosting de la web** — más allá del DNS (ya en el checklist de accesos), confirmar dónde está
+  alojado el sitio (WordPress necesita hosting, no solo dominio) y quién lo paga hoy — si es una
+  cuenta de Exxo, hay que migrarlo o el sitio se cae apenas dejen de pagarla.
+- **Cualquier herramienta paga contratada en nombre de GOTIR** (programación de contenido, diseño,
+  IA, lo que sea) — con qué cuenta está dada de alta y si GOTIR sigue pagándola o hay que
+  cancelarla/transferirla.
+- **El equivalente en euros del "100% del IPRE mensual"** que Exxo propuso como nuevo criterio de
+  fondos demostrables para el PDF v2 (sección 11.2) — sigue sin resolverse si es mayor, menor o
+  igual a los ~7.200€ que se venían usando en llamadas reales (ver `patrones-llamadas.md`). Es
+  decisión final de Mariano, pero vale la pena pedirle a Agustín el número concreto en el que
+  pensaban al proponerlo, para no arrancar de cero esa cuenta.
 
 ### 13.3 Checklist de accesos administrativos — pedir antes de cerrar la transición
 
@@ -695,7 +722,22 @@ marketing sin Exxo, Mariano necesita quedarse con el control administrativo real
    Exxo por separado.
 6. **DNS del dominio `gotir.es`** — quién lo administra hoy (¿Exxo tiene acceso?, ¿está en un
    proveedor que Mariano controla directo?).
-7. Contraseña de la página de plantillas de email (punto de arriba).
+7. **Hosting de la web** (si es WordPress, no solo el dominio) — quién lo paga y dónde vive.
+8. Contraseña de la página de plantillas de email (punto de arriba).
+9. Cualquier otra herramienta paga dada de alta en nombre de GOTIR (programación de contenido,
+   diseño, etc.) — con qué cuenta y si GOTIR sigue pagándola.
+
+### 13.3.1 Acción propia de Mariano, no un pedido a Exxo — revocar el acceso de Agustín a GHL
+
+Distinto de todo lo de arriba (que es lo que hay que **pedirle** a Exxo): Agustín tiene hoy **acceso
+de API completo por escritura a GHL** (otorgado el 26 ago, ver sección 11.4) y es usuario activo
+(`agustinzaya@exxoweb.com`, rol admin — ver `direcciones/comercial/CLAUDE.md` sección 5.3.1). Con
+el servicio terminado, corresponde **revocarle/borrarle ese acceso** en GHL — mismo criterio que ya
+se aplicó con Pamela Jordan y Belén Campana cuando dejaron de trabajar con GOTIR (`comercial/
+CLAUDE.md` sección 5.2, `ghl_delete_user`). No hacerlo hasta que el traspaso de accesos/repositorio
+esté cerrado (todavía puede necesitar acceso para terminar de entregar todo) — pero sí antes de dar
+por cerrada la transición del todo. Queda como acción pendiente de Mariano/este sistema, no algo a
+incluir en el mensaje a Agustín.
 
 ### 13.4 Resumen para Mariano — qué pedirle a Exxo, en orden de prioridad
 
@@ -710,9 +752,19 @@ marketing sin Exxo, Mariano necesita quedarse con el control administrativo real
 5. **Todo el contenido ya producido y no publicado** (los blogs/videos del link de Drive, más
    cualquier otro que quede fuera de ese link) — pedirlo completo, no solo lo que se suba el lunes.
 6. **Si armaron audiencias de remarketing** con la exportación de contactos que Mariano les mandó.
-7. **Estado de los formularios GHL nuevos y la migración de email marketing** — probablemente
-   nunca se hicieron, pero confirmar antes de asumirlo.
-8. **Cambiar la contraseña `1234`** de la página de plantillas de email.
+7. **Estado de los formularios GHL nuevos, la migración de email marketing, y los mensajes de
+   visado generalizados para toda la región** — probablemente nunca se hicieron, confirmar.
+8. **Si la web en producción es la original en WordPress o la reconstruida en GHL**, dónde está
+   alojada (hosting, no solo el DNS) y quién la paga hoy.
+9. **Qué herramienta usan para programar contenido** y si la cuenta es de Exxo o de GOTIR.
+10. **Cualquier otra herramienta paga contratada en nombre de GOTIR** — con qué cuenta y si sigue
+    activa.
+11. **El equivalente en euros del "100% del IPRE mensual"** que propusieron para el PDF v2, para no
+    arrancar esa cuenta de cero.
+12. **Cambiar la contraseña `1234`** de la página de plantillas de email.
+
+**Aparte, no es un pedido a Exxo**: una vez cerrado el traspaso, revocarle a Agustín el acceso de
+API/usuario en GHL (sección 13.3.1) — acción de Mariano/este sistema, no algo para el mensaje.
 
 Nada de esto se le mandó todavía a Exxo — es la lista consolidada para que Mariano decida cómo y
 cuándo mandarla. **No enviar nada a Exxo por API/automatización sin que Mariano lo redacte o

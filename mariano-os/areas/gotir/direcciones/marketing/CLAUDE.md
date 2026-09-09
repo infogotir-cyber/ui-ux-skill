@@ -766,6 +766,17 @@ incluir en el mensaje a Agustín.
 **Aparte, no es un pedido a Exxo**: una vez cerrado el traspaso, revocarle a Agustín el acceso de
 API/usuario en GHL (sección 13.3.1) — acción de Mariano/este sistema, no algo para el mensaje.
 
+### 13.5 Mensaje final armado para Agustín (9 sept 2026) — pendiente de que Mariano lo mande
+
+A pedido de Mariano, se armó un único mensaje consolidado con **todo** lo de arriba, en dos
+bloques: (1) compromisos concretos de reuniones anteriores (25 ago sobre todo) que Exxo dijo que
+iba a hacer y el mensaje de cierre no confirma — blog/LinkedIn (Agustín se había comprometido a
+publicar él mismo), script de alertas, migración de email marketing, reconstrucción de la landing
+en GHL, formularios nuevos, generalización de mensajes de visado, auditoría de videos sin publicar,
+y el PDF v2 de Estancia por Estudios; (2) los 13 puntos del checklist de accesos/hosting/
+herramientas/contenido de las secciones 13.3-13.4. **Mariano todavía no lo mandó** — cuando lo
+haga y Agustín responda, actualizar esta sección con lo que confirme.
+
 Nada de esto se le mandó todavía a Exxo — es la lista consolidada para que Mariano decida cómo y
 cuándo mandarla. **No enviar nada a Exxo por API/automatización sin que Mariano lo redacte o
 confirme él mismo** — es una comunicación humana de cierre de proveedor, no una tarea operativa de

@@ -89,6 +89,16 @@ necesidades de importación, mapear proveedores europeos candidatos, y eventualm
 infraestructura (landing page, embudo, outreach) reusando el know-how de GOTIR — mismo patrón que
 el proyecto de Costa Rica (SEO/GEO orgánico primero, sin gastar en ads hasta tener validación).
 
+**Nueva reunión — contacto de minería y petróleo en Argentina (9 sept 2026)**: Mariano tuvo una
+llamada con una persona que se dedica a minería y petróleo en Argentina, para evaluar
+oportunidades — enmarcada explícitamente como parte de la búsqueda de "otra cosa más para hacer
+aparte de GOTIR" (no confirmado si es la misma línea que la intermediación B2B de arriba, o una
+oportunidad distinta dentro del mismo sector — no asumir, preguntar si hace falta precisión).
+**Grabó la llamada** y va a compartirla más adelante para que se haga un resumen — queda pendiente,
+sin transcripción todavía. Mencionó que ya habló de este tema con **Pablo Ruisi**, y que también lo
+viene viendo con **Ferna Pastini** — ninguno de los dos tiene más contexto todavía (rol, cómo se
+conectan con el proyecto) más allá de estar al tanto/involucrados en la conversación.
+
 ### Venta B2B de encimeras de superficie sólida acrílica (solid surface)
 - Está involucrado en ventas para un fabricante de encimeras de superficie sólida acrílica, dirigido
   a partners B2B: tiendas de cocina, arquitectos, distribuidores.
@@ -223,6 +233,16 @@ el proyecto de Costa Rica (SEO/GEO orgánico primero, sin gastar en ads hasta te
 - **Nota para más adelante, no bloqueante**: si esto escala en serio, vale la pena que Mariano
   chequee si captar inversionistas de EE.UU. para inversión inmobiliaria extranjera tiene algún
   requisito de registro/disclosure — no confirmado, no asumir una respuesta.
+- **"Golden Rica" (9 sept 2026)** — Mariano mencionó este nombre por primera vez en esta
+  conversación, sin mucho contexto propio todavía: dijo que **lo tiene en otro repositorio** (o
+  sea, se está trabajando en otro proyecto/sesión de Claude Code, no en `mariano-os`) y que están
+  viendo **qué convenio armar con Gold Tropical** para empezar a vender "ese tipo de productos" —
+  coincide en nombre y en la contraparte (Gold Tropical Business) con este mismo proyecto de
+  referidos inmobiliarios de Costa Rica documentado arriba, así que es razonable que sea el
+  nombre/marca propia que estaba pendiente de definir (ver el punto "nombre/marca propia para
+  actuar como referidor" más arriba) — **pero Mariano no lo confirmó explícitamente así, no
+  asumirlo como resuelto** hasta que lo diga con esas palabras. Reportó que "por ese lado vamos
+  bien" — sin más detalle concreto todavía.
 
 No hay más proyectos empresariales fuera de GOTIR registrados en memoria además de estos cuatro
 (encimeras acrílicas, intermediación B2B en minería Argentina-Europa, el tema de educación en

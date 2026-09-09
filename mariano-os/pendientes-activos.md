@@ -663,11 +663,17 @@ detalle de a quién se le preguntó cada uno en `areas/ministerio/CLAUDE.md`.
 - **Actualizado 7 sept 2026**: Mariano confirmó que ya envió prácticamente todos los presupuestos
   a Administración, y sigue esperando confirmación antes de poder empezar a hacer los encargos,
   compras y pedidos — sin novedad todavía, sigue igual de bloqueado.
-- Estado: **bloqueado (esperando a Juliana)** — para los 6 ítems sin precio: **abierto**.
-- Recordado: 8 veces (3 sept 2026, creación; 3 sept, chequeo diario 18:00; 4 sept, chequeo diario
+- **Actualizado 9 sept 2026**: de los 6 ítems sin precio, dos ya se resolvieron — **radio
+  comunicador y teléfono satelital ya están pedidos, gestionados por Administración**. El
+  **autobús de 55 plazas** lo iba a reservar Administración esta semana (en curso, no confirmado
+  cerrado). Siguen sin resolver: cañas para antorchas, pastillas para encender fogata (huérfanas de
+  David Luzuriaga), fuegos artificiales, alargador cable.
+- Estado: **bloqueado (esperando a Juliana)** — para los 4 ítems que siguen sin precio/resolver:
+  **abierto**.
+- Recordado: 9 veces (3 sept 2026, creación; 3 sept, chequeo diario 18:00; 4 sept, chequeo diario
   18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00;
   7 sept, confirmado por Mariano — presupuestos enviados, sigue esperando confirmación; 8 sept,
-  chequeo diario 18:00).
+  chequeo diario 18:00; 9 sept, Mariano confirma radios/teléfono gestionados y bus en curso).
 
 ### Ministerio (Ruge y otros)
 

@@ -760,7 +760,7 @@ cual, organizado por visionador:
 | | Su cuñado | No ha podido reunirse, en principio no quiere |
 | **Marcos Ch.** | César | Paga a fin de mes |
 | | (otro, sin nombre) | Ya inscrito |
-| **Mariano Barcelona** | Jeremías, Nicolás, Lucas, Emiliano | Todos por confirmar (temas de trabajo) |
+| **Mariano Barcelona** | Jeremías, Nicolás, Lucas, Emiliano | Todos por confirmar (temas de trabajo) — **actualizado 9 sept 2026**: refinado con nombre completo donde Mariano lo dio — Lucas Raddy, Lucas MacJary (ortografía sin confirmar, hay 2 Lucas distintos), Nicolás Sima, Emiliano Ortiz (mismo de la campaña de evangelización, ver sección de arriba) — "y algunas otras personas", esperando que respondan |
 | **Marco Guanuchi** | Su hijo | Rebelde, lo sigue intentando |
 | | (otra persona, sin nombre) | Visionando |
 | **David Luzuriaga** | (1 persona, sin nombre) | Complicado por trabajo, tiene el dinero y quiere |
@@ -1192,6 +1192,21 @@ todavía; **fuegos artificiales** — Julio preguntó dónde se compraron la vez
 este sistema lo saben, sigue sin resolver; **alargador cable** — ninguno de los 2 que tiene la
 iglesia sirve bien, probablemente haya que comprar uno nuevo, sin presupuesto todavía (ver
 "Corrección del mismo día, 30 ago 2026").
+
+**Actualización 9 sept 2026 (Mariano subió a la montaña con el equipo de logística — ver el informe
+"RUGE — Subida a la montaña" ya cargado en la tarea de ClickUp — y reporta que Ruge está "bajo
+control")**:
+- **Radio comunicador y teléfono satelital**: **ya pedidos, gestionados por Administración** —
+  Mariano dijo explícitamente que se puede despreocupar de estos dos.
+- **Alquiler del autobús de 55 plazas**: Administración lo iba a reservar **esta semana** (todavía
+  no confirmado que ya esté reservado, solo que está en curso).
+- **Cañas para antorchas y pastillas para encender fogata**: siguen sin resolver — eran ítems de
+  David Luzuriaga (ya fuera del equipo, ver nota de reasignación en "Equipo de logística" más
+  abajo), quedan huérfanos igual que el resto de lo suyo.
+- **Fuegos artificiales y alargador cable**: sin novedad, Mariano dijo "falta todo lo demás que
+  todavía no me han respondido" — sin dato nuevo específico.
+- Mariano cerró el tema explícitamente: no hace falta seguir analizando Ruge en detalle por ahora,
+  solo mantener el registro de lo pendiente.
 
 **Estado del envío (3 sept 2026)**: Mariano confirmó que ya envió este presupuesto a Juliana el 2
 sept y está esperando su confirmación para empezar a comprar — **el paso que sigue no depende de

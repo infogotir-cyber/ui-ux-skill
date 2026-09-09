@@ -58,6 +58,12 @@ las armó él, no las reinterpretes en otras más "estándar" de coaching de vid
     de fe disponible hoy está entrelazada con su liderazgo eclesial, ver `areas/ministerio/CLAUDE.md`.
 - También existe una lista vacía en ClickUp: **"Desarrollo y Espiritual"**, ID `901220315621`,
   mismo folder que Salud. Comparte lista con la categoría de formación (ver abajo).
+- **9 sept 2026**: Mariano contó que hubo "muchos cambios" y que se dio cuenta de varias cosas en
+  las que estaba equivocado, que debía corregir, respecto a su relación con Dios y con el
+  ministerio — dijo explícitamente que quiere **reflexionar sobre esto con más calma más
+  adelante**. No dio detalle del contenido todavía — se deja constancia de que existe esta
+  reflexión pendiente, sin inventar ni asumir de qué se trata específicamente, a la espera de que
+  él la retome cuando quiera.
 
 ### 3. Formación y desarrollo personal
 - Aprender nuevas habilidades / nuevos conocimientos (sin especificar todavía cuáles, más allá de

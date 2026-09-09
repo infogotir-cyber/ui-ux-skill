@@ -569,18 +569,31 @@ en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
      chequeo diario 18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00;
      8 sept, chequeo diario 18:00).
 
+4.5. **Mandarle a Exxo la lista consolidada de qué falta para cerrar bien la transición (9 sept 2026)**
+   - Mariano pidió analizar el mensaje de cierre de Exxo y decir qué falta pedir para que la
+     transición a que marketing lo lleven Mariano + este sistema sea completa. Lista armada y
+     priorizada en `direcciones/marketing/CLAUDE.md` sección 13.4 (videollamada de traspaso de
+     repo/accesos, estado del PDF v2 de Estancia por Estudios, confirmar en qué dominio está el
+     píxel real, informe final de la campaña, contenido no publicado, audiencias de remarketing,
+     formularios GHL nuevos, contraseña insegura de la página de plantillas). **Todavía no se le
+     mandó nada a Exxo** — es una comunicación que Mariano tiene que redactar/confirmar él mismo,
+     no algo que este sistema mande solo.
+   - Estado: **abierto — checklist armado, pendiente de que Mariano se lo mande a Agustín**.
+   - Recordado: 1 vez (9 sept 2026, creación).
+
 5. **Repositorio de marketing de Exxo — conseguirlo y dárselo a este sistema para tener contexto real**
-   ⚠️ **Exxo quedó pausado el 4 sept 2026** — ver `direcciones/marketing/CLAUDE.md` sección 12.
-   - Detalle en `direcciones/marketing/CLAUDE.md`, sección 11.1 punto 8. Agustín se comprometió en
-     la reunión del 25 ago a transferir el repo completo de marketing (GitHub) a la cuenta de
-     GOTIR. **El objetivo explícito de Mariano es pasárselo a este sistema** para tener contexto
-     completo del trabajo de marketing, no solo tener la custodia — falta: (1) que Agustín lo
-     transfiera, (2) que Mariano avise cuando lo tenga, (3) cargarlo/conectarlo acá.
-   - Estado: **en curso**, esperando a Agustín.
-   - Recordado: 10 veces (28 ago, chequeo diario 18:00; 29 ago, chequeo diario 18:00; 30 ago, chequeo
+   ⚠️ **Exxo ya no presta servicio (confirmado 9 sept 2026)** — ver
+   `direcciones/marketing/CLAUDE.md` sección 13.
+   - Detalle en `direcciones/marketing/CLAUDE.md`, sección 11.1 punto 8 y 13.4. Agustín mandó
+     mensaje de cierre el 9 sept: sigue sin transferir, pide una videollamada para "adaptar los
+     archivos" al repo de Mariano — hay que agendarla ya. Ver checklist completo de accesos a pedir
+     en la sección 13.3 del documento de marketing (GitHub, Vercel, GA4, Search Console, Meta
+     Business, LinkedIn, DNS).
+   - Estado: **en curso — Exxo pide videollamada para transferir, sin agendar todavía**.
+   - Recordado: 11 veces (28 ago, chequeo diario 18:00; 29 ago, chequeo diario 18:00; 30 ago, chequeo
      diario 18:00; 2 sept, chequeo diario 18:00; 3 sept, chequeo diario 18:00; 4 sept, chequeo
      diario 18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00;
-     8 sept, chequeo diario 18:00).
+     8 sept, chequeo diario 18:00; 9 sept, mensaje de cierre de Exxo recibido y analizado).
 
 6. **Confirmar monto real de fondos demostrables — cambio de criterio a "100% IPRE mensual"**
    - Surgió en la reunión del 25 ago con Agustín (`direcciones/marketing/CLAUDE.md` sección 11.2):
@@ -595,16 +608,20 @@ en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
      diario 18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00;
      8 sept, chequeo diario 18:00).
 
-7. **Confirmar si Mariano acepta el script de alertas de Ads en vez del informe periódico pedido**
-   ⚠️ **Exxo quedó pausado el 4 sept 2026** — ver `direcciones/marketing/CLAUDE.md` sección 12.
-   - Agustín ofreció, en lugar de un informe de rendimiento periódico (lo que Mariano había
-     pedido), un script para la computadora de Mariano que avise cuando una campaña se bloquee o
-     interrumpa — ver `direcciones/marketing/CLAUDE.md` sección 11.1, punto 5.
-   - Estado: **abierto**, a confirmar si esto es suficiente o si Mariano insiste en el informe.
-   - Recordado: 10 veces (28 ago, chequeo diario 18:00; 29 ago, chequeo diario 18:00; 30 ago, chequeo
+7. **Script de alertas de Ads — nunca se entregó, pedir informe final manual en su lugar**
+   ⚠️ **Exxo ya no presta servicio (confirmado 9 sept 2026)** — ver
+   `direcciones/marketing/CLAUDE.md` sección 13.
+   - El script que Agustín había ofrecido el 25 ago como sustituto del informe periódico nunca se
+     entregó — sigue en el backlog pausado del mensaje de cierre del 9 sept. Ya no tiene sentido
+     pedirlo — en su lugar, pedirle a Exxo un **informe final manual** de cómo rindió la campaña de
+     estancias (gasto total, leads, costo por lead, qué creativos funcionaron) antes de que se
+     desconecten del todo.
+   - Estado: **abierto — pedir informe final en vez del script**.
+   - Recordado: 11 veces (28 ago, chequeo diario 18:00; 29 ago, chequeo diario 18:00; 30 ago, chequeo
      diario 18:00; 2 sept, chequeo diario 18:00; 3 sept, chequeo diario 18:00; 4 sept, chequeo
      diario 18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00;
-     8 sept, chequeo diario 18:00).
+     8 sept, chequeo diario 18:00; 9 sept, confirmado que nunca llegó — reformulado como pedido de
+     informe final).
 
 8. **Avisarle a Agustín que NO migre el WhatsApp de la centralita al número personal de Mariano**
    - **Resuelto 26 ago 2026** — comunicado a Agustín, incluido en el mismo mensaje que el resto del

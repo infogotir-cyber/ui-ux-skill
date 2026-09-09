@@ -605,6 +605,120 @@ reunión del 25 ago que haya quedado a mitad de camino. **Todavía no se envió 
 como intención confirmada de Mariano, no como algo ya reclamado. Cuando lo mande, actualizar esta
 sección con la lista real de lo que responda Agustín.
 
+## 13. Fin del servicio de Exxo — mensaje de cierre y checklist de transición (9 sept 2026)
+
+Mariano confirmó que **ya no cuentan con el servicio de Exxo** (pasa de "pausado" a terminado) y
+pidió construir la transición para que **este sistema + Mariano** continúen con marketing por su
+cuenta mientras deciden si vuelven a contratar una agencia. Exxo (Agustín) mandó un mensaje de
+cierre con lo hecho/pendiente — reproducido y cruzado abajo contra todo lo ya documentado en este
+archivo, para no repetir nada y detectar qué falta pedir.
+
+**Limitación técnica de esta sesión**: los 4 links que mandó Exxo son de `gotir.es` (el diagnóstico
+de la campaña y la plantilla de firma) y de Google Drive (blogs y reel) — `gotir.es` está
+**bloqueado por la política de red de este entorno** (mismo tipo de bloqueo que tuvieron
+`services.leadconnectorhq.com` o `app.gohighlevel.com` al principio, que Mariano tuvo que habilitar
+a mano). No se pudo leer el diagnóstico de la campaña ni la firma de mail directamente — si Mariano
+quiere que este sistema los analice, tiene que habilitar `gotir.es` en la política de red, o pegar
+el contenido directamente acá.
+
+### 13.1 Lo que el mensaje de Exxo confirma o cierra (cruzado contra lo ya documentado)
+
+- **Botones "Agendar mi llamada" unificados** — resuelve el detalle de inconsistencia ya detectado
+  en la auditoría técnica (sección 10) y el compromiso de la sección 11.3.
+- **"TIE en mano" → "resolución del expediente"** — cambio de copy no documentado antes, coherente
+  con la terminología ya usada en `direcciones/comercial/CLAUDE.md`.
+- **Formularios conectados a GHL + alta de la web nueva** — coincide con lo que estaba bloqueado en
+  el cronograma de agosto (sección 3) y con la reconstrucción de la landing en GHL acordada el 25
+  ago (sección 11.1 punto 6).
+- **GA4, píxel de Meta y Search Console instalados, en agosto** — ⚠️ **contradice, o al menos no
+  aclara, un hallazgo firme con evidencia de red real**: la auditoría técnica del 24 ago (sección
+  10) confirmó que ni `landing.gotir.es/estancias` (la que Mariano manda ~3 veces por día) ni
+  `www.gotir.es/servicios/estancia-estudios` tenían ningún píxel — y el propio Agustín lo confirmó
+  en la reunión del 25 ago. **No asumir que esto ya está resuelto en la página que realmente
+  importa** — el mensaje de cierre no dice en qué dominio/página exactamente se instaló la
+  medición. Es la pregunta más importante de todo este cruce: si el tracking real quedó solo en la
+  web nueva y la landing vieja (la que se usa a diario) sigue sin nada, se perdieron semanas más de
+  señal de conversión sin que nadie lo note.
+- **Repositorio "local" para que Mariano edite los precios del PDF** — dato nuevo, **no es lo
+  mismo** que "el repositorio completo de marketing" que Agustín se comprometió a transferir el 25
+  ago (sección 11.1 punto 8) y que sigue en la lista de pendientes de este mismo mensaje de cierre.
+  Hay que confirmar con Agustín si son dos repos distintos o el mismo con otro nombre — no asumir.
+
+### 13.2 Lo que quedó a mitad de camino o directamente sin tocar — no mencionado por Exxo, cruzado con lo ya acordado
+
+- **El PDF de venta v2 "Estancia por Estudios" (honorarios, 3 opciones de curso, "Mercurio")** —
+  Mariano mandó el texto final el 26 ago (sección 11.2, el punto más trabajado de todo este
+  documento) y **el mensaje de cierre de Exxo no lo menciona en absoluto**. No se sabe si se llegó
+  a maquetar la versión final. Es la pregunta más urgente de contenido — si existe, pedir el
+  archivo editable (no solo un PDF final), porque va a hacer falta seguir iterándolo sin Exxo.
+- **Script de alertas de Ads** (sustituto acordado el 25 ago del informe periódico que Mariano
+  había pedido) — nunca se entregó, sigue en el backlog pausado del mensaje de cierre. Con Exxo
+  yéndose, ya no tiene sentido pedir el script — en su lugar, pedir un **informe final manual**
+  de cómo rindió la campaña de estancias hasta hoy (gasto total, leads generados, costo por lead,
+  qué creativos funcionaron mejor) — es el dato mínimo necesario para decidir si vale la pena
+  retomarla sin agencia.
+- **PDFs B2B para estudios de abogados (actualizado) y para universidades** — parte de la
+  estrategia de partnerships (sección 5), quedaron en el backlog pausado sin haber arrancado.
+  Preguntar si hay algún borrador o brief rescatable, o si hay que empezar de cero.
+- **Landings/campañas de "prórroga", "cuenta ajena" y "cuenta propia"** — coincide en nombre con el
+  producto nuevo que Mariano armó él mismo el 31 ago 2026 ("Modificación a Residencia de Trabajo",
+  ver `direcciones/comercial/CLAUDE.md` sección 16) — Exxo nunca llegó a arrancar esto, así que no
+  hay nada que rescatar acá, es 100% a construir de cero ahora.
+- **Migración de email marketing al dominio propio de GOTIR** (acordada el 25 ago, sección 11.3) —
+  sigue sin hacer. Preguntar el estado técnico exacto antes de que se vayan (¿DNS ya tocado?, ¿qué
+  falta?) para no tener que investigarlo desde cero.
+- **Exportación de base de datos para remarketing** (Agustín la pidió el 25 ago, Mariano la hizo —
+  544 contactos exportados, ver `pendientes-activos.md`) — no se sabe si Agustín llegó a usarla
+  para armar los públicos de remarketing en Meta. Si armó audiencias, pedir que documenten cuáles
+  son y cómo acceder a ellas — si no, es trabajo perdido a rehacer.
+- **Nuevos formularios de GHL por tipo de trámite** (visado, nómada, cuenta ajena, cuenta propia,
+  renovación — acordados el 25 ago, sección 11.3) — no mencionados en el cierre, probablemente
+  nunca se crearon. Confirmar.
+- **Contraseña `1234`** de la página de plantillas de email (`gotir.es/templatesemail/...`) — ya
+  estaba señalada como insegura en agosto (sección 11.3) y sigue siendo la misma contraseña en el
+  link que mandaron ahora para la firma de Mariano. Pedir que la cambien antes de dejar de tener
+  acceso al hosting, o cambiarla Mariano mismo si ya tiene acceso.
+
+### 13.3 Checklist de accesos administrativos — pedir antes de cerrar la transición
+
+El mensaje de cierre no menciona accesos/credenciales en ningún punto — para poder operar
+marketing sin Exxo, Mariano necesita quedarse con el control administrativo real de:
+1. **Repositorio de GitHub** (código de la web) — coordinar la videollamada que ya pidieron para
+   "adaptar los archivos a tu repo", agendarla cuanto antes.
+2. **Cuenta de Vercel** donde está deployada la web (o transferir el proyecto a una cuenta propia
+   de GOTIR).
+3. **Google Analytics 4** y **Search Console** — admin propio, no solo acceso de Exxo.
+4. **Meta Business Manager** — la cuenta de ads, el píxel, y (si existen) las audiencias de
+   remarketing ya armadas.
+5. **LinkedIn** — admin de la página de empresa de GOTIR, y confirmar si el "perfil personal
+   optimizado" de Mariano fue un cambio en su cuenta real (que ya tiene) o algo que gestionaba
+   Exxo por separado.
+6. **DNS del dominio `gotir.es`** — quién lo administra hoy (¿Exxo tiene acceso?, ¿está en un
+   proveedor que Mariano controla directo?).
+7. Contraseña de la página de plantillas de email (punto de arriba).
+
+### 13.4 Resumen para Mariano — qué pedirle a Exxo, en orden de prioridad
+
+1. **Agendar ya la videollamada** para transferir el repositorio completo de marketing (código +
+   accesos de GitHub/Vercel/DNS/Analytics/Search Console/Meta/LinkedIn — checklist de 13.3).
+2. **Estado real del PDF v2 de Estancia por Estudios** (con el texto que Mariano mandó el 26 ago) —
+   si existe, pedir el archivo editable.
+3. **Confirmar en qué dominio exacto está el píxel/GA4** — específicamente si `landing.gotir.es/
+   estancias` (la que se usa a diario) ya tiene tracking real o sigue sin nada.
+4. **Informe final manual de la campaña de estancias** (gasto, leads, costo por lead, qué
+   funcionó) — en vez del script de alertas que nunca llegó.
+5. **Todo el contenido ya producido y no publicado** (los blogs/videos del link de Drive, más
+   cualquier otro que quede fuera de ese link) — pedirlo completo, no solo lo que se suba el lunes.
+6. **Si armaron audiencias de remarketing** con la exportación de contactos que Mariano les mandó.
+7. **Estado de los formularios GHL nuevos y la migración de email marketing** — probablemente
+   nunca se hicieron, pero confirmar antes de asumirlo.
+8. **Cambiar la contraseña `1234`** de la página de plantillas de email.
+
+Nada de esto se le mandó todavía a Exxo — es la lista consolidada para que Mariano decida cómo y
+cuándo mandarla. **No enviar nada a Exxo por API/automatización sin que Mariano lo redacte o
+confirme él mismo** — es una comunicación humana de cierre de proveedor, no una tarea operativa de
+GHL/ClickUp.
+
 ## 9. Cómo comportarte en esta área
 
 - Esta dirección recién se está construyendo — no inventar campañas, cifras ni fechas que no vengan

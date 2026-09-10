@@ -88,9 +88,29 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
   GHL atrasado (87€, deuda nueva), tarjeta de crédito ahora en **470€** (dato más reciente,
   reemplaza el "~600€" anterior), cuenta bancaria sigue en -700€, y a pagar **mañana (5 sept)**:
   alquiler (701€) + basura (~90€) + retroactivo de alquiler (~30€). También deuda nueva de **100€ a
-  Marco Jurado** (motivo sin confirmar). Ver detalle completo en `direcciones/finanzas/CLAUDE.md`.
-- Estado: **abierto — se alivia progresivamente en algunos frentes, pero sigue el agujero de fondo
-  y hay pagos grandes recién mañana (alquiler+basura+retroactivo, ~821€)**.
+  Marco Jurado** — **motivo confirmado 10 sept 2026: fue un préstamo que Marco le hizo para poder
+  sembrar/ofrendar en la iglesia**, no una deuda de negocio. Ver detalle completo en
+  `direcciones/finanzas/CLAUDE.md`.
+- **Actualizado 10 sept 2026 — cobro real de Javier Maddia alivia varios frentes**: pagó 2.500 USDT
+  (debía 2.350, 150 de excedente a favor — ver ítem "Promo en USDT/Binance" en la sección "GOTIR —
+  urgente", ahora resuelto/pagó). Con ese dinero, Mariano ya pagó **800€ de alquiler** y **250€ del
+  Reto Ruge** (cierra ese ítem de la lista de pagos pendientes de arriba). Está por pagar los
+  **100€ a Marco Jurado** de arriba. Aparte, ya ofrendó/diezmó **130€ propios** (120€ diezmo + 10€
+  ofrenda) — esto es aparte del cobro de Javier, información personal/espiritual, tratar con la
+  misma discreción que el resto de este tipo de contenido. Queda un remanente que sigue usando para
+  ponerse al día con el resto de las cuentas de la lista de arriba — no todas están saldadas.
+- **Mismo día (10 sept 2026), más movimiento de cobros**:
+  - **Izie pagó la factura número 53** — el monto real era 244€, pero Mariano se equivocó al
+    facturar y le mandó/cobró 213€ (error propio, faltan 31€ que no se van a volver a pedir según
+    lo contado, queda anotado como el motivo del desfase, no como pendiente de cobro).
+  - **Factura número 58, mismo tipo de error de monto** — todavía sin cobrar, queda pendiente.
+  - **Comisión del seguro de Débora** — pendiente de cobro, monto bajo (~60€).
+  - **Mariela Pérez** (tracker de próximos cierres, Grupo 3) — Mariano avisó que está próxima a
+    pagar, sin fecha exacta todavía.
+  - Recordatorio explícito de Mariano: **"tenemos que seguir vendiendo, eso sí es muy importante"**
+    — no perder de vista la generación de nuevos cierres mientras se resuelve la caja.
+- Estado: **abierto — se alivia progresivamente en varios frentes (Javier Maddia, Izie), pero sigue
+  el agujero de fondo (IRPF+IVA, tarjeta de crédito, cuenta en -700€) sin resolver**.
 - Recordado: 17 veces (24 ago 2026; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago,
   chequeo diario 18:00; 28 ago, chequeo diario 18:00; 28 ago, más tarde — agotamiento expresado; 29
   ago, chequeo diario 18:00; 30 ago, chequeo diario 18:00; 31 ago — se agrava con adelantos de
@@ -275,7 +295,7 @@ y valor, `opportunity_id=7l4aZEKuzXBh3bNJgXal`).
      diario 18:00; 30 ago, chequeo diario 18:00; 2 sept, chequeo diario 18:00; 3 sept, chequeo
      diario 18:00; 4 sept, chequeo diario 18:00 — resuelto).
 
-0. **Promo en USDT/Binance ofrecida a Javier Maddia — venció el viernes 21 ago, pero no se cayó la venta**
+~~0. **Promo en USDT/Binance ofrecida a Javier Maddia — RESUELTO (10 sept 2026): pagó**~~
    - Detectado 19 ago revisando la llamada del 18 ago (73 min, familia de 3, ~2.475€ potenciales).
      Mariano ya envió por correo una promoción agresiva por pagar en USDT vía Binance, con fecha
      límite el viernes 21 — el cliente además prefiere pagar así.
@@ -299,9 +319,14 @@ y valor, `opportunity_id=7l4aZEKuzXBh3bNJgXal`).
      un nuevo check-in cálido el **4 sept 2026** ("Hola Javier! Cómo estás?" → "Ahí seguimos en
      oración, vamos que se puede 🙌🏻" → "Qué tal va eso, alguna novedad?") — sin respuesta de Javier
      todavía a esta hora (5 sept).
-   - Estado: **abierto — esperando que Javier cobre su jubilación, no una venta caída**. Seguimiento
-     ya está al día (último mensaje nuestro es del 4 sept); no hace falta mandar nada nuevo, solo
-     esperar respuesta.
+   - **RESUELTO 10 sept 2026**: Javier pagó **2.500 USDT** (vía la promo/Binance) — el monto real
+     que debía era **2.350 USDT**, quedaron **150 USDT de excedente a favor** para futuras cosas
+     (no especificado a qué se aplican todavía). Este pago sí se concretó en USDT/cripto, en
+     contradicción con la política de centralización de pagos en euros ya fijada (14 ago 2026) —
+     se deja constancia tal cual pasó, sin corregir retroactivamente, pero vale la pena que Mariano
+     confirme si esto fue una excepción puntual (dado que la promo ya estaba ofrecida y el cliente
+     no tenía otra vía disponible) o si abre la puerta a aceptar cripto de nuevo — no asumido.
+   - Estado: **cerrado — pagó**.
    - Recordado: 21 veces (19 ago 2026; 20 ago, chequeo diario 20:00; 22 ago, chequeo de la mañana;
      22 ago, chequeo diario 20:00; 23 ago, chequeo diario 20:00; 24 ago 2026, aclarado; 25 ago,
      chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago, chequeo diario 18:00; 28 ago,
@@ -406,7 +431,7 @@ actualizada en cada barrido, no un documento de una sola vez.
 |---|---|---|---|
 | Sara Sofía Gutierrez Villa | 825€, `aYteBUaMG8PLVxbt8uV1` | **Pronto pago** (la más avanzada antes de Pagado) | **Actualizado 29 ago 2026**: se le mandó el mensaje con CTA cerrado ya acordado con Mariano — sin respuesta todavía a esta hora. Etapa sin cambio desde el 20 ago. Es reciente (mismo día) — todavía no amerita otro contacto, esperar 24-48h antes de insistir de nuevo. |
 | Maryi Castañeda | 2.475€ (familia x3), `OXCJcSWxG99B6np8qlf4` | Información y contrato enviado | **Actualizado 31 ago 2026**: se le mandó por fin un mensaje con CTA cerrado real (retomar el pago del 50%, 1.237,50€, ofreciendo el link) en vez de otro "cómo estás" — enviado por Mariano, sin respuesta todavía a esta hora. |
-| Javier Maddia | 825€, `en7sthBBlJucNvNzTixG` | Información y contrato enviado | **Actualizado 5 sept 2026**: sigue bloqueado esperando que le liquiden la jubilación en bolívares. Respondió el 31 ago pidiendo oración por el pago. Mariano mandó nuevo check-in cálido el 4 sept ("Cómo estás?" / "vamos que se puede" / "alguna novedad?") — sin respuesta todavía a esta hora. Seguimiento al día, no hace falta mandar nada nuevo. |
+| Javier Maddia | 825€, `en7sthBBlJucNvNzTixG` | **PAGADO (10 sept 2026)** | Pagó 2.500 USDT vía la promo Binance (debía 2.350 USDT, 150 USDT de excedente a favor). Mover la oportunidad a Pagado en GHL — pendiente de confirmación de Mariano antes de tocar GHL (regla de confirmación previa). Sale del tracker de "próximos cierres" una vez movida. |
 | Héctor Ojeda | 825€, `eyM4gRv1FRvbYfC4Pusi` | Información y contrato enviado | **Actualizado 29 ago 2026, con el chat real revisado**: tras el llamado del 26 ago, Mariano viene de una secuencia de seguimientos reales y específicos (no genéricos) desde el 18 ago — costos, habilitación sanitaria pendiente de confirmar, propuesta de llamada de 10 min lunes 17h y luego jueves 17h — **"hace rato que no responde" a ninguno**, según confirma Mariano. Va camino a 11+ días de silencio total pese a insistencia bien hecha (motivo concreto + CTA cada vez). Candidato a intentar por otro canal (llamada directa, no texto) antes de seguir escribiendo. |
 | Luisana Junguittu | 825€, `y1FkCgvdCj61Eosz5sr9` | Información y contrato enviado | **Actualizado 29 ago 2026, con el chat real revisado**: el 14 ago dijo que habló con Luis (su pareja) pero "surgieron algunas dudas" — nunca llegó a decir cuáles. Mariano le preguntó explícitamente el 18 ago y le ofreció verlas por llamada de 10 min el 25 ago ("lunes") — **sin respuesta desde entonces**, confirma Mariano hoy ("dejó de responder"). El bloqueo real (cuáles son las dudas de Luis) sigue sin identificar — no se puede armar un mensaje efectivo sin ese dato. Mismo candidato que Héctor a intentar por llamada en vez de texto. |
 | Ángel Villalba | 825€ + inscripción 890€, `4KjEeYnCseQYw4EHgETY` | Llamada realizada | Confirmado por Mariano hoy: quedó en contactarse la semana que viene, consistente con lo ya registrado (`patrones-llamadas.md`, fila 7) — sin fecha exacta, pero sin acción pendiente hasta esa semana. |
@@ -430,7 +455,7 @@ cada barrido con lo que surja de las llamadas de esa semana.
 | Contacto | Oportunidad | Qué está esperando |
 |---|---|---|
 | Enrique Esmilse Donna | 550€ "Visado" `mfjQpOhOJcX3oLF77mkC` (⚠️ sigue sin actualizar el valor/monto de la oportunidad en sí — Mariano confirmó 668€ cada uno para él y Abigaíl, real = 1.336€ para los dos, la oportunidad sigue en 550€, no se tocó por no haberlo pedido explícitamente) | **Resuelto 29 ago 2026**: Mariano confirmó que el precio correcto es **668€ cada uno** (no 825/750€, que era de estancia). Nota cargada en GHL: "Se le ofreció un visado para él y un visado para Abigaíl, 668€ cada uno." Tag agregado: "visado de estudios 668" (junto a "cualificado visado", ya corregido antes). Confirma que cobra el miércoles que viene. Sin acción pendiente hasta esa fecha. |
-| Mariela Pérez | 550€ visado, `6vVdeSpGBjntbiLyi2a5` | **Corregido 29 ago 2026 — la nota anterior estaba mal, el chat real muestra otra cosa**: sí respondió el 26 ago (imagen + audio), Mariano le contestó con audio, y ella cerró con "Gracias bendiciones!!🫂" el mismo día — **no es un caso de no-respuesta**. Está genuinamente movilizada juntando el primer pago (1.302,50€ entre matrícula y honorarios, monto ya comunicado el 26 ago) y Mariano ya le dijo explícitamente "sin ninguna presión, avisame cuando lo tengas" — mismo criterio que Marylaura, respetar el tiempo, no insistir. La etapa de GHL sigue sin moverse desde el 22 jun (dato de pipeline desactualizado, no refleja la relación real). |
+| Mariela Pérez | 550€ visado, `6vVdeSpGBjntbiLyi2a5` | **Actualizado 10 sept 2026**: Mariano avisa que está próxima a pagar (sin fecha exacta todavía). Contexto previo (29 ago): sí respondió el 26 ago (imagen + audio), Mariano le contestó con audio, y ella cerró con "Gracias bendiciones!!🫂" el mismo día — no es un caso de no-respuesta, está genuinamente movilizada juntando el primer pago (1.302,50€ entre matrícula y honorarios). No hace falta escribirle nada nuevo, solo esperar el pago. La etapa de GHL sigue sin moverse desde el 22 jun (dato de pipeline desactualizado, no refleja la relación real). |
 | Marylaura Guerrero | 750€, `ySVES9NUeMTbZfuRV9vt` | Dijo explícitamente "preferimos esperar un poco más" (24 ago, imprevisto de su papá) — **a propósito sin presionar**, seguimiento activo de venta sigue recién para la semana del 7-10 sept. **Actualizado 31 ago 2026**: Mariano nunca le había respondido a ese último mensaje de ella — se le dio un mensaje de cierre de cortesía (sin pitch, sin CTA de cierre), solo para no dejarla sin respuesta: *"Marylaura, no hay problema, entiendo perfecto que la prioridad sea tu papá 💛 Cuando estén listos, acá voy a estar para retomarlo cuando les convenga. Cualquier duda que surja mientras tanto, escribime tranquila."* No cambia la fecha de seguimiento comercial activo (sigue siendo 7-10 sept). |
 
 - Estado: **en curso — tracker recién creado, primera foto real tomada el 29 ago 2026**.

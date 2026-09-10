@@ -114,8 +114,11 @@ acción inmediata):
   - **Martes 8 — Altar de Adoración**: "Trae a una persona que necesita volver a encontrarse con
     Dios." (Esta es la misma actividad del martes que ya se documentó arriba en la retro del
     partido de fútbol — donde el fallo detectado fue que ninguno de los nuevos del fútbol vino.)
-  - **Sábado 12 — Salida masiva evangelística + Adoración en Plaza de Manises**: equipos por zonas,
-    conversación con "¿hay algo por lo que podamos orar por ti?", invitar a la adoración en plaza.
+  - **Sábado 12 — Salida masiva evangelística + Adoración en Plaza de Manises**: primera parte,
+    salida por equipos — equipos por zonas, conversación con "¿hay algo por lo que podamos orar por
+    ti?", invitar a la adoración en plaza. Segunda parte, adoración en plaza — bienvenida breve,
+    25–35 min de adoración, 2 testimonios de máximo 3 min, mensaje evangelístico de 8–10 min,
+    llamado a Jesús y oración, invitación a Tarde de Milagros y al Encuentro.
   - **11–13 sept — Grupos "Una silla más"**: preparar una silla adicional que representa a alguien
     que todavía no está ahí, cada miembro invita a su UNO, reunión amigable (comida, dinámica,
     testimonio), meta: al menos una persona nueva por grupo. **Esto incluye el "juego de la silla"
@@ -134,16 +137,16 @@ acción inmediata):
   recordatorio emocional, 48h antes llamadas personales, 24h antes confirmación final de pago/
   transporte/logística.
 
-**⚠️ Posible desalineación de fechas, sin resolver — no asumir, confirmar con Mariano**: en el
-mensaje anterior (10 sept 2026) sobre la retro del partido de fútbol, Mariano dijo que las próximas
-dos actividades de FM4 son el **13** y el **20 de septiembre**. El calendario oficial de los
-pastores marca **"Una silla más" para el 11–13 sept** (podría ser el mismo bloque, el 13 coincide)
-y **"Tarde de Milagros" el 19 sept / "Seguimiento inmediato" el 20 sept** (acá el 20 sept sí
-coincide con lo que dijo Mariano, pero el evento masivo en sí sería el 19, no el 20). No se está
-corrigiendo lo que Mariano ya dijo por inferencia — queda anotado el posible cruce de fechas para
-preguntarle directamente si sus "13 y 20 sept" ya están pensados como alineados a este cronograma
-oficial (ej. 13 sept = cierre de "Una silla más", 20 sept = seguimiento post Tarde de Milagros) o si
-son actividades FM4 aparte que también hay que cuadrar con el calendario de arriba.
+**Aclarado por Mariano (10 sept 2026, corrigiendo lo anotado arriba)**: las tres cosas son
+independientes entre sí, no el mismo bloque:
+- **11 sept** — cada grupo de amistad (FM4.1 a FM4.6) desarrolla en su reunión regular lo que la
+  iglesia indicó para ese día ("Una silla más"), cada uno por su cuenta.
+- **12 sept** — salida masiva evangelística + Adoración en Plaza de Manises, a nivel de toda la
+  iglesia (FM4 se suma como equipo, ver propuesta más abajo).
+- **13 sept** — actividad propia de FM4 en una plaza, separada de las dos anteriores. Detalle
+  específico de la actividad todavía por definir.
+- **20 sept** — coincide con el "Seguimiento inmediato" oficial (24h después de Tarde de Milagros,
+  19 sept) — se usa puntualmente para eso.
 
 **Tabla de manejo de objeciones/obstáculos** (útil para el seguimiento personal de cada líder):
 transporte → organizar coches; no conoce a nadie → asignarle a alguien que va con él/ella; miedo →
@@ -159,16 +162,21 @@ Documento fuente: `Estrategia_Conexion_Semanas_Setiembre_y_Encuentros_de_Gloria_
 (compartido por los pastores, 10 sept 2026). Mariano avisó que **esto es el primero de varios
 mensajes** sobre este tema — falta ver qué más va a agregar sobre cómo aplicarlo a FM4/Ruge.
 
-**Línea de tiempo FM4 armada (10 sept 2026)**: a pedido de Mariano, se construyó un documento
-visual (PDF/Artifact) que cruza el cronograma oficial de los pastores con la aplicación concreta de
-FM4 semana a semana, pensado para mandarlo al grupo de discipulado. Incluye, para el **sábado 12
-sept** (salida masiva + Adoración en Plaza de Manises), una **propuesta concreta de FM4 sin
-confirmar todavía**: sumarse como equipo a la salida general, dividir en 3-4 sub-equipos por pareja
-ministerial cubriendo zonas cerca de Manises, cada líder invitando a su propio listado, y
-convergiendo todos en la plaza para la adoración central — marcada explícitamente como "a confirmar
-con Mariano" antes de mandarla como definitiva al grupo. También deja marcado, sin resolver por
-inferencia, si la actividad de FM4 del 13 sept que Mariano ya había mencionado es el mismo bloque
-que "Una silla más" (11-13 sept, oficial) o una actividad aparte.
+**Línea de tiempo FM4 armada (10 sept 2026, corregida el mismo día con feedback de Mariano)**: a
+pedido de Mariano, se construyó un documento visual (PDF/Artifact) que cruza el cronograma oficial
+de los pastores con la aplicación concreta de FM4 semana a semana, pensado para mandarlo al grupo
+de discipulado. Correcciones que Mariano pidió sobre la primera versión, ya aplicadas:
+- Se agregó la "segunda parte" de la Adoración en Plaza de Manises que faltaba (bienvenida,
+  25-35 min de adoración, 2 testimonios, mensaje, llamado, invitación).
+- Se separaron las tres actividades del 11, 12 y 13 sept — no son el mismo bloque (ver aclaración
+  arriba).
+- Se sacó todo el lenguaje de "a confirmar con Mariano" — él ya lo confirmó directamente.
+- Para el 12 sept: se sacó el detalle de dividir en sub-equipos por pareja ministerial (FM4.1 con
+  FM4.2, etc.) porque los grupos concretos todavía no están definidos — queda solo como "nos
+  podemos organizar en grupos, a definir más adelante".
+- El CTA para la salida del 12 sept ya no dice "Escríbenos ENCUENTRO por DM" (eso es el CTA
+  digital/redes sociales del documento oficial) — para FM4 en persona el CTA es invitar
+  directamente al Encuentro.
 
 #### Campaña de evangelización rumbo al Encuentro del 26 sept 2026 (agregado 21 ago 2026)
 Con el Encuentro fijado para el 26 sept, **todo el grupo de jóvenes (FM4)** tiene la tarea de salir

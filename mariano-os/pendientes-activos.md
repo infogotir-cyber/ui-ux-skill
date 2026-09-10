@@ -692,12 +692,16 @@ detalle de a quién se le preguntó cada uno en `areas/ministerio/CLAUDE.md`.
   **autobús de 55 plazas** lo iba a reservar Administración esta semana (en curso, no confirmado
   cerrado). Siguen sin resolver: cañas para antorchas, pastillas para encender fogata (huérfanas de
   David Luzuriaga), fuegos artificiales, alargador cable.
-- Estado: **bloqueado (esperando a Juliana)** — para los 4 ítems que siguen sin precio/resolver:
-  **abierto**.
-- Recordado: 9 veces (3 sept 2026, creación; 3 sept, chequeo diario 18:00; 4 sept, chequeo diario
+- **Actualizado 10 sept 2026**: los 4 ítems que quedaban sin resolver (cañas, pastillas, fuegos
+  artificiales, alargador cable) **ya los está gestionando Julio César Navia** — reasignados
+  formalmente, ya no huérfanos. Actualizado en ClickUp.
+- Estado: **bloqueado (esperando a Juliana)** para el presupuesto general — los 4 ítems que
+  quedaban sin dueño: **en curso con Julio César Navia**.
+- Recordado: 10 veces (3 sept 2026, creación; 3 sept, chequeo diario 18:00; 4 sept, chequeo diario
   18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00;
   7 sept, confirmado por Mariano — presupuestos enviados, sigue esperando confirmación; 8 sept,
-  chequeo diario 18:00; 9 sept, Mariano confirma radios/teléfono gestionados y bus en curso).
+  chequeo diario 18:00; 9 sept, Mariano confirma radios/teléfono gestionados y bus en curso; 10
+  sept, Mariano confirma reasignación de los 4 ítems restantes a Julio César Navia).
 
 ### Ministerio (Ruge y otros)
 
@@ -834,12 +838,17 @@ detalle de a quién se le preguntó cada uno en `areas/ministerio/CLAUDE.md`.
      sobre los platos, y la Bolsa plástica negra para empacar que había quedado suelta) quedan sin
      dueño — hay que reasignarlos a Marco Guanuchi o Julio César Navia, todavía sin confirmar a
      cuál.
-   - Estado: **en curso — esperando presupuesto de Marco, respuesta de Julio, y reasignar los
-     ítems de David Luzuriaga (ya no está en el equipo)**.
-   - Recordado: 10 veces (30 ago 2026, creación; 2 sept, chequeo diario 18:00; 3 sept, chequeo
+   - **Actualizado 10 sept 2026**: las **cañas para antorchas** y las **pastillas para encender
+     fogata** quedaron confirmadas a **Julio César Navia** — ya no huérfanas. Siguen sin dueño
+     confirmado: la definición con Richard sobre los platos, y la bolsa plástica negra para
+     empacar.
+   - Estado: **en curso — esperando presupuesto de Marco, respuesta de Julio, y reasignar platos/
+     bolsa plástica negra (todavía sin dueño)**.
+   - Recordado: 11 veces (30 ago 2026, creación; 2 sept, chequeo diario 18:00; 3 sept, chequeo
      diario 18:00; 4 sept, chequeo diario 18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo
      diario 18:00; 7 sept, chequeo diario 18:00; 7 sept, David Luzuriaga sale del equipo — ítems
-     sin dueño; 8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00).
+     sin dueño; 8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00; 10 sept, cañas y
+     pastillas reasignadas a Julio César Navia).
 
 7. **Sistema de seguimiento 1:1 con discípulos FM4 — registro de fechas en marcha**
    - Detalle completo y tabla de registro en `areas/ministerio/CLAUDE.md`, sección 8.3. Mariano

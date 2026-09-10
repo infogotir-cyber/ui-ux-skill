@@ -1208,6 +1208,12 @@ control")**:
 - Mariano cerró el tema explícitamente: no hace falta seguir analizando Ruge en detalle por ahora,
   solo mantener el registro de lo pendiente.
 
+**Actualización 10 sept 2026 — reasignación confirmada**: Mariano confirmó que los 4 ítems que
+seguían sin resolver **ya los está gestionando Julio César Navia**: cañas para antorchas, pastillas
+para encender fogata (las dos huérfanas de David Luzuriaga), fuegos artificiales, y alargador de
+cable. Quedan formalmente reasignados a Julio César — ya no huérfanos. Actualizado también en
+ClickUp (tarea de Logística — Comprar, folder Ruge).
+
 **Estado del envío (3 sept 2026)**: Mariano confirmó que ya envió este presupuesto a Juliana el 2
 sept y está esperando su confirmación para empezar a comprar — **el paso que sigue no depende de
 Mariano, depende de la aprobación de Juliana/Administración**. Marcado como urgente para él (necesita

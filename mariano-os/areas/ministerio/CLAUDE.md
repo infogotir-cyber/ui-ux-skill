@@ -159,6 +159,17 @@ Documento fuente: `Estrategia_Conexion_Semanas_Setiembre_y_Encuentros_de_Gloria_
 (compartido por los pastores, 10 sept 2026). Mariano avisó que **esto es el primero de varios
 mensajes** sobre este tema — falta ver qué más va a agregar sobre cómo aplicarlo a FM4/Ruge.
 
+**Línea de tiempo FM4 armada (10 sept 2026)**: a pedido de Mariano, se construyó un documento
+visual (PDF/Artifact) que cruza el cronograma oficial de los pastores con la aplicación concreta de
+FM4 semana a semana, pensado para mandarlo al grupo de discipulado. Incluye, para el **sábado 12
+sept** (salida masiva + Adoración en Plaza de Manises), una **propuesta concreta de FM4 sin
+confirmar todavía**: sumarse como equipo a la salida general, dividir en 3-4 sub-equipos por pareja
+ministerial cubriendo zonas cerca de Manises, cada líder invitando a su propio listado, y
+convergiendo todos en la plaza para la adoración central — marcada explícitamente como "a confirmar
+con Mariano" antes de mandarla como definitiva al grupo. También deja marcado, sin resolver por
+inferencia, si la actividad de FM4 del 13 sept que Mariano ya había mencionado es el mismo bloque
+que "Una silla más" (11-13 sept, oficial) o una actividad aparte.
+
 #### Campaña de evangelización rumbo al Encuentro del 26 sept 2026 (agregado 21 ago 2026)
 Con el Encuentro fijado para el 26 sept, **todo el grupo de jóvenes (FM4)** tiene la tarea de salir
 a buscar gente nueva — actos de evangelización en la calle, actividades, aprovechar que todos

@@ -124,22 +124,24 @@ personas, varios nuevos; se aclaró en todo momento que es un grupo cristiano; s
 violencia, buen ambiente; la gente se divirtió; los líderes se quedaron con los números de los
 nuevos al finalizar; empezó y terminó en horario.
 
-**Qué mejorar**: el pago de la cancha quedó mal organizado — solo Adrián Caro pagó de entrada, el
-resto se demoró con el Bizum (algunos todavía deben); se olvidaron el balón; de 11 líderes, solo 2
-llevaron la comida/bebida pedida; hubo líderes que llegaron tarde; no se llevaron mujeres nuevas
-para evangelizar/consolidar; las líderes mujeres improvisaron en vez de planificar su propia
-actividad; no se le habló a la gente nueva de la actividad siguiente (18-19 sept); **el fallo más
-importante**: se quedaron con los números pero no hubo seguimiento real — ninguno de los nuevos
-fue al altar de adoración del martes siguiente; hace falta llevar más cantidad de gente nueva la
-próxima vez.
+**Qué mejorar**: el pago de la cancha quedó mal organizado — Adrián Caro (el líder) pagó todo junto
+de entrada para poder reservar, y el resto se demoró en hacerle el Bizum de vuelta (algunos todavía
+deben), y además hay personas invitadas que directamente no pagaron nada — hay que corregir esto
+para la próxima vez, porque si no, uno termina pagando mucho más que el resto; se olvidaron el
+balón; de 11 líderes, solo 2 llevaron la comida/bebida pedida; hubo líderes que llegaron tarde; no
+se llevaron mujeres nuevas para evangelizar/consolidar; las líderes mujeres improvisaron en vez de
+planificar su propia actividad; no se le habló a la gente nueva de la actividad siguiente (13
+sept); **el fallo más importante**: se quedaron con los números pero no hubo seguimiento real —
+ninguno de los nuevos fue al altar de adoración del martes siguiente; hace falta llevar más
+cantidad de gente nueva la próxima vez.
 
 **Principio que Mariano pidió resaltar en el mensaje**: *"todo lo que se repite se aviva"* — ya se
 contactó a más de 50 hombres jóvenes en total (fueran o no al partido); no hay que abandonar a
 nadie de esa lista solo porque no vino esta vez, hay que mantenerse presentes con todos.
 
 **Dirección para la semana**: cada líder sigue trabajando su propio listado de a quién invitó/
-llamó para el partido — mismo listado, sin soltarlo — para llevarlos a la actividad del 18-19 sept
-y de ahí al Encuentro del 26.
+llamó para el partido — mismo listado, sin soltarlo — para llevarlos a la actividad del 13 sept,
+luego a la del 20 sept, y de ahí al Encuentro del 26.
 
 Se armó un mensaje final para el grupo de WhatsApp con este mismo contenido, formateado para
 WhatsApp (título, secciones ✅/🔧/🔥/📋) — no se versiona en el repo por ser contenido de
@@ -149,10 +151,11 @@ También se armó una presentación visual (PDF/Artifact) de esta retro para Mar
 por chat el logo real de "Impact Juvenil — Generaciones de Fuego" (fondo negro, letras blancas
 gruesas con borde negro tipo sticker, badge blanco curvo debajo con "Generaciones de Fuego") para
 usarlo donde quedara bien — pero la imagen adjunta nunca llegó a guardarse como archivo accesible
-en este entorno (limitación del entorno, confirmada tras 3 intentos). Se recreó el lockup por CSS
-(mismo layout: tarjeta negra, texto blanco con contorno negro, badge blanco) y se aplicó en el
-masthead del PDF. Si en algún momento Mariano puede pasar el archivo real por otro medio (link,
-Drive), reemplazar la recreación por el logo original.
+en este entorno (limitación del entorno, confirmada tras 3 intentos). Se había recreado el lockup
+por CSS como fallback, pero **Mariano corrigió explícitamente (10 sept 2026)**: un logo no se
+recrea/modifica, tiene que usarse el archivo real tal cual — se sacó la recreación del PDF. Queda
+pendiente que Mariano pase el archivo real por otro medio (link, Drive, email) para poder
+incorporarlo tal cual al documento.
 
 #### Cambio de pilar de New Life — 7 sept 2026
 

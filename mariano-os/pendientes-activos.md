@@ -709,8 +709,8 @@ Retro del evento del domingo (20 personas, varios nuevos) hecha y mandada al gru
 completo en `areas/ministerio/CLAUDE.md`, sección "Retro — partido de fútbol". El fallo principal
 detectado: se quedaron con los números pero no hubo seguimiento real, ninguno de los nuevos fue al
 altar de adoración del martes. Instrucción dada al grupo: cada líder sigue su propio listado de a
-quién invitó, para llevarlos a la actividad del 18-19 sept y al Encuentro del 26 sept — sin soltar
-a nadie aunque no haya venido esta vez ("todo lo que se repite se aviva").
+quién invitó, para llevarlos a la actividad del 13 sept, luego a la del 20 sept, y al Encuentro del
+26 sept — sin soltar a nadie aunque no haya venido esta vez ("todo lo que se repite se aviva").
 - Estado: **abierto — a confirmar si el seguimiento real se sostiene esta semana** (era justamente
   lo que falló la vez anterior).
 - Recordado: 1 vez (10 sept 2026, creación).

@@ -145,6 +145,15 @@ Se armó un mensaje final para el grupo de WhatsApp con este mismo contenido, fo
 WhatsApp (título, secciones ✅/🔧/🔥/📋) — no se versiona en el repo por ser contenido de
 mensajería efímero, pero el contenido sustantivo queda documentado arriba.
 
+También se armó una presentación visual (PDF/Artifact) de esta retro para Mariano. Mariano mandó
+por chat el logo real de "Impact Juvenil — Generaciones de Fuego" (fondo negro, letras blancas
+gruesas con borde negro tipo sticker, badge blanco curvo debajo con "Generaciones de Fuego") para
+usarlo donde quedara bien — pero la imagen adjunta nunca llegó a guardarse como archivo accesible
+en este entorno (limitación del entorno, confirmada tras 3 intentos). Se recreó el lockup por CSS
+(mismo layout: tarjeta negra, texto blanco con contorno negro, badge blanco) y se aplicó en el
+masthead del PDF. Si en algún momento Mariano puede pasar el archivo real por otro medio (link,
+Drive), reemplazar la recreación por el logo original.
+
 #### Cambio de pilar de New Life — 7 sept 2026
 
 Mariano contó, de entrada, antes de pasar a los pendientes de GOTIR, que **ya no es pilar/

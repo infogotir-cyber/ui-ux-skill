@@ -86,6 +86,79 @@ pendiente de confirmar.
   "New Life" — descripción general del proceso recurrente; ver el detalle real del ciclo actual
   abajo).
 
+#### Estrategia general de conexión — Impact Global España (documento de pastores, 10 sept 2026)
+Mariano compartió el documento oficial que los pastores de Impact Global España mandaron a **todos
+los códigos/grupos de la iglesia** (no solo FM4) con la dirección a seguir esta temporada para
+evangelización y llevar gente al Encuentro. Es explícito en que esto es **criterio que gobierna por
+encima de** lo que FM4 venga organizando por su cuenta (ej. el partido de fútbol) — las actividades
+propias de FM4 tienen que alinearse con este calendario y no reemplazarlo. Ejemplo textual que dio
+Mariano: si los pastores pautaron un "juego de la silla" para el grupo de amistad del 11 de
+septiembre, hay que hacerlo.
+
+**Ruta del proceso**: Invitación → Experiencia → Relación → Decisión → Encuentro → New Life →
+Formación → Discipulado. Campaña general: **"Tienes que vivirlo"**.
+
+**Principios de ejecución**: trabajar con nombres reales (no listas vagas de "en visión");
+priorizar la invitación personal sobre el flyer masivo; dar seguimiento dentro de las primeras 24
+horas después de cada actividad; cada evento es puerta de entrada al proceso, no meta final; un
+único CTA digital ("Escríbenos ENCUENTRO por DM"); medir interesados / confirmados / pagados /
+acompañados.
+
+**Cronograma maestro** (hoy es 10 sept 2026 — lo ya pasado queda como referencia, lo próximo es
+acción inmediata):
+- **3–6 sept — Preparar el terreno**: cada grupo/código reporta personas en visión, contactadas,
+  con interés real, que dijeron que quieren ir al Encuentro, y que ya pagaron.
+- **7–13 sept — Semana "TRAE UNO"** (evangelismo relacional, meta: 1 persona real por discípulo):
+  - **Lunes 7** — "Mi UNO tiene nombre": cada discípulo escribe el nombre de su UNO, el líder
+    registra los nombres del grupo, se ora específicamente por esas personas.
+  - **Martes 8 — Altar de Adoración**: "Trae a una persona que necesita volver a encontrarse con
+    Dios." (Esta es la misma actividad del martes que ya se documentó arriba en la retro del
+    partido de fútbol — donde el fallo detectado fue que ninguno de los nuevos del fútbol vino.)
+  - **Sábado 12 — Salida masiva evangelística + Adoración en Plaza de Manises**: equipos por zonas,
+    conversación con "¿hay algo por lo que podamos orar por ti?", invitar a la adoración en plaza.
+  - **11–13 sept — Grupos "Una silla más"**: preparar una silla adicional que representa a alguien
+    que todavía no está ahí, cada miembro invita a su UNO, reunión amigable (comida, dinámica,
+    testimonio), meta: al menos una persona nueva por grupo. **Esto incluye el "juego de la silla"
+    que Mariano mencionó como ejemplo explícito de algo que hay que hacer sí o sí.**
+- **14–18 sept — Operación Segundo Contacto**: ya no se buscan nombres nuevos, se trabaja con
+  quienes ya respondieron/mostraron interés la semana anterior.
+- **19 sept (sábado) — Tarde de Milagros**: campaña "¿Por qué estás creyendo?", convocatoria
+  evangelística grande, cierra con invitación al Encuentro y registro (nombre, teléfono, quién lo
+  invitó, grupo/código, desea Encuentro sí/no, ya pagó sí/no).
+- **20 sept (domingo) — Seguimiento inmediato**: contactar a todos dentro de las 24 horas
+  siguientes a Tarde de Milagros, primera conversación relacional, no de venta.
+- **Semana del 21 sept — "Uno no se queda atrás"**: la medición cambia de "cuántas invitaciones" a
+  "cuántos interesados pasan a confirmados, pagados y acompañados" — café de decisión, silla con
+  nombre real, noche de testimonios, parejas de seguimiento, reporte de grupos.
+- **Últimas 72 horas antes del Encuentro (26 sept) — "No te quedes fuera"**: 72h antes testimonios y
+  recordatorio emocional, 48h antes llamadas personales, 24h antes confirmación final de pago/
+  transporte/logística.
+
+**⚠️ Posible desalineación de fechas, sin resolver — no asumir, confirmar con Mariano**: en el
+mensaje anterior (10 sept 2026) sobre la retro del partido de fútbol, Mariano dijo que las próximas
+dos actividades de FM4 son el **13** y el **20 de septiembre**. El calendario oficial de los
+pastores marca **"Una silla más" para el 11–13 sept** (podría ser el mismo bloque, el 13 coincide)
+y **"Tarde de Milagros" el 19 sept / "Seguimiento inmediato" el 20 sept** (acá el 20 sept sí
+coincide con lo que dijo Mariano, pero el evento masivo en sí sería el 19, no el 20). No se está
+corrigiendo lo que Mariano ya dijo por inferencia — queda anotado el posible cruce de fechas para
+preguntarle directamente si sus "13 y 20 sept" ya están pensados como alineados a este cronograma
+oficial (ej. 13 sept = cierre de "Una silla más", 20 sept = seguimiento post Tarde de Milagros) o si
+son actividades FM4 aparte que también hay que cuadrar con el calendario de arriba.
+
+**Tabla de manejo de objeciones/obstáculos** (útil para el seguimiento personal de cada líder):
+transporte → organizar coches; no conoce a nadie → asignarle a alguien que va con él/ella; miedo →
+conectarlo con alguien que ya vivió el Encuentro; trabajo → ayudarlo a organizarse con tiempo; no
+sabe qué llevar → enviar información clara; pago pendiente → explicar proceso y fecha límite.
+
+**Regla explícita del documento, coherente con lo que ya se venía diciendo en FM4**: no volver a
+mandar un flyer como único seguimiento — primero preguntar cómo está la persona y cómo vivió la
+actividad, recién después hablar de decisión/pago. Y no empezar el seguimiento preguntando "¿ya
+pagaste el Encuentro?" — primero relación, después decisión.
+
+Documento fuente: `Estrategia_Conexion_Semanas_Setiembre_y_Encuentros_de_Gloria_Sede_Espana.docx`
+(compartido por los pastores, 10 sept 2026). Mariano avisó que **esto es el primero de varios
+mensajes** sobre este tema — falta ver qué más va a agregar sobre cómo aplicarlo a FM4/Ruge.
+
 #### Campaña de evangelización rumbo al Encuentro del 26 sept 2026 (agregado 21 ago 2026)
 Con el Encuentro fijado para el 26 sept, **todo el grupo de jóvenes (FM4)** tiene la tarea de salir
 a buscar gente nueva — actos de evangelización en la calle, actividades, aprovechar que todos

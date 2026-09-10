@@ -61,9 +61,23 @@ las armó él, no las reinterpretes en otras más "estándar" de coaching de vid
 - **9 sept 2026**: Mariano contó que hubo "muchos cambios" y que se dio cuenta de varias cosas en
   las que estaba equivocado, que debía corregir, respecto a su relación con Dios y con el
   ministerio — dijo explícitamente que quiere **reflexionar sobre esto con más calma más
-  adelante**. No dio detalle del contenido todavía — se deja constancia de que existe esta
-  reflexión pendiente, sin inventar ni asumir de qué se trata específicamente, a la espera de que
-  él la retome cuando quiera.
+  adelante**. No dio detalle del contenido todavía en ese momento — se dejó constancia de que
+  existía esta reflexión pendiente, a la espera de que él la retomara cuando quisiera.
+- **10 sept 2026 — retomó la reflexión, con el contenido real**: contó que la semana había sido de
+  "muchos cambios" internos, y que por eso estuvo menos presente en lo operativo/comercial (venían
+  trabajando fuerte en estadísticas, seguimiento y los embudos previos/durante la llamada). Lo que
+  entendió, en sus propias palabras, lo pidió dejar registrado como un aprendizaje/proverbio
+  propio: **puede esforzarse al máximo — los mejores chatbots, la mejor IA, los mejores procesos —
+  pero si se desconecta de Dios, de la visión, de sus pastores o de su propósito, Dios puede cerrar
+  toda la economía, por más que esté haciendo las cosas "bien" desde lo natural.** Su provisión y
+  socorro vienen de Dios, no de la ejecución operativa en sí. Dijo que cuando hacía las cosas peor
+  a nivel empresarial pero estaba pegado a Dios, sirviendo de corazón y alineado a su propósito,
+  recibía mucha más provisión que últimamente — que últimamente venía ejecutando mejor en lo
+  empresarial pero se afanó y se desconectó del corazón de Dios. Conclusión que sacó: lo principal
+  es mantener el corazón limpio, "como el de un niño", un corazón que se deje sorprender cada vez y
+  con mucha fe. No pidió ninguna acción sobre esto — es una reflexión personal/espiritual que
+  compartió, se deja registrada tal cual la contó, con el mismo cuidado que el resto de contenido
+  sensible de esta sección.
 
 ### 3. Formación y desarrollo personal
 - Aprender nuevas habilidades / nuevos conocimientos (sin especificar todavía cuáles, más allá de

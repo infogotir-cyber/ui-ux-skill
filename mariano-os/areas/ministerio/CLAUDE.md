@@ -178,6 +178,14 @@ de discipulado. Correcciones que Mariano pidió sobre la primera versión, ya ap
   digital/redes sociales del documento oficial) — para FM4 en persona el CTA es invitar
   directamente al Encuentro.
 
+**Indicaciones confirmadas para el 12 sept (agregado el mismo día, 10 sept 2026)**: hora **11:00
+am**, lugar **Plaza Rafael Atard, Manises**. Asistencia confirmada y distribución en grupos:
+- **Grupo 1**: Rocío Jury, Sabrina Navarro.
+- **Grupo 2**: Lisandro Tapia, Paulina Soto, Rebeca Lema.
+- **No disponibles ese día** (están en el reconocimiento de rutas de Ruge en la montaña): Adrián
+  Caro, Mateo Arteaga, Diego Villavicencio, David Valera.
+- **Mariano Barcelona** estará en Madrid ese día, no participa presencialmente.
+
 #### Campaña de evangelización rumbo al Encuentro del 26 sept 2026 (agregado 21 ago 2026)
 Con el Encuentro fijado para el 26 sept, **todo el grupo de jóvenes (FM4)** tiene la tarea de salir
 a buscar gente nueva — actos de evangelización en la calle, actividades, aprovechar que todos

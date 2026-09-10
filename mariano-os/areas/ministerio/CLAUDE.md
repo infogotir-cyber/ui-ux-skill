@@ -111,6 +111,40 @@ va a repartir entre FM4.1, 4.2 o 4.3 más adelante):
 - **Miguel** — ya es parte de FM4.2 (a diferencia de Emiliano y Litzy, que todavía no tienen grupo);
   quieren que vaya este domingo a la playa.
 
+##### Retro — partido de fútbol (domingo, semana del 7 sept 2026)
+
+Segunda acción evangelística concreta rumbo al Encuentro, esta vez fútbol. **20 personas, varios
+nuevos.** Mariano pidió feedback a los líderes (qué salió bien / qué mejorar) y sumó su propia
+lectura, para consolidar un mensaje de retro al grupo — reproducido abajo tal cual se armó, con el
+mismo criterio de no perder de vista el seguimiento real (es la falla más repetida de esta sesión,
+igual que ya se documentó en comercial: sin próxima acción concreta, el trabajo hecho no rinde).
+
+**Qué salió bien**: planificación con anticipación (flyer y cancha reservados a tiempo); 20
+personas, varios nuevos; se aclaró en todo momento que es un grupo cristiano; sin insultos ni
+violencia, buen ambiente; la gente se divirtió; los líderes se quedaron con los números de los
+nuevos al finalizar; empezó y terminó en horario.
+
+**Qué mejorar**: el pago de la cancha quedó mal organizado — solo Adrián Caro pagó de entrada, el
+resto se demoró con el Bizum (algunos todavía deben); se olvidaron el balón; de 11 líderes, solo 2
+llevaron la comida/bebida pedida; hubo líderes que llegaron tarde; no se llevaron mujeres nuevas
+para evangelizar/consolidar; las líderes mujeres improvisaron en vez de planificar su propia
+actividad; no se le habló a la gente nueva de la actividad siguiente (18-19 sept); **el fallo más
+importante**: se quedaron con los números pero no hubo seguimiento real — ninguno de los nuevos
+fue al altar de adoración del martes siguiente; hace falta llevar más cantidad de gente nueva la
+próxima vez.
+
+**Principio que Mariano pidió resaltar en el mensaje**: *"todo lo que se repite se aviva"* — ya se
+contactó a más de 50 hombres jóvenes en total (fueran o no al partido); no hay que abandonar a
+nadie de esa lista solo porque no vino esta vez, hay que mantenerse presentes con todos.
+
+**Dirección para la semana**: cada líder sigue trabajando su propio listado de a quién invitó/
+llamó para el partido — mismo listado, sin soltarlo — para llevarlos a la actividad del 18-19 sept
+y de ahí al Encuentro del 26.
+
+Se armó un mensaje final para el grupo de WhatsApp con este mismo contenido, formateado para
+WhatsApp (título, secciones ✅/🔧/🔥/📋) — no se versiona en el repo por ser contenido de
+mensajería efímero, pero el contenido sustantivo queda documentado arriba.
+
 #### Cambio de pilar de New Life — 7 sept 2026
 
 Mariano contó, de entrada, antes de pasar a los pendientes de GOTIR, que **ya no es pilar/

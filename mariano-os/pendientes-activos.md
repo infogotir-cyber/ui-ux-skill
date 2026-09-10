@@ -703,6 +703,18 @@ detalle de a quién se le preguntó cada uno en `areas/ministerio/CLAUDE.md`.
   chequeo diario 18:00; 9 sept, Mariano confirma radios/teléfono gestionados y bus en curso; 10
   sept, Mariano confirma reasignación de los 4 ítems restantes a Julio César Navia).
 
+### Ministerio — seguimiento real a los nuevos del partido de fútbol (10 sept 2026)
+
+Retro del evento del domingo (20 personas, varios nuevos) hecha y mandada al grupo — detalle
+completo en `areas/ministerio/CLAUDE.md`, sección "Retro — partido de fútbol". El fallo principal
+detectado: se quedaron con los números pero no hubo seguimiento real, ninguno de los nuevos fue al
+altar de adoración del martes. Instrucción dada al grupo: cada líder sigue su propio listado de a
+quién invitó, para llevarlos a la actividad del 18-19 sept y al Encuentro del 26 sept — sin soltar
+a nadie aunque no haya venido esta vez ("todo lo que se repite se aviva").
+- Estado: **abierto — a confirmar si el seguimiento real se sostiene esta semana** (era justamente
+  lo que falló la vez anterior).
+- Recordado: 1 vez (10 sept 2026, creación).
+
 ### Ministerio (Ruge y otros)
 
 3. **Inventario de Ruge — cambio de fuente de verdad (21 ago 2026): ahora se trabaja sobre el excel

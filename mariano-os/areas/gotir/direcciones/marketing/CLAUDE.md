@@ -862,14 +862,13 @@ Esto no es una razón para no avanzar — es una razón para no arrancar por los
    ("que la gente vea que tenemos referencias muy buenas") para los leads nuevos que entran por el
    contenido gratuito.
 2. **Flujo confirmado, tal cual lo había propuesto este análisis**: todas las redes (Instagram,
-   TikTok, Facebook, YouTube, un canal más que Mariano nombró como "Fritz"/"Freaks" — **no
-   confirmado a qué app se refiere, podría ser Threads mal transcrito, a confirmar con Mariano antes
-   de asumirlo**, y hasta el catálogo de WhatsApp) llevan tráfico hacia Skool — **Skool es la única
-   que monetiza**, las redes son 100% distribución/descubrimiento, no operaciones de contenido
+   TikTok, Facebook, YouTube, **Threads** — confirmado por Mariano, era transcripción de voz
+   ("Fritz"/"Freaks"), y hasta el catálogo de WhatsApp) llevan tráfico hacia Skool — **Skool es la
+   única que monetiza**, las redes son 100% distribución/descubrimiento, no operaciones de contenido
    independientes.
 3. **Plan de contenido por canal, dado por Mariano**:
-   - Contenido base para **Instagram**, replicado tal cual a **TikTok** y **Facebook** (y al canal
-     sin confirmar del punto 2) — un solo proceso de producción, múltiples canales de salida.
+   - Contenido base para **Instagram**, replicado tal cual a **TikTok**, **Facebook** y **Threads**
+     — un solo proceso de producción, múltiples canales de salida.
    - Contenido aparte y específico para **YouTube Shorts**, más **directos** (streams en vivo) con
      distintas personas invitadas, más **colaboraciones con influencers** — este bloque sí requiere
      producción propia, no es réplica de lo de Instagram.
@@ -886,8 +885,7 @@ Esto no es una razón para no avanzar — es una razón para no arrancar por los
    este proyecto con el mismo esquema de pago por trabajo (`comercial/CLAUDE.md` sección 5.2).
 
 **Sin cerrar todavía**: qué canal social arranca primero (Mariano no lo especificó, solo el orden de
-producción Instagram→réplicas); precio exacto del nivel de bajo ticket dentro del rango 20-30€; y la
-identidad real del canal "Fritz"/"Freaks" del punto 2.
+producción Instagram→réplicas); precio exacto del nivel de bajo ticket dentro del rango 20-30€.
 
 ## 10. Cómo comportarte en esta área
 

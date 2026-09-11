@@ -228,9 +228,9 @@ automatización, significaría menos margen por venta mientras todo el trabajo l
   "Comunidad GOTIR" de WhatsApp (150+ viajeros) queda distinguida de la nueva comunidad de Skool —
   está inactiva, se migran sus miembros a la nueva; plan de contenido por canal dado (Instagram
   replicado a TikTok/Facebook, YouTube Shorts + directos + colaboraciones con influencers aparte);
-  Micol confirmada disponible y sin deuda pendiente (ver ítem de crisis de caja arriba). Falta
-  cerrar: qué canal arranca primero, precio exacto del nivel de bajo ticket, y confirmar con
-  Mariano a qué red se refería con "Fritz"/"Freaks" (posible transcripción de Threads).
+  Micol confirmada disponible y sin deuda pendiente (ver ítem de crisis de caja arriba); el canal
+  sin confirmar del plan de redes era **Threads** (confirmado 11 sept 2026, transcripción de voz).
+  Falta cerrar: qué canal arranca primero, precio exacto del nivel de bajo ticket.
 
 ### GOTIR — GDPR / protección de datos con Conversia (29 ago 2026)
 

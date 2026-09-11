@@ -884,8 +884,67 @@ Esto no es una razón para no avanzar — es una razón para no arrancar por los
    ARS aparecía como abierta desde el 4 sept) — **queda saldada por completo**. Sigue disponible para
    este proyecto con el mismo esquema de pago por trabajo (`comercial/CLAUDE.md` sección 5.2).
 
-**Sin cerrar todavía**: qué canal social arranca primero (Mariano no lo especificó, solo el orden de
-producción Instagram→réplicas); precio exacto del nivel de bajo ticket dentro del rango 20-30€.
+### Marco de negocio confirmado por Mariano (11 sept 2026): GOTIR como plataforma de distribución
+
+Mariano aclaró explícitamente el modelo de fondo que sostiene toda esta iniciativa: GOTIR no
+ejecuta los trámites en sí — vende, filtra y **distribuye** al cliente hacia estudios de abogados y
+colaboradores externos (Sebastián/María para estancias, Gisella para visados, María también para
+nómada digital al 70/30, etc. — ya documentado en `comercial/CLAUDE.md` secciones 0, 1.1, 14.1).
+Mariano no pasa un año acompañando un caso ni presenta documentación (no es abogado) — su rol es
+captar, calificar y coordinar. Esto importa acá porque confirma que la plataforma de
+contenido/comunidad **no es un negocio nuevo, es la misma lógica de plataforma aplicada a la puerta
+de entrada** (contenido en vez de solo ads/referidos) — coherente con el modelo ya existente, no una
+desviación de él.
+
+### Lectura de director comercial (11 sept 2026) — dónde puede trabarse esto
+
+Análisis pedido explícitamente por Mariano ("qué te parece esto, algún error que veas, los precios
+te parecen bien o crees que podrían no funcionar"). Resumen de la lectura completa (el detalle
+extendido de cada punto vive en la conversación de esa fecha, no se duplica acá):
+
+1. El mayor riesgo no es la estrategia, es la ejecución semanal — no está definido quién produce
+   cada pieza de contenido, con qué cadencia, ni quién coordina directos/colaboraciones con
+   influencers. Sin esa respuesta, el plan corre el mismo riesgo que la automatización de n8n
+   (sección 13.6/13.7 de `comercial/CLAUDE.md`): correcto en el papel, estancado por falta de tiempo
+   de builder.
+2. Presencia web en la vida real (Cialdini/prueba social) no es suficiente diferenciador si el
+   contenido gratuito/bajo ticket se queda en información genérica ("cómo se hace un visado") — ese
+   tipo de contenido ya es gratis vía IA. El diferenciador real de GOTIR es lo que la IA no tiene:
+   casos reales con nombre, acceso directo a Mariano, triage personalizado — el contenido debería
+   inclinarse hacia ahí, no hacia explicar procesos genéricos.
+3. Cuidado con que el contenido de bajo ticket conteste la pregunta específica que debería llevar a
+   la llamada de 60/120€ — mantener la línea clara: contenido pago = info general aplicable a
+   cualquiera; llamada paga = análisis del caso puntual.
+4. Costo mensual de Skool en sí (cuota fija o % de ingresos, verificar el modelo vigente) es un gasto
+   fijo nuevo a sostener en medio de la crisis de caja activa — calcular cuántas ventas de ticket
+   bajo cubren esa cuota antes de comprometerse.
+5. Si el embudo de contenido trae mucho más volumen calificado, la capacidad de los colaboradores
+   (Sebastián, María, Gisella) también se pone a prueba, no solo la de Mariano — revisar cuando haya
+   números reales de volumen.
+
+### Decisiones a cerrar antes de empezar a construir (lista de trabajo, 11 sept 2026)
+
+1. **¿El nivel de bajo ticket (20-30€) es suscripción mensual recurrente o pago único de acceso
+   permanente?** Cambia el modelo de negocio completo: recurrente exige contenido nuevo constante
+   para sostener la retención; pago único es más parecido a un producto de información grabado una
+   vez y vendido muchas veces (la lógica original que describió Mariano). **La más urgente de
+   cerrar — todo lo demás depende de esta.**
+2. **¿Quién produce qué, con qué cadencia?** Guion/grabación/edición de Instagram (réplica a
+   TikTok/Facebook/Threads), YouTube Shorts, directos, coordinación de colaboraciones con
+   influencers — repartir entre Mariano y Micol (o alguien más) antes de arrancar, no sobre la
+   marcha.
+3. **Confirmar el costo real de Skool hoy** (cuota mensual fija vs. % de ingresos) y calcular el
+   punto de equilibrio en ventas de ticket bajo.
+4. **Qué canal social arranca primero** — Mariano dio el orden de producción (Instagram → réplicas)
+   pero no cuál es la prioridad de lanzamiento real.
+5. **Definir la línea entre contenido de bajo ticket y motivo de la llamada paga** — qué preguntas
+   específicas de caso quedan reservadas para el nivel de 60/120€, para no resolverlas gratis en el
+   contenido de pago bajo.
+6. **Precio exacto del nivel de bajo ticket** dentro del rango 20-30€ ya acordado.
+
+No se avanza con la construcción de Skool ni con producción de contenido nueva hasta que estas 6
+queden resueltas — mismo criterio que se usó con el builder de GHL y con el mini-funnel: decisiones
+primero, construcción guiada después.
 
 ## 10. Cómo comportarte en esta área
 

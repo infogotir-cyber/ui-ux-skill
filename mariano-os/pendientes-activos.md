@@ -230,7 +230,13 @@ automatización, significaría menos margen por venta mientras todo el trabajo l
   replicado a TikTok/Facebook, YouTube Shorts + directos + colaboraciones con influencers aparte);
   Micol confirmada disponible y sin deuda pendiente (ver ítem de crisis de caja arriba); el canal
   sin confirmar del plan de redes era **Threads** (confirmado 11 sept 2026, transcripción de voz).
-  Falta cerrar: qué canal arranca primero, precio exacto del nivel de bajo ticket.
+- **Lectura de director comercial pedida y entregada (11 sept 2026)**: Mariano pidió explícitamente
+  una crítica honesta ("algún error que veas, los precios te parecen bien o no"). Se armó una lista
+  de **6 decisiones a cerrar antes de construir nada** (suscripción vs. pago único del ticket bajo,
+  quién produce qué contenido y con qué cadencia, costo real de Skool, qué canal arranca primero,
+  línea entre contenido pago bajo y motivo de la llamada, precio exacto del ticket bajo) — detalle
+  completo en `direcciones/marketing/CLAUDE.md`, sección "Decisiones a cerrar antes de empezar a
+  construir". Sin resolver todavía.
 
 ### GOTIR — GDPR / protección de datos con Conversia (29 ago 2026)
 

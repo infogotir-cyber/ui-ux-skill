@@ -109,8 +109,14 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
     pagar, sin fecha exacta todavía.
   - Recordatorio explícito de Mariano: **"tenemos que seguir vendiendo, eso sí es muy importante"**
     — no perder de vista la generación de nuevos cierres mientras se resuelve la caja.
-- Estado: **abierto — se alivia progresivamente en varios frentes (Javier Maddia, Izie), pero sigue
-  el agujero de fondo (IRPF+IVA, tarjeta de crédito, cuenta en -700€) sin resolver**.
+- **Actualizado 11 sept 2026 — deuda a Micol Navarro saldada por completo**: Mariano pagó hoy los
+  $33 USD pendientes más los **173.000 ARS** de la parte del sueldo de Sabrina que seguía abierta
+  desde el 4 de septiembre (línea de arriba) — cierra ese frente por completo. Contexto: Micol sigue
+  disponible para colaborar en la nueva iniciativa de contenido/comunidad (ver
+  `direcciones/marketing/CLAUDE.md`, sección "Plataforma de contenido y comunidad").
+- Estado: **abierto — se alivia progresivamente en varios frentes (Javier Maddia, Izie, Micol ya
+  saldada), pero sigue el agujero de fondo (IRPF+IVA, tarjeta de crédito, cuenta en -700€) sin
+  resolver**.
 - Recordado: 19 veces (24 ago 2026; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago,
   chequeo diario 18:00; 28 ago, chequeo diario 18:00; 28 ago, más tarde — agotamiento expresado; 29
   ago, chequeo diario 18:00; 30 ago, chequeo diario 18:00; 31 ago — se agrava con adelantos de
@@ -216,6 +222,15 @@ automatización, significaría menos margen por venta mientras todo el trabajo l
   original (son productos de información, no parte del pipeline de trámites con María) — es un
   camino más rápido de probar sin esperar esa construcción. Sigue sin decisión tomada sobre cuál
   plataforma priorizar primero ni el precio exacto del nivel de bajo ticket.
+- **Confirmado por Mariano el mismo día (11 sept 2026)**: estructura de 4 niveles aceptada (gratis
+  → bajo ticket 20-30€ en Skool → llamada 60/120€, descontada del total si contrata → premium
+  825€/668€); Skool confirmado como único hub de monetización, redes solo como tráfico; la
+  "Comunidad GOTIR" de WhatsApp (150+ viajeros) queda distinguida de la nueva comunidad de Skool —
+  está inactiva, se migran sus miembros a la nueva; plan de contenido por canal dado (Instagram
+  replicado a TikTok/Facebook, YouTube Shorts + directos + colaboraciones con influencers aparte);
+  Micol confirmada disponible y sin deuda pendiente (ver ítem de crisis de caja arriba). Falta
+  cerrar: qué canal arranca primero, precio exacto del nivel de bajo ticket, y confirmar con
+  Mariano a qué red se refería con "Fritz"/"Freaks" (posible transcripción de Threads).
 
 ### GOTIR — GDPR / protección de datos con Conversia (29 ago 2026)
 

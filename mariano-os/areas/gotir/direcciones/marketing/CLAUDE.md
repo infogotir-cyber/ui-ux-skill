@@ -849,19 +849,45 @@ Esto no es una razón para no avanzar — es una razón para no arrancar por los
    y TikTok ya tenían perfiles curados por Exxo el 7 de agosto, sección con fecha "Viernes 7 ago" —
    punto de partida más barato que abrir todo de cero), sumando el resto progresivamente.
 
-### Preguntas abiertas para Mariano, sin decidir todavía
+### Respuestas de Mariano y estructura confirmada (11 sept 2026, mismo día)
 
-1. ¿La "Comunidad GOTIR con más de 150 viajeros" ya mencionada como beneficio del acompañamiento
-   premium (sección 11.2 de este documento, PDF de honorarios) es la misma comunidad que describe
-   acá, o una comunidad separada y más chica ya existente?
-2. ¿Qué canal social arranca primero?
-3. ¿Precio aproximado del nivel de bajo ticket (20-70€ es el rango que mencionó, sin cerrar)?
-4. ¿Micol Navarro sigue disponible para ayudar con edición de contenido de este proyecto, con el
-   mismo esquema de pago por trabajo ya vigente (`comercial/CLAUDE.md` sección 5.2), o esto queda
-   100% en manos de Mariano por ahora?
+1. **Comunidad GOTIR (WhatsApp) vs. comunidad nueva (Skool) — resuelto, son distintas**: el grupo de
+   WhatsApp de 150+ viajeros ya mencionado como beneficio premium (sección 11.2) **está inactivo**
+   ("está muerto, nadie escribe nada, no tiene sentido de existir", palabras de Mariano). La
+   comunidad nueva en Skool es un proyecto separado, pensado para reemplazarlo/superarlo — Mariano
+   quiere invitar a los miembros del grupo de WhatsApp a sumarse a la nueva comunidad de Skool, no
+   mantener las dos en paralelo. **Mecánica de reactivación propuesta por Mariano**: sorteo mensual
+   entre los miembros activos, y evaluar algún tipo de incentivo/pago por participación — objetivo
+   explícito: que los clientes ya atendidos se apoyen entre ellos y sirvan de prueba social real
+   ("que la gente vea que tenemos referencias muy buenas") para los leads nuevos que entran por el
+   contenido gratuito.
+2. **Flujo confirmado, tal cual lo había propuesto este análisis**: todas las redes (Instagram,
+   TikTok, Facebook, YouTube, un canal más que Mariano nombró como "Fritz"/"Freaks" — **no
+   confirmado a qué app se refiere, podría ser Threads mal transcrito, a confirmar con Mariano antes
+   de asumirlo**, y hasta el catálogo de WhatsApp) llevan tráfico hacia Skool — **Skool es la única
+   que monetiza**, las redes son 100% distribución/descubrimiento, no operaciones de contenido
+   independientes.
+3. **Plan de contenido por canal, dado por Mariano**:
+   - Contenido base para **Instagram**, replicado tal cual a **TikTok** y **Facebook** (y al canal
+     sin confirmar del punto 2) — un solo proceso de producción, múltiples canales de salida.
+   - Contenido aparte y específico para **YouTube Shorts**, más **directos** (streams en vivo) con
+     distintas personas invitadas, más **colaboraciones con influencers** — este bloque sí requiere
+     producción propia, no es réplica de lo de Instagram.
+4. **Escalera de precio confirmada, con el mecanismo de descuento ya aplicado**: gratis → membresía
+   de bajo ticket (20-30€, Skool) → llamada personalizada o de opciones de curso (60€/120€, ya
+   documentada en `comercial/CLAUDE.md` sección 15) → acompañamiento premium (825€ estancia / 668€
+   visado). **Confirmado**: los 60€/120€ de la llamada se descuentan del total si el lead avanza al
+   acompañamiento — ya actualizado en `comercial/CLAUDE.md` sección 15 (aplica a ambos servicios, no
+   solo estancia).
+5. **Micol Navarro — confirmada disponible, y sin deuda pendiente**: Mariano terminó de pagarle hoy
+   (11 sept 2026) los $33 USD que le debía más los 173.000 ARS de la parte pendiente del sueldo de
+   Sabrina que arrastraba desde principios de mes (ver `pendientes-activos.md`, la deuda de 173.000
+   ARS aparecía como abierta desde el 4 sept) — **queda saldada por completo**. Sigue disponible para
+   este proyecto con el mismo esquema de pago por trabajo (`comercial/CLAUDE.md` sección 5.2).
 
-No se avanzó con ninguna construcción todavía — es diagnóstico y propuesta de estructura, a la
-espera de que Mariano priorice.
+**Sin cerrar todavía**: qué canal social arranca primero (Mariano no lo especificó, solo el orden de
+producción Instagram→réplicas); precio exacto del nivel de bajo ticket dentro del rango 20-30€; y la
+identidad real del canal "Fritz"/"Freaks" del punto 2.
 
 ## 10. Cómo comportarte en esta área
 

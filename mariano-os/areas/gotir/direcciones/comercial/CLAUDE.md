@@ -1623,12 +1623,14 @@ pago + agenda). En "tú" (español latino neutro), no "vos", a pedido explícito
 > 📞 *Llamada de asesoría (60€)* — vemos tu caso puntual, los requisitos que aplican para ti, y
 > resolvemos todas tus dudas para que tengas claro cuál es la mejor opción para emigrar (si además
 > quieres reagrupar a tu pareja o algún hijo menor de edad, también te asesoramos sobre eso). Se
-> puede pagar con tarjeta de crédito o débito.
+> puede pagar con tarjeta de crédito o débito. *Si más adelante decides avanzar con el
+> acompañamiento completo, estos 60€ se descuentan del total.*
 >
 > 📋 *Llamada de asesoría + opciones de cursos (120€)* — todo lo anterior, más una selección de
 > hasta 10 cursos válidos de 3 escuelas distintas (entre 2.800€ y 6.000€), de grado superior con
 > aval universitario, sin límite de edad, que no piden título previo homologado y que te habilitan
-> a trabajar. Se puede pagar en cuotas.
+> a trabajar. Se puede pagar en cuotas. *Si más adelante decides avanzar con el acompañamiento
+> completo, estos 120€ se descuentan del total.*
 >
 > Llevamos +500 familias acompañadas en su proceso para venir a España — sabemos cómo hacerlo bien.
 >
@@ -1655,17 +1657,13 @@ frente a esta aclaración más precisa (nombrar Opción 1/2/3 concretas, no un r
 el texto de la plantilla en sí **no se reescribió todavía** porque Mariano lo planteó como algo que
 sigue analizando, no como una decisión cerrada — confirmar antes de reescribir el mensaje.
 
-**Idea en evaluación, sin decidir todavía (11 sept 2026)**: Mariano está pensando en bajar el
-precio de entrada para gente que quiere "contratar de a poco" — específicamente, que lo ya pagado
-por la llamada (60€ o 120€) se descuente del total de honorarios (825€) si el lead avanza y
-contrata. Pidió una sugerencia. **Recomendación**: sí tiene sentido aplicarlo — es exactamente el
-mismo modelo que ya usa el producto de Modificación a Residencia de Trabajo (sección 16, Paso 1 de
-90€ descontado del total de 650€) y está respaldado por el mismo principio de reciprocidad
-(Cialdini, sección 12.2) ya aplicado ahí: la persona ya hizo una inversión chica y real, lo cual
-reduce la fricción del pago grande siguiente. Mantiene además el ancla de precio limpia (825€
-"todo incluido" de cara al cliente, restando lo ya pagado, en vez de sumar 825€+60€/120€ como un
-gasto aparte). **No implementado** — falta que Mariano confirme si quiere aplicarlo así antes de
-tocar la plantilla de esta sección o la de la sección 16.
+**CONFIRMADO por Mariano (11 sept 2026)**: lo pagado por la llamada de asesoría (60€ o 120€) se
+descuenta del total de honorarios si el lead avanza y contrata — aplica tanto a **estancia por
+estudios (825€)** como a **visado de estudios desde origen (668€)**, sección 1.2. Ya reflejado en
+la plantilla de arriba. Mismo modelo que ya usa el producto de Modificación a Residencia de Trabajo
+(sección 16, Paso 1 de 90€ descontado del total de 650€) — reciprocidad (Cialdini, sección 12.2): la
+persona ya hizo una inversión chica y real, lo cual reduce la fricción del pago grande siguiente, y
+mantiene el ancla de precio limpia de cara al cliente.
 
 **Comisión esperada, no deuda todavía (31 ago 2026)**: **Sara Isabel Posso Echenique** ("Sarai",
 `contact_id=e8HD8o3V2r8WZ7qCVZET`) quedó en pagarle a María García Serrano por su trámite "en estos

@@ -782,7 +782,88 @@ cuándo mandarla. **No enviar nada a Exxo por API/automatización sin que Marian
 confirme él mismo** — es una comunicación humana de cierre de proveedor, no una tarea operativa de
 GHL/ClickUp.
 
-## 9. Cómo comportarte en esta área
+## 9. Plataforma de contenido y comunidad — nueva iniciativa (11 sept 2026)
+
+Mariano planteó, en la misma conversación donde se analizaron 22 conversaciones reales del
+mini-funnel (`comercial/CLAUDE.md` sección 17), una dirección estratégica nueva: quiere crear
+contenido en YouTube, Skool y redes (Instagram, Facebook, TikTok) para construir una comunidad con
+contenido gratuito (información genérica — cómo se hace un visado/estancia, requisitos, consejos por
+país, cómo abrir cuenta bancaria) y contenido/productos pagos de bajo ticket (20-70€) para leads que
+no quieren pagar por la llamada de 60/120€ ni por el acompañamiento premium, pero sí quieren algo de
+información. Su lógica textual: "grabar una sola vez y venderlo muchas veces" — monetizar lo que hoy
+no genera nada (leads que se van sin pagar) sin sumarle tiempo real a lo que ya le consume tiempo
+(llamadas y acompañamiento).
+
+### Conexión con una decisión estratégica ya abierta (no es una idea nueva y aislada)
+
+Esto es, en los hechos, la versión concreta y ejecutable de la idea de "vender por capas" que
+Mariano ya había planteado el 28 de agosto de 2026 (`pendientes-activos.md`, "GOTIR — decisión
+estratégica: ¿bajar precios y jugar a volumen?", abierta y recordada 13 veces sin decisión desde
+entonces). La diferencia importante: aquella versión requería la automatización Fathom→GHL/n8n que
+todavía no existe (`comercial/CLAUDE.md` sección 13.6) para derivar automáticamente al cliente que
+paga por el servicio de presentación — por eso quedó frenada, bajar precios sin esa automatización
+arriesgaba empeorar la caja a corto plazo. **La capa de contenido/comunidad no tiene esa misma
+dependencia** — son productos de información, fuera del pipeline de trámites con María/abogados, así
+que se pueden vender sin esperar ninguna construcción técnica. Es el camino más rápido de probar la
+lógica de "vender por capas" sin quedar bloqueado por lo mismo que frenó la versión de agosto.
+
+### Propuesta de escalera de valor (a partir de lo que ya describió Mariano)
+
+| Nivel | Qué es | Precio | Qué ya existe hoy |
+|---|---|---|---|
+| 0 — Gratis | Contenido genérico en redes + comunidad abierta (Skool) | — | Cero producción activa desde que Exxo terminó (9 sept, sección 13) — pero **sí hay contenido ya producido y sin publicar** (ver abajo) |
+| 1 — Bajo ticket | Membresía/curso grabado de Skool (información más específica: requisitos detallados, consejos por país, cuenta bancaria, etc.) | 20-70€ (a definir) | No existe todavía |
+| 2 — Asesoría paga | Llamada personalizada de 60€ o 120€ | 60-120€ | Ya documentada, `comercial/CLAUDE.md` sección 15 |
+| 3 — Premium | Acompañamiento completo hasta la resolución | 825€+ | Ya existe, es el servicio actual |
+
+### Lectura de riesgo — por qué el timing de esto importa (11 sept 2026)
+
+Dos hechos ya documentados en este sistema cambian el cálculo de cuánto esfuerzo nuevo es realista
+pedirle a Mariano ahora mismo:
+
+1. **Exxo (la agencia de marketing) terminó el servicio el 9 de septiembre** (sección 13) — de acá
+   en más, cualquier producción de contenido nueva depende 100% de Mariano (más lo que pueda seguir
+   pagando puntualmente a Micol Navarro para edición de video, `comercial/CLAUDE.md` sección 5.2) —
+   no hay agencia ya armando calendario de contenido en paralelo, como sí había hasta hace dos días.
+2. **La crisis de caja sigue activa** (`pendientes-activos.md`, "Personal — crisis de caja
+   urgente") — el tiempo de Mariano sigue siendo el recurso más escaso del negocio (sección 0 de
+   `comercial/CLAUDE.md`), y construir esta plataforma en paralelo a las 2-3 llamadas/día y el resto
+   de la operación es tiempo real que no está hoy disponible de sobra.
+
+Esto no es una razón para no avanzar — es una razón para no arrancar por los 5 canales a la vez
+(YouTube + Skool + Instagram + Facebook + TikTok simultáneamente), coherente con la filosofía de
+"rama por rama" que ya rige el resto de este sistema (`mariano-os/CLAUDE.md`).
+
+### Recomendación concreta de por dónde arrancar
+
+1. **Antes de producir nada nuevo, revisar el contenido ya producido y sin publicar**: "Videos del
+   calendario de contenido" entregados por Exxo en un Drive aparte (sección 8, punto 2) — contenido
+   real, descargable en calidad original, nunca terminó de publicarse. Esto podría ser el primer
+   lote de contenido gratuito de nivel 0 a costo marginal casi cero, sin esperar a producir nada
+   desde cero.
+2. **Skool como hub único** (comunidad + cursos + membresías en una sola herramienta, coherente con
+   lo que Mariano describió), no un frente separado por plataforma — las redes (Instagram, TikTok,
+   YouTube, Facebook) funcionan como canales de distribución que apuntan hacia Skool, no como
+   operaciones de contenido independientes cada una.
+3. **Un solo canal social como punta de lanza para empezar** (a elegir con Mariano — YouTube Shorts
+   y TikTok ya tenían perfiles curados por Exxo el 7 de agosto, sección con fecha "Viernes 7 ago" —
+   punto de partida más barato que abrir todo de cero), sumando el resto progresivamente.
+
+### Preguntas abiertas para Mariano, sin decidir todavía
+
+1. ¿La "Comunidad GOTIR con más de 150 viajeros" ya mencionada como beneficio del acompañamiento
+   premium (sección 11.2 de este documento, PDF de honorarios) es la misma comunidad que describe
+   acá, o una comunidad separada y más chica ya existente?
+2. ¿Qué canal social arranca primero?
+3. ¿Precio aproximado del nivel de bajo ticket (20-70€ es el rango que mencionó, sin cerrar)?
+4. ¿Micol Navarro sigue disponible para ayudar con edición de contenido de este proyecto, con el
+   mismo esquema de pago por trabajo ya vigente (`comercial/CLAUDE.md` sección 5.2), o esto queda
+   100% en manos de Mariano por ahora?
+
+No se avanzó con ninguna construcción todavía — es diagnóstico y propuesta de estructura, a la
+espera de que Mariano priorice.
+
+## 10. Cómo comportarte en esta área
 
 - Esta dirección recién se está construyendo — no inventar campañas, cifras ni fechas que no vengan
   de un plan real de Exxo o de lo que Mariano cuente directamente.

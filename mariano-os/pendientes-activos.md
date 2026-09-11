@@ -205,6 +205,17 @@ automatización, significaría menos margen por venta mientras todo el trabajo l
 - **Ampliado 29 ago 2026**: análisis completo de riesgos/amenazas + las 19 opciones + una opción 20
   nueva (diversificar por tipo de trámite en España — nacionalidad, arraigos, emprendedor — en vez
   de país) ahora vive en `areas/gotir/analisis-estrategico-29ago2026.md`. Sin decisión tomada.
+- **Ampliado 11 sept 2026 — Mariano trajo la versión concreta de "vender por capas" de esta idea**:
+  plataforma de contenido + comunidad (YouTube, Skool, Instagram/TikTok/Facebook) con 4 niveles —
+  contenido gratis (genérico, para atraer comunidad) → contenido/membresía paga de bajo ticket
+  (20-70€, grabado una vez y vendido muchas veces) → llamada de asesoría paga (60-120€, ya
+  documentada en `comercial/CLAUDE.md` sección 15) → acompañamiento premium (825€+). Detalle
+  completo del análisis y las recomendaciones en `direcciones/marketing/CLAUDE.md`, nueva sección
+  "Plataforma de contenido y comunidad". **Diferencia importante con la versión de 28 ago**: la capa
+  de contenido/comunidad NO depende de la automatización Fathom→GHL/n8n que sí frenaba la versión
+  original (son productos de información, no parte del pipeline de trámites con María) — es un
+  camino más rápido de probar sin esperar esa construcción. Sigue sin decisión tomada sobre cuál
+  plataforma priorizar primero ni el precio exacto del nivel de bajo ticket.
 
 ### GOTIR — GDPR / protección de datos con Conversia (29 ago 2026)
 

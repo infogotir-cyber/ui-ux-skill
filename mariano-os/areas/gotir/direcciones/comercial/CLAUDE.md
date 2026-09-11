@@ -42,6 +42,10 @@ Con estancia por estudios pasó una versión más leve del mismo problema: el mo
 - Sebastián/María hacen la "segunda parte" por 250€: presentación, dudas 1 a 1, seguimiento hasta TIE (sin recursos de reposición incluidos).
 - **Precio al cliente: 825€ en dos cuotas, o 750€ en pago único.** De ese total, 250€ van al abogado.
 - Comisiones extra por cliente: ~250€ por matriculación a curso, 40-60€ por seguro de salud, 15€ por certificado médico.
+- **Aclarado 11 sept 2026**: el "40-60€ por seguro de salud" de arriba es la **comisión que se lleva
+  GOTIR** por la venta del seguro, no lo que paga el cliente. El costo real del seguro de salud
+  **anual** que paga el cliente es de **~500€** — cifra usada en la secuencia post-agendamiento
+  (Momento 2, precalificación) para dar una estimación de fondos totales necesarios.
 
 **Visado de estudios desde origen (ej. Argentina)**
 - GOTIR hace la "primera parte"; Gisella arma el grupo de WhatsApp y hace seguimiento hasta el TIE (crea el grupo cuando faltan ≤6 meses para la presentación).

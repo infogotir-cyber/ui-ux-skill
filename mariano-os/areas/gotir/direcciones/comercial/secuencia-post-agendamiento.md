@@ -205,9 +205,53 @@ después de implementar esto, contra el baseline ya existente:
 
 ## 6. Pendiente de decidir con Mariano
 
-- Confirmar cuál de los dos workflows candidatos ("Llamada agendada" o "Nueva reunión agendada") es
-  el que realmente dispara al agendar — no se pudo confirmar por API, hay que abrirlo en GHL.
-- Si el Momento 2 se manda siempre a horario fijo (ej. "al día siguiente de agendar") o calculado
-  dinámicamente contra la fecha de la cita (24-48hs antes) — lo segundo es mejor pero más
-  complejo de armar en el builder nativo de GHL; confirmar si vale la pena o si conviene empezar
-  simple.
+- ~~Confirmar cuál de los dos workflows candidatos...~~ — **resuelto 11 sept 2026**: es **"Nueva
+  reunión agendada"** (trigger "Cita reservada por el cliente" / "Customer Booked Appointment",
+  filtrado a calendario "Asesoría GOTIR").
+- ~~Si el Momento 2 se manda a horario fijo o calculado dinámicamente...~~ — **resuelto**: se
+  armó con **Wait dinámico contra la fecha real de la cita** (tipo "Cita / evento de calendario",
+  usando la cita del trigger), no un delay fijo — GHL sí lo soporta nativamente en el builder
+  ("Hasta una fecha/hora programada... antes/después de la cita").
+
+## 7. Implementado y publicado (11 sept 2026)
+
+Mariano construyó los 3 momentos a mano en el builder de GHL, en el workflow **"Nueva reunión
+agendada"**, con esta sesión guiándolo paso a paso por captura de pantalla (mismo método ya usado
+en el caso Regina, sección 10.2 de `CLAUDE.md` — login por navegador sigue bloqueado por
+protección anti-bot, así que la revisión se hizo 100% por capturas).
+
+**Estructura final del workflow** (orden real, confirmado por captura):
+Internal Notification → SMS (Momento 1, Fragmento "Reunion agendada") → **Email** (el original,
+movido a esta posición a propósito para que siga saliendo inmediato al agendar, no corrido por los
+Wait nuevos) → Wait ("Antes", 1 día, fallback "Continúe con la siguiente acción") → SMS (Momento 2,
+Fragmento "Momento 2") → Wait ("Antes", 5 horas, mismo fallback) → SMS (Momento 3, Fragmento
+"Momento 3") → Create Or Update Opportunity → Remove Tag → Add Tag → FINAL.
+
+**Momento 1** (SMS existente, editado): se le agregó al final "Cuando termines de ver el video,
+respondé 'listo' acá mismo — así sabemos que llegás preparado/a a la llamada." — el pedido de
+compromiso activo que faltaba (sección 2, punto 1 de Cardone).
+
+**Momento 2** (SMS nuevo, Wait 1 día antes de la cita): precalificación de modalidad (estancia por
+estudios **o** visado desde origen — ampliado a propósito respecto al borrador original, que solo
+calificaba estancia — Mariano decidió que ambos servicios prioritarios califican), timing (<6
+meses) y presupuesto (~7.200€ fondos + ~2.900€ curso + ~500€ seguro — el monto del seguro es el
+costo real anual al cliente, no la comisión de GOTIR, ver aclaración en `CLAUDE.md` sección 1.2).
+
+**Momento 3** (SMS nuevo, Wait 5 horas antes de la cita — Mariano lo dejó en 5h, no en el 2-3h
+sugerido originalmente, verificarlo si en algún momento aparece una cita muy temprano a la mañana
+y el mensaje llega de madrugada): confirmación de asistencia con salida fácil ("avisame y te
+reagendo sin problema") + lógica de escasez real (Chris Voss / Cialdini).
+
+**Registro de todo lo que se ajustó durante la revisión, para que quede como historial**:
+- Los 2 SMS nuevos llevan `{WA#1}` al principio — sin eso hubieran salido como SMS real en vez de
+  WhatsApp (mismo bug ya documentado en `CLAUDE.md` sección 5.9).
+- El nodo "Email" original quedó, en un primer momento, corrido de lugar (después del Wait+SMS del
+  Momento 2 en vez de antes) — esto hubiera retrasado la confirmación por email hasta el día antes
+  de la cita en vez de salir inmediato al agendar. Corregido por Mariano.
+- Los 3 mensajes quedaron unificados en **tú** (no vos) — decisión de Mariano, consistente con las
+  plantillas de las secciones 15 y 16 de `CLAUDE.md`.
+- Workflow publicado (no quedó en Borrador).
+
+**Estado**: en producción desde el 11 sept 2026. Falta acumular volumen real para medir contra el
+baseline (sección 5 de este documento) — no antes de tener unas cuantas citas nuevas pasando por
+la secuencia completa.

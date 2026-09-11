@@ -1753,3 +1753,162 @@ Ayala (cliente viejo, cuenta ajena) y Daniel Ribeiro Carvalho (cuenta ajena, 2 p
   cuánto es. No se encontró su conversación de hoy en GHL bajo los dos contactos "Sebastián Ayala"
   existentes (ambos leads viejos y dormidos, sin nada de esto) — posible contacto nuevo sin
   indexar todavía, o guardado con otro nombre/número — a verificar.
+
+---
+
+## 17. Lectura estratégica del mini-funnel — mirada de director comercial (11 sept 2026)
+
+Mariano pidió explícitamente ir más allá de corregir textos: que se lea el conjunto de las 22
+conversaciones de WhatsApp (detalle caso por caso en `patrones-apertura-conversacion.md`) más todo
+lo ya sabido del embudo (baseline julio 2026, sección 3.1; Mapa Antifugas, secciones 8 y 11) con
+ojo de director comercial — qué corregir, qué mejorar, y si lo que está fallando es falta de dinero
+real de los leads o leads mal calificados llegando al sistema. Estructura por tema, de mayor a menor
+impacto esperado en ventas cerradas, no por orden de aparición.
+
+### 17.1 El diagnóstico central: no es (solo) falta de dinero — es filtro insuficiente antes de la llamada
+
+La pregunta de fondo que hizo Mariano tiene una respuesta con matices, no un sí/no:
+
+- **Hay leads genuinamente sin el dinero disponible hoy** (varios casos de la primera tanda:
+  Ángel Villalba/Yasmín, Melisa Tamburo con timing de 2027) — pero en casi todos estos casos el
+  problema real **no es que no tengan o no vayan a tener el dinero**, es un problema de **timing de
+  liquidez**: venta de un local en cuotas, temporada de trabajo en Andorra para juntar fondos, venta
+  de un auto. Es decir: el dinero existe o va a existir, pero no está disponible *ahora*. Esto es
+  una fuga de **timing mal filtrado**, no de poder adquisitivo real.
+- **Hay una porción más chica pero real de leads sin capacidad real ni a mediano plazo** — no hay
+  evidencia clara de esto en las 22 conversaciones analizadas (ninguna dijo explícitamente "no voy a
+  poder juntar esto nunca"), lo cual en sí es un dato: la mayoría de los leads que llegan al
+  mini-funnel **sí son, en principio, calificables económicamente** — el problema no está tanto en
+  la calidad del tráfico como en cómo se lo filtra y secuencia antes de la llamada.
+- **La evidencia más fuerte apunta a leads mal calificados en timing, no en dinero**: Henry Alvarez
+  Contreras (`patrones-llamadas.md` fila 9) es el caso con nombre propio, pero Diego Bayeh (timing
+  1-2 años, sin oferta de llamada paga) es la misma fuga sin nombre puesto todavía. Sumado a que el
+  filtro de 4 meses (sección 15) se aplica de forma inconsistente (limpio con Mariangelica, tarde
+  con Mary Rengifo, ausente con Diego Bayeh), la conclusión es clara: **el cuello de botella no es
+  la calidad del lead, es la falta de un filtro de timing que se aplique siempre, no solo cuando
+  Mariano se acuerda.**
+
+**Esto es, en el fondo, el mismo diagnóstico de "capa 3 sin respaldo sistémico" ya hecho en la
+sección 8.2** (el proceso está bien diseñado — la plantilla de 60€/120€ existe, la política de <4
+meses existe — pero depende de que alguien la aplique caso por caso sin ningún mecanismo que la
+haga cumplir sola). El mini-funnel/bot que Mariano quiere construir es, literalmente, la solución
+a esto — convertir el filtro de timing en algo que pasa siempre, no en algo que depende de que se
+acuerde.
+
+### 17.2 Recomendación #1 (la de mayor impacto): mover el filtro de timing al principio, sin excepción
+
+Hoy el Fragmento 3 (timing) ya existe, pero nada obliga a que su respuesta se traduzca en una
+decisión antes de seguir. Sugerencia concreta: convertir la respuesta del Fragmento 3 en un
+**gate real**, con 3 ramas obligatorias (no opcionales) antes de mandar cualquier otro contenido:
+
+- **< 4 meses** → sigue el flujo normal del mini-funnel (Fragmentos 4 en adelante), termina en
+  agendar la llamada gratuita.
+- **4 meses - ~1 año** → se ofrece directo la plantilla de la sección 15 (60€/120€), sin llegar a
+  ofrecer la llamada gratuita en ningún momento — hoy esto se hace bien a veces (Mariangelica) y
+  mal otras (Mary Rengifo, ofrecida tarde después de insinuar la gratuita).
+- **> 1 año o "todavía no lo sé"** → contenido informativo únicamente (Fragmentos 4-7, sin filtro
+  de presupuesto ni CTA de agendar), con una etiqueta de recontacto a futuro — esto es exactamente
+  lo que le faltó a Diego Bayeh, y es el mismo mecanismo que ya existe conceptualmente para el
+  "recorrido mínimo de recuperación" de la sección 8.3 (punto 5), aplicado ahora en la entrada del
+  funnel, no solo en la recuperación de presupuestos fríos.
+
+**Por qué es la recomendación #1**: de las 2-3 llamadas/día que Mariano tiene disponibles (el
+recurso más escaso de todo el negocio, sección 0), cada una que se gasta en un lead con timing >1
+año es una que no se gasta en un lead calificado — y este análisis encontró al menos 2 casos
+concretos (Henry, Diego Bayeh) de las 22 conversaciones donde esto pasó. Corregir esto no depende
+de más marketing ni de bajar precios — depende de hacer cumplir algo que el proceso ya sabe hacer.
+
+### 17.3 Recomendación #2: formalizar los planes de pago flexible en el funnel, no improvisarlos en la llamada
+
+Patrón repetido en varios casos (Hector con remesas de Venezuela, Ángel Villalba con la venta de su
+local, la estrategia de migración familiar escalonada ya documentada en `patrones-llamadas.md`):
+Mariano resuelve muy bien, en vivo, durante la llamada, el problema de liquidez cuando aparece — pero
+siempre reactivo, nunca aparece mencionado antes. Sugerencia: el mini-funnel (Fragmento 8, filtro de
+presupuesto) podría mencionar de forma proactiva que existen opciones de pago para quienes tienen el
+dinero pero no todo disponible ahora mismo (cuotas, reservar el proceso con una seña, empezar cuando
+llegue el pago de una venta) — esto haría dos cosas a la vez: (a) evita perder leads que se
+autoexcluyen pensando que necesitan los ~3.000€ completos de una sola vez, y (b) filtra mejor entre
+"no tengo timing de dinero" (sigue siendo buen lead, solo necesita estructura de pago) y "no tengo ni
+voy a tener el dinero" (no es un lead calificado, sin importar cuánto se le facilite el pago).
+
+### 17.4 Recomendación #3: la inconsistencia de honorarios (650-825€) no es solo un problema de redacción — es una señal de negociación no estructurada
+
+Ya documentado como hallazgo de patrón (Flavia, Ariel recibieron un rango en vez del 825€ fijo). Con
+la idea nueva que trajiste hoy (descontar la llamada paga del total, sección 15), hay una oportunidad
+de resolver las dos cosas juntas: en vez de que la variación de precio dependa de que Mariano decida
+caso por caso bajar el ancla cuando intuye resistencia de presupuesto, **formalizar una escalera de
+precio fija y conocida de antemano** — por ejemplo: 825€ (2 cuotas) / 750€ (pago único) / 750€ menos
+lo ya pagado en la llamada diagnóstica, si aplica. Esto no cambia el criterio comercial de fondo
+(seguís pudiendo ofrecer flexibilidad real, sección 3.2) — lo que cambia es que deja de ser
+improvisado mensaje por mensaje, lo cual además evita el riesgo de que dos leads que comparen notas
+reciban números distintos sin motivo aparente.
+
+### 17.5 Recomendación #4: capitalizar mejor el patrón de escalación a llamada paga (55€)
+
+Confirmado 2/2 (Evelyn, Diego Bayeh) que cuando aparece una pregunta legal o burocrática específica
+por WhatsApp, Mariano la deriva bien a una llamada paga en vez de perder tiempo respondiéndola por
+texto (o peor, arriesgar una respuesta imprecisa). Esto es, en los hechos, un producto que ya
+funciona y ya genera ingreso marginal de leads que de otra forma no producirían nada. Sugerencia:
+en vez de que dependa de que Mariano reconozca la pregunta como "de las que se escalan" caso por
+caso, vale la pena mapear las 3-4 categorías de pregunta que más se repiten (reutilización de fondos
+entre familiares, timing burocrático específico, casos legales atípicos como custodia/tenencia de
+menores) como gatillos explícitos de "esto se escala a llamada paga" — mismo principio que ya aplica
+en el resto del sistema: mover una regla que hoy vive en el criterio de Mariano a algo que se puede
+aplicar consistentemente, sea él, un colaborador, o eventualmente el bot quien conduzca la
+conversación.
+
+### 17.6 Recomendación #5: las conversaciones "por proxy" (7 de 22, ~32%) son un segmento, no una excepción
+
+Casi un tercio de las conversaciones analizadas son de alguien escribiendo por otra persona. Esto ya
+se resolvió a nivel de texto (Fragmento `mini-funnel-1.5-proxy`, sección de arriba), pero como
+director comercial vale la pena señalar la implicación más grande: estos casos probablemente tienen
+**ciclos de decisión más largos** (hay que convencer a dos personas, no una) y **momentos de
+seguimiento distintos** (la persona que escribe puede no ser la que finalmente paga o viaja). Vale
+la pena, más adelante, revisar si estos casos tardan sistemáticamente más en cerrar o se enfrían más
+seguido que los directos — si el bot llega a construirse con algún tipo de etiquetado automático,
+"trámite para terceros" sería una etiqueta útil desde el día uno, no algo a agregar después.
+
+### 17.7 Recomendación #6: la conversación larga de price-shopping (caso María De Los Angeles Taly) — poner un límite de tiempo, no solo de mensajes
+
+Una conversación de 6+ semanas todavía abierta, con mucho ida y vuelta de precio, es tiempo real de
+Mariano (o de quien conduzca la conversación) que no está produciendo una decisión. Sugerencia:
+aplicar a las conversaciones de WhatsApp la misma disciplina que ya existe para las llamadas (Fase 5,
+sección 2 — nunca terminar sin próxima acción + fecha + responsable): si una conversación pasa,
+digamos, 2 semanas sin que el lead confirme timing y presupuesto, en vez de seguir respondiendo
+reactivamente cada pregunta nueva de precio, ofrecer explícitamente la llamada paga de asesoría
+(ya existe la oferta, sección 15) como forma de convertir tiempo gastado en texto en algo que
+efectivamente mueve la decisión o cierra el caso — beneficia a Mariano tanto si el lead paga la
+llamada como si decide no seguir (libera el tiempo para otro lead).
+
+### 17.8 Recomendación #7 (menor, no urgente): ampliar el catálogo de cursos más allá de 3 ciudades fijas
+
+El gap de Tatiana (Asturias) y la fricción de María Taly sugieren que la oferta de 3 opciones fijas
+puede estar generando más conversaciones de "no tengo lo que busco" de lo que parece a simple vista.
+No hay urgencia de resolverlo (la respuesta ya redactada arriba — "podemos presentar desde
+cualquier ciudad" — cubre el caso por ahora), pero si este patrón se repite con más frecuencia a
+medida que lleguen más conversaciones, valdría la pena evaluar sumar una cuarta opción de curso en
+otra región (norte de España, por ejemplo) en vez de resolver cada caso como excepción.
+
+### 17.9 Lo que NO hace falta corregir — para no sobre-corregir donde ya funciona bien
+
+Igual de importante que señalar lo que falla: tres cosas de las 22 conversaciones confirman que
+partes del sistema ya están sólidas y no deberían tocarse solo porque se está revisando todo:
+
+- La política de nunca nombrar la institución específica antes del pago se sostuvo firme bajo
+  presión real dos veces (Henry, la abogada colombiana) — no cambiar.
+- El patrón adaptativo de Ramiro ("¿hay algo que te preocupe más?" en vez de reenviar el bloque
+  completo) ya demuestra que cuando Mariano se aparta del guion fijo con criterio, mejora la
+  conversación — el bot debería poder hacer esto también, no ser más rígido que el propio Mariano.
+- La respuesta a la objeción de "me van a negar la entrada como turista" (Jean Carlo, "+500
+  personas, jamás negaron el ingreso") ya es fuerte tal cual está — solo hace falta formalizarla
+  como respuesta reutilizable, no rediseñarla.
+
+### 17.10 Siguiente paso sugerido, no ejecutado todavía
+
+Este análisis es de diagnóstico y estrategia, no de implementación — ninguna de las recomendaciones
+17.2 a 17.8 se escribió todavía como Fragmento, plantilla o cambio de precio. Antes de tocar
+cualquiera de estas, hace falta que Mariano priorice cuáles quiere avanzar primero (mismo criterio
+ya aplicado en la sección 8.3 con las fugas del Mapa Antifugas: no corregir todo a la vez) — la
+recomendación de este documento, si hay que elegir una sola para empezar, es la 17.2 (gate de
+timing obligatorio), por ser la que más directamente protege el recurso más escaso del negocio (las
+2-3 llamadas/día de Mariano) con el menor esfuerzo de construcción.

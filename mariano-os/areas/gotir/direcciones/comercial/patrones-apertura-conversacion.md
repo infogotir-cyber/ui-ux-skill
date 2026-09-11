@@ -255,6 +255,31 @@ continuación)*
 >
 > ¿Cuál de estas tres te resuena más? Cuéntame y seguimos con los siguientes pasos.
 
+**1.5. `mini-funnel-1.5-proxy`** *(nuevo, 11 sept 2026, resuelve pregunta abierta #3 — va justo
+después del saludo, Fragmento 1, y antes del filtro de modalidad, Fragmento 2)*
+> Antes de seguir, cuéntame: ¿este trámite sería para ti, o me estás escribiendo por otra persona
+> (un hijo, tu pareja, un familiar)?
+
+**Cómo usarlo**: si la respuesta es "para otra persona", el resto de la secuencia (Fragmentos 2 en
+adelante) hay que adaptarla a tercera persona sobre la marcha (ej. "¿ya conoce la opción..." en vez
+de "¿ya conoces..."), y al llegar al filtro de presupuesto/agendar (Fragmentos 8/9) conviene
+confirmar quién va a estar en la llamada — la persona que escribe, la que viaja, o ambas — porque
+en al menos 7 de las 22 conversaciones analizadas la persona que decide no es la misma que escribe.
+No se redactan variantes en tercera persona de cada Fragmento por ahora (duplicaría todo el
+mini-funnel) — se deja como ajuste manual de quien conduce la conversación (Mariano o, más
+adelante, el bot) hasta que haya evidencia real de que vale la pena esa inversión.
+
+**Nota sobre ciudad no cubierta por las 3 opciones de curso** *(nuevo, 11 sept 2026, resuelve
+pregunta abierta #4 — no es un Fragmento numerado del flujo principal, es una respuesta reutilizable
+para cuando el lead pregunta específicamente por una ciudad que no está entre las de la Opción 1, o
+menciona una ciudad antes de llegar al Fragmento 10)*:
+> Podemos presentar el trámite desde cualquier ciudad de España — las opciones que te comparto son
+> simplemente las que ya tenemos evaluadas y usadas por cientos de clientes, con resoluciones
+> aprobadas. Si preferís buscar un curso en [ciudad], también podemos armar el trámite con ese
+> curso, siempre que cumpla los requisitos (grado superior o con aval universitario, más de 6 meses,
+> presencial o semipresencial). ¿Querés que evaluemos esa opción, o preferís elegir entre las que ya
+> te compartí?
+
 **Nota sobre 10a/10b**: igual que el resto del mini-funnel, nunca se nombra la institución
 específica antes del pago (política ya confirmada firme bajo presión real en dos de las 22
 conversaciones analizadas — ver más abajo) — se dice "Opción 1/2/3", no el nombre de la escuela.
@@ -487,7 +512,10 @@ en `comercial/CLAUDE.md`:
    `mini-funnel-10a-opciones-curso` y `mini-funnel-10b-opciones-curso`, dividido en dos mensajes por
    pedido explícito de Mariano (el bloque completo no entra en una sola plantilla de GHL).
 
+**Actualización 11 sept 2026, mismo día**: los dos pendientes menores ya se redactaron — Fragmento
+`mini-funnel-1.5-proxy` (filtro de para quién es el trámite) y la respuesta reutilizable de "ciudad
+no cubierta", ambos arriba, junto a los Fragmentos 10a/10b.
+
 No se avanza con el diseño del bot en n8n todavía — mismo criterio que se usó con el builder de
 GHL: primero el análisis y las decisiones de Mariano sobre estas preguntas, después la construcción
-guiada paso a paso. Quedan dos pendientes menores para una próxima vuelta: redactar el Fragmento del
-filtro de proxy (pregunta 3) y la respuesta estándar de "ciudad no cubierta" (pregunta 4).
+guiada paso a paso.

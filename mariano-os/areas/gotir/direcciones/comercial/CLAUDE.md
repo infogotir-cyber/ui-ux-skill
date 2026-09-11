@@ -246,7 +246,12 @@ reflejaba nada. Investigado en vivo:
   del 18 ago ya corregidos como ejemplo del mecanismo: Javier Maddia (`showed`), Yeraldin Coba
   (`noshow` — dejó una nota en el propio formulario de reserva avisando que el horario asignado por
   el widget probablemente no le iba a funcionar por diferencia horaria y pidiendo coordinar por
-  WhatsApp antes — nadie lo vio, vale la pena revisar si el widget de reserva está exponiendo bien
+  WhatsApp antes — nadie lo vio. **Dato nuevo, confirmado 11 sept 2026 con el export real de
+  WhatsApp**: además de la nota no vista, el día de la cita (18 ago) Mariano llegó atrasado por una
+  llamada anterior ("estamos unos minutos atrasados... nos desocupamos en 15 minutos") justo en el
+  horario en que Yeraldin debía conectarse — no se puede saber con certeza si ella llegó a intentar
+  entrar y no encontró a nadie, pero es un segundo factor real que se suma a la nota no vista, no
+  solo "el lead no llegó". Vale la pena revisar si el widget de reserva está exponiendo bien
   esas notas a quien gestiona el calendario), Nazareth Rengel (`noshow`, sin nota, sin explicación
   aparente, referida por Jesús Mosquera).
 - **Cómo sacar las estadísticas cuando haga falta**: cruzar `ghl_list_calendar_events` (calendario
@@ -792,6 +797,12 @@ cuente el contenido, como ya se viene haciendo.
   tag "cualificado visado", sin notas ni oportunidad propia) — **pendiente de decidir con Mariano**,
   prioridad baja (a diferencia del duplicado de Regina Epifanio, este no tiene datos reales cargados
   que se puedan perder).
+- **CERRADO (11 sept 2026, confirmado con export real de WhatsApp)**: el mensaje sí se mandó bien
+  manualmente el 18 ago ("¿Cómo estás? Quería retomar contacto... los cupos se van completando...")
+  y Sebastián respondió el mismo día confirmando que le había llegado. El 26 ago avisó que **decidió
+  emigrar a otro país, no a España** — el trámite se descarta por decisión propia del cliente, no
+  por un problema técnico de entrega. No sigue como pendiente de reconectar canal ni de seguimiento
+  — es un caso cerrado/perdido.
 
 **Caso 2 — Enrique Eduardo Aguilar** (`contact_id=Q5FBh8Be5ujYviVJVg6c`, oportunidad
 `id=1hf61joLaDSIMWZMAtyW`, 670€) — **en curso 17 agosto 2026**:

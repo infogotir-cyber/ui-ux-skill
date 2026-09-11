@@ -1640,6 +1640,33 @@ pago + agenda). En "tú" (español latino neutro), no "vos", a pedido explícito
 subió a 60€ y el alcance es más amplio (diagnóstico completo del caso, no solo Q&A), coherente con
 que sea la oferta estándar para leads fuera de ventana, no una excepción puntual.
 
+**Distinción 60€/120€ — en definición, aclarada por Mariano 11 sept 2026 (todavía "analizando", no
+100% cerrada)**: la diferencia real entre las dos llamadas no es la cantidad de contenido en
+general, es específicamente si se nombran o no las opciones de curso:
+- **60€** = asesoría sobre la situación particular del lead (requisitos que aplican, dudas
+  puntuales) — **sin** decirle el nombre/detalle de las opciones de curso (Opción 1/2/3).
+- **120€** = información general + análisis del caso particular + **sí** incluye el detalle de las
+  3 opciones de curso (Opción 1/2/3, mismo bloque ya documentado en `patrones-llamadas.md` y en
+  `mini-funnel-10` de `patrones-apertura-conversacion.md`).
+
+Esto reemplaza en espíritu la descripción anterior de la plantilla de arriba ("hasta 10 cursos
+válidos de 3 escuelas distintas, entre 2.800€ y 6.000€") — esa descripción quedó desactualizada
+frente a esta aclaración más precisa (nombrar Opción 1/2/3 concretas, no un rango genérico), pero
+el texto de la plantilla en sí **no se reescribió todavía** porque Mariano lo planteó como algo que
+sigue analizando, no como una decisión cerrada — confirmar antes de reescribir el mensaje.
+
+**Idea en evaluación, sin decidir todavía (11 sept 2026)**: Mariano está pensando en bajar el
+precio de entrada para gente que quiere "contratar de a poco" — específicamente, que lo ya pagado
+por la llamada (60€ o 120€) se descuente del total de honorarios (825€) si el lead avanza y
+contrata. Pidió una sugerencia. **Recomendación**: sí tiene sentido aplicarlo — es exactamente el
+mismo modelo que ya usa el producto de Modificación a Residencia de Trabajo (sección 16, Paso 1 de
+90€ descontado del total de 650€) y está respaldado por el mismo principio de reciprocidad
+(Cialdini, sección 12.2) ya aplicado ahí: la persona ya hizo una inversión chica y real, lo cual
+reduce la fricción del pago grande siguiente. Mantiene además el ancla de precio limpia (825€
+"todo incluido" de cara al cliente, restando lo ya pagado, en vez de sumar 825€+60€/120€ como un
+gasto aparte). **No implementado** — falta que Mariano confirme si quiere aplicarlo así antes de
+tocar la plantilla de esta sección o la de la sección 16.
+
 **Comisión esperada, no deuda todavía (31 ago 2026)**: **Sara Isabel Posso Echenique** ("Sarai",
 `contact_id=e8HD8o3V2r8WZ7qCVZET`) quedó en pagarle a María García Serrano por su trámite "en estos
 días" — de ese pago, GOTIR cobra **150€ de comisión**. Su oportunidad (`opportunity_id=7l4aZEKuzXBh3bNJgXal`,

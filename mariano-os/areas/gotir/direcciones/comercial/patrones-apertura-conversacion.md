@@ -186,13 +186,13 @@ secuencia dentro de la misma conversación.
 > Hola {{contact.first_name}}, un gusto saludarte. Mi nombre es Mariano, director de GOTIR
 > asesoría migratoria.
 
-**2. `mini-funnel-2-modalidad`**
-> Para orientarte bien: ¿ya conocés la opción de venir con estancia por estudios, o querés que te
+**2. `mini-funnel-2-modalidad`** *(pasado a "tú", 11 sept 2026 — ver nota de registro abajo)*
+> Para orientarte bien: ¿ya conoces la opción de venir con estancia por estudios, o quieres que te
 > cuente primero de qué se trata?
 
-**3. `mini-funnel-3-timing`**
-> ¿Tenés fecha o ventana tentativa de viaje? Contame aunque sea aproximado, así te oriento mejor
-> según cuánto tiempo tenés para prepararte.
+**3. `mini-funnel-3-timing`** *(pasado a "tú", 11 sept 2026)*
+> ¿Tienes fecha o ventana tentativa de viaje? Cuéntame aunque sea aproximado, así te oriento mejor
+> según cuánto tiempo tienes para prepararte.
 
 **4. `mini-funnel-4-requisitos-curso`** *(prueba social agregada 25 ago 2026)*
 > Los requisitos principales de una visa o estancia por estudios son:
@@ -212,8 +212,8 @@ secuencia dentro de la misma conversación.
 > ✅ Contar con un seguro médico con cobertura en España. Suele oscilar entre 600 y 800€ anuales, se
 > paga una vez al comenzar.
 
-**6. `mini-funnel-6-pausa`**
-> ¿Esto te queda claro hasta acá, o tenés alguna duda?
+**6. `mini-funnel-6-pausa`** *(pasado a "tú", 11 sept 2026)*
+> ¿Esto te queda claro hasta aquí, o tienes alguna duda?
 
 **7. `mini-funnel-7-requisitos-total`** *(desglosado 25 ago 2026)*
 > Y luego hay que contemplar estos costos para arrancar:
@@ -231,11 +231,46 @@ secuencia dentro de la misma conversación.
 **8. `mini-funnel-8-presupuesto`**
 > ¿Te parecen alcanzables estos montos en el corto plazo?
 
-**9. `mini-funnel-9-video-formulario`**
-> Mirá este video corto mío (6 min) — ahí te cuento lo más importante del proceso, y al final
-> agendás directo tu asesoría gratuita conmigo: https://landing.gotir.es/estancias
+**9. `mini-funnel-9-video-formulario`** *(pasado a "tú", 11 sept 2026)*
+> Mira este video corto mío (6 min) — ahí te cuento lo más importante del proceso, y al final
+> agendas directo tu asesoría gratuita conmigo: https://landing.gotir.es/estancias
 >
-> Avisame cuando la tengas agendada 🙌
+> Avísame cuando la tengas agendada 🙌
+
+**10a. `mini-funnel-10a-opciones-curso`** *(nuevo, 11 sept 2026 — confirmado por Mariano; dividido
+en dos mensajes porque el bloque completo es muy largo para una sola plantilla de GHL)*
+> Te cuento las opciones de curso disponibles, para que puedas elegir la que más te convenga:
+>
+> ✅ *Opción 1* — con sede en varias ciudades a elegir (Alicante, Madrid, Barcelona, Valencia,
+> Murcia, Zaragoza, Santander, Vigo, Tenerife, Pontevedra), formaciones en Electricidad, Sanitario
+> u Hostelería. Duración: 12 meses. Precio: 5.650€, o en 12 cuotas de 528,83€.
+>
+> ✅ *Opción 2 — la más recomendada* — sede en Madrid/Sevilla, cursada viernes y sábado. Duración:
+> 7 meses. Precio: 2.900€, o 750€ de inscripción + cuotas mensuales.
+
+**10b. `mini-funnel-10b-opciones-curso`** *(segunda parte del mismo bloque, se manda a
+continuación)*
+> ✅ *Opción 3* — sede en Madrid. Duración: 12 meses. Precio: entre 2.740€ y 3.418€, según la
+> formación elegida.
+>
+> ¿Cuál de estas tres te resuena más? Cuéntame y seguimos con los siguientes pasos.
+
+**Nota sobre 10a/10b**: igual que el resto del mini-funnel, nunca se nombra la institución
+específica antes del pago (política ya confirmada firme bajo presión real en dos de las 22
+conversaciones analizadas — ver más abajo) — se dice "Opción 1/2/3", no el nombre de la escuela.
+Mismos precios y ciudades ya documentados en `patrones-llamadas.md` (sección "Ajustes sugeridos al
+guion") y reutilizados en las llamadas reales — no son datos nuevos, es la primera vez que se
+escriben como Fragmento formal del mini-funnel.
+
+**Corrección de registro — "tú", no "vos" (11 sept 2026, instrucción explícita de Mariano)**: todos
+los Fragmentos del mini-funnel tienen que estar en "tú" (español latino neutro), igual que el resto
+de plantillas de mensajería automatizada de GOTIR (secciones 15 y 16 de `CLAUDE.md`, y la secuencia
+post-agendamiento). Los Fragmentos 2, 3, 6 y 9 estaban en voseo ("conocés", "tenés", "contame",
+"mirá", "avisame") desde que se armaron el 20 de agosto — ya corregidos arriba. Los Fragmentos 1,
+4, 5, 7 y 8 no tenían conjugaciones vos/tú (no cambian). **Pendiente**: estos Fragmentos ya
+corregidos acá en el documento todavía no están actualizados en GHL (Conversaciones → Fragmentos)
+— hay que volver a cargarlos a mano, mismo mecanismo que el resto de los Fragmentos (sección
+"Fragmentos de GHL" más arriba, no se pueden editar por API).
 
 *(25 ago 2026 — ajustado con lenguaje asuntivo, sección 12.4 de `CLAUDE.md`: en vez de describir
 pasivamente que "hay un botón para agendar", se asume que van a agendar y se le pide directamente
@@ -422,20 +457,37 @@ en `comercial/CLAUDE.md`:
   Mariano llegó atrasado a la hora exacta de su cita por una llamada anterior — segundo factor real
   del no-show, no solo "el lead no llegó".
 
-## Resumen de preguntas abiertas para Mariano (11 sept 2026)
+## Resumen de preguntas abiertas para Mariano (11 sept 2026) — respondidas el mismo día
 
-1. ¿La omisión de la plantilla de 60€/120€ con Diego Bayeh (timing 1-2 años) fue intencional o un
-   descuido?
-2. ¿El rango "650-825€" de honorarios visto en 2 conversaciones (Flavia, Ariel) es intencional
-   (ancla más baja para pago único/efectivo) o debería estandarizarse siempre al 825€ fijo del
-   Fragmento 7?
-3. ¿Vale la pena agregar un filtro temprano "¿esto es para vos o para otra persona?" dado que 7 de
-   22 conversaciones son por proxy?
-4. ¿Cómo se quiere manejar el caso de una ciudad de interés que ninguna de las 3 opciones de curso
-   cubre (caso Tatiana, Asturias)?
-5. ¿Se confirma agregar el `mini-funnel-10-opciones-curso` como Fragmento formal, dado que ya se
-   pide y se manda manualmente en 4 de 22 conversaciones?
+1. ~~¿La omisión de la plantilla de 60€/120€ con Diego Bayeh fue intencional o un descuido?~~ — no
+   respondida directamente, pero **quedó reencuadrada**: Mariano aclaró que la diferencia real entre
+   las dos llamadas no es "más o menos contenido" sino si se nombran o no las opciones de curso (ver
+   `CLAUDE.md` sección 15) — 60€ = asesoría del caso sin nombrar Opción 1/2/3; 120€ = asesoría +
+   Opción 1/2/3. Con esa distinción más clara, a confirmar si el caso de Diego Bayeh (que no recibió
+   ninguna de las dos ofertas) sigue siendo un descuido o si aplica algún otro criterio — sigue como
+   pendiente menor, ya no es la pregunta central.
+2. **Rango de honorarios (650-825€) — todavía sin definir del todo**: Mariano no cerró si el rango
+   visto en Flavia/Ariel es intencional, pero sí abrió una idea nueva relacionada: descontar del
+   total de honorarios (825€) lo que el lead ya pagó por la llamada de 60€/120€, para bajar la
+   barrera de entrada a quien quiere "contratar de a poco". Recomendación ya dejada en `CLAUDE.md`
+   sección 15 (mismo modelo que el producto de Modificación a Residencia, sección 16) — **sin
+   decidir todavía**, no implementado en ninguna plantilla.
+3. **Resuelto**: sí, agregar el filtro "¿esto es para ti o para otra persona?" — con una corrección
+   importante de Mariano: **todo el mini-funnel tiene que estar en "tú", no en "vos"** (ver la nota
+   de registro agregada arriba a los Fragmentos 2/3/6/9). El filtro de proxy en sí todavía no se
+   redactó como Fragmento nuevo — queda para la próxima vuelta de este documento.
+4. **Resuelto**: GOTIR puede presentar trámites para cualquier ciudad de España — las 3 opciones de
+   curso son solo las que GOTIR ya tiene mapeadas y recomienda, pero el lead puede venir con un curso
+   propio elegido en cualquier ciudad (o elegir dentro de las múltiples ciudades que ya cubre la
+   Opción 1). No hace falta una rama de "ciudad no cubierta" — el mensaje correcto es aclarar que la
+   ciudad no es una limitación en sí, solo que las opciones recomendadas son esas. Pendiente:
+   redactar esta aclaración como respuesta estándar reutilizable (no se hizo todavía, solo se
+   registra la decisión).
+5. **Resuelto y ya escrito**: sí, Fragmento 10 confirmado — agregado arriba como
+   `mini-funnel-10a-opciones-curso` y `mini-funnel-10b-opciones-curso`, dividido en dos mensajes por
+   pedido explícito de Mariano (el bloque completo no entra en una sola plantilla de GHL).
 
 No se avanza con el diseño del bot en n8n todavía — mismo criterio que se usó con el builder de
 GHL: primero el análisis y las decisiones de Mariano sobre estas preguntas, después la construcción
-guiada paso a paso.
+guiada paso a paso. Quedan dos pendientes menores para una próxima vuelta: redactar el Fragmento del
+filtro de proxy (pregunta 3) y la respuesta estándar de "ciudad no cubierta" (pregunta 4).

@@ -269,3 +269,173 @@ y que quiere pagarlo. Es el mismo criterio de "puede/quiere/sabe" que motiva tod
 aplicado específicamente al precio del servicio (no solo al costo total del trámite) — filtra antes
 de la llamada a quien no puede o no quiere pagar 825€ de honorarios, en vez de que Mariano lo
 descubra recién en la llamada.
+
+## Segunda tanda — análisis de 22 conversaciones reales de WhatsApp (11 sept 2026)
+
+Mariano exportó y compartió 22 conversaciones reales de WhatsApp entre él y leads que recibieron el
+mini-funnel de los 9 Fragmentos durante las últimas ~2 semanas de uso real (no pruebas, uso en
+producción). A diferencia de la primera tanda (10 conversaciones, 20 ago, arriba), acá el objetivo
+explícito ya no es solo "ajustar el texto de los Fragmentos" — es sentar las bases para diseñar un
+bot que precalifique automáticamente antes de que el lead llegue a agendar.
+
+**Conversaciones analizadas**: Flavia, Verónica, Mary Rengifo, Carlos Natera, Milagros Stefany
+Durán Guillén (export de WhatsApp, además de las 2 llamadas ya en `patrones-llamadas.md`), Jean
+Carlo, Ariel, Ramiro, Evelyn (una segunda, distinta a la de la primera tanda), Mateo, Henry Daniel
+Alvarez Contreras (conecta con `patrones-llamadas.md`, fila 9), Mariangelica, Felix, Diego Bayeh,
+una abogada colombiana (sin nombre completo confirmado), Florencia Cuaranta, Hector Ojeda (mismo de
+`CLAUDE.md` sección 3.2, ahora con el export real), Luisana Junguittu, Maria De Los Angeles Taly,
+Sebastian Gimenez (cierre documentado en `CLAUDE.md` sección 6.3), Tatiana ("centralita" — nombre de
+guardado del contacto), Yeraldin Coba (dato adicional para el no-show ya documentado en `CLAUDE.md`
+sección 3.1.1).
+
+### Hallazgo central: el orden fijo de los 9 Fragmentos no sobrevive a un lead real
+
+Es, de lejos, el patrón más repetido de las 22 conversaciones: casi todos los leads reales
+**adelantan información en su primer mensaje** — ya dicen la ciudad, el curso que les interesa, o
+directamente preguntan precio — y eso rompe el guion lineal 1→9. Mariano, en la práctica, ya
+resuelve esto saltando fragmentos o reordenándolos caso por caso (ej. con Sara Sofía/Maryi en la
+primera tanda). Para un bot, esto es la implicación de diseño más importante de todo el análisis:
+**no puede ser un script lineal, tiene que tener lógica condicional** que detecte qué información ya
+llegó adelantada y salte directo a lo que falta, en vez de re-preguntar lo que el lead ya contestó
+sin que se le pregunte.
+
+### El filtro de timing (Fragmento 3 / la política de 4 meses) se aplica de forma inconsistente
+
+Encontrado en varias variantes:
+- **Mariangelica**: se aplicó temprano y con fluidez, sin fricción — el caso más limpio.
+- **Mary Rengifo**: se aplicó tarde, después de que ya se le había insinuado la posibilidad de una
+  llamada gratuita — generó fricción real y algo de frustración cuando se le redirigió a la opción
+  paga.
+- **Diego Bayeh**: timing de 1-2 años (muy fuera de ventana) pero **nunca se le ofreció** la
+  plantilla de 60€/120€ (sección 15 de `CLAUDE.md`) — recibió únicamente contenido informativo, sin
+  redirección a la oferta paga.
+
+**Pregunta abierta para Mariano**: ¿la omisión con Diego Bayeh fue intencional (algún criterio
+distinto para su caso) o un descuido? Si es un descuido, confirma que la plantilla de 4 meses
+todavía depende 100% de que Mariano se acuerde de aplicarla — mismo patrón de "capa 3 sin respaldo
+sistémico" ya diagnosticado en la sección 8.2 de `CLAUDE.md`.
+
+### Falta un 10º Fragmento — "Opciones de cursos válidos" (Opción 1/2/3)
+
+El bloque de las 3 opciones de curso (ya documentado y reutilizado en `patrones-llamadas.md` —
+Opción 1 multi-ciudad 12m/5.650€, Opción 2 "la recomendada" 7m/2.900€, Opción 3 Madrid 12m/2.740-
+3.418€) se pidió y se mandó manualmente en al menos **4 de las 22 conversaciones** (Carlos, Jean
+Carlo, la abogada colombiana, Henry) — no es parte de los 9 Fragmentos actuales, pero ya se comporta
+como un fragmento de facto por lo seguido que se repite. Candidato claro a formalizarse como
+`mini-funnel-10-opciones-curso`.
+
+### Patrón adaptativo nuevo, vale la pena formalizarlo (caso Ramiro)
+
+Cuando un lead dice que ya conoce los requisitos, en vez de reenviar el bloque completo de
+requisitos (Fragmentos 4/5/7), Mariano le preguntó: **"¿hay alguno que te preocupe más o que creas
+que te sería más difícil cumplir?"** — mucho más eficiente, va directo al bloqueo real en vez de
+repetir información ya conocida. Aplicable como regla condicional: si el lead confirma que ya
+conoce los requisitos, no reenviar el bloque — hacer esta pregunta en su lugar.
+
+### Objeción recurrente con una respuesta ya fuerte, lista para formalizar (caso Jean Carlo)
+
+Miedo a que le nieguen la entrada como turista. La respuesta de Mariano ("+500 personas, jamás
+negaron el ingreso") es sólida y coincide con la cifra oficial ya estandarizada
+(`areas/gotir/CLAUDE.md`, "+500 familias") — vale la pena guardarla como respuesta estándar
+reutilizable a esta objeción específica, en vez de reconstruirla cada vez.
+
+### Inconsistencia de redacción en los honorarios (Fragmento 7) — confirmada como patrón, no un caso aislado
+
+El Fragmento 7 dice "825€" fijo (decisión explícita de Mariano, 25 ago 2026, ver arriba). Pero en al
+menos **2 de las 22 conversaciones** (Flavia, Ariel) se mandó una versión en rango en su lugar:
+"(entre 650 y 825€)" / "(desde 750€ hasta 825€, dependiendo de la forma de pago)".
+
+**Pregunta abierta para Mariano**: ¿el rango es intencional (un ancla más baja para quien puede
+pagar en efectivo/de una sola vez, coherente con el descuento real de 750€ en pago único ya
+documentado en `CLAUDE.md` sección 1.2) o debería estandarizarse siempre al fijo 825€ como dice hoy
+el Fragmento 7? Si es intencional, el Fragmento debería decir explícitamente "desde 750€ (pago
+único) hasta 825€ (2 cuotas)" en vez de dejarlo ambiguo entre versiones distintas.
+
+### Escalación a llamada paga — patrón limpio, confirmado 2/2
+
+Dos casos (Evelyn — pregunta legal sobre reutilización de fondos entre familiares reagrupados;
+Diego Bayeh — preguntas de timing burocrático específico) se derivaron correctamente a una llamada
+paga de 55€ en vez de intentar responderlas por WhatsApp — coincide con el principio ya documentado
+de "no inventar respuestas legales/técnicas" (`CLAUDE.md` sección 3.2) aplicado ahora también al
+mini-funnel. No requiere corrección, solo queda confirmado que funciona bien en la práctica.
+
+### Gap estructural: conversaciones por proxy (alguien escribe en nombre de otra persona)
+
+Al menos **7 de las 22 conversaciones** son de alguien escribiendo en nombre de un hijo, sobrino,
+pareja, o como padre/madre codecisor — pero los 9 Fragmentos están redactados en segunda persona
+directa ("¿ya conocés...", "¿tenés fecha..."), lo cual suena forzado en estos casos.
+
+**Pregunta abierta para Mariano**: ¿agregar un filtro temprano tipo "¿esto es para vos o para otra
+persona?" justo después del saludo (Fragmento 1), para poder adaptar el resto de la secuencia a
+segunda o tercera persona según corresponda? No se implementó — es una sugerencia a decidir, no un
+cambio ya hecho.
+
+### FAQ recurrente, ahora confirmada 3+ veces — candidata a integrarse proactivamente
+
+"¿Puedo demostrar menos de 7.200€ si el curso es más corto?" apareció en al menos 3 casos distintos
+(la familia de Evelyn, Ramiro, Felix). Sugerencia: en vez de esperar a que se pregunte, el
+Fragmento 5 (fondos) podría aclarar directamente que el monto es proporcional a la duración del
+curso (600€/mes), no un monto fijo — ahorraría esta pregunta en la mayoría de los casos.
+
+### Policy de no nombrar la institución — confirmada firme bajo presión real
+
+En dos casos con presión repetida (Henry, vía las 11 preguntas escépticas de su pareja — ver
+`patrones-llamadas.md`, fila 9; la abogada colombiana, preguntó 3+ veces) la política de nunca
+nombrar la institución específica antes del pago se sostuvo sin ceder. No hace falta ningún ajuste
+acá — queda como confirmación de que la política funciona en la práctica, no solo en el papel.
+
+### Objeción de legitimidad — respuesta más débil que la ya documentada, recomendación de estandarizar
+
+La abogada colombiana preguntó "¿cómo sé que son una empresa real?" y recibió una respuesta más
+corta/débil que la versión más completa ("modelo") ya documentada en el caso Sara Sofía
+(`patrones-llamadas.md`). Recomendación: estandarizar siempre la versión más completa como
+respuesta a esta objeción específica, en vez de improvisarla caso por caso.
+
+### Gap nuevo: ciudad no cubierta por ninguna de las 3 opciones de curso (caso Tatiana)
+
+Tatiana quiere específicamente Asturias — ninguna de las 3 opciones estándar de GOTIR tiene sede
+ahí. El funnel (ni los 9 Fragmentos ni el Fragmento 10 propuesto arriba) no tiene una rama para
+"tu ciudad de interés no está entre las opciones" — hoy depende de que Mariano lo note y resuelva
+manualmente caso por caso. También se observó un pequeño desliz de mensaje duplicado en esta
+conversación, sin mayor impacto.
+
+**Pregunta abierta para Mariano**: ¿cómo se quiere manejar este caso — ofrecer igual las 3 opciones
+estándar aunque impliquen mudarse de ciudad, o hay alguna alternativa para ciudades no cubiertas que
+no esté documentada todavía?
+
+### Conversación larga como evidencia de por qué vale la pena un bot (caso María De Los Angeles Taly)
+
+Conversación de más de 6 semanas, todavía abierta al momento del export, con mucho price-shopping
+repetitivo — el ejemplo más claro entre las 22 de exactamente el tipo de intercambio que un bot de
+precalificación aliviaría (responder lo repetitivo automáticamente, dejando a Mariano el cierre).
+También surgió contenido reutilizable: una explicación clara de la diferencia entre visado de
+trabajo y visado de estudios, útil para leads que preguntan específicamente por visado de trabajo
+(no cubierto hoy en los 9 Fragmentos).
+
+### Dos correcciones de documentación ya aplicadas a `CLAUDE.md` a partir de estos exports
+
+No son patrones del mini-funnel en sí, pero surgieron de leer los mismos exports y ya se corrigieron
+en `comercial/CLAUDE.md`:
+- **Sebastián Gimenez** (sección 6.3): el mensaje manual del 18 ago sí llegó — Sebastián cerró el
+  caso el 26 ago por decisión propia (emigró a otro país), no por una falla técnica de entrega.
+- **Yeraldin Coba** (sección 3.1.1): al factor ya conocido (nota de reserva no vista) se suma que
+  Mariano llegó atrasado a la hora exacta de su cita por una llamada anterior — segundo factor real
+  del no-show, no solo "el lead no llegó".
+
+## Resumen de preguntas abiertas para Mariano (11 sept 2026)
+
+1. ¿La omisión de la plantilla de 60€/120€ con Diego Bayeh (timing 1-2 años) fue intencional o un
+   descuido?
+2. ¿El rango "650-825€" de honorarios visto en 2 conversaciones (Flavia, Ariel) es intencional
+   (ancla más baja para pago único/efectivo) o debería estandarizarse siempre al 825€ fijo del
+   Fragmento 7?
+3. ¿Vale la pena agregar un filtro temprano "¿esto es para vos o para otra persona?" dado que 7 de
+   22 conversaciones son por proxy?
+4. ¿Cómo se quiere manejar el caso de una ciudad de interés que ninguna de las 3 opciones de curso
+   cubre (caso Tatiana, Asturias)?
+5. ¿Se confirma agregar el `mini-funnel-10-opciones-curso` como Fragmento formal, dado que ya se
+   pide y se manda manualmente en 4 de 22 conversaciones?
+
+No se avanza con el diseño del bot en n8n todavía — mismo criterio que se usó con el builder de
+GHL: primero el análisis y las decisiones de Mariano sobre estas preguntas, después la construcción
+guiada paso a paso.

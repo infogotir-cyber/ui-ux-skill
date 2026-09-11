@@ -167,6 +167,17 @@ confirman.
   caso real con nombre propio de este tipo de error, sirve como evidencia concreta para priorizar
   ese trabajo de builder (GHL) la próxima vez que Mariano tenga tiempo, igual que la llamada con
   Hector fue la evidencia que consolidó "próxima acción sin hora" como patrón.
+- **Dato agregado 11 sept 2026, confirmado con export real de WhatsApp — objeción de legitimidad
+  post-llamada (mismo caso, Henry Daniel Alvarez Contreras)**: después de la llamada, la pareja de
+  Henry le hizo por WhatsApp **11 preguntas seguidas, muy escépticas**, verificando si GOTIR es una
+  empresa real (básicamente la misma familia de objeción ya documentada con la abogada colombiana
+  en `patrones-apertura-conversacion.md` — "¿cómo sé que son una empresa real?"). La política de
+  "nunca nombrar la institución específica antes del pago" (sección 5.9/`CLAUDE.md` del mini-funnel)
+  se sostuvo firme bajo esa presión, sin ceder. Se suma como una segunda dimensión de este mismo
+  caso, además del error de precalificación ya registrado arriba: no solo llegó sin filtro de
+  timing, sino que además llegó (a través de su pareja) con un nivel alto de desconfianza inicial —
+  refuerza que precalificar bien de entrada también filtraría mejor el nivel de confianza con el que
+  arranca la conversación.
 
 ## Ajustes sugeridos al guion (sección 2 de `CLAUDE.md`)
 

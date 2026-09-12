@@ -1439,6 +1439,57 @@ cantidad), precinto transparente, tambor y palos, banderas de España, banderas 
 confirmar si ya está completo), batería Bosch, capazos negros, machete, plásticos negros grandes,
 bolsa plástica negra para empacar y tierra orgánica. ¿Le mando un mensaje a David con estos 14?"
 
+### Cruce de fechas límite del 9 sept contra el inventario real de Marco Jurado (12 sept 2026, rutina automática)
+
+Rutina "Recordatorios Ruge — fechas límite" detectó el bloque grande de **Marco Guanuchi** (14
+ítems de "Logística — Comprar (no perecedero)" + "La Voz — Comprar" + parte de "Verificar propiedad
+existente") y de **Julio César Navia** (6 ítems de "Logística — Comprar (no perecedero)") con fecha
+límite `2026-09-09` — ya **3 días vencida** al momento de esta rutina, no "próxima a vencer". Cruce
+contra `INVENTARIO_2026_RUGE_actualizado_30ago2026.xlsx` (versión más nueva disponible en el repo):
+
+**Ya `GESTIONADO`/`OK` — NO incluir en recordatorio**: ARENA PARA BORDE PISCINA, MIEL CON LIMÓN,
+CARAMELOS CON PROPÓLEO, SPRAY ANTIINFLAMATORIO PARA GARGANTA CON PROPÓLEO (4 de 24).
+
+**Siguen `PENDIENTE GESTIONAR`/`GESTIONANDO` — 20 de 24, todos vencidos hace 3 días**:
+- **Marco Guanuchi (16)**: ATÚN, BARRAS ENERGÉTICAS DE FRUTOS SECOS, COLA CAO, GALLETAS DE DULCE CON
+  CHOCOLATE BLANCO, GALLETAS DIGESTIVAS MANZANA Y AVENA, MINIS CEREAL RELLENO DE LECHE, SNICKERS,
+  TANG BEBIDA INSTANTÁNEA (todos con presupuesto real ya calculado el 30 ago — cantidad exacta a
+  comprar y costo, ver `Checking` del excel — falta solo ejecutar la compra), CARAMELOS SURTIDOS
+  (⚠️ comisión de revisión sin confirmar, ni Mariano lo sabía con certeza al 30 ago), BOLSAS DE
+  PROVISIONES YA HECHAS (presupuesto real: Amazon 10,99€/100u, falta enviarlo a Administración),
+  CAJAS ORGANIZADORAS 1ª y 2ª REQUISA, FIDEOS RINTIN INSTANTÁNEOS (presupuesto calculado, falta
+  comprar).
+- **Julio César Navia (4, aparte de las 2 de Eventos de abajo)**: CINTA REFLECTANTE NOCTURNA
+  PLATEADA (⚠️ misma contradicción de comisión ya registrada el 30 ago, sin resolver con Marco
+  Jurado — Logística sola según el excel oficial, pero Mariano recuerda que es de Eventos), FIGURAS
+  PARA PREMIOS (presupuesto real: 91€ por 7 unidades, 30 ago — pero **sigue sin confirmar si la
+  ejecuta Marco o Julio**, mismo pendiente de fondo señalado el 3 sept, nunca resuelto), FUEGOS
+  PIROTÉCNICOS CON BATERÍA EN FRÍO, GUANTES DE PROTECCIÓN.
+- **Eventos, vía Jefferson, con Julio solo corroborando (2)**: BOLSAS DE BASURA NEGRAS 100L y 50L —
+  ya corregido el 30 ago que la comisión de revisión real es "Logística y Eventos" (Eventos
+  ejecuta), no solo Logística.
+- **Sin encargado nombrado en el lookup para este bloque**: BOLSAS ZIPLOC PARA REQUISAS Y CAL
+  30x40CM — aparece en el bloque de Julio César por posición en el lookup pero sin confirmar.
+
+**Mensajes sugeridos para Mariano** (no enviados, listos para copiar):
+
+Para Marco Guanuchi:
+> Marco, che, reviso el inventario y el bloque de consumibles (atún, barritas, cola cao, galletas
+> x2, cereal, snickers, tang, caramelos surtidos, fideos, cajas organizadoras, bolsas de
+> provisiones) venció el 9 de septiembre y sigue en gestionando. Ya tenemos los presupuestos
+> calculados de cuando lo revisamos el 30 de agosto — ¿lo compraste o falta? Necesito saber para
+> poder avisarle a Juliana.
+
+Para Julio César Navia:
+> Julio, las figuras para premios, los fuegos pirotécnicos, los guantes de protección y la cinta
+> reflectante vencían el 9 de septiembre — ¿cómo vas con eso? Sobre la cinta reflectante todavía
+> tengo la duda de si es tuya o de Jefferson (Eventos), avisame si ya lo aclaraste con Marco Jurado.
+
+**Dos preguntas que siguen sin resolver, no operativas de compra, para que Mariano las cierre
+directamente** (no tienen sentido en un mensaje de WhatsApp a Marco/Julio porque dependen de él
+mismo o de Marco Jurado): (1) ¿quién ejecuta Figuras para premios, Marco o Julio?; (2) ¿la cinta
+reflectante nocturna es de Logística o de Eventos?
+
 ### Rate limit de ClickUp (confirmado varias veces, 17-18 ago 2026) — RESUELTO 18 ago 2026
 17 ago: al traer la lista de Inventario, la API devolvió "Rate limit exceeded" dos veces seguidas
 (859 y luego 794 minutos restantes) — confirma que es un límite real que se va descontando, no un

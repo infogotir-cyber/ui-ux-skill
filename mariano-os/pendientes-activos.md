@@ -117,12 +117,12 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
 - Estado: **abierto — se alivia progresivamente en varios frentes (Javier Maddia, Izie, Micol ya
   saldada), pero sigue el agujero de fondo (IRPF+IVA, tarjeta de crédito, cuenta en -700€) sin
   resolver**.
-- Recordado: 19 veces (24 ago 2026; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago,
+- Recordado: 20 veces (24 ago 2026; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago,
   chequeo diario 18:00; 28 ago, chequeo diario 18:00; 28 ago, más tarde — agotamiento expresado; 29
   ago, chequeo diario 18:00; 30 ago, chequeo diario 18:00; 31 ago — se agrava con adelantos de
   tarjeta de crédito; 2 sept, chequeo diario 18:00; 3 sept, chequeo diario 18:00; 4 sept, chequeo
   diario 18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario
-  18:00; 8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00).
+  18:00; 8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00).
 
 ### Ministerio — traspaso de pilar de New Life a Paola Guanuchi (7 sept 2026)
 
@@ -154,8 +154,8 @@ Paola/Mariano, no de este sistema, salvo compartir el documento):
 
 - Estado: **capacitación cerrada, checklist de 10 acciones abierto** — no asumir ninguna hecha hasta
   que Mariano lo confirme.
-- Recordado: 6 veces (7 sept 2026, creación; 7 sept, chequeo diario 18:00; 8 sept, capacitación
-  realizada y documento corregido/enviado; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00).
+- Recordado: 7 veces (7 sept 2026, creación; 7 sept, chequeo diario 18:00; 8 sept, capacitación
+  realizada y documento corregido/enviado; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00).
 
 ### Personal — proyecto de serie/dibujos animados con enseñanzas cristocéntricas (4 sept 2026)
 
@@ -168,9 +168,9 @@ herramientas como LTX Studio (pipeline completo guión→storyboard→video) o V
 
 - Estado: **abierto — quiere retomarlo, todavía sin arrancar nada concreto**. No prioridad
   inmediata dada la crisis de caja — no gastar en planes pagos todavía.
-- Recordado: 9 veces (4 sept 2026, creación; 4 sept, chequeo diario 18:00; 5 sept, chequeo diario
+- Recordado: 10 veces (4 sept 2026, creación; 4 sept, chequeo diario 18:00; 5 sept, chequeo diario
   18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00; 8 sept, chequeo diario 18:00;
-  9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00).
+  9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00).
 
 ### GOTIR — pedirle a Exxo/Agustín todo lo pendiente, terminado y entregable (4 sept 2026)
 
@@ -180,9 +180,9 @@ Con el servicio de Exxo pausado (ver ítem de arriba y `direcciones/marketing/CL
 (sección 11.2 del mismo documento), posiblemente más. Todavía no mandó el pedido.
 
 - Estado: **abierto — pedido confirmado por Mariano, todavía sin enviar**.
-- Recordado: 9 veces (4 sept 2026, creación; 4 sept, chequeo diario 18:00; 5 sept, chequeo diario
+- Recordado: 10 veces (4 sept 2026, creación; 4 sept, chequeo diario 18:00; 5 sept, chequeo diario
   18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00; 8 sept, chequeo diario 18:00;
-  9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00).
+  9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00).
 
 ### GOTIR — decisión estratégica: ¿bajar precios y jugar a volumen? (28 ago 2026)
 
@@ -204,10 +204,10 @@ automatización, significaría menos margen por venta mientras todo el trabajo l
 100% manual — el riesgo es que empeore el problema de caja a corto plazo antes de mejorarlo.
 
 - Estado: **abierto — decisión estratégica pendiente, Mariano pidió una lectura de esto**.
-- Recordado: 13 veces (28 ago 2026, recién planteado; 29 ago, chequeo diario 18:00; 30 ago, chequeo
+- Recordado: 14 veces (28 ago 2026, recién planteado; 29 ago, chequeo diario 18:00; 30 ago, chequeo
   diario 18:00; 2 sept, chequeo diario 18:00; 3 sept, chequeo diario 18:00; 4 sept, chequeo diario
   18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00;
-  8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00).
+  8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00).
 - **Ampliado 29 ago 2026**: análisis completo de riesgos/amenazas + las 19 opciones + una opción 20
   nueva (diversificar por tipo de trámite en España — nacionalidad, arraigos, emprendedor — en vez
   de país) ahora vive en `areas/gotir/analisis-estrategico-29ago2026.md`. Sin decisión tomada.
@@ -245,10 +245,10 @@ le ha prestado atención todavía y quiere hacerlo — surgió al revisar riesgo
 (guardan pasaportes, antecedentes penales, certificados médicos de clientes). Detalle completo en
 `areas/gotir/analisis-estrategico-29ago2026.md`, sección "Legal/regulatorio".
 - Estado: **abierto — Mariano quiere revisar el estado real con Conversia**.
-- Recordado: 12 veces (29 ago 2026, creación; 30 ago, chequeo diario 18:00; 2 sept, chequeo diario
+- Recordado: 13 veces (29 ago 2026, creación; 30 ago, chequeo diario 18:00; 2 sept, chequeo diario
   18:00; 3 sept, chequeo diario 18:00; 4 sept, chequeo diario 18:00; 5 sept, chequeo diario 18:00;
   6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00; 8 sept, chequeo diario 18:00; 9 sept,
-  chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00).
+  chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00).
 
 ### GOTIR — seguimiento
 
@@ -297,9 +297,9 @@ Detalle completo en `direcciones/comercial/CLAUDE.md` sección 14.2 (oportunidad
 y valor, `opportunity_id=7l4aZEKuzXBh3bNJgXal`).
 
 - Estado: **en curso** — no es deuda atrasada todavía, es un cobro esperado a seguir.
-- Recordado: 11 veces (31 ago 2026, creación; 2 sept, chequeo diario 18:00; 3 sept, chequeo diario
+- Recordado: 12 veces (31 ago 2026, creación; 2 sept, chequeo diario 18:00; 3 sept, chequeo diario
   18:00; 4 sept, chequeo diario 18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00;
-  8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00).
+  8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00).
 
 ### GOTIR — urgente
 
@@ -491,7 +491,7 @@ cada barrido con lo que surja de las llamadas de esa semana.
 | Marylaura Guerrero | 750€, `ySVES9NUeMTbZfuRV9vt` | Dijo explícitamente "preferimos esperar un poco más" (24 ago, imprevisto de su papá) — **a propósito sin presionar**, seguimiento activo de venta sigue recién para la semana del 7-10 sept. **Actualizado 31 ago 2026**: Mariano nunca le había respondido a ese último mensaje de ella — se le dio un mensaje de cierre de cortesía (sin pitch, sin CTA de cierre), solo para no dejarla sin respuesta: *"Marylaura, no hay problema, entiendo perfecto que la prioridad sea tu papá 💛 Cuando estén listos, acá voy a estar para retomarlo cuando les convenga. Cualquier duda que surja mientras tanto, escribime tranquila."* No cambia la fecha de seguimiento comercial activo (sigue siendo 7-10 sept). |
 
 - Estado: **en curso — tracker recién creado, primera foto real tomada el 29 ago 2026**.
-- Recordado: 19 veces (29 ago 2026, creación; 29 ago, chequeo diario 18:00; 30 ago, chequeo diario
+- Recordado: 20 veces (29 ago 2026, creación; 29 ago, chequeo diario 18:00; 30 ago, chequeo diario
   18:00; 31 ago, barrido Fase C con mensajes reales enviados a Maryi Castañeda y Javier Maddia, y
   respuesta de cortesía dada para Marylaura Guerrero; 2 sept, barrido Fase C — Milagros, Heidy Rozo
   y Silvana Bortolotti; 3 sept, barrido Fase C — sin drafts nuevos, los 3 del 2 sept siguen sin
@@ -500,7 +500,9 @@ cada barrido con lo que surja de las llamadas de esa semana.
   Villalba y Heidy Rozo, borradores esperando aprobación; 5 sept, chequeo diario 18:00; 6 sept,
   barrido Fase C — los 6 de ayer siguen sin cambios, se suman Samuel Salgan, María Taly Navarro e
   Ysamar Balza; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00; 8 sept, chequeo diario
-  18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00).
+  18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00; 12
+  sept, barrido Fase C — 6 borradores nuevos (Sara Sofía, Maryi, Héctor, Luisana, Maximiliano,
+  Stephany), esperando aprobación de Mariano; 12 sept, chequeo diario 18:00).
 
 ### GOTIR — barrido de cobro urgente (26 ago 2026, por la crisis de caja)
 
@@ -518,11 +520,11 @@ salida en vez de presionar — se sugirió una tarea de seguimiento sin presión
 en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
 `direcciones/comercial/CLAUDE.md` sección 6.3, Caso 2).
 - Estado: **en curso — esperando respuesta de los 5 contactados hoy**.
-- Recordado: 15 veces (26 ago, chequeo diario 18:00; 27 ago, chequeo diario 18:00; 28 ago, chequeo
+- Recordado: 16 veces (26 ago, chequeo diario 18:00; 27 ago, chequeo diario 18:00; 28 ago, chequeo
   diario 18:00; 29 ago, chequeo diario 18:00; 30 ago, chequeo diario 18:00; 2 sept, chequeo diario
   18:00; 3 sept, chequeo diario 18:00; 4 sept, chequeo diario 18:00; 5 sept, chequeo diario 18:00;
   6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00; 8 sept, chequeo diario 18:00; 9 sept,
-  chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00).
+  chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00).
 
 ### GOTIR — prioritarios (marcados así por Mariano, 20 ago 2026 madrugada)
 
@@ -770,7 +772,7 @@ quién invitó, para llevarlos a la actividad del 13 sept, luego a la del 20 sep
 26 sept — sin soltar a nadie aunque no haya venido esta vez ("todo lo que se repite se aviva").
 - Estado: **abierto — a confirmar si el seguimiento real se sostiene esta semana** (era justamente
   lo que falló la vez anterior).
-- Recordado: 3 veces (10 sept 2026, creación, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00).
+- Recordado: 4 veces (10 sept 2026, creación, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00).
 
 ### Ministerio (Ruge y otros)
 

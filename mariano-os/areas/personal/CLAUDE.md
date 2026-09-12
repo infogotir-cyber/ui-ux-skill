@@ -144,6 +144,85 @@ poco cada episodio.
 prioridad inmediata (dado el contexto de crisis de caja activa) — no gastar en ningún plan pago
 todavía, hay versiones gratuitas de prueba para validar si el resultado convence antes de pagar.
 
+## 8. Marca personal — unir evangelismo, GOTIR y futuros proyectos bajo una sola identidad (12 sept 2026)
+
+Mariano abrió esta conversación notando algo que hasta ahora no estaba conectado en el sistema: los
+últimos clientes que confirmaron con GOTIR (Javier Maddia, Pamela Luján, Mariela Pérez, Enrique
+Donna, Samuel Salgan) son todos cristianos que quieren emigrar a España para seguir congregándose y
+ser de bendición ahí — no fue casualidad para él, lo lee como un llamado, y quiere que GOTIR se
+convierta también en el puente que ayuda a misioneros y gente cristiana con propósito a instalarse
+en España. Aclaración importante que corrigió un supuesto de este sistema: **Jesús Mosquera** (el
+mayor generador de referidos de GOTIR, confirmado por datos reales de pipeline en GHL) **es un
+influencer venezolano secular, no cristiano** — los clientes cristianos llegan por una red distinta,
+más orgánica, ligada al propio ministerio/fe de Mariano, no a Jesús Mosquera. Son dos audiencias
+reales y separadas, no una sola.
+
+A partir de ahí, Mariano conectó esto con algo más amplio: quiere construir **una sola marca
+personal**, no una cuenta de GOTIR haciendo marketing — la misma lógica de confianza sirve para
+evangelizar, para ayudar a emigrar, y a futuro para lo que sea que emprenda (mencionó, como ejemplo,
+vender un lote en Costa Rica o importar productos). En sus palabras: **"lo que vende es la confianza
+que generan conmigo"**. Confirmó explícitamente que Costa Rica e imports son **ideas a futuro, no
+proyectos activos hoy** — no se les asigna contenido ni presupuesto de tiempo todavía, quedan solo
+como visión declarada.
+
+### Recomendación de este sistema, aceptada por Mariano ("Sí, me gusta, lo hagamos de esta manera")
+
+**Estructura de identidad — el nombre de Mariano es la cuenta principal, GOTIR es una sección
+dentro, no al revés.**
+- Instagram/TikTok/YouTube principales pasan a construirse bajo el **nombre de Mariano**, no bajo
+  una cuenta de marca "GOTIR". GOTIR mantiene su propia cuenta como ficha técnica (para quien ya
+  busca el servicio, quiere ver reseñas/precios/contacto), pero deja de ser donde se invierte el
+  esfuerzo de creación de contenido — el contenido nuevo nace en la cuenta personal y se replica
+  hacia la cuenta de GOTIR cuando aplica (no al revés).
+- **Bio**: declara una identidad, no un menú de servicios — evitar listar "Cristiano | Fundador de
+  GOTIR | Asesor migratorio | Costa Rica próximamente". En su lugar, algo que capture el eje
+  fe+propósito+España sin enumerar verticales (ejemplo de referencia usado en la conversación:
+  "Ayudo a que tu llamado te lleve a España 🇪🇸✝️"). El link de perfil apunta como máximo a 2-3
+  destinos (algo como "Quiero emigrar a España" → GOTIR/Skool, y "Únete a la comunidad" → Skool
+  general) — Costa Rica e imports no aparecen todavía en ningún bio/link, precisamente porque son
+  ideas a futuro sin nada real que ofrecer aún.
+- **Por qué no separar en dos cuentas**: separar audiencia cristiana y audiencia GOTIR obliga a
+  construir alcance dos veces, divide el tiempo de producción (ya escaso, ver riesgo de capacidad en
+  `direcciones/marketing/CLAUDE.md` sección 9) y elimina exactamente el efecto buscado — que alguien
+  conozca a Mariano por un eje y descubra el otro después, y confíe por el primero para comprar el
+  segundo.
+
+**Contenido diferenciado dentro de una sola cuenta (no todo mezclado en cada pieza)** — pensado como
+"tracks" o programas dentro de un mismo canal, no marcas separadas:
+- **Track A — Evangelístico/testimonio puro**: nunca menciona GOTIR ni vende nada. Es lo que
+  construye alcance y confianza masiva; protege la autenticidad de este eje.
+- **Track B — "Venir a bendecir España"**: el puente explícito entre fe y GOTIR — testimonios reales
+  de clientes cristianos (Javier, Pamela, Mariela, Enrique, y Samuel Salgan si acceden a grabar
+  algo), y la propia historia de Mariano de por qué existe GOTIR como llamado, no solo como negocio.
+- **Track C — Informativo/GOTIR puro**: contenido utilitario de inmigración (requisitos, tips por
+  país) para quien busca información migratoria sin conexión religiosa.
+- En YouTube esto se organiza con playlists separadas ("Fe" / "Emigrar a España" / "Preguntas y
+  respuestas"); en Instagram/TikTok, con hashtags o highlights — el feed principal puede mezclar los
+  tres sin problema, de hecho mezclarlos es lo que genera descubrimiento cruzado entre audiencias.
+
+**Producción — sistema "grabar una vez, cortar varias" (moviliza el riesgo de capacidad ya
+identificado)**: 1-2 grabaciones largas por semana (piezas "pilares") que después se cortan en 4-6
+piezas cortas por plataforma — mismo criterio de "grabar una sola vez y venderlo muchas veces" que
+Mariano ya había planteado para el contenido de GOTIR (`direcciones/marketing/CLAUDE.md` sección 9),
+aplicado ahora también al eje evangelístico.
+
+**Skool**: sigue siendo un solo hub (ya confirmado en `direcciones/marketing/CLAUDE.md` sección 9),
+pero el nombre/marco de la comunidad pasa a estar bajo la identidad de Mariano (ej. "Comunidad
+[nombre de Mariano]"), no "Comunidad GOTIR" — GOTIR aparece dentro como una de las categorías,
+junto con contenido de fe/comunidad general. No cambia nada de lo ya definido sobre precios o
+estructura de la escalera de valor, solo el marco/nombre bajo el que se presenta la comunidad.
+
+**Costa Rica e imports — confirmado por Mariano: cero contenido, cero mención en bios/links por
+ahora.** No se planifican como pilar ni se les asigna producción. Cuando dejen de ser ideas y pasen
+a algo activo, se evalúa cómo entran (probablemente como un cuarto track más adelante, con la misma
+lógica de testimonio/confianza) — hasta entonces quedan anotadas acá únicamente como visión
+declarada, no como alcance del sistema.
+
+**Ver también** `areas/gotir/direcciones/marketing/CLAUDE.md` sección 9 (Plataforma de
+contenido y comunidad) para la escalera de valor, el plan de contenido por canal, y las 6
+decisiones todavía sin cerrar antes de empezar a construir — esta sección de acá es la capa de
+identidad/marca que envuelve a esa estrategia, no la reemplaza.
+
 ## Estilo de trabajo y comunicación (registrado 14 agosto 2026, de una conversación previa)
 Esto afecta directamente cómo interactuar con Mariano día a día, en cualquier área del sistema —
 no es exclusivo de lo personal, pero vive acá porque es donde mejor encaja como "quién es él":

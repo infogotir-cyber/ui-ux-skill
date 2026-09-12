@@ -946,6 +946,18 @@ No se avanza con la construcción de Skool ni con producción de contenido nueva
 queden resueltas — mismo criterio que se usó con el builder de GHL y con el mini-funnel: decisiones
 primero, construcción guiada después.
 
+### Pivote de marca — de "marketing de GOTIR" a marca personal de Mariano (12 sept 2026)
+
+Mariano decidió que esta plataforma de contenido no se construye como marca de GOTIR sino como
+**marca personal de Mariano**, que engloba evangelismo, GOTIR y futuros proyectos (Costa Rica,
+imports) bajo una sola identidad — su lógica: "lo que vende es la confianza que generan conmigo".
+Esto no reemplaza nada de lo ya definido en esta sección (escalera de valor, Skool como hub único,
+plan de contenido por canal, las 6 decisiones pendientes) — es la capa de identidad/marca que
+envuelve a esta estrategia. El detalle completo (estructura de cuentas, cómo conviven los tracks de
+contenido fe/GOTIR, el sistema de producción "grabar una vez, cortar varias", y la confirmación de
+que Costa Rica/imports quedan fuera del alcance de contenido por ahora) vive en
+`areas/personal/CLAUDE.md`, sección 8.
+
 ## 10. Cómo comportarte en esta área
 
 - Esta dirección recién se está construyendo — no inventar campañas, cifras ni fechas que no vengan

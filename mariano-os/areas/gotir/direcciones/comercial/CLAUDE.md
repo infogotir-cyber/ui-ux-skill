@@ -1670,8 +1670,11 @@ mantiene el ancla de precio limpia de cara al cliente.
 días" — de ese pago, GOTIR cobra **150€ de comisión**. Su oportunidad (`opportunity_id=7l4aZEKuzXBh3bNJgXal`,
 pipeline Proveedores, etapa "Lead enviado") tenía el mismo bug de nombre heredado ya documentado en
 la sección 5.5/5.9 (decía "- Carolina Chapo" en vez de "- María García Serrano", por venir de un
-workflow duplicado) — corregido, y valor actualizado a 150€. No es deuda atrasada, es un cobro
-esperado a seguir en los próximos días.
+workflow duplicado) — corregido, y valor actualizado a 150€.
+
+**Actualizado 12 sept 2026**: cobrados **75€ de los 150€** — quedan **75€ pendientes**. Mariano pidió
+un recordatorio para el 27 de septiembre para seguir el cobro del resto (programado, ver
+`pendientes-activos.md`).
 
 Este listado se actualiza cada vez que se audite el pipeline de pagos — no es de una sola vez.
 

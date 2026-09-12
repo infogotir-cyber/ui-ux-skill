@@ -177,9 +177,10 @@ herramientas como LTX Studio (pipeline completo guión→storyboard→video) o V
 Con el servicio de Exxo pausado (ver ítem de arriba y `direcciones/marketing/CLAUDE.md` sección
 12), Mariano va a pedirle a Agustín que le entregue todo lo que estaba pendiente antes de la pausa
 — al menos el repositorio de marketing y el PDF de venta "Estancia por estudios" ya acordado
-(sección 11.2 del mismo documento), posiblemente más. Todavía no mandó el pedido.
+(sección 11.2 del mismo documento), posiblemente más.
 
-- Estado: **abierto — pedido confirmado por Mariano, todavía sin enviar**.
+- **Actualizado 12 sept 2026**: Mariano ya envió el pedido — Agustín todavía no respondió.
+- Estado: **bloqueado (esperando respuesta de Agustín)**.
 - Recordado: 10 veces (4 sept 2026, creación; 4 sept, chequeo diario 18:00; 5 sept, chequeo diario
   18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00; 8 sept, chequeo diario 18:00;
   9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00).
@@ -296,7 +297,9 @@ García Serrano por su trámite "en estos días" — de ese pago, GOTIR cobra **
 Detalle completo en `direcciones/comercial/CLAUDE.md` sección 14.2 (oportunidad corregida de nombre
 y valor, `opportunity_id=7l4aZEKuzXBh3bNJgXal`).
 
-- Estado: **en curso** — no es deuda atrasada todavía, es un cobro esperado a seguir.
+- **Actualizado 12 sept 2026**: Mariano cobró **75€ de los 150€** — quedan **75€ pendientes**.
+  Recordatorio programado para el **27 de septiembre** (`trig_011LPaJKJym11i8T8HGNgiiY`).
+- Estado: **en curso — mitad cobrada, 75€ restantes, seguimiento pausado hasta el 27 sept**.
 - Recordado: 12 veces (31 ago 2026, creación; 2 sept, chequeo diario 18:00; 3 sept, chequeo diario
   18:00; 4 sept, chequeo diario 18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00;
   8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00).
@@ -468,6 +471,7 @@ actualizada en cada barrido, no un documento de una sola vez.
 | Luisana Junguittu | 825€, `y1FkCgvdCj61Eosz5sr9` | Información y contrato enviado | **Actualizado 29 ago 2026, con el chat real revisado**: el 14 ago dijo que habló con Luis (su pareja) pero "surgieron algunas dudas" — nunca llegó a decir cuáles. Mariano le preguntó explícitamente el 18 ago y le ofreció verlas por llamada de 10 min el 25 ago ("lunes") — **sin respuesta desde entonces**, confirma Mariano hoy ("dejó de responder"). El bloqueo real (cuáles son las dudas de Luis) sigue sin identificar — no se puede armar un mensaje efectivo sin ese dato. Mismo candidato que Héctor a intentar por llamada en vez de texto. |
 | Ángel Villalba | 825€ + inscripción 890€, `4KjEeYnCseQYw4EHgETY` | Llamada realizada | Confirmado por Mariano hoy: quedó en contactarse la semana que viene, consistente con lo ya registrado (`patrones-llamadas.md`, fila 7) — sin fecha exacta, pero sin acción pendiente hasta esa semana. |
 | Felipe Joaquín Nogues Martinena | 670€ visado, `vygsGYGMTHbPtw4V0KnA` | Información y contrato enviado | **Actualizado 29 ago 2026, chat real revisado**: venía respondiendo bien (preguntó plazos el 17 ago, Mariano contestó). Desde entonces, **2 mensajes asuntivos seguidos con CTA real** (24 ago: proponía coordinar inscripción miércoles/jueves; 26 ago: "te paso el link ahora así lo dejamos cerrado") — **sin respuesta a ninguno de los dos**, van 3 días de silencio sobre el último. A diferencia de Héctor/Luisana los mensajes acá sí eran los correctos (checklist bien aplicado). **Decisión de Mariano (29 ago): se llama el lunes, junto con Héctor y Luisana** — no se le vuelve a escribir antes. |
+| Mariela Pérez | 550€ visado, `6vVdeSpGBjntbiLyi2a5` | Pronto pago | **Promovida a Grupo 1 el 12 sept 2026, a pedido explícito de Mariano** — sube desde Grupo 3 (ver historial ahí abajo, movido). Está próxima a pagar el primer desembolso (1.302,50€ entre matrícula y honorarios), genuinamente movilizada, no hace falta escribirle nada nuevo — solo esperar el pago y hacer seguimiento si se demora. |
 
 **Nota aparte, no forma parte de los 3 grupos (sin fuga, en curso normal)**: Milagros Stefany Durán
 Guillén — confirmado por Mariano hoy (29 ago) que "supuestamente paga el lunes" (1 sept), coincide
@@ -487,7 +491,6 @@ cada barrido con lo que surja de las llamadas de esa semana.
 | Contacto | Oportunidad | Qué está esperando |
 |---|---|---|
 | Enrique Esmilse Donna | 550€ "Visado" `mfjQpOhOJcX3oLF77mkC` (⚠️ sigue sin actualizar el valor/monto de la oportunidad en sí — Mariano confirmó 668€ cada uno para él y Abigaíl, real = 1.336€ para los dos, la oportunidad sigue en 550€, no se tocó por no haberlo pedido explícitamente) | **Resuelto 29 ago 2026**: Mariano confirmó que el precio correcto es **668€ cada uno** (no 825/750€, que era de estancia). Nota cargada en GHL: "Se le ofreció un visado para él y un visado para Abigaíl, 668€ cada uno." Tag agregado: "visado de estudios 668" (junto a "cualificado visado", ya corregido antes). Confirma que cobra el miércoles que viene. Sin acción pendiente hasta esa fecha. |
-| Mariela Pérez | 550€ visado, `6vVdeSpGBjntbiLyi2a5` | **Actualizado 10 sept 2026**: Mariano avisa que está próxima a pagar (sin fecha exacta todavía). Contexto previo (29 ago): sí respondió el 26 ago (imagen + audio), Mariano le contestó con audio, y ella cerró con "Gracias bendiciones!!🫂" el mismo día — no es un caso de no-respuesta, está genuinamente movilizada juntando el primer pago (1.302,50€ entre matrícula y honorarios). No hace falta escribirle nada nuevo, solo esperar el pago. La etapa de GHL sigue sin moverse desde el 22 jun (dato de pipeline desactualizado, no refleja la relación real). |
 | Marylaura Guerrero | 750€, `ySVES9NUeMTbZfuRV9vt` | Dijo explícitamente "preferimos esperar un poco más" (24 ago, imprevisto de su papá) — **a propósito sin presionar**, seguimiento activo de venta sigue recién para la semana del 7-10 sept. **Actualizado 31 ago 2026**: Mariano nunca le había respondido a ese último mensaje de ella — se le dio un mensaje de cierre de cortesía (sin pitch, sin CTA de cierre), solo para no dejarla sin respuesta: *"Marylaura, no hay problema, entiendo perfecto que la prioridad sea tu papá 💛 Cuando estén listos, acá voy a estar para retomarlo cuando les convenga. Cualquier duda que surja mientras tanto, escribime tranquila."* No cambia la fecha de seguimiento comercial activo (sigue siendo 7-10 sept). |
 
 - Estado: **en curso — tracker recién creado, primera foto real tomada el 29 ago 2026**.

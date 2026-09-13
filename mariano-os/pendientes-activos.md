@@ -22,6 +22,23 @@
 
 ## Abiertos
 
+### GOTIR — reclamo de María Isabel López Arango sobre autorización de trabajo limitada a Madrid (13 sept 2026, hallado en barrido Fase C)
+
+Cliente real ya pagando (`contact_id=sZcmeXHCMcF046ae5JQE`, oportunidad en pipeline Seguimiento,
+etapa "Nuevo cliente (derivar)"), pagó 750€, inscrita en ISIE, destino Lugo (Galicia). El 11 sept
+2026 escribió un mensaje serio por WhatsApp: dice que desde la reunión inicial en Colombia había
+avisado que no iba a vivir en Madrid, que Mariano lo sabía y le dijo que no había problema, y que
+ahora se entera de que la autorización de trabajo queda limitada a la provincia de Madrid — lo que
+afecta directamente su posibilidad de trabajar donde va a vivir. Pide una solución.
+
+- **Mariano ya respondió** (12 sept, de madrugada): "anoche no alcancé a llamarte, te llamo el
+  lunes y hablamos bien". Ella contestó "ok, espero tu llamada" (11 sept, 20:40).
+- **Compromiso concreto con fecha**: llamar a María Isabel el **lunes 14 sept 2026**. No hace falta
+  mensaje de texto nuevo — es una llamada ya prometida, sobre un reclamo real con implicancia legal/
+  contractual (alcance geográfico de la autorización de trabajo).
+- Estado: **en curso — llamada comprometida para el lunes 14 sept, sin ejecutar todavía**.
+- Recordado: 1 vez (13 sept 2026, creación — hallado en el barrido Fase C de la mañana).
+
 ### Personal — crisis de caja urgente (24 ago 2026, la más urgente de todas ahora mismo)
 
 Mariano avisó que arrancó la semana con **menos de 700€ en total y hoy sin nada líquido** (pagó la

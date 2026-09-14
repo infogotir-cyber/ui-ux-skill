@@ -1,0 +1,49 @@
+name: Backup — espejo completo a repo de respaldo
+
+# Por qué existe (14 sept 2026): GitHub ya es la fuente de verdad del repo,
+# pero un backup automático a un segundo repositorio da una capa extra de
+# seguridad ante un desastre real (cuenta comprometida, borrado accidental,
+# etc.) sin depender de que Claude Code mueva archivos grandes a mano.
+#
+# Corre semanalmente y también se puede disparar a mano desde la pestaña
+# "Actions" del repo ("Run workflow").
+#
+# Qué necesita para funcionar (configurar una sola vez, ver instrucciones
+# en pendientes-activos.md / el mensaje donde se armó esto):
+#   1. Un repositorio privado vacío que reciba el espejo (ej.
+#      "mariano-os-backup" en la misma cuenta u organización).
+#   2. Un secret del repo llamado BACKUP_REPO con la URL de destino en
+#      formato "https://github.com/<owner>/<repo>.git".
+#   3. Un secret del repo llamado BACKUP_TOKEN: un Personal Access Token
+#      (fine-grained, con permiso de escritura solo sobre ese repo de
+#      destino) — Settings → Secrets and variables → Actions → New
+#      repository secret, en este mismo repo.
+# Sin esos 2 secrets configurados, el workflow corre pero falla en el paso
+# de push — no rompe nada del repo principal, solo indica que falta la
+# configuración.
+
+on:
+  schedule:
+    # Todos los lunes 06:00 UTC.
+    - cron: "0 6 * * 1"
+  workflow_dispatch: {}
+
+jobs:
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar el repo completo (todo el historial, todas las ramas)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Espejar a Personal Access Token
+        run: |
+          if [ -z "${{ secrets.BACKUP_REPO }}" ] || [ -z "${{ secrets.BACKUP_TOKEN }}" ]; then
+            echo "Faltan los secrets BACKUP_REPO y/o BACKUP_TOKEN — ver instrucciones en este mismo archivo."
+            exit 1
+          fi
+          DEST="${{ secrets.BACKUP_REPO }}"
+          DEST_WITH_TOKEN=$(echo "$DEST" | sed "s#https://#https://x-access-token:${{ secrets.BACKUP_TOKEN }}@#")
+          git remote add backup "$DEST_WITH_TOKEN"
+          git push backup --mirror

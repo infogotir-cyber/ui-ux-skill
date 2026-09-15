@@ -221,7 +221,6 @@ eso lleva semanas de trabajo de builder, no algo que se resuelve ya. Bajar preci
 automatización, significaría menos margen por venta mientras todo el trabajo lo sigue haciendo él
 100% manual — el riesgo es que empeore el problema de caja a corto plazo antes de mejorarlo.
 
-- Estado: **abierto — decisión estratégica pendiente, Mariano pidió una lectura de esto**.
 - Recordado: 14 veces (28 ago 2026, recién planteado; 29 ago, chequeo diario 18:00; 30 ago, chequeo
   diario 18:00; 2 sept, chequeo diario 18:00; 3 sept, chequeo diario 18:00; 4 sept, chequeo diario
   18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00;
@@ -260,10 +259,19 @@ automatización, significaría menos margen por venta mientras todo el trabajo l
   acceso permanente** (no suscripción), **canal de lanzamiento = Instagram + TikTok en paralelo**
   (no uno solo primero, como Mariano lo pidió). Plan de arranque armado con acciones para hoy (15
   sept) y mañana (16 sept) — detalle completo en `direcciones/marketing/CLAUDE.md`, nueva sección
-  "Plan de arranque — 15 sept 2026", incluyendo guion base de los 2 videos nuevos que pidió Mariano
-  (cambio de residencia cuenta ajena↔cuenta propia, 3 opciones de curso para visado de estudios).
-  Quedan 4 decisiones abiertas (producción/cadencia, costo real de Skool, línea contenido pago vs.
-  llamada, precio exacto dentro de 20-30€) pero ya no bloquean arrancar a producir/publicar.
+  "Plan de arranque — 15 sept 2026", incluyendo guion palabra por palabra de los 2 videos nuevos que
+  pidió Mariano (`direcciones/marketing/recursos/guiones-videos-15sept2026.md`: cambio de residencia
+  cuenta ajena↔cuenta propia, 3 opciones de curso para visado de estudios). Quedan 4 decisiones
+  abiertas (producción/cadencia, costo real de Skool, línea contenido pago vs. llamada, precio exacto
+  dentro de 20-30€) pero ya no bloquean arrancar a producir/publicar.
+- **Corrección el mismo día (15 sept 2026, más tarde) — no se espera a Exxo**: Mariano habló con
+  Agustín, quien confirmó que Exxo está con mucho trabajo y no entrega nada (repositorio, contenido
+  del Drive, accesos — ver sección 13 de `marketing/CLAUDE.md`) hasta antes de que termine
+  septiembre. Decisión de Mariano: **producir en paralelo, 100% desde cero, sin esperar esa
+  entrega** — lo que Exxo mande a fin de mes se suma después como contenido adicional, no como punto
+  de partida. Mariano va a pedirle el repositorio de GitHub a Agustín, pero es un track aparte que
+  no bloquea la producción de contenido.
+- Estado: **en curso — primer lote de contenido (2 guiones) ya armado, Mariano graba hoy/mañana**.
 
 ### GOTIR — GDPR / protección de datos con Conversia (29 ago 2026)
 

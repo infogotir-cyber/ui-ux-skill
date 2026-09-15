@@ -952,21 +952,29 @@ explícitamente dejar de solo diagnosticar y empezar a ejecutar.
 
 ### Plan de arranque — 15 sept 2026 (a pedido explícito de Mariano, "dejemos de apagar incendios y crezcamos de verdad")
 
+**Corrección importante, mismo día (15 sept 2026, más tarde)**: el plan original de arriba asumía
+que se podía arrancar publicando el contenido ya producido por Exxo y nunca publicado (carpeta de
+Drive) como primer paso de bajo costo. **Mariano habló con Agustín y confirmó que Exxo está con
+mucho trabajo y no va a entregar nada (repositorio, contenido, accesos — ver sección 13) hasta
+antes de que termine septiembre.** Decisión de Mariano: **no esperar a Exxo para arrancar** — se
+produce en paralelo, 100% desde cero con Mariano/Micol, y lo que Exxo mande a fin de mes se suma
+después como contenido adicional, no como punto de partida. Mariano también va a pedirle el
+repositorio de GitHub a Agustín (sección 13.3, punto 1) pero es un track aparte que no bloquea
+nada de lo de abajo.
+
 **Hoy (15 sept):**
-1. Recuperar y revisar el contenido ya producido por Exxo y nunca publicado (carpeta de Drive
-   `.../folders/1bEt1GBV6iW460GEBCwwBz8qywIJaRM94`, sección 8 punto 2 de este documento) — elegir
-   las primeras piezas publicables en Instagram/TikTok esta semana, a costo marginal cero.
-2. Armar el guion/outline de los 2 videos nuevos que pidió Mariano (ver detalle abajo) — ninguno
-   arranca de cero, ambos ya tienen la data de base lista en este sistema.
-3. Mariano cierra el precio exacto del ticket bajo (decisión #6, dentro de 20-30€).
+1. Armar el guion/outline de los 2 videos nuevos que pidió Mariano (ver detalle abajo) — ninguno
+   arranca de cero pese a no tener nada de Exxo, ambos ya tienen la data de base lista en este
+   sistema (producto real de comercial, texto ya cerrado del PDF de venta).
+2. Mariano cierra el precio exacto del ticket bajo (decisión #6, dentro de 20-30€).
 
 **Mañana (16 sept):**
 1. Mariano confirma el costo real de Skool (decisión #3).
 2. Cerrar la línea entre contenido bajo ticket y motivo de llamada paga (decisión #5) — con los 2
-   guiones del punto 2 de hoy como caso de prueba concreto.
+   guiones del punto 1 de hoy como caso de prueba concreto.
 3. Repartir producción entre Mariano y Micol Navarro, con cadencia fija (decisión #2) — Micol ya
    está confirmada disponible y sin deuda pendiente (sección 9 más arriba).
-4. Publicar el primer lote (rescatado de Exxo + lo nuevo que esté listo).
+4. Grabar y publicar el primer lote 100% propio (los 2 videos de hoy, si ya están grabados).
 
 **Cadencia continua, una vez arrancado**: 1-2 grabaciones largas por semana ("pilares"), cortadas en
 4-6 piezas cortas por plataforma — mismo sistema "grabar una vez, cortar varias" ya definido en
@@ -974,20 +982,24 @@ explícitamente dejar de solo diagnosticar y empezar a ejecutar.
 tiempo") es la única forma real de sostener esto en paralelo al día a día — a definir con Mariano
 qué franja horaria.
 
-**Los 2 videos nuevos que pidió Mariano hoy, ya con guion base (no genéricos — usan data real ya
-documentada, no contenido tipo "cómo se hace un visado" que ya es gratis en cualquier lado, ver
-riesgo #2 de la "Lectura de director comercial" más arriba):**
+**Los 2 videos nuevos que pidió Mariano hoy, ya con guion palabra por palabra (no genéricos — usan
+data real ya documentada, no contenido tipo "cómo se hace un visado" que ya es gratis en cualquier
+lado, ver riesgo #2 de la "Lectura de director comercial" más arriba)**: guion completo en
+`direcciones/marketing/recursos/guiones-videos-15sept2026.md`.
 
 1. **"Cambio de residencia: de cuenta ajena a cuenta propia (o al revés) en España"** — basado en el
    producto real de 2 pasos ya armado (`direcciones/comercial/CLAUDE.md` sección 16): qué significa
    cada modalidad, quién puede pedir el cambio, y el proceso real que ofrece GOTIR (Paso 1
    diagnóstico 90€ → Paso 2 gestión completa, 650€ total). CTA hacia la llamada paga o la comunidad,
-   no hacia el pago directo del Paso 1 — ese cierre es de comercial, no de contenido.
+   no hacia el pago directo del Paso 1 — ese cierre es de comercial, no de contenido. Precios y el
+   detalle de "Paso 1/Paso 2" quedan fuera del video, solo se mencionan en la llamada.
 2. **"3 opciones de curso para tu visado de estudios en España"** — basado en el texto de las 3
    opciones ya confirmado por Mariano el 26 ago (sección 11.2 de este documento): Opción 1
    (multi-ciudad, 12 meses, 5.650€), Opción 2 — la recomendada (Madrid/Sevilla, 7 meses, 2.900€),
    Opción 3 (Madrid, 12 meses, Gestión/Marketing o IA). CTA hacia la llamada de 60/120€ para definir
-   cuál conviene al caso puntual — esa es justamente la línea de la decisión #5.
+   cuál conviene al caso puntual — esa es justamente la línea de la decisión #5. Ni los precios de
+   cada opción ni el nombre real de las instituciones (ej. ALBALI) se mencionan en el video, mismo
+   criterio que el PDF de venta.
 
 No se avanza con la construcción técnica de Skool en sí hasta que Mariano confirme el costo real
 (decisión #3) — pero la producción de contenido ya no espera a eso.

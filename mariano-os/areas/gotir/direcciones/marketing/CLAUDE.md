@@ -807,7 +807,25 @@ dependencia** — son productos de información, fuera del pipeline de trámites
 que se pueden vender sin esperar ninguna construcción técnica. Es el camino más rápido de probar la
 lógica de "vender por capas" sin quedar bloqueado por lo mismo que frenó la versión de agosto.
 
-### Propuesta de escalera de valor (a partir de lo que ya describió Mariano)
+### Escalera de valor — RESUELTA de raíz, 15 sept 2026
+
+**Reemplaza la propuesta original de abajo** (quedaba un solo nivel "bajo ticket" genérico de
+20-70€ a definir) — Mariano la analizó con este sistema actuando como director comercial y la
+restructuró en 2 productos de bajo ticket, cada uno con un motivo de compra distinto. Detalle
+completo, incluyendo las 4 escuelas reales y la automatización pendiente, en
+`direcciones/comercial/CLAUDE.md`, sección "15. Plantilla de WhatsApp", subsección "Distinción
+60€/120€ — RESUELTA de raíz, 15 sept 2026":
+
+| Nivel | Qué es | Precio | Se descuenta del premium si avanza |
+|---|---|---|---|
+| 0 — Gratis | Contenido en redes (Reels/TikTok/IG) + comunidad abierta (Skool) | — | — |
+| 1a — Curso "Proceso general" | Explica el proceso de visado/estancia y requisitos — sin nombrar escuelas | **19€**, pago único | No |
+| 1b — Curso "Opciones reales de curso" | Nombra las 4 escuelas reales (Albali, ISIE, Maude, CEI) + avisa al contacto de la escuela elegida | **65€**, pago único | No |
+| 2 — Llamada personalizada | Asesoría sobre el caso puntual del lead, sin revelar las opciones de curso (eso es el nivel 1b) | **60€** | **Sí** |
+| 2b — Combo llamada + curso 1b | Llamada + curso de opciones reales juntos (125€ sueltos, 5€ de descuento) | **120€** | **Sí** |
+| 3 — Premium | Acompañamiento completo hasta la resolución | 825€ estancia / 668€ visado | — |
+
+**Propuesta original (11 sept 2026), superada — se deja como registro:**
 
 | Nivel | Qué es | Precio | Qué ya existe hoy |
 |---|---|---|---|
@@ -939,16 +957,19 @@ extendido de cada punto vive en la conversación de esa fecha, no se duplica ac�
 4. ~~¿Qué canal social arranca primero?~~ **RESUELTO 15 sept 2026: Instagram + TikTok en paralelo**
    (no uno solo primero) — Mariano lo pidió así en vez del "un solo canal" que este sistema había
    recomendado; ambos reciben el mismo contenido base replicado desde el día 1.
-5. **Definir la línea entre contenido de bajo ticket y motivo de la llamada paga** — qué preguntas
-   específicas de caso quedan reservadas para el nivel de 60/120€, para no resolverlas gratis en el
-   contenido de pago bajo. **Sigue abierto.**
-6. **Precio exacto del nivel de bajo ticket** dentro del rango 20-30€ ya acordado. **Sigue abierto.**
+5. ~~Definir la línea entre contenido de bajo ticket y motivo de la llamada paga~~ **RESUELTO 15
+   sept 2026, como parte de la restructuración completa de precios** (ver "Escalera de valor" más
+   arriba): el curso de 19€ da el proceso general, el curso de 65€ nombra las escuelas reales, y la
+   llamada de 60€ queda reservada exclusivamente para el caso puntual del lead — ya no se pisan.
+6. ~~Precio exacto del nivel de bajo ticket dentro del rango 20-30€~~ **RESUELTO 15 sept 2026, y
+   ampliado**: no es un solo nivel, son 2 productos con precio propio — **19€** (proceso general) y
+   **65€** (opciones reales de curso + automatización de aviso a la escuela).
 
-**Actualizado 15 sept 2026**: con #1 y #4 resueltos, ya no hace falta esperar a cerrar las 4
-restantes para arrancar producción — #2, #3, #5 y #6 se van cerrando en paralelo mientras se
-produce y publica el primer lote de contenido (ver "Plan de arranque — 15 sept 2026" abajo). El
-criterio de "decisiones primero, construcción después" queda relajado a propósito: Mariano pidió
-explícitamente dejar de solo diagnosticar y empezar a ejecutar.
+**Actualizado 15 sept 2026, segunda vuelta — quedan resueltas 4 de las 6**: #1, #4, #5 y #6 ya
+están cerradas. Solo quedan abiertas **#2 (quién produce qué, con qué cadencia)** y **#3 (costo real
+de Skool)** — ninguna de las dos bloquea seguir produciendo/publicando contenido gratuito ni armar
+los 2 cursos nuevos. El criterio de "decisiones primero, construcción después" queda relajado a
+propósito: Mariano pidió explícitamente dejar de solo diagnosticar y empezar a ejecutar.
 
 ### Plan de arranque — 15 sept 2026 (a pedido explícito de Mariano, "dejemos de apagar incendios y crezcamos de verdad")
 
@@ -963,18 +984,24 @@ repositorio de GitHub a Agustín (sección 13.3, punto 1) pero es un track apart
 nada de lo de abajo.
 
 **Hoy (15 sept):**
-1. Armar el guion/outline de los 2 videos nuevos que pidió Mariano (ver detalle abajo) — ninguno
-   arranca de cero pese a no tener nada de Exxo, ambos ya tienen la data de base lista en este
-   sistema (producto real de comercial, texto ya cerrado del PDF de venta).
-2. Mariano cierra el precio exacto del ticket bajo (decisión #6, dentro de 20-30€).
+1. Guiones de los 2 videos gratuitos ya armados (ver abajo) — son el gancho/teaser, gratis, sin
+   nombrar escuelas ni precios, hacia Skool y la comunidad.
+2. Precio y estructura de los 2 cursos pagos ya cerrados con Mariano (19€ proceso general, 65€
+   opciones reales — ver "Escalera de valor" más arriba). **Falta armar el contenido real de estos
+   2 cursos** (más profundo que un Reel de 60 seg — ver punto siguiente) y confirmar el contacto de
+   **CEI** (único de las 4 escuelas sin nombre de contacto todavía).
+3. Mariano confirma el costo real de Skool (decisión #3, sigue abierta) y arranca a definir con
+   Micol el reparto de producción (decisión #2, sigue abierta).
 
-**Mañana (16 sept):**
-1. Mariano confirma el costo real de Skool (decisión #3).
-2. Cerrar la línea entre contenido bajo ticket y motivo de llamada paga (decisión #5) — con los 2
-   guiones del punto 1 de hoy como caso de prueba concreto.
-3. Repartir producción entre Mariano y Micol Navarro, con cadencia fija (decisión #2) — Micol ya
-   está confirmada disponible y sin deuda pendiente (sección 9 más arriba).
-4. Grabar y publicar el primer lote 100% propio (los 2 videos de hoy, si ya están grabados).
+**Mañana (16 sept) en adelante:**
+1. Armar el contenido real de los 2 cursos pagos (19€ y 65€) — no son un guion de 60 segundos como
+   los Reels, necesitan más desarrollo (grabación más larga, tal vez un PDF descargable para el de
+   19€, mismo criterio que ya funcionó con el Paso 1 de Modificación a Residencia de Trabajo).
+2. Grabar y publicar el primer lote gratuito (los 2 videos de hoy) en Instagram + TikTok.
+3. Armar el mensaje de venta de los 2 cursos (reemplaza la plantilla vieja de 60€/120€ de
+   `comercial/CLAUDE.md` sección 15, que todavía no se reescribió).
+4. Decidir el mecanismo manual de aviso a las escuelas (Raquel/ALBALI, Álvaro/ISIE, Javier/MAUDE,
+   y CEI apenas se confirme el contacto) para cuando entre la primera venta del curso de 65€.
 
 **Cadencia continua, una vez arrancado**: 1-2 grabaciones largas por semana ("pilares"), cortadas en
 4-6 piezas cortas por plataforma — mismo sistema "grabar una vez, cortar varias" ya definido en

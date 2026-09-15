@@ -1642,28 +1642,59 @@ pago + agenda). En "tú" (español latino neutro), no "vos", a pedido explícito
 subió a 60€ y el alcance es más amplio (diagnóstico completo del caso, no solo Q&A), coherente con
 que sea la oferta estándar para leads fuera de ventana, no una excepción puntual.
 
-**Distinción 60€/120€ — en definición, aclarada por Mariano 11 sept 2026 (todavía "analizando", no
-100% cerrada)**: la diferencia real entre las dos llamadas no es la cantidad de contenido en
-general, es específicamente si se nombran o no las opciones de curso:
-- **60€** = asesoría sobre la situación particular del lead (requisitos que aplican, dudas
-  puntuales) — **sin** decirle el nombre/detalle de las opciones de curso (Opción 1/2/3).
-- **120€** = información general + análisis del caso particular + **sí** incluye el detalle de las
-  3 opciones de curso (Opción 1/2/3, mismo bloque ya documentado en `patrones-llamadas.md` y en
-  `mini-funnel-10` de `patrones-apertura-conversacion.md`).
+**Distinción 60€/120€ — RESUELTA de raíz, 15 sept 2026**: lo de arriba ("en definición, todavía
+analizando", 11 sept) quedó superado por una restructuración completa, a partir de la plataforma de
+contenido/marca personal (`direcciones/marketing/CLAUDE.md`, sección 9). Ya no es "la misma llamada
+con o sin revelar los cursos" — ahora el detalle de las opciones de curso se separó en un producto
+de contenido propio, comprable sin necesidad de la llamada:
 
-Esto reemplaza en espíritu la descripción anterior de la plantilla de arriba ("hasta 10 cursos
-válidos de 3 escuelas distintas, entre 2.800€ y 6.000€") — esa descripción quedó desactualizada
-frente a esta aclaración más precisa (nombrar Opción 1/2/3 concretas, no un rango genérico), pero
-el texto de la plantilla en sí **no se reescribió todavía** porque Mariano lo planteó como algo que
-sigue analizando, no como una decisión cerrada — confirmar antes de reescribir el mensaje.
+- **Curso "Proceso general"** (nuevo, sin llamada) — **19€**, pago único, sin descuento hacia
+  premium. Explica el proceso general de visado/estancia y los requisitos — mismo nivel de detalle
+  que hoy da la llamada gratuita, empaquetado para el público frío de redes que no llegaría a
+  agendar una llamada.
+- **Curso "Opciones reales de curso"** (nuevo, sin llamada) — **65€**, pago único, sin descuento
+  hacia premium. Nombra las escuelas reales (ver lista de 4 abajo) — a diferencia de todo el
+  contenido gratuito y del PDF de venta, que solo dicen "Opción 1/2/3" sin nombre. Dispara aviso al
+  contacto de la escuela correspondiente (ver detalle de automatización abajo).
+- **Llamada de asesoría (60€)** — vemos el caso puntual del lead, dudas específicas, reagrupación
+  familiar si aplica — **ya no incluye revelar las opciones de curso** (eso se compra aparte, en el
+  curso de 65€). *Se descuenta del total si avanza a premium.*
+- **Combo Llamada + curso de opciones (120€)** — la llamada de 60€ más el curso de 65€ (125€ suma),
+  con **5€ de descuento** por comprarlos juntos. *Se descuenta del total si avanza a premium* (igual
+  que la llamada sola).
 
-**CONFIRMADO por Mariano (11 sept 2026)**: lo pagado por la llamada de asesoría (60€ o 120€) se
-descuenta del total de honorarios si el lead avanza y contrata — aplica tanto a **estancia por
-estudios (825€)** como a **visado de estudios desde origen (668€)**, sección 1.2. Ya reflejado en
-la plantilla de arriba. Mismo modelo que ya usa el producto de Modificación a Residencia de Trabajo
-(sección 16, Paso 1 de 90€ descontado del total de 650€) — reciprocidad (Cialdini, sección 12.2): la
-persona ya hizo una inversión chica y real, lo cual reduce la fricción del pago grande siguiente, y
-mantiene el ancla de precio limpia de cara al cliente.
+**Las 4 escuelas reales (confirmadas por Mariano, 15 sept 2026)**, con su contacto para la
+automatización de aviso — **Opción 1/2/3 del PDF de venta y del contenido gratuito nunca las
+nombra**, esto es exclusivo del curso de 65€:
+- **ALBALI** — contacto: **Raquel**.
+- **ISIE** (documentada antes como ISDE/ISIE, sección 5 de `marketing/CLAUDE.md`) — contacto:
+  **Álvaro**.
+- **MAUDE** — contacto: **Javier**. (Escuela nueva, no estaba documentada en este sistema antes del
+  15 sept 2026 — sumada recién.)
+- **CEI** — contacto: **sin confirmar todavía**, preguntar a Mariano antes de armar la
+  automatización para esta escuela puntual.
+
+**Automatización pendiente de construir (no bloquea el lanzamiento del curso)**: al comprar el
+curso de 65€, avisar al contacto de la escuela elegida que un cliente viene de parte de GOTIR —
+arrancar **manual** (Mariano o el sistema manda el aviso por cada venta) y automatizar en GHL/n8n
+recién cuando haya volumen real, mismo criterio de "rama por rama" del resto del sistema. Antes de
+automatizar, agregar el texto de consentimiento en el checkout del curso ("al comprar, autorizás
+que compartamos tu nombre y contacto con la escuela elegida") — dato sensible de terceros, mismo
+cuidado que el resto de información personal de clientes.
+
+**CONFIRMADO por Mariano (11 sept 2026, sigue vigente tras la restructuración del 15 sept)**: lo
+pagado por la llamada de asesoría (60€ sola, o el combo de 120€) se descuenta del total de
+honorarios si el lead avanza y contrata — aplica tanto a **estancia por estudios (825€)** como a
+**visado de estudios desde origen (668€)**, sección 1.2. **No se descuenta si el lead compra
+solo el curso de 19€ o el de 65€ sin la llamada** — confirmado explícitamente por Mariano el 15
+sept 2026: el descuento por reciprocidad queda reservado para cuando hay contacto real en vivo, no
+para las compras de contenido puro. Mismo modelo de descuento que ya usa el producto de
+Modificación a Residencia de Trabajo (sección 16, Paso 1 de 90€ descontado del total de 650€) —
+reciprocidad (Cialdini, sección 12.2).
+
+**Falta reescribir la plantilla de WhatsApp de arriba** con esta estructura nueva (hoy sigue
+mencionando "60€ o 120€" con la descripción vieja) — pendiente para cuando se arme el mensaje
+definitivo de venta de los 2 cursos nuevos.
 
 **Comisión esperada, no deuda todavía (31 ago 2026)**: **Sara Isabel Posso Echenique** ("Sarai",
 `contact_id=e8HD8o3V2r8WZ7qCVZET`) quedó en pagarle a María García Serrano por su trámite "en estos

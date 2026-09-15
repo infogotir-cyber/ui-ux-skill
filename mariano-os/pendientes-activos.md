@@ -271,7 +271,22 @@ automatización, significaría menos margen por venta mientras todo el trabajo l
   entrega** — lo que Exxo mande a fin de mes se suma después como contenido adicional, no como punto
   de partida. Mariano va a pedirle el repositorio de GitHub a Agustín, pero es un track aparte que
   no bloquea la producción de contenido.
-- Estado: **en curso — primer lote de contenido (2 guiones) ya armado, Mariano graba hoy/mañana**.
+- **Restructuración completa de precios (15 sept 2026, más tarde todavía) — pedida por Mariano con
+  este sistema actuando como director comercial**: el nivel de bajo ticket ya no es uno solo
+  (20-30€ genérico) — quedaron **2 cursos pagos con motivo de compra distinto**: "Proceso general"
+  **19€** (sin nombrar escuelas) y "Opciones reales de curso" **65€** (nombra Albali/ISIE/MAUDE/CEI
+  + dispara aviso al contacto de la escuela). La llamada de 60€ queda reservada solo para el caso
+  puntual del lead (ya no revela las opciones de curso); el combo llamada+curso de 65€ queda en
+  120€ (5€ de descuento). El descuento hacia el premium (825€/668€) aplica a la llamada de 60€ y al
+  combo de 120€, **no** a los cursos de 19€/65€ comprados solos — confirmado explícitamente por
+  Mariano. Detalle completo en `direcciones/comercial/CLAUDE.md` sección 15 y
+  `direcciones/marketing/CLAUDE.md`, "Escalera de valor — RESUELTA de raíz, 15 sept 2026". **Falta
+  real que queda**: el contacto de **CEI** (única de las 4 escuelas sin nombre confirmado), armar
+  el contenido real de los 2 cursos (más que un guion de Reel), y reescribir la plantilla de
+  WhatsApp vieja de 60€/120€.
+- Estado: **en curso — precios y escalera de valor ya cerrados, contenido de los 2 cursos pagos
+  todavía por armar; primer lote de contenido gratuito (2 guiones) ya listo, Mariano graba
+  hoy/mañana**.
 
 ### GOTIR — GDPR / protección de datos con Conversia (29 ago 2026)
 

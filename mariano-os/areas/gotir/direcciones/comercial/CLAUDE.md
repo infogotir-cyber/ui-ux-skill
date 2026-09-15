@@ -1671,8 +1671,12 @@ nombra**, esto es exclusivo del curso de 65€:
   **Álvaro**.
 - **MAUDE** — contacto: **Javier**. (Escuela nueva, no estaba documentada en este sistema antes del
   15 sept 2026 — sumada recién.)
-- **CEI** — contacto: **sin confirmar todavía**, preguntar a Mariano antes de armar la
-  automatización para esta escuela puntual.
+- **CEI** — **mecanismo distinto a las otras 3, confirmado por Mariano 15 sept 2026**: no hay un
+  contacto directo/persona a quien avisar. El cliente entra directo a CEI y usa el **código de
+  embajador de GOTIR** para obtener un descuento — la automatización acá no es "avisar a alguien",
+  es **entregarle al comprador del curso el código correcto** como parte del material. **Falta el
+  código real** — no inventarlo, pedirle a Mariano el texto exacto antes de armar el material del
+  curso de 65€.
 
 **Automatización pendiente de construir (no bloquea el lanzamiento del curso)**: al comprar el
 curso de 65€, avisar al contacto de la escuela elegida que un cliente viene de parte de GOTIR —

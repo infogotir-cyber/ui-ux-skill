@@ -782,6 +782,30 @@ cuándo mandarla. **No enviar nada a Exxo por API/automatización sin que Marian
 confirme él mismo** — es una comunicación humana de cierre de proveedor, no una tarea operativa de
 GHL/ClickUp.
 
+### Plataforma técnica — GHL primero, no Skool (decisión 15 sept 2026)
+
+Mariano puso en duda, con buen criterio, arrancar directo con Skool: la decisión #3 (costo real de
+Skool) seguía sin cerrar, y comprometerse a una herramienta de pago nueva antes de saber el costo —
+en medio de la crisis de caja — invierte el orden correcto. Se separó lo que Skool resolvía junto en
+dos cosas distintas: **(a) cobrar y entregar los 2 cursos** (urgente, ya) y **(b) comunidad con
+efecto de viralización** (no urgente, mejor con contenido/tracción real detrás, no una comunidad
+vacía). **Decisión final: vender ya usando GHL** (que ya está pagado y ya tiene Stripe/PayPal
+conectado, "Política de centralización de pagos" en `areas/gotir/CLAUDE.md`) — Skool queda para
+más adelante, cuando (1) el costo cierre y (2) ya haya tracción real para sembrar la comunidad.
+
+**Checklist técnico para vender los 2 cursos hoy vía GHL (pendiente de que Mariano lo ejecute —
+son acciones de UI de GHL, este sistema no tiene tool para crearlas por API)**:
+1. Confirmar si el plan de GHL de GOTIR tiene **Sites → Memberships** habilitado — serviría para
+   entregar el contenido protegido automáticamente al pagar, sin herramienta extra.
+2. Crear **2 links de pago públicos y reutilizables** (no facturas 1 a 1 como las que se usan hoy
+   con leads conocidos, ej. Maryi Castañeda) — "Curso: Proceso general" 19€ y "Curso: Opciones
+   reales de escuela" 65€, en GHL → Pagos/Productos. Tienen que ser un link compartible en bio de
+   redes, no una factura personalizada por cliente.
+3. **Mientras no exista Memberships automatizado**: entrega manual — Mariano revisa los pagos
+   entrantes y manda el link privado del video (Drive/Vimeo restringido) a cada comprador — mismo
+   criterio de "manual primero, automatizar después con volumen real" ya usado en todo el sistema.
+4. Los 2 links de pago van en la bio de Instagram/TikTok y como CTA de los videos gratuitos.
+
 ## 9. Plataforma de contenido y comunidad — nueva iniciativa (11 sept 2026)
 
 Mariano planteó, en la misma conversación donde se analizaron 22 conversaciones reales del

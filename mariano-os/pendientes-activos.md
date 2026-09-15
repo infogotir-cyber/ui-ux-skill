@@ -255,6 +255,15 @@ automatización, significaría menos margen por venta mientras todo el trabajo l
   línea entre contenido pago bajo y motivo de la llamada, precio exacto del ticket bajo) — detalle
   completo en `direcciones/marketing/CLAUDE.md`, sección "Decisiones a cerrar antes de empezar a
   construir". Sin resolver todavía.
+- **Retomado con fuerza 15 sept 2026 — Mariano pidió explícitamente dejar de solo apagar incendios y
+  ponerse a ejecutar esto en serio**: resueltas 2 de las 6 decisiones — **ticket bajo = pago único de
+  acceso permanente** (no suscripción), **canal de lanzamiento = Instagram + TikTok en paralelo**
+  (no uno solo primero, como Mariano lo pidió). Plan de arranque armado con acciones para hoy (15
+  sept) y mañana (16 sept) — detalle completo en `direcciones/marketing/CLAUDE.md`, nueva sección
+  "Plan de arranque — 15 sept 2026", incluyendo guion base de los 2 videos nuevos que pidió Mariano
+  (cambio de residencia cuenta ajena↔cuenta propia, 3 opciones de curso para visado de estudios).
+  Quedan 4 decisiones abiertas (producción/cadencia, costo real de Skool, línea contenido pago vs.
+  llamada, precio exacto dentro de 20-30€) pero ya no bloquean arrancar a producir/publicar.
 
 ### GOTIR — GDPR / protección de datos con Conversia (29 ago 2026)
 

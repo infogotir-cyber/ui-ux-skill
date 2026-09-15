@@ -924,27 +924,73 @@ extendido de cada punto vive en la conversación de esa fecha, no se duplica ac�
 
 ### Decisiones a cerrar antes de empezar a construir (lista de trabajo, 11 sept 2026)
 
-1. **¿El nivel de bajo ticket (20-30€) es suscripción mensual recurrente o pago único de acceso
-   permanente?** Cambia el modelo de negocio completo: recurrente exige contenido nuevo constante
-   para sostener la retención; pago único es más parecido a un producto de información grabado una
-   vez y vendido muchas veces (la lógica original que describió Mariano). **La más urgente de
-   cerrar — todo lo demás depende de esta.**
+1. ~~¿El nivel de bajo ticket (20-30€) es suscripción mensual recurrente o pago único de acceso
+   permanente?~~ **RESUELTO 15 sept 2026: pago único de acceso permanente.** Coincide con la lógica
+   original de Mariano ("grabar una vez, vender muchas veces") y con la restricción real de
+   capacidad (sin Exxo produciendo en paralelo, exigir contenido nuevo constante para sostener una
+   suscripción era el riesgo #1 ya señalado en la "Lectura de director comercial" de más arriba).
 2. **¿Quién produce qué, con qué cadencia?** Guion/grabación/edición de Instagram (réplica a
    TikTok/Facebook/Threads), YouTube Shorts, directos, coordinación de colaboraciones con
    influencers — repartir entre Mariano y Micol (o alguien más) antes de arrancar, no sobre la
-   marcha.
+   marcha. **Sigue abierto.**
 3. **Confirmar el costo real de Skool hoy** (cuota mensual fija vs. % de ingresos) y calcular el
-   punto de equilibrio en ventas de ticket bajo.
-4. **Qué canal social arranca primero** — Mariano dio el orden de producción (Instagram → réplicas)
-   pero no cuál es la prioridad de lanzamiento real.
+   punto de equilibrio en ventas de ticket bajo. **Sigue abierto — tarea de Mariano para el 16
+   sept.**
+4. ~~¿Qué canal social arranca primero?~~ **RESUELTO 15 sept 2026: Instagram + TikTok en paralelo**
+   (no uno solo primero) — Mariano lo pidió así en vez del "un solo canal" que este sistema había
+   recomendado; ambos reciben el mismo contenido base replicado desde el día 1.
 5. **Definir la línea entre contenido de bajo ticket y motivo de la llamada paga** — qué preguntas
    específicas de caso quedan reservadas para el nivel de 60/120€, para no resolverlas gratis en el
-   contenido de pago bajo.
-6. **Precio exacto del nivel de bajo ticket** dentro del rango 20-30€ ya acordado.
+   contenido de pago bajo. **Sigue abierto.**
+6. **Precio exacto del nivel de bajo ticket** dentro del rango 20-30€ ya acordado. **Sigue abierto.**
 
-No se avanza con la construcción de Skool ni con producción de contenido nueva hasta que estas 6
-queden resueltas — mismo criterio que se usó con el builder de GHL y con el mini-funnel: decisiones
-primero, construcción guiada después.
+**Actualizado 15 sept 2026**: con #1 y #4 resueltos, ya no hace falta esperar a cerrar las 4
+restantes para arrancar producción — #2, #3, #5 y #6 se van cerrando en paralelo mientras se
+produce y publica el primer lote de contenido (ver "Plan de arranque — 15 sept 2026" abajo). El
+criterio de "decisiones primero, construcción después" queda relajado a propósito: Mariano pidió
+explícitamente dejar de solo diagnosticar y empezar a ejecutar.
+
+### Plan de arranque — 15 sept 2026 (a pedido explícito de Mariano, "dejemos de apagar incendios y crezcamos de verdad")
+
+**Hoy (15 sept):**
+1. Recuperar y revisar el contenido ya producido por Exxo y nunca publicado (carpeta de Drive
+   `.../folders/1bEt1GBV6iW460GEBCwwBz8qywIJaRM94`, sección 8 punto 2 de este documento) — elegir
+   las primeras piezas publicables en Instagram/TikTok esta semana, a costo marginal cero.
+2. Armar el guion/outline de los 2 videos nuevos que pidió Mariano (ver detalle abajo) — ninguno
+   arranca de cero, ambos ya tienen la data de base lista en este sistema.
+3. Mariano cierra el precio exacto del ticket bajo (decisión #6, dentro de 20-30€).
+
+**Mañana (16 sept):**
+1. Mariano confirma el costo real de Skool (decisión #3).
+2. Cerrar la línea entre contenido bajo ticket y motivo de llamada paga (decisión #5) — con los 2
+   guiones del punto 2 de hoy como caso de prueba concreto.
+3. Repartir producción entre Mariano y Micol Navarro, con cadencia fija (decisión #2) — Micol ya
+   está confirmada disponible y sin deuda pendiente (sección 9 más arriba).
+4. Publicar el primer lote (rescatado de Exxo + lo nuevo que esté listo).
+
+**Cadencia continua, una vez arrancado**: 1-2 grabaciones largas por semana ("pilares"), cortadas en
+4-6 piezas cortas por plataforma — mismo sistema "grabar una vez, cortar varias" ya definido en
+`areas/personal/CLAUDE.md` sección 8. Un bloque de tiempo fijo y protegido (no "cuando haya
+tiempo") es la única forma real de sostener esto en paralelo al día a día — a definir con Mariano
+qué franja horaria.
+
+**Los 2 videos nuevos que pidió Mariano hoy, ya con guion base (no genéricos — usan data real ya
+documentada, no contenido tipo "cómo se hace un visado" que ya es gratis en cualquier lado, ver
+riesgo #2 de la "Lectura de director comercial" más arriba):**
+
+1. **"Cambio de residencia: de cuenta ajena a cuenta propia (o al revés) en España"** — basado en el
+   producto real de 2 pasos ya armado (`direcciones/comercial/CLAUDE.md` sección 16): qué significa
+   cada modalidad, quién puede pedir el cambio, y el proceso real que ofrece GOTIR (Paso 1
+   diagnóstico 90€ → Paso 2 gestión completa, 650€ total). CTA hacia la llamada paga o la comunidad,
+   no hacia el pago directo del Paso 1 — ese cierre es de comercial, no de contenido.
+2. **"3 opciones de curso para tu visado de estudios en España"** — basado en el texto de las 3
+   opciones ya confirmado por Mariano el 26 ago (sección 11.2 de este documento): Opción 1
+   (multi-ciudad, 12 meses, 5.650€), Opción 2 — la recomendada (Madrid/Sevilla, 7 meses, 2.900€),
+   Opción 3 (Madrid, 12 meses, Gestión/Marketing o IA). CTA hacia la llamada de 60/120€ para definir
+   cuál conviene al caso puntual — esa es justamente la línea de la decisión #5.
+
+No se avanza con la construcción técnica de Skool en sí hasta que Mariano confirme el costo real
+(decisión #3) — pero la producción de contenido ya no espera a eso.
 
 ### Pivote de marca — de "marketing de GOTIR" a marca personal de Mariano (12 sept 2026)
 

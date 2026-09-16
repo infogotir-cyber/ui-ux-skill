@@ -1716,15 +1716,48 @@ Este listado se actualiza cada vez que se audite el pipeline de pagos — no es 
 
 ---
 
-## 16. Producto nuevo — Modificación a Residencia de Trabajo (31 ago 2026)
+## 16. Producto nuevo — Modificación a Residencia de Trabajo (31 ago 2026, restructurado 16 sept 2026)
 
-Mariano pidió armar un producto nuevo en 2 pasos para clientes que quieren hacer una **modificación
-a residencia de trabajo** (por cuenta ajena o por cuenta propia), pensado como si fuera "un curso" —
-la **renovación de estancia** se deja para armar aparte más adelante, no se mezcla acá por
-instrucción explícita de Mariano. Motivado por 2 casos reales entrantes el mismo día: Sebastián
-Ayala (cliente viejo, cuenta ajena) y Daniel Ribeiro Carvalho (cuenta ajena, 2 personas).
+Mariano pidió armar un producto nuevo para clientes que quieren hacer una **modificación a
+residencia de trabajo** (por cuenta ajena o por cuenta propia) — la **renovación de estancia** se
+deja para armar aparte más adelante, no se mezcla acá por instrucción explícita de Mariano.
+Motivado por 2 casos reales entrantes el mismo día: Sebastián Ayala (cliente viejo, cuenta ajena) y
+Daniel Ribeiro Carvalho (cuenta ajena, 2 personas).
 
-### Estructura del producto
+### Estructura vigente (16 sept 2026) — misma lógica de escalera que Estancia por Estudios, sin curso de escuelas
+
+Mariano corrigió el enfoque original: en vez de una llamada de diagnóstico paga (90€), esto ahora
+se resuelve con el mismo modelo de plataforma de contenido que ya se armó para Estancia por
+Estudios (`direcciones/marketing/CLAUDE.md`, sección 9/"Escalera de valor") — **pero explícitamente
+sin el escalón de 65€/combo 120€**, porque ese escalón existe para revelar qué escuela conviene, y
+acá no hay escuelas que elegir:
+
+| Nivel | Qué es | Precio | Para quién |
+|---|---|---|---|
+| Curso — Modificación a Residencia de Trabajo | **Educativo, no comercial**: enseña de verdad los requisitos — qué papeles pide la empresa (cuenta ajena), qué papeles de la persona (ambos caminos), plan de empresa (cuenta propia) — con **PDF descargable** al final con todos los requisitos bien explicados. Un solo curso, cubre los dos caminos. | **19€** | Gratis para quien ya es cliente de GOTIR (de cualquier servicio anterior) — el resto lo compra. |
+| Llamada personalizada | Ver si al caso puntual le conviene cuenta ajena o cuenta propia. **No existe el equivalente de "revelar escuelas"** — acá no aplica, no es una estancia por estudios. | 60€ | Cualquiera que quiera resolver su caso puntual antes de decidir. |
+| Acompañamiento / presentación completo | Gestión legal completa — presentación del expediente, revisión de documentación, seguimiento hasta que se resuelve. Mismo precio para cuenta ajena y cuenta propia, no se diferencia por camino. | **825€** (cliente nuevo) / **750€** (cliente ya existente de GOTIR) | Todos. |
+
+**Importante, para no confundir este mecanismo con el de Estancia por Estudios**: el precio de
+750€ no se activa por haber comprado el curso o la llamada (a diferencia del descuento de 60€/120€
+hacia el premium en Estancia, sección 15) — se activa por **ser ya cliente de GOTIR** de cualquier
+otro servicio (ej. alguien que pagó Estancia por Estudios y ahora quiere modificar a residencia de
+trabajo). Es un precio de fidelización por relación con GOTIR, no un descuento por reciprocidad de
+haber pagado un escalón anterior. **No confirmado todavía**: si además el curso (19€) o la llamada
+(60€) se descuentan del total de 825€/750€ para quien no es cliente — no asumir que sí, preguntar
+a Mariano si hace falta precisarlo antes de vender.
+
+**Contenido del curso — pendiente de armar con Mariano**: la estructura/módulos del curso viven en
+`direcciones/marketing/recursos/contenido-cursos-pagos-15sept2026.md` (a agregar) — los requisitos
+específicos (qué papeles exactos pide la empresa, qué papeles exactos de la persona) **no se
+inventan**, hay que pedírselos a Mariano, mismo criterio que el resto del contenido pago ya armado
+(Curso 1 de Estancia por Estudios usa el mismo principio: "no inventar ejemplos, pedirle a Mariano
+que los dicte, él los tiene de memoria").
+
+### Estructura anterior (31 ago – 15 sept 2026) — SUPERADA, queda como registro histórico
+
+No usar de acá en adelante — se deja documentada solo para no perder el rastro de cómo llegamos a
+la estructura de arriba:
 
 **Paso 1 — Diagnóstico y Plan de Acción (90€)**
 - Diagnóstico del caso puntual y los requisitos exactos a cumplir.
@@ -1748,7 +1781,7 @@ Ayala (cliente viejo, cuenta ajena) y Daniel Ribeiro Carvalho (cuenta ajena, 2 p
 - Ancla de precio limpia: 650€ total, no 740€ — reduce la sensación de "pagar dos veces".
 - Cierre asuntivo: "¿Avanzamos con el Paso 1?", no "¿te interesaría?".
 
-### Plantilla base (en "tú", español latino neutro)
+### Plantilla base — de la estructura anterior, superada, no usar (queda como registro)
 
 > ¡Hola [Nombre]! 👋
 >

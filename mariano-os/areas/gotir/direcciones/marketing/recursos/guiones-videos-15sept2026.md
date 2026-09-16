@@ -7,23 +7,21 @@
 > usado en cada guion — mismo criterio de fondo que la plantilla del producto de 2 pasos ya aprobada
 > (`direcciones/comercial/CLAUDE.md` sección 16).
 
-> **Reestructurado 16 sept 2026** — Mariano pidió partir el video combinado original ("cuenta ajena
-> a cuenta propia o al revés") en una serie más granular, priorizada por urgencia real de casos
-> entrando hoy (ver `comercial/CLAUDE.md` sección 16, casos de Sebastián Ayala y Daniel Ribeiro
-> Carvalho, ambos cuenta ajena). Orden de grabación:
-> 1. **Cambio a cuenta ajena** (hoy, el más urgente — guion completo abajo).
-> 2. **Cambio a cuenta propia** (próximo — mismo formato que el de arriba, still sin guionar).
-> 3. **General/overview**: toca por encima las 3 rutas — cambio a cuenta ajena, cambio a cuenta
->    propia, y renovación (aclarando que la renovación aplica tanto a cuenta propia como a cuenta
->    ajena) — sin profundizar en ninguna, solo mapa general para quien todavía no sabe cuál es su
->    caso.
-> 4. **Más adelante**: videos de profundización dedicados a lo que el video 3 dejó superficial —
->    sobre todo renovación (cuenta ajena y cuenta propia), ya que cambio a ajena/propia quedan
->    profundizados en los videos 1 y 2.
+> **⚠️ CORREGIDO 16 sept 2026, mismo día — los Videos 1 y 2 de abajo quedan SUPERADOS.** Mariano
+> corrigió el enfoque de fondo: *"Me estás dando videos comerciales. Y yo no estoy haciendo videos
+> comerciales. Yo estoy haciendo videos explicativos."* Los guiones cortos de gancho/CTA de abajo
+> (Video 1 "cuenta ajena", Video 2 "cuenta propia") NO son lo que se va a grabar — se dejan tal
+> cual quedaron, sin borrar, solo como registro de la primera vuelta. **El contenido real para
+> "Modificación a Residencia de Trabajo" pasa a ser un curso pago educativo y profundo** (enseña de
+> verdad los requisitos — papeles de la empresa para cuenta ajena, papeles de la persona en ambos
+> caminos, plan de empresa para cuenta propia — con PDF descargable al final), no un Reel corto de
+> venta. Estructura completa, precios y el modelo de acceso (gratis para clientes de GOTIR, pago
+> para el resto) en `comercial/CLAUDE.md` sección 16, y el esqueleto de contenido del curso en
+> `contenido-cursos-pagos-15sept2026.md`, mismo directorio.
 
 ---
 
-## Video 1 (HOY) — "Cambio de residencia: a cuenta ajena"
+## ⚠️ SUPERADO — Video 1 — "Cambio de residencia: a cuenta ajena" (registro, no grabar así)
 
 **Gancho (0-5 seg, a cámara, directo):**
 > ¿Ya tenés una oferta de trabajo o un contrato en España, pero tu residencia todavía no lo
@@ -62,7 +60,7 @@
 
 ---
 
-## Video 2 (próximo) — "Cambio de residencia: a cuenta propia"
+## ⚠️ SUPERADO — Video 2 — "Cambio de residencia: a cuenta propia" (registro, no grabar así)
 
 **Gancho (0-5 seg, a cámara, directo):**
 > ¿Querés dejar de depender de un empleador y empezar a trabajar por tu cuenta en España? Te cuento
@@ -97,13 +95,14 @@
 
 ---
 
-## Video 3 (más adelante) — Overview general de las 3 rutas *(pendiente de guionar)*
+## Video 3 (a re-evaluar) — Overview general de las 3 rutas *(pendiente de guionar)*
 
-Toca por encima, sin profundizar, las 3 rutas: cambio a cuenta ajena, cambio a cuenta propia, y
-renovación (aclarando que la renovación existe tanto para cuenta propia como para cuenta ajena) —
-pensado para quien todavía no sabe cuál es su caso y necesita el mapa completo antes de mirar el
-video específico que le toca. CTA hacia los videos 1/2 según corresponda, o hacia la llamada si el
-caso no es claro.
+Sigue teniendo sentido como pieza corta y gratuita (nivel 0 de la escalera, sección 16 de
+`comercial/CLAUDE.md`) que toca por encima las rutas — cambio a cuenta ajena, cambio a cuenta
+propia, y renovación — y lleva al curso pago (19€) o a la llamada (60€). A diferencia de los Videos
+1/2 de arriba, esto SÍ sigue siendo contenido corto tipo Reel (gancho, sin profundizar) porque su
+función es distinta: es la puerta de entrada gratuita, no el contenido que enseña de verdad. Guionar
+cuando el curso pago (contenido real) ya esté armado, para que el CTA apunte a algo que ya existe.
 
 ---
 

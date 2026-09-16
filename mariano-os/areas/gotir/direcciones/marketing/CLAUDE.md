@@ -1038,12 +1038,10 @@ data real ya documentada, no contenido tipo "cómo se hace un visado" que ya es 
 lado, ver riesgo #2 de la "Lectura de director comercial" más arriba)**: guion completo en
 `direcciones/marketing/recursos/guiones-videos-15sept2026.md`.
 
-1. **"Cambio de residencia: de cuenta ajena a cuenta propia (o al revés) en España"** — basado en el
-   producto real de 2 pasos ya armado (`direcciones/comercial/CLAUDE.md` sección 16): qué significa
-   cada modalidad, quién puede pedir el cambio, y el proceso real que ofrece GOTIR (Paso 1
-   diagnóstico 90€ → Paso 2 gestión completa, 650€ total). CTA hacia la llamada paga o la comunidad,
-   no hacia el pago directo del Paso 1 — ese cierre es de comercial, no de contenido. Precios y el
-   detalle de "Paso 1/Paso 2" quedan fuera del video, solo se mencionan en la llamada.
+1. **"Cambio de residencia: de cuenta ajena a cuenta propia (o al revés) en España"** — ⚠️ **superado
+   16 sept 2026**: Mariano corrigió que esto no va como Reel corto de gancho, sino como curso pago
+   profundo y educativo (Curso 3 en `recursos/contenido-cursos-pagos-15sept2026.md`), con acceso
+   gratuito para clientes de GOTIR — ver la estructura vigente en `comercial/CLAUDE.md` sección 16.
 2. **"3 opciones de curso para tu visado de estudios en España"** — basado en el texto de las 3
    opciones ya confirmado por Mariano el 26 ago (sección 11.2 de este documento): Opción 1
    (multi-ciudad, 12 meses, 5.650€), Opción 2 — la recomendada (Madrid/Sevilla, 7 meses, 2.900€),

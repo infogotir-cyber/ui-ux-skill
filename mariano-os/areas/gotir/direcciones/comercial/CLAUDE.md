@@ -1669,8 +1669,9 @@ nombra**, esto es exclusivo del curso de 65€:
 - **ALBALI** — contacto: **Raquel**.
 - **ISIE** (documentada antes como ISDE/ISIE, sección 5 de `marketing/CLAUDE.md`) — contacto:
   **Álvaro**.
-- **MAUDE** — contacto: **Javier**. (Escuela nueva, no estaba documentada en este sistema antes del
-  15 sept 2026 — sumada recién.)
+- **MAUDE** — contacto: **Javier**. Madrid y Sevilla, modalidad semipresencial (presencial viernes
+  y sábado, resto online) — confirmado por Mariano el 16 sept 2026. Falta todavía la formación
+  concreta que ofrece y el precio.
 - **CEI** — **mecanismo distinto a las otras 3, confirmado por Mariano 15 sept 2026**: no hay un
   contacto directo/persona a quien avisar. El cliente entra directo a CEI y usa el **código de
   embajador de GOTIR** para obtener un descuento — la automatización acá no es "avisar a alguien",

@@ -53,9 +53,12 @@ Nadie da esto gratis. Puede comprarse solo o junto con la llamada (combo 120€)
      Vigo, Tenerife, Pontevedra), Electricidad/Sanitario/Hostelería, 12 meses.
    - **ISIE** — Madrid/Sevilla, Gestión Empresarial/Comercio Exterior/Hostelería, 7 meses (la más
      corta).
-   - **MAUDE** — a completar con el detalle real que tenga Mariano (todavía no está documentado en
-     este sistema más allá del nombre — pedirle el contenido real antes de grabar este bloque).
-   - **CEI** — a completar con el detalle real (mismo caso que MAUDE).
+   - **MAUDE** — Madrid y Sevilla, modalidad semipresencial (presencial viernes y sábado, el resto
+     online) — mismo patrón de cursada que ISIE. *(Confirmado por Mariano el 16 sept 2026 — falta
+     todavía la formación concreta que ofrece y el precio, no asumir que es igual a ISIE solo
+     porque comparte ciudades y modalidad.)*
+   - **CEI** — a completar con el detalle real (código de embajador todavía pendiente, Mariano lo
+     va a dar más adelante — "luego lo vemos", 16 sept 2026).
 3. **Cómo elegir cuál te conviene (2-3 min)**: tiempo disponible, ciudad donde vas a estar, interés
    real de formación — no vender "la mejor", ayudar a elegir la correcta para cada perfil.
 4. **Cómo te conectamos con la escuela (1-2 min)** — explicar el mecanismo real:
@@ -67,6 +70,7 @@ Nadie da esto gratis. Puede comprarse solo o junto con la llamada (combo 120€)
 5. **Cierre + CTA (1 min)**: "si querés armar tu caso completo con acompañamiento, la llamada
    personalizada existe aparte (60€) — o si la comprás junto con este curso, el combo sale 120€."
 
-**Pendiente antes de grabar este curso completo**: el detalle real de MAUDE y CEI (Mariano solo dio
-el nombre hasta ahora, falta ciudad/duración/modalidad como las otras 2) y el código de embajador
-de CEI.
+**Pendiente antes de grabar este curso completo**: la formación concreta y el precio de MAUDE
+(ciudad/modalidad ya confirmados: Madrid y Sevilla, semipresencial viernes y sábado — 16 sept 2026)
+y el detalle completo de CEI (formación/ciudad/duración/modalidad + el código de embajador, todavía
+sin dar — Mariano dijo "luego lo vemos").

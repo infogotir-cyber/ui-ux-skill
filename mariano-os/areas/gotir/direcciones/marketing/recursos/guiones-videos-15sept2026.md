@@ -62,14 +62,38 @@
 
 ---
 
-## Video 2 (próximo) — "Cambio de residencia: a cuenta propia" *(pendiente de guionar)*
+## Video 2 (próximo) — "Cambio de residencia: a cuenta propia"
 
-Mismo formato y profundidad que el Video 1, pero enfocado exclusivamente en el camino de cuenta
-propia: quién puede pedirlo (alguien con otra residencia que quiere pasar a trabajar por su cuenta),
-qué hace falta (plan de empresa a medida + coordinación con la parte fiscal, distinto del contrato
-laboral del Video 1), mismo proceso en 2 pasos de GOTIR. Guionar cuando Mariano esté por grabarlo —
-no adelantarlo sin que lo pida, para no sobreproducir contenido que todavía puede ajustarse con lo
-que salga de grabar el Video 1.
+**Gancho (0-5 seg, a cámara, directo):**
+> ¿Querés dejar de depender de un empleador y empezar a trabajar por tu cuenta en España? Te cuento
+> cómo pasar a una residencia de trabajo por cuenta propia.
+
+**Desarrollo (5-70 seg):**
+> Esto aplica si hoy tenés otro tipo de residencia — por ejemplo, por estudios, o incluso por cuenta
+> ajena — y querés pasar a trabajar por tu cuenta: abrir tu propio negocio, facturar como autónomo.
+> "Cuenta propia" significa justamente eso: no dependés de un contrato con una empresa, el proyecto
+> es tuyo.
+>
+> Acá lo que más traba a la gente es armar bien el plan de empresa — migración no te aprueba
+> cualquier idea suelta, necesita ver que el proyecto es real y viable, con la parte fiscal bien
+> coordinada desde el principio.
+>
+> En GOTIR lo resolvemos en 2 pasos. Primero un diagnóstico de tu caso puntual: te damos un modelo
+> de plan de empresa armado a tu medida, y con qué gestoría coordinar la parte fiscal — todo te
+> queda por escrito, en un PDF. Recién después, si decidís avanzar, la gestión completa: presentación
+> del expediente con nuestros abogados y seguimiento hasta que se resuelve.
+
+**CTA (70-80 seg):**
+> Si ya tenés una idea de negocio o querés saber si tu caso aplica, escribime o dejame un comentario
+> y lo vemos en una llamada — cada proyecto es distinto, prefiero mirarlo en vivo antes de asumir
+> nada.
+
+**Notas de producción:**
+- No mencionar precios (90€/650€) en el video — mismo criterio que el Video 1.
+- Mismo largo aproximado que el Video 1 (~70-80 seg) — es su contraparte directa, conviene grabarlos
+  juntos para mantener el mismo ritmo y tono entre los dos.
+- Si hay tiempo de sobra, se puede sumar 5-10 seg citando un caso real anonimizado — sin nombre real
+  salvo autorización explícita del cliente.
 
 ---
 

@@ -169,10 +169,24 @@ Paola/Mariano, no de este sistema, salvo compartir el documento):
 9. Pedir al encargado administrativo de Ruge que traiga bandas de New Life desde Costa Rica.
 10. Agregar a Paola al grupo de WhatsApp de pilares de New Life de todo Impact Global.
 
-- Estado: **capacitación cerrada, checklist de 10 acciones abierto** — no asumir ninguna hecha hasta
+- **Actualizado 17 sept 2026**: Mariano ya le pasó "casi todo" a Paola. Pidió explícitamente seguir
+  corrigiendo el documento de "Procesos New Life Valencia" con este sistema antes de mandárselo ya
+  bien preparado — no urgente para hoy ("luego"), pero sigue abierto como tarea a retomar.
+- Estado: **capacitación cerrada, traspaso casi completo, checklist de 10 acciones sin confirmar
+  ítem por ítem, y el documento final para Paola sigue en revisión** — no asumir ninguna hecha hasta
   que Mariano lo confirme.
-- Recordado: 9 veces (7 sept 2026, creación; 7 sept, chequeo diario 18:00; 8 sept, capacitación
-  realizada y documento corregido/enviado; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00).
+- Recordado: 10 veces (7 sept 2026, creación; 7 sept, chequeo diario 18:00; 8 sept, capacitación
+  realizada y documento corregido/enviado; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, Mariano pide seguir corrigiendo el documento antes de mandarlo).
+
+### Ministerio — clase de recupero New Life: Jorleni, Marian y Sabrina (17 sept 2026)
+
+Hay 2 clases de New Life atrasadas. Sabrina Navarro (ahora discípula de Mariano, FM4.5) tiene que
+recuperar esa clase con él — de paso, Mariano quiere hacer el recupero junto con **Jorleni** y
+**Marian** (nombres nuevos, sin más contexto — probablemente otras alumnas de New Life, no
+confirmar el grupo/rol sin que Mariano lo aclare) para no repetir la clase 3 veces. Falta encontrar
+un horario que les sirva a los 3/4 al mismo tiempo.
+- Estado: **abierto — buscando horario común**.
+- Recordado: 1 vez (17 sept 2026, creación).
 
 ### Personal — proyecto de serie/dibujos animados con enseñanzas cristocéntricas (4 sept 2026)
 
@@ -821,13 +835,25 @@ detalle de a quién se le preguntó cada uno en `areas/ministerio/CLAUDE.md`.
 - **Actualizado 10 sept 2026**: los 4 ítems que quedaban sin resolver (cañas, pastillas, fuegos
   artificiales, alargador cable) **ya los está gestionando Julio César Navia** — reasignados
   formalmente, ya no huérfanos. Actualizado en ClickUp.
-- Estado: **bloqueado (esperando a Juliana)** para el presupuesto general — los 4 ítems que
-  quedaban sin dueño: **en curso con Julio César Navia**.
-- Recordado: 14 veces (3 sept 2026, creación; 3 sept, chequeo diario 18:00; 4 sept, chequeo diario
+- **Actualizado 17 sept 2026 — presupuesto APROBADO**: Mariano terminó el presupuesto final, lo
+  mandó a Administración, y **los pastores ya lo aprobaron**. Deja de estar bloqueado esperando
+  aprobación — pasa a la fase de ejecución (paso 2 del proceso de 5 pasos que definió Mariano, ver
+  `areas/ministerio/CLAUDE.md`, sección Ruge): falta confirmar si Administración hace las compras
+  ella misma o le da el dinero al equipo de logística para que compre directo.
+  **Cambio de equipo el mismo día, importante para reasignar lo pendiente**: **David Luzuriaga ya
+  no sirve en Ruge en absoluto** (antes solo había salido de logística, ahora sale del todo).
+  **Julio César Navia tampoco sigue en logística** — pasa al área de guías (cabañas/liguillas,
+  nombre exacto sin confirmar). **Adrián Caro se suma al equipo de logística** en su lugar. Todo lo
+  que venía haciendo Julio César (cañas, pastillas, fuegos artificiales, alargador — los 4 de
+  arriba) hay que redistribuirlo entre **Marco Guanuchi y Adrián Caro** — todavía sin definir quién
+  se queda con qué.
+- Estado: **en curso — presupuesto aprobado, arrancando fase de compras; pendiente redistribuir
+  entre Marco Guanuchi y Adrián Caro lo que era de Julio César Navia (ya no en logística)**.
+- Recordado: 15 veces (3 sept 2026, creación; 3 sept, chequeo diario 18:00; 4 sept, chequeo diario
   18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00;
   7 sept, confirmado por Mariano — presupuestos enviados, sigue esperando confirmación; 8 sept,
   chequeo diario 18:00; 9 sept, Mariano confirma radios/teléfono gestionados y bus en curso; 10
-  sept, Mariano confirma reasignación de los 4 ítems restantes a Julio César Navia, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00).
+  sept, Mariano confirma reasignación de los 4 ítems restantes a Julio César Navia, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, presupuesto aprobado + cambio de equipo).
 
 ### Ministerio — seguimiento real a los nuevos del partido de fútbol (10 sept 2026)
 

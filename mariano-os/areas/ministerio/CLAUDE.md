@@ -754,12 +754,36 @@ Ver `areas/personal/CLAUDE.md` para el contexto completo. Contiene las listas "S
 - Lista "Preparación por Día" — ID `901220315548`.
 - Equipo de logística: Marco Guanuchi, David Luzuriaga y **Julio César** (se sumó al equipo el 17
   agosto 2026 — antes eran solo Marco y David).
-- **Actualizado 7 sept 2026 — David Luzuriaga sale del equipo**: Mariano avisó que David tuvo un
-  problema personal (sin más detalle, tema sensible — no especular ni pedir precisiones) por el
-  cual no le permitieron servir en Ruge. Queda el equipo reducido a Marco Guanuchi y Julio César
-  Navia para lo que sigue pendiente de logística. Mariano mencionó que hay otras personas de otras
-  comisiones que tampoco van a servir, pero aclaró que no es competencia de logística — no se
-  registra el detalle porque no lo dio y no aplica a esta dirección.
+- **Actualizado 7 sept 2026 — David Luzuriaga sale del equipo de logística**: Mariano avisó que
+  David tuvo un problema personal (sin más detalle, tema sensible — no especular ni pedir
+  precisiones) por el cual no le permitieron servir en Ruge. Queda el equipo reducido a Marco
+  Guanuchi y Julio César Navia para lo que sigue pendiente de logística. Mariano mencionó que hay
+  otras personas de otras comisiones que tampoco van a servir, pero aclaró que no es competencia de
+  logística — no se registra el detalle porque no lo dio y no aplica a esta dirección.
+- **Actualizado 17 sept 2026 — segundo cambio de equipo, más profundo**: **David Luzuriaga ya no
+  sirve en Ruge en absoluto** (antes solo había salido de logística, ahora sale del todo). **Julio
+  César Navia tampoco sigue en logística** — pasa al área de guías (Mariano dijo "liguillas de
+  cabañas", sin estar seguro del nombre exacto — no asumir, confirmar si hace falta precisión).
+  **Adrián Caro se suma al equipo de logística** en su lugar. Equipo de logística vigente: **Marco
+  Guanuchi y Adrián Caro**. Todo lo que venía gestionando Julio César (cañas para antorchas,
+  pastillas para encender fogata, fuegos artificiales, alargador de cable — ver
+  `pendientes-activos.md`) hay que redistribuirlo entre los dos — todavía sin definir quién se queda
+  con qué.
+
+#### Proceso operativo de Ruge — los 5 pasos (definidos por Mariano, 17 sept 2026)
+
+Con el presupuesto ya aprobado por los pastores (ver sección de presupuesto más abajo), Mariano
+delineó el proceso completo que falta ejecutar, de acá al reto (1-4 oct):
+
+1. **Presupuesto aprobado** (ya hecho, 17 sept 2026).
+2. **Compras/alquileres/gestiones** — ejecutar lo aprobado. Falta confirmar si Administración hace
+   las compras directamente o le da el dinero al equipo de logística para que compre.
+3. **Recepción y almacenamiento** — a medida que van llegando las cosas, guardarlas en el almacén
+   de la iglesia y llevar registro de qué se tiene y qué no.
+4. **Carga y traslado** — cargar todo en los camiones y llevarlo al lugar donde se hace el reto.
+5. **Retorno y reconteo** — después del evento, volver a cargar todo en los camiones, traerlo de
+   vuelta al almacén, y confirmar bien qué se está guardando y qué se da por almacenado (cierre del
+   ciclo de inventario).
 - Estructura del evento: jueves salida en bus desde la iglesia con senderistas y equipo, primera
   caminata al primer punto, logística de suministro (agua, altavoz, cuerdas) durante los 4 días.
   Ruge es un retiro de hombres en una montaña en Valencia, con logística de insumos, transporte
@@ -1399,7 +1423,13 @@ sept y está esperando su confirmación para empezar a comprar — **el paso que
 Mariano, depende de la aprobación de Juliana/Administración**. Marcado como urgente para él (necesita
 arrancar las compras), pero bloqueado esperando respuesta externa, no una acción pendiente suya.
 Único pendiente de fondo sin resolver de versiones anteriores: quién gestiona "Figuras para premios"
-(Marco o Julio) — Mariano todavía no lo confirmó.
+(Marco o Julio, y ahora Julio ya no está en logística — ver cambio de equipo más arriba, este ítem
+entra en la redistribución pendiente entre Marco Guanuchi y Adrián Caro).
+
+**RESUELTO 17 sept 2026 — presupuesto aprobado**: los pastores aprobaron el presupuesto. Deja de
+estar bloqueado esperando aprobación — pasa a ejecución (paso 2 del proceso de 5 pasos, ver sección
+"Proceso operativo de Ruge" más arriba). Falta confirmar si Administración compra directo o le da
+el dinero al equipo de logística.
 
 **Regla nueva y explícita de Mariano sobre cómo trackear lo que el excel de Marco Jurado no
 cubre**: si algo no tiene columna en su excel (el caso que dio como ejemplo: fecha límite), **no se
@@ -1764,6 +1794,12 @@ semana anterior, así que decidió no hacer el viaje de despedida del 18 sept �
 boda de Adrián Caro y Jenny (mañana, 18 sept). Ver `pendientes-activos.md` para el cierre del ítem.
 Reemplaza el registro anterior (27 ago 2026: no viajó el 29 de agosto por motivos económicos, había
 quedado reagendado tentativamente para el 18 sept).
+
+**Calendario real de cierre, confirmado 17 sept 2026 — la enseñanza sigue online, no en persona**:
+Mariano da la clase del grupo de Madrid **online**, no viajando — mañana viernes 18 sept a las
+19:30 es su **penúltimo** viernes dando esa enseñanza, el **próximo viernes (25 sept) es el
+último** (coincide con el fin de septiembre). **En octubre, Mariano ya no participa del grupo de
+Madrid** — a partir de ahí queda 100% en manos de Jenny y Adrián Caro.
 
 ## 5. Discípulos actuales por grupo (lista rápida de referencia)
 - FM4.1 — Adrián Caro e Ingrid Guaño

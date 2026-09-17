@@ -836,6 +836,15 @@ son acciones de UI de GHL, este sistema no tiene tool para crearlas por API)**:
    (conviviendo con el portal operativo de Estancia/Visado), o conviene separarlos para no mezclar
    "cliente que ya pagó 825€ y sube documentación real" con "comprador de un curso de 19€ que solo
    mira contenido"? No asumir la respuesta — falta que Mariano lo defina.
+   **DECIDIDO 17 sept 2026**: separados, no mezclar clientes reales (los que suben documentación)
+   con compradores de curso. Consecuencia práctica: **no usamos el producto "Suscripciones" /
+   ClientClub para los cursos de bajo ticket** — seguimos con el circuito ya planeado en los puntos
+   2-4 de este mismo checklist (link de pago público en GHL → Mariano revisa el pago → entrega
+   manual del video/PDF por Drive o Vimeo restringido), que por diseño nunca toca el portal
+   operativo de Estancia/Visado ni sus 59 usuarios reales. Si más adelante el volumen de cursos
+   vendidos justifica automatizar la entrega, ahí sí se evalúa si el plan de GHL permite un segundo
+   producto de Suscripciones separado del actual (no confirmado si el plan lo permite) — no es
+   necesario resolverlo ahora, el circuito manual ya alcanza para arrancar a vender.
 2. Crear **2 links de pago públicos y reutilizables** (no facturas 1 a 1 como las que se usan hoy
    con leads conocidos, ej. Maryi Castañeda) — "Curso: Proceso general" 19€ y "Curso: Opciones
    reales de escuela" 65€, en GHL → Pagos/Productos. Tienen que ser un link compartible en bio de

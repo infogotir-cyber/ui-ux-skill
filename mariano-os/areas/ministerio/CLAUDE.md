@@ -257,6 +257,40 @@ recrea/modifica, tiene que usarse el archivo real tal cual — se sacó la recre
 pendiente que Mariano pase el archivo real por otro medio (link, Drive, email) para poder
 incorporarlo tal cual al documento.
 
+##### Retro — actividad evangelística del 13 sept (cumpleaños de Rocío) — mismo problema que el fútbol, ya es patrón repetido
+
+Tercera acción evangelística documentada rumbo al Encuentro (después de la playa del 23 ago y el
+fútbol de la semana del 7 sept). Coincidió con el **cumpleaños de Rocío Jury** (FM4.3). **8 personas
+nuevas** asistieron.
+
+**Lo lindo del día**: todos los líderes estaban haciendo música para Dios — la gente nueva se
+frenaba a mirar, quería ser parte. Hubo un momento real de atracción genuina.
+
+**El problema — el mismo que ya se había detectado en el fútbol, ahora confirmado como patrón, no
+un hecho aislado**: pese a ese momento, **ninguno de los líderes se acercó a la gente nueva** —
+vergüenza, miedo al rechazo, miedo a que los vean como "religiosos" o "una secta". Mariano lo
+corrigió en el momento y mejoraron, pero identifica esto como su complicación de fondo ahora mismo:
+que los líderes se liberen de esas ataduras/bloqueos mentales, porque sin eso ninguna actividad
+linda se traduce en resultado real (nadie invita → nadie consolida → no hay fruto, aunque el evento
+en sí haya salido bien).
+
+**Nota personal de Mariano (17 sept 2026)**: describe esta semana como de mucho crecimiento propio
+— dice haber entendido cosas que antes no entendía y haber sido él mismo liberado de estructuras y
+limitaciones, lo que le permitió enseñar esto con más claridad. Tratar con el mismo cuidado que el
+resto del contenido personal/espiritual de este sistema — no over-explicar, queda anotado tal cual
+lo dijo.
+
+**Relevancia para el 26 sept**: esto es exactamente lo que está en juego en cada actividad que
+quede antes del Encuentro — ver el próximo bloque (20 sept, "el último fin de semana").
+
+##### Domingo 20 sept — última actividad antes del Encuentro (26 sept)
+
+Último fin de semana con actividad propia de FM4 antes del Encuentro — última oportunidad real de
+consolidar gente y visionarla para que vaya. Mariano quiere hacer "algo especial" por ese motivo,
+pero **al 17 sept 2026 los líderes todavía no le mandaron qué actividad van a hacer** — sin definir
+todavía qué es, quién la organiza, ni el lugar/hora. Agregado a `pendientes-activos.md` como
+pendiente real a hacer seguimiento (la actividad tiene que salir a tiempo para poder promocionarla).
+
 #### Cambio de pilar de New Life — 7 sept 2026
 
 Mariano contó, de entrada, antes de pasar a los pendientes de GOTIR, que **ya no es pilar/
@@ -1814,11 +1848,13 @@ una fecha puntual):
 
 | Discípulo | Última reunión 1:1 | Próxima esperada |
 |---|---|---|
-| Diego Villavicencio (FM4.2) | Semana pasada (informado 21 ago 2026) | ~3 semanas desde esa reunión |
-| Rocío Jury (FM4.3) | Semana pasada (informado 21 ago 2026) | ~3 semanas desde esa reunión |
-| Ingrid Guaño (FM4.1) | Semana pasada (informado 21 ago 2026) | ~3 semanas desde esa reunión |
-| Adrián Caro, Rebeca Lema, Jacobo Marulanda | Sin registro todavía | — |
-| Lisandro Tapia, Paulina Soto, David Valera, Sabrina Navarro | Sin registro todavía (aplica una vez activados, 5 sept) | — |
+| Diego Villavicencio (FM4.2) | 16 sept 2026, reunión presencial (informado 17 sept) | ~3 semanas desde esa reunión |
+| Rocío Jury (FM4.3) | Reunión presencial reciente, junto con Jacobo (fecha exacta no precisada, informado 17 sept) | ~3 semanas desde esa reunión |
+| Jacobo Marulanda (FM4.3) | Reunión presencial reciente, junto con Rocío (fecha exacta no precisada, informado 17 sept) | ~3 semanas desde esa reunión |
+| Ingrid Guaño (FM4.1) | 14 sept 2026 ("el lunes"), llamada | ~3 semanas desde esa reunión |
+| Lisandro Tapia y Paulina Soto (FM4.4) | 16 sept 2026, reunión con el grupo 4.4 junto (informado 17 sept) | ~3 semanas desde esa reunión |
+| David Valera y Sabrina Navarro (FM4.5) | 16 sept 2026, reunión presencial (informado 17 sept) | ~3 semanas desde esa reunión |
+| Adrián Caro, Rebeca Lema | Sin registro todavía — ⚠️ Mariano dijo "ya he hablado con todos ellos" el 17 sept, pero no los nombró explícitamente entre los que vio esta semana; no se asume cubierto, confirmar si hace falta precisión | — |
 
 Como "la semana pasada" es una fecha imprecisa (no se sabe el día exacto dentro de esa semana), la
 ventana de aviso de las 3 semanas también va a ser aproximada — avisar quiere decir recordarle a

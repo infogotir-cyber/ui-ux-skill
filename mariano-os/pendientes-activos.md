@@ -837,9 +837,27 @@ detectado: se quedaron con los números pero no hubo seguimiento real, ninguno d
 altar de adoración del martes. Instrucción dada al grupo: cada líder sigue su propio listado de a
 quién invitó, para llevarlos a la actividad del 13 sept, luego a la del 20 sept, y al Encuentro del
 26 sept — sin soltar a nadie aunque no haya venido esta vez ("todo lo que se repite se aviva").
-- Estado: **abierto — a confirmar si el seguimiento real se sostiene esta semana** (era justamente
-  lo que falló la vez anterior).
-- Recordado: 6 veces (10 sept 2026, creación, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00).
+- **Actualizado 17 sept 2026**: se hizo la actividad del 13 sept (cumpleaños de Rocío Jury, 8
+  personas nuevas) — **mismo problema, ahora confirmado como patrón repetido, no un hecho
+  aislado**: los líderes no se acercaron a la gente nueva por vergüenza/miedo al rechazo, pese a un
+  momento genuino de atracción real (todos adorando, la gente nueva frenándose a mirar). Mariano lo
+  corrigió en el momento. Detalle completo en `areas/ministerio/CLAUDE.md`, nueva sección "Retro —
+  actividad evangelística del 13 sept". Su diagnóstico ahora es de fondo: mientras los líderes no se
+  liberen de esos bloqueos mentales, ninguna actividad linda se va a traducir en fruto real.
+- Estado: **abierto — patrón repetido (fútbol → 13 sept) sin resolver de raíz, más allá de la
+  corrección puntual en el momento**.
+- Recordado: 7 veces (10 sept 2026, creación, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, confirmado como patrón repetido).
+
+### Ministerio — última actividad antes del Encuentro, domingo 20 sept (17 sept 2026)
+
+Último fin de semana con actividad propia de FM4 antes del Encuentro (26 sept) — última oportunidad
+real de consolidar y visionar gente para que vaya. Mariano quiere hacer "algo especial" por ser la
+última chance, pero **los líderes todavía no le mandaron qué actividad van a hacer** — sin definir
+qué es, quién la organiza, ni lugar/hora. Detalle en `areas/ministerio/CLAUDE.md`, sección "Domingo
+20 sept — última actividad antes del Encuentro".
+- Estado: **abierto — esperando que los líderes definan la actividad, corre contra el reloj (faltan
+  3 días)**.
+- Recordado: 1 vez (17 sept 2026, creación).
 
 ### Ministerio (Ruge y otros)
 

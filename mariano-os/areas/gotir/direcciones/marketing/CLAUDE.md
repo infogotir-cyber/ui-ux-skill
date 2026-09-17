@@ -811,6 +811,17 @@ son acciones de UI de GHL, este sistema no tiene tool para crearlas por API)**:
    para gestionarlo, igual que se hizo con el resto de GHL. **Verificación pendiente de que Mariano
    la haga en el panel** — este sistema no puede entrar a la interfaz de GHL (no es un tema de API,
    es una pantalla de configuración de plan/producto que se revisa a mano).
+   **CONFIRMADO 17 sept 2026 (Mariano mandó captura de pantalla)**: la función está habilitada y
+   activa. En el menú lateral aparece como **"Suscripciones"** (no "Sites → Memberships" como se
+   había anticipado — el nombre real en este plan es otro), con 4 pestañas: **Portal del cliente**,
+   **Cursos**, **Comunidades**, **Certificado**. El portal del cliente ya tiene URL propia
+   (`https://uttdf7grgmbznkerppnm.app.clientclub.net/`, dominio ClientClub — el motor detrás de
+   "Suscripciones" de GHL) y ya muestra **59 usuarios y 1 invitado**. Origen de esos usuarios sin
+   confirmar todavía — no asumir que ya hay cursos cargados solo porque hay usuarios; puede venir de
+   una configuración anterior (ej. de cuando Sabrina llevaba lo técnico). **Próximo paso pendiente
+   de que Mariano lo haga**: entrar a la pestaña "Cursos" y confirmar si ya hay algo creado ahí o
+   está vacía — con eso se decide si arrancamos un curso nuevo de cero o hay estructura previa que
+   revisar primero.
 2. Crear **2 links de pago públicos y reutilizables** (no facturas 1 a 1 como las que se usan hoy
    con leads conocidos, ej. Maryi Castañeda) — "Curso: Proceso general" 19€ y "Curso: Opciones
    reales de escuela" 65€, en GHL → Pagos/Productos. Tienen que ser un link compartible en bio de

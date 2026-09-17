@@ -797,6 +797,20 @@ más adelante, cuando (1) el costo cierre y (2) ya haya tracción real para semb
 son acciones de UI de GHL, este sistema no tiene tool para crearlas por API)**:
 1. Confirmar si el plan de GHL de GOTIR tiene **Sites → Memberships** habilitado — serviría para
    entregar el contenido protegido automáticamente al pagar, sin herramienta extra.
+   **Cómo encontrarlo — respondido 17 sept 2026, a pedido directo de Mariano ("dime cómo hago para
+   encontrar esa información")**: en el panel de GHL (`app.gohighlevel.com`, ubicación GOTIR), menú
+   lateral izquierdo → **Sites** → ahí aparece **"Memberships"** (en versiones más nuevas de GHL
+   aparece como **"Courses"**, es la misma función renombrada). Si el ítem no aparece en el menú, el
+   plan actual no lo tiene incluido y hay que revisar en Configuración → Facturación/Plan qué nivel
+   de plan lo agrega. **Dato ya conocido de este sistema que confirma que la función existe de
+   verdad en GHL** (no es una suposición): el token de la API de GHL de GOTIR (`mariano-os/CLAUDE.md`,
+   lista de scopes) documenta un scope oficial `courses.write` — hoy deliberadamente no habilitado
+   porque no se usaba — que es la confirmación de que GHL tiene un producto nativo de cursos, con
+   API propia. Si más adelante hace falta automatizar la entrega (en vez de la entrega manual del
+   punto 3 más abajo), se puede agregar ese scope al token y este sistema podría construir tools
+   para gestionarlo, igual que se hizo con el resto de GHL. **Verificación pendiente de que Mariano
+   la haga en el panel** — este sistema no puede entrar a la interfaz de GHL (no es un tema de API,
+   es una pantalla de configuración de plan/producto que se revisa a mano).
 2. Crear **2 links de pago públicos y reutilizables** (no facturas 1 a 1 como las que se usan hoy
    con leads conocidos, ej. Maryi Castañeda) — "Curso: Proceso general" 19€ y "Curso: Opciones
    reales de escuela" 65€, en GHL → Pagos/Productos. Tienen que ser un link compartible en bio de

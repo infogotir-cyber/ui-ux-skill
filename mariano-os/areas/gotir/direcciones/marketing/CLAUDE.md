@@ -822,6 +822,20 @@ son acciones de UI de GHL, este sistema no tiene tool para crearlas por API)**:
    de que Mariano lo haga**: entrar a la pestaña "Cursos" y confirmar si ya hay algo creado ahí o
    está vacía — con eso se decide si arrancamos un curso nuevo de cero o hay estructura previa que
    revisar primero.
+   **RESPONDIDO 17 sept 2026 — no está vacía, es otra cosa distinta de lo que se venía asumiendo**:
+   Mariano aclaró que ese "Cursos"/Suscripciones **ya está en uso hoy, pero para el servicio actual
+   de Estancia/Visado** (el acompañamiento de 825€/668€, no los cursos de bajo ticket que se venían
+   diseñando en esta sección) — es el **portal operativo post-venta**: el cliente que ya contrató el
+   servicio recibe acceso, ve el curso/instructivos, descarga PDFs, y **sube su documentación ahí
+   mismo**; después el abogado (Sebastián/María/Gisella) revisa lo subido, lo aprueba o le pide al
+   cliente que corrija algo. Esto es justo el dato que faltaba para la dirección "Operaciones /
+   Atención al cliente" de `areas/gotir/CLAUDE.md` (preguntas abiertas ahí sobre dónde vive el
+   seguimiento de expedientes) — **conectado ahí también**, no solo acá. **Pregunta abierta que
+   queda para decidir con Mariano antes de seguir con Crecimiento GOTIR**: los cursos de bajo ticket
+   nuevos (19€/65€/Curso 3) ¿van como cursos nuevos dentro de este mismo producto "Suscripciones"
+   (conviviendo con el portal operativo de Estancia/Visado), o conviene separarlos para no mezclar
+   "cliente que ya pagó 825€ y sube documentación real" con "comprador de un curso de 19€ que solo
+   mira contenido"? No asumir la respuesta — falta que Mariano lo defina.
 2. Crear **2 links de pago públicos y reutilizables** (no facturas 1 a 1 como las que se usan hoy
    con leads conocidos, ej. Maryi Castañeda) — "Curso: Proceso general" 19€ y "Curso: Opciones
    reales de escuela" 65€, en GHL → Pagos/Productos. Tienen que ser un link compartible en bio de

@@ -81,6 +81,17 @@ construirla. Antes de crear `direcciones/operaciones/CLAUDE.md`, hace falta que 
   sin respuesta hace X días, plazos por vencer)?
 No armar carpeta ni estructura de ClickUp/GHL para esto hasta tener esas respuestas.
 
+**Primer dato real, 17 sept 2026 (surgió desde `direcciones/marketing/CLAUDE.md`, sección
+"Crecimiento GOTIR", no de una conversación directa sobre Operaciones)**: la primera pregunta de
+arriba ("¿dónde vive el seguimiento de expedientes?") ya tiene respuesta parcial — vive en el
+**portal de Suscripciones/Cursos de GHL** (`app.clientclub.net`, ya activo, 59 usuarios). El cliente
+que contrató Estancia/Visado accede ahí, ve el curso/instructivos, descarga PDFs, y sube su
+documentación; el abogado (Sebastián/María/Gisella) la revisa, la aprueba o pide corrección. Sigue
+faltando el resto de las preguntas (quién hace seguimiento activo día a día, qué etapas tiene el
+proceso completo hasta resolución/TIE, qué debería avisar este sistema proactivamente) — no crear
+todavía `direcciones/operaciones/CLAUDE.md` con solo este dato, pero tenerlo presente la próxima vez
+que Mariano hable de esto.
+
 Cuando Mariano empiece a dar contexto real de una dirección sin `CLAUDE.md` todavía, creá el
 archivo correspondiente dentro de `direcciones/<nombre>/CLAUDE.md` siguiendo el mismo estilo de
 detalle que `areas/ministerio/CLAUDE.md` o `direcciones/comercial/CLAUDE.md` — con IDs reales,

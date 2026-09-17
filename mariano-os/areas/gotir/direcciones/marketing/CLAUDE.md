@@ -836,23 +836,35 @@ son acciones de UI de GHL, este sistema no tiene tool para crearlas por API)**:
    (conviviendo con el portal operativo de Estancia/Visado), o conviene separarlos para no mezclar
    "cliente que ya pagó 825€ y sube documentación real" con "comprador de un curso de 19€ que solo
    mira contenido"? No asumir la respuesta — falta que Mariano lo defina.
-   **DECIDIDO 17 sept 2026**: separados, no mezclar clientes reales (los que suben documentación)
-   con compradores de curso. Consecuencia práctica: **no usamos el producto "Suscripciones" /
-   ClientClub para los cursos de bajo ticket** — seguimos con el circuito ya planeado en los puntos
-   2-4 de este mismo checklist (link de pago público en GHL → Mariano revisa el pago → entrega
-   manual del video/PDF por Drive o Vimeo restringido), que por diseño nunca toca el portal
-   operativo de Estancia/Visado ni sus 59 usuarios reales. Si más adelante el volumen de cursos
-   vendidos justifica automatizar la entrega, ahí sí se evalúa si el plan de GHL permite un segundo
-   producto de Suscripciones separado del actual (no confirmado si el plan lo permite) — no es
-   necesario resolverlo ahora, el circuito manual ya alcanza para arrancar a vender.
+   **DECIDIDO 17 sept 2026, matizado el mismo día**: separados en el sentido de "cursos distintos",
+   no en el sentido de "plataforma distinta". Mariano fue específico: sí quiere los cursos de pago
+   **dentro de Suscripciones de GHL** (misma herramienta, experiencia nativa de "entrar y ver el
+   curso"), pero como **cursos nuevos, propios**, no reutilizando ni mezclándose con el curso
+   operativo de Estancia/Visado — y explícitamente **sin depender de Drive ni de ninguna plataforma
+   externa** para la entrega, quiere que sea práctico y nativo.
+   **Cómo se resuelve esto en la práctica (a confirmar en el panel, no es una suposición
+   inventada)**: en herramientas de este tipo (GHL/ClientClub), un mismo portal de "Suscripciones"
+   puede alojar **varios cursos distintos**, y el acceso a cada curso se controla por separado según
+   qué producto/oferta compró cada contacto — es decir, comprar el curso de 19€ debería dar acceso
+   solo a ESE curso, no al curso operativo de Estancia/Visado, y viceversa (los 59 clientes actuales
+   no deberían ver los cursos nuevos a menos que también los compren). **Próximo paso concreto para
+   Mariano**: entrar a la pestaña "Cursos" de Suscripciones → crear un curso nuevo → revisar si al
+   crearlo permite elegir/vincular qué producto o "oferta" da acceso a ese curso puntual (sería el
+   mecanismo de separación real, sin tocar Drive ni nada externo). Si esa opción existe, es
+   directamente la solución — comprar el link de pago del curso de 19€ dispara el acceso solo a ese
+   curso. Si no aparece esa opción clara en la pantalla de creación, avisar para revisarlo juntos
+   antes de cargar contenido, porque de eso depende si el acceso queda bien separado o no.
 2. Crear **2 links de pago públicos y reutilizables** (no facturas 1 a 1 como las que se usan hoy
    con leads conocidos, ej. Maryi Castañeda) — "Curso: Proceso general" 19€ y "Curso: Opciones
    reales de escuela" 65€, en GHL → Pagos/Productos. Tienen que ser un link compartible en bio de
    redes, no una factura personalizada por cliente.
-3. **Mientras no exista Memberships automatizado**: entrega manual — Mariano revisa los pagos
-   entrantes y manda el link privado del video (Drive/Vimeo restringido) a cada comprador — mismo
-   criterio de "manual primero, automatizar después con volumen real" ya usado en todo el sistema.
-4. Los 2 links de pago van en la bio de Instagram/TikTok y como CTA de los videos gratuitos.
+3. ~~Mientras no exista Memberships automatizado: entrega manual por Drive/Vimeo~~ **SUPERADO 17
+   sept 2026** — sí existe Memberships (es "Suscripciones", confirmado en el punto 1 de arriba) y
+   Mariano quiere la entrega nativa ahí, no manual por Drive. El paso real acá es: una vez creado el
+   curso nuevo en la pestaña "Cursos" con su producto/oferta de acceso propio (ver punto 1), el
+   flujo queda automático — paga el link de GHL → se le da acceso al curso — sin intervención manual
+   de Mariano por cada venta.
+4. Los links de pago van en la bio de Instagram/TikTok y como CTA de los videos gratuitos.
 
 ## 9. Plataforma de contenido y comunidad — "Crecimiento GOTIR" (11 sept 2026)
 

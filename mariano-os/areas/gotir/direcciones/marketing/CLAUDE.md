@@ -820,7 +820,16 @@ son acciones de UI de GHL, este sistema no tiene tool para crearlas por API)**:
    criterio de "manual primero, automatizar después con volumen real" ya usado en todo el sistema.
 4. Los 2 links de pago van en la bio de Instagram/TikTok y como CTA de los videos gratuitos.
 
-## 9. Plataforma de contenido y comunidad — nueva iniciativa (11 sept 2026)
+## 9. Plataforma de contenido y comunidad — "Crecimiento GOTIR" (11 sept 2026)
+
+> **Etiqueta fija, confirmada por Mariano el 17 sept 2026**: todo este bloque (esta sección 9, la
+> subsección "Pivote de marca" más abajo, la subsección "Plataforma técnica — GHL primero, no
+> Skool" arriba, y los recursos `recursos/contenido-cursos-pagos-15sept2026.md` y
+> `recursos/guiones-videos-15sept2026.md`) se identifica de ahora en más como **"Crecimiento
+> GOTIR"** — nombre elegido por Mariano de sus propias palabras ("si nosotros no hacemos
+> crecimiento, esto no va para ningún lado", en contraste con "atender la caja" del día a día
+> comercial). Cuando Mariano diga "sigamos con Crecimiento GOTIR" (o "sigamos con esto" en un
+> contexto donde ya se esté hablando de esto), el punto de entrada es esta sección 9 completa.
 
 Mariano planteó, en la misma conversación donde se analizaron 22 conversaciones reales del
 mini-funnel (`comercial/CLAUDE.md` sección 17), una dirección estratégica nueva: quiere crear

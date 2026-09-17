@@ -917,9 +917,14 @@ quién invitó, para llevarlos a la actividad del 13 sept, luego a la del 20 sep
      puede ir. Nueva fecha tentativa: **viernes 18 de septiembre** (el día antes de la boda de
      Jenny, 19 sept — coincide con el mismo viaje de despedida). Ya actualizado en ClickUp
      (lista "FM6 — Grupo de Madrid").
-   - **Único pendiente real que queda de este bloque**: comprar el pasaje de Mariano para ese viaje,
-     sin monto ni fecha de compra confirmada — ver también el ítem de caja urgente arriba.
-   - Estado: **en curso — pasaje sin comprar, fecha de viaje movida al 18 sept**.
+   - **Actualizado 17 sept 2026 — Mariano NO viaja**: ya había ido a Madrid la semana pasada, así
+     que decide no hacer el viaje de despedida del 18 sept. Coincide con que mañana (18 sept) es el
+     casamiento de **Adrián Caro y Jenny Rodríguez** — Mariano se queda en Valencia (hoy tiene Noche
+     Profética con el profeta Víctor Villamil, ver `areas/ministerio/CLAUDE.md`). Esto **resuelve el
+     pendiente del pasaje** — no hay que comprarlo, se cae el viaje. Corrección de fecha de la boda
+     (estaba registrada como "19 sept", corregida a **18 sept**) y confirmación de que Adrián Caro es
+     el "esposo" de Jenny ya en `areas/ministerio/CLAUDE.md`, sección "Grupo de Madrid".
+   - Estado: **hecho — viaje cancelado por decisión de Mariano, no queda pendiente**.
    - Recordado: 23 veces (21 ago 2026; 22 ago, chequeo diario 20:00; 23 ago, chequeo diario 20:00;
      24 ago 2026; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago, aclarado con
      el detalle completo de la transición; 27 ago, viaje movido del 29 ago al 18 sept; 28 ago,

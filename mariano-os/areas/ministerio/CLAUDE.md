@@ -1633,6 +1633,27 @@ en responder). Es contexto relacional/pastoral de fondo, no un pendiente operati
   vez que se haga un evento similar, comparar contra este para medir si de verdad se mejoró (mismo
   criterio que ya se usa con el baseline comercial de julio en `direcciones/comercial/CLAUDE.md`).
 
+#### Noche Profética — 17 sept 2026 — Víctor Villamil (primera comparación real contra la línea base)
+
+Tarea creada en la lista "Eventos puntuales" (`901220372534`): **"Noche Profética — 17 sept —
+Profeta Víctor Villamil"**, ID `869f3fx89` (https://app.clickup.com/t/869f3fx89).
+
+Reemplaza el Noches de Vida de hoy — invitado especial **profeta Víctor Villamil**, que también
+estuvo ayer en la Cumbre. Entrada: **15€** (mismo precio que la Tarde Profética de agosto).
+
+**Esta es, en los hechos, la primera comparación real contra la línea base de la Tarde Profética**
+(sección de arriba) — y salió mejor en el punto exacto que había generado el problema con los
+pastores (reporte de pagos tardío/desorganizado):
+- El mismo día que se entregaron las entradas, todos (o casi todos) los líderes pagaron — a
+  diferencia de la Tarde Profética, donde los pagos quedaron sin resolver hasta último momento.
+- 2 líderes y algunas ovejas no podían pagar. Solución de Mariano: le compraron **45 alfajores** a
+  **Loana** (chica nueva de la iglesia, los hace ella) — eso le alcanzó a Loana para pagar su propio
+  Encuentro y su Noche Profética. Revendieron los 45 alfajores a **2,50€ cada uno**, y con esa
+  ganancia pagaron el diezmo y compraron las 4 entradas que faltaban para los que no podían pagar.
+- Resultado esperado: **~19 entradas vendidas** para hoy.
+- Lectura de Mariano: la gente se gana la entrada en vez de que sea solo un regalo — lo marca como
+  una bendición y una mejora real de proceso, no solo de resultado.
+
 **Tarea "Lanzamiento — 5 sept 2026 — Activación de nuevos líderes"** — ID `869ejwu0q`
 (https://app.clickup.com/t/869ejwu0q), en la misma lista `901220372534`, fecha 5 sept 2026. Creada
 el 14 ago 2026 apenas se liberó el rate limit que la había bloqueado antes; contenido según la
@@ -1690,20 +1711,25 @@ nuevo). El detalle completo de la transición, tal como lo confirmó Mariano:
    ellas mismas, ahora por Carlos/Juliana en FM3 — no salen de la estructura de discipulado, cambian
    de discipuladoras (de Mariano/Jenny a Carlos/Juliana) al mismo tiempo que se activan como líderes.
 2. **Jenny sigue viajando a Madrid después de fin de septiembre, pero ya no como líder de FM6** —
-   lo hace con su esposo (se casan el **19 de septiembre 2026**). El nuevo grupo de Madrid (después
-   de que Mariano se baja) lo lideran **Jenny y Adrián Caro** — no el esposo de Jenny. Empiezan
-   **desde cero**, buscando gente nueva en Madrid (no heredan al grupo actual de Mariano/Jenny).
+   lo hace con su esposo. El nuevo grupo de Madrid (después de que Mariano se baja) lo lideran
+   **Jenny y Adrián Caro**. **Resuelto 17 sept 2026**: Adrián Caro **es** el esposo de Jenny — se
+   casan **mañana, 18 de septiembre de 2026** (corrige la fecha anterior, registrada por error como
+   "19 sept" — Mariano lo confirmó directamente al contar que por eso no viaja a Madrid hoy, ver
+   `pendientes-activos.md`). Con esto queda resuelta también la duda de si esta Jenny es la misma
+   "Jenny Rodríguez" mencionada en la sección de Graduación New Life (ítem 14, edecanes) — Mariano
+   la nombró así al hablar de la boda, confirmando que sí es la misma persona.
    ⚠️ **Adrián Caro es, hoy, uno de los discípulos propios de Mariano** (FM4.1, junto con Ingrid
    Guaño — ver sección 5 más abajo) — esto significa que Adrián también está en transición: pasa de
-   discípulo de Mariano a líder de un grupo nuevo en Madrid junto a Jenny. No se confirmó todavía
-   qué pasa con Ingrid Guaño (su pareja actual en FM4.1) ni con el propio FM4.1 cuando Adrián se
-   active como líder — no asumir, preguntar si hace falta precisión.
+   discípulo de Mariano a líder de un grupo nuevo en Madrid junto a su esposa Jenny. No se confirmó
+   todavía qué pasa con Ingrid Guaño (su pareja actual en FM4.1) ni con el propio FM4.1 cuando
+   Adrián se active como líder — no asumir, preguntar si hace falta precisión.
 
-**Pendiente real que queda**: comprar el pasaje de Mariano para el viaje a Madrid (despedida y
-último grupo de amistad ahí antes de la transición) — ver `pendientes-activos.md`. **Actualizado
-27 ago 2026**: no viaja el 29 de agosto como se había registrado antes (motivo: económico, no puede
-costearlo ahora) — nueva fecha tentativa es el **viernes 18 de septiembre**, el día antes de la
-boda de Jenny (19 sept).
+**Resuelto 17 sept 2026 — el viaje se cae, no hace falta pasaje**: Mariano ya había ido a Madrid la
+semana anterior, así que decidió no hacer el viaje de despedida del 18 sept — se queda en Valencia
+(donde tiene Noche Profética esa misma noche, ver sección de eventos puntuales más abajo) y va a la
+boda de Adrián Caro y Jenny (mañana, 18 sept). Ver `pendientes-activos.md` para el cierre del ítem.
+Reemplaza el registro anterior (27 ago 2026: no viajó el 29 de agosto por motivos económicos, había
+quedado reagendado tentativamente para el 18 sept).
 
 ## 5. Discípulos actuales por grupo (lista rápida de referencia)
 - FM4.1 — Adrián Caro e Ingrid Guaño

@@ -277,41 +277,100 @@ Hector: fisioterapeuta venezolano interesado en Ourense. Esta llamada se usó co
 
 ## 5. Estructura de GHL (pipelines, etapas, campos, automatizaciones)
 
-**Sin conexión en vivo todavía (verificado 14 agosto 2026)**: no existe un conector de GoHighLevel
-disponible en el directorio de conectores de Claude ni en `.mcp.json` — se comprobó explícitamente
-al buscarlo. Hoy este sistema no puede leer GHL en tiempo real. Ver `CLAUDE.md` raíz, sección
-"Conexión en tiempo real — principio no negociable": mientras no exista esa conexión, no se
-inventa ni se aproxima estructura de GHL — se documenta acá solo lo que Mariano dicta directamente,
-y se marca explícitamente qué falta confirmar o ver en vivo.
+**Conexión en vivo confirmada y datos traídos directamente de la API (14 agosto 2026)**: se
+construyó un servidor MCP propio contra la API de GHL (ver `CLAUDE.md` raíz, sección "Herramientas
+conectadas") y se usó para leer en vivo, hoy, la estructura real de pipelines, calendarios y
+formularios de la location de GOTIR (`utTdf7grGmBznkERpPNM`). Todo lo de abajo es dato real leído de
+la API, no dictado por Mariano ni inferido — reemplaza la versión anterior de esta sección, que
+tenía la estructura incompleta porque solo había lo que Mariano recordaba de memoria.
 
-**Lo que Mariano dictó directamente el 14 de agosto de 2026** (primera vez que se documenta algo
-real de la estructura de GHL — antes de esto, la sección estaba vacía por falta de fuente):
+### 5.1 Pipelines (las 3 reales — se confirma que sí eran 3, resolviendo la duda de Mariano)
 
-- **Pipeline "Preventa"** — cubre desde que entra un lead hasta que paga. Estados mencionados por
-  Mariano, en el orden en que los nombró (⚠️ lista **no confirmada como completa** — dijo
-  textualmente que "hay un montón de estados" dentro de esta pipeline, más de los que enumeró):
-  Lead → Lead calificado → Completó el formulario → Agendó llamada → Tuvimos la llamada → Pronto a
-  pago (y otros estados intermedios sin nombrar todavía).
-- **Pipeline "Seguimiento"** — arranca cuando el cliente ya pagó y se le está dando el servicio.
-  Estados todavía no detallados por Mariano.
-- **Posible tercera pipeline** — Mariano mencionó que "creo que hay una pipeline más", pero no
-  recordó cuál en el momento. **Sin confirmar, no inventar su nombre ni propósito.**
-- **Formularios por trámite** — confirmó que existen formularios distintos según el tipo de trámite
-  (visados, estancias, otros), pero no detalló todavía cuáles ni sus campos.
+**Pre-venta** (`pipeline_id=wf2UkzEcz6TSyQHoJYgW`) — cubre desde que entra un lead hasta que paga:
+1. New lead /sin clasificar (`95da0f11-a578-4360-bdfc-6bb249ec11a4`)
+2. Cuailficado *(sic — así está escrito en GHL, con typo)* (`a24a7ae4-8ac9-4530-a9e2-cdb7f5ac5697`)
+3. Agendar llamada (`670b647d-17ff-429e-9a0c-d5a5ca729bb1`)
+4. Llamada agendada (`7c6f52a5-4dfa-442d-b75f-97235880f89c`)
+5. Llamada realizada (`4e7eeff5-c042-4b7f-8c38-9273464ec476`)
+6. Información y contrato enviado (`3c1d2e47-61e2-44fc-81c4-1121772aa309`)
+7. Pronto pago (`695a4517-14f2-4cf0-8dcd-ff5a02be6e54`)
+8. Pagado (`c677f784-81f8-41e7-b60c-132a6aa3fb9f`)
 
-**Pendiente explícito para completar esta sección**: Mariano pidió que este sistema pueda "ver bien
-todo lo que tenemos organizado en GoHighLevel" y entender la organización real antes de proponer
-mejoras — eso requiere resolver la conexión en vivo (construir un conector/servidor MCP a GHL usando
-su API key, o algún otro camino técnico) o, como alternativa mientras tanto, que Mariano dicte o
-pegue directamente la lista completa de estados de cada pipeline, los campos personalizados, y el
-nombre/propósito de la tercera pipeline. Hasta que pase una de las dos cosas, cualquier "mejora o
-cambio" que se proponga sobre GHL debe basarse solo en lo confirmado arriba, no en inferencia.
+Nota: el nombre real es "**Pre-venta**" (con guion), no "Preventa" como se había anotado antes por
+dictado. No hay una etapa separada de "completó el formulario" — parece estar implícita entre "New
+lead" y "Cuailficado", a confirmar con Mariano si le interesa desagregarla.
 
-No se debe inventar pipelines, nombres de etapas, campos personalizados ni automatizaciones de GHL
-que no estén confirmados por Mariano directamente o vistos en vivo una vez que exista la conexión —
-no reconstruirla por inferencia a partir del proceso comercial descrito en las secciones 1-2 de este
-documento (el proceso describe lo que *debería* reflejarse en GHL, no necesariamente lo que ya está
-configurado ahí).
+**Proveedores** (`pipeline_id=ldCkueEhaKZP531O7hP7`) — esta es la "tercera pipeline" que Mariano no
+recordaba en la sesión anterior. Por el nombre y las etapas, coincide con el flujo de colaboración
+con abogados/partners externos descrito en "Contexto operativo adicional" de `areas/gotir/CLAUDE.md`
+(ej. los 250€ que GOTIR paga a Sebastián/María por la "segunda parte", o comisiones a estudios
+colaboradores) — **a confirmar con Mariano**, no asumido:
+1. Lead enviado (`1f4b21fe-e4b6-40c5-aa0c-14919881d66b`)
+2. En contacto con partner (`0d9dec7a-14e2-4667-b2a8-e3063c00aaec`)
+3. Confirmado (`a856f893-1145-4f4d-aba3-49d3eccb0a6c`)
+4. Compra realizada/ Comisión pendiente (`a21f3617-5fa9-48ff-8064-a3442197972b`)
+5. Comisión pagada (`55734f75-bc63-4465-ba26-bdcdc1b37eac`)
+6. Cerrado (`ad51ba97-f557-46ef-a518-8d0fb31281e2`)
+
+**Seguimiento** (`pipeline_id=kqSbO3AkmyMF0ECNxwe4`) — arranca cuando el cliente ya pagó y se le da
+el servicio:
+1. Nuevo cliente (derivar) (`96eeffca-a783-4425-8486-02f488072ed1`)
+2. En proceso (`5849b57c-55d3-421a-90af-92eff35d0129`)
+3. Presentado en evaluación (`4846e062-8901-45f2-af48-5d3e4bdae33f`)
+4. Resolución (`aaac3a31-b0f4-49ed-93ea-dc99173d8736`)
+5. Recurso (`b34a63b3-520c-44a3-867d-17e68b7b3a10`)
+6. Trámites posteriores (`1711e597-a87b-489a-92dc-106143666115`)
+7. Renovación (`0c035bff-b386-4c5f-954e-3aa4c455b690`)
+8. En pausa (`4cbcf458-760f-4f2e-9767-ab406dd41d33`)
+9. Cerrado (`7228583e-f565-452c-aac8-469c3e1a3b20`)
+
+### 5.2 Calendarios
+
+8 calendarios configurados. Solo el propósito de dos es deducible con confianza del nombre; el resto
+queda anotado tal cual, **sin asumir para quién es cada uno**:
+- **GOTIR** (`6CRhAWYRRL8gMpwwdOyi`) — tipo colectivo, slots de 60 min. Candidato más probable al
+  "[link]" de agendar llamada que se menciona en la sección 1.5/2 de este documento, a confirmar.
+- **Asesoría GOTIR** (`Sl5Of5SLsAgTrwxhwoAE`) — tipo personal, slots de 60 min.
+- **Mariano Barcelona** (`DaiTSbSX6zMA7wIclOgw`) — personal, 30 min.
+- Calendarios personales de: Sabrina Navarro, Pamela Jordan, Micol Navarro, Jonathan Barrionuevo,
+  Rocío Jury (30-60 min c/u). ⚠️ Nota: Sabrina Navarro ya no trabaja en GOTIR (ver `CLAUDE.md` raíz)
+  pero su calendario personal sigue configurado — no confirmado si sigue en uso o es un resabio a
+  limpiar. Pamela Jordan, Micol Navarro y Jonathan Barrionuevo no están documentados en ningún otro
+  lugar de este sistema — no asumir su rol, confirmar con Mariano quiénes son.
+
+### 5.3 Formularios (10 reales, por primera vez con nombres y IDs completos)
+
+- Formulario 1 - Visados Estudios (`rvGrrKqC76JAltyuoGuL`)
+- Formulario 2 - Estancias Estudios (`6mANHohxrOLt15EvQeA0`)
+- Formulario 3 - Otros trámites (`P6m1nOByHjzbE2noLwqW`)
+- Información post venta (`SWmA6ppCjrTKnDE8yXuT`)
+- Webinar Presencial (`GM828vWiRRchNBZ9cqHa`)
+- Datos de facturación (`YrHyk4NpBIqxf59EoH0S`)
+- Apostilla (`QRMGOiQAmFzQIyPpAr8N`)
+- Alquiler IberoLocations (`ZU7dDir39vlrXpwM104o`)
+- Trámites derivados a Carolina Chapo (`55wG5sKZYkvxxAOqcJSZ`)
+- Trámites derivados a María García Serrano (`2HHoJ2flDrSkb3jAGwPg`)
+
+Los 3 primeros coinciden con lo esperado por la sección 1 (visados/estancias por estudios + otros
+trámites). El resto trae información nueva que **no estaba documentada y no se debe asumir**:
+- "Apostilla" y "Alquiler IberoLocations" no están descritos como servicios/trámites en la sección
+  1.1 de este documento (que solo lista estancias/visados de estudios y modificación de residencia
+  de trabajo como prioritarios) — confirmar con Mariano qué son y si son servicios activos o leads
+  de algo distinto (ej. Alquiler IberoLocations podría no ser ni siquiera un trámite de inmigración).
+- "Carolina Chapo" y "María García Serrano" no coinciden por nombre completo con los colaboradores
+  ya documentados en la sección 0 (Sebastián, María, Gisella) — **no asumir que "María García
+  Serrano" es la misma "María" de 250€/caso** solo porque comparten nombre de pila; confirmar con
+  Mariano antes de dar por hecho la identidad.
+
+### 5.4 Lo que sigue sin poder verse (limitación real de la API, no de este sistema)
+
+Los campos personalizados de contacto/oportunidad no se pudieron traer en esta pasada — el servidor
+MCP de GHL hoy no tiene una tool dedicada a listar campos personalizados (ver limitaciones conocidas
+en `CLAUDE.md` raíz). Si hace falta ese detalle, hay que agregar esa tool al servidor.
+
+No se debe inventar automatizaciones de GHL que no estén confirmadas por Mariano o vistas en vivo —
+lo de arriba es pipelines/calendarios/formularios reales, pero no dice nada de qué automatizaciones
+(si las hay) mueven contactos entre etapas.
 
 ---
 
@@ -373,7 +432,22 @@ PRÓXIMA ACCIÓN
 
 Lista honesta de lo que este documento *no* puede responder todavía porque no hay fuente confiable:
 
-- Estructura real de GHL (pipelines, etapas, campos custom, automatizaciones existentes) — sección 5.
+- ~~Estructura real de GHL (pipelines, etapas, campos custom, automatizaciones existentes)~~ —
+  **resuelto en gran parte el 14 agosto 2026** (ver sección 5): pipelines, etapas y formularios ya
+  están confirmados en vivo contra la API. Quedan sub-pendientes puntuales, todos nuevos, surgidos
+  de leer los datos reales:
+  - Confirmar el propósito de la pipeline **Proveedores** (¿es el flujo de comisiones a
+    Sebastián/María/estudios colaboradores, u otra cosa?) — sección 5.1.
+  - Confirmar quiénes son **Pamela Jordan**, **Micol Navarro** y **Jonathan Barrionuevo** (aparecen
+    con calendario propio en GHL pero no están documentados en ningún lugar de este sistema), y si
+    el calendario de **Sabrina Navarro** sigue en uso pese a que ya no trabaja en GOTIR — sección
+    5.2.
+  - Confirmar qué son los formularios **"Apostilla"** y **"Alquiler IberoLocations"** (no encajan en
+    los servicios descritos en la sección 1.1), y si **"Carolina Chapo"** / **"María García
+    Serrano"** (formularios de trámites derivados) son colaboradores nuevos o los mismos ya
+    documentados con otro nombre — sección 5.3.
+  - Campos personalizados de contacto/oportunidad: la API no se pudo consultar todavía (el servidor
+    MCP no tiene tool para eso) — sección 5.4.
 - Contenido exacto del mini-funnel pre-llamada (qué recibe el lead antes de agendar, más allá de su propósito general).
 - Si existe o no una solución definida para el problema de estacionalidad (sección 1.6) — identificado, no resuelto.
 - Qué rama de GHL priorizar para automatizar primero en n8n (sección 4.5) — hay una lectura razonable pero no es una decisión confirmada.

@@ -56,7 +56,7 @@ pendiente de confirmar.
 
 ### Folder: New Life (ID `901212988018`)
 - Lista "Ciclos y Alumnos" — ID `901220315606` (vacía, pendiente de cargar ciclo actual y alumnos).
-- Lista "Tareas Operativas Recurrentes" — ID `901220315608` (vacía).
+- Lista "Tareas Operativas Recurrentes" — ID `901220315608`.
 - Equipo de apoyo operativo de Mariano en New Life: Adrián Caro e Ingrid Guaño.
 - Cada ciclo de New Life arranca con **Encuentro**: un retiro de un día, ~2 veces al año (uno hacia
   marzo).
@@ -68,8 +68,63 @@ pendiente de confirmar.
   de deserciones — todavía viven fuera de ClickUp.
 - Después de New Life viene **Lanzamiento** (2/año, debe enviar la lista definitiva de candidatos)
   y Graduación (certificados con nombres revisados y enviados a Costa Rica, coordinación con
-  Producción, Impact Worship, el pastor, decoración con globos, regalo de galleta personalizada,
-  togas y bandas "New Life").
+  Producción, Impact Worship, el pastor, decoración, un detalle por estudiante, togas y bandas
+  "New Life" — descripción general del proceso recurrente; ver el detalle real del ciclo actual
+  abajo).
+
+#### Graduación New Life — 1 sept 2026 (registrado 17 agosto 2026)
+Tarea madre creada en "Tareas Operativas Recurrentes": **"Graduación New Life — 1 sept 2026"** — ID
+`869ejzpf3` (https://app.clickup.com/t/869ejzpf3). Mariano avisó que faltan varias cosas por
+confirmar/hacer y hay que apurarse. Las 10 subtareas de abajo **quedaron bloqueadas por rate limit de
+ClickUp (sigue bloqueado, ~21hs cada vez que se reintenta)** — crearlas como subtareas de
+`869ejzpf3` apenas se libere:
+
+1. **Certificados — verificar impresión (Juliana)**, urgente, vencimiento sugerido 25 ago. El PDF ya
+   fue enviado a Mariano; **Juliana** (única persona del área administrativa de la iglesia) dijo que
+   los iba a imprimir — falta confirmar si ya lo hizo.
+2. **Bandas — links de proveedores (Adrián Caro)**, vencimiento sugerido 25 ago. Adrián tiene que
+   entregar 2 links de proveedores de bandas **personalizadas** con el texto "New Life" y 2 links de
+   bandas **genéricas sin personalizar** (opción más económica) — falta confirmar si ya los buscó.
+3. **Chocolate decorado "completado" — comprar y decorar (Adrián Caro)**, vencimiento sugerido 28
+   ago. Detalle por estudiante: un chocolate decorado con un papel que diga "completado". Adrián
+   tiene que elegir y comprar el chocolate, reportarle a Mariano qué chocolate es/dónde lo compra/
+   cuánto cuesta (para pasar presupuesto), y encargarse de la decoración de cada uno. Mariano fue
+   explícito: no alcanza con que esté delegado, necesita que Adrián lo haga de verdad y reporte.
+4. **Decoración — globos, sillas y Ferrero Rocher (Ingrid Guaño + Lurbin)**, vencimiento sugerido 28
+   ago. Ingrid coordina con **Lurbin** (decoradora, apoyo externo) y tiene que reportar el estado de:
+   decoración con globos, forrado de las sillas, y un detalle para los estudiantes con bombones
+   Ferrero Rocher.
+5. **Togas — descartadas para esta graduación, evaluar para la próxima** (sin vencimiento, es una
+   nota). Se había indicado toga (sobretodo negro) por estudiante, pero sale 25€ c/u — muy caro y ya
+   es muy tarde para avisarles a los estudiantes que deben pagarlo. Descartada para el 1 sept 2026;
+   tenerla en cuenta para la próxima graduación, avisando con más anticipación si se quiere cobrar.
+6. **Producción y roles de servicio (Carlos Prado)** — agregado 17 ago. Carlos encabeza producción;
+   Mariano ya le pidió armar un rol/turnos para gente sirviendo en producción, redes sociales, etc.
+   Falta seguimiento de que efectivamente lo esté armando.
+7. **Rol de servidores (Margot)** — agregado 17 ago. Mariano ya le pidió a Margot armar el rol de
+   servidores para que haya gente sirviendo durante la graduación. Falta seguimiento.
+8. **Impact Worship — banda de música (David Valera)** — agregado 17 ago. Mariano ya le pidió a David
+   Valera coordinar Impact Worship para que haya banda en vivo durante la graduación. Falta
+   seguimiento. ⚠️ Mismo nombre y apellido que el David Valera de FM4.5 (discípulo que se activa el 5
+   sept, ver sección 3/4) — no confirmado si es la misma persona, no asumirlo sin que Mariano lo
+   confirme.
+9. **Cronograma de Costa Rica (Pablo Carranza) → reenviar a Carlos Prado → avisar al pastor** —
+   agregado 17 ago, tarea de Mariano mismo. Cadena de coordinación pendiente: (a) Mariano tiene que
+   estar pendiente de que **Pablo Carranza** (equipo de Costa Rica) le envíe el cronograma de la
+   graduación; (b) apenas lo tenga, reenviárselo a **Carlos Prado** para que coordine todos los temas
+   de producción con el cronograma real; (c) una vez confirmado, hablar con **el pastor** para que
+   prepare alguna enseñanza para el evento.
+10. **🔴 Armar presupuesto general y cobro anticipado a estudiantes** — agregado 17 ago, la más
+    urgente de todas: **quedan 15 días y los estudiantes todavía no saben que tienen que pagar para
+    la graduación, ni cuánto**. Tarea de Mariano mismo, depende de que le confirmen antes:
+    - Adrián (ítems 2 y 3: costo de bandas + costo del chocolate)
+    - Ingrid (ítem 4: costo de decoración con Lurbin)
+
+    Con esos 3 datos Mariano arma el presupuesto general, lo divide entre los estudiantes que van a
+    la graduación, le avisa a los pastores que va a mandarle a cada estudiante un mensaje pidiendo el
+    pago anticipado de un monto X — el objetivo explícito es que la graduación no le genere gastos a
+    la iglesia. Sin esto resuelto pronto, se corre el riesgo de no llegar a tiempo a cobrar antes del
+    1 sept.
 
 ### Folder: Vida Personal & Espiritual (ID `901212988023`)
 Ojo: pese al nombre, este folder vive dentro del espacio de ministerio en ClickUp por razones
@@ -86,7 +141,8 @@ Ver `areas/personal/CLAUDE.md` para el contexto completo. Contiene las listas "S
   verificar propiedad existente). El detalle línea por línea de qué falta de cada comisión está
   cargado en ClickUp, no hace falta duplicarlo acá — consultalo ahí.
 - Lista "Preparación por Día" — ID `901220315548`.
-- Equipo de logística: Marco Guanuchi y David Luzuriaga.
+- Equipo de logística: Marco Guanuchi, David Luzuriaga y **Julio César** (se sumó al equipo el 17
+  agosto 2026 — antes eran solo Marco y David).
 - Estructura del evento: jueves salida en bus desde la iglesia con senderistas y equipo, primera
   caminata al primer punto, logística de suministro (agua, altavoz, cuerdas) durante los 4 días.
   Ruge es un retiro de hombres en una montaña en Valencia, con logística de insumos, transporte
@@ -94,6 +150,21 @@ Ver `areas/personal/CLAUDE.md` para el contexto completo. Contiene las listas "S
 - Cada categoría del inventario tiene un encargado propio (ej. cocina, producción) con quien
   Mariano coordina tarea, fecha límite y reporte; luego él reporta al responsable general de Ruge.
 - Mariano es el encargado de logística en esta edición — no está confirmado si lo será en futuras.
+
+### Tareas de Ruge cargadas en ClickUp (14 agosto 2026)
+El rate limit de la API se liberó antes de lo esperado. Ambas quedaron creadas en "Equipo y
+Reuniones" (`901220315541`):
+
+1. **"Retrospectiva logística Ruge — reto inicio de año (14 ago 2026)"** — ID `869ejwty5`
+   (https://app.clickup.com/t/869ejwty5). Contiene el resumen completo de las notas de Mariano de la
+   llamada con **Marco Guanuchi** y **David Luzuriaga** (equipo de logística), agrupado por tema
+   (comunicaciones/radios, transporte, check-in y carga, vestimenta, comida, terreno/instalaciones,
+   bienestar del equipo, rutas, compras/administrativo). El resumen de IA (Gemini) había salido muy
+   pobre, así que se usó en cambio el Excel de notas propias de Mariano. ⚠️ Son notas de **parte** de
+   la reunión, no necesariamente completas — si aparece más contenido, sumarlo a esta misma tarea.
+2. **"Reunión de inventario Ruge con comisiones — miér 19 ago, 19:00hs"** — ID `869ejwtz6`
+   (https://app.clickup.com/t/869ejwtz6), con fecha de vencimiento 19 ago 2026 19:00. Comisiones
+   confirmadas por Mariano: Seguridad, Cocina, Producción (y otras sin nombrar todavía).
 
 ### Lista "Eventos puntuales" — ID `901220372534` (dentro del folder Liderazgo)
 Se creó el 14 de agosto de 2026 para eventos de un solo día con invitado especial. Diseño: una
@@ -128,9 +199,35 @@ límite de pago.
 - Dos invitados en proceso de evangelización, todavía sin entrada confirmada, NO cuentan en la
   meta: Jesús Blanco y "Alejandro" (apellido pendiente). Mariano los sigue invitando activamente.
 
-**Tarea pendiente de crear (bloqueada por rate limit de la API el 14 ago, crear apenas se pueda):**
-"Lanzamiento — 5 sept 2026 — Activación de nuevos líderes", en la misma lista `901220372534`, con
-el contenido descrito en la sección 4 más abajo.
+#### Retrospectiva del evento (registrada 17 agosto 2026, evento ya pasó)
+Pendiente de cargar en ClickUp (agregar como actualización a la tarea `869ej5fvj` — **bloqueado por
+el mismo rate limit de ClickUp que sigue activo**, cargar apenas se libere):
+
+- **Problema detectado — pagos desorganizados hasta último momento**: Mariano no supo, hasta el
+  mismo día del evento, si todos sus discípulos habían pagado sus entradas. Caso concreto: Lisandro
+  Tapia no sabía si su madre había pagado o no, y no se lo pudo confirmar a tiempo — esto explica por
+  qué el pendiente #4 de la lista de arriba (confirmación de Lisandro) nunca se resolvió realmente,
+  no es un dato que haya quedado sin cargar, es que la confusión fue real y persistió durante todo el
+  proceso.
+- **Cambio de proceso decidido para la próxima vez (política, no solo para este evento)**: de ahora
+  en más, Mariano va a **cobrarles primero a sus discípulos y recién después entregarles las
+  entradas** — en vez del modelo de esta vez (repartir entradas primero y esperar que coordinen el
+  pago después), que generó que ni los propios discípulos supieran si habían pagado o no.
+- **Asistencia real confirmada**: fueron **todos** los discípulos de Mariano, incluyendo **Mateo
+  Arteaga, David Valera y Sabrina Navarro** — pese a que estos tres todavía no son formalmente
+  discípulos activos (se activan recién con el Lanzamiento del 5 sept, ver sección 3/4). También
+  asistieron algunas ovejas de sus discípulos e invitados de primera vez.
+- **Pendiente abierto**: Mariano ya pidió el listado completo de esas ovejas/invitados a sus
+  discípulos — todavía no lo tiene. Apenas lo consiga, lo va a confirmar para completar el registro
+  de asistencia real.
+- **Para qué sirve este registro**: Mariano quiere usar este evento como **línea base** — la próxima
+  vez que se haga un evento similar, comparar contra este para medir si de verdad se mejoró (mismo
+  criterio que ya se usa con el baseline comercial de julio en `direcciones/comercial/CLAUDE.md`).
+
+**Tarea "Lanzamiento — 5 sept 2026 — Activación de nuevos líderes"** — ID `869ejwu0q`
+(https://app.clickup.com/t/869ejwu0q), en la misma lista `901220372534`, fecha 5 sept 2026. Creada
+el 14 ago 2026 apenas se liberó el rate limit que la había bloqueado antes; contenido según la
+sección 4 más abajo.
 
 ## 3. Composición REAL y actual de los grupos (corregido 14 agosto 2026)
 Esto es importante: hay una diferencia entre "quién aparece nombrado en un grupo" y "quién es

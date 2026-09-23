@@ -22,6 +22,21 @@
 
 ## Abiertos
 
+### GOTIR — posible colaboradora especializada en Argentina, sondeada informalmente con Luciana Verbauwede (23 sept 2026)
+
+Durante la llamada comercial con Luciana Verbauwede y su esposo Gustavo (17 sept 2026, registrada
+como llamada #12 en `direcciones/comercial/patrones-llamadas.md`), Mariano aprovechó para hacerle a
+Luciana un sondeo informal sobre sumarse como colaboradora especializada en casos de Argentina — el
+motivo que dio en la llamada es que **Gisela está saturada, con 4 carpetas** en curso. No se cerró
+nada, fue solo un planteo en vivo, mezclado con la venta y con la presentación de "Crecimiento
+GOTIR" en la misma conversación.
+
+- Nada de esto está reflejado todavía en ningún documento operativo (`gotir/CLAUDE.md`,
+  `comercial/CLAUDE.md`) más allá de la mención en el registro de la llamada — no se trata como
+  decisión tomada ni como colaboradora confirmada.
+- Estado: **abierto — sin decisión ni respuesta de Luciana confirmada todavía, no asumir que avanza**.
+- Recordado: 1 vez (23 sept 2026, creación).
+
 ### GOTIR — reclamo de María Isabel López Arango sobre autorización de trabajo limitada a Madrid (13 sept 2026, hallado en barrido Fase C)
 
 Cliente real ya pagando (`contact_id=sZcmeXHCMcF046ae5JQE`, oportunidad en pipeline Seguimiento,

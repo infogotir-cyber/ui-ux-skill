@@ -22,6 +22,23 @@
 
 ## Abiertos
 
+### GOTIR — definir política fija de descuento por menores en trámites familiares (23 sept 2026)
+
+Surgió como sugerencia al procesar dos llamadas reales seguidas (`patrones-llamadas.md`, filas 14 y
+15): **Vanina Rivero** (familia x3, 22-23 sept) y **Leandro Fariaz/Sheila Peralta** (familia x4, 22
+sept) pidieron ambas un descuento por los menores dentro del trámite familiar (hoy 825€ por persona,
+sin diferenciar adulto/menor). En los dos casos Mariano respondió igual: negociarlo caso por caso con
+la abogada (María García Serrano) para poder cobrarle menos por el menor y trasladar parte de ese
+ahorro al cliente — sin un criterio fijo todavía.
+
+- No es la primera vez que aparece esta pregunta (ya se había mencionado "un caso similar" el día
+  anterior a estos dos), pero es la primera vez que se registra formalmente como patrón a definir.
+- Sugerencia, no decisión tomada: convendría fijar un % o monto de descuento estándar por menor
+  reagrupado en un trámite familiar, en vez de negociarlo cada vez con la abogada y prometerle al
+  cliente "voy a ver qué consigo" sin saber de antemano cuánto se puede ofrecer.
+- Estado: **abierto — sin decisión de Mariano todavía**.
+- Recordado: 1 vez (23 sept 2026, creación).
+
 ### GOTIR — posible colaboradora especializada en Argentina, sondeada informalmente con Luciana Verbauwede (23 sept 2026)
 
 Durante la llamada comercial con Luciana Verbauwede y su esposo Gustavo (17 sept 2026, registrada

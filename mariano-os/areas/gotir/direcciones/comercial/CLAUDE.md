@@ -1559,9 +1559,11 @@ GHL **no es una fuente confiable de ingresos reales** para cualquier caso con co
 por medio — GHL queda como herramienta de pipeline/gestión, no de contabilidad. **Holded es la
 única fuente de verdad para ingresos reales** (ver "Política de centralización de pagos",
 `areas/gotir/CLAUDE.md`) — cualquier dashboard o reporte de ingresos reales que se construya en el
-futuro debe leer de Holded, nunca sumar directamente los valores de oportunidad de GHL. **Sin
-confirmar todavía**: si estas colaboradoras tienen visibilidad de las notas del contacto además del
-valor de la oportunidad — hasta confirmarlo, tampoco poner el precio real ahí.
+futuro debe leer de Holded, nunca sumar directamente los valores de oportunidad de GHL. **Confirmado por Mariano (24 sept 2026): estas colaboradoras SÍ ven también las notas del
+contacto**, no solo el valor de la oportunidad — por lo tanto el precio real tampoco debe
+aparecer en las notas de ningún contacto que una colaboradora externa vaya a tocar. Mismo criterio
+que el valor: si hace falta anotar el precio en algún lado por contexto, usar el monto placeholder
+(lo que se le paga a la colaboradora), nunca el precio real cobrado al cliente.
 
 ### 14.1 Modelo de reparto "nómada digital" (70% colaborador / 30% GOTIR) — confirmado con caso real
 

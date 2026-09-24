@@ -61,12 +61,18 @@ las 3 oportunidades de la familia Castañeda a 825€ reales cada una — casos 
   `areas/gotir/CLAUDE.md`) — cualquier dashboard de ingresos reales que se construya en el futuro
   debe leer de Holded, nunca del campo "valor" de GHL directamente. Falta agregar este criterio
   formalmente a `comercial/CLAUDE.md` sección 14.
-- Sin confirmar todavía: si María García Serrano (o las otras colaboradoras) tienen visibilidad de
-  las **notas** del contacto además del valor de la oportunidad — mientras no se confirme, no
-  poner el precio real ahí tampoco.
-- Estado: **en curso — criterio y aplicación a Castañeda resueltos; falta documentar la regla en
-  `comercial/CLAUDE.md` y confirmar visibilidad de notas**.
-- Recordado: 1 vez (24 sept 2026, creación y resolución el mismo día).
+- **Confirmado por Mariano (24 sept 2026): las colaboradoras SÍ ven también las notas del
+  contacto** — ya documentado en `comercial/CLAUDE.md` sección 14.
+- **Problema real detectado al confirmar esto**: la nota ya cargada en el contacto de Maryi
+  (`xdGJBMJg9IavPGR1Oi4a`, "LLAMADA 20 AGO 2026") tiene escrito el precio real completo —
+  *"Precio del servicio: 825€ por persona × 3 = 2.475€ en total"* — visible para María García
+  Serrano si entra a ver ese contacto. El servidor MCP solo tiene tool para **agregar** notas
+  (`ghl_add_contact_note`), no para editarlas ni borrarlas — no se puede corregir por API. Hay que
+  editarla o borrarla a mano desde el panel de GHL.
+- Estado: **abierto — falta que Mariano corrija/borre a mano la nota vieja de Maryi con el precio
+  real expuesto; revisar si hay otras notas viejas con el mismo problema en otros contactos que
+  colaboradoras externas puedan ver**.
+- Recordado: 1 vez (24 sept 2026, creación y resolución del criterio el mismo día).
 
 ### GOTIR — definir política fija de descuento por menores en trámites familiares (23 sept 2026)
 

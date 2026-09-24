@@ -69,10 +69,17 @@ las 3 oportunidades de la familia Castañeda a 825€ reales cada una — casos 
   Serrano si entra a ver ese contacto. El servidor MCP solo tiene tool para **agregar** notas
   (`ghl_add_contact_note`), no para editarlas ni borrarlas — no se puede corregir por API. Hay que
   editarla o borrarla a mano desde el panel de GHL.
-- Estado: **abierto — falta que Mariano corrija/borre a mano la nota vieja de Maryi con el precio
-  real expuesto; revisar si hay otras notas viejas con el mismo problema en otros contactos que
-  colaboradoras externas puedan ver**.
-- Recordado: 1 vez (24 sept 2026, creación y resolución del criterio el mismo día).
+- **Decisión explícita de Mariano (24 sept 2026): no corrige la nota de Maryi** — prefiere
+  mantener su propio registro de cuánto se cobró realmente en cada caso, como control personal
+  para no perder de vista esos montos, aunque eso implique el riesgo de que María la vea si entra a
+  ese contacto puntual. No es un olvido, es un trade-off consciente que él eligió.
+- **Sugerencia para adelante, no forzada**: si en algún momento quiere ese control personal sin el
+  riesgo de exposición, el lugar natural para registrar el precio real por caso es este mismo
+  sistema (`mariano-os`, ej. el tracker de la sección 14 de `comercial/CLAUDE.md`) en vez de las
+  notas de GHL — mismo criterio ya acordado de que Holded/este sistema son la fuente de verdad
+  real, GHL queda para lo operativo. Queda como idea, no como pendiente a resolver.
+- Estado: **cerrado — decisión tomada por Mariano, la nota de Maryi queda tal cual está**.
+- Recordado: 1 vez (24 sept 2026, creación y cierre el mismo día).
 
 ### GOTIR — definir política fija de descuento por menores en trámites familiares (23 sept 2026)
 

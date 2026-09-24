@@ -47,21 +47,26 @@ externos con cuenta de usuario en GHL (empezando por **María García Serrano**,
 presenta los expedientes de estancia por estudios) puedan verlo. Surgió justo después de corregir
 las 3 oportunidades de la familia Castañeda a 825€ reales cada una — casos que ella va a presentar.
 
-**Ya existe un mecanismo documentado para esto** (`comercial/CLAUDE.md` sección 14): cargar en el
-campo "valor" de la oportunidad un **monto placeholder** — lo que Mariano realmente le paga a la
-colaboradora (ej. 250€ por caso de estancia) — en vez del precio real cobrado al cliente (825€/750€).
-Ya se usó con la familia Díaz/Balzan y con Federico Prieto. Sugerencia para dejarlo resuelto de raíz:
-- Aplicar el mismo criterio a **cualquier oportunidad que ella vaya a tocar**, no solo casos puntuales
-  — incluidas las 3 de la familia Castañeda recién creadas/corregidas (hoy están en 825€ reales).
-- El precio real no debería quedar tampoco en las **notas del contacto** (no está confirmado qué
-  visibilidad tiene ella sobre notas, mejor no arriesgarse) — llevar el número real en un lugar
-  100% fuera del alcance de su usuario de GHL: la app "GOTIR Finanzas", o este mismo sistema
-  (`mariano-os`), no en ningún campo de GHL.
-- Sin decidir todavía: ¿corregir ya las 3 oportunidades de Castañeda a 250€ (o el monto real que le
-  pagás a María por caso) para que quede consistente con el resto?
-- Estado: **abierto — esperando que Mariano confirme si aplicamos esto ya a las 3 de Castañeda y
-  cuál es el monto real que le paga a María por caso**.
-- Recordado: 1 vez (24 sept 2026, creación).
+**Resuelto el criterio general, mismo día (24 sept 2026)**: se confirmó y se aplicó —
+- Regla: cuando una oportunidad la va a ver una colaboradora externa con usuario en GHL (María
+  García Serrano, Carolina Chapo, Gisela Justribo), el campo "valor" lleva el monto que
+  **realmente se le paga a ella** por el caso (250€ por estancia, confirmado), no el precio real
+  cobrado al cliente — mismo número que ella ya espera ver, para no generar ninguna anomalía que
+  dispare preguntas. Ya aplicado a las 3 oportunidades de la familia Castañeda (bajadas de 825€ a
+  250€ cada una).
+- **Regla de fondo, para que esto no rompa futuros dashboards**: GHL queda como herramienta de
+  pipeline/gestión, no como fuente de verdad contable — su campo "valor" puede no reflejar el
+  ingreso real cuando hay colaborador externo de por medio. **Holded es la única fuente de verdad
+  para ingresos reales** (ya establecido en la política de centralización de pagos,
+  `areas/gotir/CLAUDE.md`) — cualquier dashboard de ingresos reales que se construya en el futuro
+  debe leer de Holded, nunca del campo "valor" de GHL directamente. Falta agregar este criterio
+  formalmente a `comercial/CLAUDE.md` sección 14.
+- Sin confirmar todavía: si María García Serrano (o las otras colaboradoras) tienen visibilidad de
+  las **notas** del contacto además del valor de la oportunidad — mientras no se confirme, no
+  poner el precio real ahí tampoco.
+- Estado: **en curso — criterio y aplicación a Castañeda resueltos; falta documentar la regla en
+  `comercial/CLAUDE.md` y confirmar visibilidad de notas**.
+- Recordado: 1 vez (24 sept 2026, creación y resolución el mismo día).
 
 ### GOTIR — definir política fija de descuento por menores en trámites familiares (23 sept 2026)
 

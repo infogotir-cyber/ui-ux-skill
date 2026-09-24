@@ -1547,6 +1547,22 @@ el contacto tiene como colaborador a alguien con cuenta de usuario en GHL (Marí
 Carolina Chapo, Gisela Justribo — ver 5.3.1), **preguntarle a Mariano si es un valor placeholder
 antes de reportarlo como deuda o anomalía** — no asumir ninguna de las dos cosas.
 
+**Regla general confirmada 24 sept 2026 (caso real: familia Castañeda)**: cuando una oportunidad la
+va a ver una colaboradora externa con usuario en GHL, el campo "valor" lleva el monto que
+**realmente se le paga a ella** por el caso — **250€ por caso de estancia con María García
+Serrano**, confirmado — en vez del precio real cobrado al cliente (825€/750€). El criterio elegido
+a propósito es que el placeholder coincida *exactamente* con lo que la colaboradora ya sabe que
+cobra (no un número intermedio como el margen neto de Mariano) — un número que no coincide con nada
+conocido es lo que más dispara preguntas; uno que coincide con su propia comisión no genera ninguna
+anomalía. **Consecuencia importante para reportes futuros**: esto significa que el campo "valor" de
+GHL **no es una fuente confiable de ingresos reales** para cualquier caso con colaborador externo de
+por medio — GHL queda como herramienta de pipeline/gestión, no de contabilidad. **Holded es la
+única fuente de verdad para ingresos reales** (ver "Política de centralización de pagos",
+`areas/gotir/CLAUDE.md`) — cualquier dashboard o reporte de ingresos reales que se construya en el
+futuro debe leer de Holded, nunca sumar directamente los valores de oportunidad de GHL. **Sin
+confirmar todavía**: si estas colaboradoras tienen visibilidad de las notas del contacto además del
+valor de la oportunidad — hasta confirmarlo, tampoco poner el precio real ahí.
+
 ### 14.1 Modelo de reparto "nómada digital" (70% colaborador / 30% GOTIR) — confirmado con caso real
 
 En la misma auditoría, la oportunidad de **Federico Prieto** (`opportunity_id=V3IEbgKtiJY4LwiLDGw7`)

@@ -22,6 +22,47 @@
 
 ## Abiertos
 
+### GOTIR — enviar contrato + acceso a plataforma por separado a Maryi, John y Antonella Castañeda (24 sept 2026)
+
+Se corrigió el enredo de contactos duplicados de la familia Castañeda (ver detalle completo más abajo,
+"GOTIR — contactos duplicados por reutilizar teléfono/email en el formulario") — ya quedaron 3
+contactos limpios en GHL, cada uno con su propia oportunidad (825€, Pagado):
+- **Maryi** (`xdGJBMJg9IavPGR1Oi4a`) — oportunidad "Maryi Castañeda - Estancia".
+- **John** (`9pmSWklozAuohRIneqGi`) — oportunidad "John Castañeda - Estancia".
+- **Antonella** (`srCQqsOY3V4NNxxXKRk2`, nuevo, email maryicastaneda.ugc@outlook.com que gestiona
+  Maryi) — oportunidad "Antonella Castañeda - Estancia".
+
+Ya se les mandaron por WhatsApp los 3 mensajes de aviso (que ahora cada uno tiene su propio
+trámite/contrato/acceso separado). **Falta el paso real**: enviar el documento de contrato de cada
+uno desde el panel de GHL (el mismo botón "Enviar documento" que se usó con Pamela Luján) — esto no
+se puede hacer por API, no hay tool para eso. Los 3 tienen que recibir su propio link de firma.
+
+- Estado: **abierto — falta que Mariano dispare el envío del contrato a los 3, uno por uno, desde GHL**.
+- Recordado: 1 vez (24 sept 2026, creación).
+
+### GOTIR — ocultar precio real de clientes a colaboradores externos con acceso a GHL (24 sept 2026)
+
+Mariano pidió pensar cómo cargar el precio real que le cobra a cada cliente sin que colaboradores
+externos con cuenta de usuario en GHL (empezando por **María García Serrano**, la abogada que
+presenta los expedientes de estancia por estudios) puedan verlo. Surgió justo después de corregir
+las 3 oportunidades de la familia Castañeda a 825€ reales cada una — casos que ella va a presentar.
+
+**Ya existe un mecanismo documentado para esto** (`comercial/CLAUDE.md` sección 14): cargar en el
+campo "valor" de la oportunidad un **monto placeholder** — lo que Mariano realmente le paga a la
+colaboradora (ej. 250€ por caso de estancia) — en vez del precio real cobrado al cliente (825€/750€).
+Ya se usó con la familia Díaz/Balzan y con Federico Prieto. Sugerencia para dejarlo resuelto de raíz:
+- Aplicar el mismo criterio a **cualquier oportunidad que ella vaya a tocar**, no solo casos puntuales
+  — incluidas las 3 de la familia Castañeda recién creadas/corregidas (hoy están en 825€ reales).
+- El precio real no debería quedar tampoco en las **notas del contacto** (no está confirmado qué
+  visibilidad tiene ella sobre notas, mejor no arriesgarse) — llevar el número real en un lugar
+  100% fuera del alcance de su usuario de GHL: la app "GOTIR Finanzas", o este mismo sistema
+  (`mariano-os`), no en ningún campo de GHL.
+- Sin decidir todavía: ¿corregir ya las 3 oportunidades de Castañeda a 250€ (o el monto real que le
+  pagás a María por caso) para que quede consistente con el resto?
+- Estado: **abierto — esperando que Mariano confirme si aplicamos esto ya a las 3 de Castañeda y
+  cuál es el monto real que le paga a María por caso**.
+- Recordado: 1 vez (24 sept 2026, creación).
+
 ### GOTIR — definir política fija de descuento por menores en trámites familiares (23 sept 2026)
 
 Surgió como sugerencia al procesar dos llamadas reales seguidas (`patrones-llamadas.md`, filas 14 y

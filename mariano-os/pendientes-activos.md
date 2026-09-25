@@ -33,12 +33,14 @@ contactos limpios en GHL, cada uno con su propia oportunidad (825€, Pagado):
   Maryi) — oportunidad "Antonella Castañeda - Estancia".
 
 Ya se les mandaron por WhatsApp los 3 mensajes de aviso (que ahora cada uno tiene su propio
-trámite/contrato/acceso separado). **Falta el paso real**: enviar el documento de contrato de cada
-uno desde el panel de GHL (el mismo botón "Enviar documento" que se usó con Pamela Luján) — esto no
-se puede hacer por API, no hay tool para eso. Los 3 tienen que recibir su propio link de firma.
+trámite/contrato/acceso separado). Se resolvió el bug de GHL que no dejaba reenviar el documento de
+Antonella/John editado (ya firmado antes) — la salida fue clonarlo (Clone) y mandar el clon nuevo,
+descartando el original trabado.
 
-- Estado: **abierto — falta que Mariano dispare el envío del contrato a los 3, uno por uno, desde GHL**.
-- Recordado: 1 vez (24 sept 2026, creación).
+- **RESUELTO 25 sept 2026**: Mariano confirmó que los 3 contratos (Maryi, John y Antonella) ya están
+  firmados por ambas partes.
+- Estado: **hecho**.
+- Recordado: 1 vez (24 sept 2026, creación; 25 sept, resuelto).
 
 ### GOTIR — ocultar precio real de clientes a colaboradores externos con acceso a GHL (24 sept 2026)
 

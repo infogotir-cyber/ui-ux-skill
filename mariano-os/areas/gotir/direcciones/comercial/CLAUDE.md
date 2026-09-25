@@ -1799,6 +1799,23 @@ la estructura de arriba:
 - Ancla de precio limpia: 650€ total, no 740€ — reduce la sensación de "pagar dos veces".
 - Cierre asuntivo: "¿Avanzamos con el Paso 1?", no "¿te interesaría?".
 
+## 18. Secuencia post-pago (25 sept 2026)
+
+A pedido explícito de Mariano: quiere que apenas alguien paga, tenga un procedimiento claro que le
+llegue automáticamente (más allá del contrato y el acceso a la plataforma, que ya existían) para
+que no sienta que "GOTIR desaparece apenas cobra". Spec completa, con los mensajes ya redactados,
+los links reales, y el guion del video pendiente de grabar, en
+`direcciones/comercial/secuencia-post-pago.md`.
+
+Resumen de los 3 momentos (mismo principio de fragmentar que la Fase 3 del guion de venta):
+bienvenida inmediata (junto al contrato/plataforma) → +3hs video de la plataforma + Comunidad GOTIR
+(WhatsApp) → +1 día elegir curso + seguro de salud + certificado médico + datos de facturación.
+
+**Falta para que quede funcionando de verdad**: (a) que Mariano grabe el video de la plataforma
+(guion ya armado en el documento), (b) construirlo en el builder de GHL/n8n — no se puede armar por
+API, mismo límite de siempre. Mientras tanto, se puede seguir manualmente con el mismo orden y
+timing del documento.
+
 ### Plantilla base — de la estructura anterior, superada, no usar (queda como registro)
 
 > ¡Hola [Nombre]! 👋

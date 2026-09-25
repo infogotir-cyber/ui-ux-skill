@@ -22,6 +22,26 @@
 
 ## Abiertos
 
+### GOTIR — construir la secuencia post-pago (25 sept 2026)
+
+Mariano pidió un procedimiento completo que se dispare apenas un cliente paga — más allá del
+contrato y el acceso a la plataforma, que ya estaban automatizados. Spec completa ya escrita en
+`direcciones/comercial/secuencia-post-pago.md` (mensajes redactados, links reales confirmados por
+Mariano: Comunidad GOTIR por WhatsApp, formulario de seguro de salud, formulario del médico para el
+certificado, link de la plataforma), referenciada en `comercial/CLAUDE.md` sección 18.
+
+- **Falta 1 — grabar el video de la plataforma**: guion de qué cubrir ya armado en el documento
+  (sección 5), Mariano tiene que grabarlo cuando pueda.
+- **Falta 2 — construirlo en el builder de GHL o n8n**: no se puede armar por API (mismo límite de
+  siempre, GHL no tiene endpoint para crear/editar workflows) — agregar los 3 momentos al workflow
+  "Pago realizado- contrato" existente, con los `Wait` correspondientes.
+- **Falta 3 — confirmar el formulario de facturación**: se asumió que es el ya existente en GHL
+  (`YrHyk4NpBIqxf59EoH0S`, "Datos de facturación"), sin confirmación explícita de Mariano todavía.
+- Mientras tanto, se puede seguir el mismo orden/timing manualmente, como ya se hizo con Pamela
+  Luján.
+- Estado: **en curso — spec lista, falta contenido (video) y construcción (builder)**.
+- Recordado: 1 vez (25 sept 2026, creación).
+
 ### GOTIR — enviar contrato + acceso a plataforma por separado a Maryi, John y Antonella Castañeda (24 sept 2026)
 
 Se corrigió el enredo de contactos duplicados de la familia Castañeda (ver detalle completo más abajo,

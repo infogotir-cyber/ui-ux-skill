@@ -1547,6 +1547,14 @@ el contacto tiene como colaborador a alguien con cuenta de usuario en GHL (Marí
 Carolina Chapo, Gisela Justribo — ver 5.3.1), **preguntarle a Mariano si es un valor placeholder
 antes de reportarlo como deuda o anomalía** — no asumir ninguna de las dos cosas.
 
+**Carolina Chapo ya no colabora con GOTIR (confirmado por Mariano, 26 sept 2026)** — de las tres
+colaboradoras mencionadas en este párrafo, ya no aplica. Mapa de reemplazo real, confirmado ese
+mismo día: Estancia → María García Serrano; Cuenta Propia/Ajena → Sebastián Sánchez Lorente (sin
+cuenta de GHL, no aplica la regla de placeholder para él); Visado Argentina → Gisela Justribó
+(salvo excepciones → Wilmen Mendoza, tampoco tiene cuenta de GHL); Visado LATAM → Wilmen Mendoza.
+Detalle completo, incluido qué falta limpiar de Carolina Chapo en GHL, en
+`pendientes-activos.md` y en `direcciones/comercial/secuencia-post-pago.md` sección 7.
+
 **Regla general confirmada 24 sept 2026 (caso real: familia Castañeda)**: cuando una oportunidad la
 va a ver una colaboradora externa con usuario en GHL, el campo "valor" lleva el monto que
 **realmente se le paga a ella** por el caso — **250€ por caso de estancia con María García
@@ -1799,22 +1807,21 @@ la estructura de arriba:
 - Ancla de precio limpia: 650€ total, no 740€ — reduce la sensación de "pagar dos veces".
 - Cierre asuntivo: "¿Avanzamos con el Paso 1?", no "¿te interesaría?".
 
-## 18. Secuencia post-pago (25 sept 2026)
+## 18. Secuencia post-pago (25 sept 2026, avance grande 26 sept 2026)
 
 A pedido explícito de Mariano: quiere que apenas alguien paga, tenga un procedimiento claro que le
-llegue automáticamente (más allá del contrato y el acceso a la plataforma, que ya existían) para
-que no sienta que "GOTIR desaparece apenas cobra". Spec completa, con los mensajes ya redactados,
-los links reales, y el guion del video pendiente de grabar, en
-`direcciones/comercial/secuencia-post-pago.md`.
+llegue automáticamente para que no sienta que "GOTIR desaparece apenas cobra". **Corrección
+importante (26 sept)**: gran parte de esto ya existía en GHL, en el workflow "nuevo cliente start"
+(no "Pago realizado- contrato") — no fue construir desde cero, fue corregir bugs reales (timing
+roto, derivación al abogado demasiado temprana/"en crudo", un bug de nombres en el Condition, y el
+default de Proveedor con Carolina Chapo, colaboradora con la que GOTIR ya no trabaja — ver sección
+14). Documento completo y actualizado, con el detalle técnico exacto de qué se corrigió y qué
+falta, en `direcciones/comercial/secuencia-post-pago.md` — no duplicar acá, es la fuente de verdad.
 
-Resumen de los 3 momentos (mismo principio de fragmentar que la Fase 3 del guion de venta):
-bienvenida inmediata (junto al contrato/plataforma) → +3hs video de la plataforma + Comunidad GOTIR
-(WhatsApp) → +1 día elegir curso + seguro de salud + certificado médico + datos de facturación.
-
-**Falta para que quede funcionando de verdad**: (a) que Mariano grabe el video de la plataforma
-(guion ya armado en el documento), (b) construirlo en el builder de GHL/n8n — no se puede armar por
-API, mismo límite de siempre. Mientras tanto, se puede seguir manualmente con el mismo orden y
-timing del documento.
+Avanzado hoy en un clon del workflow (todavía sin publicar, por seguridad — el original tiene 51
+inscritos activos): rama ESTANCIA corregida y con el mensaje de Momento 3 agregado. Falta replicar
+en Visado ARG/LATAM, construir la rama de Cuenta Propia (vacía hoy), probar, y publicar. El video
+de la plataforma sigue sin grabarse.
 
 ### Plantilla base — de la estructura anterior, superada, no usar (queda como registro)
 

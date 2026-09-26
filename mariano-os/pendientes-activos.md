@@ -22,6 +22,23 @@
 
 ## Abiertos
 
+### GOTIR — sacar a Carolina Chapo de todos lados en GHL (26 sept 2026)
+
+Mariano confirmó que **ya no van a trabajar más con Carolina Chapo** — hay que quitarla de todas
+partes. Encontrada hardcodeada como Proveedor default en la rama ESTANCIA del workflow "nuevo
+cliente start" — ya corregida ahí (ver pendiente de la secuencia post-pago, abajo). Faltan revisar
+otros lugares donde aparece, documentados en `comercial/CLAUDE.md`, no tocados hoy:
+- Formulario "Trámites derivados a Carolina Chapo" (`55wG5sKZYkvxxAOqcJSZ`, sección 5.3).
+- Workflow "Carolina Chapo - tramites" (`61519076-1516-4760-8ce9-62cf8ce54262`, sección 5.5/5.7) —
+  dispara con tag "chapo" o formulario, crea oportunidad en pipeline Proveedores.
+- Usuario de GHL "Chapo abogados" (`visados@carolinachapo.com`, sección 5.3.1) — confirmar si hay
+  que borrarlo (mismo proceso que se hizo con Pamela Jordan/Belén Campana, `CLAUDE.md` raíz, GHL).
+- Cualquier oportunidad real abierta en el pipeline Proveedores con ella como destino.
+- El mapa de reemplazo por tipo de trámite ya está confirmado por Mariano — ver
+  `direcciones/comercial/secuencia-post-pago.md` sección 7.
+- Estado: **abierto — corregido solo el default de ESTANCIA, falta el resto**.
+- Recordado: 1 vez (26 sept 2026, creación).
+
 ### GOTIR — repensar cómo se modela "Reagrupación" dentro de tipo de trámite en GHL (26 sept 2026)
 
 Surgió al revisar el workflow "nuevo cliente start" (rama de seguimiento post-pago, GHL): una de las
@@ -47,25 +64,45 @@ vive mezclado dentro de la condición de "Renovación", lo cual no representa bi
 - Estado: **abierto — decisión de fondo pospuesta a propósito por Mariano, sin urgencia**.
 - Recordado: 1 vez (26 sept 2026, creación).
 
-### GOTIR — construir la secuencia post-pago (25 sept 2026)
+### GOTIR — construir la secuencia post-pago (25 sept 2026, avance grande 26 sept 2026)
 
-Mariano pidió un procedimiento completo que se dispare apenas un cliente paga — más allá del
-contrato y el acceso a la plataforma, que ya estaban automatizados. Spec completa ya escrita en
-`direcciones/comercial/secuencia-post-pago.md` (mensajes redactados, links reales confirmados por
-Mariano: Comunidad GOTIR por WhatsApp, formulario de seguro de salud, formulario del médico para el
-certificado, link de la plataforma), referenciada en `comercial/CLAUDE.md` sección 18.
+Mariano pidió un procedimiento completo que se dispare apenas un cliente paga. **Hallazgo clave del
+26 sept**: gran parte de esto ya existía en GHL (workflow "nuevo cliente start", no "Pago realizado-
+contrato" como se asumía), aunque con bugs reales — no era construir desde cero, era corregir.
+Detalle completo, honesto y actualizado en `direcciones/comercial/secuencia-post-pago.md`
+(reescrito a fondo el 26 sept) — acá solo el resumen ejecutivo.
 
-- **Falta 1 — grabar el video de la plataforma**: guion de qué cubrir ya armado en el documento
-  (sección 5), Mariano tiene que grabarlo cuando pueda.
-- **Falta 2 — construirlo en el builder de GHL o n8n**: no se puede armar por API (mismo límite de
-  siempre, GHL no tiene endpoint para crear/editar workflows) — agregar los 3 momentos al workflow
-  "Pago realizado- contrato" existente, con los `Wait` correspondientes.
-- **Falta 3 — confirmar el formulario de facturación**: se asumió que es el ya existente en GHL
-  (`YrHyk4NpBIqxf59EoH0S`, "Datos de facturación"), sin confirmación explícita de Mariano todavía.
-- Mientras tanto, se puede seguir el mismo orden/timing manualmente, como ya se hizo con Pamela
-  Luján.
-- Estado: **en curso — spec lista, falta contenido (video) y construcción (builder)**.
-- Recordado: 1 vez (25 sept 2026, creación).
+**Hecho el 26 sept (en un CLON del workflow, "Copy - nuevo cliente start", todavía sin publicar)**:
+- Corregido el timing roto (Waits en 1 minuto en vez de horas/días) en la rama ESTANCIA.
+- Sacado el campo "Proveedor" (tenía a **Carolina Chapo**, ya no colabora con GOTIR) y la
+  notificación al abogado del paso temprano — movidos al final, después de que el cliente reciba
+  el mensaje de curso/seguro/médico/facturación (para no derivar clientes "en crudo" — pedido
+  explícito de Mariano). Se agregó Proveedor = **María García Serrano** en el paso nuevo del final.
+- Agregado el mensaje nuevo de Momento 3 (curso/seguro/médico/facturación) en ESTANCIA, con el link
+  real de facturación ya confirmado por Mariano.
+- Corregido un bug de nombres en el Condition: una rama titulada "CUENTA PROPIA" en realidad
+  filtraba por "Renovación"+"Reagrupación" — renombrada a "Renovación por estudios", y se borró la
+  rama vacía duplicada que nunca se ejecutaba (ver pendiente aparte sobre Reagrupación, arriba).
+- Confirmado el mapa real de colaboradores por trámite (Estancia→María García Serrano, Cuenta
+  Propia/Ajena→Sebastián Sánchez Lorente, Visado ARG→Gisela Justribó, Visado LATAM→Wilmen Mendoza)
+  y las reglas reales de requisitos (visados/renovaciones no llevan certificado médico;
+  modificaciones a residencia no llevan ni seguro ni médico).
+
+**Falta (próxima sesión, orden sugerido)**:
+1. Probar la rama ESTANCIA del clon con "Probar flujo de trabajo" antes de publicar nada.
+2. Replicar la misma corrección en VISADO ARG y VISADO LATAM (ninguna tenía Proveedor cargado,
+   había sido a propósito — ahora corresponde agregarlo al final, no antes).
+3. Agregar "Valor del cliente potencial" real en Visado LATAM y Cuenta Propia/Ajena (Wilmen y
+   Sebastián no tienen cuenta de GHL, no hay riesgo de exposición ahí).
+4. Construir de cero la rama Cuenta Propia real (hoy va directo a FINAL, sin nada).
+5. Cuando todo esté probado: renombrar el original a "OLD" + Borrador, publicar el clon.
+6. **Diseño condicional completo** (preguntar al cliente con opciones numeradas si ya completó cada
+   requisito antes de derivar, en vez de solo esperar tiempo) — pospuesto a propósito por falta de
+   tiempo, spec completa ya documentada en el archivo, 4 campos personalizados ya creados en GHL
+   (`seguro_confirmado`, `medico_confirmado`, `curso_confirmado`, `plataforma_confirmada`).
+- **Grabar el video de la plataforma** sigue pendiente (guion listo, sección 9 del documento).
+- Estado: **en curso — avance grande hoy, falta terminar 3 ramas + probar + publicar**.
+- Recordado: 2 veces (25 sept 2026, creación; 26 sept, avance grande).
 
 ### GOTIR — enviar contrato + acceso a plataforma por separado a Maryi, John y Antonella Castañeda (24 sept 2026)
 

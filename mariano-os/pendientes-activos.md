@@ -22,6 +22,31 @@
 
 ## Abiertos
 
+### GOTIR — repensar cómo se modela "Reagrupación" dentro de tipo de trámite en GHL (26 sept 2026)
+
+Surgió al revisar el workflow "nuevo cliente start" (rama de seguimiento post-pago, GHL): una de las
+ramas del Condition por "Tipo de trámite" filtraba por "Renovación" + "Reagrupación" juntos, mal
+titulada como "CUENTA PROPIA". Al corregir el título, Mariano señaló el problema de fondo: **"Reagrupación"
+no es un tipo de trámite en sí mismo** — es un atributo que puede sumarse a cualquier trámite (un cliente
+puede reagrupar a su esposa/hijo menor tanto en un Visado, como en una Estancia o una Residencia). Hoy
+vive mezclado dentro de la condición de "Renovación", lo cual no representa bien la realidad.
+
+- Decisión explícita de Mariano (26 sept 2026): por ahora no tocar el chip "Reagrupación" de esa
+  condición (sigue funcionando como hasta ahora, no romper nada) — la rama se renombra a "Renovación
+  por estudios" para reflejar su uso real, y se elimina la rama vacía duplicada "RENOVACIÓN DE ESTUDIOS"
+  (quedaba muerta, nunca se ejecutaba porque la otra la interceptaba antes en el orden de evaluación).
+- Mismo criterio aplica potencialmente a "Renovación" en general: Mariano notó que tampoco es 100%
+  genérico (se puede renovar una Estancia también, no solo Estudios) — decidió no complicarse con eso
+  ahora porque no es un caso tan frecuente, y arrancar solo con "Renovación por estudios" como caso
+  principal.
+- **Pendiente real**: si en algún momento se quiere modelar "Reagrupación" (y quizás "Renovación" en
+  general) como un atributo/tag transversal en vez de un valor más dentro de "Tipo de trámite", hay que
+  revisar todas las ramas del Condition de "nuevo cliente start" (y cualquier otro workflow que use el
+  mismo campo) para separar correctamente cada combinación — hoy no está roto, pero puede generar la
+  misma confusión de etiquetas que se encontró hoy en cualquier otra rama.
+- Estado: **abierto — decisión de fondo pospuesta a propósito por Mariano, sin urgencia**.
+- Recordado: 1 vez (26 sept 2026, creación).
+
 ### GOTIR — construir la secuencia post-pago (25 sept 2026)
 
 Mariano pidió un procedimiento completo que se dispare apenas un cliente paga — más allá del

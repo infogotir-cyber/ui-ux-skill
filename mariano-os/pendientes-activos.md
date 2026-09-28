@@ -552,10 +552,12 @@ y valor, `opportunity_id=7l4aZEKuzXBh3bNJgXal`).
 
 - **Actualizado 12 sept 2026**: Mariano cobró **75€ de los 150€** — quedan **75€ pendientes**.
   Recordatorio programado para el **27 de septiembre** (`trig_011LPaJKJym11i8T8HGNgiiY`).
-- Estado: **en curso — mitad cobrada, 75€ restantes, seguimiento pausado hasta el 27 sept**.
-- Recordado: 24 veces (31 ago 2026, creación; 2 sept, chequeo diario 18:00; 3 sept, chequeo diario
+- **Actualizado 28 sept 2026**: Mariano confirmó que Sarai todavía no pagó los 75€ restantes —
+  **debería pagar el 03/10 2026**, nueva fecha comprometida.
+- Estado: **en curso — mitad cobrada, 75€ restantes, próximo vencimiento comprometido 03/10 2026**.
+- Recordado: 25 veces (31 ago 2026, creación; 2 sept, chequeo diario 18:00; 3 sept, chequeo diario
   18:00; 4 sept, chequeo diario 18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00;
-  8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 28 sept).
+  8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 28 sept, 28 sept — Mariano confirma no pagado, nuevo vencimiento 03/10).
 
 ### GOTIR — urgente
 

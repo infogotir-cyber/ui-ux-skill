@@ -37,7 +37,7 @@ otros lugares donde aparece, documentados en `comercial/CLAUDE.md`, no tocados h
 - El mapa de reemplazo por tipo de trámite ya está confirmado por Mariano — ver
   `direcciones/comercial/secuencia-post-pago.md` sección 7.
 - Estado: **abierto — corregido solo el default de ESTANCIA, falta el resto**.
-- Recordado: 6 veces (26 sept 2026, creación, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+- Recordado: 7 veces (26 sept 2026, creación, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 ### GOTIR — repensar cómo se modela "Reagrupación" dentro de tipo de trámite en GHL (26 sept 2026)
 
@@ -62,7 +62,7 @@ vive mezclado dentro de la condición de "Renovación", lo cual no representa bi
   mismo campo) para separar correctamente cada combinación — hoy no está roto, pero puede generar la
   misma confusión de etiquetas que se encontró hoy en cualquier otra rama.
 - Estado: **abierto — decisión de fondo pospuesta a propósito por Mariano, sin urgencia**.
-- Recordado: 6 veces (26 sept 2026, creación, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+- Recordado: 7 veces (26 sept 2026, creación, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 ### GOTIR — construir la secuencia post-pago (25 sept 2026, avance grande 26 sept 2026)
 
@@ -102,7 +102,7 @@ Detalle completo, honesto y actualizado en `direcciones/comercial/secuencia-post
    (`seguro_confirmado`, `medico_confirmado`, `curso_confirmado`, `plataforma_confirmada`).
 - **Grabar el video de la plataforma** sigue pendiente (guion listo, sección 9 del documento).
 - Estado: **en curso — avance grande hoy, falta terminar 3 ramas + probar + publicar**.
-- Recordado: 7 veces (25 sept 2026, creación; 26 sept, avance grande, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+- Recordado: 8 veces (25 sept 2026, creación; 26 sept, avance grande, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 ### GOTIR — enviar contrato + acceso a plataforma por separado a Maryi, John y Antonella Castañeda (24 sept 2026)
 
@@ -180,7 +180,7 @@ ahorro al cliente — sin un criterio fijo todavía.
   reagrupado en un trámite familiar, en vez de negociarlo cada vez con la abogada y prometerle al
   cliente "voy a ver qué consigo" sin saber de antemano cuánto se puede ofrecer.
 - Estado: **abierto — sin decisión de Mariano todavía**.
-- Recordado: 6 veces (23 sept 2026, creación, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+- Recordado: 7 veces (23 sept 2026, creación, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 ### GOTIR — posible colaboradora especializada en Argentina, sondeada informalmente con Luciana Verbauwede (23 sept 2026)
 
@@ -195,7 +195,7 @@ GOTIR" en la misma conversación.
   `comercial/CLAUDE.md`) más allá de la mención en el registro de la llamada — no se trata como
   decisión tomada ni como colaboradora confirmada.
 - Estado: **abierto — sin decisión ni respuesta de Luciana confirmada todavía, no asumir que avanza**.
-- Recordado: 6 veces (23 sept 2026, creación, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+- Recordado: 7 veces (23 sept 2026, creación, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 ### GOTIR — reclamo de María Isabel López Arango sobre autorización de trabajo limitada a Madrid (13 sept 2026, hallado en barrido Fase C)
 
@@ -212,7 +212,7 @@ afecta directamente su posibilidad de trabajar donde va a vivir. Pide una soluci
   mensaje de texto nuevo — es una llamada ya prometida, sobre un reclamo real con implicancia legal/
   contractual (alcance geográfico de la autorización de trabajo).
 - Estado: **en curso — llamada comprometida para el lunes 14 sept, sin ejecutar todavía**.
-- Recordado: 17 veces (13 sept 2026, creación — hallado en el barrido Fase C de la mañana, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+- Recordado: 18 veces (13 sept 2026, creación — hallado en el barrido Fase C de la mañana, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 ### Personal — crisis de caja urgente (24 ago 2026, la más urgente de todas ahora mismo)
 
@@ -309,12 +309,12 @@ prioridad real todavía — Mariano pidió armar el orden cruzando contra lo que
 - Estado: **abierto — se alivia progresivamente en varios frentes (Javier Maddia, Izie, Micol ya
   saldada), pero sigue el agujero de fondo (IRPF+IVA, tarjeta de crédito, cuenta en -700€) sin
   resolver**.
-- Recordado: 36 veces (24 ago 2026; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago,
+- Recordado: 37 veces (24 ago 2026; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago,
   chequeo diario 18:00; 28 ago, chequeo diario 18:00; 28 ago, más tarde — agotamiento expresado; 29
   ago, chequeo diario 18:00; 30 ago, chequeo diario 18:00; 31 ago — se agrava con adelantos de
   tarjeta de crédito; 2 sept, chequeo diario 18:00; 3 sept, chequeo diario 18:00; 4 sept, chequeo
   diario 18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario
-  18:00; 8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+  18:00; 8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 ### Ministerio — traspaso de pilar de New Life a Paola Guanuchi (7 sept 2026)
 
@@ -350,8 +350,8 @@ Paola/Mariano, no de este sistema, salvo compartir el documento):
 - Estado: **capacitación cerrada, traspaso casi completo, checklist de 10 acciones sin confirmar
   ítem por ítem, y el documento final para Paola sigue en revisión** — no asumir ninguna hecha hasta
   que Mariano lo confirme.
-- Recordado: 21 veces (7 sept 2026, creación; 7 sept, chequeo diario 18:00; 8 sept, capacitación
-  realizada y documento corregido/enviado; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, Mariano pide seguir corrigiendo el documento antes de mandarlo, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+- Recordado: 22 veces (7 sept 2026, creación; 7 sept, chequeo diario 18:00; 8 sept, capacitación
+  realizada y documento corregido/enviado; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, Mariano pide seguir corrigiendo el documento antes de mandarlo, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 ### Ministerio — clase de recupero New Life: Jorleni, Marian y Sabrina (17 sept 2026)
 
@@ -361,7 +361,7 @@ recuperar esa clase con él — de paso, Mariano quiere hacer el recupero junto 
 confirmar el grupo/rol sin que Mariano lo aclare) para no repetir la clase 3 veces. Falta encontrar
 un horario que les sirva a los 3/4 al mismo tiempo.
 - Estado: **abierto — buscando horario común**.
-- Recordado: 6 veces (17 sept 2026, creación, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+- Recordado: 7 veces (17 sept 2026, creación, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 ### Personal — proyecto de serie/dibujos animados con enseñanzas cristocéntricas (4 sept 2026)
 
@@ -374,9 +374,9 @@ herramientas como LTX Studio (pipeline completo guión→storyboard→video) o V
 
 - Estado: **abierto — quiere retomarlo, todavía sin arrancar nada concreto**. No prioridad
   inmediata dada la crisis de caja — no gastar en planes pagos todavía.
-- Recordado: 20 veces (4 sept 2026, creación; 4 sept, chequeo diario 18:00; 5 sept, chequeo diario
+- Recordado: 21 veces (4 sept 2026, creación; 4 sept, chequeo diario 18:00; 5 sept, chequeo diario
   18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00; 8 sept, chequeo diario 18:00;
-  9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+  9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 ### GOTIR — pedirle a Exxo/Agustín todo lo pendiente, terminado y entregable (4 sept 2026)
 
@@ -387,9 +387,9 @@ Con el servicio de Exxo pausado (ver ítem de arriba y `direcciones/marketing/CL
 
 - **Actualizado 12 sept 2026**: Mariano ya envió el pedido — Agustín todavía no respondió.
 - Estado: **bloqueado (esperando respuesta de Agustín)**.
-- Recordado: 26 veces (4 sept 2026, creación; 4 sept, chequeo diario 18:00; 5 sept, chequeo diario
+- Recordado: 27 veces (4 sept 2026, creación; 4 sept, chequeo diario 18:00; 5 sept, chequeo diario
   18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00; 8 sept, chequeo diario 18:00;
-  9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+  9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 ### GOTIR — decisión estratégica: ¿bajar precios y jugar a volumen? (28 ago 2026)
 
@@ -410,10 +410,10 @@ eso lleva semanas de trabajo de builder, no algo que se resuelve ya. Bajar preci
 automatización, significaría menos margen por venta mientras todo el trabajo lo sigue haciendo él
 100% manual — el riesgo es que empeore el problema de caja a corto plazo antes de mejorarlo.
 
-- Recordado: 28 veces (28 ago 2026, recién planteado; 29 ago, chequeo diario 18:00; 30 ago, chequeo
+- Recordado: 29 veces (28 ago 2026, recién planteado; 29 ago, chequeo diario 18:00; 30 ago, chequeo
   diario 18:00; 2 sept, chequeo diario 18:00; 3 sept, chequeo diario 18:00; 4 sept, chequeo diario
   18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00;
-  8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+  8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 - **Ampliado 29 ago 2026**: análisis completo de riesgos/amenazas + las 19 opciones + una opción 20
   nueva (diversificar por tipo de trámite en España — nacionalidad, arraigos, emprendedor — en vez
   de país) ahora vive en `areas/gotir/analisis-estrategico-29ago2026.md`. Sin decisión tomada.
@@ -499,10 +499,10 @@ le ha prestado atención todavía y quiere hacerlo — surgió al revisar riesgo
 (guardan pasaportes, antecedentes penales, certificados médicos de clientes). Detalle completo en
 `areas/gotir/analisis-estrategico-29ago2026.md`, sección "Legal/regulatorio".
 - Estado: **abierto — Mariano quiere revisar el estado real con Conversia**.
-- Recordado: 27 veces (29 ago 2026, creación; 30 ago, chequeo diario 18:00; 2 sept, chequeo diario
+- Recordado: 28 veces (29 ago 2026, creación; 30 ago, chequeo diario 18:00; 2 sept, chequeo diario
   18:00; 3 sept, chequeo diario 18:00; 4 sept, chequeo diario 18:00; 5 sept, chequeo diario 18:00;
   6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00; 8 sept, chequeo diario 18:00; 9 sept,
-  chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+  chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 ### GOTIR — seguimiento
 
@@ -528,7 +528,7 @@ le ha prestado atención todavía y quiere hacerlo — surgió al revisar riesgo
      persona ayudando en otra área) y porque algunos ya están en grupos de WhatsApp con clientes.
      No hay nada que cambiar acá.
    - Estado: **el bloqueo de fondo está resuelto — canal de WhatsApp funcionando de nuevo**.
-   - Recordado: 19 veces (19/20 ago 2026; 20 ago, chequeo diario 20:00; 21 ago 2026, resolución, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+   - Recordado: 20 veces (19/20 ago 2026; 20 ago, chequeo diario 20:00; 21 ago 2026, resolución, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 ~~**Revisión de automatizaciones (builder de GHL) — RESUELTA por completo (21 ago 2026)**~~
    - El login automatizado por navegador no fue viable (protección anti-bot de GHL/Cloudflare —
@@ -555,9 +555,9 @@ y valor, `opportunity_id=7l4aZEKuzXBh3bNJgXal`).
 - **Actualizado 28 sept 2026**: Mariano confirmó que Sarai todavía no pagó los 75€ restantes —
   **debería pagar el 03/10 2026**, nueva fecha comprometida.
 - Estado: **en curso — mitad cobrada, 75€ restantes, próximo vencimiento comprometido 03/10 2026**.
-- Recordado: 27 veces (31 ago 2026, creación; 2 sept, chequeo diario 18:00; 3 sept, chequeo diario
+- Recordado: 28 veces (31 ago 2026, creación; 2 sept, chequeo diario 18:00; 3 sept, chequeo diario
   18:00; 4 sept, chequeo diario 18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00;
-  8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 28 sept, 28 sept — Mariano confirma no pagado, nuevo vencimiento 03/10, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+  8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 28 sept, 28 sept — Mariano confirma no pagado, nuevo vencimiento 03/10, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 ### GOTIR — urgente
 
@@ -581,9 +581,9 @@ y valor, `opportunity_id=7l4aZEKuzXBh3bNJgXal`).
      `CLAUDE.md` raíz, sección de herramientas conectadas/GHL, para el historial completo del
      diagnóstico (queda como registro histórico, no desactualizar retroactivamente).
    - Estado: **resuelto**.
-   - Recordado: 23 veces (28 ago 2026, reabierto; 28 ago, chequeo diario 18:00; 29 ago, chequeo
+   - Recordado: 24 veces (28 ago 2026, reabierto; 28 ago, chequeo diario 18:00; 29 ago, chequeo
      diario 18:00; 30 ago, chequeo diario 18:00; 2 sept, chequeo diario 18:00; 3 sept, chequeo
-     diario 18:00; 4 sept, chequeo diario 18:00 — resuelto, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+     diario 18:00; 4 sept, chequeo diario 18:00 — resuelto, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 ~~0. **Promo en USDT/Binance ofrecida a Javier Maddia — RESUELTO (10 sept 2026): pagó**~~
    - Detectado 19 ago revisando la llamada del 18 ago (73 min, familia de 3, ~2.475€ potenciales).
@@ -639,13 +639,13 @@ y valor, `opportunity_id=7l4aZEKuzXBh3bNJgXal`).
      viernes, pide nuevo día. GHL aceptó el envío (`message_id=0S93hBbZPugXnkaXPxiq`) — pendiente
      que Mariano confirme entrega real en el panel de Conversaciones.
    - Estado: **en curso — mensaje nuevo enviado, esperando confirmación de entrega y respuesta**.
-   - Recordado: 37 veces (19 ago 2026; 20 ago, chequeo diario 20:00; 22 ago, chequeo de la mañana;
+   - Recordado: 38 veces (19 ago 2026; 20 ago, chequeo diario 20:00; 22 ago, chequeo de la mañana;
      22 ago, chequeo diario 20:00; 23 ago, chequeo diario 20:00; 25 ago, chequeo diario 18:00; 26 ago,
      chequeo diario 18:00 — recontactada esta tarde; 27 ago, chequeo diario 18:00; 28 ago, chequeo
      diario 18:00; 29 ago, chequeo diario 18:00; 30 ago, chequeo diario 18:00; 2 sept, chequeo diario
      18:00; 3 sept, chequeo diario 18:00; 4 sept, chequeo diario 18:00; 5 sept, chequeo diario 18:00;
      6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00; 8 sept, chequeo diario 18:00; 9 sept,
-     chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+     chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 ### GOTIR — decisión pendiente, la más importante de todas
 
@@ -694,12 +694,12 @@ y valor, `opportunity_id=7l4aZEKuzXBh3bNJgXal`).
      Fase B y C sin empezar**. La Fase C manual (barrido de conversaciones) se usó de nuevo hoy
      (26 ago) para el barrido de cobro urgente — sigue funcionando bien como práctica, aunque más
      cara en tiempo que el diseño final automatizado.
-   - Recordado: 35 veces (20 ago 2026, tras la elección; 22 ago, chequeo diario 20:00; 23 ago,
+   - Recordado: 36 veces (20 ago 2026, tras la elección; 22 ago, chequeo diario 20:00; 23 ago,
      chequeo diario 20:00; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago,
      chequeo diario 18:00; 28 ago, chequeo diario 18:00; 29 ago, chequeo diario 18:00; 30 ago,
      chequeo diario 18:00; 2 sept, chequeo diario 18:00; 3 sept, chequeo diario 18:00; 4 sept,
      chequeo diario 18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00;
-     8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+     8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 ### GOTIR — Tracker de próximos cierres (creado 29 ago 2026, a pedido explícito de Mariano)
 
@@ -749,7 +749,7 @@ cada barrido con lo que surja de las llamadas de esa semana.
 | Marylaura Guerrero | 750€, `ySVES9NUeMTbZfuRV9vt` | Dijo explícitamente "preferimos esperar un poco más" (24 ago, imprevisto de su papá) — **a propósito sin presionar**, seguimiento activo de venta sigue recién para la semana del 7-10 sept. **Actualizado 31 ago 2026**: Mariano nunca le había respondido a ese último mensaje de ella — se le dio un mensaje de cierre de cortesía (sin pitch, sin CTA de cierre), solo para no dejarla sin respuesta: *"Marylaura, no hay problema, entiendo perfecto que la prioridad sea tu papá 💛 Cuando estén listos, acá voy a estar para retomarlo cuando les convenga. Cualquier duda que surja mientras tanto, escribime tranquila."* No cambia la fecha de seguimiento comercial activo (sigue siendo 7-10 sept). |
 
 - Estado: **en curso — tracker recién creado, primera foto real tomada el 29 ago 2026**.
-- Recordado: 36 veces (29 ago 2026, creación; 29 ago, chequeo diario 18:00; 30 ago, chequeo diario
+- Recordado: 37 veces (29 ago 2026, creación; 29 ago, chequeo diario 18:00; 30 ago, chequeo diario
   18:00; 31 ago, barrido Fase C con mensajes reales enviados a Maryi Castañeda y Javier Maddia, y
   respuesta de cortesía dada para Marylaura Guerrero; 2 sept, barrido Fase C — Milagros, Heidy Rozo
   y Silvana Bortolotti; 3 sept, barrido Fase C — sin drafts nuevos, los 3 del 2 sept siguen sin
@@ -760,7 +760,7 @@ cada barrido con lo que surja de las llamadas de esa semana.
   Ysamar Balza; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00; 8 sept, chequeo diario
   18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00; 12
   sept, barrido Fase C — 6 borradores nuevos (Sara Sofía, Maryi, Héctor, Luisana, Maximiliano,
-  Stephany), esperando aprobación de Mariano; 12 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+  Stephany), esperando aprobación de Mariano; 12 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 ### GOTIR — barrido de cobro urgente (26 ago 2026, por la crisis de caja)
 
@@ -778,11 +778,11 @@ salida en vez de presionar — se sugirió una tarea de seguimiento sin presión
 en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
 `direcciones/comercial/CLAUDE.md` sección 6.3, Caso 2).
 - Estado: **en curso — esperando respuesta de los 5 contactados hoy**.
-- Recordado: 32 veces (26 ago, chequeo diario 18:00; 27 ago, chequeo diario 18:00; 28 ago, chequeo
+- Recordado: 33 veces (26 ago, chequeo diario 18:00; 27 ago, chequeo diario 18:00; 28 ago, chequeo
   diario 18:00; 29 ago, chequeo diario 18:00; 30 ago, chequeo diario 18:00; 2 sept, chequeo diario
   18:00; 3 sept, chequeo diario 18:00; 4 sept, chequeo diario 18:00; 5 sept, chequeo diario 18:00;
   6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00; 8 sept, chequeo diario 18:00; 9 sept,
-  chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+  chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 ### GOTIR — prioritarios (marcados así por Mariano, 20 ago 2026 madrugada)
 
@@ -822,13 +822,13 @@ en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
    - Mencionado por Mariano: antes del 19 ago 2026 (fecha exacta no registrada — él mismo señaló el
      19 ago que lo había pedido y nunca se retomó).
    - Estado: **abierto**, sin dueño ni plan todavía.
-   - Recordado: 37 veces (19 ago 2026, chequeo diario 20:00; 20 ago, chequeo diario 20:00; 22 ago,
+   - Recordado: 38 veces (19 ago 2026, chequeo diario 20:00; 20 ago, chequeo diario 20:00; 22 ago,
      chequeo diario 20:00; 23 ago, chequeo diario 20:00; 25 ago, chequeo diario 18:00; 26 ago,
      chequeo diario 18:00; 27 ago, chequeo diario 18:00; 28 ago, chequeo diario 18:00; 29 ago,
      chequeo diario 18:00; 30 ago, chequeo diario 18:00; 2 sept, chequeo diario 18:00; 3 sept,
      chequeo diario 18:00; 4 sept, chequeo diario 18:00; 5 sept, chequeo diario 18:00; 6 sept,
      chequeo diario 18:00; 7 sept, chequeo diario 18:00; 8 sept, chequeo diario 18:00; 9 sept,
-     chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+     chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
    - Falta definir: ¿GHL ya centraliza Instagram/WhatsApp — también permite TikTok, o hace falta
      otra herramienta? Confirmar con Mariano el volumen real de mensajes de TikTok antes de decidir
      la solución.
@@ -853,13 +853,13 @@ en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
    - Estado: **bloqueado (esperando a Mariano) — texto terminado y cargado en el sistema, falta que
      Mariano pegue los 9 Fragmentos en GHL y los pruebe manual con leads reales antes de que se
      construya la versión bot en n8n**.
-   - Recordado: 37 veces (19 ago 2026, chequeo diario 20:00; 20 ago 2026; 20 ago, chequeo diario
+   - Recordado: 38 veces (19 ago 2026, chequeo diario 20:00; 20 ago 2026; 20 ago, chequeo diario
      20:00; 25 ago 2026; 25 ago, en curso ahora mismo — 9 Fragmentos ya cargados en GHL por
      Mariano, falta probarlos con leads reales; 26 ago, chequeo diario 18:00; 27 ago, chequeo
      diario 18:00; 28 ago, chequeo diario 18:00; 29 ago, chequeo diario 18:00; 30 ago, chequeo
      diario 18:00; 2 sept, chequeo diario 18:00; 3 sept, chequeo diario 18:00; 4 sept, chequeo
      diario 18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00;
-     8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+     8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 3. **Migrar la cuenta de ads a facturación en euros (hoy en pesos, vía Mercado Pago Argentina)**
    ⚠️ **Exxo (quien maneja la campaña de ads) quedó pausado el 4 sept 2026** — ver
@@ -869,12 +869,12 @@ en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
      (más caro pero deducible, y no le parece correcto operar en ARS para un negocio español), pero
      sin fecha todavía — acaba de cargar 70.000 ARS para no cortar la campaña mientras tanto.
    - Estado: **abierto**, sin fecha.
-   - Recordado: 36 veces (21 ago 2026, dos veces el mismo día; 22 ago, chequeo diario 20:00; 23 ago,
+   - Recordado: 37 veces (21 ago 2026, dos veces el mismo día; 22 ago, chequeo diario 20:00; 23 ago,
      chequeo diario 20:00; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago,
      chequeo diario 18:00; 28 ago, chequeo diario 18:00; 29 ago, chequeo diario 18:00; 30 ago,
      chequeo diario 18:00; 2 sept, chequeo diario 18:00; 3 sept, chequeo diario 18:00; 4 sept,
      chequeo diario 18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00;
-     8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+     8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 4. **Conectar el sistema a la cuenta de administrador de anuncios de Mariano (Meta Ads Manager)**
    ⚠️ **Exxo quedó pausado el 4 sept 2026** — ver `direcciones/marketing/CLAUDE.md` sección 12.
@@ -886,12 +886,12 @@ en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
      de la cuenta de anuncios (`act_XXXXXXXXXXXXX`) — ver instrucciones de dónde conseguir cada uno
      en `direcciones/marketing/CLAUDE.md` sección 7.
    - Estado: **abierto — bloqueado esperando que Mariano consiga el token y el ID de cuenta**.
-   - Recordado: 36 veces (21 ago 2026, dos veces el mismo día; 22 ago, chequeo diario 20:00; 23 ago,
+   - Recordado: 37 veces (21 ago 2026, dos veces el mismo día; 22 ago, chequeo diario 20:00; 23 ago,
      chequeo diario 20:00; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago,
      chequeo diario 18:00; 28 ago, chequeo diario 18:00; 29 ago, chequeo diario 18:00; 30 ago,
      chequeo diario 18:00; 2 sept, chequeo diario 18:00; 3 sept, chequeo diario 18:00; 4 sept,
      chequeo diario 18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00;
-     8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+     8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 4.5. **Mandarle a Exxo la lista consolidada de qué falta para cerrar bien la transición (9 sept 2026)**
    - Mariano pidió analizar el mensaje de cierre de Exxo y decir qué falta pedir para que la
@@ -903,7 +903,7 @@ en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
      mandó nada a Exxo** — es una comunicación que Mariano tiene que redactar/confirmar él mismo,
      no algo que este sistema mande solo.
    - Estado: **abierto — checklist armado, pendiente de que Mariano se lo mande a Agustín**.
-   - Recordado: 19 veces (9 sept 2026, creación, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+   - Recordado: 20 veces (9 sept 2026, creación, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 5. **Repositorio de marketing de Exxo — conseguirlo y dárselo a este sistema para tener contexto real**
    ⚠️ **Exxo ya no presta servicio (confirmado 9 sept 2026)** — ver
@@ -914,10 +914,10 @@ en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
      en la sección 13.3 del documento de marketing (GitHub, Vercel, GA4, Search Console, Meta
      Business, LinkedIn, DNS).
    - Estado: **en curso — Exxo pide videollamada para transferir, sin agendar todavía**.
-   - Recordado: 29 veces (28 ago, chequeo diario 18:00; 29 ago, chequeo diario 18:00; 30 ago, chequeo
+   - Recordado: 30 veces (28 ago, chequeo diario 18:00; 29 ago, chequeo diario 18:00; 30 ago, chequeo
      diario 18:00; 2 sept, chequeo diario 18:00; 3 sept, chequeo diario 18:00; 4 sept, chequeo
      diario 18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00;
-     8 sept, chequeo diario 18:00; 9 sept, mensaje de cierre de Exxo recibido y analizado, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+     8 sept, chequeo diario 18:00; 9 sept, mensaje de cierre de Exxo recibido y analizado, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 6. **Confirmar monto real de fondos demostrables — cambio de criterio a "100% IPRE mensual"**
    - Surgió en la reunión del 25 ago con Agustín (`direcciones/marketing/CLAUDE.md` sección 11.2):
@@ -927,10 +927,10 @@ en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
      al que se viene usando en llamadas reales. **No usar la cifra de IPRE con clientes hasta que
      Mariano confirme el monto exacto.**
    - Estado: **abierto, bloqueante para el nuevo PDF de venta**.
-   - Recordado: 29 veces (28 ago, chequeo diario 18:00; 29 ago, chequeo diario 18:00; 30 ago, chequeo
+   - Recordado: 30 veces (28 ago, chequeo diario 18:00; 29 ago, chequeo diario 18:00; 30 ago, chequeo
      diario 18:00; 2 sept, chequeo diario 18:00; 3 sept, chequeo diario 18:00; 4 sept, chequeo
      diario 18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00;
-     8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+     8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 7. **Script de alertas de Ads — nunca se entregó, pedir informe final manual en su lugar**
    ⚠️ **Exxo ya no presta servicio (confirmado 9 sept 2026)** — ver
@@ -941,11 +941,11 @@ en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
      estancias (gasto total, leads, costo por lead, qué creativos funcionaron) antes de que se
      desconecten del todo.
    - Estado: **abierto — pedir informe final en vez del script**.
-   - Recordado: 29 veces (28 ago, chequeo diario 18:00; 29 ago, chequeo diario 18:00; 30 ago, chequeo
+   - Recordado: 30 veces (28 ago, chequeo diario 18:00; 29 ago, chequeo diario 18:00; 30 ago, chequeo
      diario 18:00; 2 sept, chequeo diario 18:00; 3 sept, chequeo diario 18:00; 4 sept, chequeo
      diario 18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00;
      8 sept, chequeo diario 18:00; 9 sept, confirmado que nunca llegó — reformulado como pedido de
-     informe final, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+     informe final, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 8. **Avisarle a Agustín que NO migre el WhatsApp de la centralita al número personal de Mariano**
    - **Resuelto 26 ago 2026** — comunicado a Agustín, incluido en el mismo mensaje que el resto del
@@ -980,10 +980,10 @@ en GHL hoy, cerrando el pendiente que quedaba abierto desde el 17-18 ago (ver
     - Estado: **resuelto** (con las 2 dudas menores todavía abiertas, no bloqueantes).
     ⚠️ **Exxo quedó pausado el 4 sept 2026** — ver `direcciones/marketing/CLAUDE.md` sección 12.
     - Estado: **en curso** — texto listo, falta el envío (mismo paquete que el ítem 11).
-    - Recordado: 28 veces (29 ago, chequeo diario 18:00; 30 ago, chequeo diario 18:00; 2 sept,
+    - Recordado: 29 veces (29 ago, chequeo diario 18:00; 30 ago, chequeo diario 18:00; 2 sept,
       chequeo diario 18:00; 3 sept, chequeo diario 18:00; 4 sept, chequeo diario 18:00; 5 sept,
       chequeo diario 18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00; 8 sept,
-      chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+      chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 9. **Permisos de API en GHL otorgados a Agustín (Exxo) — confirmado por Mariano (26 ago), sin objeciones**
    - Ver `direcciones/marketing/CLAUDE.md` sección 11.4. No requiere ninguna acción de este sistema,
@@ -1026,11 +1026,11 @@ detalle de a quién se le preguntó cada uno en `areas/ministerio/CLAUDE.md`.
   se queda con qué.
 - Estado: **en curso — presupuesto aprobado, arrancando fase de compras; pendiente redistribuir
   entre Marco Guanuchi y Adrián Caro lo que era de Julio César Navia (ya no en logística)**.
-- Recordado: 24 veces (3 sept 2026, creación; 3 sept, chequeo diario 18:00; 4 sept, chequeo diario
+- Recordado: 25 veces (3 sept 2026, creación; 3 sept, chequeo diario 18:00; 4 sept, chequeo diario
   18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00;
   7 sept, confirmado por Mariano — presupuestos enviados, sigue esperando confirmación; 8 sept,
   chequeo diario 18:00; 9 sept, Mariano confirma radios/teléfono gestionados y bus en curso; 10
-  sept, Mariano confirma reasignación de los 4 ítems restantes a Julio César Navia, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, presupuesto aprobado + cambio de equipo, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+  sept, Mariano confirma reasignación de los 4 ítems restantes a Julio César Navia, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, presupuesto aprobado + cambio de equipo, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 ### Ministerio — seguimiento real a los nuevos del partido de fútbol (10 sept 2026)
 
@@ -1049,7 +1049,7 @@ quién invitó, para llevarlos a la actividad del 13 sept, luego a la del 20 sep
   liberen de esos bloqueos mentales, ninguna actividad linda se va a traducir en fruto real.
 - Estado: **abierto — patrón repetido (fútbol → 13 sept) sin resolver de raíz, más allá de la
   corrección puntual en el momento**.
-- Recordado: 12 veces (10 sept 2026, creación, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, confirmado como patrón repetido, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+- Recordado: 13 veces (10 sept 2026, creación, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 12 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, confirmado como patrón repetido, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 ### Ministerio — última actividad antes del Encuentro, domingo 20 sept (17 sept 2026)
 
@@ -1060,7 +1060,7 @@ qué es, quién la organiza, ni lugar/hora. Detalle en `areas/ministerio/CLAUDE.
 20 sept — última actividad antes del Encuentro".
 - Estado: **abierto — esperando que los líderes definan la actividad, corre contra el reloj (faltan
   3 días)**.
-- Recordado: 6 veces (17 sept 2026, creación, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+- Recordado: 7 veces (17 sept 2026, creación, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 ### Ministerio (Ruge y otros)
 
@@ -1084,14 +1084,14 @@ qué es, quién la organiza, ni lugar/hora. Detalle en `areas/ministerio/CLAUDE.
      apareció asociado a "COCINAS PORTATILES DE GAS" (ya `GESTIONADO`/`OK` como ítem, el maletín
      roto en sí sigue sin resolver). Paños pequeños, linterna de cabeza y martillo siguen sin
      rastro en ningún excel — Mariano dijo que los corrobora él mismo.
-   - Recordado: 29 veces (20 ago, chequeo diario 20:00; 21 ago, cambio de fuente; 22 ago, chequeo
+   - Recordado: 30 veces (20 ago, chequeo diario 20:00; 21 ago, cambio de fuente; 22 ago, chequeo
      diario 20:00; 23 ago, chequeo diario 20:00; 25 ago, chequeo diario 18:00; 26 ago, chequeo
      diario 18:00; 28 ago, chequeo diario 18:00; 29 ago, chequeo diario 18:00; 30 ago, chequeo
      diario 18:00; 2 sept, chequeo diario 18:00 — 21 de los ~34 ítems del cruce de fechas límite del
      2 sept ya estaban `GESTIONADO`/`OK`, ver `areas/ministerio/CLAUDE.md`; 3 sept, chequeo diario
      18:00; 4 sept, chequeo diario 18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario
      18:00; 7 sept, chequeo diario 18:00; 8 sept, chequeo diario 18:00; 9 sept, chequeo diario
-     18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+     18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
    - **Actualizado 25 ago 2026 (mañana)**: Mariano ya les mandó a Marco y Julio la minuta de la
      reunión del 24 ago con todos los pendientes y la fecha límite (jueves 27 ago) — cubre lo mismo
      que este sistema iba a recordarles por separado del bloque "26 ago" (cámara/dron, Costa Rica,
@@ -1117,14 +1117,14 @@ qué es, quién la organiza, ni lugar/hora. Detalle en `areas/ministerio/CLAUDE.
      que **Paulina, Jacobo y Lisandro** paguen (Lisandro es el mismo caso de arriba sin poder
      pagar — no confirmado si esto significa que Mariano lo va a cubrir él).
    - Estado: **abierto**, varios sub-ítems en paralelo.
-   - Recordado: 36 veces (21 ago 2026, dos actualizaciones el mismo día; 22 ago, chequeo diario
+   - Recordado: 37 veces (21 ago 2026, dos actualizaciones el mismo día; 22 ago, chequeo diario
      20:00; 23 ago, chequeo diario 20:00; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario
      18:00; 27 ago, chequeo diario 18:00; 28 ago, chequeo diario 18:00; 29 ago, chequeo diario
      18:00; 30 ago, chequeo diario 18:00; 2 sept, chequeo diario 18:00 — el evento fue ayer, falta
      que Mariano cuente cómo salió; 3 sept, chequeo diario 18:00 — sigue sin novedad de cómo salió;
      4 sept, chequeo diario 18:00 — sigue sin novedad; 5 sept, chequeo diario 18:00 — sigue sin
      novedad; 6 sept, chequeo diario 18:00 — sigue sin novedad; 7 sept, chequeo diario 18:00;
-     8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+     8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 5. **Grupo de Madrid ("FM6") — riesgo RESUELTO (27 ago 2026), queda solo el pasaje**
    - **Resuelto**: Marianne y Yorlenny sí van al Lanzamiento (5 sept 2026) — se activan como líderes
@@ -1161,24 +1161,24 @@ qué es, quién la organiza, ni lugar/hora. Detalle en `areas/ministerio/CLAUDE.
    - Pidió armar un **listado de los hombres que está visionando** para servir en el reto — todavía
      no dio nombres, falta que los aporte antes de poder armar la lista.
    - Estado: **abierto — reuniones hoy a la noche**.
-   - Recordado: 34 veces (24 ago 2026; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00;
+   - Recordado: 35 veces (24 ago 2026; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00;
      27 ago, chequeo quincenal de visionadores; 28 ago, chequeo diario 18:00; 29 ago, chequeo
      diario 18:00; 30 ago, chequeo diario 18:00; 2 sept, chequeo diario 18:00; 3 sept, chequeo
      quincenal de visionadores — sigue 15/50, sin novedad; 3 sept, chequeo diario 18:00; 4 sept,
      chequeo diario 18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00;
-     8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+     8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 6. **Asignar a Emiliano Ortiz y Litzy a un grupo FM4 (4.1, 4.2 o 4.3)**
    - Detalle completo en `areas/ministerio/CLAUDE.md`, sección "Campaña de evangelización rumbo al
      Encuentro". Los dos fueron por primera vez a Noches de Vida el 20 ago 2026; Mariano dijo que
      los va a repartir más adelante, sin fecha concreta todavía.
    - Estado: **abierto**, sin urgencia declarada.
-   - Recordado: 35 veces (21 ago 2026; 22 ago, chequeo diario 20:00; 23 ago, chequeo diario 20:00;
+   - Recordado: 36 veces (21 ago 2026; 22 ago, chequeo diario 20:00; 23 ago, chequeo diario 20:00;
      25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago, chequeo diario 18:00; 28
      ago, chequeo diario 18:00; 29 ago, chequeo diario 18:00; 30 ago, chequeo diario 18:00; 2 sept,
      chequeo diario 18:00; 3 sept, chequeo diario 18:00; 4 sept, chequeo diario 18:00; 5 sept,
      chequeo diario 18:00; 6 sept, chequeo diario 18:00; 7 sept, chequeo diario 18:00; 8 sept,
-     chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+     chequeo diario 18:00; 9 sept, chequeo diario 18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 9. **Ruge — mensajes enviados al equipo de logística (30 ago 2026, noche), esperando respuestas**
    - Mariano mandó los mensajes finales (más cortos que el borrador propuesto) a Marco Guanuchi,
@@ -1208,11 +1208,11 @@ qué es, quién la organiza, ni lugar/hora. Detalle en `areas/ministerio/CLAUDE.
      empacar.
    - Estado: **en curso — esperando presupuesto de Marco, respuesta de Julio, y reasignar platos/
      bolsa plástica negra (todavía sin dueño)**.
-   - Recordado: 29 veces (30 ago 2026, creación; 2 sept, chequeo diario 18:00; 3 sept, chequeo
+   - Recordado: 30 veces (30 ago 2026, creación; 2 sept, chequeo diario 18:00; 3 sept, chequeo
      diario 18:00; 4 sept, chequeo diario 18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo
      diario 18:00; 7 sept, chequeo diario 18:00; 7 sept, David Luzuriaga sale del equipo — ítems
      sin dueño; 8 sept, chequeo diario 18:00; 9 sept, chequeo diario 18:00; 10 sept, cañas y
-     pastillas reasignadas a Julio César Navia, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+     pastillas reasignadas a Julio César Navia, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 7. **Sistema de seguimiento 1:1 con discípulos FM4 — registro de fechas en marcha**
    - Detalle completo y tabla de registro en `areas/ministerio/CLAUDE.md`, sección 8.3. Mariano
@@ -1227,14 +1227,14 @@ qué es, quién la organiza, ni lugar/hora. Detalle en `areas/ministerio/CLAUDE.
    - **Falta antes de poder avisar proactivamente con precisión**: como la fecha es "la semana
      pasada" y no un día puntual, el aviso de las ~3 semanas va a ser aproximado, no exacto al día.
    - Estado: **abierto — tracking en marcha, con 3 de ~10 discípulos ya con una fecha registrada**.
-   - Recordado: 36 veces (21 ago 2026, dos veces; 22 ago, chequeo diario 20:00; 23 ago, chequeo
+   - Recordado: 37 veces (21 ago 2026, dos veces; 22 ago, chequeo diario 20:00; 23 ago, chequeo
      diario 20:00; 25 ago, chequeo diario 18:00; 26 ago, chequeo diario 18:00; 27 ago, chequeo
      diario 18:00 — todavía sin decidir si las tareas de Diego/Rocío/Ingrid en ClickUp se marcan
      completadas o quedan como recurrentes; 28 ago, chequeo diario 18:00; 29 ago, chequeo diario
      18:00; 30 ago, chequeo diario 18:00; 2 sept, chequeo diario 18:00; 3 sept, chequeo diario
      18:00; 4 sept, chequeo diario 18:00; 5 sept, chequeo diario 18:00; 6 sept, chequeo diario
      18:00; 7 sept, chequeo diario 18:00; 8 sept, chequeo diario 18:00; 9 sept, chequeo diario
-     18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept).
+     18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct).
 
 ---
 

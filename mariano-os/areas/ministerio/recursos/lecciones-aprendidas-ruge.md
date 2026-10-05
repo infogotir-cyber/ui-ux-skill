@@ -32,7 +32,8 @@ de la fecha límite real.
 
 Mariano delegó la preparación de las etiquetas de las mochilas al pastor, asumiendo que él se
 encargaba. Hubo una **falla de comunicación real** entre ambos, y el resultado fue que se hicieron
-tarde — Mariano lo califica como **"un gran error"**.
+tarde — Mariano lo califica como **"un gran error"**. Estas etiquetas las hace el mismo proveedor
+que las de provisiones (punto 6) y las gorras (punto 8) — ver punto 7, "Levis".
 
 **Corrección para la próxima vez**: no asumir que una tarea crítica como esta está cubierta solo
 porque se mencionó una vez quién la iba a hacer — confirmar explícitamente con esa persona, con
@@ -68,24 +69,33 @@ problema real).
 Las etiquetas de provisiones también llegaron tarde/sin anticipación, y el resultado concreto fue
 que **terminaron pagando mucho más caro** por pedirlas a último momento en vez de con anticipación.
 Mismo patrón de fondo que el punto 1 (mochilas): una tarea de preparación que se deja para último
-momento sale más cara y/o peor hecha.
+momento sale más cara y/o peor hecha. Mismo proveedor que las etiquetas de mochilas y las gorras —
+ver punto 7, "Levis".
 
-## 7. Cuidado con "Levis" — proveedor/colaborador que ha fallado varias veces
+## 7. Cuidado con "Levis" — proveedor que hace las gorras y las etiquetas, ha fallado varias veces
 
-Mariano pidió tener cuidado con **"Levis"** (nombre tal cual lo dijo Mariano, por dictado — no
-confirmado todavía si es un proveedor, una empresa o una persona puntual, ni en qué tarea
-específica falló) — "nos ha quedado mal con varias cosas". Pendiente de precisar con Mariano, la
-próxima vez que lo mencione, exactamente qué cosas y si conviene no volver a trabajar con esa
-persona/proveedor para la próxima edición.
+**Precisado 6 oct 2026**: "Levis" (nombre tal cual lo dijo Mariano, por dictado — no confirmado si
+es el nombre de la empresa/local o de una persona) es el **proveedor que hace tanto las gorras como
+las etiquetas** (mochilas y provisiones, puntos 1, 6 y 8 de este documento) — es decir, el mismo
+proveedor está detrás de al menos 3 de los problemas ya listados arriba, no son fallas aisladas de
+3 proveedores distintos. "Nos ha quedado mal con varias cosas", en palabras de Mariano.
+
+**Corrección para la próxima vez**: dado que las etiquetas (mochilas y provisiones) y las gorras
+dependen del mismo proveedor, conviene decidir con más anticipación si se sigue trabajando con
+Levis o se busca una alternativa — y si se sigue con Levis, pedir todo (gorras + ambas etiquetas)
+con mucho más margen de tiempo del que se les dio en 2026, dado su historial real de demoras/
+errores. Pendiente de precisar con Mariano el detalle exacto de qué salió mal cada vez (más allá de
+gorras y etiquetas) para decidir si conviene cambiar de proveedor.
 
 ## 8. Gorras — corrección pendiente, con acción inmediata ya cargada en `pendientes-activos.md`
 
 Faltó poner el texto **"RETO 2"** en las gorras, y además quedaron **algunas gorras incorrectas
-que no se pudieron corregir** a tiempo para el evento. A diferencia de los puntos anteriores (que
-son lecciones para la próxima edición), este tiene una acción concreta y urgente **para ahora
-mismo** — ver `pendientes-activos.md`, ítem "Ministerio — corregir gorras del Reto Ruge" (creado 6
-oct 2026). Para la próxima edición: confirmar el diseño final de la gorra (texto, talles, cantidad)
-con más margen antes del evento, para no repetir el mismo apuro de último momento.
+que no se pudieron corregir** a tiempo para el evento. Mismo proveedor que las etiquetas de
+mochilas y de provisiones — ver punto 7, "Levis". A diferencia de los puntos anteriores (que son
+lecciones para la próxima edición), este tiene una acción concreta y urgente **para ahora mismo**
+— ver `pendientes-activos.md`, ítem "Ministerio — corregir gorras del Reto Ruge" (creado 6 oct
+2026). Para la próxima edición: confirmar el diseño final de la gorra (texto, talles, cantidad) con
+más margen antes del evento, para no repetir el mismo apuro de último momento.
 
 ---
 

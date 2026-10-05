@@ -1,6 +1,6 @@
 # Lecciones aprendidas — Reto Ruge
 
-> Creado 6 octubre 2026, a pedido explícito de Mariano, justo después de que terminara el Reto
+> Creado 5 octubre 2026, a pedido explícito de Mariano, justo después de que terminara el Reto
 > Ruge 2026 (1-4 oct, "salió excelente, 40 hombres transformados" — ver
 > `areas/ministerio/CLAUDE.md`, sección "Hombres visionados/invitados para Ruge", resultado final).
 >
@@ -74,7 +74,7 @@ ver punto 7, "Levis".
 
 ## 7. Cuidado con "Levis" — proveedor que hace las gorras y las etiquetas, ha fallado varias veces
 
-**Precisado 6 oct 2026**: "Levis" (nombre tal cual lo dijo Mariano, por dictado — no confirmado si
+**Precisado 5 oct 2026**: "Levis" (nombre tal cual lo dijo Mariano, por dictado — no confirmado si
 es el nombre de la empresa/local o de una persona) es el **proveedor que hace tanto las gorras como
 las etiquetas** (mochilas y provisiones, puntos 1, 6 y 8 de este documento) — es decir, el mismo
 proveedor está detrás de al menos 3 de los problemas ya listados arriba, no son fallas aisladas de
@@ -93,7 +93,7 @@ Faltó poner el texto **"RETO 2"** en las gorras, y además quedaron **algunas g
 que no se pudieron corregir** a tiempo para el evento. Mismo proveedor que las etiquetas de
 mochilas y de provisiones — ver punto 7, "Levis". A diferencia de los puntos anteriores (que son
 lecciones para la próxima edición), este tiene una acción concreta y urgente **para ahora mismo**
-— ver `pendientes-activos.md`, ítem "Ministerio — corregir gorras del Reto Ruge" (creado 6 oct
+— ver `pendientes-activos.md`, ítem "Ministerio — corregir gorras del Reto Ruge" (creado 5 oct
 2026). Para la próxima edición: confirmar el diseño final de la gorra (texto, talles, cantidad) con
 más margen antes del evento, para no repetir el mismo apuro de último momento.
 

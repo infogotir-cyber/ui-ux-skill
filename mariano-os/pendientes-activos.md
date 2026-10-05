@@ -1236,6 +1236,21 @@ qué es, quién la organiza, ni lugar/hora. Detalle en `areas/ministerio/CLAUDE.
      18:00; 7 sept, chequeo diario 18:00; 8 sept, chequeo diario 18:00; 9 sept, chequeo diario
      18:00, 10 sept, chequeo diario 18:00, 11 sept, chequeo diario 18:00, 15 sept, chequeo diario 18:00, 16 sept, chequeo diario 18:00, 17 sept, chequeo diario 18:00, 18 sept, chequeo diario 18:00, 19 sept, chequeo diario 18:00, 20 sept, chequeo diario 18:00, 21 sept, chequeo diario 18:00, 22 sept, chequeo diario 18:00, 23 sept, chequeo diario 18:00, 24 sept, chequeo diario 18:00, 25 sept, chequeo diario 18:00, chequeo diario 18:00, 26 sept, chequeo diario 18:00, 27 sept, chequeo diario 18:00, 28 sept, chequeo diario 18:00, 29 sept, chequeo diario 18:00, 30 sept, chequeo diario 18:00, 1 oct, chequeo diario 18:00, 2 oct, chequeo diario 18:00, 3 oct, chequeo diario 18:00, 4 oct).
 
+### Ministerio — corregir gorras del Reto Ruge: falta "RETO 2" y hay gorras mal hechas (6 oct 2026)
+
+Ya pasó el Reto Ruge (1-4 oct), pero quedó un pendiente material sin resolver a tiempo para el
+evento: falta poner el texto **"RETO 2"** en las gorras, y además hay **algunas gorras que
+quedaron incorrectas y no se pudieron corregir** antes del evento. Mariano lo anotó explícitamente
+como corrección a resolver ahora, no como parte del cierre del evento. Ver también
+`areas/ministerio/recursos/lecciones-aprendidas-ruge.md` (ítem de gorras en la lista de
+correcciones para el próximo Reto Ruge) — ese documento es la retrospectiva general, este ítem es
+la acción concreta de ahora mismo.
+
+- Falta que Mariano precise: cuántas gorras están mal, en qué está mal (diseño, texto, cantidad), y
+  si hay que reimprimir/corregir las existentes o encargar gorras nuevas.
+- Estado: **abierto**.
+- Recordado: 1 vez (6 oct 2026, creación).
+
 ---
 
 ## Hechos (quedan un tiempo como registro antes de limpiarse)

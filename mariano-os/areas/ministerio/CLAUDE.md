@@ -1008,6 +1008,13 @@ inscripción. No se actualiza el detalle fila por fila de la tabla de visionador
 ese nivel de detalle) — este ítem queda **cerrado**, el seguimiento quincenal de visionadores
 (pensado para antes del reto) ya no aplica.
 
+**Dejar de registrar el detalle día a día de Ruge (6 oct 2026, instrucción explícita de
+Mariano)**: con el evento ya terminado, ya no hace falta seguir anotando novedades operativas
+puntuales de esta edición. En cambio, Mariano pidió consolidar todo lo aprendido en un documento de
+retrospectiva para reusar cuando se organice el próximo Reto Ruge "dentro de unos meses" — ver
+`areas/ministerio/recursos/lecciones-aprendidas-ruge.md` (creado 6 oct 2026, lista abierta — sigue
+sumando ítems a medida que Mariano los mencione, no está cerrada).
+
 ### Reunión de Logística real — 24 ago 2026, resumen (transcripción completa procesada)
 
 Llamada con Marco Guanuchi, Julio César Navia y David Luzuriaga, dirigida por Mariano. Detalle

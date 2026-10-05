@@ -1000,6 +1000,14 @@ cual, organizado por visionador:
 etapas (visionando, indecisos, sin recursos, o ya dijeron que no) — no se cuentan como confirmados
 hasta que paguen o se inscriban.
 
+**RESULTADO FINAL (5 oct 2026, confirmado por Mariano después del reto, 1-4 oct)**: el Reto Ruge ya
+se realizó — "salió excelente, 40 hombres transformados". No se detalló si ese número de 40 es la
+asistencia final (vs. la meta de 50 cupos) o específicamente cuántos tuvieron una transformación
+espiritual real — Mariano usó "transformados" como la métrica que le importa, no un conteo de
+inscripción. No se actualiza el detalle fila por fila de la tabla de visionadores de arriba (no dio
+ese nivel de detalle) — este ítem queda **cerrado**, el seguimiento quincenal de visionadores
+(pensado para antes del reto) ya no aplica.
+
 ### Reunión de Logística real — 24 ago 2026, resumen (transcripción completa procesada)
 
 Llamada con Marco Guanuchi, Julio César Navia y David Luzuriaga, dirigida por Mariano. Detalle

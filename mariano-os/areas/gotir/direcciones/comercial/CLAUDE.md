@@ -1023,9 +1023,15 @@ tenga que acordarse de nada, no sumarle otra carga.
 A pedido de Mariano, durante al menos 20 llamadas va a compartir el resumen/transcripción (Fathom)
 de cada una para que el sistema registre patrones: preguntas frecuentes de los clientes, errores
 recurrentes de Mariano en la llamada, y ajustes sugeridos al guion (sección 2). El registro vive en
-`patrones-llamadas.md`, mismo directorio — se actualiza cada vez que llega una transcripción nueva.
+`patrones-llamadas.md`, mismo directorio.
 
-**Contador: 0/20 llamadas registradas al 19 agosto 2026.**
+**CERRADA (6 oct 2026, a pedido explícito de Mariano)**: se llegó a 20/20 llamadas registradas con
+la llamada de Angie Melina Linares Vanegas (fila 20). El chequeo diario (abajo, sección 9.1) ya no
+pide transcripciones nuevas por este motivo. Si Mariano comparte una igual más adelante, se sigue
+registrando en `patrones-llamadas.md` como contexto de comercial, pero deja de ser parte de este
+mecanismo. El detalle completo de las 20 llamadas, más las listas vivas de preguntas frecuentes,
+errores recurrentes y ajustes sugeridos al guion que dejó la ventana, quedan en ese archivo —
+quedan como insumo permanente para seguir mejorando el guion de la sección 2, no se archivan.
 
 ### 9.3 `pendientes-activos.md` — qué es y cómo se usa
 

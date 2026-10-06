@@ -6,10 +6,14 @@
 > llamada (`CLAUDE.md`, sección 2). Se actualiza cada vez que llega una transcripción nueva, sin
 > esperar a que Mariano lo pida.
 >
-> **Contador: 20/20 llamadas registradas — ventana completa (6 oct 2026).** Mariano pidió "al menos
-> 20 llamadas", así que el mínimo ya se cumplió. Sigue registrándose cualquier transcripción nueva
-> que comparta hasta que él confirme explícitamente si quiere cerrar la ventana del todo o
-> continuarla — no se asume ninguna de las dos por inferencia.
+> **CERRADA — 20/20 llamadas registradas (6 oct 2026, cierre confirmado explícitamente por
+> Mariano).** El mecanismo de "compartir cada transcripción para la ventana de aprendizaje" ya no
+> está activo — el chequeo diario (`comercial/CLAUDE.md`, sección 9.1) dejó de pedir transcripciones
+> nuevas por este motivo. Las tres listas de abajo (preguntas frecuentes, errores recurrentes,
+> ajustes sugeridos al guion) quedan como el resultado permanente de la ventana — siguen siendo
+> insumo real para mejorar el guion de la sección 2 de `CLAUDE.md`, no se archivan ni se borran. Si
+> en el futuro Mariano comparte otra transcripción, se puede seguir registrando acá como contexto
+> normal de comercial, pero ya no cuenta para ningún contador.
 
 ## Cómo se carga
 

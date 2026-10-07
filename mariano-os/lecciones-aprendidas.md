@@ -642,12 +642,14 @@ Ruge) — busca un sistema o mecanismo que resista a ellos, que le permita notar
 desbalance antes de que se le acumule la consecuencia, en vez de darse cuenta solo cuando ya duele
 el cuerpo o la caja.
 
-**Aplicación a futuro**: a diferencia de otras lecciones de este documento, acá Mariano pidió
-ayuda directa para diseñar la solución, no solo que se registre el patrón. El sistema le propuso
-un mecanismo concreto en la conversación del 7 oct 2026 (chequeo semanal de equilibrio entre ramas
-+ una alerta puntual de alimentación segura cuando se detecta que arranca un evento de alta
-demanda) — queda pendiente de que Mariano lo confirme, ajuste o rechace antes de construirlo; no se
-da por decidido todavía.
+**Aplicación a futuro — CONFIRMADA Y ARMADA el mismo día (7 oct 2026)**: Mariano aprobó los dos
+mecanismos propuestos ("armemos los 2"). Detalle técnico completo en
+`areas/personal/CLAUDE.md`, sección "Mecanismo de equilibrio entre ramas": (1) Routine semanal
+(`trig_016p5ngYYYX4Jk7MVSkFZPH3`, domingos 19:48 España) que pregunta rama por rama cuánta atención
+recibió cada una esa semana, con foco explícito en si comió afuera por desorganización, y alerta
+si una rama queda desatendida 2+ semanas seguidas; (2) instrucción permanente de preguntar
+proactivamente por comida segura organizada apenas Mariano avise que se viene un evento de alta
+demanda (Ruge, congreso, viaje), en vez de esperar a que el daño ya esté hecho.
 
 **Proverbio**: lo urgente no cancela las otras ramas de la vida — las vuelve invisibles hasta que
 el cuerpo o la caja te mandan la factura.

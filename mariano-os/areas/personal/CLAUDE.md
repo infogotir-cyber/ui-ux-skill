@@ -257,3 +257,30 @@ no es exclusivo de lo personal, pero vive acá porque es donde mejor encaja como
   dado el peso de ministerio + GOTIR + empresarial), tu rol es reflejarlo sin culpa ni presión —
   mostrarle el estado, no sermonearlo. Esto es coherente con cómo el sistema general trata temas de
   bienestar: acompañar, no presionar.
+
+## Mecanismo de equilibrio entre ramas (7 oct 2026, Lección 20 de `lecciones-aprendidas.md`)
+
+Mariano identificó un patrón real: cuando un evento repentino de alta demanda se lleva su atención
+(Ruge, un congreso, una reunión que surge), las demás ramas de su vida se le caen sin que lo note a
+tiempo — en particular su alimentación (es intolerante a gluten y lactosa, sección 1 arriba; cuando
+se desorganiza termina comiendo afuera y se daña el cuerpo de verdad, no es solo una incomodidad) y
+las finanzas/trabajo. Pidió ayuda directa para armar un sistema resistente a este patrón — dos
+mecanismos, confirmados y armados el mismo día:
+
+**1. Chequeo semanal de equilibrio** — Routine `trig_016p5ngYYYX4Jk7MVSkFZPH3`, dispara los domingos
+19:48 hora de España (`CRON_TZ=Europe/Madrid`). Pregunta, rama por rama (Personal/físico-
+alimentación, Formación, Ministerio, GOTIR/laboral, Empresarial), cuánta atención recibió esa
+semana, con pregunta directa sobre si comió afuera por desorganización. Si una rama queda en
+"poco"/"nada" 2+ semanas seguidas, lo señala como alerta sin esperar a que Mariano lo note solo.
+Las respuestas de cada semana se registran abajo, para poder ver el patrón en el tiempo:
+
+- *(sin registros todavía — el primer chequeo dispara el 11 oct 2026)*
+
+**2. Alerta puntual de comida segura ante un evento de alta demanda** — instrucción permanente, no
+un trigger programado: cuando Mariano avise en cualquier conversación que se viene un evento que va
+a demandarle mucho tiempo/atención de golpe (Ruge, un congreso, un viaje, una crisis puntual),
+preguntarle directamente y en el momento si tiene organizada comida segura (sin gluten/lactosa)
+para esos días, o si va a terminar comiendo afuera — antes de que el evento arranque, no después.
+No esperar a que lo mencione él; es el mismo criterio de proactividad que ya rige el resto del
+sistema (`mariano-os/CLAUDE.md`), aplicado a este punto concreto porque ya probó ser el que más
+daño físico real le generó.

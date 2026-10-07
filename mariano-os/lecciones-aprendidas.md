@@ -62,6 +62,8 @@ una lección nueva.
 25. Si no sabés si realmente necesitás a esa persona, si sabés hacer lo que le vas a pedir, y si su
     aporte se paga solo — no estás por incorporar ayuda, estás por incorporar un problema con
     sueldo. *(Antes de contratar)*
+26. Lo urgente no cancela las otras ramas de la vida — las vuelve invisibles hasta que el cuerpo o
+    la caja te mandan la factura. *(Lección 20)*
 
 ## Autoengaños del emprendedor (sección aparte, empezada 29 ago 2026)
 
@@ -607,3 +609,45 @@ por separado — son, en los hechos, el resumen de hacia dónde apuntan varias l
 **Proverbio**: una empresa no está quebrada porque duela sostenerla — está quebrada cuando sostenerla
 cuesta más que cerrarla. Todo lo demás es una señal de que hay que optimizar, no de que hay que
 rendirse.
+
+## Lección 20 — Un evento urgente desequilibra cualquier rama de la vida, no solo la que está en foco; el cuerpo y la caja cobran la factura después (7 oct 2026)
+
+**Lo que pasó, en sus propias palabras**: le es muy necesario sostener un equilibrio entre las
+ramas más importantes de su vida (las mismas ya definidas en `areas/personal/CLAUDE.md`: bienestar
+físico/alimentación, formación — libros, idiomas, nuevas habilidades —, y lo que tiene que ver con
+nuevas inversiones y crecimiento, además de lo ministerial y lo laboral de GOTIR), pero todavía no
+encontró la manera de mantenerse cerca de ese punto de equilibrio. El patrón concreto: cuando se
+mete mucho en una rama (da el ejemplo del ministerio: "apago incendios porque hay una reunión que
+surgió, porque viene lo de Ruge, o porque viene un congreso"), las demás ramas se le van cayendo —
+específicamente nombra su **cuidado personal y alimentación**: es intolerante al gluten y a la
+lactosa (ya documentado en `areas/personal/CLAUDE.md` sección 1), y cuando se desorganiza termina
+comiendo afuera, dañándose el cuerpo de forma concreta, no solo "descuidando la dieta" en abstracto.
+Lo mismo le pasa con las finanzas y el trabajo cuando se vuelca mucho a una actividad. Es explícito
+en que el desequilibrio no tiene una sola dirección — a veces se desequilibra para el lado
+ministerial, a veces para el laboral — y que siempre termina lidiando con consecuencias reales de
+la rama que descuidó, cualquiera sea.
+
+**Qué lo distingue de lo que ya pide equilibrio en otras lecciones**: la Lección 7 (confundir
+"subsistir" con estabilidad, volcarse de más al ministerio y descuidar lo empresarial) ya era este
+mismo patrón, pero en una sola dirección y sin disparador puntual. Acá Mariano generaliza el
+patrón — puede pasar en cualquier dirección, entre cualquier par de ramas — y agrega un elemento
+nuevo y específico: el disparador suele ser un **evento repentino y de alta demanda** (una reunión
+que surge, un Ruge, un congreso), no una deriva lenta por desorden general como en la Lección 4. El
+desbalance es agudo, no gradual, y es la primera vez que se conecta explícitamente con un daño
+físico concreto y verificable (comer afuera pese a una intolerancia real) en vez de con un
+descuido abstracto.
+
+**Lo que pide, explícitamente**: no busca evitar este tipo de eventos (a veces hacen falta, como
+Ruge) — busca un sistema o mecanismo que resista a ellos, que le permita notar y corregir el
+desbalance antes de que se le acumule la consecuencia, en vez de darse cuenta solo cuando ya duele
+el cuerpo o la caja.
+
+**Aplicación a futuro**: a diferencia de otras lecciones de este documento, acá Mariano pidió
+ayuda directa para diseñar la solución, no solo que se registre el patrón. El sistema le propuso
+un mecanismo concreto en la conversación del 7 oct 2026 (chequeo semanal de equilibrio entre ramas
++ una alerta puntual de alimentación segura cuando se detecta que arranca un evento de alta
+demanda) — queda pendiente de que Mariano lo confirme, ajuste o rechace antes de construirlo; no se
+da por decidido todavía.
+
+**Proverbio**: lo urgente no cancela las otras ramas de la vida — las vuelve invisibles hasta que
+el cuerpo o la caja te mandan la factura.

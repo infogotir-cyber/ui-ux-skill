@@ -578,3 +578,16 @@ pendiente de construcción, no algo ya armado.
   (prefiere audio/dictado sobre texto, da dirección más que ejecuta, se dispersa fácilmente, es
   mobile-first en iPhone) — afecta cómo deberías formular cualquier respuesta que le llegue por
   JARVIS.
+- **De lo general a lo particular — instrucción permanente (7 oct 2026)**: Mariano confirmó
+  explícitamente que este es el modo de análisis con el que se siente cómodo, y pidió que se aplique
+  "para todo" — no solo a la arquitectura del sistema (que ya sigue esta lógica, ver "Motivación y
+  contexto de fondo" arriba), sino a cómo se le presenta cualquier información, en cualquier
+  horizonte temporal (día, semana, mes, año). Su propia metáfora: si uno solo analiza el próximo
+  metro que recorre en un auto, puede terminar tomando la salida equivocada sin darse cuenta — hace
+  falta mirar el camino completo para saber si ese metro lleva a donde quiere ir. Regla concreta: antes
+  de entrar en el detalle particular de una respuesta o chequeo (tareas de hoy, pendiente puntual,
+  número suelto), dar primero el panorama general que lo contiene (cómo viene esa área/ese período
+  en conjunto, si lo urgente de hoy lo acerca o no a donde quiere ir) — nunca arrancar directo en lo
+  particular. El mecanismo concreto que aplica esto a su rutina diaria/semanal/mensual/anual vive en
+  `ritmo-de-planificacion.md` (raíz de `mariano-os/`) — ver también `lecciones-aprendidas.md`,
+  Lección 21.

@@ -653,3 +653,52 @@ demanda (Ruge, congreso, viaje), en vez de esperar a que el daño ya esté hecho
 
 **Proverbio**: lo urgente no cancela las otras ramas de la vida — las vuelve invisibles hasta que
 el cuerpo o la caja te mandan la factura.
+
+## Lección 21 — Analizar solo el próximo metro hace perder la ruta completa; hace falta planificar de lo general a lo particular en cada horizonte (día, semana, mes, año) (7 oct 2026)
+
+**Lo que pasó, en sus propias palabras**: necesita organización y análisis "de lo general a lo
+particular" — se siente cómodo con ese tipo de análisis, y pide que se aplique a todo: su semana,
+su mes, su año, su día. Da una metáfora propia, muy concreta: si uno analiza solo el próximo metro
+que recorre en un auto, puede terminar eligiendo otra salida sin darse cuenta, porque lo único que
+mira es el metro siguiente, no el camino completo. Por eso cada mañana necesita ver, a nivel
+general, si está yendo por el camino correcto — si una urgencia que está resolviendo realmente lo
+lleva a donde quiere ir, o si se la pasa resolviendo urgencias/incendios todos los días sin avanzar,
+quedándose en el mismo lugar. Describe el síntoma con claridad: termina improvisando, la agenda se
+la marcan los incendios, y si alguien lo "regañó" por algo, lo resuelve rápido y después vuelve a
+resolver otro problema — sin avanzar realmente, solo apagando conflictos.
+
+**Lo que pide, concretamente**: algún método — no sabe todavía si es un chequeo diario, un panel
+donde ver todos los datos juntos por área, o alguna otra forma — para poder conectarse cada mañana
+desde temprano y ver, por área, cómo viene cada cosa y cuáles son las tareas, en vez de improvisar
+el día.
+
+**Síntomas nuevos y concretos que agrega, consecuencia directa de no tener este método todavía**:
+no se siente cómodo con su físico; su ropa está vieja y ya no le gusta; hace mucho tiempo que no le
+puede dar mantenimiento al coche como corresponde, y el coche que tiene es demasiado chico, no se
+siente cómodo en él; no tiene ahorros; y se pasa todo el tiempo apagando incendios y lidiando con
+flujos de caja que no tiene.
+
+**Cómo conecta con la Lección 20 (mismo día, misma conversación)**: es la misma familia de
+problema, pero en una capa distinta. La Lección 20 es sobre qué pasa cuando un evento puntual de
+alta demanda se lleva toda la atención y las demás ramas se caen sin aviso. Esta lección es sobre
+la causa estructural de fondo: **sin un hábito de mirar el panorama general antes de actuar en lo
+particular, cualquier día puede convertirse en una sucesión de "próximos metros"** — reaccionando a
+lo que aparece, sin chequear si eso lleva a la ruta elegida — y eso es cierto incluso en
+semanas sin ningún Ruge o congreso de por medio. Los síntomas nuevos (cuerpo, ropa, coche, ahorros,
+caja) son la evidencia acumulada de vivir así durante mucho tiempo, no hechos aislados.
+
+**También conecta con las Lecciones 1 y 4**: la Lección 1 ya establecía que lo que no se anota se
+pierde y no se puede decidir bien con eso; la Lección 4 ya diagnosticaba que vivir a las corridas no
+deja tiempo para ver las fugas. Esta lección agrega la pieza que faltaba: no alcanza con anotar o
+con pararse a mirar una vez — hace falta un **ritmo**, repetido en cada horizonte de tiempo (día,
+semana, mes, año), que arranque siempre por el panorama general antes de bajar a la tarea puntual —
+mismo principio que ya sostiene la arquitectura completa de este sistema (`mariano-os/CLAUDE.md`,
+"director general → áreas → direcciones"), ahora pedido explícitamente también para su propia
+rutina personal de planificación, no solo para cómo está armado el sistema.
+
+**Aplicación a futuro — en construcción el mismo día (7 oct 2026)**: ver `ritmo-de-planificacion.md`
+(raíz de `mariano-os/`) para el mecanismo concreto de los 4 horizontes (día/semana/mes/año),
+incluidos los que todavía están pendientes de que Mariano confirme fecha/cadencia exacta.
+
+**Proverbio**: quien solo analiza el próximo metro puede terminar en la salida equivocada sin darse
+cuenta — hace falta mirar el camino completo para saber si ese metro lleva a donde se quiere ir.

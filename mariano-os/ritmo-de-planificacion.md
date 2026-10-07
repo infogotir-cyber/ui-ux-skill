@@ -35,23 +35,22 @@ viene — primero qué área necesita más foco esta semana que arranca (según 
 retrospectiva), y recién después 1-3 tareas particulares concretas por área. Ver el prompt completo
 de la Routine.
 
-## 3. Mensual — PENDIENTE de confirmar día/cadencia exacta
+## 3. Mensual — ARMADO (7 oct 2026)
 
-Mismo principio, a escala de mes: repasar el mes que termina (por área, en general, no tarea por
-tarea) y planificar el mes que viene (de lo general — qué prioridad tiene cada área este mes — a lo
-particular — qué 2-3 cosas concretas hacen falta para sostener esa prioridad). **Falta que Mariano
-confirme**: ¿el último domingo del mes, el primer día del mes, o alguna otra fecha que le sea más
-natural? Mientras no haya confirmación, esto no se construye — no se asume ninguna fecha por
-inferencia.
+Mariano confirmó: **el primer día de cada mes**. Routine `trig_01EpDNLcxLYuTyco3YzEgGar`
+("Vida — chequeo mensual de planificación general"), dispara día 1 de cada mes, 07:49 hora de
+España. Repasa el mes que termina por área (apoyándose en las "Semanas planificadas" de ese mes,
+abajo) antes de planificar 2-4 objetivos particulares del mes que arranca, siempre después de
+nombrar primero cuál área necesita más foco a nivel general.
 
-## 4. Anual — PENDIENTE de confirmar fecha y alcance
+## 4. Anual — ARMADO (7 oct 2026)
 
-Mismo principio, a escala de año: panorama general del año completo por área antes de bajar a los
-meses/trimestres particulares. **Falta que Mariano confirme**: ¿primeros días de enero, su
-cumpleaños, el aniversario de GOTIR, u otra fecha con sentido propio para él? También falta
-confirmar si quiere que esto viva en una Routine automática o prefiere hacerlo él mismo con este
-sistema como acompañamiento puntual, dado que es un ejercicio más largo y reflexivo que los
-anteriores.
+Mariano confirmó: **primeros días de enero**. Routine `trig_01R7kepvMw6F8UvTdRkRcYc3`
+("Vida — chequeo anual de planificación general"), dispara el 2 de enero de cada año (a propósito
+no el 1/1), 07:51 hora de España. Es el más largo y reflexivo de los cuatro — repasa el año
+completo por área, pregunta explícitamente si los síntomas de la Lección 21 (físico, ropa, coche,
+ahorros, flujo de caja) mejoraron o no, y planifica 3-5 objetivos particulares del año que arranca,
+siempre después de nombrar la prioridad general del año.
 
 ## Pendiente de fondo, todavía sin resolver
 

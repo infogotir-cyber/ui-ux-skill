@@ -180,10 +180,13 @@ Si responde con dudas, ahí sí se pasa a resolver la objeción puntual (Fase 4)
    para que quede visible directo en la tarjeta de la oportunidad y para que el chequeo de la noche
    (sección 9.1) lo pueda auditar sin tener que abrir cada tarea.
 4. Si se detectó un bloqueo nuevo o un diferenciador que funcionó bien, anotarlo — sirve para afinar el guion con el tiempo
-5. **Agregado 18 agosto 2026**: marcar el estado real de la cita en GHL (`showed` si se realizó,
-   `noshow` si no se presentó) — ver mecanismo completo y por qué es un paso nuevo en la sección
-   "Tracking de no-show" más abajo. Sin este paso, el panel de estadísticas de Mariano no refleja
-   la realidad.
+5. **Agregado 18 agosto 2026, EN PAUSA desde el 9 oct 2026 (ver hallazgo abajo)**: marcar el estado
+   real de la cita en GHL (`showed` si se realizó, `noshow` si no se presentó) — ver mecanismo
+   completo y por qué es un paso nuevo en la sección "Tracking de no-show" más abajo. Sin este paso,
+   el panel de estadísticas de Mariano no refleja la realidad — pero mientras el hallazgo de abajo no
+   se resuelva, NO llamar a `ghl_update_appointment_status` automáticamente después de una llamada
+   (le manda al cliente una notificación como si se hubiera vuelto a agendar la cita). Hacer este
+   paso a mano en la UI de GHL, o esperar confirmación de Mariano, hasta nuevo aviso.
 6. **Agregado 19 agosto 2026, a pedido explícito de Mariano tras el curso de Mapa Antifugas**: si la
    llamada no terminó en venta, completar un post-mortem corto en la misma nota del contacto — dónde
    se frenó, qué dijo el cliente, qué se cree que pasó realmente, qué señal hubo, qué se haría
@@ -259,6 +262,23 @@ reflejaba nada. Investigado en vivo:
   fechas pedido, contra el campo `Pais` y la fuente (`Fuente`) de cada contacto — no hace falta una
   tool nueva, se arma con las que ya existen. Todavía no hay suficiente volumen desde el 18 ago para
   sacar conclusiones — retomar cuando Mariano pida el corte.
+- **Hallazgo real, sin resolver todavía (9 oct 2026)**: Mariano reportó que, varias veces que se
+  procesó el checklist de "Después de colgar" de una llamada, le llegó al rato una notificación
+  como si el cliente hubiera vuelto a agendar la cita — y que sospecha que pasa "cuando le cambiás
+  el estado", es decir, al llamar `ghl_update_appointment_status`. Lectura más probable: el `PUT
+  /calendars/events/appointments/{id}` que usa esa tool dispara, del lado de GHL, el mismo workflow
+  o notificación que normalmente avisa de una cita nueva/reprogramada — un efecto secundario de la
+  API, no algo pedido ni visible desde este sistema. **No se pudo confirmar la causa exacta por
+  API** — mismo límite ya documentado varias veces (`CLAUDE.md` raíz y sección 5.5 de este
+  documento): GHL no expone el detalle interno de sus workflows/automatizaciones vía API, así que
+  no hay forma de inspeccionar desde acá qué automatización se dispara al actualizar una cita.
+  **Decisión mientras no se resuelva**: el paso 5 del checklist (marcar `showed`/`noshow`) queda en
+  pausa — no se llama más a `ghl_update_appointment_status` de forma automática después de una
+  llamada, para no generarle al cliente una notificación falsa de "se agendó/reprogramó tu cita".
+  Mariano puede seguir marcándolo a mano en la UI de GHL si quiere mantener el dato para su panel,
+  o revisar en el builder de GHL (Automatizaciones) si hay algún workflow con trigger de tipo
+  "cita actualizada/reprogramada" que esté mandando ese mensaje — si lo encuentra y lo desactiva o
+  ajusta, se puede retomar el paso automático acá.
 
 ### 3.2 La llamada con Hector (analizada el 13 de agosto 2026)
 
